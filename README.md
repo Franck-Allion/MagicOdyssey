@@ -1,6 +1,6 @@
-# Tower TCG — Spécifications v1.6
+# Tower TCG — Spécifications v1.8
 
-**Version consolidée : décisions Q01 à Q154.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
+**Version consolidée : décisions Q01 à Q174.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
 
 **Nouveautés Q65–Q74 :** [attribution des dégâts, arrondis, vol de vie et événements des protections](01-combat/damage-attribution.md) ; [prévention létale](01-combat/damage-prevention.md) ; [file d'événements](01-combat/event-queue.md) ; [tests d'acceptation](09-technical/acceptance-tests.md) ; [journal de décisions](DECISIONS.md).
 
@@ -106,3 +106,12 @@ Une décision nouvelle modifie le document propriétaire de la règle, ses tests
 ## État de consolidation v1.7 — 2026-11-04
 
 Le socle documentaire historique demeure disponible ; la consolidation **v1.7 couvre les décisions explicites jusqu’à Q164**. Modules additionnels : [UI Q135–Q144](02-art-direction/tooltips-durations-and-vfx.md), [plateau et prévision Q145–Q154](02-art-direction/board-and-tactical-preview.md), [sorts et effets continus Q155–Q164](02-art-direction/spells-auras-and-continuous-effects.md). Cette version ne constitue pas une implémentation ni la preuve que les scénarios d’acceptation sont exécutés. **Prochaine question Q165.**
+
+## Consolidation v1.8 — Q165–Q174
+
+- [Journal de combat joueur, inspection historique, visibilité et synchronisation avec les animations](02-art-direction/combat-journal-and-inspection.md).
+- [Tests d’acceptation T-165-01 à T-174-04](09-technical/acceptance-tests.md) : **40 nouveaux scénarios spécifiés, non exécutés**.
+- [Décisions Q165–Q174](DECISIONS.md).
+- Priorité fonctionnelle : journal **secondaire et léger**, jamais permanent sur le plateau, sans replay interactif ni graphe de causalité en V1.
+- L’UI ne révèle pas les résultats avant leur présentation visuelle et ne modifie jamais l’état déterministe du combat.
+- **Q175 ouverte** ; prochaine consolidation prévue après Q184, sauf réorientation du périmètre.

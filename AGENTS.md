@@ -39,3 +39,7 @@ La présentation des effets/échéances/VFX est spécifiée dans [tooltips et du
 ## Extension v1.7 — Effets continus et previews
 
 Lire [Q155–Q164](02-art-direction/spells-auras-and-continuous-effects.md) avant d’implémenter des zones, buffs, auras ou cycles. Même solveur déterministe/versionné pour partie et prévision, mais preview isolée sans fuite d’information cachée ; rendus et VFX ne sont pas la source de vérité. Voir [tests d’acceptation](09-technical/acceptance-tests.md). Les détails de l’algorithme canonique de neutralisation et les valeurs concrètes de budgets restent ouverts.
+
+## Règles UI journal Q165–Q174 — v1.8
+
+Lire [le journal de combat et l'inspection historique](02-art-direction/combat-journal-and-inspection.md) pour toute fonction d'historique. Ne jamais révéler une entrée avant son point de présentation VFX ni exposer les données cachées dans la recherche ou les résumés. Le journal V1 est secondaire : pas de graphe causal interactif, de replay graphique ni de simulations supplémentaires pour le produire. Tests documentés : [T-165-* à T-174-*](09-technical/acceptance-tests.md).

@@ -485,3 +485,49 @@ Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-
 | T-164-02 | Cascades de 8 modifications dans une opération atomique | Pas d’état intermédiaire incohérent exposé comme commit | [Q164](../02-art-direction/spells-auras-and-continuous-effects.md) |
 | T-164-03 | UI regroupe plusieurs transitions rapides | Journal logique et empreintes identiques avec VFX détaillés ou regroupés | [Q164](../02-art-direction/spells-auras-and-continuous-effects.md) |
 | T-164-04 | Preview en cache sous version antérieure du solveur | Cache invalidé, aucun résultat périmé ; RNG et FIFO réels inchangés | [Q164](../02-art-direction/spells-auras-and-continuous-effects.md) |
+
+
+## Scénarios d’acceptation v1.8 — Q165–Q174 (spécifiés, non exécutés)
+
+| ID | Scénario | Résultat attendu | Référence |
+|---|---|---|---|
+| T-165-01 | Conflit neutralise une dépendance d’aura | Feedback bref source + bénéficiaires, valeurs effectives exactes, aucun pictogramme permanent ajouté | [Q165](../02-art-direction/combat-journal-and-inspection.md) |
+| T-165-02 | Cycle résolu et condition extérieure change | Feedback distinct de réactivation et retour du bonus, sans double application | [Q165](../02-art-direction/combat-journal-and-inspection.md) |
+| T-165-03 | Inspection d’un bonus neutralisé | Source, contribution non appliquée et raison visible sans divulguer de secret | [Q165](../02-art-direction/combat-journal-and-inspection.md) |
+| T-165-04 | Même conflit en preview et en combat | Même contribution neutralisée et logs/replay déterministes | [Q165](../02-art-direction/combat-journal-and-inspection.md) |
+| T-166-01 | Combat sans consultation | Journal masqué par défaut, VFX et résolution non affectés | [Q166](../02-art-direction/combat-journal-and-inspection.md) |
+| T-166-02 | Attaque avec huit réactions | Résumé par séquence ; détail complet des huit réactions dans leur ordre | [Q166](../02-art-direction/combat-journal-and-inspection.md) |
+| T-166-03 | Événement masqué par règle de visibilité | Ni résumé ni détail joueur ne révèle le secret | [Q166](../02-art-direction/combat-journal-and-inspection.md) |
+| T-166-04 | Ouverture puis fermeture du journal | Aucune variation du moteur, du RNG ou de la FIFO | [Q166](../02-art-direction/combat-journal-and-inspection.md) |
+| T-167-01 | Large écran, ouverture sur demande | Panneau latéral ; plateau encore visible et lisible | [Q167](../02-art-direction/combat-journal-and-inspection.md) |
+| T-167-02 | Petit écran, ouverture sur demande | Panneau se superpose ou s’adapte, sans écraser les 24 cases | [Q167](../02-art-direction/combat-journal-and-inspection.md) |
+| T-167-03 | Fermeture immédiate | Panneau disparaît, aucun changement de combat | [Q167](../02-art-direction/combat-journal-and-inspection.md) |
+| T-167-04 | Journal avec séquences nombreuses | Dépliage et défilement fonctionnels dans le panneau | [Q167](../02-art-direction/combat-journal-and-inspection.md) |
+| T-168-01 | Survol événement, créature encore présente | Mise en évidence de la bonne instance et retour visuel à la normale | [Q168](../02-art-direction/combat-journal-and-inspection.md) |
+| T-168-02 | Deux créatures au même nom | Seule instance historiquement liée est sélectionnée | [Q168](../02-art-direction/combat-journal-and-inspection.md) |
+| T-168-03 | Créature détruite ou déplacée depuis événement | Identité/portrait/position d’époque dans journal ; plateau actuel inchangé | [Q168](../02-art-direction/combat-journal-and-inspection.md) |
+| T-168-04 | Événement historique de contrôle | Pas de déplacement ni changement de camp en direct durant consultation | [Q168](../02-art-direction/combat-journal-and-inspection.md) |
+| T-169-01 | Créature perd 7 PV et meurt | Inspection distingue avant 7 PV et après 0 PV | [Q169](../02-art-direction/combat-journal-and-inspection.md) |
+| T-169-02 | Créature détruite puis ressuscitée | Événements historiques restent attribués à leur instance correcte | [Q169](../02-art-direction/combat-journal-and-inspection.md) |
+| T-169-03 | Aura active à T puis disparue à T+1 | Inspection de T montre état et source pertinents à T | [Q169](../02-art-direction/combat-journal-and-inspection.md) |
+| T-169-04 | Créature a changé de colonne et contrôleur | Position et contrôle historiques corrects, sans reconstruction depuis état courant | [Q169](../02-art-direction/combat-journal-and-inspection.md) |
+| T-170-01 | Recherche par nom de sort connu | Seules séquences concernées et visibles retournées | [Q170](../02-art-direction/combat-journal-and-inspection.md) |
+| T-170-02 | Filtre morts puis remise à zéro | Événements filtrés adéquats, retour au journal complet | [Q170](../02-art-direction/combat-journal-and-inspection.md) |
+| T-170-03 | Filtre d’une chaîne multi-événements | Ordre des enfants conservé après filtrage | [Q170](../02-art-direction/combat-journal-and-inspection.md) |
+| T-170-04 | Recherche d’information cachée | Aucun secret affiché, indexé ou suggéré | [Q170](../02-art-direction/combat-journal-and-inspection.md) |
+| T-171-01 | Attaque annonce 8, 3 absorbés, 5 PV perdus | Résumé : 5 PV perdus et 3 absorbés, sans double compte | [Q171](../02-art-direction/combat-journal-and-inspection.md) |
+| T-171-02 | Chaîne de 20 événements dont deux morts | Résumé identifie deux morts ; détail conserve les 20 événements | [Q171](../02-art-direction/combat-journal-and-inspection.md) |
+| T-171-03 | Changement de contrôle sans dégâts | Événement majeur mis en avant malgré zéro dégât | [Q171](../02-art-direction/combat-journal-and-inspection.md) |
+| T-171-04 | Consultation d’une vieille séquence après changements du plateau | Résumé historique stable, jamais recalculé depuis état actuel | [Q171](../02-art-direction/combat-journal-and-inspection.md) |
+| T-172-01 | Capacité déclenchée après mort | Texte décrit capacité, source et déclencheur visibles | [Q172](../02-art-direction/combat-journal-and-inspection.md) |
+| T-172-02 | Longue chaîne multi-causale | Aucun lien de navigation causale ni graphe requis ; événements lisibles en ordre | [Q172](../02-art-direction/combat-journal-and-inspection.md) |
+| T-172-03 | Panneau ouvert pendant séquence | Descriptions calculées depuis événements existants, pas de simulation rétroactive | [Q172](../02-art-direction/combat-journal-and-inspection.md) |
+| T-172-04 | Effet venant d’une source cachée | Texte ne révèle pas source secrète | [Q172](../02-art-direction/combat-journal-and-inspection.md) |
+| T-173-01 | Combat de trente tours avec nombreuses réactions | Début et fin du combat consultables, aucune purge par tour | [Q173](../02-art-direction/combat-journal-and-inspection.md) |
+| T-173-02 | Événements secondaires multiples | Tous les événements visibles pertinents retrouvables dans les détails | [Q173](../02-art-direction/combat-journal-and-inspection.md) |
+| T-173-03 | Fin de combat normal | Historique joueur peut être libéré sans supprimer logs techniques nécessaires | [Q173](../02-art-direction/combat-journal-and-inspection.md) |
+| T-173-04 | Sauvegarde puis reprise pendant combat | Journal cohérent et complet pour la partie déjà révélée | [Q173](../02-art-direction/combat-journal-and-inspection.md) |
+| T-174-01 | Ouverture pendant longue animation | Panneau consultable, VFX continuent, aucune pause moteur | [Q174](../02-art-direction/combat-journal-and-inspection.md) |
+| T-174-02 | Moteur a résolu mort mais animation non présentée | Mort pas encore révélée dans journal joueur | [Q174](../02-art-direction/combat-journal-and-inspection.md) |
+| T-174-03 | Événements visuels groupés | Révélation progressive cohérente avec groupes, sans inversion chronologique | [Q174](../02-art-direction/combat-journal-and-inspection.md) |
+| T-174-04 | Fin des animations, journal encore ouvert | Historique visible complet et résumé définitif, combat inchangé | [Q174](../02-art-direction/combat-journal-and-inspection.md) |

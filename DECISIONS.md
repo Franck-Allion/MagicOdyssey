@@ -247,3 +247,21 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q164 | B | Cohérence recalculée aux frontières atomiques nécessaires ; rendu VFX peut regrouper sans changer la logique. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
 
 **Q165 ouverte.** Les paramètres numériques, l’algorithme exact de départage canonique et les noms d’API ne sont pas encore validés.
+
+
+## Décisions validées Q165–Q174 — v1.8
+
+| Question | Choix | Résumé | Fichier propriétaire |
+|---|---|---|---|
+| Q165 | B | Feedback temporaire lors de la neutralisation ou réactivation d’une aura. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+| Q166 | B + précision | Journal hiérarchique, masqué par défaut, consultable à la demande. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+| Q167 | B | Panneau latéral escamotable pour le journal. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+| Q168 | B | Survol/sélection d’un événement : mise en évidence contextuelle des créatures. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+| Q169 | B | Résumé compact des créatures et inspection historique détaillée à la demande. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+| Q170 | B | Historique par tour, recherche textuelle et filtres légers. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+| Q171 | B | Résumé tactique et détail exhaustif à la demande. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+| Q172 | A + contrainte de coût | Explications textuelles, sans navigation causale avancée en V1. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+| Q173 | B | Conservation de l’historique complet du combat en cours. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+| Q174 | B | Journal consultable pendant les animations sans pause ni fuite anticipée. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
+
+**Q175 ouverte.** Le journal V1 reste volontairement léger et non central.
