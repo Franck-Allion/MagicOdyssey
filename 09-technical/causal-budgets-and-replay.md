@@ -126,3 +126,11 @@ Pour chaque périmètre `p` (branche, chaîne, opération initiale), `0 <= consu
 
 - Q125 : stratégie de conservation des anciennes versions du moteur et des packs de cartes ; politique de support et migration éventuelle de progression RPG **hors combat**.
 - Valeurs chiffrées des plafonds Q113/Q116, schéma de causalité pour les événements à multiples origines, sérialisation canonique exacte, standard de hachage, fréquence d'instantanés et stockage/compression restent des **paramètres d'implémentation ou décisions futures**, et ne sont pas validés par Q115–Q124.
+
+
+## Q125 — Conservation des versions historiques encore supportées
+
+- **COMPAT-125-01** : aussi longtemps qu’une sauvegarde ou un replay est **officiellement supporté**, la version historique de règles nécessaire doit rester disponible, éventuellement dans une archive chargée à la demande.
+- **COMPAT-125-02** : un combat ancien est restauré avec ses composants historiques compatibles (règles, cartes, RNG, budgets) ; si l’environnement supporté requis est indisponible, annoncer l’incompatibilité, jamais substituer silencieusement des règles plus récentes (Q124).
+- **COMPAT-125-03** : conserver la capacité de reproduction des tests de non-régression d’anciennes règles supportées. La durée exacte du support officiel n’est **pas encore définie**.
+- **COMPAT-125-04** : les migrations de progression RPG persistante sont séparées des combats en cours. Une mise à jour purement graphique ne change pas le déterminisme des règles : [UI et cartes](../02-art-direction/card-and-board-ui.md).

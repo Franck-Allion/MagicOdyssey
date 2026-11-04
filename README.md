@@ -1,6 +1,6 @@
-# Tower TCG — Spécifications v1.3
+# Tower TCG — Spécifications v1.4
 
-**Version consolidée : décisions Q01 à Q124.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
+**Version consolidée : décisions Q01 à Q134.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
 
 **Nouveautés Q65–Q74 :** [attribution des dégâts, arrondis, vol de vie et événements des protections](01-combat/damage-attribution.md) ; [prévention létale](01-combat/damage-prevention.md) ; [file d'événements](01-combat/event-queue.md) ; [tests d'acceptation](09-technical/acceptance-tests.md) ; [journal de décisions](DECISIONS.md).
 
@@ -8,7 +8,7 @@ Ne pas implémenter comme validées les idées présentées comme ouvertes ou pr
 
 # Tower TCG — Game Design Documentation
 
-> Version 1.3 — 2026-11-04. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q124). Aucun code n'est encore implémenté.
+> Version 1.4 — 2026-11-04. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q134). Aucun code n'est encore implémenté.
 
 ## Principe
 Jeu solo TCG/RPG : ascension de tours, étages avec ennemis, marchands et ressources, boss par étage ; progression persistante par cartes, artefacts et caractéristiques du héros. Le combat tactique est le cœur du jeu.
@@ -78,3 +78,11 @@ Une décision nouvelle modifie le document propriétaire de la règle, ses tests
 - Dépendances : [anti-boucles Q105–Q114](01-combat/turn-control-and-loop-safety.md), [FIFO](01-combat/event-queue.md), [opérations atomiques](01-combat/effect-resolution.md), [instances](01-combat/instance-identity.md).
 - [Scénarios d’acceptation T-115 à T-124](09-technical/acceptance-tests.md) : **40 nouveaux cas documentés, non exécutés**.
 - **Q125 ouverte** : politique de support des anciennes versions et migration de données persistantes ; ne pas implémenter ce point comme arbitrage validé.
+
+
+## Consolidation v1.4 — Q125–Q134
+
+- [Direction artistique, jetons, cartes d’origine et panneau d’inspection](02-art-direction/card-and-board-ui.md) — Q126–Q134, avec valeurs **ATQ/PV finales visibles** et effet actif exhaustif.
+- [Gestion des versions historiques supportées](09-technical/causal-budgets-and-replay.md) — Q125.
+- [Tests d’acceptation](09-technical/acceptance-tests.md) — T-125 à T-134.
+- **Q135 ouverte** : conventions de couleur, valeurs finales et détail des modifications dans les vues d’inspection.

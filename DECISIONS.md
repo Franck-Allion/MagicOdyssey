@@ -174,4 +174,22 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q123 | A | Sauvegarde entre commits atomiques, FIFO non vide admise ; restauration sans double exécution. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
 | Q124 | A | Versions de règles/cartes/PRNG/budgets figées par combat ; incompatibilité explicite si dépendance manquante ; RPG migrable entre combats. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
 
-**Q125 ouverte :** stratégie de conservation/compatibilité des moteurs historiques et migration RPG hors combat.
+**Q125 validée** : voir le lot v1.4 ci-dessous.
+
+
+## Consolidation v1.4 — décisions Q125 à Q134
+
+| Question | Choix | Résumé | Document propriétaire |
+|---|---|---|---|
+| Q125 | A | Moteurs/règles historiques archivés et chargés à la demande tant que sauvegardes/replays restent officiellement pris en charge. | [Spécification](09-technical/causal-budgets-and-replay.md) |
+| Q126 | Hearthstone / Magic | Fantasy illustrée riche et colorée, identité originale et forte lisibilité des cartes. | [Spécification](02-art-direction/card-and-board-ui.md) |
+| Q127 | D personnalisée | Carte premium riche dans la main/inspection ; jeton compact portrait sur plateau ; tooltip et clic pour détails. | [Spécification](02-art-direction/card-and-board-ui.md) |
+| Q128 | D | Jeton adaptatif avec portrait, ATQ et PV toujours visibles, états tactiques importants uniquement. | [Spécification](02-art-direction/card-and-board-ui.md) |
+| Q129 | D | Médaillon circulaire/ovale à socle tactique, camp reconnaissable. | [Spécification](02-art-direction/card-and-board-ui.md) |
+| Q130 | A | ATQ en bas à gauche, PV en bas à droite, états sous le portrait. | [Spécification](02-art-direction/card-and-board-ui.md) |
+| Q131 | A | Valeurs numériques et couleurs avec symboles ; armure et bouclier distincts, PV actuels sur jeton. | [Spécification](02-art-direction/card-and-board-ui.md) |
+| Q132 | A personnalisée | Maximum 3 icônes prioritaires et +N ; clic ouvre carte complète avec tous bonus/malus. | [Spécification](02-art-direction/card-and-board-ui.md) |
+| Q133 | A personnalisée | Inspection de la carte d’origine inchangée, panneau latéral séparé pour modifications. | [Spécification](02-art-direction/card-and-board-ui.md) |
+| Q134 | B personnalisée | Panneau exhaustif avec ATQ finale et PV/défense effective clairement visibles, protections et calcul des effets. | [Spécification](02-art-direction/card-and-board-ui.md) |
+
+**Q135 ouverte :** couleurs et conventions des valeurs finales/statistiques modifiées et effets sur l’inspection.

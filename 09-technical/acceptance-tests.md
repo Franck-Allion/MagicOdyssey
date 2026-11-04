@@ -293,3 +293,51 @@ Les scénarios ci-dessous sont des critères d’acceptation à automatiser apr�
 | T-124-02 | Rejeu historique R1 alors que R2 est version par défaut | Rejeu R1 reproduit exactement les empreintes historiques. | Q124 |
 | T-124-03 | Dépendance R1 indisponible au chargement | Incompatibilité signalée ; pas de migration silencieuse en R2. | Q124 |
 | T-124-04 | Progression RPG entre combats R1 et R2 | Migration RPG possible hors combat ; prochain combat utilise R2, combat R1 inchangé. | Q124 |
+
+
+## Consolidation v1.4 — Q125–Q134 : scénarios UI et compatibilité (documentés, non exécutés)
+
+Références : [direction artistique et inspection](../02-art-direction/card-and-board-ui.md), [versions historiques](causal-budgets-and-replay.md), [statistiques PV](../01-combat/temporary-effects.md). Tests UI vérifiables par maquettes et tests d’interface ; règles de combat exécutées uniquement après développement du moteur.
+
+| ID | Mise en situation | Critère d’acceptation | Décision |
+|---|---|---|---|
+| T-125-01 | Règles R1 restent officiellement supportées après sortie R2 | R1 disponible/chargeable à la demande ; combat/replay original reproductible. | Q125 |
+| T-125-02 | Version R1 archivée dans dépôt historique compatible | Chargement R1 utilise le manifeste R1 et non les règles R2. | Q125 |
+| T-125-03 | Version R1 manquante malgré sauvegarde R1 | Incompatibilité explicite, aucune substitution R2. | Q125 |
+| T-125-04 | Mise à jour purement graphique avec règles R1 | Même empreinte fonctionnelle et mêmes résultats. | Q125 |
+| T-126-01 | Prototype de carte fantasy avec portrait détaillé | Illustration riche et colorée, texte et stats faciles à lire. | Q126 |
+| T-126-02 | Collection de cartes avec créatures et sorts | Direction fantasy cohérente, familles reconnaissables. | Q126 |
+| T-126-03 | Revue des sources visuelles | Pas de réutilisation d’assets ou cadres protégés Hearthstone/Magic. | Q126 |
+| T-126-04 | Affichage dense du plateau | Lisibilité tactique conservée malgré style illustré. | Q126 |
+| T-127-01 | Carte en main puis même créature posée | Carte complète en main ; jeton compact sur plateau. | Q127 |
+| T-127-02 | Survol du jeton | Tooltip de synthèse des stats et états. | Q127 |
+| T-127-03 | Clic sur jeton | Vue de la carte complète et état de combat. | Q127 |
+| T-127-04 | Plateau 24 créatures | Ni chevauchement de cartes complètes ni blocage de lecture. | Q127 |
+| T-128-01 | Créature ordinaire sans état | Portrait, ATQ finale et PV actuels visibles. | Q128 |
+| T-128-02 | Créature avec effet critique | Icône d’état pertinent ajoutée sans modifier les chiffres. | Q128 |
+| T-128-03 | Créature avec capacité secondaire seulement | Jeton reste sobre ; capacité accessible au survol. | Q128 |
+| T-128-04 | État absent du jeton | État présent dans le tooltip et l’inspection. | Q128 |
+| T-129-01 | Jeton d’une créature alliée | Médaillon rond/ovale et socle tactique visibles. | Q129 |
+| T-129-02 | Jeton adverse de même type | Camp discernable sans s’appuyer uniquement sur couleur. | Q129 |
+| T-129-03 | Colonne offense/défense remplie | Portrait et socle n’empêchent pas lecture de la position. | Q129 |
+| T-129-04 | Affichage avec 24 unités | Forme compacte et emplacements restent reconnaissables. | Q129 |
+| T-130-01 | Jeton ATQ 5 PV 6 | 5 en bas à gauche, 6 en bas à droite. | Q130 |
+| T-130-02 | Créature avec deux états | Icônes sous le portrait et pas sur les valeurs. | Q130 |
+| T-130-03 | PV réduits par opération atomique | Valeur à droite synchronisée après commit. | Q130 |
+| T-130-04 | Clic du jeton | Structure de la carte originale distincte du rendu compact. | Q130 |
+| T-131-01 | ATQ de base 3, bonus +2 | ATQ effective 5, signe positif visible en plus de la couleur. | Q131 |
+| T-131-02 | ATQ de base 5, malus -2 | ATQ effective 3, signe négatif sans seul code couleur. | Q131 |
+| T-131-03 | 6 PV actuels, 8 PV max | Jeton montre 6, tooltip/inspection montrent 6/8. | Q131 |
+| T-131-04 | 2 armures et 1 bouclier | Symboles distincts et quantités identifiables, aucune DEF inventée. | Q131 |
+| T-132-01 | Deux effets actifs | Deux icônes, pas de +N. | Q132 |
+| T-132-02 | Six états actifs distincts | Trois icônes prioritaires et +3. | Q132 |
+| T-132-03 | Clic jeton avec six états | Vue complète présente les six, y compris ceux masqués. | Q132 |
+| T-132-04 | Changement de priorité après effet expiré | Trio recalculé selon règles stables, +N exact. | Q132 |
+| T-133-01 | Carte imprimée 3 ATQ/8 PV, bonus +2 | Carte d’origine reste 3/8 ; panneau explique +2 ATQ. | Q133 |
+| T-133-02 | Capacité initiale neutralisée | Texte imprimé intact ; panneau explique la neutralisation. | Q133 |
+| T-133-03 | Aucun effet ni différence à l’original | Carte seule possible, aucun panneau vide imposé. | Q133 |
+| T-133-04 | Carte avec capacité temporaire | Capacité temporaire présentée hors recto et avec durée/source. | Q133 |
+| T-134-01 | Base 3 ATQ, +4, -2 simultanés | **ATQ FINALE 5** visible en tête de panneau et détail 3+4-2. | Q134 |
+| T-134-02 | 6/8 PV et +2 PV max temporaire | **PV actuels/max effectifs** reflètent Q78 ; blessure conservée, aucune guérison fictive. | Q134 |
+| T-134-03 | Armure 2 et bouclier 1 | Valeurs défensives distinctes visibles ; pas de DEF unique fabriquée. | Q134 |
+| T-134-04 | Créature avec sept buffs/debuffs et contrôle temporaire | Tous les effets actifs, sources, durées et restrictions accessibles, panneau défilable. | Q134 |

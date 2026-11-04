@@ -66,3 +66,9 @@ Voir [transferts de contrôle](control-transfers.md) pour expirations simultané
 ## Référence croisée v1.2
 
 **Q109–Q110** : création durant `ON_TURN_END` n’accorde aucune durée minimale ; expiration à l’échéance suivante, même immédiate. La prolongation garde le même `effectInstanceId` et ne génère pas `ON_EFFECT_EXPIRED`. Après échéance passée : retrait atomique après l’opération courante, réactions en queue FIFO. Source : [capacités de tour et boucles](turn-control-and-loop-safety.md).
+
+
+
+## Affichage des effets actifs — Q131–Q134
+
+Les [valeurs finales d'ATQ et de PV max, états et durées actives](../02-art-direction/card-and-board-ui.md) sont affichées dans le panneau d'inspection. Ne jamais compter une expiration comme effet encore actif ; la conservation des blessures lors de modifications du maximum de PV reste normative ici.

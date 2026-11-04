@@ -32,3 +32,9 @@ Voir [transferts de contrôle](control-transfers.md) pour instanceId préservé 
 ## Référence croisée v1.3 — identité et empreintes
 
 Les identifiants pertinents pour les futurs événements et le rejeu sont préservés dans la sérialisation canonique et les instantanés, distinctement de la normalisation anti-cycle Q112. Voir [Q122–Q123](../09-technical/causal-budgets-and-replay.md).
+
+
+
+## Carte d'origine et vue d'inspection — Q133–Q134
+
+Le [recto imprimé d'origine est présenté séparément de l'état effectif et des effets actifs](../02-art-direction/card-and-board-ui.md). `instanceId` et états fonctionnels persistent indépendamment de la vue d'interface.

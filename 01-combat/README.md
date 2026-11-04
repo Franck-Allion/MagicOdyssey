@@ -64,3 +64,8 @@ Voir [capacités de tour et protection anti-boucles](turn-control-and-loop-safet
 
 - [Budgets causaux, admissions FIFO, sauvegardes et replays](../09-technical/causal-budgets-and-replay.md) — Q115–Q124.
 - [Tests d’acceptation](../09-technical/acceptance-tests.md) — T-115 à T-124.
+
+
+## Interface — Référence croisée v1.4
+
+- [Carte d’origine, jetons tactiques, inspection et états (Q126–Q134)](../02-art-direction/card-and-board-ui.md) ; les valeurs de combat restent produites par les règles de ce module, jamais recalculées par l’UI.

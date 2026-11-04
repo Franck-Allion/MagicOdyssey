@@ -66,3 +66,9 @@ Le retrait d'un bonus de PV maximum peut créer un événement létal même sans
 ## Référence croisée v1.1
 
 Voir [transferts de contrôle](control-transfers.md) pour mort de placement non prévenable par protection létale ordinaire Q98.
+
+
+
+## Armure/bouclier dans l'interface — Q131–Q134
+
+Les [protections restantes sont indiquées distinctement des PV et de l'ATQ](../02-art-direction/card-and-board-ui.md). Le terme « défense » dans l'UI n'ajoute pas de statistique autonome au moteur.

@@ -24,3 +24,9 @@ Deux rôles distincts par colonne : attaque et protection/soutien, sans règles 
 ## Référence croisée v1.1
 
 Voir [transferts de contrôle](control-transfers.md) pour transfert entre plateaux et réservations de départ Q102.
+
+
+
+## Affichage plateau — Q127–Q132 (v1.4)
+
+L'interface représente chaque créature en [médaillon compact avec ATQ/PV et trois icônes tactiques maximum](../02-art-direction/card-and-board-ui.md). Clic = inspection. Il s'agit d'une projection de l'état fonctionnel, sans modifier le plateau 6×2 par camp.

@@ -28,3 +28,13 @@
 ## Référence croisée v1.2
 
 **Mal d’invocation après contrôle (Q105–Q106)** : restriction d’attaque pour le premier tour personnel du nouveau contrôleur, même transfert hors tour ou retour. **Chaîne/branche de déclenchements (Q111–Q114)** : causalité des événements FIFO ; interruption ciblée sans rollback et conservation des événements déjà enfilés. Voir [règles détaillées](01-combat/turn-control-and-loop-safety.md).
+
+
+
+## Termes visuels (v1.4)
+
+- **Carte d'origine** : recto de référence de la carte, conservant illustration, valeurs imprimées et capacités initiales dans la vue d'inspection ; distinct des modifications de combat.
+- **Jeton de plateau** : représentation compacte d'une créature, sous forme de médaillon, avec ATQ effective et PV actuels.
+- **Panneau latéral d'inspection** : vue de l'ensemble des états actifs et du calcul des valeurs finales. Pas une deuxième carte réécrite.
+- **ATQ effective** : ATQ applicable calculée selon les modificateurs actifs.
+- **État défensif effectif** : PV actuels/max effectifs, armure et bouclier distincts ; **aucune statistique DEF indépendante validée**.
