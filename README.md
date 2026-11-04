@@ -1,6 +1,6 @@
-# Tower TCG — Spécifications v1.4
+# Tower TCG — Spécifications v1.5
 
-**Version consolidée : décisions Q01 à Q134.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
+**Version consolidée : décisions Q01 à Q144.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
 
 **Nouveautés Q65–Q74 :** [attribution des dégâts, arrondis, vol de vie et événements des protections](01-combat/damage-attribution.md) ; [prévention létale](01-combat/damage-prevention.md) ; [file d'événements](01-combat/event-queue.md) ; [tests d'acceptation](09-technical/acceptance-tests.md) ; [journal de décisions](DECISIONS.md).
 
@@ -8,7 +8,7 @@ Ne pas implémenter comme validées les idées présentées comme ouvertes ou pr
 
 # Tower TCG — Game Design Documentation
 
-> Version 1.4 — 2026-11-04. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q134). Aucun code n'est encore implémenté.
+> Version 1.5 — 2026-11-04. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q144). Aucun code n'est encore implémenté.
 
 ## Principe
 Jeu solo TCG/RPG : ascension de tours, étages avec ennemis, marchands et ressources, boss par étage ; progression persistante par cartes, artefacts et caractéristiques du héros. Le combat tactique est le cœur du jeu.
@@ -86,3 +86,10 @@ Une décision nouvelle modifie le document propriétaire de la règle, ses tests
 - [Gestion des versions historiques supportées](09-technical/causal-budgets-and-replay.md) — Q125.
 - [Tests d’acceptation](09-technical/acceptance-tests.md) — T-125 à T-134.
 - **Q135 ouverte** : conventions de couleur, valeurs finales et détail des modifications dans les vues d’inspection.
+
+
+## Modules consolidés en v1.5
+- [Tooltips, durées en langage naturel, contrôle et orchestrateur Juicy & Fast-Paced Q135–Q144](02-art-direction/tooltips-durations-and-vfx.md).
+- [Tests d’acceptation v1.5](09-technical/acceptance-tests.md) ; [journal Q135–Q144](DECISIONS.md).
+
+**Q145 ouverte** — la suite du questionnaire reste à valider, ne pas interpréter des propositions comme des décisions.

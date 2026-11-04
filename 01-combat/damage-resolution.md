@@ -34,3 +34,8 @@
 
 ## Extensions validées Q75–Q84
 La variation concomitante de `currentHp` et `maxHp` n'est ni un soin ni un dégât (Q78). Si elle provoque une mort, appliquer les protections létales générales puis `ON_DEATH` ou `ON_LETHAL_PREVENTED` (Q79). Voir [effets temporaires](temporary-effects.md) et [soins](healing.md).
+
+
+## Référence de présentation v1.5
+
+Les nombres flottants représentent les pertes de PV **effectives**, les absorptions d’armure/bouclier et les soins sont visuellement distincts : [Q143 — Feedbacks de combat](../02-art-direction/tooltips-durations-and-vfx.md). La couche visuelle ne change ni l’attribution ni les événements du moteur.

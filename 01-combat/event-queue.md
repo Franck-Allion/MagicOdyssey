@@ -56,3 +56,8 @@ Voir [transferts de contrôle](control-transfers.md) pour ordre ON_DEATH / ON_CO
 ## Référence croisée v1.3 — admissions budgétées
 
 L’admission d’une capacité déclenchée en FIFO doit réserver atomiquement ses budgets **avant insertion** ; les capacités déjà admises restent valides et les refus ne sont pas réadmis rétroactivement. Voir [Q115–Q120](../09-technical/causal-budgets-and-replay.md), [Q111–Q114](turn-control-and-loop-safety.md), [tests](../09-technical/acceptance-tests.md).
+
+
+## Orchestration visuelle v1.5
+
+L’[orchestrateur d’animations Q140–Q144](../02-art-direction/tooltips-durations-and-vfx.md) ne modifie jamais l’ordre FIFO, les opérations atomiques ou le journal logique. Les événements peuvent être condensés **visuellement** seulement si les résultats et cibles restent identifiables.

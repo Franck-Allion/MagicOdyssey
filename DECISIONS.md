@@ -192,4 +192,22 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q133 | A personnalisée | Inspection de la carte d’origine inchangée, panneau latéral séparé pour modifications. | [Spécification](02-art-direction/card-and-board-ui.md) |
 | Q134 | B personnalisée | Panneau exhaustif avec ATQ finale et PV/défense effective clairement visibles, protections et calcul des effets. | [Spécification](02-art-direction/card-and-board-ui.md) |
 
-**Q135 ouverte :** couleurs et conventions des valeurs finales/statistiques modifiées et effets sur l’inspection.
+**Q135 validée** : voir lot v1.5 ci-dessous.
+
+
+## Consolidation v1.5 — Q135 à Q144
+
+| Question | Choix | Décision | Module propriétaire |
+|---|---|---|---|
+| Q135 | A | ATQ/PV effectifs codés par couleur et flèche ; blessure différente de réduction de PV max. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+| Q136 | C | Tooltip tactique condensé : stats finales, tous effets, protections et échéances ; clic pour sources/texte détaillés. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+| Q137 | A | Ordre fixe par catégorie, ancienneté dans la catégorie ; une ligne et une durée par effectInstanceId, aucune fusion. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+| Q138 | A | Échéances naturelles explicites, temporaires/permanentes/conditionnelles ; calendrier du créateur. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+| Q139 | Personnalisée | Symbole de prise de contrôle parmi états prioritaires ; durée des autres effets inchangée, propriétaire conservé. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+| Q140 | B + principe global | Changement de durée signalé par bref feedback ; chaque action/effet donne un retour expressif et lisible. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+| Q141 | C | Animations juicy hiérarchisées, rythme adaptatif, accessibilité, spectacle proportionné sans ralentissement. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+| Q142 | C | Orchestrateur de VFX indépendant, regroupement/accélération/superposition sans changer FIFO et résultats. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+| Q143 | A + précision | Nombres flottants dégâts/soins et protections distincts ; effets puissants : éclairs, halos, secousses. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+| Q144 | B | Objectif indicatif global de 3–5 s pour chaîne complexe, avec rythme adaptatif et moments décisifs préservés. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
+
+**Q145 ouverte** : suite du questionnaire d’UI, notamment affichage du plateau et feedback de ciblage, à arbitrer avec le concepteur.

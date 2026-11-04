@@ -134,3 +134,8 @@ Pour chaque périmètre `p` (branche, chaîne, opération initiale), `0 <= consu
 - **COMPAT-125-02** : un combat ancien est restauré avec ses composants historiques compatibles (règles, cartes, RNG, budgets) ; si l’environnement supporté requis est indisponible, annoncer l’incompatibilité, jamais substituer silencieusement des règles plus récentes (Q124).
 - **COMPAT-125-03** : conserver la capacité de reproduction des tests de non-régression d’anciennes règles supportées. La durée exacte du support officiel n’est **pas encore définie**.
 - **COMPAT-125-04** : les migrations de progression RPG persistante sont séparées des combats en cours. Une mise à jour purement graphique ne change pas le déterminisme des règles : [UI et cartes](../02-art-direction/card-and-board-ui.md).
+
+
+## Budget technique vs budget temporel de présentation (v1.5)
+
+Ne pas confondre les plafonds d’**exécution fonctionnelle** Q111–Q120 avec l’**objectif d’affichage** de 3–5 s par longue chaîne Q144. Voir [orchestrateur visuel Q135–Q144](../02-art-direction/tooltips-durations-and-vfx.md) ; celui-ci ne participe ni à l’empreinte fonctionnelle du rejeu ni au calcul des capacités.

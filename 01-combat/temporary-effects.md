@@ -72,3 +72,8 @@ Voir [transferts de contrôle](control-transfers.md) pour expirations simultané
 ## Affichage des effets actifs — Q131–Q134
 
 Les [valeurs finales d'ATQ et de PV max, états et durées actives](../02-art-direction/card-and-board-ui.md) sont affichées dans le panneau d'inspection. Ne jamais compter une expiration comme effet encore actif ; la conservation des blessures lors de modifications du maximum de PV reste normative ici.
+
+
+## Référence de présentation v1.5
+
+L’affichage en langage naturel des durées, l’échéance conservée après changement de contrôle, la modification de durée et son feedback sont décrits dans [UI des échéances Q135–Q144](../02-art-direction/tooltips-durations-and-vfx.md). Ces animations n’altèrent jamais les règles de Q81–Q84 ou Q109–Q110.

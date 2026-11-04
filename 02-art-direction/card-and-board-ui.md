@@ -87,4 +87,9 @@ Le recto de carte continue d'afficher **3 ATQ / 8 PV**. Le jeton montre **5 ATQ 
 
 - La priorité exacte entre états de même catégorie, les dimensions, la palette finale, l'animation, le tooltip précis, la disposition smartphone/écran réduit et le design complet du plateau seront discutés après Q134.
 - La différence entre caractéristique imprimée et amélioration **persistante RPG** doit rester explicite selon [carte et instances](../01-combat/instance-identity.md). Le terme « carte d'origine » renvoie au recto de référence pour le combat considéré ; les modalités de présentation des améliorations RPG persistantes restent ouvertes.
-- **Q135** : règles de couleur et conventions des valeurs finales, notamment comment signaler modification positive/négative et blessures sans surcharger le panneau.
+- **Q135–Q144 validées** : conventions de couleurs, tooltip, durées, états de contrôle, feedbacks et orchestrateur présentés dans [Tooltips, durées et VFX](tooltips-durations-and-vfx.md). **Q145 ouverte.**
+
+
+## Évolutions v1.5 — Q135–Q144
+
+Les règles d’affichage d’ATQ effective, de PV, des icônes de contrôle, des échéances, des buffs/debuffs et des feedbacks visuels sont centralisées dans [Tooltips, échéances et feedbacks visuels](tooltips-durations-and-vfx.md). Ce module prévaut sur les propositions anciennes marquées ouvertes, sans modifier les choix Q126–Q134.

@@ -62,3 +62,8 @@
 ## Référence croisée v1.3 — sauvegardes et compatibilité
 
 Le contrôleur, les effets temporaires de contrôle et les événements en FIFO sont inclus dans l’état sérialisable et les empreintes déterministes. Voir [Q121–Q124](../09-technical/causal-budgets-and-replay.md).
+
+
+## Référence de présentation v1.5
+
+Une prise de contrôle réussie affiche un indicateur de **contrôleur changé** parmi les icônes prioritaires ; elle ne change **pas le propriétaire**, ni le calendrier d’expiration des autres effets : [Q139 — Iconographie de contrôle](../02-art-direction/tooltips-durations-and-vfx.md).

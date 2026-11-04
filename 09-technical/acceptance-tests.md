@@ -341,3 +341,51 @@ Références : [direction artistique et inspection](../02-art-direction/card-and
 | T-134-02 | 6/8 PV et +2 PV max temporaire | **PV actuels/max effectifs** reflètent Q78 ; blessure conservée, aucune guérison fictive. | Q134 |
 | T-134-03 | Armure 2 et bouclier 1 | Valeurs défensives distinctes visibles ; pas de DEF unique fabriquée. | Q134 |
 | T-134-04 | Créature avec sept buffs/debuffs et contrôle temporaire | Tous les effets actifs, sources, durées et restrictions accessibles, panneau défilable. | Q134 |
+
+
+## Consolidation v1.5 — Q135–Q144 : tests de tooltip, durée et feedbacks (spécifiés, non exécutés)
+
+Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-durations-and-vfx.md), [cartes et inspections Q126–Q134](../02-art-direction/card-and-board-ui.md), [règles d’effets](../01-combat/temporary-effects.md), [règles de la FIFO](../01-combat/event-queue.md). Les objectifs de 3–5 secondes sont **indicatifs**, à mesurer sur prototypes et plateformes cibles ; les critères logiques demeurent stricts.
+
+| Test | Mise en situation | Critère d’acceptation | Décision |
+|---|---|---|---|
+| T-135-01 | ATQ 5 +2 et ATQ 5 −2 | 7 vert/flèche haute et 3 rouge/flèche basse, lisibles sans couleur | Q135 |
+| T-135-02 | 6/8 PV sans modificateur max | Blessure visible distincte du malus PV max | Q135 |
+| T-135-03 | Bonus +3 et malus −3 | Valeur finale neutre, calcul des deux effets conservé dans panneau | Q135 |
+| T-135-04 | Source en dehors du plateau | Actualisation des valeurs finales après commit sans changer la carte imprimée | Q135 |
+| T-136-01 | Survol avec six effets | Les six apparaissent sous forme condensée, pas seulement les trois icônes | Q136 |
+| T-136-02 | Créature à 6 PV sur 8 max | Tooltip 6/8, jeton 6 | Q136 |
+| T-136-03 | Effet très long / plusieurs textes de capacités | Tooltip condensé et inspection au clic pour descriptions détaillées | Q136 |
+| T-136-04 | Tooltip près du bord de plateau | Position adaptée sans masquer la cible ou les commandes | Q136 |
+| T-137-01 | Deux effets +2 ATQ identiques | Deux lignes distinctes avec durées propres | Q137 |
+| T-137-02 | Effets caractéristiques/protection/restriction/capacité | Ordre de catégorie stable quelle que soit la phase | Q137 |
+| T-137-03 | Deux effets catégorie identique, âges différents | Ordre d’application stable et déterministe | Q137 |
+| T-137-04 | Réordonnancement UI après expiration | Aucune modification de priorité logique FIFO/expiration | Q137 |
+| T-138-01 | Buff créé par joueur, portée par unité ennemie | Libellé de durée basé sur tour du joueur créateur | Q138 |
+| T-138-02 | Effet permanent | Affichage Permanent sans compteur inventé | Q138 |
+| T-138-03 | Effet conditionnel lié à artefact | Condition de disparition indiquée, pas fausse durée | Q138 |
+| T-138-04 | Expiration prochain tour adverse | Texte naturel explicitant le camp et la phase sans confusion | Q138 |
+| T-139-01 | Contrôle ennemi réussi | Icône contrôle incluse parmi états tactiques prioritaires | Q139 |
+| T-139-02 | Buff « Encore 2 tours ennemi » change de contrôleur | Texte « Encore 2 tours ennemi » invariant | Q139 |
+| T-139-03 | Créature volée | Owner reste propriétaire original, controller nouveau | Q139 |
+| T-139-04 | Plus de trois états dont contrôle | Trois icônes prioritaires +N ; source et contrôle détaillés au clic | Q139 |
+| T-140-01 | Bonus prolongé de deux tours | Durée mise à jour + bref +2 tours / horloge sur jeton | Q140 |
+| T-140-02 | Bonus raccourci d’un tour | Durée mise à jour + feedback négatif distinct | Q140 |
+| T-140-03 | Prolongation sans expiration | Aucun événement ON_EFFECT_EXPIRED ou nouvelle instance | Q140 |
+| T-140-04 | Feedback de durée fini | Aucune quatrième icône permanente ajoutée au jeton | Q140 |
+| T-141-01 | Action mineure répétée dix fois | Feedback perceptible mais bref sans attente excessive | Q141 |
+| T-141-02 | Sort puissant et boss tué | Animation graduée intense, résultat perceptible | Q141 |
+| T-141-03 | Mode animations réduites | Même information et état final, mouvement/flash réduits | Q141 |
+| T-141-04 | Mêmes actions avec différents FPS | Mêmes transitions logiques, aucun effet sur résolution | Q141 |
+| T-142-01 | Dix réactions secondaires compatibles | Accélération ou regroupement visuel sans changement des effets | Q142 |
+| T-142-02 | Deux cibles frappées simultanément | Rendus indépendants sans nombres confondus | Q142 |
+| T-142-03 | Fin de chaîne avec mort et soin | Mort et PV final restent visibles avant reprise | Q142 |
+| T-142-04 | Replay avec animations désactivées | Journal logique et empreintes identiques | Q142 |
+| T-143-01 | 8 dégâts bruts et 3 absorbés armure | −3 armure représenté séparément de −5 PV | Q143 |
+| T-143-02 | Soin demandé 6, réalisé 2 | Nombre flottant +2 et non +6 | Q143 |
+| T-143-03 | Bouclier consommé sans perte PV | Éclat/rupture magique sans nombre −PV | Q143 |
+| T-143-04 | Sort exceptionnel | Éclairs, halo ou secousse si pertinent, chiffres restent lisibles | Q143 |
+| T-144-01 | Chaîne de 20 effets mineurs | Objectif initial de 3–5 s visé par orchestrateur, mesures de prototype | Q144 |
+| T-144-02 | Chaîne avec ultime et mort de boss | Moment spectaculaire préservé malgré accélération du reste | Q144 |
+| T-144-03 | Effets indépendants et réactions secondaires | Superposition et regroupement compatibles sans pertes d’information | Q144 |
+| T-144-04 | Chaîne calculée en 1 ms, présentation ralentie par GPU | Moteur logique, budgets et résultats indépendants du temps visuel | Q144 |
