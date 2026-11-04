@@ -101,3 +101,8 @@ Une décision nouvelle modifie le document propriétaire de la règle, ses tests
 - [Tests d’acceptation T-145-01 à T-154-04](09-technical/acceptance-tests.md) — **40 nouveaux scénarios documentés mais non exécutés**.
 - [Décisions Q145–Q154](DECISIONS.md).
 - **Q155 ouverte** : suite du questionnaire ; ne pas anticiper d'arbitrage.
+
+
+## État de consolidation v1.7 — 2026-11-04
+
+Le socle documentaire historique demeure disponible ; la consolidation **v1.7 couvre les décisions explicites jusqu’à Q164**. Modules additionnels : [UI Q135–Q144](02-art-direction/tooltips-durations-and-vfx.md), [plateau et prévision Q145–Q154](02-art-direction/board-and-tactical-preview.md), [sorts et effets continus Q155–Q164](02-art-direction/spells-auras-and-continuous-effects.md). Cette version ne constitue pas une implémentation ni la preuve que les scénarios d’acceptation sont exécutés. **Prochaine question Q165.**

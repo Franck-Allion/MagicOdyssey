@@ -228,4 +228,22 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q153 | B | Dépôt immédiat sans confirmation, revalidation moteur, animation si succès, retour visuel si refus. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
 | Q154 | C | Drag-and-drop, clic-clic et tactile cohérents ; prévisions accessibles sans hover ; annulation sans effet tant qu'aucune validation n'a eu lieu. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
 
-**Q155 ouverte** : proposition de la prochaine question distincte des décisions déjà validées.
+**Q155–Q164 validées en v1.7. Q165 ouverte.**
+
+
+## Consolidation v1.7 — Décisions Q155–Q164
+
+| Question | Choix | Décision | Fichier propriétaire |
+|---|---|---|---|
+| Q155 | C | Prévisualisation des sorts/capacités ciblés via moteur commun isolé, sans fuite d’information cachée. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+| Q156 | B + précision | Même langage visuel pour une ou plusieurs cibles ; informations individuelles conservées, zone discrète. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+| Q157 | A + précision | Sur plateau, valeurs finales prévues pour buffs/debuffs ; avant/après dans inspection. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+| Q158 | A | Conditions futures expliquées en inspection, pas ajoutées aux caractéristiques immédiates du plateau. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+| Q159 | B | Aura discrète au repos ; sélection de source révèle les bénéficiaires. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+| Q160 | B | Cascades d'auras : état final immédiatement prévisible de chaque créature, détails au clic. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+| Q161 | B | Graphe de dépendances, ordre stable, détection des cycles et solveur commun combat/preview. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+| Q162 | B | Cycles ambigus / insolubles : neutralisation ciblée, temporaire, traçable des dépendances problématiques. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+| Q163 | B | Priorités sémantiques, contraintes fondamentales préservées, neutralisation minimale, départage canonique stable. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+| Q164 | B | Cohérence recalculée aux frontières atomiques nécessaires ; rendu VFX peut regrouper sans changer la logique. | [Sorts et auras](02-art-direction/spells-auras-and-continuous-effects.md) |
+
+**Q165 ouverte.** Les paramètres numériques, l’algorithme exact de départage canonique et les noms d’API ne sont pas encore validés.

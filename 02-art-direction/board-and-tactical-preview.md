@@ -117,3 +117,8 @@
 - Algorithme et budget chiffré du simulateur de prévision (temps, nombres de branches, scénarios aléatoires), seuils de cache et éventuel rendu multi-cibles global.
 - Définition graphique des gestes tactiles d'annulation, des raccourcis, de la compatibilité manette et des normes de confort visuel à tester.
 - Les exemples visuels de créatures, dégâts et échanges ne sont pas des formules de combat supplémentaires ; conserver la maladie d'invocation et l'absence de riposte normale Q09.
+
+
+## Extension v1.7
+
+La prévisualisation des sorts ciblés, effets multi-cibles, buffs/debuffs, auras et cascades ainsi que le solveur d’effets continus Q155–Q164 sont spécifiés dans [le module dédié](spells-auras-and-continuous-effects.md). Ce module prolonge Q149–Q154 sans remplacer leurs conventions, y compris la séparation preview / commit et l’uniformité des résultats affichés.

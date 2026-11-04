@@ -33,4 +33,9 @@ Pour les créatures, lire [le module d'identité visuelle et d'inspection](02-ar
 
 La présentation des effets/échéances/VFX est spécifiée dans [tooltips et durées](02-art-direction/tooltips-durations-and-vfx.md) et les nouveaux comportements de décor, grille contextuelle, simulation prévisionnelle isolée, calcul asynchrone non bloquant, validation moteur et modes d'entrée dans [plateau et prévisualisations](02-art-direction/board-and-tactical-preview.md).
 
-**Ne jamais** confondre prévisualisation et engagement ; ne pas consommer le RNG réel, ne pas modifier la FIFO ou les réservations logiques en prévision. Le bouton/drag de placement est revalidé par le moteur au commit. Les 40 [tests Q145–Q154](09-technical/acceptance-tests.md) sont seulement des critères d'acceptation, non des tests exécutés. Q155 est ouverte.
+**Ne jamais** confondre prévisualisation et engagement ; ne pas consommer le RNG réel, ne pas modifier la FIFO ou les réservations logiques en prévision. Le bouton/drag de placement est revalidé par le moteur au commit. Les 40 [tests Q145–Q154](09-technical/acceptance-tests.md) sont seulement des critères d'acceptation, non des tests exécutés. Q155–Q164 sont validées ; Q165 est ouverte.
+
+
+## Extension v1.7 — Effets continus et previews
+
+Lire [Q155–Q164](02-art-direction/spells-auras-and-continuous-effects.md) avant d’implémenter des zones, buffs, auras ou cycles. Même solveur déterministe/versionné pour partie et prévision, mais preview isolée sans fuite d’information cachée ; rendus et VFX ne sont pas la source de vérité. Voir [tests d’acceptation](09-technical/acceptance-tests.md). Les détails de l’algorithme canonique de neutralisation et les valeurs concrètes de budgets restent ouverts.

@@ -437,3 +437,51 @@ Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-
 | T-154-02 | Tactile sans survol | Accès par sélection/focus aux cases et prévisions | [Q154](../02-art-direction/board-and-tactical-preview.md) |
 | T-154-03 | Échap ou annulation avant commit | Retour initial sans dépense ni événement | [Q154](../02-art-direction/board-and-tactical-preview.md) |
 | T-154-04 | Commande d’annulation après commit | Aucun undo implicite de l’action effective | [Q154](../02-art-direction/board-and-tactical-preview.md) |
+
+
+## Tests de conformité v1.7 — Q155 à Q164
+
+> **40 nouveaux scénarios définis, non exécutés.** Le tableau ci-dessous décrit les critères de réception du futur moteur et de l’interface, et non des résultats de test d’un logiciel existant. Les tie-breakers canoniques précis et seuils techniques doivent être finalisés et versionnés avant automatisation de leurs valeurs attendues. Source : [sorts, auras et effets continus](../02-art-direction/spells-auras-and-continuous-effects.md).
+
+| ID | Scénario | Résultat attendu | Source |
+|---|---|---|---|
+| T-155-01 | Sort ciblé sur une créature protégée | Dégâts et consommations estimés selon résolution moteur ; statistiques réelles intactes | [Q155](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-155-02 | Même sort vers deux cibles successives | Preview mise à jour ; aucun résultat tardif de la cible précédente | [Q155](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-155-03 | Capacité adverse cachée | Aucune révélation d’information secrète ou de mort garantie trompeuse | [Q155](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-155-04 | Prévision d’un sort suivie d’un commit | Aucune mutation RNG/FIFO/ressources avant le commit réel | [Q155](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-156-01 | Sort ne touche qu’une unité puis plusieurs | Même graphisme, symboles et convention de chiffres par créature | [Q156](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-156-02 | Zone touche 6 créatures de caractéristiques distinctes | Six résultats individuels lisibles, sans chevauchement ni omission | [Q156](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-156-03 | Créature hors zone touchée par réaction | Cible indirecte distinguée de la zone directement visée | [Q156](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-156-04 | Dégâts de zone atomiques avec protections | Prévision identique aux règles de dégâts simultanés, sans faux ordre | [Q156](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-157-01 | Buff +3 ATQ sur une cible | Plateau montre ATQ finale prévisionnelle, sans imposer la flèche avant/après | [Q157](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-157-02 | Inspection du buff | Valeurs avant/après, source et durée explicitement consultables | [Q157](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-157-03 | Sort modifie PV maximum et actuels | PV prévus cohérents avec Q26 ; chiffre réel non écrasé | [Q157](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-157-04 | Cible et zone avec même buff | Conventions identiques quel que soit le nombre de cibles | [Q157](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-158-01 | Enchantement donne bonus immédiat et armure au prochain coup | Bonus immédiatement actif présent, armure future absente du total | [Q158](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-158-02 | Inspection de condition non déclenchée | Condition, durée, source et conséquence future visibles | [Q158](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-158-03 | Condition déjà satisfaite après le sort | Effet immédiatement effectif intégré à la valeur finale prévue | [Q158](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-158-04 | Capacité conditionnelle réellement appliquée | Icône tactique prioritaire reste disponible selon Q132/Q136 | [Q158](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-159-01 | Plateau avec plusieurs auras au repos | Absence de rayons/halos permanents entre toutes les unités | [Q159](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-159-02 | Source d’aura sélectionnée | Tous les bénéficiaires actuels surlignés sans ambiguïté | [Q159](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-159-03 | Source retirée ou contrôleur changé | Bénéficiaires et caractéristiques actualisés selon règles | [Q159](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-159-04 | Interaction tactile sur source | Même liste de bénéficiaires disponible sans hover | [Q159](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-160-01 | Aura ATQ ouvre condition armure | Preview montre ATQ et armure finales après cascade | [Q160](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-160-02 | Déplacer source sur autre colonne | Tous bénéficiaires pertinents recalculés sans étapes intermédiaires visibles | [Q160](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-160-03 | Réaction future dépend du prochain tour | Elle reste non comptée comme bonus immédiat | [Q160](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-160-04 | Une cascade devient incertaine | Marqueur incertitude et détails, aucun faux état final certain | [Q160](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-161-01 | Chaîne d’auras A vers B vers C acyclique | Ordre topologique canonique, mêmes résultats quel que soit parcours interne | [Q161](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-161-02 | Deux états d’entrée identiques historiques différents | Même état final sauf règles explicitement historiques | [Q161](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-161-03 | Modification de condition dans la même opération | Dépendances concernées recomputées avant lecture pertinente | [Q161](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-161-04 | Prévisualisation puis moteur sur mêmes paramètres déterministes | Même solveur, mêmes valeurs, aucune FIFO issue des itérations internes | [Q161](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-162-01 | Cycle sans point fixe | Détecté, sortie déterministe sans oscillation infinie | [Q162](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-162-02 | Deux points fixes possibles sans priorité | Ambiguïté détectée et règle canonique appliquée | [Q162](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-162-03 | Cycle avec branche indépendante | Branche indépendante reste active après neutralisation ciblée | [Q162](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-162-04 | Modification casse le cycle | Dépendances neutralisées réévaluées, trace de décision reproductible | [Q162](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-163-01 | Cycle oppose une contrainte fondamentale et un bonus | Contrainte fondamentale préservée, seule dépendance neutralisable écartée | [Q163](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-163-02 | Deux dépendances de même priorité peuvent être écartées | Tie-break canonique stable, identique entre exécutions | [Q163](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-163-03 | Même état sous autre ordre mémoire ou plateforme | Même dépendance neutralisée et même résultat final | [Q163](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-163-04 | Conflit local et bonus indépendant sur une même source | Bonus indépendant reste actif ; neutralisation minimale vérifiable | [Q163](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-164-01 | Source détruite, aura ATQ et armure conditionnelle perdues | Valeurs cohérentes avant l’opération suivante et ses réactions FIFO | [Q164](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-164-02 | Cascades de 8 modifications dans une opération atomique | Pas d’état intermédiaire incohérent exposé comme commit | [Q164](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-164-03 | UI regroupe plusieurs transitions rapides | Journal logique et empreintes identiques avec VFX détaillés ou regroupés | [Q164](../02-art-direction/spells-auras-and-continuous-effects.md) |
+| T-164-04 | Preview en cache sous version antérieure du solveur | Cache invalidé, aucun résultat périmé ; RNG et FIFO réels inchangés | [Q164](../02-art-direction/spells-auras-and-continuous-effects.md) |

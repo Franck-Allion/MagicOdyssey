@@ -139,3 +139,8 @@ Pour chaque périmètre `p` (branche, chaîne, opération initiale), `0 <= consu
 ## Budget technique vs budget temporel de présentation (v1.5)
 
 Ne pas confondre les plafonds d’**exécution fonctionnelle** Q111–Q120 avec l’**objectif d’affichage** de 3–5 s par longue chaîne Q144. Voir [orchestrateur visuel Q135–Q144](../02-art-direction/tooltips-durations-and-vfx.md) ; celui-ci ne participe ni à l’empreinte fonctionnelle du rejeu ni au calcul des capacités.
+
+
+## Extension v1.7 — Reproductibilité du solveur des auras
+
+Les règles [Q161–Q164](../02-art-direction/spells-auras-and-continuous-effects.md) imposent un ordre canonique et une trace de neutralisation des dépendances cycliques ; versionner cette convention avec les règles gelées du combat. Les opérations atomiques validées continuent de produire les empreintes de Q122 et les checkpoints de Q123. Le solveur d’effets continus ne consomme pas les budgets de déclenchements causaux Q115–Q120.

@@ -44,3 +44,8 @@ Les capacités actives avant une expiration peuvent réagir aux effets expirés,
 ## Référence croisée v1.2
 
 **Q107–Q114** : captures de contexte des capacités de tour au déclenchement ; pour reprises FIFO après protection anti-boucle, événements déjà enfilés conservés et seules les nouvelles descendances bloquées. Voir [capacités de tour et boucles](turn-control-and-loop-safety.md).
+
+
+## Complément v1.7 — Effets continus et auras (Q155–Q164)
+
+Les règles de calcul des dépendances, de neutralisation des cycles et des points de cohérence sont dans [la spécification des effets continus](../02-art-direction/spells-auras-and-continuous-effects.md). Les itérations du solveur ne sont pas des déclenchements FIFO. Les capacités déclenchées conservent leurs règles d’admission et d’exécution.

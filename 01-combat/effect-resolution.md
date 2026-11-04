@@ -56,3 +56,8 @@ Expirations « après échéance » en opération atomique distincte (Q110) ; pr
 ## Référence croisée v1.3 — commits et empreintes
 
 Après chaque commit atomique, une empreinte canonique est enregistrée pour le rejeu ; sauvegarde seulement aux points cohérents entre commits. Voir [Q121–Q124](../09-technical/causal-budgets-and-replay.md), [tests](../09-technical/acceptance-tests.md).
+
+
+## Complément v1.7 — Cohérence atomique des caractéristiques
+
+Voir [Q161–Q164](../02-art-direction/spells-auras-and-continuous-effects.md) : les effets continus dérivés sont cohérents avant toute lecture logique pertinente et à chaque commit atomique ; les transitions visuelles peuvent être groupées, mais les opérations logiques validées, événements et réactions FIFO restent inchangés.
