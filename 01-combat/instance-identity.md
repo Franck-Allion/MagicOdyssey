@@ -27,3 +27,8 @@ La source d'une capacité accordée à une créature est la créature porteuse (
 ## Référence croisée v1.1
 
 Voir [transferts de contrôle](control-transfers.md) pour instanceId préservé lors d’un transfert Q94–Q104.
+
+
+## Référence croisée v1.3 — identité et empreintes
+
+Les identifiants pertinents pour les futurs événements et le rejeu sont préservés dans la sérialisation canonique et les instantanés, distinctement de la normalisation anti-cycle Q112. Voir [Q122–Q123](../09-technical/causal-budgets-and-replay.md).

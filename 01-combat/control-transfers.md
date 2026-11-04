@@ -57,3 +57,8 @@
 ## Référence croisée v1.2
 
 **Q105–Q107** : chaque transfert effectif (y compris retour) réapplique le mal d’invocation pour le premier tour personnel du nouveau contrôleur ; pas d’`ON_SUMMON`. Les capacités de début/fin de tour appartiennent au contrôleur effectif au déclenchement. Voir [capacités de tour et boucles](turn-control-and-loop-safety.md).
+
+
+## Référence croisée v1.3 — sauvegardes et compatibilité
+
+Le contrôleur, les effets temporaires de contrôle et les événements en FIFO sont inclus dans l’état sérialisable et les empreintes déterministes. Voir [Q121–Q124](../09-technical/causal-budgets-and-replay.md).

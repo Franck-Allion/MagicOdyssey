@@ -51,3 +51,8 @@ Voir [transferts de contrôle](control-transfers.md) pour ordre ON_DEATH / ON_CO
 ## Référence croisée v1.2
 
 **Q111–Q114 (remplace « anti-boucle à préciser » pour les mécanismes décidés)** : signature fonctionnelle combat + FIFO, interruption ciblée des cycles, budget technique par chaîne configurable, conservation des événements déjà enfilés même descendants d’une branche bloquée ; seuls les nouveaux descendants de cette branche sont empêchés. Journalisation et maintien de l’ordre FIFO. Source normative : [capacités de tour et boucles](turn-control-and-loop-safety.md). Portée des budgets multi-parents encore ouverte Q115.
+
+
+## Référence croisée v1.3 — admissions budgétées
+
+L’admission d’une capacité déclenchée en FIFO doit réserver atomiquement ses budgets **avant insertion** ; les capacités déjà admises restent valides et les refus ne sont pas réadmis rétroactivement. Voir [Q115–Q120](../09-technical/causal-budgets-and-replay.md), [Q111–Q114](turn-control-and-loop-safety.md), [tests](../09-technical/acceptance-tests.md).

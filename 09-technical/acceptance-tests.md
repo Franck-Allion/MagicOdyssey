@@ -245,3 +245,51 @@ Source normative : [capacités de tour et protection anti-boucle](../01-combat/t
 | T-114-02 | A.27 conservé tente d’insérer A.28 nouveau descendant branche bloquée | A.28 refusé avant insertion, motif journalisé ; les effets directs de A.27 restent validés. | Q114 |
 | T-114-03 | B.1 indépendant déclenche un nouvel événement B.2 | B.2 peut être ajouté normalement sous protection de son propre budget/anti-cycle. | Q114 |
 | T-114-04 | Branche bloquée avait déjà enregistré trois événements descendants | Les trois événements déjà enregistrés ne sont pas purgés ; ordre FIFO initial préservé. | Q114 |
+
+
+## Consolidation v1.3 — Q115–Q124 (scénarios documentés, non exécutés)
+
+Les scénarios ci-dessous sont des critères d’acceptation à automatiser après implémentation du moteur. Références : [budgets causaux et rejeu](causal-budgets-and-replay.md), [FIFO](../01-combat/event-queue.md), [anti-cycles Q105–Q114](../01-combat/turn-control-and-loop-safety.md). Les seuils numériques sont des **fixtures de test**, pas des valeurs d’équilibrage adoptées.
+
+| ID | Mise en situation | Résultat attendu | Décision |
+|---|---|---|---|
+| T-115-01 | Deux événements parentaux A/B déclenchent une unique admission sémantique C | C entre une fois en FIFO ; tous parents/branches conservés, une seule résolution. | Q115 |
+| T-115-02 | Branche A bloquée ; B autorisée contribue à C | La convergence ne réactive pas A ; descendants seulement pour B autorisée. | Q115 |
+| T-115-03 | Deux expirations distinctes Q84 déclenchent chacune la même capacité | Deux déclenchements séparés demeurent si la sémantique prévoit deux événements, sans fusion artificielle. | Q115 |
+| T-115-04 | Joueur et IA exécutent mêmes causes et même état | Même arbre causal, mêmes admissions, mêmes interruptions. | Q115 |
+| T-116-01 | Branche A atteint plafond individuel avec B encore libre | A cesse d’engendrer de nouveaux descendants ; B reste autorisée si plafonds supérieurs disponibles. | Q116 |
+| T-116-02 | Branches individuellement sous leur plafond mais chaîne globale épuisée | Toute nouvelle admission descendante de cette chaîne est refusée ; réservations existantes préservées. | Q116 |
+| T-116-03 | Plusieurs chaînes créées par une opération atteignent plafond supérieur | Nouvelles admissions de cette origine refusées sans annulation des effets déjà validés. | Q116 |
+| T-116-04 | Rejeu sur machine différente avec mêmes règles et budgets versionnés | Même ordre et mêmes décisions, indépendamment du temps CPU. | Q116 |
+| T-117-01 | C unique avec deux branches A/B autorisées | Une seule exécution ; +1 branche A, +1 B, +1 chaîne, +1 opération. | Q117 |
+| T-117-02 | C unique avec trois causes dont deux de branche A | Une seule imputation +1 pour A, non +2, et +1 pour chaque autre branche distincte autorisée. | Q117 |
+| T-117-03 | C atteint exactement plafond A | C autorisée si réservation préalable valide ; nouveaux descendants imputables à A bloqués ensuite. | Q117 |
+| T-117-04 | Une des deux branches est déjà bloquée à nouvelle admission C | Aucun coût/nouveau descendant attribuable à branche bloquée ; seul apport autorisé suit les règles de causalité. | Q117 |
+| T-118-01 | 998 consommés sur limite 1000, trois admissions successives A,B,C | A et B réservent chacune 1 ; C refusée sans entrée FIFO, ordre canonique conservé. | Q118 |
+| T-118-02 | 997 consommés, 3 réservés ; plafond atteint avant résolution | Les trois capacités réservées se résolvent en FIFO ; zéro dépassement du plafond. | Q118 |
+| T-118-03 | Une admission requiert branche disponible mais chaîne globale pleine | Aucune réservation partielle : refus atomique et compteurs inchangés. | Q118 |
+| T-118-04 | Événement de jeu survient mais capacité réactive est refusée pour budget | Événement source reste dans le journal ; seule la capacité non admise est absente de FIFO. | Q118 |
+| T-119-01 | C multicausale réservée A/B puis branche A bloquée avant résolution | Réservations A et B inchangées ; C se résout ; aucun nouveau descendant de A. | Q119 |
+| T-119-02 | Capacité réservée A/B/chaîne/opération explicitement annulée avant résolution | Libération atomique des quatre crédits réservés ; aucun crédit consommé retiré. | Q119 |
+| T-119-03 | Annulation libère crédit sur branche déjà interrompue | Compteur disponible augmente mais branche demeure bloquée. | Q119 |
+| T-119-04 | Même reservationId reçoit une deuxième demande de libération | Deuxième transition refusée comme anomalie, aucun compteur négatif/double crédit. | Q119 |
+| T-120-01 | C refusée à budget plein ; B libère ensuite 1 | C reste refusée, aucune file d’attente secondaire. | Q120 |
+| T-120-02 | Après libération, nouveau déclenchement D sous branche autorisée | D peut réserver le crédit nouvellement disponible selon FIFO. | Q120 |
+| T-120-03 | Branche bloquée récupère des crédits et génère nouveau déclenchement | Déclenchement refusé malgré crédit disponible. | Q120 |
+| T-120-04 | Admission refusée puis revue du journal | Aucune mutation des compteurs au refus, motif conservé. | Q120 |
+| T-121-01 | Exécution avec deux capacités causales, réservation, interruption, résolution | Journal ordonné enregistre décisions intermédiaires et causes, en plus du résultat. | Q121 |
+| T-121-02 | Snapshot périodique puis reprise | Reconstruction avec version des règles, budgets, choix et état RNG identiques. | Q121 |
+| T-121-03 | Combat avec choix de joueur et décision IA | Choix explicitement journalisés en ordre canonique. | Q121 |
+| T-121-04 | Combat avec tirage aléatoire | Graine, version/état RNG et tirage effectif permettent reproduction du résultat. | Q121 |
+| T-122-01 | Deux replays identiques après cinq commits atomiques | Empreintes canoniques identiques après chacun des cinq commits. | Q122 |
+| T-122-02 | Écart introduit après troisième commit | Arrêt immédiat au troisième point ; diagnostic identifie commit et différences. | Q122 |
+| T-122-03 | Signature anti-cycle Q112 normalise des IDs mais identités différant en rejeu | L’empreinte exacte signale divergence si identité pertinente diffère, sans confusion des deux signatures. | Q122 |
+| T-122-04 | FIFO/PRNG diffèrent mais PV finaux identiques | Empreintes différentes : identité d’état futur non garantie malgré PV identiques. | Q122 |
+| T-123-01 | FIFO A terminée, B et C réservées ; création snapshot | Snapshot valide avec FIFO B,C et budgets, reprise commence par B sans réexécuter A. | Q123 |
+| T-123-02 | Demande snapshot au milieu d’un commit atomique | Snapshot différé au point stable suivant ; jamais de demi-commit sérialisé. | Q123 |
+| T-123-03 | Charger snapshot ayant état RNG/counters/FIFO complets | Reprise produit même empreinte après prochaine opération que exécution continue. | Q123 |
+| T-123-04 | Choix encore en attente au point de sauvegarde | Choix représenté explicitement et restaurable, ou sauvegarde différée jusqu’à finalisation. | Q123 |
+| T-124-01 | Combat commencé avec règles R1 puis installation de R2 | Combat sauvegardé reprend sous R1, cartes/configuration/PRNG liés à R1. | Q124 |
+| T-124-02 | Rejeu historique R1 alors que R2 est version par défaut | Rejeu R1 reproduit exactement les empreintes historiques. | Q124 |
+| T-124-03 | Dépendance R1 indisponible au chargement | Incompatibilité signalée ; pas de migration silencieuse en R2. | Q124 |
+| T-124-04 | Progression RPG entre combats R1 et R2 | Migration RPG possible hors combat ; prochain combat utilise R2, combat R1 inchangé. | Q124 |

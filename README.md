@@ -1,6 +1,6 @@
-# Tower TCG — Spécifications v1.2
+# Tower TCG — Spécifications v1.3
 
-**Version consolidée : décisions Q01 à Q114.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
+**Version consolidée : décisions Q01 à Q124.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
 
 **Nouveautés Q65–Q74 :** [attribution des dégâts, arrondis, vol de vie et événements des protections](01-combat/damage-attribution.md) ; [prévention létale](01-combat/damage-prevention.md) ; [file d'événements](01-combat/event-queue.md) ; [tests d'acceptation](09-technical/acceptance-tests.md) ; [journal de décisions](DECISIONS.md).
 
@@ -8,7 +8,7 @@ Ne pas implémenter comme validées les idées présentées comme ouvertes ou pr
 
 # Tower TCG — Game Design Documentation
 
-> Version 1.2 — 2026-11-02. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q114). Aucun code n'est encore implémenté.
+> Version 1.3 — 2026-11-04. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q124). Aucun code n'est encore implémenté.
 
 ## Principe
 Jeu solo TCG/RPG : ascension de tours, étages avec ennemis, marchands et ressources, boss par étage ; progression persistante par cartes, artefacts et caractéristiques du héros. Le combat tactique est le cœur du jeu.
@@ -69,4 +69,12 @@ Une décision nouvelle modifie le document propriétaire de la règle, ses tests
 - [Attaque après transfert, capacités de tour et sécurité FIFO](01-combat/turn-control-and-loop-safety.md) — **source normative Q105–Q114**.
 - [Transferts Q95–Q104](01-combat/control-transfers.md) ; [séquence de tour](01-combat/turn-sequence.md), [effets temporaires](01-combat/temporary-effects.md), [événements](01-combat/event-queue.md).
 - [Tests d'acceptation](09-technical/acceptance-tests.md) — série **T-105 à T-114**. Cas documentés, **non exécutés**.
-- **Ouvert Q115** : portée du budget et héritage de causalité. Ne pas implémenter une politique arbitraire comme validée.
+- **Q115 désormais validée** ; voir la consolidation v1.3 ci-dessous.
+
+
+## Consolidation v1.3 — décisions Q115 à Q124
+
+- **Source normative** : [budgets causaux, réservations FIFO, journalisation, instantanés, replays et compatibilité](09-technical/causal-budgets-and-replay.md).
+- Dépendances : [anti-boucles Q105–Q114](01-combat/turn-control-and-loop-safety.md), [FIFO](01-combat/event-queue.md), [opérations atomiques](01-combat/effect-resolution.md), [instances](01-combat/instance-identity.md).
+- [Scénarios d’acceptation T-115 à T-124](09-technical/acceptance-tests.md) : **40 nouveaux cas documentés, non exécutés**.
+- **Q125 ouverte** : politique de support des anciennes versions et migration de données persistantes ; ne pas implémenter ce point comme arbitrage validé.

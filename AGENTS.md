@@ -15,4 +15,9 @@ Pour implémenter `ON_DAMAGE_DEALT`, `ON_DAMAGE_TAKEN`, le vol de vie, les prote
 
 ## Référence croisée v1.2
 
-**Mise à jour v1.2 :** lire [règles de tour et de sécurité FIFO](01-combat/turn-control-and-loop-safety.md) pour Q105–Q114. Q115 (budget/causalité multiparents) reste ouvert.
+**Mise à jour v1.2 :** lire [règles de tour et de sécurité FIFO](01-combat/turn-control-and-loop-safety.md) pour Q105–Q114. Les arbitrages de causalité Q115 ont été validés en v1.3 (voir ci-dessous).
+
+
+## Référence croisée v1.3
+
+Pour les règles **VALIDÉES Q115–Q124**, lire [budgets, réservations, journal et compatibilité](09-technical/causal-budgets-and-replay.md) et [scénarios de tests](09-technical/acceptance-tests.md). Les budgets chiffrés et noms d’API restent **PROPOSÉS**. Q115 n’est plus ouverte.

@@ -51,3 +51,8 @@ Voir [transferts de contrôle](control-transfers.md) pour transferts croisés et
 ## Référence croisée v1.2
 
 Expirations « après échéance » en opération atomique distincte (Q110) ; protections anti-boucles ne font aucun rollback (Q111–Q114). Voir [capacités de tour et boucles](turn-control-and-loop-safety.md).
+
+
+## Référence croisée v1.3 — commits et empreintes
+
+Après chaque commit atomique, une empreinte canonique est enregistrée pour le rejeu ; sauvegarde seulement aux points cohérents entre commits. Voir [Q121–Q124](../09-technical/causal-budgets-and-replay.md), [tests](../09-technical/acceptance-tests.md).

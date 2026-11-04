@@ -36,3 +36,8 @@ Voir [transferts de contrôle](control-transfers.md) pour effets de contrôle ex
 ## Référence croisée v1.2
 
 **Q105–Q108** : après un transfert effectif, première attaque du premier tour personnel du nouveau contrôleur bloquée (même si acquis hors tour ou retour), sauf exception explicite. Les capacités de début/fin de tour suivent le contrôleur effectif au déclenchement. **Fin de tour** : attaques et réactions → `ON_TURN_END` et réactions entièrement résolues → expiration atomique et réactions → changement de camp. Source normative : [capacités de tour et boucles](turn-control-and-loop-safety.md).
+
+
+## Référence croisée v1.3 — continuité de combat
+
+La version fonctionnelle des règles est figée pour toute la durée du combat ; l’état de tour/phase doit être sérialisé lors des instantanés sûrs, même avec FIFO non vide. Voir [Q123–Q124](../09-technical/causal-budgets-and-replay.md).

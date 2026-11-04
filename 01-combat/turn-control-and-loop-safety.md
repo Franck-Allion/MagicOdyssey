@@ -73,6 +73,11 @@ Références : [transferts de contrôle](control-transfers.md), [séquence de to
 ## Traçabilité et assertions de tests
 Les champs `chainId`, `branchId`, `eventId`, `parentEventId`, `triggerId`, `resolutionCount`, `suppressionReason`, `combatStateHash` sont des **propositions de schéma**, non des API figées. Voir [scénarios Q105–Q114](../09-technical/acceptance-tests.md) pour les comportements à vérifier.
 
-## Points ouverts après Q114
-- Q115 : portée exacte du budget, comptabilité des résolutions, causalité multi-parent et branches réentrantes ; définition d'un garde-fou global si les branches indépendantes se multiplient ; configuration et télémétrie.
+## Points ouverts à la clôture de v1.2 (historique)
+- **Résolu en v1.3 (Q115–Q124)** : causalité multicausale, plafonds par branche/chaîne/opération, réservation, reprise, journalisation et compatibilité. Voir le module v1.3 lié ci-dessous.
 - Autres points non encore arbitrés : variantes d'événement `ON_TURN_END` sur cartes, effets de duration textuellement spécifiques et bornes des caractéristiques.
+
+
+## Mise à jour validée v1.3
+
+La portée des budgets, la causalité multicausale et les trois niveaux de plafonds ont **été arbitrés en Q115–Q124** : [règles normatives correspondantes](../09-technical/causal-budgets-and-replay.md). Les valeurs quantitatives de plafond restent ouvertes.

@@ -1,6 +1,6 @@
-# Journal des décisions Q01–Q114
+# Journal des décisions Q01–Q124
 
-Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q114 est validée ; les règles non décidées restent explicitement ouvertes.
+Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 est validée ; les règles non décidées restent explicitement ouvertes.
 
 | Question | Choix | Résumé | Fichier propriétaire |
 |---|---|---|---|
@@ -157,3 +157,21 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q114 es
 | Q112 | A | Détection par signature fonctionnelle du combat et FIFO ordonnée, identifiants neutres normalisés. | [Capacités de tour et boucles](01-combat/turn-control-and-loop-safety.md) |
 | Q113 | A | Budget configurable par chaîne, interruption de branche ; exemple 1 000 non définitif. | [Capacités de tour et boucles](01-combat/turn-control-and-loop-safety.md) |
 | Q114 | A | Conserver tous les événements déjà en FIFO ; empêcher seulement nouveaux descendants branche bloquée. | [Capacités de tour et boucles](01-combat/turn-control-and-loop-safety.md) |
+
+
+## Consolidation v1.3 — décisions Q115 à Q124
+
+| Question | Choix | Résumé | Fichier propriétaire |
+|---|---|---|---|
+| Q115 | A | Résolution multicausale unique ; causes et branches préservées ; branche bloquée non réactivable. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+| Q116 | A | Triple plafond configurable et versionné : branche, chaîne globale, opération initiale. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+| Q117 | A | Une unité par branche contributrice active, une seule unité par chaîne et opération. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+| Q118 | A | Réservation atomique à l’admission FIFO ; capacités admises garanties ; pas de dépassement. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+| Q119 | A | Réservations multicausales immuables ; libération atomique à l’annulation ; blocage de branche permanent. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+| Q120 | A | Déclenchement refusé définitivement ; crédits libérés réservés aux admissions futures. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+| Q121 | A | Journal déterministe complet + instantanés périodiques ; états, causes, budgets, RNG et choix traçables. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+| Q122 | A | Empreinte canonique après chaque commit atomique ; arrêt et diagnostic à première divergence. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+| Q123 | A | Sauvegarde entre commits atomiques, FIFO non vide admise ; restauration sans double exécution. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+| Q124 | A | Versions de règles/cartes/PRNG/budgets figées par combat ; incompatibilité explicite si dépendance manquante ; RPG migrable entre combats. | [Budgets causaux et rejeu](09-technical/causal-budgets-and-replay.md) |
+
+**Q125 ouverte :** stratégie de conservation/compatibilité des moteurs historiques et migration RPG hors combat.

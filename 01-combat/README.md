@@ -58,3 +58,9 @@
 ## Référence croisée v1.2
 
 Voir [capacités de tour et protection anti-boucles](turn-control-and-loop-safety.md) — Q105–Q114, et [tests](../09-technical/acceptance-tests.md).
+
+
+## Référence croisée v1.3
+
+- [Budgets causaux, admissions FIFO, sauvegardes et replays](../09-technical/causal-budgets-and-replay.md) — Q115–Q124.
+- [Tests d’acceptation](../09-technical/acceptance-tests.md) — T-115 à T-124.
