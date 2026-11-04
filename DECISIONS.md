@@ -264,4 +264,22 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q173 | B | Conservation de l’historique complet du combat en cours. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
 | Q174 | B | Journal consultable pendant les animations sans pause ni fuite anticipée. | [Journal et inspection](02-art-direction/combat-journal-and-inspection.md) |
 
-**Q175 ouverte.** Le journal V1 reste volontairement léger et non central.
+**Q175–Q184 validées en v1.9.** Le journal V1 reste volontairement léger et non central.
+
+
+## Décisions validées Q175–Q184 — v1.9
+
+| Question | Choix | Résumé | Fichier propriétaire |
+|---|---|---|---|
+| Q175 | B | Victoire expressive graduée : rapide en combat courant, plus spectaculaire contre boss ; VFX sans impact moteur. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+| Q176 | B | Écran de récompenses fantasy dédié ; inspection, choix distingués des gains automatiques, animations brèves. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+| Q177 | B | Trois cartes éligibles proposées ; inspection puis choix d’une seule ou alternative Q178. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+| Q178 | C | Refuser les trois cartes contre compensation en ressources visible avant confirmation. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+| Q179 | B | Gains automatiques après chaque victoire : monnaie et EXP du héros. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+| Q180 | C | Boss : gains renforcés + choix exceptionnel entre carte, artefact ou amélioration du héros. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+| Q181 | C modifiée | Cinq rangs SANS mythique : Commun blanc, Peu commun bleu, Rare rouge, Épique violet, Légendaire or. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+| Q182 | B + précision | Artefacts conservés pendant l’ascension ; finir la tour peut débloquer cartes et artefacts draftables lors des suivantes. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+| Q183 | C | Nombre limité d’emplacements d’artefacts, capacité augmentable pendant une ascension, réinitialisée ensuite. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+| Q184 | C | Améliorations temporaires du héros : caractéristiques ou capacités, au choix parmi propositions éligibles. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
+
+**Q185 ouverte :** usage de l’EXP, niveaux du héros et acquisition d’améliorations. Aucun seuil ni mode de persistance de l’EXP n’est encore fixé.

@@ -17,3 +17,8 @@ Héros : capacité actuelle 5, plafond 8, mana disponible 2. Effet +3 au plafond
 
 ## OUVERT
 Valeurs initiales et maximales des héros ; croissance lors du premier tour (proposition : pas de croissance) ; baisses de plafond et mana disponible ; ordre des modificateurs simultanés ; interaction entre bonus de début de tour et prochaine croissance ; seuil minimal du mana.
+
+
+## Référence de progression v1.9
+
+**Progression entre combats et ascensions :** voir [EXP et améliorations du héros Q179/Q184](../03-progression/rewards-rarity-and-ascension.md). Les seuils d’EXP restent ouverts.

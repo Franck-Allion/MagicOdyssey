@@ -130,3 +130,8 @@
 
 Les tests `T-165-*` à `T-174-*` sont ajoutés à [acceptance-tests.md](../09-technical/acceptance-tests.md). Ce sont des scénarios à exécuter lors de l’implémentation, pas des preuves de conformité actuelle.
 
+
+
+## Référence de progression v1.9
+
+**Fin de combat :** la révélation de l’issue et l’entrée dans l’écran de [récompenses Q175–Q180](../03-progression/rewards-rarity-and-ascension.md) ne peuvent anticiper les faits non encore présentés visuellement (Q174).

@@ -144,3 +144,8 @@ Ne pas confondre les plafonds d’**exécution fonctionnelle** Q111–Q120 avec 
 ## Extension v1.7 — Reproductibilité du solveur des auras
 
 Les règles [Q161–Q164](../02-art-direction/spells-auras-and-continuous-effects.md) imposent un ordre canonique et une trace de neutralisation des dépendances cycliques ; versionner cette convention avec les règles gelées du combat. Les opérations atomiques validées continuent de produire les empreintes de Q122 et les checkpoints de Q123. Le solveur d’effets continus ne consomme pas les budgets de déclenchements causaux Q115–Q120.
+
+
+## Référence de progression v1.9
+
+**Choix de récompenses :** la [progression Q175–Q184](../03-progression/rewards-rarity-and-ascension.md) impose la persistance idempotente des offres et décisions, sans confondre avec journal de combat ou replay moteur.

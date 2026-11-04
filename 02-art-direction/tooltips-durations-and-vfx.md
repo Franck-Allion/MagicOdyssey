@@ -86,3 +86,8 @@
 1. Tests : jeton/tooltip/inspection cohérents au même état atomique ; différence entre blessures et PV max ; libellés des effets non changés par contrôle ; retours de contrôle ; feedback court de durée ; absorption distinguée de perte PV ; deux animations indépendantes sans collision ; accélération sans divergence logique.
 2. Ouverts : valeurs finales et profils de durée validés sur prototype ; seuils chiffrés d'intensité, design du plateau complet, accessibilité tactile/manette précise, sound design détaillé et éventuel bouton d'accélération manuelle distinct (l'option C de Q144 n'a **pas** été retenue).
 3. **Q145–Q154 validées** : plateau et interactions dans [Plateau et prévisualisations tactiques](board-and-tactical-preview.md). **Q155 ouverte.**
+
+
+## Référence de progression v1.9
+
+**Célébration et révélation :** voir [Q175–Q176](../03-progression/rewards-rarity-and-ascension.md). L’animation de victoire et des récompenses suit l’issue canonique et respecte la rareté.

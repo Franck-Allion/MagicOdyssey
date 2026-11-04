@@ -11,7 +11,7 @@ Ne pas implémenter comme validées les idées présentées comme ouvertes ou pr
 > Version 1.6 — 2026-11-04. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q154). Aucun code n'est encore implémenté.
 
 ## Principe
-Jeu solo TCG/RPG : ascension de tours, étages avec ennemis, marchands et ressources, boss par étage ; progression persistante par cartes, artefacts et caractéristiques du héros. Le combat tactique est le cœur du jeu.
+Jeu solo TCG/RPG : ascension de tours, étages avec ennemis, marchands et ressources, boss par étage ; progression pendant chaque ascension par deck, artefacts et améliorations temporaires du héros ; méta-progression persistante par déblocage de nouvelles cartes et artefacts éligibles au draft (Q182). Le combat tactique est le cœur du jeu.
 
 ## Statuts
 - **VALIDÉ** : choix explicite du concepteur.
@@ -114,4 +114,13 @@ Le socle documentaire historique demeure disponible ; la consolidation **v1.7 co
 - [Décisions Q165–Q174](DECISIONS.md).
 - Priorité fonctionnelle : journal **secondaire et léger**, jamais permanent sur le plateau, sans replay interactif ni graphe de causalité en V1.
 - L’UI ne révèle pas les résultats avant leur présentation visuelle et ne modifie jamais l’état déterministe du combat.
-- **Q175 ouverte** ; prochaine consolidation prévue après Q184, sauf réorientation du périmètre.
+- **Q175–Q184 validées en v1.9** ; la prochaine question est Q185.
+
+
+## Consolidation v1.9 — Q175–Q184 (2026-11-04)
+
+- **Source normative** : [récompenses, cinq raretés, artefacts et progression des ascensions](03-progression/rewards-rarity-and-ascension.md).
+- **Décisions** : [Q175–Q184](DECISIONS.md) ; **Q181** = 5 rangs Commun/blanc, Peu commun/bleu, Rare/rouge, Épique/violet, Légendaire/or, **sans mythique** ; **Q182** = artefacts seulement durant une ascension, déblocages de cartes/artefacts persistants dans les futurs pools de draft.
+- **Tests** : [T-175-01 à T-184-04](09-technical/acceptance-tests.md) : **40 scénarios spécifiés et non exécutés**.
+- **Références croisées** : [victoire](01-combat/victory-and-defeat.md), [VFX et feedback](02-art-direction/tooltips-durations-and-vfx.md), [journal et visibilité](02-art-direction/combat-journal-and-inspection.md), [événements déterministes](01-combat/event-queue.md), [compatibilité des sauvegardes](09-technical/causal-budgets-and-replay.md).
+- **Q185 ouverte** : rôle de l’EXP et acquisition des niveaux/améliorations du héros pendant l’ascension.

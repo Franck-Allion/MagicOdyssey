@@ -29,3 +29,8 @@ Le vol de vie est un soin déclenché **différé** : il ne peut annuler la mort
 
 ## Mort due à un retrait temporaire — Q79–Q80
 Un retrait de bonus qui amène des PV à zéro peut tuer, après application des protections létales générales ; un retrait collectif s'évalue atomiquement et le contrôle victoire/défaite intervient au commit avant les réactions. Voir [effets temporaires](temporary-effects.md).
+
+
+## Référence de progression v1.9
+
+**Transition victoire → récompenses :** voir [Q175–Q180](../03-progression/rewards-rarity-and-ascension.md). Les gains n’altèrent pas les règles de détermination de l’issue du combat.

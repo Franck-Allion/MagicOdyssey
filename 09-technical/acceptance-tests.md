@@ -531,3 +531,51 @@ Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-
 | T-174-02 | Moteur a résolu mort mais animation non présentée | Mort pas encore révélée dans journal joueur | [Q174](../02-art-direction/combat-journal-and-inspection.md) |
 | T-174-03 | Événements visuels groupés | Révélation progressive cohérente avec groupes, sans inversion chronologique | [Q174](../02-art-direction/combat-journal-and-inspection.md) |
 | T-174-04 | Fin des animations, journal encore ouvert | Historique visible complet et résumé définitif, combat inchangé | [Q174](../02-art-direction/combat-journal-and-inspection.md) |
+
+
+## V1.9 — Tests Q175–Q184 : récompenses et progression (40 scénarios non exécutés)
+
+| ID | Scénario | Résultat attendu | Référence |
+|---|---|---|---|
+| T-175-01 | Victoire normale | Célébration courte, feedback final identifiable et accès rapide aux gains | [Q175](../03-progression/rewards-rarity-and-ascension.md) |
+| T-175-02 | Victoire de boss | Mise en scène enrichie mais non obligatoire pour combat ordinaire | [Q175](../03-progression/rewards-rarity-and-ascension.md) |
+| T-175-03 | Animation écourtée par joueur | Issue, trace et gains inchangés | [Q175](../03-progression/rewards-rarity-and-ascension.md) |
+| T-175-04 | Attaque létale + événements de fin | Aucune célébration ne change le verdict canonique | [Q175](../03-progression/rewards-rarity-and-ascension.md) |
+| T-176-01 | Récompense avec gains automatiques et choix | Zones distinctes, sélection explicite | [Q176](../03-progression/rewards-rarity-and-ascension.md) |
+| T-176-02 | Trois cartes à inspecter | Inspection sans acquisition ni perte de contexte | [Q176](../03-progression/rewards-rarity-and-ascension.md) |
+| T-176-03 | Révélation d’une carte commune | Effet et couleur cohérents avec la rareté réelle | [Q176](../03-progression/rewards-rarity-and-ascension.md) |
+| T-176-04 | Reprise pendant écran de gains | Offre identique, aucune duplication | [Q176](../03-progression/rewards-rarity-and-ascension.md) |
+| T-177-01 | Offre standard | Exactement trois cartes éligibles affichées | [Q177](../03-progression/rewards-rarity-and-ascension.md) |
+| T-177-02 | Inspection des trois cartes | Toutes consultables avant confirmation | [Q177](../03-progression/rewards-rarity-and-ascension.md) |
+| T-177-03 | Choisir une proposition | Une seule carte ajoutée, autres non acquises | [Q177](../03-progression/rewards-rarity-and-ascension.md) |
+| T-177-04 | Double clic sur validation | Un seul ajout par décision | [Q177](../03-progression/rewards-rarity-and-ascension.md) |
+| T-178-01 | Refuser toutes les cartes | Aucune carte ajoutée, compensation attribuée | [Q178](../03-progression/rewards-rarity-and-ascension.md) |
+| T-178-02 | Refus avec gains automatiques | Monnaie et EXP normales conservées + compensation | [Q178](../03-progression/rewards-rarity-and-ascension.md) |
+| T-178-03 | Prévisualiser compensation | Type et quantité visibles avant validation | [Q178](../03-progression/rewards-rarity-and-ascension.md) |
+| T-178-04 | Recharger après confirmation | Pas de compensation distribuée deux fois | [Q178](../03-progression/rewards-rarity-and-ascension.md) |
+| T-179-01 | Combat ordinaire gagné | Monnaie et EXP reçues | [Q179](../03-progression/rewards-rarity-and-ascension.md) |
+| T-179-02 | Refus du draft | Gains monnaie/EXP préservés indépendamment | [Q179](../03-progression/rewards-rarity-and-ascension.md) |
+| T-179-03 | Étage et difficulté différents | Paramètres de calcul pris en compte selon barème disponible | [Q179](../03-progression/rewards-rarity-and-ascension.md) |
+| T-179-04 | Affichage de gains | Distingue gains garantis des options | [Q179](../03-progression/rewards-rarity-and-ascension.md) |
+| T-180-01 | Boss vaincu | Monnaie et EXP renforcées, offre exceptionnelle | [Q180](../03-progression/rewards-rarity-and-ascension.md) |
+| T-180-02 | Joueur préfère deck compact | Possibilité de choisir artefact ou amélioration, sans carte | [Q180](../03-progression/rewards-rarity-and-ascension.md) |
+| T-180-03 | Offres intercatégories | Inspection et confirmation de la catégorie choisie | [Q180](../03-progression/rewards-rarity-and-ascension.md) |
+| T-180-04 | Reprise avant validation | Une seule récompense exceptionnelle au maximum validée | [Q180](../03-progression/rewards-rarity-and-ascension.md) |
+| T-181-01 | Affichage des cinq rangs | Blanc/bleu/rouge/violet/or associés aux bons noms | [Q181](../03-progression/rewards-rarity-and-ascension.md) |
+| T-181-02 | Carte peu commune | Bleu, non rare ; carte rare rouge | [Q181](../03-progression/rewards-rarity-and-ascension.md) |
+| T-181-03 | Pool de rareté | Aucun niveau Mythique | [Q181](../03-progression/rewards-rarity-and-ascension.md) |
+| T-181-04 | Affichage daltonisme | Libellé/motif distinct au-delà du code couleur | [Q181](../03-progression/rewards-rarity-and-ascension.md) |
+| T-182-01 | Fin ascension avec artefacts | Artefacts de tentative non conservés à la prochaine | [Q182](../03-progression/rewards-rarity-and-ascension.md) |
+| T-182-02 | Tour terminée et déblocage | Nouvel élément éligible au draft des ascensions suivantes | [Q182](../03-progression/rewards-rarity-and-ascension.md) |
+| T-182-03 | Nouvelle ascension après déblocage | Nouvel élément pas attribué automatiquement | [Q182](../03-progression/rewards-rarity-and-ascension.md) |
+| T-182-04 | Sauvegarde des déblocages | Déblocages persistants à travers tentatives | [Q182](../03-progression/rewards-rarity-and-ascension.md) |
+| T-183-01 | Inventaire rempli | Acquisition supplémentaire impose libération/remplacement | [Q183](../03-progression/rewards-rarity-and-ascension.md) |
+| T-183-02 | Récompense augmentant capacité | Emplacement supplémentaire disponible pendant ascension | [Q183](../03-progression/rewards-rarity-and-ascension.md) |
+| T-183-03 | Recommencer après hausse capacité | Capacité de départ rétablie | [Q183](../03-progression/rewards-rarity-and-ascension.md) |
+| T-183-04 | UI montre capacité | Occupés/disponibles exacts sans présumer valeur initiale | [Q183](../03-progression/rewards-rarity-and-ascension.md) |
+| T-184-01 | Offre caractéristique | Bonus choisi appliqué durant tentative | [Q184](../03-progression/rewards-rarity-and-ascension.md) |
+| T-184-02 | Offre capacité | Nouvelle capacité ou évolution appliquée selon moteur | [Q184](../03-progression/rewards-rarity-and-ascension.md) |
+| T-184-03 | Fin tentative | Améliorations temporaires réinitialisées | [Q184](../03-progression/rewards-rarity-and-ascension.md) |
+| T-184-04 | Déblocages permanents existants | Déblocages Q182 restent, mais bonus Q184 disparaissent | [Q184](../03-progression/rewards-rarity-and-ascension.md) |
+
+**État** : tous les tests v1.9 ci-dessus sont **documentaires, non exécutés** ; ne pas les annoncer comme réussis. Les tests de probabilités, des seuils numériques d’EXP et des capacités initiales ne sont pas spécifiés tant que ces paramètres restent ouverts.

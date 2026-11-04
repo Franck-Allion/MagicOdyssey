@@ -38,3 +38,15 @@
 - **Panneau latéral d'inspection** : vue de l'ensemble des états actifs et du calcul des valeurs finales. Pas une deuxième carte réécrite.
 - **ATQ effective** : ATQ applicable calculée selon les modificateurs actifs.
 - **État défensif effectif** : PV actuels/max effectifs, armure et bouclier distincts ; **aucune statistique DEF indépendante validée**.
+
+
+## Vocabulaire de progression — Q175–Q184
+
+- **Ascension / tentative** : progression de la tour en cours, conservant temporairement artefacts et améliorations du héros, et permettant de construire les synergies du deck.
+- **Déblocage permanent** : permission persistante de voir de nouvelles cartes ou de nouveaux artefacts dans les pools de draft futurs ; n’accorde pas leur possession au démarrage.
+- **Draft de carte** : choix d’une carte parmi trois propositions éligibles, ou refus contre ressources (Q177–Q178).
+- **Récompense automatique** : monnaie et EXP dues pour toute victoire, indépendantes du draft (Q179).
+- **Récompense exceptionnelle de boss** : proposition stratégique entre catégorie carte, artefact et amélioration du héros, en sus des gains renforcés (Q180).
+- **Rareté** : Commun (blanc), Peu commun (bleu), Rare (rouge), Épique (violet), Légendaire (or) ; cinq niveaux, sans mythique (Q181).
+- **Artefact de run** : objet conservé pendant une ascension, soumis aux emplacements évolutifs (Q182–Q183).
+- **Amélioration du héros** : progression temporaire d’une caractéristique ou d’une capacité au cours de l’ascension (Q184).
