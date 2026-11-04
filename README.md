@@ -1,6 +1,6 @@
-# Tower TCG — Spécifications v1.5
+# Tower TCG — Spécifications v1.6
 
-**Version consolidée : décisions Q01 à Q144.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
+**Version consolidée : décisions Q01 à Q154.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
 
 **Nouveautés Q65–Q74 :** [attribution des dégâts, arrondis, vol de vie et événements des protections](01-combat/damage-attribution.md) ; [prévention létale](01-combat/damage-prevention.md) ; [file d'événements](01-combat/event-queue.md) ; [tests d'acceptation](09-technical/acceptance-tests.md) ; [journal de décisions](DECISIONS.md).
 
@@ -8,7 +8,7 @@ Ne pas implémenter comme validées les idées présentées comme ouvertes ou pr
 
 # Tower TCG — Game Design Documentation
 
-> Version 1.5 — 2026-11-04. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q144). Aucun code n'est encore implémenté.
+> Version 1.6 — 2026-11-04. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q154). Aucun code n'est encore implémenté.
 
 ## Principe
 Jeu solo TCG/RPG : ascension de tours, étages avec ennemis, marchands et ressources, boss par étage ; progression persistante par cartes, artefacts et caractéristiques du héros. Le combat tactique est le cœur du jeu.
@@ -92,4 +92,12 @@ Une décision nouvelle modifie le document propriétaire de la règle, ses tests
 - [Tooltips, durées en langage naturel, contrôle et orchestrateur Juicy & Fast-Paced Q135–Q144](02-art-direction/tooltips-durations-and-vfx.md).
 - [Tests d’acceptation v1.5](09-technical/acceptance-tests.md) ; [journal Q135–Q144](DECISIONS.md).
 
-**Q145 ouverte** — la suite du questionnaire reste à valider, ne pas interpréter des propositions comme des décisions.
+**Q145–Q154 validées ; Q155 ouverte** — consulter le nouveau module UI plateau.
+
+
+## Consolidation v1.6 — Q145–Q154
+
+- [Plateau fantasy, décor V1 fixe animé discrètement, grille tactique contextuelle, destinations valides et prévisualisation progressive, interactions multimodales](02-art-direction/board-and-tactical-preview.md).
+- [Tests d’acceptation T-145-01 à T-154-04](09-technical/acceptance-tests.md) — **40 nouveaux scénarios documentés mais non exécutés**.
+- [Décisions Q145–Q154](DECISIONS.md).
+- **Q155 ouverte** : suite du questionnaire ; ne pas anticiper d'arbitrage.

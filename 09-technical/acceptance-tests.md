@@ -389,3 +389,51 @@ Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-
 | T-144-02 | Chaîne avec ultime et mort de boss | Moment spectaculaire préservé malgré accélération du reste | Q144 |
 | T-144-03 | Effets indépendants et réactions secondaires | Superposition et regroupement compatibles sans pertes d’information | Q144 |
 | T-144-04 | Chaîne calculée en 1 ms, présentation ralentie par GPU | Moteur logique, budgets et résultats indépendants du temps visuel | Q144 |
+
+
+## Tests UI / plateau et prévisualisations — v1.6, Q145 à Q154
+
+> **40 scénarios supplémentaires documentés, non exécutés** : les résultats attendus sont des exigences d’acceptation et non des affirmations de conformité d’un prototype. Les valeurs temporelles et les seuils de performance restent à mesurer. Source : [spécification Q145–Q154](../02-art-direction/board-and-tactical-preview.md).
+
+| ID | Situation / action | Résultat attendu | Référence |
+|---|---|---|---|
+| T-145-01 | Décor unique V1 et changement de thème simulé | Mêmes positions, règles, états et cibles ; seul habillage varie | [Q145](../02-art-direction/board-and-tactical-preview.md) |
+| T-145-02 | Grille 6x4 et deux camps | 24 emplacements fonctionnels alignés et identifiables pendant interaction | [Q145](../02-art-direction/board-and-tactical-preview.md) |
+| T-145-03 | Thème fantaisie visuellement chargé | Cases, chiffres et jetons lisibles sans recouvrement | [Q145](../02-art-direction/board-and-tactical-preview.md) |
+| T-145-04 | Données de combat rechargées après changement de décor | Aucune différence de hash fonctionnel ni événement moteur | [Q145](../02-art-direction/board-and-tactical-preview.md) |
+| T-146-01 | Torche animée derrière une créature | PV et ATQ lisibles ; ambiance visuellement secondaire | [Q146](../02-art-direction/board-and-tactical-preview.md) |
+| T-146-02 | Animations d’ambiance désactivées | Aucune perte de capacité à jouer, cibler ou comprendre | [Q146](../02-art-direction/board-and-tactical-preview.md) |
+| T-146-03 | Sort puissant sur case avec rune de décor | Feedback du sort reste prioritaire | [Q146](../02-art-direction/board-and-tactical-preview.md) |
+| T-146-04 | Changement de profil de mouvement réduit | Ambiance réduite, données tactiques intactes | [Q146](../02-art-direction/board-and-tactical-preview.md) |
+| T-147-01 | Plateau au repos | Absence de pictogrammes répétitifs encombrants | [Q147](../02-art-direction/board-and-tactical-preview.md) |
+| T-147-02 | Survol case offensive | Indication contextuelle de rôle/camp visible puis masquée | [Q147](../02-art-direction/board-and-tactical-preview.md) |
+| T-147-03 | Sélection puis annulation | Highlights et étiquettes temporaires supprimés | [Q147](../02-art-direction/board-and-tactical-preview.md) |
+| T-147-04 | Thème dénué de bleu/rouge | Symboles/contours permettent toujours de différencier les camps | [Q147](../02-art-direction/board-and-tactical-preview.md) |
+| T-148-01 | Carte sélectionnée avec 3 destinations légales | Seules 3 cases légales identifiées | [Q148](../02-art-direction/board-and-tactical-preview.md) |
+| T-148-02 | Tentative sur case non autorisée | Feedback local et motif court ; pas de dépôt exécuté | [Q148](../02-art-direction/board-and-tactical-preview.md) |
+| T-148-03 | Début du geste de déplacement | Destinations légales du mouvement effectif affichées | [Q148](../02-art-direction/board-and-tactical-preview.md) |
+| T-148-04 | Fin de geste/annulation | Cases éclairées effacées sans persistance | [Q148](../02-art-direction/board-and-tactical-preview.md) |
+| T-149-01 | Créature sélectionnée, attaque déterministe létale | La cible et la créature affichent leurs conséquences de phase pertinentes | [Q149](../02-art-direction/board-and-tactical-preview.md) |
+| T-149-02 | Unité fraîchement invoquée et malade | Aucune attaque supposée pendant phase non autorisée | [Q149](../02-art-direction/board-and-tactical-preview.md) |
+| T-149-03 | Capacité de dégâts en réaction déterministe | Ordre de résolution pris en compte ; pas de calcul naïf de riposte | [Q149](../02-art-direction/board-and-tactical-preview.md) |
+| T-149-04 | Prévision sans commit et RNG isolé | État réel, FIFO, seed et hash identiques avant/après consultation | [Q149](../02-art-direction/board-and-tactical-preview.md) |
+| T-150-01 | Cible à 8 PV finissant à 3 | Indicateur temporaire 8 → 3 sans masquer 8 PV réels | [Q150](../02-art-direction/board-and-tactical-preview.md) |
+| T-150-02 | Mort prévue après protections | Crâne et zéro PV visibles, sans animation de mort réelle | [Q150](../02-art-direction/board-and-tactical-preview.md) |
+| T-150-03 | Issue pouvant dépendre d’une réaction | ? explicite, pas de faux résultat garanti | [Q150](../02-art-direction/board-and-tactical-preview.md) |
+| T-150-04 | Fin de sélection | Overlays disparaissent, caractéristiques réelles inchangées | [Q150](../02-art-direction/board-and-tactical-preview.md) |
+| T-151-01 | Glissement entre deux cases valides | Aperçu et valeurs changent selon la case, non selon pixels | [Q151](../02-art-direction/board-and-tactical-preview.md) |
+| T-151-02 | Retour vers case déjà consultée sans modification d’état | Cache réutilisable ; résultat identique | [Q151](../02-art-direction/board-and-tactical-preview.md) |
+| T-151-03 | État réel changé après mise en cache | Invalidation et nouveau calcul, pas de chiffres périmés | [Q151](../02-art-direction/board-and-tactical-preview.md) |
+| T-151-04 | Calcul tardif pour ancienne case | Résultat rejeté si la case cible a changé | [Q151](../02-art-direction/board-and-tactical-preview.md) |
+| T-152-01 | Résultat déterministe rapide | Montre valeurs certaines sans attendre branches non pertinentes | [Q152](../02-art-direction/board-and-tactical-preview.md) |
+| T-152-02 | Aléa ou choix futur peut inverser décès | Statut incertain et hypothèses explicites | [Q152](../02-art-direction/board-and-tactical-preview.md) |
+| T-152-03 | Budget de prévision épuisé | Indisponible ou partiel explicitement, sans bloquer case légale | [Q152](../02-art-direction/board-and-tactical-preview.md) |
+| T-152-04 | Mode preview sur partie rejouée | Aucune influence sur RNG, budget logique, log ni issue | [Q152](../02-art-direction/board-and-tactical-preview.md) |
+| T-153-01 | Dépôt sur case légale avec prévision en cours | Action traitée immédiatement après vérification moteur | [Q153](../02-art-direction/board-and-tactical-preview.md) |
+| T-153-02 | Dépôt sur case devenue interdite | Rejet sans mutation, carte retourne à l’origine | [Q153](../02-art-direction/board-and-tactical-preview.md) |
+| T-153-03 | Dépôt légal d’invocation forte | Feedback juicy gradué ; action logique indépendante animation | [Q153](../02-art-direction/board-and-tactical-preview.md) |
+| T-153-04 | Réponse de preview tardive après dépôt | Ignorée ; ne modifie ni nouveaux chiffres ni partie | [Q153](../02-art-direction/board-and-tactical-preview.md) |
+| T-154-01 | Placement au drag et clic-clic sur même case | Action identique, mêmes règles/couts et informations de placement | [Q154](../02-art-direction/board-and-tactical-preview.md) |
+| T-154-02 | Tactile sans survol | Accès par sélection/focus aux cases et prévisions | [Q154](../02-art-direction/board-and-tactical-preview.md) |
+| T-154-03 | Échap ou annulation avant commit | Retour initial sans dépense ni événement | [Q154](../02-art-direction/board-and-tactical-preview.md) |
+| T-154-04 | Commande d’annulation après commit | Aucun undo implicite de l’action effective | [Q154](../02-art-direction/board-and-tactical-preview.md) |

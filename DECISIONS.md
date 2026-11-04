@@ -210,4 +210,22 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q143 | A + précision | Nombres flottants dégâts/soins et protections distincts ; effets puissants : éclairs, halos, secousses. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
 | Q144 | B | Objectif indicatif global de 3–5 s pour chaîne complexe, avec rythme adaptatif et moments décisifs préservés. | [UI/VFX](02-art-direction/tooltips-durations-and-vfx.md) |
 
-**Q145 ouverte** : suite du questionnaire d’UI, notamment affichage du plateau et feedback de ciblage, à arbitrer avec le concepteur.
+
+
+
+## Consolidation v1.6 — Décisions Q145–Q154
+
+| Question | Choix | Décision | Fichier propriétaire |
+|---|---|---|---|
+| Q145 | B + précision | Plateau fantasy premium, grille subtile ; V1 un seul décor riche, architecture prévue pour variantes futures par étape/tour/biome/boss. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+| Q146 | B | Illustration principalement fixe, quelques animations d'ambiance discrètes, réductibles ; priorité au gameplay. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+| Q147 | B personnalisé | Camps distingués subtilement ; épée/bouclier et marquages contextuels seulement au survol, focus ou drag-and-drop, pas de surcharge permanente. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+| Q148 | B | Cases valides révélées ; interdites neutres sauf tentative ciblée avec retour et explication. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+| Q149 | C | Sélection créature → simulation des conséquences pertinentes de la prochaine phase de combat plutôt que simple cible/trajectoire. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+| Q150 | B | PV futurs temporaires `actuel → prévu`, crâne/protections/`?` contextuels ; détail en inspection. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+| Q151 | C | Prévisions mises à jour sur case valide durant drag-and-drop, cache lié à l'état, calcul non bloquant. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+| Q152 | C | Résultats certains, incertains, en calcul, indisponibles explicites ; budget de prévision indépendant, non bloquant. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+| Q153 | B | Dépôt immédiat sans confirmation, revalidation moteur, animation si succès, retour visuel si refus. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+| Q154 | C | Drag-and-drop, clic-clic et tactile cohérents ; prévisions accessibles sans hover ; annulation sans effet tant qu'aucune validation n'a eu lieu. | [Plateau / prévisions](02-art-direction/board-and-tactical-preview.md) |
+
+**Q155 ouverte** : proposition de la prochaine question distincte des décisions déjà validées.

@@ -85,4 +85,4 @@
 
 1. Tests : jeton/tooltip/inspection cohérents au même état atomique ; différence entre blessures et PV max ; libellés des effets non changés par contrôle ; retours de contrôle ; feedback court de durée ; absorption distinguée de perte PV ; deux animations indépendantes sans collision ; accélération sans divergence logique.
 2. Ouverts : valeurs finales et profils de durée validés sur prototype ; seuils chiffrés d'intensité, design du plateau complet, accessibilité tactile/manette précise, sound design détaillé et éventuel bouton d'accélération manuelle distinct (l'option C de Q144 n'a **pas** été retenue).
-3. **Q145** : choix de la suite de conception après la première consolidation *Juicy & Fast-Paced* ; ne pas considérer les propositions Q145 comme décidées.
+3. **Q145–Q154 validées** : plateau et interactions dans [Plateau et prévisualisations tactiques](board-and-tactical-preview.md). **Q155 ouverte.**

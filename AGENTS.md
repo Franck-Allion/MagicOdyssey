@@ -27,3 +27,10 @@ Pour les règles **VALIDÉES Q115–Q124**, lire [budgets, réservations, journa
 ## Interface — Q125–Q134 (v1.4)
 
 Pour les créatures, lire [le module d'identité visuelle et d'inspection](02-art-direction/card-and-board-ui.md). La carte d'origine reste inchangée ; le panneau doit présenter ATQ finale, PV actuels/max effectifs, protections et **tous les effets actifs**. Les changements visuels ne modifient pas les règles de combat ou de replay.
+
+
+## Interface — Q135–Q154 (v1.5–v1.6)
+
+La présentation des effets/échéances/VFX est spécifiée dans [tooltips et durées](02-art-direction/tooltips-durations-and-vfx.md) et les nouveaux comportements de décor, grille contextuelle, simulation prévisionnelle isolée, calcul asynchrone non bloquant, validation moteur et modes d'entrée dans [plateau et prévisualisations](02-art-direction/board-and-tactical-preview.md).
+
+**Ne jamais** confondre prévisualisation et engagement ; ne pas consommer le RNG réel, ne pas modifier la FIFO ou les réservations logiques en prévision. Le bouton/drag de placement est revalidé par le moteur au commit. Les 40 [tests Q145–Q154](09-technical/acceptance-tests.md) sont seulement des critères d'acceptation, non des tests exécutés. Q155 est ouverte.
