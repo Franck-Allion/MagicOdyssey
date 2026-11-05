@@ -50,3 +50,14 @@
 - **Rareté** : Commun (blanc), Peu commun (bleu), Rare (rouge), Épique (violet), Légendaire (or) ; cinq niveaux, sans mythique (Q181).
 - **Artefact de run** : objet conservé pendant une ascension, soumis aux emplacements évolutifs (Q182–Q183).
 - **Amélioration du héros** : progression temporaire d’une caractéristique ou d’une capacité au cours de l’ascension (Q184).
+
+
+## Termes de progression v2.0
+
+- **Sphérier :** réseau de nœuds permanents de caractéristiques et capacités du héros, avec branches thématiques, passerelles et prérequis (Q185–Q189).
+- **Point de compétence :** ressource permanente octroyée par les niveaux du héros, dépensable dans le sphérier (Q186–Q188).
+- **Réinitialisation de sphérier :** remboursement intégral et gratuit des points investis, possible uniquement hors ascension (Q189).
+- **Copie de tentative :** instance de carte/artefact possédée pendant l’ascension, perdue à la fin selon Q182.
+- **Catalogue / pool de draft débloqué :** collection persistante d’identités de cartes pouvant être générées lors de futures récompenses. Débloqué ne signifie ni offert ni garanti (Q182, Q194).
+- **Exclusivité marchande de tour :** carte initialement achetable seulement dans des commerces de tours désignées ; après achat, devient débloquée pour les drafts futurs (Q193–Q194).
+- **Rendement décroissant :** récompense répétable de tour ancienne moins intéressante à mesure que le héros gagne en niveau, sans modification de la difficulté des ennemis (Q192).

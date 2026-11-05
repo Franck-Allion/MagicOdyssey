@@ -579,3 +579,51 @@ Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-
 | T-184-04 | Déblocages permanents existants | Déblocages Q182 restent, mais bonus Q184 disparaissent | [Q184](../03-progression/rewards-rarity-and-ascension.md) |
 
 **État** : tous les tests v1.9 ci-dessus sont **documentaires, non exécutés** ; ne pas les annoncer comme réussis. Les tests de probabilités, des seuils numériques d’EXP et des capacités initiales ne sont pas spécifiés tant que ces paramètres restent ouverts.
+
+
+## Consolidation v2.0 — Tests d’acceptation Q185–Q194 (spécifiés, NON exécutés)
+
+| ID | Scénario | Résultat attendu | Référence |
+|---|---|---|---|
+| T-185-01 | Acquisition d’un bonus de PV via arbre | Les PV du héros augmentent selon le nœud et le bonus subsiste à la prochaine ascension. | [Q185](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-185-02 | Échec après investissement dans le sphérier | Le nœud permanent reste acquis ; le deck et les artefacts de tentative sont perdus. | [Q185](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-185-03 | Bonus feu permanent et amélioration temporaire de boss | Les deux bonus suivent leurs sources ; seul celui du sphérier persiste. | [Q185](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-185-04 | Début d’une nouvelle ascension | Aucun bonus du sphérier n’est perdu ni doublé. | [Q185](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-186-01 | Gain d’EXP sur victoire | Le cumul permanent augmente exactement une fois. | [Q186](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-186-02 | Montée de niveau | Le nombre paramétré de points est crédité une fois. | [Q186](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-186-03 | Défaite avec points non dépensés | EXP, niveau et points non dépensés persistent. | [Q186](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-186-04 | Reprise après sauvegarde au seuil de niveau | Aucun second crédit de points de niveau. | [Q186](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-187-01 | Tentative sur nœud non connecté | Déblocage refusé avec prérequis explicite. | [Q187](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-187-02 | Déblocage d’un nœud accessible adjacent | Nœud acquis et successeurs accessibles selon leurs prérequis. | [Q187](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-187-03 | Passerelle interbranche activée | Nouvel itinéraire de progression disponible sans contourner les prérequis. | [Q187](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-187-04 | Affichage de trois états de nœuds | Acquis, accessible et verrouillé distincts et corrects. | [Q187](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-188-01 | Nœuds de coûts distincts | Chaque nœud débite son coût configuré. | [Q188](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-188-02 | Fonds insuffisants | Aucune acquisition ni solde négatif. | [Q188](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-188-03 | Compétence avancée sans prérequis | Coût disponible ne suffit pas à contourner le prérequis. | [Q188](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-188-04 | Double confirmation du même nœud | Déblocage et débit effectués une seule fois. | [Q188](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-189-01 | Reset hors ascension confirmé | Nœuds libérés, total des points restitué sans coût. | [Q189](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-189-02 | Reset pendant ascension | Action impossible. | [Q189](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-189-03 | Réallocation après reset | Nœuds acquis selon nouveaux chemins et coûts ; capital total constant. | [Q189](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-189-04 | Reset puis rechargement | Niveau, EXP et points comptabilisés sans création ou perte. | [Q189](../03-progression/hero-sphere-and-skill-tree.md) |
+| T-190-01 | Nouveau profil de joueur | Plusieurs tours de difficultés distinctes immédiatement accessibles. | [Q190](../03-progression/towers-merchants-and-unlocks.md) |
+| T-190-02 | Tour spéciale non déverrouillée | Accès refusé, prérequis de tour explicite. | [Q190](../03-progression/towers-merchants-and-unlocks.md) |
+| T-190-03 | Fin des tours requises | Tour spéciale débloquée de manière persistante. | [Q190](../03-progression/towers-merchants-and-unlocks.md) |
+| T-190-04 | Héros sous niveau conseillé | Une tour accessible autorise l’entrée quand même. | [Q190](../03-progression/towers-merchants-and-unlocks.md) |
+| T-191-01 | Première victoire sur une tour | Déblocages uniques et récompenses répétables prévus crédités. | [Q191](../03-progression/towers-merchants-and-unlocks.md) |
+| T-191-02 | Seconde victoire même tour | Aucun duplicata de déblocage unique ; récompenses répétables accordées. | [Q191](../03-progression/towers-merchants-and-unlocks.md) |
+| T-191-03 | Rechargement après première victoire | Flag de première victoire préservé, pas de double gain. | [Q191](../03-progression/towers-merchants-and-unlocks.md) |
+| T-191-04 | Déblocage de carte par fin de tour | Carte devient éligible au draft, pas ajoutée automatiquement au deck initial. | [Q191](../03-progression/towers-merchants-and-unlocks.md) |
+| T-192-01 | Héros niveau faible entre dans une tour | Ennemis ont la difficulté canonique de la tour. | [Q192](../03-progression/towers-merchants-and-unlocks.md) |
+| T-192-02 | Héros niveau élevé entre dans la même tour | Ennemis gardent exactement les mêmes caractéristiques de difficulté. | [Q192](../03-progression/towers-merchants-and-unlocks.md) |
+| T-192-03 | Répétition d’une tour facile à haut niveau | Récompenses répétables deviennent moins intéressantes selon barème configurable. | [Q192](../03-progression/towers-merchants-and-unlocks.md) |
+| T-192-04 | Première victoire à haut niveau | Déblocage unique inchangé, pas soumis à la décote d’EXP. | [Q192](../03-progression/towers-merchants-and-unlocks.md) |
+| T-193-01 | Accomplissement global débloqué | Contenu correspondant devient éligible aux futures propositions. | [Q193](../03-progression/towers-merchants-and-unlocks.md) |
+| T-193-02 | Visite d’un marchand de tour exclusive | Carte exclusive est disponible à l’achat dans la tour prévue selon les règles de stock. | [Q193](../03-progression/towers-merchants-and-unlocks.md) |
+| T-193-03 | Visite d’un marchand d’une autre tour | Exclusivité non offerte à l’achat par ce marchand avant déblocage selon règles d’offre. | [Q193](../03-progression/towers-merchants-and-unlocks.md) |
+| T-193-04 | Offre d’une carte rare | Rare est rouge, peu commune bleue ; code couleur respecté. | [Q193](../03-progression/towers-merchants-and-unlocks.md) |
+| T-194-01 | Carte choisie parmi trois | Carte obtenue et son identité enregistrée immédiatement dans le catalogue permanent ; cartes refusées non débloquées. | [Q194](../03-progression/towers-merchants-and-unlocks.md) |
+| T-194-02 | Carte exclusive achetée puis ascension perdue | Copie de tentative perdue ; identité reste débloquée et éligible aux futurs drafts. | [Q194](../03-progression/towers-merchants-and-unlocks.md) |
+| T-194-03 | Carte seulement inspectée ou proposée | Aucun déblocage de cette carte. | [Q194](../03-progression/towers-merchants-and-unlocks.md) |
+| T-194-04 | Achat répété / rechargement / double clic | Une seule attribution d’achat et un seul déblocage idempotent ; carte non garantie au prochain draft. | [Q194](../03-progression/towers-merchants-and-unlocks.md) |
+
+**Statut :** 40 scénarios ajoutés à v2.0 ; **non exécutés**. Les barèmes EXP, tailles de stocks, coût des compétences et taux de draft restent ouverts.

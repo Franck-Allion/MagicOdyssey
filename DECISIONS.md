@@ -283,3 +283,21 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q184 | C | Améliorations temporaires du héros : caractéristiques ou capacités, au choix parmi propositions éligibles. | [Progression](03-progression/rewards-rarity-and-ascension.md) |
 
 **Q185 ouverte :** usage de l’EXP, niveaux du héros et acquisition d’améliorations. Aucun seuil ni mode de persistance de l’EXP n’est encore fixé.
+
+
+## Décisions validées Q185–Q194 — v2.0
+
+| Question | Choix | Résumé | Fichier propriétaire |
+|---|---|---|---|
+| Q185 | B profondément personnalisée | Sphérier permanent de compétences/caractéristiques (PV, feu, etc.), conservé entre ascensions ; remplace le modèle simple de trois choix par niveau. | [Sphérier](03-progression/hero-sphere-and-skill-tree.md) |
+| Q186 | B | EXP permanente, niveau permanent, points acquis à chaque niveau et conservés. | [Sphérier](03-progression/hero-sphere-and-skill-tree.md) |
+| Q187 | C | Branches interconnectées, progression de proche en proche, passerelles et prérequis. | [Sphérier](03-progression/hero-sphere-and-skill-tree.md) |
+| Q188 | C | Coût variable de chaque nœud selon sa valeur, avec respect des prérequis. | [Sphérier](03-progression/hero-sphere-and-skill-tree.md) |
+| Q189 | B | Réinitialisation intégrale gratuite du sphérier uniquement hors ascension ; points restitués, niveau/EXP préservés. | [Sphérier](03-progression/hero-sphere-and-skill-tree.md) |
+| Q190 | D personnalisée | Plusieurs tours ouvertes d’emblée ; quelques tours spéciales conditionnées par l’achèvement d’autres tours ; pas de niveau minimum imposé. | [Tours et boutiques](03-progression/towers-merchants-and-unlocks.md) |
+| Q191 | B | Première victoire : déblocages permanents uniques ; victoires suivantes : récompenses répétables. | [Tours et boutiques](03-progression/towers-merchants-and-unlocks.md) |
+| Q192 | A personnalisée | Difficulté des tours fixe ; les récompenses répétables de tours faciles perdent de l’intérêt à haut niveau. | [Tours et boutiques](03-progression/towers-merchants-and-unlocks.md) |
+| Q193 | D personnalisée | Déblocages par succès, défis et combats, plus achats chez les marchands présents dans les tours ; certaines cartes exclusives à des marchands de tours données. | [Tours et boutiques](03-progression/towers-merchants-and-unlocks.md) |
+| Q194 | Règle personnalisée | **Toute carte effectivement obtenue ou achetée est ajoutée définitivement au pool potentiel de draft futur** ; la copie de tentative disparaît en fin d’ascension ; ne pas confondre vu/acheté, ni déblocage/obtention garantie. | [Tours et boutiques](03-progression/towers-merchants-and-unlocks.md) |
+
+**Q195 ouverte :** structure des inventaires des commerces (fixes, variables ou mixtes) et garantie d’accès aux exclusivités.

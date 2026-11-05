@@ -1,6 +1,6 @@
-# Tower TCG — Spécifications v1.8
+# Tower TCG — Spécifications v2.0
 
-**Version consolidée : décisions Q01 à Q174.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
+**Version consolidée : décisions Q01 à Q194.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
 
 **Nouveautés Q65–Q74 :** [attribution des dégâts, arrondis, vol de vie et événements des protections](01-combat/damage-attribution.md) ; [prévention létale](01-combat/damage-prevention.md) ; [file d'événements](01-combat/event-queue.md) ; [tests d'acceptation](09-technical/acceptance-tests.md) ; [journal de décisions](DECISIONS.md).
 
@@ -11,7 +11,7 @@ Ne pas implémenter comme validées les idées présentées comme ouvertes ou pr
 > Version 1.6 — 2026-11-04. Spécifications de combat en cours. Source : décisions explicites du concepteur (Q01–Q154). Aucun code n'est encore implémenté.
 
 ## Principe
-Jeu solo TCG/RPG : ascension de tours, étages avec ennemis, marchands et ressources, boss par étage ; progression pendant chaque ascension par deck, artefacts et améliorations temporaires du héros ; méta-progression persistante par déblocage de nouvelles cartes et artefacts éligibles au draft (Q182). Le combat tactique est le cœur du jeu.
+Jeu solo TCG/RPG : ascension de tours, étages avec ennemis, marchands et ressources, boss par étage ; progression pendant chaque ascension par deck, artefacts et améliorations temporaires du héros ; méta-progression persistante du sphérier (EXP, niveaux, compétences) et déblocage de nouvelles cartes et artefacts éligibles au draft (Q182, Q185–Q194). Le combat tactique est le cœur du jeu.
 
 ## Statuts
 - **VALIDÉ** : choix explicite du concepteur.
@@ -124,3 +124,11 @@ Le socle documentaire historique demeure disponible ; la consolidation **v1.7 co
 - **Tests** : [T-175-01 à T-184-04](09-technical/acceptance-tests.md) : **40 scénarios spécifiés et non exécutés**.
 - **Références croisées** : [victoire](01-combat/victory-and-defeat.md), [VFX et feedback](02-art-direction/tooltips-durations-and-vfx.md), [journal et visibilité](02-art-direction/combat-journal-and-inspection.md), [événements déterministes](01-combat/event-queue.md), [compatibilité des sauvegardes](09-technical/causal-budgets-and-replay.md).
 - **Q185 ouverte** : rôle de l’EXP et acquisition des niveaux/améliorations du héros pendant l’ascension.
+
+## Consolidation v2.0 — décisions Q185–Q194
+
+- [Sphérier permanent du héros](03-progression/hero-sphere-and-skill-tree.md) : EXP et niveaux persistants, branches connectées, coûts variables et réinitialisation totale gratuite uniquement entre les ascensions.
+- [Tours, récompenses répétables, commerces et déblocages](03-progression/towers-merchants-and-unlocks.md) : tours majoritairement libres, défis spéciaux conditionnés, difficulté fixe, rendements décroissants et exclusivités des marchands.
+- **Q194 personnalisée : toute carte effectivement obtenue ou achetée devient une possibilité des drafts futurs.** La copie possédée dans l’ascension reste temporaire, le déblocage du catalogue est permanent ; une offre simplement vue n’est pas acquise.
+- [Décisions](DECISIONS.md) et [40 tests documentaires Q185–Q194](09-technical/acceptance-tests.md).
+- **Questions ouvertes :** stocks des marchands, probabilités, barème EXP, détails du sphérier, doublons, conservation de la monnaie, artefacts acquis.

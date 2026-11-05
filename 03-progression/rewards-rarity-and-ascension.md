@@ -150,3 +150,11 @@
 ## Vérification
 
 Voir [tests d’acceptation T-175-01 à T-184-04](../09-technical/acceptance-tests.md) : quarante scénarios écrits, **non exécutés**. Source des arbitrages : [DECISIONS](../DECISIONS.md).
+
+
+## Complément normatif v2.0 — Q185–Q194
+
+- Q184 régit **les améliorations temporaires de récompense** (dont boss), distinctes du [sphérier permanent Q185–Q189](hero-sphere-and-skill-tree.md).
+- Q179 reste la source des gains d’EXP ; Q186 précise que cette **EXP est persistante** et alimente les niveaux et points de compétence permanents.
+- Q182 reste la source de temporalité des copies de cartes et artefacts de tentative. **Q194 précise que toute carte effectivement obtenue ou achetée déverrouille aussi son identité dans le catalogue de draft permanent** (sans être offerte dans les futures tentatives). Voir [tours, boutiques, déblocages](towers-merchants-and-unlocks.md).
+- La rareté Q181 reste strictement **Commun/blanc ; Peu commun/bleu ; Rare/rouge ; Épique/violet ; Légendaire/or**, sans Mythique.
