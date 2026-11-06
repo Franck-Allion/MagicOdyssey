@@ -43,3 +43,7 @@ Lire [Q155–Q164](02-art-direction/spells-auras-and-continuous-effects.md) avan
 ## Règles UI journal Q165–Q174 — v1.8
 
 Lire [le journal de combat et l'inspection historique](02-art-direction/combat-journal-and-inspection.md) pour toute fonction d'historique. Ne jamais révéler une entrée avant son point de présentation VFX ni exposer les données cachées dans la recherche ou les résumés. Le journal V1 est secondaire : pas de graphe causal interactif, de replay graphique ni de simulations supplémentaires pour le produire. Tests documentés : [T-165-* à T-174-*](09-technical/acceptance-tests.md).
+
+## Règles normatives Q195–Q204 — v2.1
+
+Avant d’implémenter boutiques, tirage, achat ou récompense de carte, lire [boutiques, rotation et limites](03-progression/merchant-stock-and-deck-limits.md), puis [récompenses](03-progression/rewards-rarity-and-ascension.md) et [tours](03-progression/towers-merchants-and-unlocks.md). Quatre copies par identité dans le deck ; filtrer avant tirage et revalider au commit. Une compensation automatique Q178 s’applique si **zéro** carte est éligible ; monnaie et EXP Q179 restent acquises. RNG de run déterministe, actions idempotentes et sauvegarde des stocks/compteurs. Les 40 tests nouveaux sont **non exécutés**.

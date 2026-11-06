@@ -627,3 +627,51 @@ Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-
 | T-194-04 | Achat répété / rechargement / double clic | Une seule attribution d’achat et un seul déblocage idempotent ; carte non garantie au prochain draft. | [Q194](../03-progression/towers-merchants-and-unlocks.md) |
 
 **Statut :** 40 scénarios ajoutés à v2.0 ; **non exécutés**. Les barèmes EXP, tailles de stocks, coût des compétences et taux de draft restent ouverts.
+
+
+## Consolidation v2.1 — Tests d’acceptation Q195–Q204 (SPÉCIFIÉS, NON EXÉCUTÉS)
+
+| ID | Scénario | Résultat attendu | Référence |
+|---|---|---|---|
+| T-195-01 | Tirage marchand dans une tour donnée | Stock généré dans le pool de la tour, mélange génériques/exclusives éligibles. | [Q195](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-195-02 | Exclusivité absente d’un tirage | Aucune obligation de présenter une carte exclusive à chaque visite. | [Q195](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-195-03 | Exclusivité autre tour | Impossible de trouver dans ce commerce une carte exclusive d’une autre tour non éligible. | [Q195](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-195-04 | Carte exclusive achetée | Carte utilisable pendant le run et débloquée pour les drafts futurs (Q194). | [Q195](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-196-01 | Cartes de raretés différentes | Références tarifaires correspondantes, cinq couleurs Q181 et prix affichés. | [Q196](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-196-02 | Ajustement individuel | Une carte peut différer de sa référence selon son paramétrage sans prix RNG arbitraire. | [Q196](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-196-03 | État de collection | UI distingue clairement carte débloquée ou non. | [Q196](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-196-04 | Confirmation achat | Débit exact du prix affiché, aucune acquisition en cas de fonds insuffisants. | [Q196](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-197-01 | Défaite avec monnaie restante | Solde de run supprimé ; aucun transfert au run suivant. | [Q197](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-197-02 | Victoire avec monnaie restante | Solde de run supprimé également. | [Q197](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-197-03 | Achat carte puis défaite | Monnaie effacée mais identité de carte débloquée pour drafts futurs. | [Q197](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-197-04 | Nouvelle ascension | Solde initial configuré et progression permanente EXP/sphérier intacte. | [Q197](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-198-01 | Renouvellements successifs | Prochain coût strictement croissant pour ce marchand. | [Q198](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-198-02 | Fonds insuffisants | Aucun débit, nouveau stock ni incrément de compteur. | [Q198](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-198-03 | Renouvellement conforme au pool | Tirage respecte les exclusivités et raretés ; rien n’est garanti. | [Q198](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-198-04 | Renouvellement rejoué après sauvegarde | Stock, compteur et débit appliqués une seule fois. | [Q198](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-199-01 | Deux marchands différents | Renouvellement A ne modifie pas le compteur ni le coût du marchand B. | [Q199](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-199-02 | Quitter/rentrer même commerce | Même stock et même coût progressif. | [Q199](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-199-03 | Sauvegarde/reprise même tentative | Stocks et compteurs identiques avant et après reprise. | [Q199](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-199-04 | Nouvelle tentative | Compteurs réinitialisés pour les nouvelles instances de marchands. | [Q199](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-200-01 | Achat dans emplacement | Une seule carte attribuée, emplacement vidé, autres offres inchangées. | [Q200](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-200-02 | Renouvellement après achat | Carte achetée peut réapparaître si elle reste éligible et sous plafond. | [Q200](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-200-03 | Second achat même carte | Deux exemplaires dans le deck, une seule identité débloquée durablement. | [Q200](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-200-04 | Double clic achat | Un achat, un débit et un exemplaire attribués une fois. | [Q200](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-201-01 | Quatre copies Commune | Quatre autorisées, cinquième refusée. | [Q201](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-201-02 | Quatre copies Légendaire | Même plafond de quatre, pas de règle unique légendaire. | [Q201](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-201-03 | Copie temporaire en combat | Ne modifie pas le compteur de copies du deck d’ascension. | [Q201](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-201-04 | Carte déjà débloquée achetée de nouveau | Pas de duplicata dans le catalogue permanent ; plafond du deck respecté. | [Q201](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-202-01 | Génération magasin avec carte à 4 | Carte exclue avant tirage. | [Q202](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-202-02 | Renouvellement magasin à 4 | Carte exclue également au renouvellement. | [Q202](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-202-03 | Pool magasin trop petit | Moins d’offres, aucune offre impossible ou hors-tour. | [Q202](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-202-04 | Offre affichée devenue plafonnée | Validation rejette sans débit ni nouvelle copie. | [Q202](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-203-01 | Trois cartes éligibles ou plus | Trois propositions valides selon Q177. | [Q203](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-203-02 | Une ou deux cartes éligibles | Seulement une ou deux propositions, aucune carte invalidée. | [Q203](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-203-03 | Refus de propositions | Compensation Q178 disponible même avec moins de trois cartes. | [Q203](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-203-04 | Réévaluation à l’engagement | Aucune cinquième copie admise après changements ou reprise. | [Q203](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-204-01 | Zéro carte éligible | Compensation Q178 automatique sans écran de sélection vide. | [Q204](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-204-02 | Récompense automatique parallèle | Monnaie et EXP Q179 accordées en plus de la compensation. | [Q204](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-204-03 | Reprise et retry au point de récompense | Compensation enregistrée exactement une fois. | [Q204](../03-progression/merchant-stock-and-deck-limits.md) |
+| T-204-04 | Aucun pool éligible | Pas d’extension cachée de pools ni de carte débloquée par la compensation. | [Q204](../03-progression/merchant-stock-and-deck-limits.md) |
+
+**Statut :** 40 scénarios nouveaux documentés et **non exécutés** sur un jeu. Les paramètres numériques restent à arbitrer.

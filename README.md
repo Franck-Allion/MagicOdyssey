@@ -1,6 +1,6 @@
-# Tower TCG — Spécifications v2.0
+# Tower TCG — Spécifications v2.1
 
-**Version consolidée : décisions Q01 à Q194.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
+**Version consolidée : décisions Q01 à Q204.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
 
 **Nouveautés Q65–Q74 :** [attribution des dégâts, arrondis, vol de vie et événements des protections](01-combat/damage-attribution.md) ; [prévention létale](01-combat/damage-prevention.md) ; [file d'événements](01-combat/event-queue.md) ; [tests d'acceptation](09-technical/acceptance-tests.md) ; [journal de décisions](DECISIONS.md).
 
@@ -132,3 +132,10 @@ Le socle documentaire historique demeure disponible ; la consolidation **v1.7 co
 - **Q194 personnalisée : toute carte effectivement obtenue ou achetée devient une possibilité des drafts futurs.** La copie possédée dans l’ascension reste temporaire, le déblocage du catalogue est permanent ; une offre simplement vue n’est pas acquise.
 - [Décisions](DECISIONS.md) et [40 tests documentaires Q185–Q194](09-technical/acceptance-tests.md).
 - **Questions ouvertes :** stocks des marchands, probabilités, barème EXP, détails du sphérier, doublons, conservation de la monnaie, artefacts acquis.
+
+## Consolidation v2.1 — Q195–Q204 (2026-11-06)
+
+- **Source normative** : [boutiques, stock, renouvellements, prix et plafond de deck](03-progression/merchant-stock-and-deck-limits.md).
+- Points clés : inventaires aléatoires et sorts propres aux tours ; tarifs basés sur cinq raretés ; monnaie temporaire ; renouvellements payants à coût croissant par marchand ; une offre = un exemplaire ; plafond de **quatre copies** pour toutes les raretés ; exclusion des cartes plafonnées des boutiques/récompenses ; si aucune carte n’est éligible, compensation Q178 automatique en plus de Q179.
+- [Décisions Q195–Q204](DECISIONS.md) ; [tests T-195-01 à T-204-04](09-technical/acceptance-tests.md) (40 tests **spécifiés et non exécutés**).
+- Aucune sixième rareté « Mythique » (Q181). Les coûts de renouvellement, taux de tirage et prix chiffrés restent ouverts. **Prochaine question Q205.**

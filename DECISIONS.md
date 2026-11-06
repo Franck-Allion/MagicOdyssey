@@ -301,3 +301,21 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q194 | Règle personnalisée | **Toute carte effectivement obtenue ou achetée est ajoutée définitivement au pool potentiel de draft futur** ; la copie de tentative disparaît en fin d’ascension ; ne pas confondre vu/acheté, ni déblocage/obtention garantie. | [Tours et boutiques](03-progression/towers-merchants-and-unlocks.md) |
 
 **Q195 ouverte :** structure des inventaires des commerces (fixes, variables ou mixtes) et garantie d’accès aux exclusivités.
+
+
+## Décisions validées Q195–Q204 — v2.1
+
+| Question | Choix | Résumé | Fichier propriétaire |
+|---|---|---|---|
+| Q195 | C personnalisée | Inventaire marchand aléatoire ; certains sorts/cartes uniquement dans les pools de commerces de tours précises, jamais garantis. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+| Q196 | B | Prix de référence par rareté et ajustements par carte, stables et affichés. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+| Q197 | A | Monnaie temporaire perdue à la fin de chaque ascension, progression permanente conservée. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+| Q198 | B personnalisée | Renouvellements payants sans plafond fixe ; chaque renouvellement successif coûte davantage. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+| Q199 | A | Compteur de renouvellement indépendant par instance de marchand, persistant jusqu’à fin du run. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+| Q200 | B | Un exemplaire par offre ; achat vide la place ; même carte peut réapparaître après renouvellement. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+| Q201 | B personnalisée | Quatre exemplaires identiques maximum dans le deck, toutes raretés ; aucune rareté mythique. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+| Q202 | B | Cartes déjà à quatre copies exclues du pool des boutiques, avec revalidation à l’achat. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+| Q203 | B | Cartes déjà à quatre copies exclues des récompenses ; moins de trois offres si pool insuffisant. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+| Q204 | B | Pool de récompenses vide : compensation en ressources Q178 automatique, sans écran de choix ; EXP et monnaie Q179 préservées. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
+
+**Q205 ouverte :** prochaine décision de conception. Les quantités et pourcentages illustratifs ne sont pas adoptés.

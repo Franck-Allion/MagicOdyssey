@@ -158,3 +158,7 @@ Voir [tests d’acceptation T-175-01 à T-184-04](../09-technical/acceptance-tes
 - Q179 reste la source des gains d’EXP ; Q186 précise que cette **EXP est persistante** et alimente les niveaux et points de compétence permanents.
 - Q182 reste la source de temporalité des copies de cartes et artefacts de tentative. **Q194 précise que toute carte effectivement obtenue ou achetée déverrouille aussi son identité dans le catalogue de draft permanent** (sans être offerte dans les futures tentatives). Voir [tours, boutiques, déblocages](towers-merchants-and-unlocks.md).
 - La rareté Q181 reste strictement **Commun/blanc ; Peu commun/bleu ; Rare/rouge ; Épique/violet ; Légendaire/or**, sans Mythique.
+
+## Mise à jour v2.1 — Éligibilité des cartes Q201–Q204
+
+La règle Q177 des trois cartes est désormais sous réserve des filtres d’éligibilité : au plus quatre exemplaires par identité de carte ; si le pool contient moins de trois cartes valides, afficher moins de propositions ; s’il est vide, attribuer **automatiquement** la compensation Q178, en plus de la monnaie et de l’EXP Q179, sans écran de sélection. Consulter [boutiques et limites Q195–Q204](merchant-stock-and-deck-limits.md).

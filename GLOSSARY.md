@@ -61,3 +61,10 @@
 - **Catalogue / pool de draft débloqué :** collection persistante d’identités de cartes pouvant être générées lors de futures récompenses. Débloqué ne signifie ni offert ni garanti (Q182, Q194).
 - **Exclusivité marchande de tour :** carte initialement achetable seulement dans des commerces de tours désignées ; après achat, devient débloquée pour les drafts futurs (Q193–Q194).
 - **Rendement décroissant :** récompense répétable de tour ancienne moins intéressante à mesure que le héros gagne en niveau, sans modification de la difficulté des ennemis (Q192).
+
+## Vocabulaire v2.1
+
+- **Exemplaire de deck** : copie d’une identité de carte acquise dans le deck de l’ascension, soumise au plafond de quatre ; ne compte pas les copies transitoires créées au combat.
+- **Pool éligible** : cartes autorisées pour une récompense ou un commerce après restrictions de tour, rareté et plafond de copies, **avant tirage**.
+- **Renouvellement** : opération payante tirant un nouveau stock pour une instance de marchand, avec compteur individuel et coût croissant.
+- **Compensation automatique** : ressources de Q178 accordées quand le pool de récompense de carte est vide, sans UI de sélection.

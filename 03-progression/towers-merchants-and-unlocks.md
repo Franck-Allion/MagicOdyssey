@@ -64,3 +64,7 @@
 ## Ouvert / non décidé
 
 Probabilités des drafts, distribution et exclusions ; tarifs marchands ; fixation ou génération aléatoire des boutiques ; persistance de la monnaie ; nombre de cartes achetables ; achat d’artefact et effet sur catalogue permanent ; gestion de doublons du deck ; gain d’une carte hors d’une ascension ; stocks exclusifs et rotation ; récompenses de déblocage de première victoire exactes.
+
+## Mise à jour v2.1 — Q195–Q204
+
+Les questions de stock, de prix, de monnaie, de limite de copies, de rotation et de récompense lorsque le pool est vide ont été arbitrées : consulter [la source normative Q195–Q204](merchant-stock-and-deck-limits.md). Les mentions « ouvert » ci-dessus sur ces thèmes décrivent **l’état historique v2.0**, et ne prévalent pas sur v2.1. Restent ouverts les paramètres numériques précis, les tailles de stocks et les probabilités.
