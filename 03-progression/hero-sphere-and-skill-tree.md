@@ -44,3 +44,7 @@ Seuils d’EXP par niveau ; nombre de points par niveau ; coûts chiffrés ; con
 - **Q222 B** : les compétences réellement acquises orientent prioritairement la composition automatique de deck ; une spécialisation feu favorise les cartes en synergie lorsqu'elles sont présentes, sans en créer.
 - **Q224 D** : des nœuds permanents peuvent autoriser des substitutions d'instances dans le **socle fixe de 20 cartes**, par variantes prédéfinies. Il s’agit d’une progression du socle, différente du retrait libre de cartes de base vers la réserve (Q223). Conditions exactes ouvertes.
 - Le reset gratuit **entre ascensions** Q189 permet de changer les effets de préparation **pour une nouvelle tentative**, pas rétroactivement au milieu d'une ascension en cours.
+
+## Précision v2.4 — portée des variantes (Q226–Q229)
+
+Le sphérier remplace de façon déterministe des versions **dans les 20 emplacements du socle** avant l'ascension, **pas dans les boosters** ni dans les exemplaires acquis lors de l'ascension. Les versions partagent le plafond de leur famille. Voir [catalogue v2.4](mvp-card-catalog-and-tribes.md).

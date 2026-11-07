@@ -773,3 +773,53 @@ Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-
 **Non-régression v2.3** : Q207 plafond de **quatre copies** deck+réserve incluant le socle et les deux boosters ; Q208/Q217 min/max standard 40/40 ; Q209 compétences permanentes et temporaires ; Q211–Q214 recherches pendant combat indépendantes de la préparation ; Q218 garantie Rare+ **seulement si compétence active et éligibilité**, sinon assouplissement Q219 ; Q220 ouverture **séquentielle** ; Q222 spécialisation du héros **prioritaire**, et non optimisation multicritère dominante ; Q223 **aucune base imposée dans le deck** ; Q224 variantes du socle **uniquement via compétences permanentes autorisées**.
 
 **Blocage de conception ouvert** : le mécanisme exact Q219 de secours pour un pool incapable de fournir 50 copies légales ne peut pas avoir de test de résultat positif définitif avant arbitrage. `T-219-03` porte uniquement sur la détection et l'absence de violation.
+
+
+## Tests de conformité v2.4 — Q225 à Q234
+
+> **40 scénarios nouveaux spécifiés, non exécutés.** Les tests de disponibilité de contenus exigent un jeu de données MVP réel ; ne pas interpréter leur rédaction comme une preuve de faisabilité. Référence normative : [catalogue et peuples v2.4](../03-progression/mvp-card-catalog-and-tribes.md).
+
+| ID | Sujet | État initial / action | Résultat attendu |
+|---|---|---|---|
+| T-225-01 | Départ nouveau profil | Profil neuf avec catalogue fondamental configuré | Le pool débloqué rend possible 20+15+15 copies légales. |
+| T-225-02 | Secours sans carte verrouillée | Pool pondéré épuisé, alternatives fondamentales débloquées | Les slots restants utilisent des copies fondamentales éligibles selon une règle déterministe. |
+| T-225-03 | Plafond familial sous secours | Famille déjà à quatre copies dans socle et boosters | Aucune cinquième copie n’est tirée ou attribuée. |
+| T-225-04 | Pool mathématiquement impossible | Moins de capacités légales que 50 exemplaires | Erreur de validation de contenu/configuration détectée sans boucle infinie ni déblocage artificiel. |
+| T-226-01 | Substitution fixe | Même nœud actif et même socle sur deux ascensions | Les mêmes emplacements reçoivent les mêmes variantes. |
+| T-226-02 | Sans nœud | Sphérier ne débloque aucune variante | Socle original inchangé, 20 copies. |
+| T-226-03 | Réinitialisation sphérier | Réinitialiser le sphérier entre deux ascensions | Le socle de l’ascension suivante reflète les nœuds actifs, sans modifier l’ascension antérieure. |
+| T-226-04 | Conflit non défini | Deux nœuds tentent de modifier le même emplacement sans priorité | Validation de contenu refuse l’ambiguïté ou requiert règle explicite ; pas de choix aléatoire silencieux. |
+| T-227-01 | Quatre versions mélangées | 2 originales + 1 Feu + 1 Glace d’une même famille | Plafond familial atteint ; une cinquième variante est inéligible. |
+| T-227-02 | Deck et réserve | 2 copies actives et 2 en réserve de même famille | Le compteur familial vaut 4. |
+| T-227-03 | Familles différentes | Deux familles indépendantes avec copies respectives | Les plafonds sont appliqués séparément. |
+| T-227-04 | Identifiants d’instance | Deux copies de la même variante | Chaque copie conserve son identité distincte lors des transferts. |
+| T-228-01 | Socle amélioré | Nœud actif, exemplaire d’origine socle | La variante améliorée est attribuée. |
+| T-228-02 | Booster non amélioré | Même famille tirée dans booster, nœud actif | La copie du booster conserve sa définition non améliorée. |
+| T-228-03 | Déplacement vers réserve | Déplacer copie de socle améliorée du deck à la réserve | La version améliorée et l’origine sont conservées. |
+| T-228-04 | Acquisition après combat | Récompense d’une famille améliorée dans le socle | La copie acquise ne change pas de version en raison du sphérier. |
+| T-229-01 | Filtre de booster | Variante du sphérier existante et carte ordinaire de même famille débloquée | La variante n’est jamais candidate dans les boosters. |
+| T-229-02 | Catalogue limité | Seules variantes du sphérier existent dans une famille du socle | Le booster ne tire pas ces variantes comme cartes indépendantes. |
+| T-229-03 | Compte familial | Socle contient deux variantes et booster propose deux copies ordinaires | Quatre copies au total acceptées ; aucune cinquième. |
+| T-229-04 | Secours strict | Pool de booster insuffisant avec variantes du sphérier non éligibles | Le secours n’introduit aucune variante réservée au socle. |
+| T-230-01 | Budget calculé | 40 fondamentales, 30 variantes, 100 indépendantes | Le nombre de définitions est 170, distinct des copies de préparation. |
+| T-230-02 | Socle de 20 | Catalogue fondamental contient 40 définitions | Une ascension n’attribue que 20 copies de socle selon ses règles. |
+| T-230-03 | Cartes non débloquées | Catalogue indépendant de 100, profil au début | Toutes les 100 définitions ne sont pas automatiquement dans le pool débloqué. |
+| T-230-04 | Famille et variante | Une famille possède trois variantes additionnelles | Quatre définitions peuvent partager une famille et un plafond commun de quatre copies. |
+| T-231-01 | Trois groupes | Inventaire de 100 cartes indépendantes | Les cartes se classent en neutre, élémentaire ou hybride/avancé. |
+| T-231-02 | Quotas non forcés | Répartition différente de 33/50/17, mais catalogue équilibré | La validation ne rejette pas seulement pour différence aux proportions illustratives. |
+| T-231-03 | Carte hybride | Carte avec deux éléments/stratégies | La catégorie avancée/hybride peut porter plusieurs interactions. |
+| T-231-04 | Compatibilité rareté | Cartes de toutes les catégories avec raretés Q181 | Catégorie de design et rareté sont deux axes distincts. |
+| T-232-01 | Rôle principal | Carte attaque+pioche | Un rôle principal et des rôles secondaires peuvent être indexés. |
+| T-232-02 | Quotas souples | Répartition différente de 25/15/20/15/15/10 | Le suivi signale l’écart sans le traiter comme violation normative. |
+| T-232-03 | Couverture utilitaire | Catalogue comprend recherche/pioche | La catégorie fonctionnelle est prise en compte en conception. |
+| T-232-04 | Diversité tactique | Cartes d’un même élément avec défense et attaque | Les rôles ne sont pas conditionnés exclusivement par l’élément. |
+| T-233-01 | Synergie de peuple | Créature de peuple Nain, effet ciblant les Nains | L’effet filtre selon le peuple et non uniquement selon l’élément. |
+| T-233-02 | Élément transversal | Deux créatures de peuples différents avec élément Feu | Un effet Feu peut s’appliquer aux deux selon ses critères. |
+| T-233-03 | Archétype multiaxe | Deck mélange peuple, élément et rôle | Les axes de classification coexistent sans exclusion arbitraire. |
+| T-233-04 | Créature sans peuple majeur | Créature de type Bête/Élémentaire suivant catalogue | Le moteur n’oblige pas à appartenir à l’un des quatre peuples principaux. |
+| T-234-01 | Quatre peuples MVP | Catalogue MVP validé avec quatre peuples définis | L’inventaire signale exactement quatre peuples représentés. |
+| T-234-02 | Ajout futur Gobelin | Charger une définition d’extension avec peuple Gobelin | Indexation, ciblage et inspection fonctionnent sans modification du moteur. |
+| T-234-03 | Ajout futur Mort-vivant | Charger une définition d’extension de type Mort-vivant | Aucune règle de combat existante n’est cassée ; cible et sauvegarde restent compatibles. |
+| T-234-04 | Aucun archétype forcé | Un peuple n’a que quelques cartes dans le MVP | L’existence du peuple ne requiert pas un deck tribal complet. |
+
+**Non-régression :** Q207 limite de quatre copies sur deck+réserve, **par famille** si variantes Q227 ; Q208/Q217 deck standard 40/40 ; Q215 20 copies de base et 30 de boosters ; Q218–Q219 raretés et garanties conditionnelles ; Q220 boosters séquentiels ; Q222 proposition spécialisée ; Q223 cartes du socle non obligatoires dans deck ; Q224–Q229 variantes **du seul socle**, boosters sans variantes du sphérier. Le budget Q230 **≈170 définitions** ne modifie pas les 50 copies de préparation.

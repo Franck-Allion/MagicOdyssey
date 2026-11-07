@@ -157,3 +157,12 @@ Le socle documentaire historique demeure disponible ; la consolidation **v1.7 co
 - Socle de 20 cartes **initialement fixe**, dont certaines variantes peuvent être autorisées via des nœuds permanents du sphérier (Q224 D).
 - [Journal Q215–Q224](DECISIONS.md) ; [40 nouveaux tests d'acceptation v2.3](09-technical/acceptance-tests.md), **spécifiés mais non exécutés**.
 - **Ouverts** : secours concret lorsque 50 exemplaires ne sont pas générables sous le plafond de quatre ; probabilité chiffrée, compétences et variantes exactes, adaptation 40/10 aux bornes évolutives Q209. Prochaine question **Q225**.
+
+## Consolidation v2.4 — décisions Q225–Q234 (2026-11-07)
+
+- **Source normative** : [familles évolutives, catalogue MVP et peuples](03-progression/mvp-card-catalog-and-tribes.md).
+- Q225 catalogue de base et secours déterministe ; Q226–Q229 variantes du sphérier **déterministes, réservées aux copies du socle** ; **plafond de quatre copies par famille**, boosters sans variantes du sphérier.
+- Q230 révisée : **≈170 définitions** (40 fondamentales + ≈30 variantes + 100 indépendantes), et non 100 au total ; 20 copies de socle et 2 × 15 copies de booster par ascension (Q215).
+- Q231 catalogue hybride neutre/élémentaire/avancé ; Q232 quotas tactiques souples ; Q233 Heroic Fantasy, peuples et archétypes transversaux ; Q234 **quatre peuples représentés au MVP**, extensibles (Gobelins, Morts-vivants, etc.).
+- [Journal Q225–Q234](DECISIONS.md) ; [40 nouveaux scénarios d'acceptation documentés](09-technical/acceptance-tests.md), **non exécutés**.
+- **Ouvert :** choix nominatif des quatre peuples, nombre d'éléments et d'archétypes, seuils/probabilités et critères précis des variantes, constitution du catalogue fondamental garantissant toute configuration légale. Prochaine décision : **Q235**.

@@ -47,3 +47,7 @@
 - **Q223** : les cartes de base ne sont **jamais obligatoires dans la composition active** ; leur répartition est libre parmi les exemplaires attribués, dans le respect du plafond Q207.
 - **Q224** : le socle attribué de 20 cartes est initialement fixe, puis ses variantes autorisées dépendent des compétences permanentes du sphérier ; **cette évolution du pool de cartes de base ne rend pas leur présence active obligatoire**.
 - Le paragraphe « contenu initial des 40 cartes / procédure de création » ci-dessus est **historique** et désormais précisé par Q215–Q224 ; seuls restent ouverts les paramètres listés dans le nouveau module.
+
+## Précision v2.4 — familles de variantes Q227
+
+Le plafond Q207 de quatre copies s'entend **sur la famille entière** pour une carte fondamentale à variantes (Q227), en additionnant toutes ses versions et toutes les zones de possession pertinentes (deck actif + réserve). Référence normative : [catalogue et variantes Q225–Q234](mvp-card-catalog-and-tribes.md).

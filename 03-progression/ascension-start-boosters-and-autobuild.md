@@ -1,6 +1,6 @@
 # Préparation d’ascension, boosters et deck automatique — Q215–Q224 (v2.3)
 
-> **Statut : VALIDÉ** pour les décisions explicites Q215–Q224. Ce module constitue la source normative pour la **préparation avant l’ascension** ; voir les règles connexes du [deck et de la réserve](deck-reserve-and-capacity.md), du [sphérier permanent](hero-sphere-and-skill-tree.md), des [déblocages Q194](towers-merchants-and-unlocks.md) et des [raretés Q181](rewards-rarity-and-ascension.md). La composition des boosters, les paramètres chiffrés de probabilité et le fonctionnement exact du secours lorsque le pool est structurellement insuffisant restent **OUVERTS**.
+> **Statut : VALIDÉ** pour les décisions explicites Q215–Q224. Ce module constitue la source normative pour la **préparation avant l’ascension** ; voir les règles connexes du [deck et de la réserve](deck-reserve-and-capacity.md), du [sphérier permanent](hero-sphere-and-skill-tree.md), des [déblocages Q194](towers-merchants-and-unlocks.md) et des [raretés Q181](rewards-rarity-and-ascension.md). Les probabilités chiffrées restent **OUVERTES** ; le catalogue fondamental et le secours déterministe sont précisés en [v2.4](mvp-card-catalog-and-tribes.md).
 
 ## Modèle canonique et phases de préparation
 
@@ -71,3 +71,9 @@
 - [Marchands et filtrage Q201–Q204](merchant-stock-and-deck-limits.md).
 - [Fatigue et recherches Q210–Q214](../01-combat/deck-search-and-fatigue-v22.md).
 - [Tests d’acceptation](../09-technical/acceptance-tests.md) — scénarios Q215–Q224, non exécutés.
+
+## Complément normatif v2.4 — Q225–Q234
+
+La version v2.4 apporte les règles [catalogue, variantes et peuples](mvp-card-catalog-and-tribes.md). **Supersède** toute mention indiquant que le secours concret Q219 est entièrement indécidé : Q225 retient un **catalogue initial garanti** et une **sélection de secours déterministe d'identités fondamentales déjà débloquées**. Sa garantie de faisabilité doit être démontrée pour tous les sphériers admissibles.
+
+Les **20 copies du socle** sont remplacées de façon déterministe selon le sphérier (Q226), les variantes partageant un plafond **par famille** de quatre (Q227). Seules les copies d'origine socle changent de variante (Q228), et les boosters **excluent** les variantes du sphérier (Q229). Le budget **≈170 définitions** Q230 n'affecte ni les 50 copies initiales ni le ratio standard deck 40/réserve 10.

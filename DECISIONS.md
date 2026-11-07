@@ -1,4 +1,4 @@
-# Journal des décisions Q01–Q224
+# Journal des décisions Q01–Q234
 
 Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 est validée ; les règles non décidées restent explicitement ouvertes.
 
@@ -352,4 +352,21 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q223 | C | Toutes les cartes de base peuvent être placées en réserve et remplacées dans le deck actif. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
 | Q224 | **D** | Socle initial fixe de 20 cartes ; des compétences permanentes débloquent progressivement des remplacements par variantes spécialisées ou plus fortes. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
 
-**Q225 ouverte.** N'inférer ni catalogue global libre ni quotas 10/10 de base, ni composition pondérée obligatoire, ni valeurs probabilistes fictives.
+**Q225–Q234 :** décisions validées et détaillées ci-dessous ; les probabilités et quotas numériques non validés restent ouverts.
+
+## Décisions validées Q225–Q234 — consolidation v2.4
+
+| Question | Choix | Décision | Source normative |
+|---|---|---|---|
+| Q225 | B | Catalogue fondamental débloqué au départ ; secours déterministe à partir des cartes éligibles, sans carte verrouillée ni dépassement du plafond. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+| Q226 | Personnalisée / A adaptée | Variantes du sphérier remplacent de façon déterministe les versions précédentes du socle de 20 exemplaires. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+| Q227 | B | Variantes d'une même famille ; plafond de quatre copies **toutes versions confondues**. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+| Q228 | A | Amélioration du sphérier limitée aux exemplaires d'origine socle, non appliquée aux acquisitions ordinaires. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+| Q229 | Précision personnalisée | Variantes du sphérier exclues des boosters ; réservées aux cartes d'origine socle. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+| Q230 | B puis révision personnalisée | Objectif MVP élargi de 100 à **≈170 définitions** : **40 fondamentales + ≈30 variantes (≈10 familles × 3) + 100 indépendantes**. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+| Q231 | C adaptée | Catalogue indépendant hybride : neutre/polyvalent, élémentaire, hybride/avancé ; hypothèse 33/50/17 non contraignante. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+| Q232 | C | Répartition équilibrée selon rôles tactiques, quotas **indicatifs** et cartes multirôles possibles. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+| Q233 | C enrichie | Spécialisations élémentaires fortes et archétypes transversaux, intégrant peuples/types de créatures Heroic Fantasy. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+| Q234 | Personnalisée | **Quatre peuples** représentés au MVP ; moteur extensible pour Gobelins, Morts-vivants et autres. Les quatre peuples exacts restent ouverts. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
+
+**Q235 ouverte.** Prochain arbitrage : nommer les quatre peuples MVP (ou arbitrer leur sélection), sans confondre peuples et archétypes/éléments.

@@ -84,3 +84,12 @@
 - **Garantie de rareté** : effet de compétence permanente pouvant imposer une rareté minimale par booster, assouplie si aucune carte éligible ne satisfait la condition (Q218–Q219).
 - **Proposition automatique du deck** : sélection de copies attribuées favorisant en priorité la spécialisation du sphérier et modifiable librement (Q216/Q222/Q223).
 - **Pool de préparation** : somme des 20 copies de base et 30 copies issues des boosters ; distinct de la collection permanente de cartes débloquées (Q215).
+
+
+## Complément v2.4 — catalogue et peuples
+
+- **Définition de carte :** modèle unique de statistiques, coût, effets et présentation. Le catalogue MVP vise **≈170 définitions** (Q230 révisée), distinctes des copies possédées.
+- **Famille de carte (`familyId`) :** groupe de variantes d'une carte fondamentale partageant le plafond de **quatre exemplaires** (Q227).
+- **Variante du sphérier :** version d'une carte fondamentale déterminée par les nœuds permanents, attribuée **seulement aux copies du socle initial**, non disponible dans les boosters (Q226–Q229).
+- **Peuple/type de créature :** axe de synergie Heroic Fantasy extensible au-delà des **quatre peuples du MVP** (Q233–Q234).
+- **Catalogue fondamental initial :** identités débloquées permettant de générer socle et boosters légaux, avec secours déterministe lorsque nécessaire (Q225).

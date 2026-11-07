@@ -23,3 +23,8 @@ Voir [tests](../09-technical/acceptance-tests.md), [journal des décisions](../D
 ## Extension v2.3 — Q215–Q224
 
 - [Préparation, boosters, assistant de deck et socle évolutif](ascension-start-boosters-and-autobuild.md) — **source normative** de Q215–Q224.
+
+## Extension v2.4 — Q225–Q234
+
+- [Catalogue MVP, familles et variantes du sphérier, Heroic Fantasy et peuples extensibles](mvp-card-catalog-and-tribes.md) — source normative Q225–Q234.
+- **Cible révisée : ≈170 définitions** = 40 fondamentales + ≈30 variantes + 100 indépendantes ; 20 exemplaires seulement dans le socle d'ascension. Quatre peuples au MVP, autres peuples extensibles.
