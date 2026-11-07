@@ -5,7 +5,7 @@
 ## Invariants transversaux
 
 1. **Cinq raretés, sans Mythique** : Commun (blanc), Peu commun (bleu), Rare (rouge), Épique (violet), Légendaire (or), conformément à [Q181](rewards-rarity-and-ascension.md).
-2. **Quatre exemplaires identiques maximum dans le deck d'ascension**, quelle que soit la rareté (Q201). Le contrôle porte sur l'**identité de carte canonique** et les copies réellement acquises dans le deck, pas sur les invocations/copies temporaires de combat. Les exemplaires d'une même identité partagent le plafond, indépendamment de leur source d'achat ou de récompense.
+2. **Quatre exemplaires identiques maximum possédés dans l’ascension (deck actif + réserve)**, quelle que soit la rareté (Q201). Le contrôle porte sur l'**identité de carte canonique** et les copies réellement acquises dans le deck actif **et dans la réserve d'ascension** (Q207), pas sur les invocations/copies temporaires de combat. Les exemplaires d'une même identité partagent le plafond, indépendamment de leur source d'achat ou de récompense.
 3. **Une acquisition effective débloque définitivement la carte pour les drafts futurs** [Q194](towers-merchants-and-unlocks.md), mais ni la simple apparition ni l'inspection ne la débloquent. Possibilité de draft ≠ apparition garantie ≠ carte de départ. Un achat répété ne duplique pas le déblocage permanent.
 4. **Monnaie temporaire à chaque ascension** : aucun solde de la tentative précédente n'est reconduit (Q197). EXP, niveaux, compétences du sphérier et déblocages permanents restent conservés, voir [sphérier](hero-sphere-and-skill-tree.md).
 5. Tirages RNG, résolution d'achat, mise à jour du deck et des déblocages sont transactionnels, déterministes par les entrées de run et **idempotents**, selon les mécanismes de [résolution atomique](../01-combat/effect-resolution.md) et [rejeu/sauvegarde](../09-technical/causal-budgets-and-replay.md). Les générateurs n'exposent pas les offres cachées au joueur.
@@ -55,7 +55,7 @@
 
 ## Q201 — Quatre copies identiques maximum, rareté indifférente : B adaptée
 
-- **DECK-201-01** : **4** copies de la même identité canonique maximum dans le deck, Commun à Légendaire ; **pas de rareté Mythique** (Q181).
+- **DECK-201-01** : **4** copies de la même identité canonique maximum **dans le deck actif et la réserve réunis** (Q207), Commun à Légendaire ; **pas de rareté Mythique** (Q181).
 - **DECK-201-02** : aucune règle de copie unique propre aux cartes légendaires ; leur faible probabilité peut limiter leur accumulation naturellement, sans garantie mathématique chiffrée à ce stade.
 - **DECK-201-03** : achats et récompenses ordinaires respectent le plafond ; au commit, un cinquième exemplaire est refusé sans débit ni acquisition.
 - **DECK-201-04** : le nombre de copies de deck n'est pas celui des copies temporaires créées pendant les combats ; ne pas compter ces dernières dans les limites de stock/draft.
@@ -63,13 +63,13 @@
 
 ## Q202 — Filtrer les cartes plafonnées dans les commerces : B
 
-- **SHOP-202-01** : exclure du pool de génération initial et de renouvellement les cartes déjà présentes à 4 exemplaires dans le deck.
+- **SHOP-202-01** : exclure du pool de génération initial et de renouvellement les cartes déjà possédées à 4 exemplaires **entre deck actif et réserve** (Q207).
 - **SHOP-202-02** : avant confirmation d'un achat, revérifier le nombre de copies de deck et les fonds ; une offre affichée mais devenue non achetable ne peut être débitée.
 - **SHOP-202-03** : si le pool éligible manque de cartes, le commerce propose moins d'articles plutôt que des cartes impossibles à acheter ; le tirage ne contourne jamais les exclusivités de tour.
 
 ## Q203 — Filtrer les cartes plafonnées dans les récompenses : B
 
-- **REWARD-203-01** : avant tirage des **trois propositions standard** [Q177](rewards-rarity-and-ascension.md), retirer les identités déjà à 4 exemplaires.
+- **REWARD-203-01** : avant tirage des **trois propositions standard** [Q177](rewards-rarity-and-ascension.md), retirer les identités déjà à 4 exemplaires **entre deck actif et réserve** (Q207).
 - **REWARD-203-02** : si seulement 1 ou 2 cartes éligibles existent, les proposer sans remplir les places manquantes avec des offres invalides ; ne jamais présenter de choix impossible.
 - **REWARD-203-03** : la possibilité de **refuser les cartes contre des ressources** [Q178](rewards-rarity-and-ascension.md) reste applicable.
 - **REWARD-203-04** : revalider l'éligibilité lors de l'attribution transactionnelle ; pas de cinquième copie, y compris après reprise de sauvegarde.
@@ -85,7 +85,7 @@
 
 1. Identifier le contexte de tirage (tour, marchand, récompense standard), la version du catalogue et la graine déterministe de tentative.
 2. Appliquer les restrictions de contenu et d'exclusivité **avant** le tirage (en boutique, la tour détermine les exclusivités ; en récompense, respecter le pool configuré).
-3. Filtrer les identités `deckCopies(cardId) >= 4` sans compter les copies temporaires générées pendant les combats.
+3. Filtrer les identités `ownedRunCopies(cardId) = activeDeckCopies(cardId) + reserveCopies(cardId) >= 4` sans compter les copies temporaires générées pendant les combats.
 4. Tirer dans le pool restant selon les **poids configurables non encore fixés**. Une offre représente une unité. Aucun résultat caché n'est révélé hors des offres présentées.
 5. Pour les récompenses standard : proposer jusqu'à trois identités éligibles, ou si pool vide, accorder directement la compensation Q178 ; l'absence d'une troisième proposition ne crée pas une autre compensation automatique.
 6. Au commit, vérifier soldes, seuil de quatre, disponibilité du stock ou identité de l'offre, puis attribuer exactement une fois la copie et, si nouvelle, son déblocage permanent [Q194](towers-merchants-and-unlocks.md).
@@ -102,3 +102,7 @@
 ## Points restant ouverts
 
 Montants par rareté et ajustements prix ; taux de drop et tirage des exclusivités ; stock initial, nombre de marchands par tour, politique des offres identiques entre emplacements ; montant/formule de hausse du renouvellement ; ressources exactes de compensation Q178 ; éventuels outils de manipulation du RNG ; règles particulières de cartes acquises autrement que par draft/boutique ; limites spécifiques aux artefacts. **Ne pas ériger des illustrations chiffrées en exigences.**
+
+## Addendum normatif v2.2 — Q205–Q214
+Les mentions plus anciennes du seul « deck » comme compteur de copies sont **interprétées désormais comme deck actif + réserve** (Q207), sans changer la limite de quatre. Une carte transférée vers la réserve demeure possédée et ne réentre pas dans le pool marchand/récompense ; une copie créée uniquement en combat reste hors compteur. Voir [préparation du deck et réserve Q205–Q209](deck-reserve-and-capacity.md).
+Les cartes obtenues lors de recherches en pioche (Q211–Q214) sont des **instances déjà acquises**, déplacées entre zones de combat : elles ne créent pas une nouvelle copie de collection, ni un nouveau déblocage permanent. Voir [recherche en combat](../01-combat/deck-search-and-fatigue-v22.md).

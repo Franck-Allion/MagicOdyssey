@@ -1,4 +1,4 @@
-# Journal des décisions Q01–Q124
+# Journal des décisions Q01–Q224
 
 Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 est validée ; les règles non décidées restent explicitement ouvertes.
 
@@ -319,3 +319,37 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q204 | B | Pool de récompenses vide : compensation en ressources Q178 automatique, sans écran de choix ; EXP et monnaie Q179 préservées. | [Boutiques et limites de deck](03-progression/merchant-stock-and-deck-limits.md) |
 
 **Q205 ouverte :** prochaine décision de conception. Les quantités et pourcentages illustratifs ne sont pas adoptés.
+
+## Décisions validées Q205–Q214 — consolidation v2.2
+
+| Question | Choix | Règle validée | Module normatif |
+|---|---|---|---|
+| Q205 | Personnalisée | Retirer une carte du deck actif = transfert réversible vers la réserve d’ascension, pas destruction ni perte du déblocage permanent. | [Deck et réserve](03-progression/deck-reserve-and-capacity.md) |
+| Q206 | B | Réorganisation libre et gratuite du deck actif/réserve entre combats ; verrouillage pendant le combat. | [Deck et réserve](03-progression/deck-reserve-and-capacity.md) |
+| Q207 | A | Quatre copies identiques possédées **deck actif + réserve réunis**, toutes raretés ; filtres marchands et récompenses en tiennent compte. | [Deck et réserve](03-progression/deck-reserve-and-capacity.md) |
+| Q208 | Personnalisée | Minimum et maximum de deck évolutifs ; base initiale **40/40**, deck compact plus sensible à la fatigue ; grand deck soutenu par recherche. | [Deck et réserve](03-progression/deck-reserve-and-capacity.md) |
+| Q209 | C | Limites de deck modifiables par sphérier permanent et effets temporaires de run cumulables, dans bornes à équilibrer. | [Deck et réserve](03-progression/deck-reserve-and-capacity.md) |
+| Q210 | B | Fatigue progressive **1/2/3… PV perdus directement** sur pioches impossibles, par héros et combat ; **remplace montant fixe Q41**, sans recyclage Q43. | [Fatigue et recherche](01-combat/deck-search-and-fatigue-v22.md) |
+| Q211 | C | Recherches ciblées ou aléatoires selon le texte du sort, critères explicites, RNG déterministe. | [Fatigue et recherche](01-combat/deck-search-and-fatigue-v22.md) |
+| Q212 | C | Destination et mélange définis par l’effet ; aucune fatigue sur recherche sans résultat, autres instructions indépendantes préservées. | [Fatigue et recherche](01-combat/deck-search-and-fatigue-v22.md) |
+| Q213 | B | Recherche ciblée : seules instances éligibles inspectables, pas d’ordre de pioche ; recherche aléatoire sans sélecteur. | [Fatigue et recherche](01-combat/deck-search-and-fatigue-v22.md) |
+| Q214 | **A** | Chaque copie éligible affichée **séparément**, même strictement identique, sélection explicite d’une instance ; **aucun regroupement**. | [Fatigue et recherche](01-combat/deck-search-and-fatigue-v22.md) |
+
+**Q215 ouverte :** prochaine question à arbitrer ; ne pas supposer de règle définitive non validée.
+
+## Décisions validées Q215–Q224 — consolidation v2.3
+
+| Question | Choix | Règle validée | Module normatif |
+|---|---|---|---|
+| Q215 | D adaptée | 20 cartes de base + 2 boosters de 15 cartes débloquées ; 50 exemplaires initiaux pour deck standard 40 et réserve 10 ; pas de construction libre depuis la collection. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
+| Q216 | C | Composition automatique immédiatement jouable, avec changements manuels facultatifs. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
+| Q217 | A | Confirmer la taille de base 40/40 (Q208), avec capacité évolutive Q209. | [Deck et réserve](03-progression/deck-reserve-and-capacity.md) |
+| Q218 | B adaptée | Probabilités pondérées par rareté ; compétences du sphérier pouvant accorder des garanties par booster. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
+| Q219 | B | Garanties satisfaites si possible, sinon assouplies sans carte verrouillée ni cinquième copie ; mécanisme exact de secours structurel encore ouvert. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
+| Q220 | **B** | Ouverture **successive** des deux boosters, 15 cartes révélées d’un coup par booster, animations passables. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
+| Q221 | B | Affichage compact, couleurs de rareté et indices de synergie, inspection et filtres facultatifs, transferts rapides. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
+| Q222 | **B** | L'assistant privilégie **la spécialisation du sphérier**, autres critères secondaires, sans privilégier la rareté. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
+| Q223 | C | Toutes les cartes de base peuvent être placées en réserve et remplacées dans le deck actif. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
+| Q224 | **D** | Socle initial fixe de 20 cartes ; des compétences permanentes débloquent progressivement des remplacements par variantes spécialisées ou plus fortes. | [Préparation](03-progression/ascension-start-boosters-and-autobuild.md) |
+
+**Q225 ouverte.** N'inférer ni catalogue global libre ni quotas 10/10 de base, ni composition pondérée obligatoire, ni valeurs probabilistes fictives.

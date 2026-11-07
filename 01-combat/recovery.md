@@ -19,3 +19,6 @@ Main 7/7, sort « récupère un sort de défausse » : le sort ciblé est récup
 - Comportement exact du sort de récupération si la cible manque dès le lancement ; texte et ciblage des capacités avec plusieurs composantes.
 - Effets déclenchés par la même carte après retour à la défausse, politique anti-boucle des interactions répétées.
 - Carte récupérée alors que la main est temporairement réduite à zéro emplacement ; même principe, seuils à tester.
+
+## Référence croisée Q210–Q214
+La récupération depuis la défausse (Q53–Q54) n'est **pas** une recherche dans la pioche ni une pioche. La fatigue progressive (Q210) et la recherche dans la pioche ([Q211–Q214](deck-search-and-fatigue-v22.md)) n'altèrent pas les événements de récupération et de défausse définis ici.

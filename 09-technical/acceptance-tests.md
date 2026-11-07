@@ -36,8 +36,8 @@
 | TEST-022 | Q38 | Main 7/7 et deck 1, pioche 1 | Carte va en défausse et deck −1 ; pas de fatigue |
 | TEST-023 | Q39 | Héros débutant | Main maximum 7 |
 | TEST-024 | Q40 | Main A–G dans ordre d'arrivée, maximum passe de 7 à 5 | G puis F défaussées |
-| TEST-025 | Q41 | Deck vide, héros 2 PV, 2 tentatives | Perte directe 1 PV puis 1 PV ; défaite, bouclier ignoré |
-| TEST-026 | Q42 | Deck 1, piocher 3 | Pioche 1 ; résoudre effets ; fatigue 1 ; résoudre effets ; fatigue 1 |
+| TEST-025 | Q41/Q210 | Deck vide, héros 2 PV, 2 tentatives | Perte directe 1 PV puis 2 PV si le héros survit ; dans cet exemple défaite à la deuxième tentative, bouclier ignoré |
+| TEST-026 | Q42/Q210 | Deck 1, piocher 3 | Pioche 1 ; résoudre effets ; fatigue 1 PV ; résoudre effets ; fatigue 2 PV |
 | TEST-027 | Q43 | Deck vide, défausse non vide, tentative pioche | Aucune réintégration automatique ; fatigue |
 | TEST-028 | Q44 | Sort joué, créature détruite, carte défaussée | Même défausse, métadonnées de raison et origine distinctes |
 
@@ -675,3 +675,101 @@ Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-
 | T-204-04 | Aucun pool éligible | Pas d’extension cachée de pools ni de carte débloquée par la compensation. | [Q204](../03-progression/merchant-stock-and-deck-limits.md) |
 
 **Statut :** 40 scénarios nouveaux documentés et **non exécutés** sur un jeu. Les paramètres numériques restent à arbitrer.
+
+## Consolidation v2.2 — tests d’acceptation Q205–Q214
+
+> **40 scénarios nouveaux, spécifiés et NON EXÉCUTÉS.** Les tests ci-dessous s’ajoutent aux tests précédents. Ils respectent les prérequis ouverts, et emploient les valeurs initiales 40/40 validées en Q208.
+
+| ID | Cas | Résultat attendu | Référence |
+|---|---|---|---|
+| T-205-01 | Retrait réversible | Une copie acquise est déplacée du deck actif à la réserve, sans destruction ni perte de déblocage. | [Q205](../03-progression/deck-reserve-and-capacity.md) |
+| T-205-02 | Réintégration | La même instance peut revenir de réserve au deck actif sans nouvelle acquisition. | [Q205](../03-progression/deck-reserve-and-capacity.md) |
+| T-205-03 | Fin de run | Deck actif et réserve réinitialisés ; identité de carte reste déverrouillée pour le draft futur. | [Q205](../03-progression/deck-reserve-and-capacity.md) |
+| T-205-04 | Copies multiples | Transfert de deux copies conserve le total possédé et les identifiants des instances. | [Q205](../03-progression/deck-reserve-and-capacity.md) |
+| T-206-01 | Entre combats | Transfert gratuit sans marchand, sauvegarde et affichage de la répartition à jour. | [Q206](../03-progression/deck-reserve-and-capacity.md) |
+| T-206-02 | Combat démarré | Action manuelle de transfert refusée sans modification d’état. | [Q206](../03-progression/deck-reserve-and-capacity.md) |
+| T-206-03 | Sauvegarde/reprise | Deck et réserve reconstruits exactement après reprise pendant une ascension. | [Q206](../03-progression/deck-reserve-and-capacity.md) |
+| T-206-04 | Composition invalide avant combat | Préparation éditable, mais lancement de combat bloqué tant que taille hors bornes. | [Q206](../03-progression/deck-reserve-and-capacity.md) |
+| T-207-01 | Plafond réparti 2+2 | Deux copies actives et deux en réserve : achat d’une cinquième refusé. | [Q207](../03-progression/deck-reserve-and-capacity.md) |
+| T-207-02 | Déplacer en réserve | Déplacer 2 copies du deck à la réserve ne rend pas la carte éligible à un nouveau draft/achat. | [Q207](../03-progression/deck-reserve-and-capacity.md) |
+| T-207-03 | Quatre légendaires | Même plafond de quatre pour une identité légendaire, sans unique par rareté. | [Q207](../03-progression/deck-reserve-and-capacity.md) |
+| T-207-04 | Copy temporaire | Une copie créée exclusivement en combat ne change pas le compteur d’acquisition deck+réserve. | [Q207](../03-progression/deck-reserve-and-capacity.md) |
+| T-208-01 | Départ 40/40 | Un deck actif de 40 cartes respecte la taille initiale ; 39 et 41 ne peuvent commencer un combat sans bonus. | [Q208](../03-progression/deck-reserve-and-capacity.md) |
+| T-208-02 | Minimum abaissé | Minimum effectif à 35, deck 35 : lancement autorisé ; fatigue ordinaire inchangée. | [Q208](../03-progression/deck-reserve-and-capacity.md) |
+| T-208-03 | Maximum augmenté | Maximum effectif à 45, deck 45 : lancement autorisé, aucun transfert auto. | [Q208](../03-progression/deck-reserve-and-capacity.md) |
+| T-208-04 | Transfert hors bornes | Cartes non détruites ; deck invalide ne peut pas lancer de combat avant correction. | [Q208](../03-progression/deck-reserve-and-capacity.md) |
+| T-209-01 | Sphérier permanent | Réduction du minimum par nœud de sphérier persiste entre ascensions et apparaît dans les bornes. | [Q209](../03-progression/deck-reserve-and-capacity.md) |
+| T-209-02 | Bonus temporaire | Bonus de maximum en run s’ajoute au sphérier selon les bornes effectives. | [Q209](../03-progression/deck-reserve-and-capacity.md) |
+| T-209-03 | Expiration bonus | Une expiration rend le deck potentiellement invalide, sans supprimer silencieusement d’exemplaire. | [Q209](../03-progression/deck-reserve-and-capacity.md) |
+| T-209-04 | Nouvelle ascension | Bonus temporaire perdu, bonus du sphérier conservé ; capacité revalidée. | [Q209](../03-progression/deck-reserve-and-capacity.md) |
+| T-210-01 | Multi-pioche 2/5 | Deux cartes disponibles, cinq pioches : fatigue 1, 2, 3 PV après les deux pioches, réactions FIFO entre. | [Q210](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-210-02 | Pas de recyclage | Pioche vide avec cartes en défausse : fatigue, pas de remélange automatique Q43. | [Q210](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-210-03 | Réinsertion | Après fatigue 1, une carte est réinsérée puis piochée : prochaine pioche impossible inflige 2 PV. | [Q210](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-210-04 | Nature et interruption | Fatigue directe ignore bouclier et ne déclenche pas ON_DAMAGE_TAKEN ; mort interrompt les pioches suivantes. | [Q210](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-211-01 | Recherche ciblée | Choix manuel d’une instance valide selon critères type/élément/coût et zone pioche. | [Q211](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-211-02 | Recherche aléatoire | Une instance éligible sélectionnée via RNG déterministe sans ouverture de sélecteur. | [Q211](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-211-03 | Zones exclues | Copie dans main/défausse/réserve non trouvée par recherche limitée à la pioche. | [Q211](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-211-04 | Aucune carte éligible | Résolution sans résultat ni fatigue et sans sélection artificielle. | [Q211](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-212-01 | Destination main | Carte recherchée déplacée en main, sans événement de pioche sauf texte explicite ; limite main respectée. | [Q212](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-212-02 | Destination sommet | Carte ciblée placée au sommet, ordre relatif des autres copies conservé sans instruction de mélange. | [Q212](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-212-03 | Mélange demandé | Mélange RNG déterministe conforme à l’instruction et reproductible après replay. | [Q212](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-212-04 | Recherche manquée multi-effet | Aucune fatigue ; composante indépendante se résout ; pas de mélange si non ordonné. | [Q212](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-213-01 | Filtre visibilité | Recherche ciblée montre toutes et seulement les instances éligibles, inspectables. | [Q213](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-213-02 | Ordre masqué | Affichage des cartes éligibles ne permet pas de reconstruire l’ordre réel de la pioche. | [Q213](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-213-03 | Recherche aléatoire | Pas de fenêtre de choix, résultat exposé seulement selon règles de visibilité. | [Q213](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-213-04 | Journal confidentialité | Journal et historique ne révèlent ni cartes non éligibles ni ordre caché. | [Q213](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-214-01 | Trois copies identiques | Trois instances éligibles de même carte affichées dans trois entrées séparées, jamais ×3. | [Q214](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-214-02 | Choix instance | Le joueur clique une instance précise ; exactement cette instance est transférée. | [Q214](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-214-03 | Copies modifiées | Copies d’état différent restent séparées et inspectables, identités stables. | [Q214](../01-combat/deck-search-and-fatigue-v22.md) |
+| T-214-04 | Instance devenue invalide | Validation rejette la cible disparue sans sélectionner un autre exemplaire et sans RNG de départage. | [Q214](../01-combat/deck-search-and-fatigue-v22.md) |
+
+**Non-régression obligatoire :** remplacer dans la suite Q41 les assertions de « −1 PV à chaque pioche impossible » par `−1, −2, −3… PV` dans un même combat. Pour Q201–Q203, filtrer sur **deck actif + réserve** ; pour Q213, ne jamais fusionner les exemplaires identiques (Q214-A).
+
+## Tests de conformité Q215–Q224 — v2.3 (40 scénarios, **spécifiés et non exécutés**)
+
+| Test | Décision | Entrée | Résultat attendu | Source |
+|---|---|---|---|---|
+| T-215-01 | Allocation standard | Débuter ascension sans bonus de taille. | 20 cartes de base + deux boosters de 15, soit 50 instances ; 40 actives/10 réserve après constitution. | [Q215](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-215-02 | Collection non directement utilisable | Une carte est débloquée mais absente du socle et des deux boosters. | Impossible de l’ajouter directement au deck initial, malgré son déblocage. | [Q215](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-215-03 | Copies non permanentes | Achever une ascension, puis en commencer une nouvelle. | Les 50 instances de run ne persistent pas ; les déblocages permanents demeurent. | [Q215](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-215-04 | Bornes améliorées | Sphérier modifie le minimum et/ou maximum avant ascension. | Validation avec bornes effectives ; aucune répartition 40/10 inventée si elle est incompatible. | [Q215](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-216-01 | Proposition immédiate | Deux boosters ouverts ; déclencher l’assistant. | Proposition de deck/réserve légale sans choisir manuellement 40 cartes. | [Q216](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-216-02 | Ajustement facultatif | Modifier librement la proposition avant le combat. | Instances conservées et transfert gratuit ; taille vérifiée au démarrage. | [Q216](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-216-03 | Aucune inspection obligatoire | Joueur passe animations et n’ouvre aucun inspecteur. | Peut commencer dès que la composition automatique est légale. | [Q216](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-216-04 | Proposition invalide | Un état partiellement modifié ne satisfait pas minDeckSize. | Démarrage du combat bloqué, édition de préparation autorisée. | [Q216](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-217-01 | Bornes de base | Héros sans bonus de capacité. | minDeckSize=maxDeckSize=40, pas 30 ni 35. | [Q217](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-217-02 | Répartition standard | 20 + 15 + 15 exemplaires attribués. | 40 deck actif et 10 réserve après composition. | [Q217](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-217-03 | Réduction min sphérier | Compétence permanente abaisse minDeckSize. | Valeur effective appliquée, sans changer la base enregistrée 40. | [Q217](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-217-04 | Hausse max run | Bonus temporaire augmente maxDeckSize. | Max effectif augmenté, retour à la base après fin run ; aucune destruction de copies. | [Q217](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-218-01 | Pool de rareté | Génération de booster avec plusieurs raretés débloquées. | Tirage pondéré par rareté, et non sélection égale ou quota fixe. | [Q218](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-218-02 | Aucune garantie passive | Aucun nœud de garantie actif. | Pas de carte Rare+ systématiquement imposée. | [Q218](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-218-03 | Garantie par booster | Compétence garantissant Rare+ et ≥1 carte éligible Rare+. | Booster 1 et booster 2 contiennent chacun au moins une Rare+, si faisable selon les plafonds. | [Q218](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-218-04 | Rareté inaccessible | Garantie Rare+ mais aucun exemplaire Rare+ déverrouillé/éligible. | Aucune carte verrouillée créée ; renvoi vers assouplissement Q219. | [Q218](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-219-01 | Plafond trans-packs | Socle contient trois copies X ; booster 1 ajoute X. | Booster 2 ne peut plus contenir X ; total X=4. | [Q219](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-219-02 | Assouplir garantie | Garantie Rare+, seules cartes Peu communes éligibles. | Dégradation vers meilleure rareté éligible, sans ajout de carte verrouillée. | [Q219](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-219-03 | Pool structurellement impossible | Moins de capacité totale de 50 copies sous cap de quatre. | Détection explicite ; pas de boucle infinie ni violation ; secours **À DÉFINIR** avant implémentation complète. | [Q219](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-219-04 | RNG reproductible | Même seed, pool éligible, socle et état sphérier. | Mêmes exemplaires générés dans le même ordre, sauvegarde/reprise cohérente. | [Q219](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-220-01 | Ordre des boosters | Démarrer le flux de révélation. | Booster 1 avant booster 2, jamais simultanés. | [Q220](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-220-02 | Révélation groupée | Ouvrir un booster de 15 cartes. | Affichage des 15 cartes en une seule révélation, pas 15 clics obligatoires. | [Q220](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-220-03 | Passer animation | Passer l’animation du booster 1 et poursuivre. | Booster 2 est accessible ; résultats tirés invariants. | [Q220](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-220-04 | Rare feedback | Carte de rareté élevée tirée dans un booster. | Feedback visuel distinctif et lisible sans obligation de visionner l’animation. | [Q220](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-221-01 | Rareté lisible | Afficher les cartes des boosters. | Couleurs conformes Q181 pour les cinq niveaux ; pas de mythique. | [Q221](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-221-02 | Filtres optionnels | Filtrer type puis rareté puis synergie. | Visibilité filtrée ; sélection/possession des cartes inchangées. | [Q221](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-221-03 | Transfert rapide | Déplacer une carte de deck vers réserve puis inversement. | Conserve identité de copie ; plafonds et taille revalidés. | [Q221](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-221-04 | Libellé de découverte | Carte déjà débloquée présente dans booster. | Identifiée comme tirage du run, sans faux statut de nouveau déblocage permanent. | [Q221](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-222-01 | Spécialisation dominante | Héros feu ; boosters avec cartes feu et cartes hors élément. | Assistant privilégie feu parmi cartes disponibles selon compatibilité du sphérier. | [Q222](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-222-02 | Rareté non dominante | Légendaire hors synergie et commune utile au héros. | La légendaire n’est pas obligatoirement sélectionnée pour sa seule rareté. | [Q222](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-222-03 | Aucune synergie | Héros polyvalent sans orientation dominante. | Assistant utilise critères subsidiaires de cohérence, sans inventer de cartes. | [Q222](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-222-04 | Déterminisme | Même sphérier, pool d’instances et paramètres. | Même composition et même répartition deck/réserve. | [Q222](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-223-01 | Base non obligatoire | 30 cartes de boosters et 20 de base disponibles. | Un deck actif de 40 peut contenir moins de 20 cartes de base. | [Q223](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-223-02 | Remplacer base | Déplacer une base vers réserve et booster vers deck. | Transfert permis si composition finale valide. | [Q223](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-223-03 | Conserver identités | Une carte de base entre et sort du deck actif. | Même instance et même décompte global ; aucune duplication. | [Q223](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-223-04 | Limiter au pool | Une carte débloquée n’a pas été attribuée parmi les 50. | Elle ne peut pas être insérée manuellement avant le combat. | [Q223](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-224-01 | Socle fixe débutant | Aucun nœud de variante acquis. | 20 exemplaires de base selon liste fixe de départ. | [Q224](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-224-02 | Substitution autorisée | Nœud de variante du sphérier acquis avant ascension. | Remplacement(s) permis dans le socle attribué selon configuration du nœud. | [Q224](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-224-03 | Pas de catalogue libre | Nœud de variante acquis ; carte non autorisée par le nœud. | Le joueur ne peut pas l’utiliser comme remplacement arbitraire du socle. | [Q224](../03-progression/ascension-start-boosters-and-autobuild.md) |
+| T-224-04 | Socle et réserve distincts | Variante de base attribuée puis envoyée en réserve. | La réserve l’accepte (Q223) ; aucune base obligatoire dans le deck actif. | [Q224](../03-progression/ascension-start-boosters-and-autobuild.md) |
+
+**Non-régression v2.3** : Q207 plafond de **quatre copies** deck+réserve incluant le socle et les deux boosters ; Q208/Q217 min/max standard 40/40 ; Q209 compétences permanentes et temporaires ; Q211–Q214 recherches pendant combat indépendantes de la préparation ; Q218 garantie Rare+ **seulement si compétence active et éligibilité**, sinon assouplissement Q219 ; Q220 ouverture **séquentielle** ; Q222 spécialisation du héros **prioritaire**, et non optimisation multicritère dominante ; Q223 **aucune base imposée dans le deck** ; Q224 variantes du socle **uniquement via compétences permanentes autorisées**.
+
+**Blocage de conception ouvert** : le mécanisme exact Q219 de secours pour un pool incapable de fournir 50 copies légales ne peut pas avoir de test de résultat positif définitif avant arbitrage. `T-219-03` porte uniquement sur la détection et l'absence de violation.

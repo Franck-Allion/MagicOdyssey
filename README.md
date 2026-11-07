@@ -1,6 +1,6 @@
-# Tower TCG — Spécifications v2.1
+# Tower TCG — Spécifications v2.3
 
-**Version consolidée : décisions Q01 à Q204.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
+**Version consolidée : décisions Q01 à Q224.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
 
 **Nouveautés Q65–Q74 :** [attribution des dégâts, arrondis, vol de vie et événements des protections](01-combat/damage-attribution.md) ; [prévention létale](01-combat/damage-prevention.md) ; [file d'événements](01-combat/event-queue.md) ; [tests d'acceptation](09-technical/acceptance-tests.md) ; [journal de décisions](DECISIONS.md).
 
@@ -139,3 +139,21 @@ Le socle documentaire historique demeure disponible ; la consolidation **v1.7 co
 - Points clés : inventaires aléatoires et sorts propres aux tours ; tarifs basés sur cinq raretés ; monnaie temporaire ; renouvellements payants à coût croissant par marchand ; une offre = un exemplaire ; plafond de **quatre copies** pour toutes les raretés ; exclusion des cartes plafonnées des boutiques/récompenses ; si aucune carte n’est éligible, compensation Q178 automatique en plus de Q179.
 - [Décisions Q195–Q204](DECISIONS.md) ; [tests T-195-01 à T-204-04](09-technical/acceptance-tests.md) (40 tests **spécifiés et non exécutés**).
 - Aucune sixième rareté « Mythique » (Q181). Les coûts de renouvellement, taux de tirage et prix chiffrés restent ouverts. **Prochaine question Q205.**
+
+## Consolidation v2.2 — décisions Q205 à Q214
+- [Deck actif, réserve réversible, modifications hors combat, plafond quatre exemplaires sur toutes les copies possédées et capacités 40/40 évolutives](03-progression/deck-reserve-and-capacity.md) — Q205–Q209.
+- [Fatigue progressive 1/2/3… en remplacement de Q41 ; recherche ciblée/aléatoire, destination/mélange, visibilité, sélection individuelle des exemplaires](01-combat/deck-search-and-fatigue-v22.md) — Q210–Q214.
+- [Marchands Q195–Q204](03-progression/merchant-stock-and-deck-limits.md) : le filtre de plafond utilise maintenant la somme **deck actif + réserve** (Q207).
+- [Tests v2.2](09-technical/acceptance-tests.md) : 40 scénarios nouveaux T-205 à T-214, **non exécutés**.
+
+**Statut :** documentation consolidée jusqu'à **Q214**. Les propositions visuelles et chiffrées non explicitement validées restent ouvertes. Q215 sera la prochaine décision.
+
+## Consolidation v2.3 — décisions Q215–Q224 (2026-11-07)
+
+- **Source normative** : [préparation de l’ascension, boosters, composition automatique, évolutions du socle Q215–Q224](03-progression/ascension-start-boosters-and-autobuild.md).
+- Deck standard **40/40** (Q208/Q217), **20 cartes de base + 2 boosters de 15**, **40 actives/10 réserve** ; aucune construction libre à partir de toute la collection permanente (Q215).
+- Assistant automatique sans préparation obligatoire (Q216), classement d'abord par **spécialisation du sphérier** (Q222), cartes de base **librement remplaçables dans le deck actif** (Q223).
+- Boosters : rareté pondérée et garanties de compétences possibles (Q218), dégradation progressive sans contourner les cartes débloquées ni le maximum de quatre exemplaires (Q219), **ouverture séquentielle** et passable (Q220), présentation compacte et filtres facultatifs (Q221).
+- Socle de 20 cartes **initialement fixe**, dont certaines variantes peuvent être autorisées via des nœuds permanents du sphérier (Q224 D).
+- [Journal Q215–Q224](DECISIONS.md) ; [40 nouveaux tests d'acceptation v2.3](09-technical/acceptance-tests.md), **spécifiés mais non exécutés**.
+- **Ouverts** : secours concret lorsque 50 exemplaires ne sont pas générables sous le plafond de quatre ; probabilité chiffrée, compétences et variantes exactes, adaptation 40/10 aux bornes évolutives Q209. Prochaine question **Q225**.

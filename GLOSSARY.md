@@ -68,3 +68,19 @@
 - **Pool éligible** : cartes autorisées pour une récompense ou un commerce après restrictions de tour, rareté et plafond de copies, **avant tirage**.
 - **Renouvellement** : opération payante tirant un nouveau stock pour une instance de marchand, avec compteur individuel et coût croissant.
 - **Compensation automatique** : ressources de Q178 accordées quand le pool de récompense de carte est vide, sans UI de sélection.
+
+## Termes ajoutés en v2.2
+- **Deck actif (hors combat)** : ensemble d’exemplaires acquis qui composera la pioche de départ du prochain combat. Doit respecter ses bornes de taille pour lancer le combat (base 40/40, Q208).
+- **Réserve d'ascension** : cartes acquises mais momentanément non incluses dans le deck actif ; transfert libre et gratuit hors combat (Q205–Q206).
+- **Copies possédées de run** : somme des copies de la même carte dans le deck actif et la réserve, plafonnée à quatre (Q207).
+- **Recherche ciblée** : effet faisant sélectionner au joueur une instance éligible de sa pioche. Chaque exemplaire affiché séparément, sans dévoiler l’ordre de la pioche (Q211–Q214).
+- **Recherche aléatoire** : sélection moteur via RNG déterministe d’une instance éligible, sans choix UI (Q211).
+- **Fatigue progressive** : pertes directes de PV de rang 1, puis 2, puis 3, etc. lors de pioches impossibles pendant un même combat ; remplace la valeur fixe Q41 (Q210).
+
+## Termes ajoutés en v2.3
+
+- **Socle de base** : 20 exemplaires de départ attribués au héros, fixes initialement, dont certaines variantes deviennent accessibles par le sphérier permanent (Q224). Ces exemplaires ne sont pas obligatoires dans le deck actif (Q223).
+- **Booster de départ** : paquet de 15 exemplaires de cartes définitivement débloquées, générés avant l'ascension selon rareté pondérée (Q218–Q219). Deux boosters successifs (Q220).
+- **Garantie de rareté** : effet de compétence permanente pouvant imposer une rareté minimale par booster, assouplie si aucune carte éligible ne satisfait la condition (Q218–Q219).
+- **Proposition automatique du deck** : sélection de copies attribuées favorisant en priorité la spécialisation du sphérier et modifiable librement (Q216/Q222/Q223).
+- **Pool de préparation** : somme des 20 copies de base et 30 copies issues des boosters ; distinct de la collection permanente de cartes débloquées (Q215).

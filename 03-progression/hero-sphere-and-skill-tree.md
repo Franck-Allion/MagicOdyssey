@@ -36,3 +36,11 @@ Le deck constitué et les artefacts ramassés pendant l’ascension sont tempora
 ## Ouvert / non validé
 
 Seuils d’EXP par niveau ; nombre de points par niveau ; coûts chiffrés ; contenu et topologie réels ; caps de statistiques ; nombre et rôles de branches ; répartition initiale. Les exemples de +2 PV / bonus feu sont des **types d’améliorations**, pas des valeurs d’équilibrage imposées.
+
+## Extension v2.3 — compétences influençant la préparation
+
+- **Q209** : nœuds permanents peuvent ajuster les bornes de taille du deck (source : [deck et réserve](deck-reserve-and-capacity.md)).
+- **Q218 B adaptée** : certains nœuds peuvent augmenter les probabilités des boosters ou garantir une rareté minimale **par booster** (exemple ≥1 Rare+ lorsque éligible), sous [règles de secours Q219](ascension-start-boosters-and-autobuild.md). Nœuds précis non définis.
+- **Q222 B** : les compétences réellement acquises orientent prioritairement la composition automatique de deck ; une spécialisation feu favorise les cartes en synergie lorsqu'elles sont présentes, sans en créer.
+- **Q224 D** : des nœuds permanents peuvent autoriser des substitutions d'instances dans le **socle fixe de 20 cartes**, par variantes prédéfinies. Il s’agit d’une progression du socle, différente du retrait libre de cartes de base vers la réserve (Q223). Conditions exactes ouvertes.
+- Le reset gratuit **entre ascensions** Q189 permet de changer les effets de préparation **pour une nouvelle tentative**, pas rétroactivement au milieu d'une ascension en cours.

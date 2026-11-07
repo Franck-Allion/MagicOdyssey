@@ -25,3 +25,7 @@ Q45 : bannissement et zone distincte ; sorts joués, créatures mortes, résurre
 - **VALIDÉ** : récupération depuis la défausse avec main pleine → retour immédiat à la défausse, sans fatigue : [recovery](recovery.md).
 - **VALIDÉ** : les causes d'arrivée en défausse produisent des événements distincts, et récupération débordante déclenche récupération puis défausse : [zone-events](zone-events.md).
 - Correction de statut : les anciennes mentions de Q45 « ouvert » ci-dessus sont **remplacées** par le document [banishment](banishment.md). Les dispositions détaillées de résurrection sont désormais [VALIDÉES Q46–Q52](resurrection.md).
+
+## Référence croisée v2.2 — fatigue et recherche
+- La perte initialement fixe de Q41 est **remplacée par le compteur progressif Q210** ([pioche et fatigue](draw-and-fatigue.md)) ; l’absence de recyclage automatique Q43 reste inchangée.
+- Recherche en pioche Q211–Q214 : [contrat de recherche](deck-search-and-fatigue-v22.md). Rechercher et déplacer une carte directement vers la main ne constitue pas une pioche, sauf instruction expresse ; les règles de main pleine doivent néanmoins être respectées.
