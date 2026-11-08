@@ -166,3 +166,9 @@ Le socle documentaire historique demeure disponible ; la consolidation **v1.7 co
 - Q231 catalogue hybride neutre/élémentaire/avancé ; Q232 quotas tactiques souples ; Q233 Heroic Fantasy, peuples et archétypes transversaux ; Q234 **quatre peuples représentés au MVP**, extensibles (Gobelins, Morts-vivants, etc.).
 - [Journal Q225–Q234](DECISIONS.md) ; [40 nouveaux scénarios d'acceptation documentés](09-technical/acceptance-tests.md), **non exécutés**.
 - **Ouvert :** choix nominatif des quatre peuples, nombre d'éléments et d'archétypes, seuils/probabilités et critères précis des variantes, constitution du catalogue fondamental garantissant toute configuration légale. Prochaine décision : **Q235**.
+
+## Consolidation v2.5 — Q235–Q244 (2026-11-08)
+
+- [Peuples, géométrie et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) : Humains, Elfes, Nains, Dragons ; synergies mixtes ; voisinage orthogonal ; recalcul et morts secondaires.
+- **Audit des doublons** : Q242 renvoie à Q13–Q14, Q111–Q124 ; Q243–Q244 **réaffirment** Q161–Q164 ; ne pas implémenter des budgets ni des politiques de cycle concurrents.
+- [Tests Q235–Q244](09-technical/acceptance-tests.md) : 40 scénarios spécifiés, non exécutés. Prochaine question : Q245.

@@ -370,3 +370,20 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q234 | Personnalisée | **Quatre peuples** représentés au MVP ; moteur extensible pour Gobelins, Morts-vivants et autres. Les quatre peuples exacts restent ouverts. | [Catalogue MVP](03-progression/mvp-card-catalog-and-tribes.md) |
 
 **Q235 ouverte.** Prochain arbitrage : nommer les quatre peuples MVP (ou arbitrer leur sélection), sans confondre peuples et archétypes/éléments.
+
+## Décisions Q235–Q244 — consolidation v2.5 (sans doublons moteur)
+
+| Question | Choix | Décision / référence préexistante | Module |
+|---|---|---|---|
+| Q235 | A | Humains, Elfes, Nains et Dragons retenus pour le MVP ; taxonomie extensible, pas nécessairement des peuples de héros. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+| Q236 | C | Identités mécaniques fortes, synergies tribales ouvertes ; decks mixtes et combinaisons éléments/positions. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+| Q237 | C | Sphérier fondé sur mécaniques transversales avec nœuds complémentaires pouvant profiter à certains peuples ; pas de branches tribales obligatoires. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+| Q238 | C | Synergies de peuples globales et positionnelles : rangées, colonnes, voisinage et formations selon le texte. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+| Q239 | C | Adjacent = partage un côté (orthogonal), hors diagonales sauf indication explicite ; autres zones autorisées. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+| Q240 | C | Effets continus recalculés après changements pertinents, aux points de cohérence atomiques ; pas de triggers fabriqués par les itérations. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+| Q241 | C | Conserver les blessures/dégâts subis quand PV max change ; détecter les morts secondaires en lots et stabiliser. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+| Q242 | C | Stabilisation par lots, morts simultanées, puis réactions FIFO ; cycles et budgets causaux existants restent normatifs. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+| Q243 | C | Couches et graphe de dépendances pour effets continus ; confirme Q161 et Q164, sans inventer de nouveau solveur. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+| Q244 | B (confirmation) | Neutralisation minimale et canonique des dépendances cycliques contradictoires ; règle DÉJÀ validée Q162–Q163. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
+
+**Q242–Q244 :** confirmations et intégration ciblée, sans nouvelle file FIFO, sans nouveau budget causal, sans remplacement du solveur Q161–Q164. **Q245 ouverte.**

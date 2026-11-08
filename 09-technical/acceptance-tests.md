@@ -823,3 +823,52 @@ Références : [spécification UI/VFX Q135–Q144](../02-art-direction/tooltips-
 | T-234-04 | Aucun archétype forcé | Un peuple n’a que quelques cartes dans le MVP | L’existence du peuple ne requiert pas un deck tribal complet. |
 
 **Non-régression :** Q207 limite de quatre copies sur deck+réserve, **par famille** si variantes Q227 ; Q208/Q217 deck standard 40/40 ; Q215 20 copies de base et 30 de boosters ; Q218–Q219 raretés et garanties conditionnelles ; Q220 boosters séquentiels ; Q222 proposition spécialisée ; Q223 cartes du socle non obligatoires dans deck ; Q224–Q229 variantes **du seul socle**, boosters sans variantes du sphérier. Le budget Q230 **≈170 définitions** ne modifie pas les 50 copies de préparation.
+
+## Tests v2.5 — Q235–Q244 (spécifiés, non exécutés)
+
+Les tests ci-dessous réutilisent les invariants Q13–Q14, Q26–Q27, Q111–Q124 et Q159–Q164. Ils ne créent pas un nouveau solveur concurrent.
+
+| ID | Scénario | Attendu |
+|---|---|---|
+| T-235-01 | Indexation des quatre peuples MVP | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-235-02 | Charge d’un type Gobelin en extension | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-235-03 | Typage Humain distinct de classe de héros | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-235-04 | Sauvegarde avec nouveau type extensible | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-236-01 | Effet ciblant un Nain allié | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-236-02 | Deck mixte Humains-Elfes fonctionne | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-236-03 | Combinaison tribale et élémentaire | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-236-04 | Carte hors tribu reste jouable | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-237-01 | Nœud générique armure fonctionne pour Nain et Humain | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-237-02 | Bonus tribal ponctuel se combine à élément | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-237-03 | Pas de branche peuple obligatoire | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-237-04 | Réinitialisation hors ascension recalcule bonus | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-238-01 | Aura globale affecte cibles éligibles | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-238-02 | Bonus de rangée seulement pour bonnes cases | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-238-03 | Critère tribu filtre zone géométrique | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-238-04 | Inspection révèle les unités ciblées | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-239-01 | Voisins orthogonaux sur deux rangées | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-239-02 | Diagonale exclue de adjacent | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-239-03 | Carte mentionnant diagonale l’inclut | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-239-04 | Effet colonne et bord de plateau corrects | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-240-01 | Déplacement brise une aura | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-240-02 | Invocation active une aura | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-240-03 | Transformation de peuple retire un bonus | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-240-04 | Aucune activation FIFO par simple itération | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-241-01 | Perte PV max conserve blessures | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-241-02 | Deux unités létales identifiées dans même lot | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-241-03 | Destruction secondaire réévalue aura | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-241-04 | Perte de PV max ne déclenche pas ON_DAMAGE_TAKEN | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-242-01 | Morts simultanées en ordre canonique Q13/Q27 | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-242-02 | Réactions FIFO conservées après stabilisation | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-242-03 | Boucle de triggers bloquée par Q111/Q112 | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-242-04 | Budget causal Q113–Q120 bloque seulement descendance non admise | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-243-01 | Graphe acyclique donne résultat canonique Q161 | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-243-02 | Auras indépendantes recalculées localement | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-243-03 | Même état donne même replay Q164 | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-243-04 | Pas de consommation budget FIFO durant solveur aura Q162 | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-244-01 | Cycle sans point fixe neutralisé minimalement Q162 | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-244-02 | Tie-break sémantique canonique Q163 | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-244-03 | Effet indépendant reste actif | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+| T-244-04 | Recalcul sur changement externe sans boucle infinie | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
+
+**État des tests : 40 cas spécifiés, non exécutés.** Q244 est testé comme régression de Q162–Q163.

@@ -73,3 +73,7 @@ Voir [capacités de tour et protection anti-boucles](turn-control-and-loop-safet
 ## Consolidation v2.2 — Q210–Q214
 - [Fatigue croissante remplaçant la valeur fixe Q41 et recherches de cartes Q211–Q214](deck-search-and-fatigue-v22.md).
 - [Pioche Q36–Q42](draw-and-fatigue.md), [absence de recyclage Q43](hand-and-discard.md), [récupération de défausse Q53–Q54](recovery.md) et [deck actif/réserve Q205–Q209](../03-progression/deck-reserve-and-capacity.md).
+
+## v2.5 — Géométrie, peuples et effets continus
+
+- [Peuples et stabilisation Q235–Q244](tribes-positioning-and-stabilization-v25.md), en complément des règles préexistantes (FIFO, budgets causaux et auras Q159–Q164).
