@@ -1,6 +1,6 @@
-# Tower TCG — Spécifications v2.3
+# Tower TCG — Spécifications v2.7
 
-**Version consolidée : décisions Q01 à Q224.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
+**Version consolidée : décisions Q01 à Q264.** Le corpus est conçu pour être lu de façon modulaire par un agent d'implémentation ; les documents liés demeurent les sources de vérité pour chaque système.
 
 **Nouveautés Q65–Q74 :** [attribution des dégâts, arrondis, vol de vie et événements des protections](01-combat/damage-attribution.md) ; [prévention létale](01-combat/damage-prevention.md) ; [file d'événements](01-combat/event-queue.md) ; [tests d'acceptation](09-technical/acceptance-tests.md) ; [journal de décisions](DECISIONS.md).
 
@@ -172,3 +172,23 @@ Le socle documentaire historique demeure disponible ; la consolidation **v1.7 co
 - [Peuples, géométrie et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) : Humains, Elfes, Nains, Dragons ; synergies mixtes ; voisinage orthogonal ; recalcul et morts secondaires.
 - **Audit des doublons** : Q242 renvoie à Q13–Q14, Q111–Q124 ; Q243–Q244 **réaffirment** Q161–Q164 ; ne pas implémenter des budgets ni des politiques de cycle concurrents.
 - [Tests Q235–Q244](09-technical/acceptance-tests.md) : 40 scénarios spécifiés, non exécutés. Prochaine question : Q245.
+
+## Consolidation v2.6 — Q245–Q254 (2026-11-10)
+
+- [Source normative Q245–Q254 : taxonomie, composition et équipements](01-combat/equipment-and-card-classifications-v26.md).
+- Q245–Q248 : peuple/faction/types secondaires ; socle de 20 exemplaires neutre et spécialisation par les deux boosters ; conditions du deck actif figées avant la pioche initiale à chaque combat ; relations de factions narratives sans malus automatiques.
+- Q249–Q253 : équipements de combat (différents des artefacts), **0–2 emplacements par créature** (au plus un Arme, un Protection ; Q253 corrige Q250), restriction explicite par carte, défausse par défaut après départ ou remplacement du porteur.
+- Q254 : **pas de durabilité universelle**, mais charges et effet à épuisement propres aux cartes concernées.
+- [Décisions](DECISIONS.md) et [40 tests Q245–Q254](09-technical/acceptance-tests.md), spécifiés et non exécutés.
+- Les règles moteur Q13–Q14, Q111–Q124, Q159–Q164, Q240–Q244 demeurent normatives ; pas de nouveau moteur de boucle ou d’aura. Prochaine question : **Q255**.
+
+## Consolidation v2.7 — Q255–Q264 (2026-11-10)
+
+- **Source normative :** [Catalogue indépendant et synergies Q255–Q264](03-progression/independent-card-catalog-and-synergies-v27.md), à lire avec [règles d'équipements Q245–Q254](01-combat/equipment-and-card-classifications-v26.md).
+- **Q255 :** allié par défaut, équipement sur ennemi seulement si texte explicite ; propriétaire et porteur distincts, restrictions et départ inchangés.
+- **Q256–Q258 :** équipements transversaux, pas d'archétype imposé ; **100 cartes indépendantes = 50 créatures + 30 sorts + 20 équipements** ; cible 10 armes/10 protections.
+- **Q259–Q260 :** parmi 50 créatures, cibles souples **15 Humains / 14 Elfes / 13 Nains / 8 Dragons** ; environ **50–60 %** de profils en adéquation avec l'identité dominante de chaque peuple.
+- **Q261–Q263 :** parmi ces 50 créatures, **6–10 passerelles**, **13–18 hybrides**, **5–8 évolutives** ; **étiquettes éditoriales recouvrables**, pas de cartes supplémentaires ni quotas de boosters.
+- **Q264 :** **8–12 cartes indépendantes** présentant une contrepartie explicite ; réparties entre les 100 définitions, sans coût universel supplémentaire.
+- [Journal de décisions](DECISIONS.md) ; [40 tests d'acceptation v2.7](09-technical/acceptance-tests.md), **décrits mais non exécutés**. Les règles moteur précédentes ne sont pas redéfinies.
+- **Q265 ouverte** : prochaine dimension de gameplay à arbitrer.

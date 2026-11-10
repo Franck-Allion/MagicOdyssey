@@ -1,4 +1,4 @@
-# Journal des décisions Q01–Q234
+# Journal des décisions Q01–Q254
 
 Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 est validée ; les règles non décidées restent explicitement ouvertes.
 
@@ -387,3 +387,39 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q244 | B (confirmation) | Neutralisation minimale et canonique des dépendances cycliques contradictoires ; règle DÉJÀ validée Q162–Q163. | [Peuples et stabilisation](01-combat/tribes-positioning-and-stabilization-v25.md) |
 
 **Q242–Q244 :** confirmations et intégration ciblée, sans nouvelle file FIFO, sans nouveau budget causal, sans remplacement du solveur Q161–Q164. **Q245 ouverte.**
+
+## Décisions validées Q245–Q254 — consolidation v2.6
+
+| Question | Choix | Décision | Source normative |
+|---|---|---|---|
+| Q245 | **C** | Taxonomie peuple / faction / types secondaires : métadonnées distinctes, non obligatoires sauf origine pertinente, multiples types, inspectables et extensibles. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+| Q246 | **C adaptée** | Deck libre entre peuples/factions/types ; effets conditionnels de composition sans illégalité ; socle neutre de 20 copies, spécialisation émergente des deux boosters aléatoires. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+| Q247 | **B** | Conditions de composition évaluées avant la main initiale de chaque combat, sur le deck actif, figées durant ce combat. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+| Q248 | **B** | Alliances/rivalités narratives ; aucune règle de bonus/malus automatique, seuls effets explicites des cartes. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+| Q249 | **B** | Cartes Équipement attachables aux créatures, distinctes des artefacts d’ascension, sans case créature. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+| Q250 | **B adaptée par Q253** | Une créature a au maximum une case Arme et une case Protection, et peut posséder 0, 1 ou 2 emplacements au total. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+| Q251 | **B** | Départ du porteur : détacher chaque équipement, puis défausse du propriétaire par défaut, exceptions explicites. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+| Q252 | **B** | Emplacement occupé : remplacement autorisé ; ancien objet détaché et envoyé en défausse, sauf effet explicite. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+| Q253 | **C adaptée** | Équipements utilisables par défaut si la créature possède la case adéquate ; restrictions de porteur explicites par carte ; certaines créatures (ex. Dragon) ont 0 emplacement. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+| Q254 | **C** | Aucune durabilité universelle ; cartes spécifiques avec charges, consommation et conséquence à zéro explicitement définies ; compteur seulement si pertinent. | [Classification et équipements](01-combat/equipment-and-card-classifications-v26.md) |
+
+**Corrections rétroactives** : Q250=B est précisé par Q253 : **0 à 2 emplacements par créature**, pas deux systématiques. Q246 précise Q215/Q222/Q224 : **socle neutre**, spécialisation émerge des boosters tirés aléatoirement ; sphérier favorise les synergies présentes, sans imposer un archétype ni créer des cartes. Artefacts Q182–Q183 distincts des équipements Q249.
+
+**Q255 ouverte** : nouvelle décision à choisir.
+
+## Décisions validées Q255–Q264 — consolidation v2.7
+
+| Question | Choix | Décision | Source normative |
+|---|---|---|---|
+| Q255 | **B** | Alliés par défaut ; porteur ennemi autorisé ou imposé par texte explicite ; contraintes d’emplacement, compatibilité, propriété et défausse Q250–Q253 demeurent. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+| Q256 | **C** | Synergies d’équipement transversales ; aucun archétype imposé ; spécialisation issue des cartes réellement tirées. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+| Q257 | **B** | **20 équipements** parmi 100 indépendantes, cible indicative **10 Armes / 10 Protections**. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+| Q258 | **B** | **50 créatures, 30 sorts et 20 équipements** = exactement 100 définitions indépendantes ; aucun quota équivalent dans les boosters. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+| Q259 | **C** | Répartition cible souple des 50 créatures : **15 Humains / 14 Elfes / 13 Nains / 8 Dragons** ; la rareté de booster est indépendante du peuple. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+| Q260 | **C** | Identité dominante par peuple (~50–60 % de leurs créatures), rôles alternatifs réellement représentés ; pas de restrictions implicites de peuple. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+| Q261 | **B** | **6 à 10 créatures passerelles** entre peuples, dans les 50 et avec utilité hors synergie optimale. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+| Q262 | **B** | **13 à 18 créatures hybrides** (~25–35 %) à au moins deux rôles significatifs, pouvant aussi être passerelles. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+| Q263 | **B** | **5 à 8 créatures évolutives** pendant le combat, sans progression permanente implicite ; mécanismes existants. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+| Q264 | **B** | **8 à 12 cartes à contrepartie parmi les 100 indépendantes** ; risque/récompense explicite sur créatures, sorts ou équipements. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
+
+**Q265 ouverte** : nouvelle section de conception ; aucune réponse anticipée. **Attention aux décomptes** : passerelle, hybride et évolutive sont des caractéristiques possiblement cumulées ; elles ne s'ajoutent jamais aux 50 créatures. Les cartes à contrepartie se répartissent parmi les 100.

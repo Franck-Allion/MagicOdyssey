@@ -50,3 +50,7 @@ Avant d’implémenter boutiques, tirage, achat ou récompense de carte, lire [b
 
 ## Règles normatives v2.2 — Q205–Q214
 Pour tout transfert entre deck actif et réserve, taille évolutive, recherche dans la pioche ou fatigue : lire [deck et réserve Q205–Q209](03-progression/deck-reserve-and-capacity.md) et [recherches/fatigue Q210–Q214](01-combat/deck-search-and-fatigue-v22.md). **Attention :** Q210 **remplace** les dégâts fixes de fatigue Q41 par 1,2,3… PV perdus directement ; Q207 impose quatre copies **deck+réserve** ; Q214-A impose l’affichage de **chaque exemplaire séparément**, même identique (contrairement à la suggestion non retenue de regroupement en Q213). Respecter les invariants RNG/FIFO et les tests [T-205 à T-214](09-technical/acceptance-tests.md).
+
+## Consolidation v2.7
+
+Pour la conception ou validation des 100 cartes indépendantes, lire [module catalogue Q255–Q264](03-progression/independent-card-catalog-and-synergies-v27.md) et [tests T-255–T-264](09-technical/acceptance-tests.md). **Ne pas interpréter les sous-populations passerelles/hybrides/évolutives comme des cartes additionnelles ; ne pas transformer les quotas éditoriaux de conception en quotas de boosters.**

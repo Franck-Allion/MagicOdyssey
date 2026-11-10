@@ -872,3 +872,101 @@ Les tests ci-dessous réutilisent les invariants Q13–Q14, Q26–Q27, Q111–Q1
 | T-244-04 | Recalcul sur changement externe sans boucle infinie | Résultat déterministe, sans violer les règles normatives antérieures ; assertion à implémenter. |
 
 **État des tests : 40 cas spécifiés, non exécutés.** Q244 est testé comme régression de Q162–Q163.
+
+## Tests v2.6 — Q245–Q254 (spécifiés, non exécutés)
+
+Ces scénarios respectent les systèmes normatifs de FIFO, stabilisation, changements de zone, budgets causaux et sauvegardes existants.
+
+| ID | Scénario | Mise en situation | Résultat attendu |
+|---|---|---|---|
+| T-245-01 | Peuple et faction indépendants | Créer un Humain de deux factions différentes | Même peuple, factions différentes ; filtres exacts indépendants. |
+| T-245-02 | Types secondaires multiples | Une créature Mage et Guerrier | Les deux filtres de type la reconnaissent. |
+| T-245-03 | Faction facultative | Créature sans faction | Validation, inspection et capacités ne requièrent aucune faction. |
+| T-245-04 | Extension sans migration moteur | Ajouter un peuple Gobelin | Ciblage et sauvegarde acceptent le nouvel identifiant. |
+| T-246-01 | Deck factions rivales | Mettre deux factions opposées dans le même deck | Deck légal si toutes les autres limites sont respectées. |
+| T-246-02 | Bonus conditionnel insuffisant | Seulement 5 Nains pour seuil fictif de 8 | Carte jouable, bonus conditionnel inactif. |
+| T-246-03 | Pool booster sans élément spécialisé | Sphérier feu, boosters sans cartes feu | Composition auto légale sans générer de carte feu. |
+| T-246-04 | Socle neutre | Initialiser 20 cartes fondamentales | Aucun archétype imposé par la composition du socle. |
+| T-247-01 | Instant avant main initiale | Deck avec 8 Nains puis distribuer 6 cartes | Condition de composition reste vraie après distribution. |
+| T-247-02 | Réserve exclue | 7 Nains deck actif et 2 en réserve | Seuls les 7 du deck actif comptent. |
+| T-247-03 | Deck change entre combats | Passer 1 Nain de réserve au deck | Condition réévaluée au combat suivant. |
+| T-247-04 | Défausse durant combat | 8 Nains initialement, 4 défaussés | Condition reste figée ; snapshot replay identique. |
+| T-248-01 | Rivalité seule | Deux factions rivales sans capacité spécifique | Aucun modificateur implicite. |
+| T-248-02 | Effet contre faction | Carte ciblant faction ennemie explicitement | Bonus seulement selon texte de carte. |
+| T-248-03 | Allié narratif sans effet | Deux factions alliées sans capacités | Aucun bonus automatique. |
+| T-248-04 | Nouvelle faction | Charger une faction d’extension | Aucune table de rivalités obligatoire. |
+| T-249-01 | Équipement vs artefact | Équiper une épée pendant une ascension | Aucun emplacement d’artefact consommé. |
+| T-249-02 | Case plateau | Attacher un bouclier à une unité | Aucune case de créature occupée. |
+| T-249-03 | Bonus standard | Équipement +2 attaque | Le calcul des statistiques existant l’intègre. |
+| T-249-04 | Instance distincte | Deux objets identiques dans deux zones | Identités d’instance et snapshots distincts. |
+| T-250-01 | Deux catégories | Un slot Arme et un Protection | Une arme et un bouclier coexistent. |
+| T-250-02 | Deux armes | Créature avec Arme déjà occupé | Ne peut porter simultanément deux armes ; remplacement Q252. |
+| T-250-03 | Catégorie Protection utilitaire | Équiper une amulette accordant pioche | Admissible dans Protection malgré effet non défensif. |
+| T-250-04 | Pas de troisième slot | Créature avec deux équipements | Pas d’accessoire supplémentaire indépendant. |
+| T-251-01 | Mort du porteur | Créature équipée détruite | Chaque objet est détaché et défaussé au bon propriétaire. |
+| T-251-02 | Retour en main | Porteur équipé renvoyé en main | Équipements en défausse ; ne suivent pas le porteur. |
+| T-251-03 | Bannissement | Porteur équipé banni | Équipements en défausse par défaut. |
+| T-251-04 | Exception retour objet | Carte équipement indique retour en main | La destination explicite prime sur défaut. |
+| T-252-01 | Remplacer arme | Épée remplace hache | Hache en défausse, épée en slot Arme. |
+| T-252-02 | Remplacer protection | Anneau remplace bouclier | Bouclier en défausse, anneau en slot Protection. |
+| T-252-03 | Refus restriction | Nouvelle arme non compatible avec créature | Attachement invalide ; ancienne arme conservée. |
+| T-252-04 | Retrait bonus PV maximum | Ancienne protection accorde +3 PV max | Stabilisation Q240–Q244, aucun moteur parallèle. |
+| T-253-01 | Créature sans slot | Dragon à zéro emplacement | Aucun équipement attachable. |
+| T-253-02 | Créature un seul slot | Elfe avec Arme uniquement | Arme permise ; Protection refusée. |
+| T-253-03 | Restrictions explicites | Épée réservée aux Guerriers | Mage sans type Guerrier refusé malgré slot Arme. |
+| T-253-04 | Bonus conditionnel | Bouclier universel +1 si Nain | Autres peuples peuvent porter sans bonus nain. |
+| T-254-01 | Sans durabilité | Équipement ordinaire après dix activations de combat | Pas d’usure ni destruction implicite. |
+| T-254-02 | Charges consommées | Objet à 3 charges effectue une activation coûtant 1 | Instance passe à 2 charges, journal et replay cohérents. |
+| T-254-03 | Zéro charges sans destruction | Carte désactive seulement une capacité à zéro | Carte reste équipée, capacité indisponible. |
+| T-254-04 | Zéro charges avec défausse | Carte stipule défausse à zéro | Détachement et défausse ordinaires, stabilisation conforme. |
+
+**État : 40 nouveaux tests d’acceptation spécifiés ; exécution non réalisée.** Non-régression obligatoire Q183 artefacts, Q207/Q227 quatre copies par famille, Q215/Q246 pool neutre + boosters, Q250/Q253 zéro à deux slots, Q251/Q252 transferts, Q254 charges sans durabilité globale.
+
+## Tests v2.7 — Q255–Q264 (spécifiés, non exécutés)
+
+Les tests suivants couvrent les décisions nouvelles de ciblage d’équipements et les **invariants de contenu du catalogue**. Ils ne réimplémentent pas la FIFO, les durées, la stabilisation ou les transferts de zone des versions antérieures. Les scénarios à décomptes indicatifs sont des contrôles **éditoriaux de conception**, pas des assertions bloquantes du moteur ou du générateur de boosters.
+
+| ID | Scénario | Mise en situation | Résultat attendu |
+|---|---|---|---|
+| T-255-01 | Cible alliée par défaut | Une épée sans texte de ciblage spécial ; créature ennemie compatible | Cible ennemie refusée, alliée compatible acceptée. |
+| T-255-02 | Cible ennemie explicite | Anneau maudit avec « ciblez un ennemi » | Créature ennemie admissible si emplacement Protection présent. |
+| T-255-03 | Ennemi sans emplacement | Dragon ennemi avec zéro slot ; anneau maudit | Attachement refusé ; pas de contournement de Q253. |
+| T-255-04 | Remplacement sur ennemi et propriétaire | Ennemi avec ancienne protection du joueur adverse ; nouvelle protection maudite | Ancien équipement défaussé chez SON propriétaire ; nouveau remplace ; départ du porteur => défausse du propriétaire de la malédiction. |
+| T-256-01 | Synergie artisanat sur tirage valide | Boosters contiennent créature artisane et équipement éligibles | Les deux cartes peuvent interagir sans qu’un archétype soit imposé. |
+| T-256-02 | Tirage sans équipement | Boosters du pool débloqué ne contiennent aucun équipement | Deck légal sans ajout artificiel d’objet. |
+| T-256-03 | Synergie maudite explicite | Créature réagit aux équipements sur ennemis | Interaction possible seulement si les textes la prévoient. |
+| T-256-04 | Synergie croisée | Équipement affecte une créature d’un autre peuple | Règles de peuple, faction, cible et effet réutilisées. |
+| T-257-01 | Quota catalogue | Inventaire des 100 définitions indépendantes | Exactement 20 définitions de type Équipement. |
+| T-257-02 | Quotas Arme / Protection souples | Répartition 11 Armes / 9 Protections proposée pour équilibrage | Total 20 respecté ; ajustement admis car cible 10/10 indicative. |
+| T-257-03 | Non addition aux fondamentales | Inventaire contient 40 fondamentales et ~30 variantes | Les 20 équipements se trouvent dans les 100 indépendantes, non ajoutées au total ~170. |
+| T-257-04 | Type et fonction indépendants | Amulette dans Protection avec effet offensif | Type Protection légitime malgré fonction offensive. |
+| T-258-01 | Total exact | Compter types des 100 indépendantes | 50 Créatures + 30 Sorts + 20 Équipements = 100. |
+| T-258-02 | Fonctions transversales | Sort de pioche également classé soutien | Une seule définition dans 30 Sorts ; pas de double comptage. |
+| T-258-03 | Pas de quota booster | Pack de 15 avec proportions différentes de 50/30/20 | Pack valide si toutes règles de tirage, déblocage et plafonds respectées. |
+| T-258-04 | Socle et ouverture inchangés | Démarrer ascension standard | 20 base + 2 × 15 booster ; 40 actives et 10 réserve ; proportions catalogue ne changent pas cela. |
+| T-259-01 | Répartition cible | Inventorier 50 créatures indépendantes proposées | Cible 15/14/13/8 (total 50), déviations justifiées comme ajustements de conception. |
+| T-259-02 | Rareté non déduite | Définir un jeune Dragon Commun et un Humain Rare | Deux raretés acceptées sans contrainte raciale automatique. |
+| T-259-03 | Booster sans quota de peuple | Boosters proposés avec aucun Dragon | Pas de rejet du seul fait du quota catalogue. |
+| T-259-04 | Taxonomie distincte | Elfe et Nain partageant une faction | La faction ne remplace pas le peuple dans les comptages. |
+| T-260-01 | Identité dominante indicative | Comptage des 15 Humains dont 8 commandement/cooperation | Atteint environ 50–60 % comme cible de conception, sans erreur de validation runtime. |
+| T-260-02 | Rôle alternatif | Nain offensif plutôt que défensif | Carte admissible, cohérente avec son peuple. |
+| T-260-03 | Dragon soutien | Un des 8 Dragons spécialisé en soutien élémentaire | Profil accepté ; identité narrative maintenue. |
+| T-260-04 | Unité mixte | Un Elfe soutien utilisé avec Humains | Deck autorisé ; pas de verrouillage par identité dominante. |
+| T-261-01 | Quota passerelles | Marquer 8 créatures passerelles dans catalogue de 50 | Quota cible 6–10 atteint sans créer 8 cartes supplémentaires. |
+| T-261-02 | Recouvrement hybride | Une créature passerelle est également hybride | Comptage des deux labels permis sur la même définition. |
+| T-261-03 | Utilité hors synergie | Carte passerelle sans autre peuple sur plateau | Carte a un effet de base raisonnable, sans exiger de générer le peuple manquant. |
+| T-261-04 | Booster sans passerelles | Pack valide ne contient aucune passerelle | Pas de reroll ou de garantie non prévue. |
+| T-262-01 | Quota hybride | Marquer 15 créatures ayant au moins deux fonctions significatives | Entre 13 et 18 sur 50, sans dépasser 50 définitions. |
+| T-262-02 | Fonctions non décoratives | Carte attaque mais ajoute un effet de protection situationnel substantiel | Profil hybride justifié par deux fonctions effectives. |
+| T-262-03 | Double attribution | Créature hybride et évolutive appartenant à un peuple dominant | Une seule définition malgré plusieurs labels. |
+| T-262-04 | Booster mono-rôle | Pack ne contient que créatures spécialisées | Aucune obligation de tirage d’hybrides. |
+| T-263-01 | Population évolutive | Marquer 6 créatures évolutives sur 50 | Cible 5–8 atteinte, cartes non ajoutées au total. |
+| T-263-02 | Condition propre à carte | Dragon avec progression à l’usage de sorts feu | Seule la condition écrite incrémente le compteur, pas un niveau global automatique. |
+| T-263-03 | Fin du combat | Progression acquise pendant un combat puis combat suivant | Pas de conservation par défaut de progression de combat. |
+| T-263-04 | Lisibilité et replay | Progression d’une carte par événement et franchissement de seuil | Indicateur et journal conformes, mêmes résultats en replay déterministe. |
+| T-264-01 | Nombre de cartes | Marquer 10 définitions indépendantes à contrepartie | Cible 8–12 atteinte ; toutes déjà comprises parmi les 100. |
+| T-264-02 | Répartition entre types | 4 créatures, 4 sorts et 2 équipements à contrepartie | Aucune nouvelle catégorie ni augmentation des quotas Q258. |
+| T-264-03 | Capacité facultative | Carte propose « activer : sacrifiez allié pour... » | Sans activation, aucun sacrifice ; avec activation, contrepartie selon texte et règles de coût. |
+| T-264-04 | Contrepartie automatique explicite | Équipement donnant +ATQ et -PV max de manière continue | Malus appliqué selon texte, sans option universelle de refus ; règles de PV max existantes. |
+
+**État : 40 scénarios supplémentaires spécifiés, 0 exécuté.** Vérifications de non-régression : propriété de l’équipement Q251, remplacement Q252, emplacements Q253, charges Q254, classification Q245, composition neutre et tirages Q215/Q246, 4 copies par famille Q207/Q227, risques de cycles Q111–Q124 et Q159–Q164.

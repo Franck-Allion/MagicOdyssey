@@ -77,3 +77,7 @@ Voir [capacités de tour et protection anti-boucles](turn-control-and-loop-safet
 ## v2.5 — Géométrie, peuples et effets continus
 
 - [Peuples et stabilisation Q235–Q244](tribes-positioning-and-stabilization-v25.md), en complément des règles préexistantes (FIFO, budgets causaux et auras Q159–Q164).
+
+## Cartes d’équipement (v2.6)
+
+- [Taxonomie, conditions de deck et équipements Q245–Q254](equipment-and-card-classifications-v26.md) : 0–2 slots, Arme/Protection, restrictions, détachement, remplacement, charges facultatives. Réutiliser [FIFO](event-queue.md) et [stabilisation](tribes-positioning-and-stabilization-v25.md).
