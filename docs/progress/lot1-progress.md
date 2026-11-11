@@ -191,3 +191,7 @@ When executing subsequent prompts (`P003` through `P065`):
 4. **Preserve Normative Content:** Never modify the underlying game rules, acceptance criteria, or prompt definitions when updating this tracker.
 5. **Quality Gates:** Never set a Quality Gate (`G0`–`G8`) to `VALIDATED` until all constituent prompts in that iteration have passed and all gate exit criteria are demonstrably satisfied.
 6. **Keep Updates Concise:** Maintain clean tabular Markdown formatting without conversational fluff.
+
+## Premium presentation revision ? 2026-11-11
+
+PASS: replaced the gallery with a static six-column combat shell, layered Theme variants, native original procedural motifs, hero/token/card studies and corrected rarity identities. Headless import and showcase launch exit 0; existing harness 14/14 assertions PASS (exit 0). Real 1080p/720p captures refreshed and visually inspected; detailed evidence and limitations: `docs/art/ui-baseline.md`. Interaction/focus review NOT_RUN. This is a P004 presentation refinement; P005?P065 remain TODO and G0 remains NOT_VALIDATED.

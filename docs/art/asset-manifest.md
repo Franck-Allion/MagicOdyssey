@@ -1,6 +1,6 @@
-﻿# Lot 1 asset manifest
+# Lot 1 asset manifest
 
-P004 inventory. No artwork or audio has been downloaded or generated.
+P004 inventory. No external artwork or audio has been downloaded. Original native procedural ornaments, architecture silhouettes and shield/helmet studies are available in `scripts/presentation/premium_combat_shell.gd`.
 AVAILABLE denotes implemented native UI resources only; REQUIRED denotes missing production assets.
 
 | Category | Intended usage | Source / creation method | Rights required | Status | Integration |
@@ -15,3 +15,7 @@ AVAILABLE denotes implemented native UI resources only; REQUIRED denotes missing
 | UI sound effects and combat audio | Hover, confirm, cancel, impacts, spells | Original recordings/synthesis or licensed library | Commercial synchronization and game redistribution rights | REQUIRED | P057–P059 |
 
 Record exact filenames, authors, provenance, license evidence, and attribution before integration. Final asset approval remains pending. The showcase uses native styles and text markers, not stand-in artwork.
+
+## Premium revision inventory
+
+AVAILABLE: deterministic native arena decoration, panel/frame studies, five color-coded hand studies, four shield-shaped helmet motifs. Authored directly in repository GDScript/Theme, with no third-party art dependency. These are presentation studies; production illustration/audio requirements above remain REQUIRED.
