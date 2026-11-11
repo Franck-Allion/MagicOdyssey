@@ -3,7 +3,7 @@ extends "res://scripts/presentation/premium_combat_shell.gd"
 ## The base shell and normative geometry remain unchanged.
 @export_enum("A - Background only", "B - Typical combat", "C - Maximum occupation") var preset: int = 1
 @export_range(0.0, 0.65, 0.01) var board_darkening: float = 0.30
-const ARTWORK: Texture2D = preload("res://assets/_source/lot1/battlefield/wip/mo_battlefield_sundered_observatory_bg_wip_v02.png")
+const ARTWORK: Texture2D = preload("res://assets/_source/lot1/battlefield/wip/mo_battlefield_sundered_observatory_bg_wip_v03.png")
 const GRID_ORIGIN: Vector2 = Vector2(478, 263)
 const SLOT_SIZE: Vector2 = Vector2(164, 120)
 const COLUMN_STEP: float = 185.0
@@ -39,7 +39,7 @@ func _build() -> void:
 func _header_and_hud() -> void:
 	panel(Rect2(42,23,510,86), &"InspectorFrame")
 	text("THE SUNDERED OBSERVATORY",Rect2(62,39,490,32),26,&"accent",true)
-	text("ART-001-T01 / %s / STATIC FIXTURES" % ("C" if preset == 2 else "B"),Rect2(62,76,490,25),19,&"secondary")
+	text("ART-001-T02 / %s / STATIC FIXTURES" % ("C" if preset == 2 else "B"),Rect2(62,76,490,25),19,&"secondary")
 	hero(115,true)
 	panel(Rect2(42,329,198,310), &"InspectorFrame")
 	text("INSPECTED",Rect2(62,350,170,30),20,&"accent")
