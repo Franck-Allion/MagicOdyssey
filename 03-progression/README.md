@@ -30,3 +30,8 @@ Voir [tests](../09-technical/acceptance-tests.md), [journal des décisions](../D
 - **Cible révisée : ≈170 définitions** = 40 fondamentales + ≈30 variantes + 100 indépendantes ; 20 exemplaires seulement dans le socle d'ascension. Quatre peuples au MVP, autres peuples extensibles.
 
 - [Catalogue indépendant Q255–Q264 : équipements maudits, répartition 50/30/20, peuples, profils passerelles/hybrides/évolutifs et contreparties](independent-card-catalog-and-synergies-v27.md) — v2.7.
+
+## Consolidation v2.8 — Q265–Q274
+
+- [Rencontres ennemies et missions spéciales](enemy-encounters-and-special-missions-v28.md) : IA adaptative, archétypes, progression, prévisualisation, deux familles spéciales et variantes contrôlées.
+- [Tests T-265 à T-274](../09-technical/acceptance-tests.md) : spécifiés, non exécutés.

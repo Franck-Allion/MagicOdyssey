@@ -970,3 +970,52 @@ Les tests suivants couvrent les décisions nouvelles de ciblage d’équipements
 | T-264-04 | Contrepartie automatique explicite | Équipement donnant +ATQ et -PV max de manière continue | Malus appliqué selon texte, sans option universelle de refus ; règles de PV max existantes. |
 
 **État : 40 scénarios supplémentaires spécifiés, 0 exécuté.** Vérifications de non-régression : propriété de l’équipement Q251, remplacement Q252, emplacements Q253, charges Q254, classification Q245, composition neutre et tirages Q215/Q246, 4 copies par famille Q207/Q227, risques de cycles Q111–Q124 et Q159–Q164.
+
+## Tests v2.8 — Q265–Q274 (spécifiés, non exécutés)
+
+**40 tests de comportement et de conformité du contenu**, sans exécution contre un moteur. Les attentes concernant des paramètres numériques encore ouverts vérifient les **contraintes éditoriales**, pas des valeurs seuils inventées. Les cas explicitement ouverts sont marqués « À SPÉCIFIER ».
+
+| ID | Sujet | Situation / action | Attendu |
+|---|---|---|---|
+| T-265-01 | Profil dominant | Défenseur avec deux actions valides | Préférence défensive à intérêt tactique comparable. |
+| T-265-02 | Opportunité décisive | Défenseur dispose d’une attaque létale légale | IA peut choisir l’attaque décisive plutôt que maintenir aveuglément sa défense. |
+| T-265-03 | Règles communes | IA envisage action interdite faute de ressources | Action invalide exclue au même titre que pour le joueur. |
+| T-265-04 | Boss spécifique | Boss avec priorités éditoriales particulières | Priorités appliquées sans contourner l’état ou les règles du moteur. |
+| T-266-01 | Noyau fixe | Deux tirages du même archétype | Cartes signatures conservées ; cartes variables issues du pool compatible. |
+| T-266-02 | Incompatibilité de pool | Variante candidate détruit la synergie requise | Candidat rejeté selon contraintes de composition. |
+| T-266-03 | Indépendance joueur | Carte ennemie non débloquée par le joueur | L’ennemi peut l’utiliser ; elle n’est pas déverrouillée chez le joueur. |
+| T-266-04 | Reprise déterministe | Rencontre générée puis partie sauvegardée/chargée | La même composition est restaurée, sans nouveau tirage. |
+| T-267-01 | Progression double | Comparer début et fin d’ascension | Puissance et complexité tactique augmentent sans simple inflation brute. |
+| T-267-02 | Début lisible | Rencontre des premières étapes | Archétype et menace pédagogiques, cohérents avec le palier. |
+| T-267-03 | Diversité avancée | Deux rencontres tardives consécutives | Archétypes distincts malgré forte difficulté. |
+| T-267-04 | Difficulté fixe | Même rencontre face à deux decks joueurs de force différente | Aucune augmentation/atténuation secrète du palier adversaire liée au deck. |
+| T-268-01 | Aperçu honnête | Archétype nain défensif / équipement | Peuple et stratégie décrits conformément au contenu réellement généré. |
+| T-268-02 | Cartes cachées | Variante ennemie retenue | Liste exacte et cartes variables restent non révélées. |
+| T-268-03 | Préparation | Joueur édite le deck après l’aperçu | Échanges deck/réserve permis selon Q206. |
+| T-268-04 | Boss narratif | Boss présenté avant combat | Identité narrative visible sans obligation de dévoiler les signatures. |
+| T-269-01 | Minorité spéciale | Construire une série de rencontres | La majorité demeure classique, selon les contraintes de contenu validées. |
+| T-269-02 | Annonce objectif | Entrer dans une rencontre spéciale | L’objectif est présenté avant lancement. |
+| T-269-03 | Priorité héros | Héros joueur meurt avant achèvement de mission | Défaite immédiate Q VIC-001, aucune réussite différée implicite. |
+| T-269-04 | Concurrence ouverte | Objectif complété et mort de héros au même commit atomique | À SPÉCIFIER avant implémentation : pas de priorité inventée ; VIC-001–006 restent normatifs. |
+| T-270-01 | Espacement | Générer segment avec plusieurs créneaux spéciaux | Contraintes de séparation respectées. |
+| T-270-02 | Progression | Scénario de fin avancée candidat pour premier étage | Scénario exclu par contraintes de progression. |
+| T-270-03 | Diversité | Plusieurs missions spéciales d’une même ascension | La sélection respecte les contraintes de diversité configurées. |
+| T-270-04 | Sauvegarde génération | Charger une ascension après placement | Identité et positions des missions inchangées. |
+| T-271-01 | Deux familles | Lister les missions du MVP | Seules les familles Protection et Survie sont présentes. |
+| T-271-02 | Refus famille hors périmètre | Scénario « interruption » marqué famille autonome MVP | Signalé comme hors périmètre MVP. |
+| T-271-03 | Protection | Scénario définissant une unité à préserver | Objectif de protection explicitement décrit et annoncé. |
+| T-271-04 | Survie | Scénario avec échéance | Échéance et objectif de résistance explicitement décrits et annoncés. |
+| T-272-01 | Protection passive | Mission avec érudit qui ne combat pas | Mission admissible ; comportement passif documenté. |
+| T-272-02 | Protection active | Mission avec guérisseur capable de soutenir | Capacité existante utilisable dans les règles ordinaires. |
+| T-272-03 | Visibilité cible | Avant combat avec gardien à protéger | Rôle, capacités et vulnérabilités affichés. |
+| T-272-04 | Hors collection | PNJ de mission créé pour rencontre | Aucun ajout implicite aux 50 créatures collectionnables ni déblocage. |
+| T-273-01 | Profil constant | Mission Survie à pression constante | Séquence de scénario respecte un niveau de menace relativement stable. |
+| T-273-02 | Profil croissant | Mission Survie à pression croissante | Menace augmente selon programmation, non selon force du joueur. |
+| T-273-03 | Profil en pics | Mission Survie avec phases alternées | Périodes de pression annoncées comme profil général, détails cachés. |
+| T-273-04 | Non adaptation | Joueur change ses équipements avant mission | Pression programmée inchangée à difficulté identique. |
+| T-274-01 | Plusieurs scénarios | Inventaire des missions Protection/Survie | Chaque famille dispose de plusieurs scénarios éditorialement conçus. |
+| T-274-02 | Variante compatible | Changer adversaires dans pool du scénario | Identité, objectif et niveau de difficulté restent cohérents. |
+| T-274-03 | Variante impossible | Cible de Protection non conforme au scénario | Variante écartée ; pas de génération libre au mépris des contraintes. |
+| T-274-04 | Reprise variante | Sauvegarder puis charger une mission choisie | Même mission, même unité et mêmes cartes/variantes restituées. |
+
+**Non-régression attendue :** VIC-001 à VIC-006, Q192 (difficulté fixe), Q206 (deck/réserve), Q215/Q246 (boosters débloqués), Q266/Q274 (variantes persistées), Q271=A (deux familles et non quatre), sauvegarde et replay. **Bilan : 40 cas spécifiés, 0 exécuté ; les critères de victoire des missions spéciales non encore décidés ne sont pas considérés comme implémentés.**

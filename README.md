@@ -192,3 +192,11 @@ Le socle documentaire historique demeure disponible ; la consolidation **v1.7 co
 - **Q264 :** **8–12 cartes indépendantes** présentant une contrepartie explicite ; réparties entre les 100 définitions, sans coût universel supplémentaire.
 - [Journal de décisions](DECISIONS.md) ; [40 tests d'acceptation v2.7](09-technical/acceptance-tests.md), **décrits mais non exécutés**. Les règles moteur précédentes ne sont pas redéfinies.
 - **Q265 ouverte** : prochaine dimension de gameplay à arbitrer.
+
+## Consolidation v2.8 — Q265–Q274 (2026-11-11)
+
+- [Source normative : rencontres, missions et adversaires](03-progression/enemy-encounters-and-special-missions-v28.md) : profils IA adaptatifs Q265, decks à archétype avec variation Q266, difficulté hybride Q267, aperçu stratégique précombat Q268.
+- **Q269–Q270 :** missions spéciales minoritaires, à placement semi-aléatoire contraint.
+- **Q271=A : seulement deux familles au MVP** — Protection et Survie. Q272 : unités protégées passives ou actives ; Q273 : pressions constante, croissante ou en pics ; Q274 : scénarios éditoriaux avec variantes contrôlées.
+- [40 nouveaux tests d'acceptation](09-technical/acceptance-tests.md), spécifiés et non exécutés. VIC-001–VIC-006 et difficulté fixe Q192 demeurent normatifs ; les priorités non résolues des objectifs spéciaux restent **ouvertes**, sans changement moteur implicite.
+- **Prochaine question : Q275**.

@@ -423,3 +423,20 @@ Toutes les décisions ci-dessous ont été exprimées par le concepteur. Q124 es
 | Q264 | **B** | **8 à 12 cartes à contrepartie parmi les 100 indépendantes** ; risque/récompense explicite sur créatures, sorts ou équipements. | [Catalogue v2.7](03-progression/independent-card-catalog-and-synergies-v27.md) |
 
 **Q265 ouverte** : nouvelle section de conception ; aucune réponse anticipée. **Attention aux décomptes** : passerelle, hybride et évolutive sont des caractéristiques possiblement cumulées ; elles ne s'ajoutent jamais aux 50 créatures. Les cartes à contrepartie se répartissent parmi les 100.
+
+## Décisions validées Q265–Q274 — consolidation v2.8
+
+| Question | Choix | Décision | Source normative |
+|---|---|---|---|
+| Q265 | **C** | Profils tactiques ennemis avec adaptation situationnelle, sans avantage caché. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+| Q266 | **C** | Archétypes ennemis conçus, avec noyau fixe et variations contrôlées. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+| Q267 | **C** | Difficulté évoluant en puissance et sophistication tactique, sans adaptation secrète au héros. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+| Q268 | **B** | Avant combat : identité, peuple dominant pertinent et stratégie générale ; deck exact caché. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+| Q269 | **B** | Minorité de rencontres spéciales à objectifs alternatifs, règles de victoire moteur préservées. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+| Q270 | **C** | Placement semi-aléatoire avec contraintes d’espacement, diversité et progression. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+| Q271 | **A** | Deux familles seulement au MVP : Protection et Survie. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+| Q272 | **C** | Unité à protéger passive ou active, avec rôles tactiques et vulnérabilités variés. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+| Q273 | **C** | Survie : pression constante, croissante ou par pics selon les scénarios. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+| Q274 | **C** | Plusieurs scénarios conçus par famille, enrichis de variantes contrôlées. | [Rencontres v2.8](03-progression/enemy-encounters-and-special-missions-v28.md) |
+
+**Points ouverts et non tranchés par Q269–Q274 :** arbitrage objectif spécial vs mort des héros à une même frontière atomique, traitement des départs de la cible protégée et modalités exactes des fins de missions. **Q275 ouverte.**
