@@ -28,7 +28,7 @@
 | **P001** | Initialize Godot 4 Project | **PASS** | `project.godot`, `scenes/main.tscn`, `.gitignore` created. Headless import exit 0; headless launch exit 0; `git diff --check` clean. | `c193bfc` |
 | **P002** | Install Normative Specs & Progress Tracking | **PASS** | Normative specs and `AGENTS.md` verified; all paths checked; progress tracker created; Godot headless import exit 0. | `0be2b62` |
 | **P003** | Native Headless Test Harness | **PASS** | `test_runner.gd`, `test_asserts.gd`, `test_harness_self.gd`, `run_tests.ps1` created. 14 assertions PASS (exit 0); intentional failure mode verified (1 fail, exit 1); wrapper exit code propagation verified (exit 0 and 1). | — |
-| **P004** | Design System & UI Baseline | **TODO** | Scheduled: `Theme`, color tokens, asset manifest, 1080p/720p screenshot baseline. | — |
+| **P004** | Design System & UI Baseline | **PASS** | Native Theme, typed tokens, static showcase and asset inventory created. Headless import exit 0; native harness 14/14 assertions PASS (exit 0); showcase headless launch exit 0. Actual graphical captures at 1080p/720p, both exit 0; layout inspected. Interaction/focus review NOT_RUN. Commands and evidence: `docs/art/ui-baseline.md`. | — |
 
 ---
 
