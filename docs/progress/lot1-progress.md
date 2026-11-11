@@ -1,7 +1,7 @@
 # MagicOdyssey — Lot 1 Implementation Progress Tracker
 
-**Document Version:** 1.0  
-**Last Updated:** November 2026  
+**Document Version:** 1.0
+**Last Updated:** November 2026
 **Status:** Active Implementation Tracking
 
 ---
@@ -26,8 +26,8 @@
 | Prompt | Title | Status | Verification Evidence / Reference | Commit SHA |
 |---|---|:---:|---|:---:|
 | **P001** | Initialize Godot 4 Project | **PASS** | `project.godot`, `scenes/main.tscn`, `.gitignore` created. Headless import exit 0; headless launch exit 0; `git diff --check` clean. | `c193bfc` |
-| **P002** | Install Normative Specs & Progress Tracking | **PASS** | Normative specs and `AGENTS.md` verified; all paths checked; progress tracker created; Godot headless import exit 0. | Current |
-| **P003** | Native Headless Test Harness | **TODO** | Scheduled: `test_runner.gd`, assertion library, PowerShell script with exit codes. | — |
+| **P002** | Install Normative Specs & Progress Tracking | **PASS** | Normative specs and `AGENTS.md` verified; all paths checked; progress tracker created; Godot headless import exit 0. | `0be2b62` |
+| **P003** | Native Headless Test Harness | **PASS** | `test_runner.gd`, `test_asserts.gd`, `test_harness_self.gd`, `run_tests.ps1` created. 14 assertions PASS (exit 0); intentional failure mode verified (1 fail, exit 1); wrapper exit code propagation verified (exit 0 and 1). | — |
 | **P004** | Design System & UI Baseline | **TODO** | Scheduled: `Theme`, color tokens, asset manifest, 1080p/720p screenshot baseline. | — |
 
 ---
@@ -178,7 +178,7 @@
 1. **P001 Graphical Visual Review:** `NOT_RUN` (P001 was verified via headless import and launch; human graphical window inspection is pending).
 2. **Engine Acceptance Tests:** `NOT_RUN` (0 of 32 engine tests executed; test runner scheduled for P003).
 3. **UI Acceptance Tests:** `NOT_RUN` (0 of 13 UX criteria evaluated; visual implementation scheduled across J1, J4, J7).
-4. **Dedicated Test Harness:** Scheduled for `P003` (`res://scripts/tests/test_runner.gd`).
+4. **Dedicated Test Harness:** Operational (`scripts/tests/test_runner.gd`, `test_asserts.gd`, `test_harness_self.gd`, `run_tests.ps1`). Self-tests PASS (14 assertions, exit 0); negative failure mode verified (exit 1).
 
 ---
 
