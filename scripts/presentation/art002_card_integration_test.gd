@@ -1,39 +1,19 @@
 extends Control
 ## Isolated visual fixture. No catalog, engine, input commands or production CardView.
-## RGB source has painted checkerboard: the shader is TEMPORARY PREVIEW ONLY.
+## Rarity-neutral master card frame v03 rendered with native RGBA transparency.
 
-const FRAME: Texture2D = preload("res://assets/_source/lot1/cards/frames/mo_card_frame_master_v02.png")
+const FRAME: Texture2D = preload("res://assets/_source/lot1/cards/frames/mo_card_frame_master_v03.png")
 const ART: Texture2D = preload("res://assets/_source/lot1/cards/illustrations/mo_illustration_arcane_knight_test_v01.png")
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
 const CARD_SIZE: Vector2 = Vector2(1086, 1448)
 const RARITIES: Array[StringName] = [&"common", &"uncommon", &"rare", &"epic", &"legendary"]
 const NAMES: PackedStringArray = ["Common", "Uncommon", "Rare", "Epic", "Legendary"]
-const PREVIEW_SHADER: String = """
-shader_type canvas_item;
-void fragment() {
-    vec4 pixel = texture(TEXTURE, UV);
-    float high = max(pixel.r, max(pixel.g, pixel.b));
-    float low = min(pixel.r, min(pixel.g, pixel.b));
-    bool aperture = UV.x > 0.105 && UV.x < 0.895 && UV.y > 0.135 && UV.y < 0.595;
-    bool exterior = UV.x < 0.065 || UV.x > 0.94 || UV.y < 0.055 || UV.y > 0.96;
-    // Experimental chroma key, never exported as approved alpha artwork.
-    if ((aperture || exterior) && low > 0.70 && high - low < 0.045) {
-        pixel.a = 0.0;
-    }
-    COLOR = pixel;
-}
-"""
 
 var _stage: Control
 var _mode: int = 0
-var _frame_material: ShaderMaterial
 
 func _ready() -> void:
 	theme = TOKENS.THEME
-	var shader: Shader = Shader.new()
-	shader.code = PREVIEW_SHADER
-	_frame_material = ShaderMaterial.new()
-	_frame_material.shader = shader
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--mode="):
 			_mode = clampi(argument.trim_prefix("--mode=").to_int(), 0, 2)
@@ -90,7 +70,6 @@ func _card(parent: Control, origin: Vector2, height: float, rarity_index: int) -
 	var portrait: TextureRect = _texture(aperture, crop, Rect2(Vector2.ZERO, aperture.size))
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	var frame: TextureRect = _texture(card, FRAME, Rect2(Vector2.ZERO, CARD_SIZE))
-	frame.material = _frame_material
 	var ink: Color = TOKENS.color_token(&"text_bright")
 	var rarity: Color = TOKENS.color_token(RARITIES[rarity_index])
 	var title: Label = _label(card, "Arcane Knight", Rect2(280, 90, 645, 94), 68, ink, &"CardTitle")
@@ -143,13 +122,13 @@ func _rebuild() -> void:
 	_stage.add_child(background)
 	_label(_stage, "MAGIC ODYSSEY  /  ART–002", Rect2(64, 30, 1400, 60), 38,
 		TOKENS.color_token(&"accent"), &"SectionHeading")
-	_label(_stage, "TEMPORARY PREVIEW · RGB checkerboard keyed at runtime · BLOCKED_FOR_FINAL_APPROVAL",
-		Rect2(64, 97, 1800, 40), 24, TOKENS.color_token(&"rare"))
+	_label(_stage, "MASTER FRAME v03 · Native RGBA transparency · Neutral master candidate",
+		Rect2(64, 97, 1800, 40), 24, TOKENS.color_token(&"accent"))
 	var modes: PackedStringArray = ["01  /  Full-size inspection", "02  /  Seven-card hand", "03  /  Five rarity identities"]
 	_label(_stage, modes[_mode], Rect2(64, 157, 1600, 50), 30, TOKENS.color_token(&"text"), &"SectionHeading")
 	if _mode == 0:
 		_card(_stage, Vector2(460, 225), 760, 3)
-		_label(_stage, "ARCANE KNIGHT\n\nPresentation fixture only\nMana 4   /   ATK 4   /   HP 5\n\nUnmodified source artwork\nTemporary display mask\n\nPurple ornaments remain baked in.\nProduction needs true RGBA export.",
+		_label(_stage, "ARCANE KNIGHT\n\nPresentation fixture only\nMana 4   /   ATK 4   /   HP 5\n\nNative RGBA master frame v03\nTrue alpha transparency (no shader)\n\nNeutral bronze and midnight-blue\nBaked purple accents removed.",
 			Rect2(1130, 330, 690, 500), 28, TOKENS.color_token(&"secondary"))
 	elif _mode == 1:
 		var height: float = 316.0
@@ -168,7 +147,7 @@ func _rebuild() -> void:
 			var sample: Label = _label(_stage, NAMES[index], Rect2(104 + index * 350, 794, 320, 60),
 				28, TOKENS.color_token(RARITIES[index]), &"CardTitle")
 			sample.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		_label(_stage, "Rarity uses native token colors + explicit names. Fixed violet gems compete with non-Epic identities.",
+		_label(_stage, "Rarity uses native token colors + explicit names. Neutral v03 frame supports all five rarity identities.",
 			Rect2(104, 910, 1750, 50), 26, TOKENS.color_token(&"secondary"))
 	_label(_stage, "[1] Inspection     [2] Seven cards     [3] Rarities       •       Visual experiment only / no gameplay / P009 unchanged",
 		Rect2(64, 1010, 1800, 44), 23, TOKENS.color_token(&"secondary"))
