@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1086" height="1448" viewBox="0 0 1086 1448">
+  <!-- Master v03 source pixels. White covers only crystal interiors; black protects
+       bronze bezels, sockets, cloth, aperture and native alpha. Update these three
+       contours if (and only if) the approved master geometry changes. -->
+  <rect width="1086" height="1448" fill="black"/>
+  <g fill="white">
+    <path id="crown" d="M543 24 L564 48 L544 83 L525 49 Z"/>
+    <path id="bridge" d="M543 836 L565 861 L544 896 L522 862 Z"/>
+    <path id="footer" d="M543 1247 L567 1286 L543 1337 L520 1287 Z"/>
+  </g>
+</svg>
