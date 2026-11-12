@@ -12,22 +12,30 @@ const NAMES: PackedStringArray = ["Common", "Uncommon", "Rare", "Epic", "Legenda
 
 var _stage: Control
 var _mode: int = 0
+var _use_emerald: bool = false
 var _gem_materials: Array[ShaderMaterial] = []
+var _emerald_epic_material: ShaderMaterial
 
 func _ready() -> void:
 	theme = TOKENS.THEME
-	for rarity: StringName in RARITIES:
-		_gem_materials.append(GEM_TREATMENT.create_material(rarity))
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--mode="):
-			_mode = clampi(argument.trim_prefix("--mode=").to_int(), 0, 2)
+			_mode = clampi(argument.trim_prefix("--mode=").to_int(), 0, 3)
+		elif argument == "--emerald":
+			_use_emerald = true
+	for rarity: StringName in RARITIES:
+		if rarity == &"epic" and _use_emerald:
+			_gem_materials.append(GEM_TREATMENT.create_emerald_epic_material())
+		else:
+			_gem_materials.append(GEM_TREATMENT.create_material(rarity))
+	_emerald_epic_material = GEM_TREATMENT.create_emerald_epic_material()
 	resized.connect(_rebuild)
 	_rebuild()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed() and not event.is_echo():
 		var key: InputEventKey = event as InputEventKey
-		if key.keycode >= KEY_1 and key.keycode <= KEY_3:
+		if key.keycode >= KEY_1 and key.keycode <= KEY_4:
 			_mode = key.keycode - KEY_1
 			_rebuild()
 
@@ -56,7 +64,8 @@ func _texture(parent: Control, source: Texture2D, bounds: Rect2) -> TextureRect:
 	parent.add_child(image)
 	return image
 
-func _card(parent: Control, origin: Vector2, height: float, rarity_index: int) -> void:
+func _card(parent: Control, origin: Vector2, height: float, rarity_index: int,
+		material_override: ShaderMaterial = null) -> void:
 	var card: Control = Control.new()
 	card.position = origin
 	card.size = CARD_SIZE
@@ -74,7 +83,7 @@ func _card(parent: Control, origin: Vector2, height: float, rarity_index: int) -
 	var portrait: TextureRect = _texture(aperture, crop, Rect2(Vector2.ZERO, aperture.size))
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	var frame: TextureRect = _texture(card, FRAME, Rect2(Vector2.ZERO, CARD_SIZE))
-	frame.material = _gem_materials[rarity_index]
+	frame.material = material_override if material_override != null else _gem_materials[rarity_index]
 	var ink: Color = TOKENS.color_token(&"text_bright")
 	var title: Label = _label(card, "Arcane Knight", Rect2(280, 90, 645, 94), 68, ink, &"CardTitle")
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -115,13 +124,21 @@ func _rebuild() -> void:
 	_stage.add_child(background)
 	_label(_stage, "MAGIC ODYSSEY  /  ART–002", Rect2(64, 30, 1400, 60), 38,
 		TOKENS.color_token(&"accent"), &"SectionHeading")
-	_label(_stage, "ART–002–T03B · MASTER FRAME v03 · Three faceted rarity gemstones",
-		Rect2(64, 97, 1800, 40), 24, TOKENS.color_token(&"accent"))
-	var modes: PackedStringArray = ["01  /  Full-size inspection", "02  /  Seven-card hand", "03  /  Five rarity identities"]
+	var sub_title: String = "ART–002–T03C · MASTER FRAME v03 · Emerald Epic Rarity Experiment" if _use_emerald or _mode == 3 \
+		else "ART–002–T03B · MASTER FRAME v03 · Three faceted rarity gemstones"
+	_label(_stage, sub_title, Rect2(64, 97, 1800, 40), 24, TOKENS.color_token(&"accent"))
+	var modes: PackedStringArray = [
+		"01  /  Full-size inspection",
+		"02  /  Seven-card hand",
+		"03  /  Five rarity identities",
+		"04  /  Epic comparison: Canonical Violet vs Experimental Emerald"
+	]
 	_label(_stage, modes[_mode], Rect2(64, 157, 1600, 50), 30, TOKENS.color_token(&"text"), &"SectionHeading")
 	if _mode == 0:
 		_card(_stage, Vector2(460, 225), 760, 3)
-		_label(_stage, "ARCANE KNIGHT\n\nPresentation fixture only\nMana 4   /   ATK 4   /   HP 5\n\nThree amethyst crystals\nPainted facets and white speculars\n\nNeutral bronze and midnight-blue\nNative frame transparency preserved.",
+		var epic_desc: String = "Three emerald crystals\nPainted facets and white speculars\n\nNeutral bronze and midnight-blue\nNative frame transparency preserved." if _use_emerald \
+			else "Three amethyst crystals\nPainted facets and white speculars\n\nNeutral bronze and midnight-blue\nNative frame transparency preserved."
+		_label(_stage, "ARCANE KNIGHT\n\nPresentation fixture only\nMana 4   /   ATK 4   /   HP 5\n\n%s" % epic_desc,
 			Rect2(1130, 330, 690, 500), 28, TOKENS.color_token(&"secondary"))
 	elif _mode == 1:
 		var height: float = 316.0
@@ -134,13 +151,28 @@ func _rebuild() -> void:
 			Rect2(84, 360, 1752, 50), 28, TOKENS.color_token(&"accent"), &"SectionHeading")
 		_label(_stage, "Small rules text requires inspection at hand scale. Titles, mana and base statistics remain the primary scan targets.",
 			Rect2(84, 420, 1752, 50), 24, TOKENS.color_token(&"secondary"))
-	else:
+	elif _mode == 2:
 		for index: int in range(5):
 			_card(_stage, Vector2(104 + index * 350, 340), 426, index)
-			var sample: Label = _label(_stage, NAMES[index], Rect2(104 + index * 350, 794, 320, 60),
-				28, TOKENS.color_token(RARITIES[index]), &"CardTitle")
+			var label_text: String = "Epic (Emerald)" if (index == 3 and _use_emerald) else NAMES[index]
+			var label_color: Color = Color(0.2, 0.85, 0.45) if (index == 3 and _use_emerald) else TOKENS.color_token(RARITIES[index])
+			var sample: Label = _label(_stage, label_text, Rect2(104 + index * 350, 794, 320, 60),
+				28, label_color, &"CardTitle")
 			sample.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		_label(_stage, "White crystal · Sapphire · Ruby · Amethyst · Gold  /  Identical bronze frame, rarity carried by the three stones.",
-			Rect2(104, 910, 1750, 50), 26, TOKENS.color_token(&"secondary"))
-	_label(_stage, "[1] Inspection     [2] Seven cards     [3] Rarities       •       Visual experiment only / no gameplay / P009 unchanged",
-		Rect2(64, 1010, 1800, 44), 23, TOKENS.color_token(&"secondary"))
+		var list_desc: String = "White crystal · Sapphire · Ruby · Emerald · Gold  /  Identical bronze frame, rarity carried by the three stones." if _use_emerald \
+			else "White crystal · Sapphire · Ruby · Amethyst · Gold  /  Identical bronze frame, rarity carried by the three stones."
+		_label(_stage, list_desc, Rect2(104, 910, 1750, 50), 26, TOKENS.color_token(&"secondary"))
+	else:
+		# Mode 3: Side-by-side Epic comparison: Canonical Violet vs Experimental Emerald at full card size
+		var canonical_violet: ShaderMaterial = GEM_TREATMENT.create_material(&"epic", false)
+		var experimental_emerald: ShaderMaterial = GEM_TREATMENT.create_material(&"epic", true)
+		_card(_stage, Vector2(250, 220), 740, 3, canonical_violet)
+		_card(_stage, Vector2(1090, 220), 740, 3, experimental_emerald)
+		var violet_lbl: Label = _label(_stage, "CANONICAL EPIC  /  Amethyst Violet (Q181)", Rect2(200, 975, 650, 45), 24,
+			TOKENS.color_token(&"epic"), &"CardTitle")
+		violet_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		var emerald_lbl: Label = _label(_stage, "EXPERIMENTAL EPIC  /  Emerald Green (T03C)", Rect2(1040, 975, 650, 45), 24,
+			Color(0.2, 0.85, 0.45), &"CardTitle")
+		emerald_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_label(_stage, "[1] Inspection   [2] Hand   [3] Rarities   [4] Violet vs Emerald   •   Visual experiment only / no gameplay / P009 unchanged",
+		Rect2(64, 1025, 1800, 35), 21, TOKENS.color_token(&"secondary"))
