@@ -5,7 +5,8 @@ render_mode unshaded;
 // midnight-blue metal and cloth must remain identical to the approved master.
 uniform sampler2D gem_mask : filter_linear, repeat_disable;
 uniform vec4 gemstone_color : source_color = vec4(1.0);
-uniform float inner_light : hint_range(0.0, 0.1) = 0.02;
+uniform float inner_light : hint_range(0.0, 0.3) = 0.05;
+uniform vec4 specular_color : source_color = vec4(1.0);
 
 varying vec4 item_modulate;
 
@@ -18,16 +19,29 @@ void vertex() {
 void fragment() {
 	vec4 source = texture(TEXTURE, UV);
 	float coverage = texture(gem_mask, UV).r;
+
 	// The original crystal is a blue-black faceted stone. Its strongest channel
 	// carries the painted cuts, reflected environment, occlusion and speculars.
 	float facet = max(source.r, max(source.g, source.b));
-	float body = pow(clamp(facet * 1.65, 0.0, 1.0), 0.78);
+
+	// Deep cuts (facet < 0.08) stay dark to preserve realistic facet geometry and cuts.
+	// Mid-tone facets (0.12 - 0.60) get rich body tone and refraction.
+	float body = pow(clamp(facet * 1.75, 0.0, 1.0), 0.75);
 	vec3 pigment = gemstone_color.rgb;
-	vec3 crystal = pigment * (0.035 + body * 0.83);
-	// Internal light stays inside the crystal, never forming a halo on the bezel.
-	crystal += pigment * inner_light * smoothstep(0.06, 0.24, facet);
-	// Keep the narrow, painted white glints and their original facet geometry.
-	float specular = smoothstep(0.42, 0.88, facet);
-	crystal = mix(crystal, vec3(0.98, 0.99, 1.0), specular * 0.88);
+	vec3 crystal = pigment * (body * 0.90);
+
+	// Internal light: simulates subsurface light trapped inside the crystal volume.
+	// Guided by facet depth so it stays inside the stone and does not spill onto bezels.
+	crystal += pigment * inner_light * smoothstep(0.06, 0.28, facet);
+
+	// Colored specular reflection: bright facet reflections gleam with the gemstone's
+	// own brilliance before reaching the peak specular glint.
+	float colored_spec = smoothstep(0.35, 0.75, facet);
+	crystal = mix(crystal, specular_color.rgb, colored_spec * 0.45);
+
+	// Narrow, crisp white specular glints at the sharp painted highlights.
+	float white_spec = smoothstep(0.66, 0.92, facet);
+	crystal = mix(crystal, vec3(0.98, 0.99, 1.0), white_spec * 0.85);
+
 	COLOR = vec4(mix(source.rgb, crystal, coverage), source.a) * item_modulate;
 }

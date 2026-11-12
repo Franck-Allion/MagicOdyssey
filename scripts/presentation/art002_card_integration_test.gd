@@ -115,7 +115,7 @@ func _rebuild() -> void:
 	_stage.add_child(background)
 	_label(_stage, "MAGIC ODYSSEY  /  ART–002", Rect2(64, 30, 1400, 60), 38,
 		TOKENS.color_token(&"accent"), &"SectionHeading")
-	_label(_stage, "ART–002–T03 · MASTER FRAME v03 · Three faceted rarity gemstones",
+	_label(_stage, "ART–002–T03B · MASTER FRAME v03 · Three faceted rarity gemstones",
 		Rect2(64, 97, 1800, 40), 24, TOKENS.color_token(&"accent"))
 	var modes: PackedStringArray = ["01  /  Full-size inspection", "02  /  Seven-card hand", "03  /  Five rarity identities"]
 	_label(_stage, modes[_mode], Rect2(64, 157, 1600, 50), 30, TOKENS.color_token(&"text"), &"SectionHeading")

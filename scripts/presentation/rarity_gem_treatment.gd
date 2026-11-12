@@ -10,14 +10,45 @@ const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd
 
 static func create_material(rarity: StringName) -> ShaderMaterial:
 	var color: Color = TOKENS.color_token(rarity)
-	# Theme colors are designed for readable text. Increase chroma for a small
-	# translucent jewel while retaining the normative palette's exact hue.
-	var saturation: float = 0.0 if rarity == &"common" else minf(color.s * 1.65, 0.85)
-	var pigment: Color = Color.from_hsv(color.h, saturation, 1.0)
-	var richness: float = 0.045 if rarity == &"epic" or rarity == &"legendary" else 0.02
+	var pigment: Color
+	var specular: Color
+	var inner_light: float
+
+	match rarity:
+		&"common":
+			# Pure neutral white / quartz crystal; completely achromatic
+			pigment = Color(1.0, 1.0, 1.0)
+			specular = Color(1.0, 1.0, 1.0)
+			inner_light = 0.04
+		&"uncommon":
+			# Sapphire blue: high chroma, pure azure/sapphire hue from token
+			pigment = Color.from_hsv(color.h, 0.88, 1.0)
+			specular = Color.from_hsv(color.h, 0.45, 1.0)
+			inner_light = 0.10
+		&"rare":
+			# Ruby red: vivid ruby crimson from token
+			pigment = Color.from_hsv(color.h, 0.90, 1.0)
+			specular = Color.from_hsv(color.h, 0.45, 1.0)
+			inner_light = 0.10
+		&"epic":
+			# Amethyst violet: saturated, vivid violet hue from token
+			pigment = Color.from_hsv(color.h, 0.92, 1.0)
+			specular = Color.from_hsv(color.h, 0.50, 1.0)
+			inner_light = 0.13
+		&"legendary":
+			# Luminous gold: warm, radiant golden yellow from token
+			pigment = Color.from_hsv(color.h, 0.82, 1.0)
+			specular = Color.from_hsv(color.h, 0.35, 1.0)
+			inner_light = 0.16
+		_:
+			pigment = Color(1.0, 1.0, 1.0)
+			specular = Color(1.0, 1.0, 1.0)
+			inner_light = 0.04
+
 	var treatment: ShaderMaterial = ShaderMaterial.new()
 	treatment.shader = SHADER
 	treatment.set_shader_parameter("gem_mask", MASK)
 	treatment.set_shader_parameter("gemstone_color", pigment)
-	treatment.set_shader_parameter("inner_light", richness)
+	treatment.set_shader_parameter("specular_color", specular)
+	treatment.set_shader_parameter("inner_light", inner_light)
 	return treatment
