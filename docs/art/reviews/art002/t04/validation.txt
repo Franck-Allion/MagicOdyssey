@@ -1,0 +1,57 @@
+﻿ART-002-T04 validation transcript
+Godot import: exit 0; final stderr empty
+Headless suite: exit 0
+--- Native suite output ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+==================================================
+MagicOdyssey â€” Native Headless Test Runner
+Engine: 4.7.2-stable (official)
+==================================================
+[RUN] TestHarnessSelf
+--------------------------------------------------
+Test Execution Summary:
+  Total Assertions: 14
+  Passed:           14
+  Failed:           0
+==================================================
+RESULT: ALL TESTS PASSED
+Graphical capture / pixel checks: exit 0
+--- Graphical output ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 551.86 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 Ti
+
+PASS CAPTURE single_card_1080p.png (1920, 1080) exit=0
+PASS CAPTURE hand_7_cards_1080p.png (1920, 1080) exit=0
+PASS CAPTURE hand_7_cards_720p.png (1280, 720) exit=0
+PASS CAPTURE stats_closeup_1080p.png (1920, 1080) exit=0
+PASS CAPTURE armor_shield_samples_1080p.png (1920, 1080) exit=0
+PASS NUMERIC_INK value=0 scale=1.0000 center=(110.5, 111.0) error=(0.5, 1.0)
+PASS NUMERIC_INK value=1 scale=1.0000 center=(110.0, 110.5) error=(0.0, 0.5)
+PASS NUMERIC_INK value=4 scale=1.0000 center=(110.5, 110.5) error=(0.5, 0.5)
+PASS NUMERIC_INK value=5 scale=1.0000 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS NUMERIC_INK value=10 scale=1.0000 center=(110.5, 111.0) error=(0.5, 1.0)
+PASS NUMERIC_INK value=12 scale=1.0000 center=(110.5, 110.5) error=(0.5, 0.5)
+PASS NUMERIC_INK value=99 scale=1.0000 center=(110.5, 111.0) error=(0.5, 1.0)
+PASS NUMERIC_INK value=999 scale=1.0000 center=(109.5, 110.0) error=(0.5, 0.0)
+PASS NUMERIC_INK value=0 scale=0.2182 center=(110.0, 110.5) error=(0.0, 0.5)
+PASS NUMERIC_INK value=1 scale=0.2182 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS NUMERIC_INK value=4 scale=0.2182 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS NUMERIC_INK value=5 scale=0.2182 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS NUMERIC_INK value=10 scale=0.2182 center=(110.0, 110.5) error=(0.0, 0.5)
+PASS NUMERIC_INK value=12 scale=0.2182 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS NUMERIC_INK value=99 scale=0.2182 center=(110.0, 110.5) error=(0.0, 0.5)
+PASS NUMERIC_INK value=999 scale=0.2182 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS NUMERIC_INK value=0 scale=0.1455 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS NUMERIC_INK value=1 scale=0.1455 center=(109.0, 110.0) error=(1.0, 0.0)
+PASS NUMERIC_INK value=4 scale=0.1455 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS NUMERIC_INK value=5 scale=0.1455 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS NUMERIC_INK value=10 scale=0.1455 center=(110.5, 110.5) error=(0.5, 0.5)
+PASS NUMERIC_INK value=12 scale=0.1455 center=(110.5, 110.0) error=(0.5, 0.0)
+PASS NUMERIC_INK value=99 scale=0.1455 center=(110.5, 110.0) error=(0.5, 0.0)
+PASS NUMERIC_INK value=999 scale=0.1455 center=(110.0, 110.0) error=(0.0, 0.0)
+PASS SHIELD_OVERLAY changed=22780 outside=0 restore=0
+PASS ZERO_NATIVE_ARMOR badge hidden
+T04_VISUAL_CHECK_FAILURES=0
+Preservation: HEAD blob equality true for master v03, rarity factory, shader, mask and theme
+git diff --check: exit 0

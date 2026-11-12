@@ -6,6 +6,7 @@ const FRAME: Texture2D = preload("res://assets/_source/lot1/cards/frames/mo_card
 const ART: Texture2D = preload("res://assets/_source/lot1/cards/illustrations/mo_illustration_arcane_knight_test_v01.png")
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
 const GEM_TREATMENT: GDScript = preload("res://scripts/presentation/rarity_gem_treatment.gd")
+const STAT_OVERLAY: GDScript = preload("res://scripts/presentation/card_stat_overlay.gd")
 const CARD_SIZE: Vector2 = Vector2(1086, 1448)
 const RARITIES: Array[StringName] = [&"common", &"uncommon", &"rare", &"epic", &"legendary"]
 const NAMES: PackedStringArray = ["Common", "Uncommon", "Rare", "Epic", "Legendary"]
@@ -20,7 +21,7 @@ func _ready() -> void:
 	theme = TOKENS.THEME
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--mode="):
-			_mode = clampi(argument.trim_prefix("--mode=").to_int(), 0, 3)
+			_mode = clampi(argument.trim_prefix("--mode=").to_int(), 0, 5)
 		elif argument == "--emerald":
 			_use_emerald = true
 	for rarity: StringName in RARITIES:
@@ -35,7 +36,7 @@ func _ready() -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed() and not event.is_echo():
 		var key: InputEventKey = event as InputEventKey
-		if key.keycode >= KEY_1 and key.keycode <= KEY_4:
+		if key.keycode >= KEY_1 and key.keycode <= KEY_6:
 			_mode = key.keycode - KEY_1
 			_rebuild()
 
@@ -65,7 +66,8 @@ func _texture(parent: Control, source: Texture2D, bounds: Rect2) -> TextureRect:
 	return image
 
 func _card(parent: Control, origin: Vector2, height: float, rarity_index: int,
-		material_override: ShaderMaterial = null) -> void:
+		material_override: ShaderMaterial = null, native_armor: int = 0,
+		shield: int = 0, cost: int = 4, attack_value: int = 4, health_value: int = 5) -> Control:
 	var card: Control = Control.new()
 	card.position = origin
 	card.size = CARD_SIZE
@@ -87,22 +89,17 @@ func _card(parent: Control, origin: Vector2, height: float, rarity_index: int,
 	var ink: Color = TOKENS.color_token(&"text_bright")
 	var title: Label = _label(card, "Arcane Knight", Rect2(280, 90, 645, 94), 68, ink, &"CardTitle")
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var mana: Label = _label(card, "4", Rect2(70, 85, 168, 142), 110, ink, &"TacticalNumber")
-	mana.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	var tribe: Label = _label(card, "Creature  ·  Human", Rect2(155, 929, 776, 60), 49,
 		TOKENS.color_token(&"accent"), &"CardTitle")
 	tribe.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	var rule: Label = _label(card, "Whenever this creature\nattacks, gain 1 Shield.",
 		Rect2(170, 1010, 746, 150), 54, ink)
 	rule.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var attack: Label = _label(card, "4", Rect2(75, 1210, 164, 132), 108, ink, &"TacticalNumber")
-	attack.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var health: Label = _label(card, "5", Rect2(852, 1210, 164, 132), 108, ink, &"TacticalNumber")
-	health.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var atk_caption: Label = _label(card, "ATK", Rect2(80, 1330, 154, 45), 32, ink)
-	atk_caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var hp_caption: Label = _label(card, "HP", Rect2(857, 1330, 154, 45), 32, ink)
-	hp_caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var stats: Control = STAT_OVERLAY.new()
+	card.add_child(stats)
+	stats.set_printed_values(cost, attack_value, health_value, native_armor)
+	stats.set_shield_overlay(shield)
+	return card
 
 func _rebuild() -> void:
 	if not is_node_ready():
@@ -124,21 +121,20 @@ func _rebuild() -> void:
 	_stage.add_child(background)
 	_label(_stage, "MAGIC ODYSSEY  /  ART–002", Rect2(64, 30, 1400, 60), 38,
 		TOKENS.color_token(&"accent"), &"SectionHeading")
-	var sub_title: String = "ART–002–T03C · MASTER FRAME v03 · Emerald Epic Rarity Experiment" if _use_emerald or _mode == 3 \
-		else "ART–002–T03B · MASTER FRAME v03 · Three faceted rarity gemstones"
+	var sub_title: String = "ART–002–T04 · MASTER FRAME v03 · Premium stat sockets and protection indicators"
 	_label(_stage, sub_title, Rect2(64, 97, 1800, 40), 24, TOKENS.color_token(&"accent"))
 	var modes: PackedStringArray = [
 		"01  /  Full-size inspection",
 		"02  /  Seven-card hand",
 		"03  /  Five rarity identities",
-		"04  /  Epic comparison: Canonical Violet vs Experimental Emerald"
+		"04  /  Epic comparison: Canonical Violet vs Experimental Emerald",
+		"05  /  Stat socket inspection",
+		"06  /  Armor and Shield samples"
 	]
 	_label(_stage, modes[_mode], Rect2(64, 157, 1600, 50), 30, TOKENS.color_token(&"text"), &"SectionHeading")
 	if _mode == 0:
-		_card(_stage, Vector2(460, 225), 760, 3)
-		var epic_desc: String = "Three emerald crystals\nPainted facets and white speculars\n\nNeutral bronze and midnight-blue\nNative frame transparency preserved." if _use_emerald \
-			else "Three amethyst crystals\nPainted facets and white speculars\n\nNeutral bronze and midnight-blue\nNative frame transparency preserved."
-		_label(_stage, "ARCANE KNIGHT\n\nPresentation fixture only\nMana 4   /   ATK 4   /   HP 5\n\n%s" % epic_desc,
+		_card(_stage, Vector2(460, 225), 760, 3, null, 2, 3)
+		_label(_stage, "ARCANE KNIGHT\n\nCentered ivory numerals\nSword / Attack     Heart / Max Health\n\nMetal crest / Native Armor\nAzure ward / Temporary Shield\n\nPrinted face values stay immutable.\nProtection values are visual samples.",
 			Rect2(1130, 330, 690, 500), 28, TOKENS.color_token(&"secondary"))
 	elif _mode == 1:
 		var height: float = 316.0
@@ -146,7 +142,9 @@ func _rebuild() -> void:
 		var gap: float = 16.0
 		var left: float = (1920.0 - width * 7.0 - gap * 6.0) * 0.5
 		for index: int in range(7):
-			_card(_stage, Vector2(left + index * (width + gap), 586), height, index % RARITIES.size())
+			_card(_stage, Vector2(left + index * (width + gap), 586), height, index % RARITIES.size(),
+				null, 2 if index in [1, 3, 5] else 0, 3 if index in [2, 3, 6] else 0,
+				0 if index == 0 else 4, 12 if index == 5 else 4, 10 if index == 6 else 5)
 		_label(_stage, "LINEAR HAND  /  Entire silhouettes · 16 px gaps · no overlap",
 			Rect2(84, 360, 1752, 50), 28, TOKENS.color_token(&"accent"), &"SectionHeading")
 		_label(_stage, "Small rules text requires inspection at hand scale. Titles, mana and base statistics remain the primary scan targets.",
@@ -162,7 +160,7 @@ func _rebuild() -> void:
 		var list_desc: String = "White crystal · Sapphire · Ruby · Emerald · Gold  /  Identical bronze frame, rarity carried by the three stones." if _use_emerald \
 			else "White crystal · Sapphire · Ruby · Amethyst · Gold  /  Identical bronze frame, rarity carried by the three stones."
 		_label(_stage, list_desc, Rect2(104, 910, 1750, 50), 26, TOKENS.color_token(&"secondary"))
-	else:
+	elif _mode == 3:
 		# Mode 3: Side-by-side Epic comparison: Canonical Violet vs Experimental Emerald at full card size
 		var canonical_violet: ShaderMaterial = GEM_TREATMENT.create_material(&"epic", false)
 		var experimental_emerald: ShaderMaterial = GEM_TREATMENT.create_material(&"epic", true)
@@ -174,5 +172,34 @@ func _rebuild() -> void:
 		var emerald_lbl: Label = _label(_stage, "EXPERIMENTAL EPIC  /  Emerald Green (T03C)", Rect2(1040, 975, 650, 45), 24,
 			Color(0.2, 0.85, 0.45), &"CardTitle")
 		emerald_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_label(_stage, "[1] Inspection   [2] Hand   [3] Rarities   [4] Violet vs Emerald   •   Visual experiment only / no gameplay / P009 unchanged",
+	elif _mode == 4:
+		# Crop actual integrated cards, not a second rendering of the sockets.
+		var mana_crop: Control = Control.new()
+		mana_crop.position = Vector2(100, 310)
+		mana_crop.size = Vector2(410, 410)
+		mana_crop.clip_contents = true
+		_stage.add_child(mana_crop)
+		_card(mana_crop, Vector2(-35, -35), 2000, 3, null, 2, 3, 10)
+		var footer_crop: Control = Control.new()
+		footer_crop.position = Vector2(590, 370)
+		footer_crop.size = Vector2(1230, 400)
+		footer_crop.clip_contents = true
+		_stage.add_child(footer_crop)
+		_card(footer_crop, Vector2(-40, -1340), 1800, 3, null, 2, 3, 10, 12, 10)
+		_label(_stage, "MANA  /  10", Rect2(100, 790, 400, 50), 28, TOKENS.color_token(&"text"))
+		_label(_stage, "ATTACK 12     /     NATIVE ARMOR 2     /     SHIELD 3     /     MAX HEALTH 10",
+			Rect2(590, 790, 1240, 50), 24, TOKENS.color_token(&"text"))
+		_label(_stage, "Glyph bounds centered in the original sockets. Two-digit values fit without touching the metal.",
+			Rect2(100, 900, 1750, 50), 26, TOKENS.color_token(&"secondary"))
+	else:
+		var captions: PackedStringArray = ["No protections", "Native Armor 2", "Shield overlay 3", "Armor 2 + Shield 3"]
+		for index: int in range(4):
+			_card(_stage, Vector2(120 + index * 445, 270), 550, index,
+				null, 2 if index in [1, 3] else 0, 3 if index in [2, 3] else 0)
+			var caption: Label = _label(_stage, captions[index], Rect2(100 + index * 445, 860, 445, 60),
+				28, TOKENS.color_token(&"text"), &"CardTitle")
+			caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		_label(_stage, "Zero values hide their badge. Metal crest = Armor. Azure energy ward = Shield. Samples only.",
+			Rect2(100, 950, 1750, 45), 26, TOKENS.color_token(&"secondary"))
+	_label(_stage, "[1] Inspection   [2] Hand   [3] Rarities   [4] Epic comparison   [5] Sockets   [6] Protections   •   Presentation review",
 		Rect2(64, 1025, 1800, 35), 21, TOKENS.color_token(&"secondary"))
