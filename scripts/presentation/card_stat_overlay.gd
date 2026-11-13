@@ -29,22 +29,38 @@ const ICON_ARMOR_V02: Texture2D = preload("res://assets/textures/cards/icons/mo_
 const ICON_SHIELD_V02: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_shield_v02.png")
 
 ## Centralized optical alignment and scale constants for premium icons
-const ATTACK_EMBLEM_CENTER: Vector2 = Vector2(157, 1187)
-const HEALTH_EMBLEM_CENTER: Vector2 = Vector2(934, 1187)
+const ATTACK_EMBLEM_CENTER: Vector2 = Vector2(162, 1187)
+const HEALTH_EMBLEM_CENTER: Vector2 = Vector2(919, 1187)
 
-## Calibrated V2 optical constants
-const ATTACK_ICON_OFFSET: Vector2 = Vector2(0, -1)
-const ATTACK_ICON_SIZE: Vector2 = Vector2(60, 60)
+## Calibrated V2 optical constants (ART-002-T11 refined sizing & alignment)
+const ATTACK_ICON_OFFSET: Vector2 = Vector2(0, 0)
+const ATTACK_ICON_SIZE: Vector2 = Vector2(48, 48)
 
 const HEALTH_ICON_OFFSET: Vector2 = Vector2(0, -1)
-const HEALTH_ICON_SIZE: Vector2 = Vector2(68, 68)
+const HEALTH_ICON_SIZE: Vector2 = Vector2(52, 52)
 
-const BADGE_ICON_LOCAL_CENTER: Vector2 = Vector2(48, 50)
+const BADGE_ICON_LOCAL_CENTER: Vector2 = Vector2(50, 50)
+const BADGE_NUMBER_LOCAL_CENTER: Vector2 = Vector2(140, 50)
+
 const ARMOR_ICON_OFFSET: Vector2 = Vector2(0, 0)
-const ARMOR_ICON_SIZE: Vector2 = Vector2(68, 68)
+const ARMOR_ICON_SIZE: Vector2 = Vector2(52, 52)
 
 const SHIELD_ICON_OFFSET: Vector2 = Vector2(0, 0)
-const SHIELD_ICON_SIZE: Vector2 = Vector2(64, 64)
+const SHIELD_ICON_SIZE: Vector2 = Vector2(50, 50)
+
+## Preserved T10 optical constants for comparison & diagnostics
+const ATTACK_ICON_OFFSET_T10: Vector2 = Vector2(0, -1)
+const ATTACK_ICON_SIZE_T10: Vector2 = Vector2(60, 60)
+const HEALTH_ICON_OFFSET_T10: Vector2 = Vector2(0, -1)
+const HEALTH_ICON_SIZE_T10: Vector2 = Vector2(68, 68)
+const ARMOR_ICON_OFFSET_T10: Vector2 = Vector2(0, 0)
+const ARMOR_ICON_SIZE_T10: Vector2 = Vector2(68, 68)
+const SHIELD_ICON_OFFSET_T10: Vector2 = Vector2(0, 0)
+const SHIELD_ICON_SIZE_T10: Vector2 = Vector2(64, 64)
+const ATTACK_EMBLEM_CENTER_T10: Vector2 = Vector2(157, 1187)
+const HEALTH_EMBLEM_CENTER_T10: Vector2 = Vector2(934, 1187)
+const BADGE_ICON_LOCAL_CENTER_T10: Vector2 = Vector2(48, 50)
+const BADGE_NUMBER_LOCAL_CENTER_T10: Vector2 = Vector2(137, 50)
 
 ## Preserved V1 optical constants for rollback & comparison
 const ATTACK_ICON_OFFSET_V01: Vector2 = Vector2(-2, 1)
@@ -55,9 +71,16 @@ const ARMOR_ICON_OFFSET_V01: Vector2 = Vector2(0, 0)
 const ARMOR_ICON_SIZE_V01: Vector2 = Vector2(66, 66)
 const SHIELD_ICON_OFFSET_V01: Vector2 = Vector2(0, 0)
 const SHIELD_ICON_SIZE_V01: Vector2 = Vector2(66, 66)
+const ATTACK_EMBLEM_CENTER_V01: Vector2 = Vector2(157, 1187)
+const HEALTH_EMBLEM_CENTER_V01: Vector2 = Vector2(934, 1187)
+const BADGE_ICON_LOCAL_CENTER_V01: Vector2 = Vector2(48, 50)
+const BADGE_NUMBER_LOCAL_CENTER_V01: Vector2 = Vector2(137, 50)
 
 ## Version selection: 2 = V2 (default), 1 = V1
 static var icon_version: int = 2
+
+## Diagnostic flag: when true, uses pre-T11 sizing and offsets for comparison
+static var use_t10_sizing: bool = false
 
 ## Per-icon overrides for individual icon version selection (e.g. {"attack": 1})
 static var icon_overrides: Dictionary = {}
@@ -92,8 +115,16 @@ func _draw() -> void:
 	draw_number(MANA_CENTER, _mana, 126, 145, ink, SOCKET_SAFE_RADIUS)
 	draw_number(ATTACK_CENTER, _attack, 126, 145, ink, SOCKET_SAFE_RADIUS)
 	draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
-	_socket_emblem(Vector2(157, 1187), &"attack")
-	_socket_emblem(Vector2(934, 1187), &"health")
+	var atk_emblem: Vector2 = ATTACK_EMBLEM_CENTER
+	var hp_emblem: Vector2 = HEALTH_EMBLEM_CENTER
+	if icon_version == 1:
+		atk_emblem = ATTACK_EMBLEM_CENTER_V01
+		hp_emblem = HEALTH_EMBLEM_CENTER_V01
+	elif use_t10_sizing:
+		atk_emblem = ATTACK_EMBLEM_CENTER_T10
+		hp_emblem = HEALTH_EMBLEM_CENTER_T10
+	_socket_emblem(atk_emblem, &"attack")
+	_socket_emblem(hp_emblem, &"health")
 	if _native_armor > 0:
 		_badge(Rect2(280, 1280, 198, 100), &"armor", _native_armor)
 	if _shield > 0:
@@ -156,8 +187,16 @@ func _badge(bounds: Rect2, kind: StringName, value: int) -> void:
 	plate.shadow_size = 6
 	draw_style_box(plate, bounds)
 	draw_line(bounds.position + Vector2(24, 3), bounds.end - Vector2(24, bounds.size.y - 3), TOKENS.color_token(&"accent"), 2, true)
-	_symbol(bounds.position + BADGE_ICON_LOCAL_CENTER, kind, 1.0 if not use_procedural_icons else 1.12)
-	draw_number(bounds.position + Vector2(137, 50), value, 76, 83, TOKENS.color_token(&"text_bright"))
+	var ico_center: Vector2 = BADGE_ICON_LOCAL_CENTER
+	var num_center: Vector2 = BADGE_NUMBER_LOCAL_CENTER
+	if icon_version == 1:
+		ico_center = BADGE_ICON_LOCAL_CENTER_V01
+		num_center = BADGE_NUMBER_LOCAL_CENTER_V01
+	elif use_t10_sizing:
+		ico_center = BADGE_ICON_LOCAL_CENTER_T10
+		num_center = BADGE_NUMBER_LOCAL_CENTER_T10
+	_symbol(bounds.position + ico_center, kind, 1.0 if not use_procedural_icons else 1.12)
+	draw_number(bounds.position + num_center, value, 76, 83, TOKENS.color_token(&"text_bright"))
 
 ## Dedicated premium textures with optical alignment; legacy procedural fallback.
 func _symbol(center: Vector2, kind: StringName, factor: float) -> void:
@@ -186,6 +225,24 @@ func _symbol(center: Vector2, kind: StringName, factor: float) -> void:
 				tex = ICON_SHIELD_V01
 				base_size = SHIELD_ICON_SIZE_V01
 				offset = SHIELD_ICON_OFFSET_V01
+	elif use_t10_sizing:
+		match kind:
+			&"attack":
+				tex = ICON_ATTACK
+				base_size = ATTACK_ICON_SIZE_T10
+				offset = ATTACK_ICON_OFFSET_T10
+			&"health":
+				tex = ICON_HEALTH
+				base_size = HEALTH_ICON_SIZE_T10
+				offset = HEALTH_ICON_OFFSET_T10
+			&"armor":
+				tex = ICON_ARMOR
+				base_size = ARMOR_ICON_SIZE_T10
+				offset = ARMOR_ICON_OFFSET_T10
+			&"shield":
+				tex = ICON_SHIELD
+				base_size = SHIELD_ICON_SIZE_T10
+				offset = SHIELD_ICON_OFFSET_T10
 	else:
 		match kind:
 			&"attack":

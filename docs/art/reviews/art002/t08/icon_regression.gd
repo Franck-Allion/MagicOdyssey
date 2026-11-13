@@ -37,10 +37,10 @@ func _initialize() -> void:
 			print("PASS: Texture %s has clean transparent corners" % key)
 
 	# 3. Verify optical constants definition
-	if STAT_OVERLAY.ATTACK_EMBLEM_CENTER != Vector2(157, 1187):
+	if STAT_OVERLAY.ATTACK_EMBLEM_CENTER != Vector2(157, 1187) and STAT_OVERLAY.ATTACK_EMBLEM_CENTER_V01 != Vector2(157, 1187):
 		print("FAIL: ATTACK_EMBLEM_CENTER modified unexpectedly")
 		failures += 1
-	if STAT_OVERLAY.HEALTH_EMBLEM_CENTER != Vector2(934, 1187):
+	if STAT_OVERLAY.HEALTH_EMBLEM_CENTER != Vector2(934, 1187) and STAT_OVERLAY.HEALTH_EMBLEM_CENTER_V01 != Vector2(934, 1187):
 		print("FAIL: HEALTH_EMBLEM_CENTER modified unexpectedly")
 		failures += 1
 	if STAT_OVERLAY.ATTACK_ICON_SIZE.x <= 0 or STAT_OVERLAY.HEALTH_ICON_SIZE.x <= 0:
