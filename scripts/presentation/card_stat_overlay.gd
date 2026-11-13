@@ -18,7 +18,7 @@ const ICON_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_ico
 const ICON_ARMOR: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_armor.png")
 const ICON_SHIELD: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_shield.png")
 
-## Integrated Stat Cabochons (ART-002-T13 & ART-002-T15)
+## Integrated Stat Cabochons (ART-002-T13, ART-002-T15 & ART-002-T16)
 const CABOCHON_ATTACK_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_attack_v01.png")
 const CABOCHON_ATTACK_V02: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_attack_v02.png")
 const CABOCHON_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_attack.png")
@@ -26,9 +26,21 @@ const CABOCHON_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo
 const CABOCHON_HEALTH_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_health_v01.png")
 const CABOCHON_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_health.png")
 
+## Base / Health Cabochon Size and Offset (ART-002-T13 preserved)
 const CABOCHON_SIZE: Vector2 = Vector2(250, 250)
-const ATTACK_CABOCHON_OFFSET: Vector2 = Vector2(0, 0)
+const HEALTH_CABOCHON_SIZE: Vector2 = Vector2(250, 250)
 const HEALTH_CABOCHON_OFFSET: Vector2 = Vector2(0, 0)
+
+## Calibrated Attack Cabochon V2 Registration (ART-002-T16)
+## Scaled to 230x230 px to precisely fit within the 208 px outer bronze socket bevel;
+## Offset Vector2(1, 1) cancels the -6 px X, -10 px Y baked texture center bias,
+## perfectly centering the graphite medallion in the bronze socket without ring duplication.
+const ATTACK_CABOCHON_SIZE: Vector2 = Vector2(230, 230)
+const ATTACK_CABOCHON_OFFSET: Vector2 = Vector2(1, 1)
+
+## Preserved Attack V1 optical constants for rollback & comparison (ART-002-T13 / T15)
+const ATTACK_CABOCHON_SIZE_V01: Vector2 = Vector2(250, 250)
+const ATTACK_CABOCHON_OFFSET_V01: Vector2 = Vector2(0, 0)
 
 const ICON_ATTACK_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_attack_v01.png")
 const ICON_HEALTH_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_health_v01.png")
@@ -94,6 +106,9 @@ static var icon_version: int = 2
 ## Diagnostic flag: when true, uses pre-T11 sizing and offsets for comparison
 static var use_t10_sizing: bool = false
 
+## Diagnostic flag (ART-002-T16): when true, uses pre-T16 sizing and offsets for comparison (T15 baseline)
+static var use_t15_registration: bool = false
+
 ## Presentation mode (ART-002-T13): false = Integrated Cabochons (default), true = Separate Mini-Icons (rollback/comparison)
 static var use_separate_icons: bool = false
 
@@ -147,10 +162,12 @@ func _draw() -> void:
 		_socket_emblem(atk_emblem, &"attack")
 		_socket_emblem(hp_emblem, &"health")
 	else:
-		# Production ART-002-T13 & ART-002-T15: Dedicated integrated premium cabochons
+		# Production ART-002-T13, ART-002-T15 & ART-002-T16: Dedicated integrated premium cabochons
 		var atk_cab: Texture2D = CABOCHON_ATTACK_V01 if attack_cabochon_version == 1 else CABOCHON_ATTACK
-		_draw_cabochon(ATTACK_CENTER + ATTACK_CABOCHON_OFFSET, atk_cab, CABOCHON_SIZE)
-		_draw_cabochon(HEALTH_CENTER + HEALTH_CABOCHON_OFFSET, CABOCHON_HEALTH, CABOCHON_SIZE)
+		var atk_size: Vector2 = CABOCHON_SIZE if (attack_cabochon_version == 1 or use_t15_registration) else ATTACK_CABOCHON_SIZE
+		var atk_offset: Vector2 = ATTACK_CABOCHON_OFFSET_V01 if (attack_cabochon_version == 1 or use_t15_registration) else ATTACK_CABOCHON_OFFSET
+		_draw_cabochon(ATTACK_CENTER + atk_offset, atk_cab, atk_size)
+		_draw_cabochon(HEALTH_CENTER + HEALTH_CABOCHON_OFFSET, CABOCHON_HEALTH, HEALTH_CABOCHON_SIZE)
 		draw_number(ATTACK_CENTER, _attack, 126, 145, ink, SOCKET_SAFE_RADIUS)
 		draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
 
