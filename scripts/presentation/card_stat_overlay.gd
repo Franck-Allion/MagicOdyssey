@@ -18,8 +18,12 @@ const ICON_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_ico
 const ICON_ARMOR: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_armor.png")
 const ICON_SHIELD: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_shield.png")
 
-## Integrated Stat Cabochons (ART-002-T13)
+## Integrated Stat Cabochons (ART-002-T13 & ART-002-T15)
+const CABOCHON_ATTACK_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_attack_v01.png")
+const CABOCHON_ATTACK_V02: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_attack_v02.png")
 const CABOCHON_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_attack.png")
+
+const CABOCHON_HEALTH_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_health_v01.png")
 const CABOCHON_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_health.png")
 
 const CABOCHON_SIZE: Vector2 = Vector2(250, 250)
@@ -93,6 +97,9 @@ static var use_t10_sizing: bool = false
 ## Presentation mode (ART-002-T13): false = Integrated Cabochons (default), true = Separate Mini-Icons (rollback/comparison)
 static var use_separate_icons: bool = false
 
+## Attack cabochon version (ART-002-T15): 2 = Graphite Steel (default), 1 = Warm Bronze/Amber (T13 rollback/comparison)
+static var attack_cabochon_version: int = 2
+
 ## Per-icon overrides for individual icon version selection (e.g. {"attack": 1})
 static var icon_overrides: Dictionary = {}
 
@@ -140,8 +147,9 @@ func _draw() -> void:
 		_socket_emblem(atk_emblem, &"attack")
 		_socket_emblem(hp_emblem, &"health")
 	else:
-		# Production ART-002-T13: Dedicated integrated premium cabochons
-		_draw_cabochon(ATTACK_CENTER + ATTACK_CABOCHON_OFFSET, CABOCHON_ATTACK, CABOCHON_SIZE)
+		# Production ART-002-T13 & ART-002-T15: Dedicated integrated premium cabochons
+		var atk_cab: Texture2D = CABOCHON_ATTACK_V01 if attack_cabochon_version == 1 else CABOCHON_ATTACK
+		_draw_cabochon(ATTACK_CENTER + ATTACK_CABOCHON_OFFSET, atk_cab, CABOCHON_SIZE)
 		_draw_cabochon(HEALTH_CENTER + HEALTH_CABOCHON_OFFSET, CABOCHON_HEALTH, CABOCHON_SIZE)
 		draw_number(ATTACK_CENTER, _attack, 126, 145, ink, SOCKET_SAFE_RADIUS)
 		draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
