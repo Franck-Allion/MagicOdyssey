@@ -1,0 +1,350 @@
+﻿ART-002-T05 final validation - 2026-11-13
+Engine: D:\Temp\Godot_v4.7.2-stable_win64.exe; 4.7.2.stable.official.ed1daf0bf
+Headless editor import: exit 0; empty final stderr
+Existing native suite: exit 0
+--- Native suite ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+==================================================
+MagicOdyssey â€” Native Headless Test Runner
+Engine: 4.7.2-stable (official)
+==================================================
+[RUN] TestHarnessSelf
+--------------------------------------------------
+Test Execution Summary:
+  Total Assertions: 14
+  Passed:           14
+  Failed:           0
+==================================================
+RESULT: ALL TESTS PASSED
+Isolated ART-002 scene: exit 0; empty stderr
+T05 headless text checks: exit 0; empty stderr
+--- Headless text checks ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS accepted title=Fireball result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Fireball chars=8 title_font=68 rules_chars=35 rules_font=48 lines=2 height=130
+PASS accepted title=Arcane Knight result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Arcane Knight chars=13 title_font=68 rules_chars=46 rules_font=48 lines=2 height=130
+PASS accepted title=Guardian of the Ancient Grove result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Guardian of the Ancient Grove chars=29 title_font=43 rules_chars=163 rules_font=31 lines=5 height=210
+PASS accepted title=Rampart Guard result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Rampart Guard chars=13 title_font=68 rules_chars=8 rules_font=48 lines=1 height=65
+PASS accepted title=Bastion Armor result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Bastion Armor chars=13 title_font=68 rules_chars=31 rules_font=48 lines=2 height=130
+PASS accepted title=Arcane Barrier result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Arcane Barrier chars=14 title_font=68 rules_chars=37 rules_font=48 lines=2 height=130
+PASS accepted title=Ancestral Drake result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Ancestral Drake chars=15 title_font=68 rules_chars=0 rules_font=48 lines=1 height=65
+PASS accepted title=Arcane Knight result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Arcane Knight chars=13 title_font=68 rules_chars=120 rules_font=31 lines=5 height=210
+PASS accepted title=Rune Crafter result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Rune Crafter chars=12 title_font=68 rules_chars=23 rules_font=48 lines=1 height=65
+PASS accepted title=Guardians of the Ancient Grove result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Guardians of the Ancient Grove chars=30 title_font=41 rules_chars=163 rules_font=31 lines=5 height=210
+PASS overflow test initial content
+PASS explicit very-long title overflow
+PASS title rejection is transactional
+PASS explicit long paragraph overflow
+PASS rules rejection is transactional
+PASS card data is not parsed as BBCode
+PASS invalid keyword spans rejected
+PASS official title fits: Realm Recruit font=68
+PASS official title fits: Rampart Guard font=68
+PASS official title fits: Oathbound Knight font=68
+PASS official title fits: Sylvan Archer font=68
+PASS official title fits: Woodland Healer font=68
+PASS official title fits: Mist Sentinel font=68
+PASS official title fits: Iron Guardian font=68
+PASS official title fits: Rune Crafter font=68
+PASS official title fits: Ember Whelp font=68
+PASS official title fits: Ancestral Drake font=68
+PASS official title fits: Fireball font=68
+PASS official title fits: Mending Light font=68
+PASS official title fits: Arcane Barrier font=68
+PASS official title fits: Martial Blessing font=68
+PASS official title fits: Runic Blade font=68
+PASS official title fits: Bastion Armor font=68
+PASS neighboring long title sizing: Guardian of the Ancient Grove font=43
+PASS neighboring long title sizing: Guardians of the Ancient Grove font=41
+T05_CHECKS=125 FAILURES=0
+T05 graphical capture and GPU masks: exit 0; empty final stderr
+--- Graphical output ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 551.86 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 Ti
+
+PASS accepted title=Fireball result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Fireball chars=8 title_font=68 rules_chars=35 rules_font=48 lines=2 height=130
+PASS accepted title=Arcane Knight result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Arcane Knight chars=13 title_font=68 rules_chars=46 rules_font=48 lines=2 height=130
+PASS accepted title=Guardian of the Ancient Grove result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Guardian of the Ancient Grove chars=29 title_font=43 rules_chars=163 rules_font=31 lines=5 height=210
+PASS accepted title=Rampart Guard result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Rampart Guard chars=13 title_font=68 rules_chars=8 rules_font=48 lines=1 height=65
+PASS accepted title=Bastion Armor result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Bastion Armor chars=13 title_font=68 rules_chars=31 rules_font=48 lines=2 height=130
+PASS accepted title=Arcane Barrier result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Arcane Barrier chars=14 title_font=68 rules_chars=37 rules_font=48 lines=2 height=130
+PASS accepted title=Ancestral Drake result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Ancestral Drake chars=15 title_font=68 rules_chars=0 rules_font=48 lines=1 height=65
+PASS accepted title=Arcane Knight result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Arcane Knight chars=13 title_font=68 rules_chars=120 rules_font=31 lines=5 height=210
+PASS accepted title=Rune Crafter result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Rune Crafter chars=12 title_font=68 rules_chars=23 rules_font=48 lines=1 height=65
+PASS accepted title=Guardians of the Ancient Grove result=0 reason=
+PASS title native bounds
+PASS type native bounds
+PASS rules native bounds
+PASS literal rules retained without truncation
+PASS full title retained
+PASS all wrapped lines visible
+PASS readable size floors
+PASS no missing/non-creature tribe placeholder
+PASS glyph coverage all Theme fonts
+LAYOUT title=Guardians of the Ancient Grove chars=30 title_font=41 rules_chars=163 rules_font=31 lines=5 height=210
+PASS overflow test initial content
+PASS explicit very-long title overflow
+PASS title rejection is transactional
+PASS explicit long paragraph overflow
+PASS rules rejection is transactional
+PASS card data is not parsed as BBCode
+PASS invalid keyword spans rejected
+PASS official title fits: Realm Recruit font=68
+PASS official title fits: Rampart Guard font=68
+PASS official title fits: Oathbound Knight font=68
+PASS official title fits: Sylvan Archer font=68
+PASS official title fits: Woodland Healer font=68
+PASS official title fits: Mist Sentinel font=68
+PASS official title fits: Iron Guardian font=68
+PASS official title fits: Rune Crafter font=68
+PASS official title fits: Ember Whelp font=68
+PASS official title fits: Ancestral Drake font=68
+PASS official title fits: Fireball font=68
+PASS official title fits: Mending Light font=68
+PASS official title fits: Arcane Barrier font=68
+PASS official title fits: Martial Blessing font=68
+PASS official title fits: Runic Blade font=68
+PASS official title fits: Bastion Armor font=68
+PASS neighboring long title sizing: Guardian of the Ancient Grove font=43
+PASS neighboring long title sizing: Guardians of the Ancient Grove font=41
+PASS GPU_TEXT_MASK title=Fireball outside_regions=0 warm_metal_overlap=0
+PASS GPU_TEXT_MASK title=Arcane Knight outside_regions=0 warm_metal_overlap=0
+PASS GPU_TEXT_MASK title=Guardian of the Ancient Grove outside_regions=0 warm_metal_overlap=0
+PASS GPU_TEXT_MASK title=Rampart Guard outside_regions=0 warm_metal_overlap=0
+PASS GPU_TEXT_MASK title=Bastion Armor outside_regions=0 warm_metal_overlap=0
+PASS GPU_TEXT_MASK title=Arcane Barrier outside_regions=0 warm_metal_overlap=0
+PASS GPU_TEXT_MASK title=Ancestral Drake outside_regions=0 warm_metal_overlap=0
+PASS CAPTURE title_length_samples_1080p.png (1920, 1080) exit=0
+PASS CAPTURE rules_text_samples_1080p.png (1920, 1080) exit=0
+PASS CAPTURE card_categories_1080p.png (1920, 1080) exit=0
+PASS CAPTURE mixed_hand_1080p.png (1920, 1080) exit=0
+PASS CAPTURE mixed_hand_720p.png (1280, 720) exit=0
+PASS CAPTURE typography_stress_test_1080p.png (1920, 1080) exit=0
+T05_CHECKS=138 FAILURES=0
+Existing gem regression: exit 0; empty stderr
+--- Gem output ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 551.86 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 Ti
+
+GEM_VERIFY common                       alpha_changes=0 outside_mask_changes=0 changed_gems=[1224, 1375, 2217] pass=true
+GEM_VERIFY uncommon                     alpha_changes=0 outside_mask_changes=0 changed_gems=[1223, 1368, 2218] pass=true
+GEM_VERIFY rare                         alpha_changes=0 outside_mask_changes=0 changed_gems=[1224, 1375, 2214] pass=true
+GEM_VERIFY epic_canonical_violet        alpha_changes=0 outside_mask_changes=0 changed_gems=[1223, 1368, 2218] pass=true
+GEM_VERIFY epic_experimental_emerald    alpha_changes=0 outside_mask_changes=0 changed_gems=[1225, 1373, 2218] pass=true
+GEM_VERIFY legendary                    alpha_changes=0 outside_mask_changes=0 changed_gems=[1225, 1375, 2214] pass=true
+Preservation against bfe0d8e: exact Git blob equality for frame, original illustration, stat renderer, rarity factory, gem shader/mask, Theme, catalog and roadmap
+T04B 144-case numeric test: NOT_RERUN in T05; previous evidence retained
+Initial headless text test: exit 1 on the initial five-line region; corrected, final passes above
+git diff --check: exit 0
+No commit/amend issued by this agent; current HEAD 669e8ad advanced externally during work
+--- Git status at evidence creation ---
+ M docs/art/reviews/art002/t05/capture.gd
+ M docs/art/reviews/art002/t05/card_categories_1080p.png
+ M docs/art/reviews/art002/t05/fixture.gd
+ M docs/art/reviews/art002/t05/mixed_hand_1080p.png
+ M docs/art/reviews/art002/t05/mixed_hand_720p.png
+ M docs/art/reviews/art002/t05/rules_text_samples_1080p.png
+ M docs/art/reviews/art002/t05/title_length_samples_1080p.png
+ M docs/art/reviews/art002/t05/typography_stress_test_1080p.png
+ M scripts/presentation/card_content_overlay.gd
+?? docs/art/reviews/art002/t05/capture.gd.uid
+?? docs/art/reviews/art002/t05/card_categories_1080p.png.import
+?? docs/art/reviews/art002/t05/fixture.gd.uid
+?? docs/art/reviews/art002/t05/mixed_hand_1080p.png.import
+?? docs/art/reviews/art002/t05/mixed_hand_720p.png.import
+?? docs/art/reviews/art002/t05/review.md
+?? docs/art/reviews/art002/t05/rules_text_samples_1080p.png.import
+?? docs/art/reviews/art002/t05/title_length_samples_1080p.png.import
+?? docs/art/reviews/art002/t05/typography_stress_test_1080p.png.import
+?? docs/art/reviews/art002/t05/validation.txt

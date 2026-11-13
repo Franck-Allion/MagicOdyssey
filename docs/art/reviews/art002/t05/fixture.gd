@@ -5,6 +5,7 @@ const CONTENT: GDScript = preload("res://scripts/presentation/card_content_overl
 const STRESS_RULES: String = "Armor reduces each damage instance. Shield absorbs damage after Armor. Damage remaining after both protections reduces current HP. Armor is not consumed by damage."
 const TOO_LONG_TITLE: String = "Guardian of the Ancient Grove and the Forgotten Observatory Beyond the Northern Mountains"
 const TOO_LONG_RULES: String = "Armor is never consumed or depleted by taking damage. Shield absorbs damage after Armor. "
+const SUPPORTED_STRESS_TITLE: String = "Guardians of the Ancient Grove"
 
 func fields(title_value: String, category: CardContentOverlay.Category = CardContentOverlay.Category.CREATURE,
 		tribe_value: String = "Human", rules_value: String = "") -> CardContentOverlay.Content:
@@ -87,13 +88,14 @@ func _rebuild() -> void:
 		_label(_stage,"Hand scan order: title / mana / illustration / creature stats / category",Rect2(85,330,1750,50),30,TOKENS.color_token(&"accent"),&"SectionHeading")
 		_label(_stage,"Long titles and complete rules require inspection. The common portrait is review art, not final category-specific artwork.",Rect2(85,405,1750,70),23,TOKENS.color_token(&"secondary"))
 	else:
+		data[2].title = SUPPORTED_STRESS_TITLE
 		_sample(_stage,Vector2(95,210),760,data[2],2)
 		var probe: CardContentOverlay = CONTENT.new()
 		_stage.add_child(probe)
 		probe.visible = false
 		var rejected: CardContentOverlay.Content = fields(TOO_LONG_TITLE,CardContentOverlay.Category.CREATURE,"Elf",TOO_LONG_RULES.repeat(5))
 		var result: Error = probe.configure(rejected)
-		_label(_stage,"LEFT / longest supported review title + dense rules\n\nRIGHT / rejected stress input, shown in full below\nExplicit overflow: error %d / title=%s / rules=%s" % [result,probe.title_overflow,probe.rules_overflow],Rect2(790,235,1050,160),25,TOKENS.color_token(&"accent"))
+		_label(_stage,"LEFT / supported boundary sample: long title + five-line rules\n\nRIGHT / rejected stress input, shown in full below\nExplicit overflow: error %d / title=%s / rules=%s" % [result,probe.title_overflow,probe.rules_overflow],Rect2(790,235,1050,160),25,TOKENS.color_token(&"accent"))
 		var full_text: RichTextLabel = RichTextLabel.new()
 		full_text.position = Vector2(790,425)
 		full_text.size = Vector2(1030,490)

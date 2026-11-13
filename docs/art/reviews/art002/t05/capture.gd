@@ -67,6 +67,59 @@ func _verify_overflow() -> void:
 	_check(overlay.configure(invalid) == ERR_INVALID_DATA,"invalid keyword spans rejected")
 	overlay.free()
 
+func _verify_title_envelope() -> void:
+	var overlay: CardContentOverlay = CONTENT.new()
+	root.add_child(overlay)
+	var official_names: PackedStringArray = ["Realm Recruit","Rampart Guard","Oathbound Knight","Sylvan Archer","Woodland Healer","Mist Sentinel","Iron Guardian","Rune Crafter","Ember Whelp","Ancestral Drake","Fireball","Mending Light","Arcane Barrier","Martial Blessing","Runic Blade","Bastion Armor"]
+	for value: String in official_names:
+		var data: CardContentOverlay.Content = CardContentOverlay.Content.new(value)
+		_check(overlay.configure(data) == OK,"official title fits: %s font=%d" % [value,overlay.title_font_size])
+	var previous: int = 0
+	for value: String in ["Guardian of the Ancient Grove","Guardians of the Ancient Grove"]:
+		var data: CardContentOverlay.Content = CardContentOverlay.Content.new(value)
+		var result: Error = overlay.configure(data)
+		_check(result == OK and (previous == 0 or absi(previous-overlay.title_font_size) <= 3),"neighboring long title sizing: %s font=%d" % [value,overlay.title_font_size])
+		previous = overlay.title_font_size
+	overlay.free()
+
+func _verify_ink(samples: Array[CardContentOverlay.Content]) -> void:
+	var viewport: SubViewport = SubViewport.new()
+	viewport.size = Vector2i(1086,1448)
+	viewport.transparent_bg = true
+	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	root.add_child(viewport)
+	var overlay: CardContentOverlay = CONTENT.new()
+	viewport.add_child(overlay)
+	var source: Image = load("res://assets/_source/lot1/cards/frames/mo_card_frame_master_v03.png").get_image()
+	source.convert(Image.FORMAT_RGBA8)
+	var source_pixels: PackedByteArray = source.get_data()
+	for data: CardContentOverlay.Content in samples:
+		var result: Error = overlay.configure(data)
+		if result != OK:
+			_check(false,"GPU mask setup rejected")
+			continue
+		await process_frame
+		await process_frame
+		await RenderingServer.frame_post_draw
+		var pixels: PackedByteArray = viewport.get_texture().get_image().get_data()
+		var outside: int = 0
+		var metal: int = 0
+		for offset: int in range(0,pixels.size(),4):
+			if pixels[offset+3] <= 16:
+				continue
+			var pixel_index: int = offset/4
+			var at: Vector2 = Vector2(pixel_index % 1086,pixel_index/1086)
+			if not CONTENT.TITLE_BOUNDS.grow(1).has_point(at) and not CONTENT.TYPE_BOUNDS.grow(1).has_point(at) and not CONTENT.RULES_BOUNDS.grow(1).has_point(at):
+				outside += 1
+			var red: int = source_pixels[offset]
+			var green: int = source_pixels[offset+1]
+			var blue: int = source_pixels[offset+2]
+			if source_pixels[offset+3] > 0 and red > 55 and green > 35 and red > 1.35*blue and red > 1.1*green:
+				metal += 1
+		_check(outside == 0 and metal == 0,"GPU_TEXT_MASK title=%s outside_regions=%d warm_metal_overlap=%d" % [data.title,outside,metal])
+	viewport.queue_free()
+	await process_frame
+
 func _capture(filename: String, dimensions: Vector2i, mode: int) -> void:
 	var viewport: SubViewport = SubViewport.new()
 	viewport.size = dimensions
@@ -98,11 +151,14 @@ func _run() -> void:
 		_verify(data)
 	_verify(_fixture.call("fields","Arcane Knight",CardContentOverlay.Category.CREATURE,"Human","Armor reduces damage.\nShield absorbs damage.\nRemaining damage reduces HP.\nArmor is not consumed.\nShield can be depleted.") as CardContentOverlay.Content)
 	_verify(_fixture.call("fields","Rune Crafter",CardContentOverlay.Category.CREATURE,"","Grant 2 Shield to self.") as CardContentOverlay.Content)
+	_verify(_fixture.call("fields",_fixture.get("SUPPORTED_STRESS_TITLE"),CardContentOverlay.Category.CREATURE,"Elf",_fixture.get("STRESS_RULES")) as CardContentOverlay.Content)
 	_verify_overflow()
+	_verify_title_envelope()
 	if not OS.get_cmdline_user_args().has("--verify-only"):
 		if DisplayServer.get_name() == "headless":
 			quit(2)
 			return
+		await _verify_ink(samples)
 		await _capture("title_length_samples_1080p.png",Vector2i(1920,1080),0)
 		await _capture("rules_text_samples_1080p.png",Vector2i(1920,1080),1)
 		await _capture("card_categories_1080p.png",Vector2i(1920,1080),2)

@@ -5,8 +5,10 @@ extends Control
 ## the last accepted display remains intact and the caller retains the full input.
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
 const TITLE_BOUNDS: Rect2 = Rect2(292, 90, 610, 94)
-const TYPE_BOUNDS: Rect2 = Rect2(180, 923, 726, 58)
-const RULES_BOUNDS: Rect2 = Rect2(212, 990, 662, 210)
+const TYPE_BOUNDS: Rect2 = Rect2(180, 916, 726, 66)
+const TYPE_SIZE: int = 48
+## Narrow body column clears the upper shoulders of both original footer sockets.
+const RULES_BOUNDS: Rect2 = Rect2(260, 990, 566, 210)
 const TITLE_PREFERRED: int = 68
 const TITLE_MINIMUM: int = 40
 const RULES_PREFERRED: int = 48
@@ -105,7 +107,7 @@ func configure(data: Content) -> Error:
 		cursor = span.start+span.length
 	var display_font: Font = TOKENS.THEME.get_font(&"font", &"CardTitle")
 	var type_text: String = category_name(data.category) + (" · " + data.tribe if data.category == Category.CREATURE and not data.tribe.is_empty() else "")
-	if display_font.get_string_size(type_text, HORIZONTAL_ALIGNMENT_LEFT, -1, 43).x > TYPE_BOUNDS.size.x:
+	if display_font.get_string_size(type_text, HORIZONTAL_ALIGNMENT_LEFT, -1, TYPE_SIZE).x > TYPE_BOUNDS.size.x:
 		overflow_reason = "Type/tribe line exceeds its supported width."
 		return ERR_PARAMETER_RANGE_ERROR
 	var preferred_width: float = display_font.get_string_size(data.title, HORIZONTAL_ALIGNMENT_LEFT, -1, TITLE_PREFERRED).x
@@ -137,7 +139,7 @@ func configure(data: Content) -> Error:
 		rules_label.free()
 	title_label = _title(data.title, title_points)
 	add_child(title_label)
-	type_label = _title(type_text, 43)
+	type_label = _title(type_text, TYPE_SIZE)
 	type_label.position = TYPE_BOUNDS.position
 	type_label.size = TYPE_BOUNDS.size
 	type_label.add_theme_color_override("font_color", TOKENS.color_token(&"accent"))
