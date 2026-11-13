@@ -12,6 +12,32 @@ const HEALTH_CENTER: Vector2 = Vector2(919, 1279)
 ## Nearest detected metal is >=72 source px away; reserve a 70 px safe disk.
 const SOCKET_SAFE_RADIUS: float = 70.0
 
+## Premium Stat Icons (ART-002-T08)
+const ICON_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_attack.png")
+const ICON_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_health.png")
+const ICON_ARMOR: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_armor.png")
+const ICON_SHIELD: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_shield.png")
+
+## Centralized optical alignment and scale constants for premium icons
+const ATTACK_EMBLEM_CENTER: Vector2 = Vector2(157, 1187)
+const HEALTH_EMBLEM_CENTER: Vector2 = Vector2(934, 1187)
+
+const ATTACK_ICON_OFFSET: Vector2 = Vector2(-2, 1)
+const ATTACK_ICON_SIZE: Vector2 = Vector2(62, 62)
+
+const HEALTH_ICON_OFFSET: Vector2 = Vector2(0, 0)
+const HEALTH_ICON_SIZE: Vector2 = Vector2(62, 62)
+
+const BADGE_ICON_LOCAL_CENTER: Vector2 = Vector2(48, 50)
+const ARMOR_ICON_OFFSET: Vector2 = Vector2(0, 0)
+const ARMOR_ICON_SIZE: Vector2 = Vector2(66, 66)
+
+const SHIELD_ICON_OFFSET: Vector2 = Vector2(0, 0)
+const SHIELD_ICON_SIZE: Vector2 = Vector2(66, 66)
+
+## Diagnostic / comparison flag: when true, draws legacy procedural silhouettes.
+static var use_procedural_icons: bool = false
+
 var _mana: int = 0
 var _attack: int = 0
 var _max_health: int = 0
@@ -91,7 +117,7 @@ func _socket_emblem(center: Vector2, kind: StringName) -> void:
 	draw_circle(center, 34, TOKENS.color_token(&"accent_dim"))
 	draw_circle(center, 29, TOKENS.color_token(&"surface"))
 	draw_arc(center, 32, PI, TAU, 24, TOKENS.color_token(&"accent_bright"), 2, true)
-	_symbol(center, kind, 0.83)
+	_symbol(center, kind, 1.0 if not use_procedural_icons else 0.83)
 
 func _badge(bounds: Rect2, kind: StringName, value: int) -> void:
 	var plate: StyleBoxFlat = StyleBoxFlat.new()
@@ -103,11 +129,41 @@ func _badge(bounds: Rect2, kind: StringName, value: int) -> void:
 	plate.shadow_size = 6
 	draw_style_box(plate, bounds)
 	draw_line(bounds.position + Vector2(24, 3), bounds.end - Vector2(24, bounds.size.y - 3), TOKENS.color_token(&"accent"), 2, true)
-	_symbol(bounds.position + Vector2(48, 50), kind, 1.12)
+	_symbol(bounds.position + BADGE_ICON_LOCAL_CENTER, kind, 1.0 if not use_procedural_icons else 1.12)
 	draw_number(bounds.position + Vector2(137, 50), value, 76, 83, TOKENS.color_token(&"text_bright"))
 
-## Replaceable source-space silhouettes; shape and color both carry meaning.
+## Dedicated premium textures with optical alignment; legacy procedural fallback.
 func _symbol(center: Vector2, kind: StringName, factor: float) -> void:
+	if use_procedural_icons:
+		_draw_procedural_symbol(center, kind, factor)
+		return
+	var tex: Texture2D
+	var base_size: Vector2
+	var offset: Vector2 = Vector2.ZERO
+	match kind:
+		&"attack":
+			tex = ICON_ATTACK
+			base_size = ATTACK_ICON_SIZE
+			offset = ATTACK_ICON_OFFSET
+		&"health":
+			tex = ICON_HEALTH
+			base_size = HEALTH_ICON_SIZE
+			offset = HEALTH_ICON_OFFSET
+		&"armor":
+			tex = ICON_ARMOR
+			base_size = ARMOR_ICON_SIZE
+			offset = ARMOR_ICON_OFFSET
+		&"shield":
+			tex = ICON_SHIELD
+			base_size = SHIELD_ICON_SIZE
+			offset = SHIELD_ICON_OFFSET
+	if tex == null:
+		return
+	var dest_size: Vector2 = base_size * factor
+	var dest_pos: Vector2 = (center + offset - dest_size * 0.5).round()
+	draw_texture_rect(tex, Rect2(dest_pos, dest_size), false)
+
+func _draw_procedural_symbol(center: Vector2, kind: StringName, factor: float) -> void:
 	var shape: PackedVector2Array
 	var tint: Color = TOKENS.color_token(&"accent_bright")
 	match kind:
