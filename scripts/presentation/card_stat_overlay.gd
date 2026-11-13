@@ -18,6 +18,14 @@ const ICON_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_ico
 const ICON_ARMOR: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_armor.png")
 const ICON_SHIELD: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_shield.png")
 
+## Integrated Stat Cabochons (ART-002-T13)
+const CABOCHON_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_attack.png")
+const CABOCHON_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_health.png")
+
+const CABOCHON_SIZE: Vector2 = Vector2(250, 250)
+const ATTACK_CABOCHON_OFFSET: Vector2 = Vector2(0, 0)
+const HEALTH_CABOCHON_OFFSET: Vector2 = Vector2(0, 0)
+
 const ICON_ATTACK_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_attack_v01.png")
 const ICON_HEALTH_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_health_v01.png")
 const ICON_ARMOR_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_armor_v01.png")
@@ -82,6 +90,9 @@ static var icon_version: int = 2
 ## Diagnostic flag: when true, uses pre-T11 sizing and offsets for comparison
 static var use_t10_sizing: bool = false
 
+## Presentation mode (ART-002-T13): false = Integrated Cabochons (default), true = Separate Mini-Icons (rollback/comparison)
+static var use_separate_icons: bool = false
+
 ## Per-icon overrides for individual icon version selection (e.g. {"attack": 1})
 static var icon_overrides: Dictionary = {}
 
@@ -113,22 +124,39 @@ func set_shield_overlay(shield: int) -> void:
 func _draw() -> void:
 	var ink: Color = TOKENS.color_token(&"text_bright")
 	draw_number(MANA_CENTER, _mana, 126, 145, ink, SOCKET_SAFE_RADIUS)
-	draw_number(ATTACK_CENTER, _attack, 126, 145, ink, SOCKET_SAFE_RADIUS)
-	draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
-	var atk_emblem: Vector2 = ATTACK_EMBLEM_CENTER
-	var hp_emblem: Vector2 = HEALTH_EMBLEM_CENTER
-	if icon_version == 1:
-		atk_emblem = ATTACK_EMBLEM_CENTER_V01
-		hp_emblem = HEALTH_EMBLEM_CENTER_V01
-	elif use_t10_sizing:
-		atk_emblem = ATTACK_EMBLEM_CENTER_T10
-		hp_emblem = HEALTH_EMBLEM_CENTER_T10
-	_socket_emblem(atk_emblem, &"attack")
-	_socket_emblem(hp_emblem, &"health")
+
+	if use_separate_icons:
+		# Historical separate icon-over-socket mode (T11 / T10 / T08 rollback & comparison)
+		var atk_emblem: Vector2 = ATTACK_EMBLEM_CENTER
+		var hp_emblem: Vector2 = HEALTH_EMBLEM_CENTER
+		if icon_version == 1:
+			atk_emblem = ATTACK_EMBLEM_CENTER_V01
+			hp_emblem = HEALTH_EMBLEM_CENTER_V01
+		elif use_t10_sizing:
+			atk_emblem = ATTACK_EMBLEM_CENTER_T10
+			hp_emblem = HEALTH_EMBLEM_CENTER_T10
+		draw_number(ATTACK_CENTER, _attack, 126, 145, ink, SOCKET_SAFE_RADIUS)
+		draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
+		_socket_emblem(atk_emblem, &"attack")
+		_socket_emblem(hp_emblem, &"health")
+	else:
+		# Production ART-002-T13: Dedicated integrated premium cabochons
+		_draw_cabochon(ATTACK_CENTER + ATTACK_CABOCHON_OFFSET, CABOCHON_ATTACK, CABOCHON_SIZE)
+		_draw_cabochon(HEALTH_CENTER + HEALTH_CABOCHON_OFFSET, CABOCHON_HEALTH, CABOCHON_SIZE)
+		draw_number(ATTACK_CENTER, _attack, 126, 145, ink, SOCKET_SAFE_RADIUS)
+		draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
+
 	if _native_armor > 0:
 		_badge(Rect2(280, 1280, 198, 100), &"armor", _native_armor)
 	if _shield > 0:
 		_badge(Rect2(608, 1280, 198, 100), &"shield", _shield)
+
+## Render dedicated integrated cabochon centered at stat position
+func _draw_cabochon(center: Vector2, tex: Texture2D, cab_size: Vector2) -> void:
+	if tex == null:
+		return
+	var dest_pos: Vector2 = (center - cab_size * 0.5).round()
+	draw_texture_rect(tex, Rect2(dest_pos, cab_size), false)
 
 ## Center visible glyph bounds rather than a line box (which includes descender space).
 ## The same measured glyphs are drawn, avoiding kerning/advance discrepancies.
