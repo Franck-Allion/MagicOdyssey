@@ -1,0 +1,35 @@
+﻿ART-002-T04B validation transcript
+Source geometry measurement: exit 0
+Godot final headless import: exit 0; empty stderr
+Existing headless suite: exit 0
+--- Native suite output ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+==================================================
+MagicOdyssey â€” Native Headless Test Runner
+Engine: 4.7.2-stable (official)
+==================================================
+[RUN] TestHarnessSelf
+--------------------------------------------------
+Test Execution Summary:
+  Total Assertions: 14
+  Passed:           14
+  Failed:           0
+==================================================
+RESULT: ALL TESTS PASSED
+Final graphical capture / 144 numeral cases: exit 0; empty stderr
+--- Final graphical output ---
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 551.86 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 Ti
+
+BASELINE observations: unsafe_circle=81 off_artwork_center=94 /144
+FINAL measured=144 max_ink_center_error_px=1.0552 failures=0
+CAPTURE single_digit_comparison_1080p.png size=(1920, 1080) exit=0
+CAPTURE double_digit_comparison_1080p.png size=(1920, 1080) exit=0
+CAPTURE multi_digit_hand_720p.png size=(1280, 720) exit=0
+CAPTURE multi_digit_hand_1080p.png size=(1920, 1080) exit=0
+CAPTURE socket_optical_alignment_1080p.png size=(1920, 1080) exit=0
+T04B_FAILURES=0
+Preservation: HEAD blob equality true for master v03, integration fixture, rarity factory, gem shader, gem mask and theme
+git diff --check: exit 0
+Additional untracked capture-script whitespace check: git diff --no-index --check -- NUL docs/art/reviews/art002/t04b/capture.gd; exit 1 for new-file differences, no whitespace-error diagnostics

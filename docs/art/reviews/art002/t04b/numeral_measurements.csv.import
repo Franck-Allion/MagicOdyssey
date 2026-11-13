@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dmwbjon0knfji"
+
+[deps]
+
+files=["res://docs/art/reviews/art002/t04b/numeral_measurements.socket.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.value.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.scale.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.centroid.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.centroid.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.outline.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.safe.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.centered.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.emblem.translation"]
+
+source_file="res://docs/art/reviews/art002/t04b/numeral_measurements.csv"
+dest_files=["res://docs/art/reviews/art002/t04b/numeral_measurements.socket.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.value.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.scale.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.centroid.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.centroid.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.outline.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.safe.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.centered.translation", "res://docs/art/reviews/art002/t04b/numeral_measurements.emblem.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

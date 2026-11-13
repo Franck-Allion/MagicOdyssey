@@ -3,9 +3,14 @@ extends Control
 ## Frame-v03 source coordinates. Presentation only: no commands or domain state.
 ## Printed primary values remain separate from the optional live Shield overlay.
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
-const MANA_CENTER: Vector2 = Vector2(154, 157)
-const ATTACK_CENTER: Vector2 = Vector2(157, 1284)
-const HEALTH_CENTER: Vector2 = Vector2(934, 1284)
+## Painted aperture registration, measured independently from the numerals.
+## T04B median of 360-ray inner bronze-edge fits at three warm-metal thresholds:
+## docs/art/reviews/art002/t04b/socket_geometry.json. Not glyph-specific nudges.
+const MANA_CENTER: Vector2 = Vector2(153, 151)
+const ATTACK_CENTER: Vector2 = Vector2(162, 1279)
+const HEALTH_CENTER: Vector2 = Vector2(919, 1279)
+## Nearest detected metal is >=72 source px away; reserve a 70 px safe disk.
+const SOCKET_SAFE_RADIUS: float = 70.0
 
 var _mana: int = 0
 var _attack: int = 0
@@ -31,9 +36,9 @@ func set_shield_overlay(shield: int) -> void:
 
 func _draw() -> void:
 	var ink: Color = TOKENS.color_token(&"text_bright")
-	draw_number(MANA_CENTER, _mana, 126, 145, ink)
-	draw_number(ATTACK_CENTER, _attack, 126, 145, ink)
-	draw_number(HEALTH_CENTER, _max_health, 126, 145, ink)
+	draw_number(MANA_CENTER, _mana, 126, 145, ink, SOCKET_SAFE_RADIUS)
+	draw_number(ATTACK_CENTER, _attack, 126, 145, ink, SOCKET_SAFE_RADIUS)
+	draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
 	_socket_emblem(Vector2(157, 1187), &"attack")
 	_socket_emblem(Vector2(934, 1187), &"health")
 	if _native_armor > 0:
@@ -43,7 +48,8 @@ func _draw() -> void:
 
 ## Center visible glyph bounds rather than a line box (which includes descender space).
 ## The same measured glyphs are drawn, avoiding kerning/advance discrepancies.
-func draw_number(center: Vector2, value: int, points: int, max_width: float, ink: Color) -> void:
+func draw_number(center: Vector2, value: int, points: int, max_width: float, ink: Color,
+		safe_radius: float = 0.0) -> void:
 	var text: String = str(value)
 	var font: Font = TOKENS.THEME.get_font(&"font", &"TacticalNumber")
 	var measured: Vector2 = font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, points)
@@ -52,18 +58,27 @@ func draw_number(center: Vector2, value: int, points: int, max_width: float, ink
 	var font_rid: RID = font.get_rids()[0]
 	var glyphs: PackedInt32Array = PackedInt32Array()
 	var offsets: PackedFloat32Array = PackedFloat32Array()
-	var cursor: float = 0.0
 	var bounds: Rect2 = Rect2()
-	for index: int in range(text.length()):
-		var glyph: int = server.font_get_glyph_index(font_rid, font_size, text.unicode_at(index), 0)
-		server.font_render_glyph(font_rid, Vector2i(font_size, 0), glyph)
-		var glyph_bounds: Rect2 = Rect2(
-			server.font_get_glyph_offset(font_rid, Vector2i(font_size, 0), glyph) + Vector2(cursor, 0),
-			server.font_get_glyph_size(font_rid, Vector2i(font_size, 0), glyph))
-		bounds = glyph_bounds if index == 0 else bounds.merge(glyph_bounds)
-		glyphs.append(glyph)
-		offsets.append(cursor)
-		cursor += server.font_get_glyph_advance(font_rid, font_size, glyph).x
+	while true:
+		glyphs.clear()
+		offsets.clear()
+		var cursor: float = 0.0
+		for index: int in range(text.length()):
+			var glyph: int = server.font_get_glyph_index(font_rid, font_size, text.unicode_at(index), 0)
+			server.font_render_glyph(font_rid, Vector2i(font_size, 0), glyph)
+			var glyph_bounds: Rect2 = Rect2(
+				server.font_get_glyph_offset(font_rid, Vector2i(font_size, 0), glyph) + Vector2(cursor, 0),
+				server.font_get_glyph_size(font_rid, Vector2i(font_size, 0), glyph))
+			bounds = glyph_bounds if index == 0 else bounds.merge(glyph_bounds)
+			glyphs.append(glyph)
+			offsets.append(cursor)
+			cursor += server.font_get_glyph_advance(font_rid, font_size, glyph).x
+		# A width-only fit cannot protect a circular socket's diagonal corners.
+		# Keep the existing glyph-bounds centering; fit its enclosing rectangle in
+		# the safe disk, including 3 px outline + 1 px baseline rounding allowance.
+		if safe_radius <= 0.0 or bounds.size.length() * 0.5 + 4.0 <= safe_radius or font_size <= 1:
+			break
+		font_size -= 1
 	var baseline: Vector2 = (center - bounds.get_center()).round()
 	for index: int in range(glyphs.size()):
 		var at: Vector2 = baseline + Vector2(offsets[index], 0)
