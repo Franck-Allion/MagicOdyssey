@@ -7,6 +7,7 @@ const ART: Texture2D = preload("res://assets/_source/lot1/cards/illustrations/mo
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
 const GEM_TREATMENT: GDScript = preload("res://scripts/presentation/rarity_gem_treatment.gd")
 const STAT_OVERLAY: GDScript = preload("res://scripts/presentation/card_stat_overlay.gd")
+const CONTENT_OVERLAY: GDScript = preload("res://scripts/presentation/card_content_overlay.gd")
 const CARD_SIZE: Vector2 = Vector2(1086, 1448)
 const RARITIES: Array[StringName] = [&"common", &"uncommon", &"rare", &"epic", &"legendary"]
 const NAMES: PackedStringArray = ["Common", "Uncommon", "Rare", "Epic", "Legendary"]
@@ -16,6 +17,12 @@ var _mode: int = 0
 var _use_emerald: bool = false
 var _gem_materials: Array[ShaderMaterial] = []
 var _emerald_epic_material: ShaderMaterial
+
+class ManaOnlyOverlay extends CardStatOverlay:
+	## Non-creatures leave the original midnight-enamel footer sockets dormant.
+	## Uses the approved cost renderer unchanged; no invented Attack/HP values.
+	func _draw() -> void:
+		draw_number(MANA_CENTER, _mana, 126, 145, TOKENS.color_token(&"text_bright"), SOCKET_SAFE_RADIUS)
 
 func _ready() -> void:
 	theme = TOKENS.THEME
@@ -67,7 +74,8 @@ func _texture(parent: Control, source: Texture2D, bounds: Rect2) -> TextureRect:
 
 func _card(parent: Control, origin: Vector2, height: float, rarity_index: int,
 		material_override: ShaderMaterial = null, native_armor: int = 0,
-		shield: int = 0, cost: int = 4, attack_value: int = 4, health_value: int = 5) -> Control:
+		shield: int = 0, cost: int = 4, attack_value: int = 4, health_value: int = 5,
+		content: CardContentOverlay.Content = null) -> Control:
 	var card: Control = Control.new()
 	card.position = origin
 	card.size = CARD_SIZE
@@ -86,16 +94,15 @@ func _card(parent: Control, origin: Vector2, height: float, rarity_index: int,
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	var frame: TextureRect = _texture(card, FRAME, Rect2(Vector2.ZERO, CARD_SIZE))
 	frame.material = material_override if material_override != null else _gem_materials[rarity_index]
-	var ink: Color = TOKENS.color_token(&"text_bright")
-	var title: Label = _label(card, "Arcane Knight", Rect2(280, 90, 645, 94), 68, ink, &"CardTitle")
-	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var tribe: Label = _label(card, "Creature  ·  Human", Rect2(155, 929, 776, 60), 49,
-		TOKENS.color_token(&"accent"), &"CardTitle")
-	tribe.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var rule: Label = _label(card, "Whenever this creature\nattacks, gain 1 Shield.",
-		Rect2(170, 1010, 746, 150), 54, ink)
-	rule.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var stats: Control = STAT_OVERLAY.new()
+	var fields: CardContentOverlay.Content = content if content != null else CardContentOverlay.Content.new(
+		"Arcane Knight", CardContentOverlay.Category.CREATURE, "Human", "Whenever this creature attacks, gain 1 Shield.")
+	var text_overlay: CardContentOverlay = CONTENT_OVERLAY.new()
+	text_overlay.name = "CardContent"
+	card.add_child(text_overlay)
+	var text_result: Error = text_overlay.configure(fields)
+	if text_result != OK:
+		push_error("ART002 content rejected: %s" % text_overlay.overflow_reason)
+	var stats: CardStatOverlay = STAT_OVERLAY.new() if fields.category == CardContentOverlay.Category.CREATURE else ManaOnlyOverlay.new()
 	card.add_child(stats)
 	stats.set_printed_values(cost, attack_value, health_value, native_armor)
 	stats.set_shield_overlay(shield)
