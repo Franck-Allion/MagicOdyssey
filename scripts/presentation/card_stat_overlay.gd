@@ -12,28 +12,55 @@ const HEALTH_CENTER: Vector2 = Vector2(919, 1279)
 ## Nearest detected metal is >=72 source px away; reserve a 70 px safe disk.
 const SOCKET_SAFE_RADIUS: float = 70.0
 
-## Premium Stat Icons (ART-002-T08)
+## Premium Stat Icons (ART-002-T08 & ART-002-T10)
 const ICON_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_attack.png")
 const ICON_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_health.png")
 const ICON_ARMOR: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_armor.png")
 const ICON_SHIELD: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_shield.png")
 
+const ICON_ATTACK_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_attack_v01.png")
+const ICON_HEALTH_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_health_v01.png")
+const ICON_ARMOR_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_armor_v01.png")
+const ICON_SHIELD_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_shield_v01.png")
+
+const ICON_ATTACK_V02: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_attack_v02.png")
+const ICON_HEALTH_V02: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_health_v02.png")
+const ICON_ARMOR_V02: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_armor_v02.png")
+const ICON_SHIELD_V02: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_shield_v02.png")
+
 ## Centralized optical alignment and scale constants for premium icons
 const ATTACK_EMBLEM_CENTER: Vector2 = Vector2(157, 1187)
 const HEALTH_EMBLEM_CENTER: Vector2 = Vector2(934, 1187)
 
-const ATTACK_ICON_OFFSET: Vector2 = Vector2(-2, 1)
-const ATTACK_ICON_SIZE: Vector2 = Vector2(62, 62)
+## Calibrated V2 optical constants
+const ATTACK_ICON_OFFSET: Vector2 = Vector2(0, -1)
+const ATTACK_ICON_SIZE: Vector2 = Vector2(60, 60)
 
-const HEALTH_ICON_OFFSET: Vector2 = Vector2(0, 0)
-const HEALTH_ICON_SIZE: Vector2 = Vector2(62, 62)
+const HEALTH_ICON_OFFSET: Vector2 = Vector2(0, -1)
+const HEALTH_ICON_SIZE: Vector2 = Vector2(68, 68)
 
 const BADGE_ICON_LOCAL_CENTER: Vector2 = Vector2(48, 50)
 const ARMOR_ICON_OFFSET: Vector2 = Vector2(0, 0)
-const ARMOR_ICON_SIZE: Vector2 = Vector2(66, 66)
+const ARMOR_ICON_SIZE: Vector2 = Vector2(68, 68)
 
 const SHIELD_ICON_OFFSET: Vector2 = Vector2(0, 0)
-const SHIELD_ICON_SIZE: Vector2 = Vector2(66, 66)
+const SHIELD_ICON_SIZE: Vector2 = Vector2(64, 64)
+
+## Preserved V1 optical constants for rollback & comparison
+const ATTACK_ICON_OFFSET_V01: Vector2 = Vector2(-2, 1)
+const ATTACK_ICON_SIZE_V01: Vector2 = Vector2(62, 62)
+const HEALTH_ICON_OFFSET_V01: Vector2 = Vector2(0, 0)
+const HEALTH_ICON_SIZE_V01: Vector2 = Vector2(62, 62)
+const ARMOR_ICON_OFFSET_V01: Vector2 = Vector2(0, 0)
+const ARMOR_ICON_SIZE_V01: Vector2 = Vector2(66, 66)
+const SHIELD_ICON_OFFSET_V01: Vector2 = Vector2(0, 0)
+const SHIELD_ICON_SIZE_V01: Vector2 = Vector2(66, 66)
+
+## Version selection: 2 = V2 (default), 1 = V1
+static var icon_version: int = 2
+
+## Per-icon overrides for individual icon version selection (e.g. {"attack": 1})
+static var icon_overrides: Dictionary = {}
 
 ## Diagnostic / comparison flag: when true, draws legacy procedural silhouettes.
 static var use_procedural_icons: bool = false
@@ -140,23 +167,43 @@ func _symbol(center: Vector2, kind: StringName, factor: float) -> void:
 	var tex: Texture2D
 	var base_size: Vector2
 	var offset: Vector2 = Vector2.ZERO
-	match kind:
-		&"attack":
-			tex = ICON_ATTACK
-			base_size = ATTACK_ICON_SIZE
-			offset = ATTACK_ICON_OFFSET
-		&"health":
-			tex = ICON_HEALTH
-			base_size = HEALTH_ICON_SIZE
-			offset = HEALTH_ICON_OFFSET
-		&"armor":
-			tex = ICON_ARMOR
-			base_size = ARMOR_ICON_SIZE
-			offset = ARMOR_ICON_OFFSET
-		&"shield":
-			tex = ICON_SHIELD
-			base_size = SHIELD_ICON_SIZE
-			offset = SHIELD_ICON_OFFSET
+	var ver: int = icon_overrides.get(String(kind), icon_version)
+	if ver == 1:
+		match kind:
+			&"attack":
+				tex = ICON_ATTACK_V01
+				base_size = ATTACK_ICON_SIZE_V01
+				offset = ATTACK_ICON_OFFSET_V01
+			&"health":
+				tex = ICON_HEALTH_V01
+				base_size = HEALTH_ICON_SIZE_V01
+				offset = HEALTH_ICON_OFFSET_V01
+			&"armor":
+				tex = ICON_ARMOR_V01
+				base_size = ARMOR_ICON_SIZE_V01
+				offset = ARMOR_ICON_OFFSET_V01
+			&"shield":
+				tex = ICON_SHIELD_V01
+				base_size = SHIELD_ICON_SIZE_V01
+				offset = SHIELD_ICON_OFFSET_V01
+	else:
+		match kind:
+			&"attack":
+				tex = ICON_ATTACK
+				base_size = ATTACK_ICON_SIZE
+				offset = ATTACK_ICON_OFFSET
+			&"health":
+				tex = ICON_HEALTH
+				base_size = HEALTH_ICON_SIZE
+				offset = HEALTH_ICON_OFFSET
+			&"armor":
+				tex = ICON_ARMOR
+				base_size = ARMOR_ICON_SIZE
+				offset = ARMOR_ICON_OFFSET
+			&"shield":
+				tex = ICON_SHIELD
+				base_size = SHIELD_ICON_SIZE
+				offset = SHIELD_ICON_OFFSET
 	if tex == null:
 		return
 	var dest_size: Vector2 = base_size * factor

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cajhgxmc6ftuc"
+
+[deps]
+
+files=["res://docs/art/reviews/art002/t06/numeral_measurements.socket.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.value.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.scale.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.centroid.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.centroid.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.outline.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.safe.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.centered.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.emblem.translation"]
+
+source_file="res://docs/art/reviews/art002/t06/numeral_measurements.csv"
+dest_files=["res://docs/art/reviews/art002/t06/numeral_measurements.socket.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.value.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.scale.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.centroid.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.centroid.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.outline.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.ink.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.safe.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.centered.translation", "res://docs/art/reviews/art002/t06/numeral_measurements.emblem.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
