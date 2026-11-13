@@ -139,8 +139,8 @@ func _optical() -> void:
 				_label(page, "T04" if version == 0 else "T04B", Rect2(at+Vector2(75,215),Vector2(110,35)), 19)
 	await _save(viewport, "socket_optical_alignment_1080p.png")
 
-func _measure() -> void:
-	var csv: FileAccess = FileAccess.open(OUT+"numeral_measurements.csv", FileAccess.WRITE)
+func _measure(output_directory: String = OUT) -> void:
+	var csv: FileAccess = FileAccess.open(output_directory+"numeral_measurements.csv", FileAccess.WRITE)
 	csv.store_csv_line(PackedStringArray(["version","socket","value","scale","ink_center_dx_px","ink_center_dy_px","centroid_dx_source","centroid_dy_source","outline_radius_source","ink_height_px","safe_fit","centered","emblem_clear"]))
 	var viewport: SubViewport = _viewport(Vector2i(220,220))
 	var probe: NumeralProbe = NumeralProbe.new()

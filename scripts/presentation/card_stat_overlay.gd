@@ -123,9 +123,13 @@ func _symbol(center: Vector2, kind: StringName, factor: float) -> void:
 			# Arcane ward: pointed lozenge and floating energy arcs, unlike solid metal Armor.
 			shape = PackedVector2Array([Vector2(0,-28), Vector2(19,-4), Vector2(15,14), Vector2(0,29), Vector2(-15,14), Vector2(-19,-4)])
 			tint = TOKENS.color_token(&"shield")
+	# Preserve silhouettes and registration; add restrained top-lit material relief.
+	var facets: PackedColorArray = PackedColorArray()
 	for index: int in range(shape.size()):
+		var upper_light: float = clampf((28.0-shape[index].y-shape[index].x*0.35)/62.0,0.0,1.0)
+		facets.append(tint.darkened(0.64).lerp(tint.lightened(0.12),upper_light))
 		shape[index] = center + shape[index] * factor
-	draw_colored_polygon(shape, tint.darkened(0.4))
+	draw_polygon(shape,facets)
 	var edge: PackedVector2Array = shape.duplicate()
 	edge.append(shape[0])
 	draw_polyline(edge, tint, 3.5, true)

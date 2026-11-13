@@ -8,6 +8,7 @@ const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd
 const GEM_TREATMENT: GDScript = preload("res://scripts/presentation/rarity_gem_treatment.gd")
 const STAT_OVERLAY: GDScript = preload("res://scripts/presentation/card_stat_overlay.gd")
 const CONTENT_OVERLAY: GDScript = preload("res://scripts/presentation/card_content_overlay.gd")
+const CATEGORY_OVERLAY: GDScript = preload("res://scripts/presentation/card_category_overlay.gd")
 const CARD_SIZE: Vector2 = Vector2(1086, 1448)
 const RARITIES: Array[StringName] = [&"common", &"uncommon", &"rare", &"epic", &"legendary"]
 const NAMES: PackedStringArray = ["Common", "Uncommon", "Rare", "Epic", "Legendary"]
@@ -17,12 +18,6 @@ var _mode: int = 0
 var _use_emerald: bool = false
 var _gem_materials: Array[ShaderMaterial] = []
 var _emerald_epic_material: ShaderMaterial
-
-class ManaOnlyOverlay extends CardStatOverlay:
-	## Non-creatures leave the original midnight-enamel footer sockets dormant.
-	## Uses the approved cost renderer unchanged; no invented Attack/HP values.
-	func _draw() -> void:
-		draw_number(MANA_CENTER, _mana, 126, 145, TOKENS.color_token(&"text_bright"), SOCKET_SAFE_RADIUS)
 
 func _ready() -> void:
 	theme = TOKENS.THEME
@@ -102,7 +97,9 @@ func _card(parent: Control, origin: Vector2, height: float, rarity_index: int,
 	var text_result: Error = text_overlay.configure(fields)
 	if text_result != OK:
 		push_error("ART002 content rejected: %s" % text_overlay.overflow_reason)
-	var stats: CardStatOverlay = STAT_OVERLAY.new() if fields.category == CardContentOverlay.Category.CREATURE else ManaOnlyOverlay.new()
+	var stats: CardStatOverlay = STAT_OVERLAY.new() if fields.category == CardContentOverlay.Category.CREATURE else CATEGORY_OVERLAY.new()
+	if stats is CardCategoryOverlay:
+		(stats as CardCategoryOverlay).category = fields.category
 	card.add_child(stats)
 	stats.set_printed_values(cost, attack_value, health_value, native_armor)
 	stats.set_shield_overlay(shield)
