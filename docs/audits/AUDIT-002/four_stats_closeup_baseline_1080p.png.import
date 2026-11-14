@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7j87fnubmy02"
-path="res://.godot/imported/mo_icon_health_v01.png-b297036990c66ce5949ef35a43ac056c.ctex"
+uid="uid://cv4myhsned1sc"
+path="res://.godot/imported/four_stats_closeup_baseline_1080p.png-1f775af0ed26314928b024e43f0a493f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/cards/icons/mo_icon_health_v01.png"
-dest_files=["res://.godot/imported/mo_icon_health_v01.png-b297036990c66ce5949ef35a43ac056c.ctex"]
+source_file="res://docs/audits/AUDIT-002/four_stats_closeup_baseline_1080p.png"
+dest_files=["res://.godot/imported/four_stats_closeup_baseline_1080p.png-1f775af0ed26314928b024e43f0a493f.ctex"]
 
 [params]
 

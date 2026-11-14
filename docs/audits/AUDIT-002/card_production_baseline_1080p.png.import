@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw8iw1lpj0mh7"
-path="res://.godot/imported/mo_plate_armor_v01.png-87050ce44fe42778f91ec66607cdb015.ctex"
+uid="uid://c2jfva1ynsowp"
+path="res://.godot/imported/card_production_baseline_1080p.png-b94671390e801529a168ab97b291db87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/cards/icons/mo_plate_armor_v01.png"
-dest_files=["res://.godot/imported/mo_plate_armor_v01.png-87050ce44fe42778f91ec66607cdb015.ctex"]
+source_file="res://docs/audits/AUDIT-002/card_production_baseline_1080p.png"
+dest_files=["res://.godot/imported/card_production_baseline_1080p.png-b94671390e801529a168ab97b291db87.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -164,7 +164,7 @@ func _test_numeral_styling_coherence(asserts: TestAsserts) -> void:
 	asserts.assert_equal(STAT_OVERLAY.NUMERAL_OUTLINE_SIZE, 4, "Global numeral outline size must be 4 px")
 	asserts.assert_equal(STAT_OVERLAY.NUMERAL_SHADOW_OFFSET, Vector2(0, 2), "Global numeral shadow offset must be Vector2(0, 2)")
 	asserts.assert_equal(STAT_OVERLAY.NUMERAL_SHADOW_COLOR, Color(0.0, 0.0, 0.0, 0.8), "Global numeral shadow color must be black at 80% opacity")
-	asserts.assert_true(STAT_OVERLAY.use_t25_readability_polish, "Global readability polish must be active by default")
+	asserts.assert_true(STAT_OVERLAY.use_optical_numeral_centering, "Principled optical numeral centering must be active by default")
 
 
 func _test_numeral_fitting_and_breathing_room(asserts: TestAsserts) -> void:

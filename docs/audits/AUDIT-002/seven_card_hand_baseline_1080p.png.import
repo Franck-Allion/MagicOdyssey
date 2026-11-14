@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crm2o33gouy2j"
-path="res://.godot/imported/mo_plate_shield_v01.png-2522cc1ffefad6d15a79d1bf8bff0c47.ctex"
+uid="uid://bg4o58r32b03j"
+path="res://.godot/imported/seven_card_hand_baseline_1080p.png-ad128c7f96a030514ca69b435438c69d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/cards/icons/mo_plate_shield_v01.png"
-dest_files=["res://.godot/imported/mo_plate_shield_v01.png-2522cc1ffefad6d15a79d1bf8bff0c47.ctex"]
+source_file="res://docs/audits/AUDIT-002/seven_card_hand_baseline_1080p.png"
+dest_files=["res://.godot/imported/seven_card_hand_baseline_1080p.png-ad128c7f96a030514ca69b435438c69d.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
