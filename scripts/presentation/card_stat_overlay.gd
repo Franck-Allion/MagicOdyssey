@@ -50,10 +50,15 @@ const ARMOR_PLAQUE_OFFSET: Vector2 = Vector2(0, 0)
 const SHIELD_PLAQUE_SIZE: Vector2 = Vector2(180, 69)
 const SHIELD_PLAQUE_OFFSET: Vector2 = Vector2(0, 0)
 
-## Centralized optical alignment for plaque badge numeral (ART-002-T23)
+## Centralized optical alignment for plaque badge numeral (ART-002-T23/T24)
+## Refined in ART-002-T24 from 76 pt to 62 pt to provide comfortable vertical breathing room
+## (5.5 px top/bottom margin on Armor, 9.0 px on Shield) without crowding plaque borders.
 const BADGE_PLAQUE_NUMBER_LOCAL_CENTER: Vector2 = Vector2(99, 50)
-const BADGE_PLAQUE_NUMBER_FONT_SIZE: int = 76
+const BADGE_PLAQUE_NUMBER_FONT_SIZE: int = 62
 const BADGE_PLAQUE_NUMBER_MAX_WIDTH: float = 83.0
+
+## Preserved T23 font size for comparison and rollback
+const BADGE_PLAQUE_NUMBER_FONT_SIZE_T23: int = 76
 
 ## Original Master-Frame Bronze Socket Bezels (ART-002-T20)
 ## Preserves original sculpted bronze rings, bevels, cardinal points, highlights and shadows.
@@ -171,6 +176,9 @@ static var use_separate_icons: bool = false
 ## true = Integrated Plaque Inlays (production default per ART-002-T23)
 ## false = Separate Mini-Icons (ART-002-T11/T10/T08 legacy rollback)
 static var use_plaque_inlays: bool = true
+
+## Diagnostic flag (ART-002-T24): when true, uses pre-T24 76 pt sizing for comparison / rollback
+static var use_t23_badge_font_size: bool = false
 
 ## Diagnostic flag: when true, draws inlay with direct circular mask without Layer 3 bezel overlay
 static var use_inlay_mask_only: bool = false
@@ -292,11 +300,34 @@ static func get_numeral_optical_offset(value: int) -> Vector2:
 		return Vector2(-2, 0)
 	return Vector2.ZERO
 
+## Dedicated optical offsets for plaque badge numerals (ART-002-T24).
+## Calibrated specifically for horizontal rectangular plaques:
+## Vertical offset is strictly 0 to preserve equal top/bottom breathing room.
+## Horizontal offset balances asymmetrical visual mass (e.g. narrow '1' in '10', '12', '14').
+const BADGE_PLAQUE_NUMERAL_OPTICAL_OFFSETS: Dictionary = {
+	1: Vector2(0, 0),
+	2: Vector2(0, 0),
+	4: Vector2(-1, 0),
+	5: Vector2(0, 0),
+	7: Vector2(1, 0),
+	8: Vector2(0, 0),
+	10: Vector2(-2, 0),
+	12: Vector2(-2, 0),
+	14: Vector2(-2, 0),
+}
+
+static func get_badge_plaque_numeral_optical_offset(value: int) -> Vector2:
+	if BADGE_PLAQUE_NUMERAL_OPTICAL_OFFSETS.has(value):
+		return BADGE_PLAQUE_NUMERAL_OPTICAL_OFFSETS[value]
+	if value >= 10 and value <= 19 and value != 11:
+		return Vector2(-2, 0)
+	return Vector2.ZERO
+
 ## Center visible glyph bounds rather than a line box (which includes descender space).
 ## The same measured glyphs are drawn, avoiding kerning/advance discrepancies.
 ## Applies principled optical centering for asymmetrical numerals (ART-002-T21).
 func draw_number(center: Vector2, value: int, points: int, max_width: float, ink: Color,
-		safe_radius: float = 0.0) -> void:
+		safe_radius: float = 0.0, custom_optical_offset: Variant = null) -> void:
 	var text: String = str(value)
 	var font: Font = TOKENS.THEME.get_font(&"font", &"TacticalNumber")
 	var measured: Vector2 = font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, points)
@@ -326,7 +357,9 @@ func draw_number(center: Vector2, value: int, points: int, max_width: float, ink
 		if safe_radius <= 0.0 or bounds.size.length() * 0.5 + 4.0 <= safe_radius or font_size <= 1:
 			break
 		font_size -= 1
-	var opt_offset: Vector2 = get_numeral_optical_offset(value) if use_optical_numeral_centering else Vector2.ZERO
+	var opt_offset: Vector2 = Vector2.ZERO
+	if use_optical_numeral_centering:
+		opt_offset = custom_optical_offset if custom_optical_offset != null else get_numeral_optical_offset(value)
 	var baseline: Vector2 = (center + opt_offset - bounds.get_center()).round()
 	for index: int in range(glyphs.size()):
 		var at: Vector2 = baseline + Vector2(offsets[index], 0)
@@ -364,9 +397,11 @@ func _badge(bounds: Rect2, kind: StringName, value: int) -> void:
 		# Layer 3: Top inner bronze highlight line
 		draw_line(bounds.position + Vector2(24, 3), bounds.end - Vector2(24, bounds.size.y - 3), TOKENS.color_token(&"accent"), 2, true)
 
-		# Layer 4: White Stat Numeral centered over plaque
+		# Layer 4: White Stat Numeral centered over plaque (ART-002-T24 refined breathing room)
+		var f_size: int = BADGE_PLAQUE_NUMBER_FONT_SIZE_T23 if use_t23_badge_font_size else BADGE_PLAQUE_NUMBER_FONT_SIZE
+		var badge_offset: Vector2 = get_numeral_optical_offset(value) if use_t23_badge_font_size else get_badge_plaque_numeral_optical_offset(value)
 		draw_number(bounds.position + BADGE_PLAQUE_NUMBER_LOCAL_CENTER, value,
-			BADGE_PLAQUE_NUMBER_FONT_SIZE, BADGE_PLAQUE_NUMBER_MAX_WIDTH, TOKENS.color_token(&"text_bright"))
+			f_size, BADGE_PLAQUE_NUMBER_MAX_WIDTH, TOKENS.color_token(&"text_bright"), 0.0, badge_offset)
 	else:
 		# Historical separate floating icon treatment (rollback & comparison)
 		draw_line(bounds.position + Vector2(24, 3), bounds.end - Vector2(24, bounds.size.y - 3), TOKENS.color_token(&"accent"), 2, true)
