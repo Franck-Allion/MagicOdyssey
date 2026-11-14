@@ -37,7 +37,7 @@
 
 | Prompt | Title | Status | Verification Evidence / Reference | Commit SHA |
 |---|---|:---:|---|:---:|
-| **P005** | Compose `CombatScreen` | **TODO** | Central battlefield, hero zones, hand area, action bar responsive layout. | — |
+| **P005** | Compose `CombatScreen` | **PASS** | `scenes/combat/combat_screen.tscn` and `combat_screen.gd` created. Responsive 1080p/720p layout with 0 clipping. Native CI: 208/208 PASS (exit 0); failure mode exits 1 (3 failures). GPU screenshots at 1080p, 720p, and debug overlay captured and inspected. Review evidence: `docs/art/reviews/p005/review.md`. | — |
 | **P006** | Create 24 Board Slots | **TODO** | 2 camps × 6 columns × 2 rows; distinct Attack/Defense rows; slot signals. | — |
 | **P007** | Hero & Turn HUDs | **TODO** | HP, mana capacity/available, deck counters, turn banner, End Turn button. | — |
 | **P008** | Fantasy Crest `CreatureToken` | **TODO** | Shield token: portrait, ATK (BL), HP (BR), armor/shield badges, max 3 statuses + `+N`. | — |

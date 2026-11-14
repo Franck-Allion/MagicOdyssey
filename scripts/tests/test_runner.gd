@@ -7,6 +7,7 @@ extends SceneTree
 const TestAssertsScript = preload("res://scripts/tests/test_asserts.gd")
 const TestHarnessSelfScript = preload("res://scripts/tests/test_harness_self.gd")
 const TestCardPresentationScript = preload("res://scripts/tests/test_card_presentation.gd")
+const TestCombatScreenScript = preload("res://scripts/tests/test_combat_screen.gd")
 
 
 func _init() -> void:
@@ -53,6 +54,10 @@ func _run_registered_suites(asserts: TestAsserts, failure_mode: bool) -> void:
 	print("[RUN] TestCardPresentation")
 	var presentation_suite: TestCardPresentation = TestCardPresentationScript.new()
 	presentation_suite.run_suite(asserts, failure_mode)
+
+	print("[RUN] TestCombatScreen")
+	var combat_screen_suite: TestCombatScreen = TestCombatScreenScript.new()
+	combat_screen_suite.run_suite(asserts, failure_mode)
 
 
 func _is_failure_mode_requested() -> bool:
