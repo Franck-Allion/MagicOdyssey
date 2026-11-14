@@ -6,6 +6,7 @@ extends SceneTree
 
 const TestAssertsScript = preload("res://scripts/tests/test_asserts.gd")
 const TestHarnessSelfScript = preload("res://scripts/tests/test_harness_self.gd")
+const TestCardPresentationScript = preload("res://scripts/tests/test_card_presentation.gd")
 
 
 func _init() -> void:
@@ -45,10 +46,13 @@ func _init() -> void:
 
 func _run_registered_suites(asserts: TestAsserts, failure_mode: bool) -> void:
 	# Explicit suite registry for deterministic execution order.
-	# Future test suites will be appended here.
 	print("[RUN] TestHarnessSelf")
 	var self_suite: TestHarnessSelf = TestHarnessSelfScript.new()
 	self_suite.run_suite(asserts, failure_mode)
+
+	print("[RUN] TestCardPresentation")
+	var presentation_suite: TestCardPresentation = TestCardPresentationScript.new()
+	presentation_suite.run_suite(asserts, failure_mode)
 
 
 func _is_failure_mode_requested() -> bool:
