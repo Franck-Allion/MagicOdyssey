@@ -156,3 +156,16 @@ func get_overlay_layer() -> Control:
 	if overlay_layer != null:
 		return overlay_layer
 	return get_node_or_null("OverlayLayer") as Control
+
+## P005-R01 presentation injection points. No domain dependencies.
+func get_player_health_orb() -> LiquidResourceOrb:
+	return get_node("CombatLayout/PlayerHeroZone/PlayerHealthOrb") as LiquidResourceOrb
+
+func get_player_mana_orb() -> LiquidResourceOrb:
+	return get_node("CombatLayout/PlayerHeroZone/PlayerManaOrb") as LiquidResourceOrb
+
+func get_opponent_health_orb() -> LiquidResourceOrb:
+	return get_node("CombatLayout/OpponentHeroZone/OpponentHealthOrb") as LiquidResourceOrb
+
+func get_opponent_mana_orb() -> LiquidResourceOrb:
+	return get_node("CombatLayout/OpponentHeroZone/OpponentManaOrb") as LiquidResourceOrb

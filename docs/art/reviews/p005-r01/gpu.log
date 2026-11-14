@@ -1,0 +1,57 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 551.86 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 Ti
+
+Animation PNG frames: C:\Users\franc\AppData\Local\Temp/magicodyssey-p005-r01-frames
+P005-R01 GPU: 4.7.2-stable (official) / NVIDIA GeForce GTX 1660 Ti
+CAPTURE res://docs/art/reviews/p005-r01/combat_screen_1080p.png 1920x1080 save=0
+PASS: Integrated orb ready: PlayerHealthOrb
+PASS: Integrated orb has visible bounds
+PASS: Integrated orb ready: PlayerManaOrb
+PASS: Integrated orb has visible bounds
+PASS: Integrated orb ready: OpponentHealthOrb
+PASS: Integrated orb has visible bounds
+PASS: Integrated orb ready: OpponentManaOrb
+PASS: Integrated orb has visible bounds
+CAPTURE res://docs/art/reviews/p005-r01/combat_screen_720p.png 1280x720 save=0
+PASS: Integrated orb ready: PlayerHealthOrb
+PASS: Integrated orb has visible bounds
+PASS: Integrated orb ready: PlayerManaOrb
+PASS: Integrated orb has visible bounds
+PASS: Integrated orb ready: OpponentHealthOrb
+PASS: Integrated orb has visible bounds
+PASS: Integrated orb ready: OpponentManaOrb
+PASS: Integrated orb has visible bounds
+CAPTURE res://docs/art/reviews/p005-r01/liquid_orbs_states.png 1400x900 save=0
+PASS: Exact Health label updates before animation
+PASS: Health settles
+PASS: Mana settles
+PASS: Exact Health label updates before animation
+PASS: Transition starts from previous visible level
+PASS: Health intermediate liquid level
+PASS: Mana fill moves promptly
+PASS: Health settles
+PASS: Mana settles
+PASS: Exact Health label updates before animation
+PASS: Transition starts from previous visible level
+PASS: Health intermediate liquid level
+PASS: Mana fill moves promptly
+PASS: Health settles
+PASS: Mana settles
+PASS: Exact Health label updates before animation
+PASS: Transition starts from previous visible level
+PASS: Health intermediate liquid level
+PASS: Mana fill moves promptly
+PASS: Health settles
+PASS: Mana settles
+CAPTURE res://docs/art/reviews/p005-r01/liquid_orbs_animation_frames.png 2560x720 save=0
+PASS: GPU waves/bubbles move at fixed fill
+CAPTURE res://docs/art/reviews/p005-r01/motion_a.png 640x360 save=0
+CAPTURE res://docs/art/reviews/p005-r01/motion_b.png 640x360 save=0
+PASS: Rapid retarget is continuous
+PASS: Repeated identical updates do not restart animation
+PASS: Health updates leave Mana full
+PASS: Static capture is bit exact across time
+PASS: GPU bottom fills at 100% and empties at 0%
+PASS: GPU top fills at 100% and empties at 0%
+PASS: No liquid outside circular housing
+GPU / ANIMATION RESULT: PASS

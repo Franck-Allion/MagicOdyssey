@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Theme" path="res://resources/themes/fantasy_theme.tres" id="1_theme"]
 [ext_resource type="Script" path="res://scripts/presentation/combat_screen.gd" id="2_script"]
 [ext_resource type="Texture2D" path="res://assets/_source/lot1/battlefield/wip/mo_battlefield_sundered_observatory_bg_wip_v03.png" id="3_bg"]
+
+[ext_resource type="PackedScene" path="res://scenes/hud/liquid_resource_orb.tscn" id="4_orb"]
 
 [node name="CombatScreen" type="Control"]
 layout_mode = 3
@@ -125,31 +127,20 @@ vertical_alignment = 1
 [node name="HeroTitle" type="Label" parent="CombatLayout/OpponentHeroZone"]
 layout_mode = 0
 offset_left = 94.0
-offset_top = 10.0
-offset_right = 616.0
-offset_bottom = 34.0
+offset_top = 18.0
+offset_right = 420.0
+offset_bottom = 44.0
 theme_override_colors/font_color = Color(0.85, 0.35, 0.3, 1)
 theme_override_font_sizes/font_size = 17
-text = "OPPONENT · THE ASHEN WATCH"
-vertical_alignment = 1
-
-[node name="HeroStats" type="Label" parent="CombatLayout/OpponentHeroZone"]
-layout_mode = 0
-offset_left = 94.0
-offset_top = 32.0
-offset_right = 616.0
-offset_bottom = 60.0
-theme_override_colors/font_color = Color(1, 0.972549, 0.901961, 1)
-theme_override_font_sizes/font_size = 22
-text = "30 HP    ·    0 / 0 MANA"
+text = "OPPONENT"
 vertical_alignment = 1
 
 [node name="HeroCounters" type="Label" parent="CombatLayout/OpponentHeroZone"]
 layout_mode = 0
 offset_left = 94.0
-offset_top = 58.0
-offset_right = 616.0
-offset_bottom = 78.0
+offset_top = 46.0
+offset_right = 420.0
+offset_bottom = 70.0
 theme_override_colors/font_color = Color(0.627, 0.608, 0.588, 1)
 theme_override_font_sizes/font_size = 14
 text = "DECK 34    ·    HAND 6"
@@ -906,31 +897,7 @@ offset_right = 204.0
 offset_bottom = 134.0
 theme_override_colors/font_color = Color(0.24, 0.65, 0.88, 1)
 theme_override_font_sizes/font_size = 18
-text = "PLAYER · YOU"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HeroHp" type="Label" parent="CombatLayout/PlayerHeroZone"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 148.0
-offset_right = 204.0
-offset_bottom = 192.0
-theme_override_colors/font_color = Color(1, 0.972549, 0.901961, 1)
-theme_override_font_sizes/font_size = 34
-text = "30 HP"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HeroMana" type="Label" parent="CombatLayout/PlayerHeroZone"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 202.0
-offset_right = 204.0
-offset_bottom = 236.0
-theme_override_colors/font_color = Color(0.87, 0.79, 0.59, 1)
-theme_override_font_sizes/font_size = 22
-text = "1 / 1 MANA"
+text = "PLAYER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1062,3 +1029,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="PlayerHealthOrb" parent="CombatLayout/PlayerHeroZone" instance=ExtResource("4_orb")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 146.0
+offset_right = 110.0
+offset_bottom = 246.0
+resource_kind = 0
+current_value = 30
+maximum_value = 30
+
+[node name="PlayerManaOrb" parent="CombatLayout/PlayerHeroZone" instance=ExtResource("4_orb")]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 146.0
+offset_right = 210.0
+offset_bottom = 246.0
+resource_kind = 1
+current_value = 1
+maximum_value = 1
+
+[node name="OpponentHealthOrb" parent="CombatLayout/OpponentHeroZone" instance=ExtResource("4_orb")]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 3.0
+offset_right = 518.0
+offset_bottom = 83.0
+resource_kind = 0
+current_value = 30
+maximum_value = 30
+
+[node name="OpponentManaOrb" parent="CombatLayout/OpponentHeroZone" instance=ExtResource("4_orb")]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 3.0
+offset_right = 606.0
+offset_bottom = 83.0
+resource_kind = 1
+current_value = 0
+maximum_value = 0
