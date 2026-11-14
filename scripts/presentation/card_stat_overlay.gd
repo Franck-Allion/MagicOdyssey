@@ -60,6 +60,13 @@ const BADGE_PLAQUE_NUMBER_MAX_WIDTH: float = 83.0
 ## Preserved T23 font size for comparison and rollback
 const BADGE_PLAQUE_NUMBER_FONT_SIZE_T23: int = 76
 
+## Coherent Global Numeral Styling (ART-002-T25)
+## Mandate: Applied identically across all four stats (Attack, Health, Armor, Shield).
+## Provides crisp dark edge definition (4 px outline) and subtle directional depth separation (y=+2 px).
+const NUMERAL_OUTLINE_SIZE: int = 4
+const NUMERAL_SHADOW_OFFSET: Vector2 = Vector2(0, 2)
+const NUMERAL_SHADOW_COLOR: Color = Color(0.0, 0.0, 0.0, 0.8)
+
 ## Original Master-Frame Bronze Socket Bezels (ART-002-T20)
 ## Preserves original sculpted bronze rings, bevels, cardinal points, highlights and shadows.
 ## Sits on Layer 3 over Layer 2 inlays; aperture makes only the internal dark cavity transparent.
@@ -179,6 +186,11 @@ static var use_plaque_inlays: bool = true
 
 ## Diagnostic flag (ART-002-T24): when true, uses pre-T24 76 pt sizing for comparison / rollback
 static var use_t23_badge_font_size: bool = false
+
+## Readability polish toggle (ART-002-T25):
+## true = Coherent 4 px stroke + depth shadow across all stats (T25 production default)
+## false = Baseline 3 px stroke without shadow (T24 rollback)
+static var use_t25_readability_polish: bool = true
 
 ## Diagnostic flag: when true, draws inlay with direct circular mask without Layer 3 bezel overlay
 static var use_inlay_mask_only: bool = false
@@ -361,9 +373,23 @@ func draw_number(center: Vector2, value: int, points: int, max_width: float, ink
 	if use_optical_numeral_centering:
 		opt_offset = custom_optical_offset if custom_optical_offset != null else get_numeral_optical_offset(value)
 	var baseline: Vector2 = (center + opt_offset - bounds.get_center()).round()
+
+	var outline_size: int = NUMERAL_OUTLINE_SIZE if use_t25_readability_polish else 3
+	var shadow_offset: Vector2 = NUMERAL_SHADOW_OFFSET if use_t25_readability_polish else Vector2.ZERO
+	var shadow_color: Color = NUMERAL_SHADOW_COLOR if use_t25_readability_polish else Color.TRANSPARENT
+
 	for index: int in range(glyphs.size()):
 		var at: Vector2 = baseline + Vector2(offsets[index], 0)
-		server.font_draw_glyph_outline(font_rid, get_canvas_item(), font_size, 3, at, glyphs[index], TOKENS.color_token(&"background"))
+
+		# Layer A: Coherent directional depth shadow across all stat numerals (ART-002-T25)
+		if shadow_offset != Vector2.ZERO and shadow_color.a > 0.0:
+			server.font_draw_glyph_outline(font_rid, get_canvas_item(), font_size, outline_size, at + shadow_offset, glyphs[index], shadow_color)
+			server.font_draw_glyph(font_rid, get_canvas_item(), font_size, at + shadow_offset, glyphs[index], shadow_color)
+
+		# Layer B: Crisp boundary stroke
+		server.font_draw_glyph_outline(font_rid, get_canvas_item(), font_size, outline_size, at, glyphs[index], TOKENS.color_token(&"background"))
+
+		# Layer C: Bright ivory numeral fill
 		server.font_draw_glyph(font_rid, get_canvas_item(), font_size, at, glyphs[index], ink)
 
 func _socket_emblem(center: Vector2, kind: StringName) -> void:
