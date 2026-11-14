@@ -26,6 +26,19 @@ const CABOCHON_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo
 const CABOCHON_HEALTH_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_health_v01.png")
 const CABOCHON_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_cabochon_health.png")
 
+## Dedicated Integrated Stat Inlays (ART-002-T20)
+## Pure material disks replacing only the internal dark cavity of the bronze sockets.
+const INLAY_ATTACK_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_inlay_attack_v01.png")
+const INLAY_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo_inlay_attack.png")
+const INLAY_HEALTH_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_inlay_health_v01.png")
+const INLAY_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_inlay_health.png")
+
+## Original Master-Frame Bronze Socket Bezels (ART-002-T20)
+## Preserves original sculpted bronze rings, bevels, cardinal points, highlights and shadows.
+## Sits on Layer 3 over Layer 2 inlays; aperture makes only the internal dark cavity transparent.
+const SOCKET_BEZEL_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo_socket_bezel_attack.png")
+const SOCKET_BEZEL_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_socket_bezel_health.png")
+
 ## Base / Health Cabochon Size and Offset (ART-002-T13 preserved)
 const CABOCHON_SIZE: Vector2 = Vector2(250, 250)
 const HEALTH_CABOCHON_SIZE: Vector2 = Vector2(250, 250)
@@ -41,6 +54,18 @@ const ATTACK_CABOCHON_OFFSET: Vector2 = Vector2(1, 1)
 ## Preserved Attack V1 optical constants for rollback & comparison (ART-002-T13 / T15)
 const ATTACK_CABOCHON_SIZE_V01: Vector2 = Vector2(250, 250)
 const ATTACK_CABOCHON_OFFSET_V01: Vector2 = Vector2(0, 0)
+
+## Calibrated Inlay Size and Offsets (ART-002-T20)
+## Scaled to 190x190 px so the internal material fills the socket cavity (radius ~76 px)
+## and seats smoothly underneath the original master-frame bronze socket bevel (r=71.5-74.5 px).
+const ATTACK_INLAY_SIZE: Vector2 = Vector2(190, 190)
+const ATTACK_INLAY_OFFSET: Vector2 = Vector2(0, 0)
+const HEALTH_INLAY_SIZE: Vector2 = Vector2(190, 190)
+const HEALTH_INLAY_OFFSET: Vector2 = Vector2(0, 0)
+
+## Bronze Bezel Overlay Box Size (covers r=110 px from center = 220x220 px)
+const SOCKET_BEZEL_SIZE: Vector2 = Vector2(220, 220)
+const SOCKET_BEZEL_OFFSET: Vector2 = Vector2(0, 0)
 
 const ICON_ATTACK_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_attack_v01.png")
 const ICON_HEALTH_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_icon_health_v01.png")
@@ -109,8 +134,19 @@ static var use_t10_sizing: bool = false
 ## Diagnostic flag (ART-002-T16): when true, uses pre-T16 sizing and offsets for comparison (T15 baseline)
 static var use_t15_registration: bool = false
 
-## Presentation mode (ART-002-T13): false = Integrated Cabochons (default), true = Separate Mini-Icons (rollback/comparison)
+## Presentation mode (ART-002-T20):
+## 0 = Integrated Inlays inside Bronze Sockets (ART-002-T20 production default)
+## 1 = Independent Integrated Cabochons (ART-002-T16 / T15 / T13 rollback)
+## 2 = Separate Mini-Icons (ART-002-T11 / T10 / T08 rollback)
+## 3 = Procedural Silhouettes (legacy baseline)
+static var presentation_mode: int = 0
+
+## Presentation mode flags for backward compatibility & rollback
+static var use_inlays: bool = true
 static var use_separate_icons: bool = false
+
+## Diagnostic flag: when true, draws inlay with direct circular mask without Layer 3 bezel overlay
+static var use_inlay_mask_only: bool = false
 
 ## Attack cabochon version (ART-002-T15): 2 = Graphite Steel (default), 1 = Warm Bronze/Amber (T13 rollback/comparison)
 static var attack_cabochon_version: int = 2
@@ -147,7 +183,7 @@ func _draw() -> void:
 	var ink: Color = TOKENS.color_token(&"text_bright")
 	draw_number(MANA_CENTER, _mana, 126, 145, ink, SOCKET_SAFE_RADIUS)
 
-	if use_separate_icons:
+	if presentation_mode == 2 or use_separate_icons:
 		# Historical separate icon-over-socket mode (T11 / T10 / T08 rollback & comparison)
 		var atk_emblem: Vector2 = ATTACK_EMBLEM_CENTER
 		var hp_emblem: Vector2 = HEALTH_EMBLEM_CENTER
@@ -161,13 +197,28 @@ func _draw() -> void:
 		draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
 		_socket_emblem(atk_emblem, &"attack")
 		_socket_emblem(hp_emblem, &"health")
-	else:
-		# Production ART-002-T13, ART-002-T15 & ART-002-T16: Dedicated integrated premium cabochons
+	elif presentation_mode == 1 or not use_inlays:
+		# Historical independent cabochons mode (T16 / T15 / T13 rollback & comparison)
 		var atk_cab: Texture2D = CABOCHON_ATTACK_V01 if attack_cabochon_version == 1 else CABOCHON_ATTACK
 		var atk_size: Vector2 = CABOCHON_SIZE if (attack_cabochon_version == 1 or use_t15_registration) else ATTACK_CABOCHON_SIZE
 		var atk_offset: Vector2 = ATTACK_CABOCHON_OFFSET_V01 if (attack_cabochon_version == 1 or use_t15_registration) else ATTACK_CABOCHON_OFFSET
 		_draw_cabochon(ATTACK_CENTER + atk_offset, atk_cab, atk_size)
 		_draw_cabochon(HEALTH_CENTER + HEALTH_CABOCHON_OFFSET, CABOCHON_HEALTH, HEALTH_CABOCHON_SIZE)
+		draw_number(ATTACK_CENTER, _attack, 126, 145, ink, SOCKET_SAFE_RADIUS)
+		draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
+	else:
+		# Production ART-002-T20: Integrated Attack & Health Inlays
+		# Layer 2: Stat Inlay Material (seamlessly under bronze ornamentation)
+		_draw_cabochon(ATTACK_CENTER + ATTACK_INLAY_OFFSET, INLAY_ATTACK, ATTACK_INLAY_SIZE)
+		_draw_cabochon(HEALTH_CENTER + HEALTH_INLAY_OFFSET, INLAY_HEALTH, HEALTH_INLAY_SIZE)
+
+		# Layer 3: Original Master-Frame Bronze Socket Ornamentation
+		# Preserves original rings, bevels, cardinal points, highlights and shadows.
+		if not use_inlay_mask_only:
+			_draw_cabochon(ATTACK_CENTER + SOCKET_BEZEL_OFFSET, SOCKET_BEZEL_ATTACK, SOCKET_BEZEL_SIZE)
+			_draw_cabochon(HEALTH_CENTER + SOCKET_BEZEL_OFFSET, SOCKET_BEZEL_HEALTH, SOCKET_BEZEL_SIZE)
+
+		# Layer 4: White Stat Numerals
 		draw_number(ATTACK_CENTER, _attack, 126, 145, ink, SOCKET_SAFE_RADIUS)
 		draw_number(HEALTH_CENTER, _max_health, 126, 145, ink, SOCKET_SAFE_RADIUS)
 
