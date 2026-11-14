@@ -8,11 +8,10 @@ const SHADER: Shader = preload("res://resources/shaders/card_rarity_gems.gdshade
 const MASK: Texture2D = preload("res://assets/textures/cards/frame_v03_gem_mask.svg")
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
 
-## Experimental override flag for ART-002-T03C evaluation. Default false preserves canonical violet.
-static var experimental_epic_emerald: bool = false
+## Canonical emerald green hue (Colombian beryl hue ~150°, ART-002-T03C)
 const EMERALD_PIGMENT_HUE: float = 0.415
 
-static func create_material(rarity: StringName, force_emerald_epic: bool = false) -> ShaderMaterial:
+static func create_material(rarity: StringName, _force_emerald_epic: bool = true) -> ShaderMaterial:
 	var color: Color = TOKENS.color_token(rarity)
 	var pigment: Color
 	var specular: Color
@@ -35,16 +34,10 @@ static func create_material(rarity: StringName, force_emerald_epic: bool = false
 			specular = Color.from_hsv(color.h, 0.45, 1.0)
 			inner_light = 0.10
 		&"epic":
-			if force_emerald_epic or experimental_epic_emerald:
-				# ART-002-T03C: Experimental emerald green (Colombian beryl hue ~150°)
-				pigment = Color.from_hsv(EMERALD_PIGMENT_HUE, 0.90, 1.0)
-				specular = Color.from_hsv(EMERALD_PIGMENT_HUE, 0.45, 1.0)
-				inner_light = 0.12
-			else:
-				# Canonical amethyst violet: saturated, vivid violet hue from token
-				pigment = Color.from_hsv(color.h, 0.92, 1.0)
-				specular = Color.from_hsv(color.h, 0.50, 1.0)
-				inner_light = 0.13
+			# Canonical emerald green: Colombian beryl hue ~150° (ART-002-T03C)
+			pigment = Color.from_hsv(EMERALD_PIGMENT_HUE, 0.90, 1.0)
+			specular = Color.from_hsv(EMERALD_PIGMENT_HUE, 0.45, 1.0)
+			inner_light = 0.12
 		&"legendary":
 			# Luminous gold: warm, radiant golden yellow from token
 			pigment = Color.from_hsv(color.h, 0.82, 1.0)
@@ -63,5 +56,6 @@ static func create_material(rarity: StringName, force_emerald_epic: bool = false
 	treatment.set_shader_parameter("inner_light", inner_light)
 	return treatment
 
+## Backward compatibility alias for create_material(&"epic")
 static func create_emerald_epic_material() -> ShaderMaterial:
-	return create_material(&"epic", true)
+	return create_material(&"epic")

@@ -4,11 +4,13 @@ extends Control
 ## configure() is transactional: unsupported content returns an explicit error;
 ## the last accepted display remains intact and the caller retains the full input.
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
-const TITLE_BOUNDS: Rect2 = Rect2(292, 90, 610, 94)
-const TYPE_BOUNDS: Rect2 = Rect2(180, 916, 726, 66)
-const TYPE_SIZE: int = 48
+const LAYOUT: GDScript = preload("res://scripts/presentation/card_view_layout.gd")
+
+const TITLE_BOUNDS: Rect2 = CardViewLayout.TITLE_BOUNDS
+const TYPE_BOUNDS: Rect2 = CardViewLayout.TYPE_BOUNDS
+const TYPE_SIZE: int = CardViewLayout.TYPE_SIZE
 ## Narrow body column clears the upper shoulders of both original footer sockets.
-const RULES_BOUNDS: Rect2 = Rect2(260, 990, 566, 210)
+const RULES_BOUNDS: Rect2 = CardViewLayout.RULES_BOUNDS
 const TITLE_PREFERRED: int = 68
 const TITLE_MINIMUM: int = 40
 const RULES_PREFERRED: int = 48

@@ -1,9 +1,13 @@
 class_name CardCategoryOverlay
-extends CardStatOverlay
-## Non-creature presentation only. Original enamel remains visible through engraving.
+extends CardSocketOverlay
+## Non-creature presentation only (Spells & Equipment).
+## Original master-frame enamel remains visible through engraved rosettes.
 ## Category cues are typographic ornaments, never gameplay keywords or statistics.
+## Decoupled from creature-specific inlays and plaque textures (AUDIT-002-T03).
+
 const CONTENT: GDScript = preload("res://scripts/presentation/card_content_overlay.gd")
 const ENGRAVING_RADIUS: float = 56.0
+
 var category: CardContentOverlay.Category = CardContentOverlay.Category.SPELL
 
 func _draw() -> void:
@@ -45,7 +49,7 @@ func category_cue_center() -> Vector2:
 	var font: Font = TOKENS.THEME.get_font(&"font",&"CardTitle")
 	var width: float = font.get_string_size(name_text,HORIZONTAL_ALIGNMENT_LEFT,-1,CONTENT.TYPE_SIZE).x
 	# 28 px cue half-width + 16 px breathing room before the existing category text.
-	return CONTENT.TYPE_BOUNDS.get_center()-Vector2(width*0.5+44.0,0)
+	return CardViewLayout.TYPE_BOUNDS.get_center()-Vector2(width*0.5+44.0,0)
 
 func draw_category_cue() -> void:
 	var center: Vector2 = category_cue_center()

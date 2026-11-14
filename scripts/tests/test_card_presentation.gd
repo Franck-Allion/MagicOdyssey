@@ -235,9 +235,11 @@ func _test_optical_alignment(asserts: TestAsserts) -> void:
 func _test_creature_vs_non_creature_behavior(asserts: TestAsserts) -> void:
 	asserts.set_current_test("card_presentation:creature_vs_non_creature")
 
-	# Non-creature category overlay
+	# Non-creature category overlay decoupled from CardStatOverlay (AUDIT-002-T03)
 	var cat_overlay: CardCategoryOverlay = CATEGORY_OVERLAY.new()
 	asserts.assert_true(cat_overlay != null, "CardCategoryOverlay must instantiate cleanly")
+	asserts.assert_true(cat_overlay is CardSocketOverlay, "CardCategoryOverlay must inherit from CardSocketOverlay")
+	asserts.assert_false((cat_overlay as Object) is CardStatOverlay, "CardCategoryOverlay must NOT inherit from CardStatOverlay")
 
 	cat_overlay.category = CardContentOverlay.Category.SPELL
 	var spell_cue: Vector2 = cat_overlay.category_cue_center()
@@ -253,16 +255,27 @@ func _test_creature_vs_non_creature_behavior(asserts: TestAsserts) -> void:
 func _test_epic_emerald_rarity(asserts: TestAsserts) -> void:
 	asserts.set_current_test("card_presentation:epic_emerald_rarity")
 
-	var epic_mat: ShaderMaterial = GEM_TREATMENT.create_emerald_epic_material()
-	asserts.assert_true(epic_mat != null, "Emerald Epic material must instantiate cleanly")
-	if epic_mat != null:
-		var gem_mask = epic_mat.get_shader_parameter("gem_mask")
-		asserts.assert_true(gem_mask != null, "Emerald Epic material must assign gem_mask shader parameter")
+	# Canonical UI Theme token must be emerald green (AUDIT-002-T03)
+	var epic_token: Color = TOKENS.color_token(&"epic")
+	asserts.assert_true(epic_token.h >= 0.38 and epic_token.h <= 0.45, "Epic theme token must be in green spectrum (~0.415, got %.3f)" % epic_token.h)
+	asserts.assert_true(epic_token.s >= 0.70, "Epic theme token must have high saturation (>= 0.70, got %.2f)" % epic_token.s)
 
-		var pigment: Color = epic_mat.get_shader_parameter("gemstone_color")
+	# Default create_material(&"epic") must produce approved emerald treatment without special flags
+	var default_epic: ShaderMaterial = GEM_TREATMENT.create_material(&"epic")
+	asserts.assert_true(default_epic != null, "Default Epic material must instantiate cleanly")
+	if default_epic != null:
+		var gem_mask = default_epic.get_shader_parameter("gem_mask")
+		asserts.assert_true(gem_mask != null, "Default Epic material must assign gem_mask shader parameter")
+
+		var pigment: Color = default_epic.get_shader_parameter("gemstone_color")
 		# Emerald green hue is ~0.415 (approx 150°), distinctly in the green spectrum, NOT violet (hue ~0.77)
-		asserts.assert_true(pigment.h >= 0.38 and pigment.h <= 0.45, "Emerald Epic pigment hue must be in green spectrum (~0.415, got %.3f)" % pigment.h)
-		asserts.assert_true(pigment.s >= 0.80, "Emerald Epic pigment must have high saturation (>= 0.80, got %.2f)" % pigment.s)
+		asserts.assert_true(pigment.h >= 0.38 and pigment.h <= 0.45, "Default Epic pigment hue must be in green spectrum (~0.415, got %.3f)" % pigment.h)
+		asserts.assert_true(pigment.s >= 0.80, "Default Epic pigment must have high saturation (>= 0.80, got %.2f)" % pigment.s)
+		asserts.assert_equal(default_epic.get_shader_parameter("inner_light"), 0.12, "Default Epic inner light must be 0.12")
+
+	# Backward-compatible alias create_emerald_epic_material() must match default create_material(&"epic")
+	var alias_epic: ShaderMaterial = GEM_TREATMENT.create_emerald_epic_material()
+	asserts.assert_equal(alias_epic.get_shader_parameter("gemstone_color"), default_epic.get_shader_parameter("gemstone_color"), "Alias and default Epic gemstone colors must be identical")
 
 
 func _test_content_transactional_safety(asserts: TestAsserts) -> void:
