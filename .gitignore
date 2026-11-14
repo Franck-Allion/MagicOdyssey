@@ -9,3 +9,6 @@ export_presets.cfg
 *.log
 .DS_Store
 Thumbs.db
+
+# Visual regression fresh test captures (transient)
+docs/audits/AUDIT-002/captures_fresh/

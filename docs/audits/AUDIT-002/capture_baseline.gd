@@ -1,6 +1,7 @@
 extends SceneTree
-## AUDIT-002-T01: Permanent ART-002 Baseline Reference Capture Suite
+## AUDIT-002: Permanent ART-002 Baseline Reference Capture & Visual Regression Suite
 ## Generates genuine GPU renders at 1920x1080 using the active production rendering path.
+## Compares fresh captures against committed golden references without overwriting golden files.
 
 const FRAME: Texture2D = preload("res://assets/_source/lot1/cards/frames/mo_card_frame_master_v03.png")
 const ART: Texture2D = preload("res://assets/_source/lot1/cards/illustrations/mo_illustration_arcane_knight_test_v01.png")
@@ -11,32 +12,200 @@ const CONTENT_OVERLAY: GDScript = preload("res://scripts/presentation/card_conte
 const CATEGORY_OVERLAY: GDScript = preload("res://scripts/presentation/card_category_overlay.gd")
 const CARD_SIZE: Vector2 = Vector2(1086, 1448)
 
-func _initialize() -> void:
+func _init() -> void:
+	if DisplayServer.get_name() == "headless":
+		print("ERROR: Graphical renderer required for visual baseline captures (DisplayServer is headless).")
+		quit(2)
+		return
 	call_deferred("_run_captures")
+
+func _is_update_golden_requested() -> bool:
+	for arg: String in OS.get_cmdline_user_args():
+		if arg == "--update-golden-baselines":
+			return true
+	for arg: String in OS.get_cmdline_args():
+		if arg == "--update-golden-baselines":
+			return true
+	return false
 
 func _run_captures() -> void:
 	if DisplayServer.get_name() == "headless":
-		push_error("Graphical renderer required for baseline captures")
+		push_error("ERROR: Graphical renderer required for baseline captures (DisplayServer is headless).")
 		quit(2)
 		return
 
-	var out_dir: String = "D:/Dev/MagicOdyssey/docs/audits/AUDIT-002/"
+	var base_dir: String = ProjectSettings.globalize_path("res://docs/audits/AUDIT-002/")
+	var fresh_dir: String = ProjectSettings.globalize_path("res://docs/audits/AUDIT-002/captures_fresh/")
+	var make_err: Error = DirAccess.make_dir_recursive_absolute(fresh_dir)
+	if make_err != OK and not DirAccess.dir_exists_absolute(fresh_dir):
+		push_error("ERROR: Failed to create fresh captures directory: %s (Error %d)" % [fresh_dir, make_err])
+		quit(1)
+		return
+
+	var update_golden: bool = _is_update_golden_requested()
+
+	var targets: Array[Dictionary] = [
+		{
+			"id": "card_production",
+			"name": "Card Production Baseline (1080p)",
+			"golden": base_dir + "card_production_baseline_1080p.png",
+			"fresh": fresh_dir + "card_production_fresh_1080p.png",
+			"capture_func": "_capture_card_production_baseline"
+		},
+		{
+			"id": "seven_card_hand",
+			"name": "Seven-Card Hand Baseline (1080p)",
+			"golden": base_dir + "seven_card_hand_baseline_1080p.png",
+			"fresh": fresh_dir + "seven_card_hand_fresh_1080p.png",
+			"capture_func": "_capture_seven_card_hand_baseline"
+		},
+		{
+			"id": "four_stats_closeup",
+			"name": "Four Stats Closeup Baseline (1080p)",
+			"golden": base_dir + "four_stats_closeup_baseline_1080p.png",
+			"fresh": fresh_dir + "four_stats_closeup_fresh_1080p.png",
+			"capture_func": "_capture_four_stats_closeup_baseline"
+		}
+	]
+
+	print("==================================================")
+	print("MagicOdyssey — Visual Regression Suite (AUDIT-002)")
+	print("Engine: %s" % Engine.get_version_info().string)
+	print("Display Server: %s" % DisplayServer.get_name())
+	print("Output Directory: %s" % fresh_dir)
+	if update_golden:
+		print("MODE: Explicit Golden Baseline Refresh (--update-golden-baselines)")
+	print("==================================================")
 
 	var anchor: Node = Node.new()
 	anchor.name = "Anchor"
 	root.add_child(anchor)
 
-	print("START_CAPTURE_1: Card Production Baseline (1080p)")
-	await _capture_card_production_baseline(out_dir + "card_production_baseline_1080p.png")
+	var capture_errors: int = 0
+	for t: Dictionary in targets:
+		var dest_path: String = t["golden"] if update_golden else t["fresh"]
+		print("[CAPTURE] Generating %s -> %s" % [t["name"], dest_path.get_file()])
+		var save_err: Error = await call(t["capture_func"], dest_path)
+		if save_err != OK:
+			push_error("ERROR: Failed to save %s to %s (error %d)" % [t["name"], dest_path, save_err])
+			capture_errors += 1
 
-	print("START_CAPTURE_2: Seven-Card Hand Baseline (1080p)")
-	await _capture_seven_card_hand_baseline(out_dir + "seven_card_hand_baseline_1080p.png")
+	if capture_errors > 0:
+		print("ERROR: %d capture(s) failed to render or save!" % capture_errors)
+		quit(1)
+		return
 
-	print("START_CAPTURE_3: Four Stats Closeup Baseline (1080p)")
-	await _capture_four_stats_closeup_baseline(out_dir + "four_stats_closeup_baseline_1080p.png")
+	if update_golden:
+		print("SUCCESS: Approved golden baselines refreshed explicitly.")
+		quit(0)
+		return
 
-	print("AUDIT_002_ALL_CAPTURES_COMPLETED")
-	quit(0)
+	print("--------------------------------------------------")
+	print("Visual Comparison Metrics (Fresh vs Golden Baseline):")
+	print("--------------------------------------------------")
+
+	var all_passed: bool = true
+	for t: Dictionary in targets:
+		var res: Dictionary = _compare_images(t["golden"], t["fresh"])
+		if not res["passed"]:
+			all_passed = false
+
+		print("Scene: %s" % t["name"])
+		print("  Golden Reference:   %s" % t["golden"].get_file())
+		print("  Fresh Render:       %s" % t["fresh"].get_file())
+		print("  Image Dimensions:   %d × %d px" % [res["width"], res["height"]])
+		print("  Total Subpixels:    %d" % res["total_subpixels"])
+		print("  Differing Pixels:   %d (%.4f%%)" % [res["differing_pixels"], res["diff_pct"]])
+		print("  Max Channel Diff:   %d" % res["max_channel_diff"])
+		print("  Mean Channel Diff:  %.6f" % res["mean_diff"])
+		var status_str: String = "PASS (100% Bit-Exact Parity)" if res["differing_pixels"] == 0 else ("PASS (Within Tolerance)" if res["passed"] else "FAIL (Regression Detected)")
+		print("  Comparison Result:  %s" % status_str)
+		print("")
+
+	print("==================================================")
+	if all_passed:
+		print("VISUAL REGRESSION RESULT: ALL SCENES PASSED (0 regressions)")
+		quit(0)
+	else:
+		print("VISUAL REGRESSION RESULT: FAILED (Regressions detected)")
+		quit(1)
+
+func _compare_images(golden_path: String, fresh_path: String) -> Dictionary:
+	var img_golden: Image = Image.load_from_file(golden_path)
+	if img_golden == null or img_golden.is_empty():
+		push_error("Cannot load golden image: %s" % golden_path)
+		return {"passed": false, "width": 0, "height": 0, "total_subpixels": 0, "differing_pixels": -1, "diff_pct": 100.0, "max_channel_diff": 255, "mean_diff": 255.0}
+
+	var img_fresh: Image = Image.load_from_file(fresh_path)
+	if img_fresh == null or img_fresh.is_empty():
+		push_error("Cannot load fresh image: %s" % fresh_path)
+		return {"passed": false, "width": 0, "height": 0, "total_subpixels": 0, "differing_pixels": -1, "diff_pct": 100.0, "max_channel_diff": 255, "mean_diff": 255.0}
+
+	var w: int = img_golden.get_width()
+	var h: int = img_golden.get_height()
+	if w != img_fresh.get_width() or h != img_fresh.get_height():
+		push_error("Dimension mismatch between golden (%dx%d) and fresh (%dx%d)" % [w, h, img_fresh.get_width(), img_fresh.get_height()])
+		return {"passed": false, "width": img_fresh.get_width(), "height": img_fresh.get_height(), "total_subpixels": 0, "differing_pixels": -1, "diff_pct": 100.0, "max_channel_diff": 255, "mean_diff": 255.0}
+
+	if img_fresh.get_format() != img_golden.get_format():
+		img_fresh.convert(img_golden.get_format())
+
+	var data_golden: PackedByteArray = img_golden.get_data()
+	var data_fresh: PackedByteArray = img_fresh.get_data()
+
+	var total_bytes: int = data_golden.size()
+	var total_pixels: int = w * h
+	var bytes_per_pixel: int = maxi(1, total_bytes / total_pixels)
+
+	# Fast C++ equality check (0 ms for bit-exact match)
+	if data_golden == data_fresh:
+		return {
+			"passed": true,
+			"width": w,
+			"height": h,
+			"total_subpixels": total_bytes,
+			"differing_pixels": 0,
+			"diff_pct": 0.0,
+			"max_channel_diff": 0,
+			"mean_diff": 0.0
+		}
+
+	var differing_pixels: int = 0
+	var max_diff: int = 0
+	var total_diff_sum: float = 0.0
+
+	for p: int in range(total_pixels):
+		var p_diff: bool = false
+		var offset: int = p * bytes_per_pixel
+		for c: int in range(bytes_per_pixel):
+			var b_gold: int = data_golden[offset + c]
+			var b_fresh: int = data_fresh[offset + c]
+			var diff: int = absi(b_gold - b_fresh)
+			if diff > 0:
+				p_diff = true
+				if diff > max_diff:
+					max_diff = diff
+				total_diff_sum += diff
+		if p_diff:
+			differing_pixels += 1
+
+	var mean_diff: float = total_diff_sum / float(total_bytes)
+	var diff_pct: float = (float(differing_pixels) / float(total_pixels)) * 100.0
+
+	# Tolerance policy:
+	# Prefer exact pixel equality. A conservative tolerance of max 1 channel diff on <= 5 pixels is allowed for minor GPU rasterization variances.
+	var passed: bool = (differing_pixels == 0) or (max_diff <= 1 and differing_pixels <= 5)
+
+	return {
+		"passed": passed,
+		"width": w,
+		"height": h,
+		"total_subpixels": total_bytes,
+		"differing_pixels": differing_pixels,
+		"diff_pct": diff_pct,
+		"max_channel_diff": max_diff,
+		"mean_diff": mean_diff
+	}
 
 func _create_viewport(vp_size: Vector2i) -> SubViewport:
 	var vp: SubViewport = SubViewport.new()
@@ -51,14 +220,15 @@ func _create_viewport(vp_size: Vector2i) -> SubViewport:
 	vp.add_child(bg)
 	return vp
 
-func _save_and_free(vp: SubViewport, path: String) -> void:
+func _save_and_free(vp: SubViewport, path: String) -> Error:
 	await process_frame
 	await process_frame
 	await RenderingServer.frame_post_draw
 	var err: Error = vp.get_texture().get_image().save_png(path)
-	print("BASELINE_CAPTURE size=%s path=%s result=%d" % [vp.size, path.get_file(), err])
+	print("  -> Saved %s (%d × %d px, exit %d)" % [path.get_file(), vp.size.x, vp.size.y, err])
 	root.remove_child(vp)
 	vp.queue_free()
+	return err
 
 func _card(parent: Node, origin: Vector2, height: float, rarity_index: int = 3,
 		use_emerald: bool = false, native_armor: int = 0, shield: int = 0,
@@ -163,7 +333,7 @@ func _render_card_texture(rarity_idx: int, use_emerald: bool, arm: int, shd: int
 	card_vp.queue_free()
 	return tex
 
-func _capture_card_production_baseline(path: String) -> void:
+func _capture_card_production_baseline(path: String) -> Error:
 	var vp: SubViewport = _create_viewport(Vector2i(1920, 1080))
 
 	_add_label(vp, "MAGIC ODYSSEY  /  AUDIT–002 BASELINE", Rect2(64, 25, 1000, 45), 34,
@@ -227,9 +397,9 @@ func _capture_card_production_baseline(path: String) -> void:
 		_add_label(p, cinfo["name"], Rect2(5, 180, 220, 24), 14,
 			TOKENS.color_token(&"secondary"), &"BodyText", HORIZONTAL_ALIGNMENT_CENTER)
 
-	await _save_and_free(vp, path)
+	return await _save_and_free(vp, path)
 
-func _capture_seven_card_hand_baseline(path: String) -> void:
+func _capture_seven_card_hand_baseline(path: String) -> Error:
 	var vp: SubViewport = _create_viewport(Vector2i(1920, 1080))
 
 	_add_label(vp, "MAGIC ODYSSEY  /  AUDIT–002 BASELINE", Rect2(40, 20, 900, 40), 28,
@@ -262,9 +432,9 @@ func _capture_seven_card_hand_baseline(path: String) -> void:
 	_add_label(vp, "Production Baseline: 5 Creatures with Inlays & Plaques  •  1 Spell & 1 Equipment with Inactive Sockets",
 		Rect2(40, 1080 - 40, 1840, 24), 16, TOKENS.color_token(&"secondary"))
 
-	await _save_and_free(vp, path)
+	return await _save_and_free(vp, path)
 
-func _capture_four_stats_closeup_baseline(path: String) -> void:
+func _capture_four_stats_closeup_baseline(path: String) -> Error:
 	var vp: SubViewport = _create_viewport(Vector2i(1920, 1080))
 
 	_add_label(vp, "MAGIC ODYSSEY  /  AUDIT–002 BASELINE", Rect2(64, 25, 1000, 45), 34,
@@ -334,4 +504,4 @@ func _capture_four_stats_closeup_baseline(path: String) -> void:
 		_add_label(panel, sdata["sub"], Rect2(20, 520, col_w - 40, 240), 16,
 			TOKENS.color_token(&"text"), &"BodyText", HORIZONTAL_ALIGNMENT_CENTER)
 
-	await _save_and_free(vp, path)
+	return await _save_and_free(vp, path)

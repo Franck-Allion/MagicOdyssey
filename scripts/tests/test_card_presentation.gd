@@ -183,6 +183,11 @@ func _test_numeral_fitting_and_breathing_room(asserts: TestAsserts) -> void:
 	var font_rid: RID = font.get_rids()[0]
 	var test_values: Array[int] = [1, 2, 4, 8, 10, 12, 14, 99]
 
+	# Authoritative rendering contract (ART-002-T25):
+	# 4 px stroke outline + directional depth shadow at offset (0, 2).
+	var outline_size: float = float(STAT_OVERLAY.NUMERAL_OUTLINE_SIZE)
+	var shadow_offset_y: float = STAT_OVERLAY.NUMERAL_SHADOW_OFFSET.y
+
 	for val: int in test_values:
 		var text: String = str(val)
 		var bounds: Rect2 = Rect2()
@@ -197,17 +202,32 @@ func _test_numeral_fitting_and_breathing_room(asserts: TestAsserts) -> void:
 			bounds = gb if index == 0 else bounds.merge(gb)
 			cursor += server.font_get_glyph_advance(font_rid, 62, glyph).x
 
-		# Check width fits inside max width cap
+		# 1. Source-space unadorned glyph bounds:
 		asserts.assert_true(bounds.size.x <= 83.0, "Value %d width (%.1f px) must fit within 83 px budget" % [val, bounds.size.x])
+		asserts.assert_true(bounds.size.y <= 46.0, "Value %d glyph height (%.1f px) must not exceed 46 px budget" % [val, bounds.size.y])
 
-		# Check vertical breathing room on Armor plaque (height 62) and Shield plaque (height 69)
-		# Glyph height + 6 px (3 px outline top and bottom)
-		var total_h: float = bounds.size.y + 6.0
-		var armor_margin: float = (62.0 - total_h) * 0.5
-		var shield_margin: float = (69.0 - total_h) * 0.5
+		# 2. Source-space drawn outline bounds (4 px stroke top and bottom):
+		# Symmetrical outline height = glyph height + 2 * outline_size
+		var outline_h: float = bounds.size.y + 2.0 * outline_size
+		var armor_outline_margin: float = (62.0 - outline_h) * 0.5
+		var shield_outline_margin: float = (69.0 - outline_h) * 0.5
 
-		asserts.assert_true(armor_margin >= 4.8, "Value %d must preserve >= 5.0 px breathing room on Armor (got %.1f px)" % [val, armor_margin])
-		asserts.assert_true(shield_margin >= 7.8, "Value %d must preserve >= 8.0 px breathing room on Shield (got %.1f px)" % [val, shield_margin])
+		asserts.assert_true(armor_outline_margin >= 4.0, "Value %d must preserve >= 4.0 px outline margin on Armor (got %.1f px)" % [val, armor_outline_margin])
+		asserts.assert_true(shield_outline_margin >= 7.5, "Value %d must preserve >= 7.5 px outline margin on Shield (got %.1f px)" % [val, shield_outline_margin])
+
+		# 3. Directional shadow extent (offset (0, 2)):
+		# Downward shadow shifts the bottom drawn extent by +2 px, leaving >= 2.0 px air on Armor and >= 5.5 px on Shield
+		var armor_bottom_margin: float = armor_outline_margin - shadow_offset_y
+		var shield_bottom_margin: float = shield_outline_margin - shadow_offset_y
+
+		asserts.assert_true(armor_bottom_margin >= 2.0, "Value %d must preserve >= 2.0 px bottom shadow clearance on Armor (got %.1f px)" % [val, armor_bottom_margin])
+		asserts.assert_true(shield_bottom_margin >= 5.5, "Value %d must preserve >= 5.5 px bottom shadow clearance on Shield (got %.1f px)" % [val, shield_bottom_margin])
+
+		# 4. Bronze slot inner clearance:
+		# Total drawn footprint (height <= 56 px) remains comfortably inset within 198x100 bronze slot (> 18 px margin)
+		var slot_inner_h: float = 94.0 # inner usable height
+		var slot_margin: float = (slot_inner_h - (outline_h + shadow_offset_y)) * 0.5
+		asserts.assert_true(slot_margin >= 18.0, "Value %d drawn footprint must preserve >= 18.0 px clearance inside bronze slot (got %.1f px)" % [val, slot_margin])
 
 	# Typographic scale ratio: secondary stats (62 pt) to primary stats (126 pt)
 	var ratio: float = 62.0 / 126.0
