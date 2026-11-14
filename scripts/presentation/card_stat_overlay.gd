@@ -33,6 +33,28 @@ const INLAY_ATTACK: Texture2D = preload("res://assets/textures/cards/icons/mo_in
 const INLAY_HEALTH_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_inlay_health_v01.png")
 const INLAY_HEALTH: Texture2D = preload("res://assets/textures/cards/icons/mo_inlay_health.png")
 
+## Dedicated Integrated Stat Plaque Inlays (ART-002-T23)
+## Internal plaque inserts replacing floating mini-icons in the central bronze stat plate slots.
+const PLATE_ARMOR_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_plate_armor_v01.png")
+const PLATE_ARMOR: Texture2D = preload("res://assets/textures/cards/icons/mo_plate_armor.png")
+const PLATE_SHIELD_V01: Texture2D = preload("res://assets/textures/cards/icons/mo_plate_shield_v01.png")
+const PLATE_SHIELD: Texture2D = preload("res://assets/textures/cards/icons/mo_plate_shield.png")
+
+## Calibrated Plaque Size and Offsets (ART-002-T23)
+## Fitted cleanly inside the 198x100 bronze slot (inner usable area 192x94 px, corner radius 20 px).
+## Scaled to 180 px width preserving natural aspect ratio (Armor 2.89 -> 180x62, Shield 2.60 -> 180x69).
+## Zero spill beyond inner bronze border; white numeral centered over the plaque.
+const ARMOR_PLAQUE_SIZE: Vector2 = Vector2(180, 62)
+const ARMOR_PLAQUE_OFFSET: Vector2 = Vector2(0, 0)
+
+const SHIELD_PLAQUE_SIZE: Vector2 = Vector2(180, 69)
+const SHIELD_PLAQUE_OFFSET: Vector2 = Vector2(0, 0)
+
+## Centralized optical alignment for plaque badge numeral (ART-002-T23)
+const BADGE_PLAQUE_NUMBER_LOCAL_CENTER: Vector2 = Vector2(99, 50)
+const BADGE_PLAQUE_NUMBER_FONT_SIZE: int = 76
+const BADGE_PLAQUE_NUMBER_MAX_WIDTH: float = 83.0
+
 ## Original Master-Frame Bronze Socket Bezels (ART-002-T20)
 ## Preserves original sculpted bronze rings, bevels, cardinal points, highlights and shadows.
 ## Sits on Layer 3 over Layer 2 inlays; aperture makes only the internal dark cavity transparent.
@@ -144,6 +166,11 @@ static var presentation_mode: int = 0
 ## Presentation mode flags for backward compatibility & rollback
 static var use_inlays: bool = true
 static var use_separate_icons: bool = false
+
+## Plaque inlays toggle (ART-002-T23):
+## true = Integrated Plaque Inlays (production default per ART-002-T23)
+## false = Separate Mini-Icons (ART-002-T11/T10/T08 legacy rollback)
+static var use_plaque_inlays: bool = true
 
 ## Diagnostic flag: when true, draws inlay with direct circular mask without Layer 3 bezel overlay
 static var use_inlay_mask_only: bool = false
@@ -323,17 +350,36 @@ func _badge(bounds: Rect2, kind: StringName, value: int) -> void:
 	plate.shadow_color = Color(0, 0, 0, 0.7)
 	plate.shadow_size = 6
 	draw_style_box(plate, bounds)
-	draw_line(bounds.position + Vector2(24, 3), bounds.end - Vector2(24, bounds.size.y - 3), TOKENS.color_token(&"accent"), 2, true)
-	var ico_center: Vector2 = BADGE_ICON_LOCAL_CENTER
-	var num_center: Vector2 = BADGE_NUMBER_LOCAL_CENTER
-	if icon_version == 1:
-		ico_center = BADGE_ICON_LOCAL_CENTER_V01
-		num_center = BADGE_NUMBER_LOCAL_CENTER_V01
-	elif use_t10_sizing:
-		ico_center = BADGE_ICON_LOCAL_CENTER_T10
-		num_center = BADGE_NUMBER_LOCAL_CENTER_T10
-	_symbol(bounds.position + ico_center, kind, 1.0 if not use_procedural_icons else 1.12)
-	draw_number(bounds.position + num_center, value, 76, 83, TOKENS.color_token(&"text_bright"))
+
+	if use_plaque_inlays and not use_separate_icons and not use_procedural_icons and presentation_mode != 2:
+		# Production ART-002-T23: Integrated Plaque Inlay Treatment
+		# Layer 2: Plaque Inlay Material
+		var plaque_tex: Texture2D = PLATE_ARMOR if kind == &"armor" else PLATE_SHIELD
+		var plaque_size: Vector2 = ARMOR_PLAQUE_SIZE if kind == &"armor" else SHIELD_PLAQUE_SIZE
+		var plaque_offset: Vector2 = ARMOR_PLAQUE_OFFSET if kind == &"armor" else SHIELD_PLAQUE_OFFSET
+		var center: Vector2 = bounds.get_center() + plaque_offset
+		var dest_pos: Vector2 = (center - plaque_size * 0.5).round()
+		draw_texture_rect(plaque_tex, Rect2(dest_pos, plaque_size), false)
+
+		# Layer 3: Top inner bronze highlight line
+		draw_line(bounds.position + Vector2(24, 3), bounds.end - Vector2(24, bounds.size.y - 3), TOKENS.color_token(&"accent"), 2, true)
+
+		# Layer 4: White Stat Numeral centered over plaque
+		draw_number(bounds.position + BADGE_PLAQUE_NUMBER_LOCAL_CENTER, value,
+			BADGE_PLAQUE_NUMBER_FONT_SIZE, BADGE_PLAQUE_NUMBER_MAX_WIDTH, TOKENS.color_token(&"text_bright"))
+	else:
+		# Historical separate floating icon treatment (rollback & comparison)
+		draw_line(bounds.position + Vector2(24, 3), bounds.end - Vector2(24, bounds.size.y - 3), TOKENS.color_token(&"accent"), 2, true)
+		var ico_center: Vector2 = BADGE_ICON_LOCAL_CENTER
+		var num_center: Vector2 = BADGE_NUMBER_LOCAL_CENTER
+		if icon_version == 1:
+			ico_center = BADGE_ICON_LOCAL_CENTER_V01
+			num_center = BADGE_NUMBER_LOCAL_CENTER_V01
+		elif use_t10_sizing:
+			ico_center = BADGE_ICON_LOCAL_CENTER_T10
+			num_center = BADGE_NUMBER_LOCAL_CENTER_T10
+		_symbol(bounds.position + ico_center, kind, 1.0 if not use_procedural_icons else 1.12)
+		draw_number(bounds.position + num_center, value, 76, 83, TOKENS.color_token(&"text_bright"))
 
 ## Dedicated premium textures with optical alignment; legacy procedural fallback.
 func _symbol(center: Vector2, kind: StringName, factor: float) -> void:
