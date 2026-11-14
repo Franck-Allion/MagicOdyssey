@@ -234,8 +234,40 @@ func _draw_cabochon(center: Vector2, tex: Texture2D, cab_size: Vector2) -> void:
 	var dest_pos: Vector2 = (center - cab_size * 0.5).round()
 	draw_texture_rect(tex, Rect2(dest_pos, cab_size), false)
 
+## Centralized optical centering offsets for asymmetrical numerals (ART-002-T21).
+## Compensates for visual mass imbalance relative to mathematical bounding box center.
+## Documented per-glyph rationales:
+##   4:  Vector2(-4, -4) -> Balances heavy right vertical stem and lower crossbar (+4.2 px X, +4.9 px Y mass bias)
+##   5:  Vector2(0, 1)   -> Subtle vertical balance for top horizontal flag
+##   7:  Vector2(2, 2)   -> Balances heavy top bar and leftward diagonal slant
+##   10: Vector2(-2, 0)  -> Balances wide '0' against narrow '1'
+##   12: Vector2(-2, 0)  -> Balances wide '2' against narrow '1'
+##   14: Vector2(-3, -2) -> Balances heavy '4' against narrow '1'
+const NUMERAL_OPTICAL_OFFSETS: Dictionary = {
+	1: Vector2(0, 0),
+	4: Vector2(-4, -4),
+	5: Vector2(0, 1),
+	7: Vector2(2, 2),
+	8: Vector2(0, 0),
+	10: Vector2(-2, 0),
+	12: Vector2(-2, 0),
+	14: Vector2(-3, -2),
+}
+
+## Optical numeral centering toggle (ART-002-T21): true = optically centered (default), false = mathematical bbox
+static var use_optical_numeral_centering: bool = true
+
+## Returns optical centering correction offset for a given stat value
+static func get_numeral_optical_offset(value: int) -> Vector2:
+	if NUMERAL_OPTICAL_OFFSETS.has(value):
+		return NUMERAL_OPTICAL_OFFSETS[value]
+	if value >= 10 and value <= 19 and value != 11:
+		return Vector2(-2, 0)
+	return Vector2.ZERO
+
 ## Center visible glyph bounds rather than a line box (which includes descender space).
 ## The same measured glyphs are drawn, avoiding kerning/advance discrepancies.
+## Applies principled optical centering for asymmetrical numerals (ART-002-T21).
 func draw_number(center: Vector2, value: int, points: int, max_width: float, ink: Color,
 		safe_radius: float = 0.0) -> void:
 	var text: String = str(value)
@@ -267,7 +299,8 @@ func draw_number(center: Vector2, value: int, points: int, max_width: float, ink
 		if safe_radius <= 0.0 or bounds.size.length() * 0.5 + 4.0 <= safe_radius or font_size <= 1:
 			break
 		font_size -= 1
-	var baseline: Vector2 = (center - bounds.get_center()).round()
+	var opt_offset: Vector2 = get_numeral_optical_offset(value) if use_optical_numeral_centering else Vector2.ZERO
+	var baseline: Vector2 = (center + opt_offset - bounds.get_center()).round()
 	for index: int in range(glyphs.size()):
 		var at: Vector2 = baseline + Vector2(offsets[index], 0)
 		server.font_draw_glyph_outline(font_rid, get_canvas_item(), font_size, 3, at, glyphs[index], TOKENS.color_token(&"background"))

@@ -77,6 +77,7 @@ func _card(parent: Control, origin: Vector2, height: float, rarity_index: int,
 	card.scale = Vector2.ONE * height / CARD_SIZE.y
 	parent.add_child(card)
 	# Fixed source-space aperture; crop shows face, shoulder and spell hand.
+	# ART-002-T21: Calibrated to exact aperture aspect ratio (1.3053) with anisotropic mipmaps
 	var aperture: Control = Control.new()
 	aperture.position = Vector2(124, 207)
 	aperture.size = Vector2(838, 642)
@@ -84,10 +85,12 @@ func _card(parent: Control, origin: Vector2, height: float, rarity_index: int,
 	card.add_child(aperture)
 	var crop: AtlasTexture = AtlasTexture.new()
 	crop.atlas = ART
-	crop.region = Rect2(0, 0, 1086, 900)
+	crop.region = Rect2(0, 34, 1086, 832)
 	var portrait: TextureRect = _texture(aperture, crop, Rect2(Vector2.ZERO, aperture.size))
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	portrait.texture_filter = Control.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
 	var frame: TextureRect = _texture(card, FRAME, Rect2(Vector2.ZERO, CARD_SIZE))
+	frame.texture_filter = Control.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
 	frame.material = material_override if material_override != null else _gem_materials[rarity_index]
 	var fields: CardContentOverlay.Content = content if content != null else CardContentOverlay.Content.new(
 		"Arcane Knight", CardContentOverlay.Category.CREATURE, "Human", "Whenever this creature attacks, gain 1 Shield.")
