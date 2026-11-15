@@ -4,9 +4,10 @@ render_mode unshaded;
 // Original analytic reservoir: no Unity source or textures are distributed.
 uniform float fill_ratio : hint_range(0.0, 1.0) = 1.0;
 uniform float clock_seconds = 0.0;
-uniform float wave_amplitude : hint_range(0.0, 0.04) = 0.012;
+uniform float wave_amplitude : hint_range(0.0, 0.04) = 0.003;
 uniform float wave_frequency : hint_range(1.0, 30.0) = 12.0;
 uniform float animation_speed : hint_range(0.0, 3.0) = 1.0;
+uniform float surface_tilt = 0.0;
 uniform float response = 0.0;
 uniform float restoration = 0.0;
 uniform float is_mana = 0.0;
@@ -38,37 +39,36 @@ void fragment() {
 	// Exact endpoints: waves fade into the top/bottom of the usable glass.
 	float envelope = smoothstep(0.0, 0.12, fill_ratio) * smoothstep(0.0, 0.12, 1.0 - fill_ratio);
 	float surface = 0.875 - 0.75 * fill_ratio;
-	float w1 = sin(p.x * wave_frequency + t * 1.8) * wave_amplitude * envelope;
-	float w2 = sin(p.x * wave_frequency * 1.63 - t * 1.27 + 1.9) * wave_amplitude * 0.48 * envelope;
+	float wall_curve = -0.009 * pow(abs(p.x) / 0.375, 6.0) * envelope;
+	float w1 = (sin(p.x * wave_frequency + t * 0.65) * wave_amplitude + p.x * surface_tilt) * envelope + wall_curve;
+	float w2 = w1 + sin(p.x * 17.0 - t * 0.8) * 0.0015 * envelope;
 	float front = smoothstep(surface + w1 - aa, surface + w1 + aa, UV.y);
 	float back = smoothstep(surface + w2 - aa, surface + w2 + aa, UV.y);
 	float wet = max(front, back) * step(0.00001, fill_ratio);
 	float depth = clamp((UV.y - surface) / max(0.75 * fill_ratio, 0.001), 0.0, 1.0);
 	float roundness = sqrt(max(0.0, 1.0 - r * r / (0.375 * 0.375)));
-	vec3 fluid = liquid_color.rgb * mix(1.35, 0.22, depth) * (0.45 + 0.65 * roundness);
-	fluid += liquid_color.rgb * 0.12 * sin(p.x * 22.0 + p.y * 13.0 + t * 0.7) * roundness;
-	fluid += liquid_color.rgb * 0.28 * abs(front - back);
-	float meniscus = exp(-abs(UV.y - surface - w1) * 410.0) * step(0.00001, fill_ratio) * step(fill_ratio, 0.99999);
-	fluid += mix(liquid_color.rgb, vec3(1.0), 0.38) * meniscus * 0.7;
-	// Seven analytic bubbles; stable seeds, no noise textures or CPU particles.
-	for (int i = 0; i < 7; i++) {
+	vec3 pigment = mix(liquid_color.rgb, liquid_color.rgb * liquid_color.rgb, 0.42);
+	vec3 fluid = pigment * mix(1.12, 0.24, depth) * (0.55 + 0.45 * roundness);
+	float meniscus = exp(-abs(UV.y - surface - w1) * 520.0) * step(0.00001, fill_ratio) * step(fill_ratio, 0.99999);
+	fluid += mix(pigment, vec3(0.8), 0.28) * meniscus * 0.65;
+	fluid += pigment * exp(-abs(UV.y - surface - w2 - 0.009) * 100.0) * 0.12;
+	// Two tiny subordinate bubbles, with unrelated deterministic rise rates.
+	for (int i = 0; i < 2; i++) {
 		float seed = float(i);
-		vec2 center = vec2(0.5 + sin(seed * 19.3) * 0.29 + sin(t + seed) * 0.009,
-			0.9 - fract(seed * 0.173 + t * (0.027 + seed * 0.003)) * 0.8);
+		vec2 center = vec2(0.35 + seed * 0.27, 0.86 - fract(seed * 0.413 + t * (0.018 + seed * 0.009)) * 0.65);
 		float d = length(UV - center);
-		float br = 0.004 + fract(seed * 0.37) * 0.008;
-		float bubble = (1.0 - smoothstep(aa, aa * 2.0, abs(d - br))) * 0.23;
-		fluid += mix(liquid_color.rgb, vec3(0.7, 0.86, 1.0), 0.45) * bubble;
+		float bubble = (1.0 - smoothstep(aa, aa * 1.5, abs(d - 0.004))) * 0.07;
+		fluid += vec3(0.5, 0.65, 0.8) * bubble;
 	}
 	vec3 reservoir = mix(enamel_color.rgb * (0.6 + roundness), fluid, wet);
 	// Broad soft reflection plus thin curved specular arcs, also visible when empty.
 	float soft = exp(-dot((p - vec2(-0.13, -0.16)) * vec2(8.0, 13.0), (p - vec2(-0.13, -0.16)) * vec2(8.0, 13.0)));
 	float arc = band(length(p - vec2(0.025, 0.025)), 0.323, 0.006, aa) * (1.0 - smoothstep(-0.22, 0.08, p.y)) * (1.0 - smoothstep(-0.24, 0.12, p.x));
 	float bottom_arc = band(r, 0.354, 0.002, aa) * smoothstep(0.1, 0.32, p.y);
-	reservoir += vec3(0.65, 0.78, 0.88) * (soft * 0.26 + arc * 0.65 + bottom_arc * 0.3);
-	reservoir += liquid_color.rgb * response * (0.18 + restoration * 0.14) * roundness;
+	reservoir += vec3(0.65, 0.78, 0.88) * (soft * 0.12 + arc * 0.40 + bottom_arc * 0.18);
+	reservoir += liquid_color.rgb * response * 0.035 * roundness * wet;
 	float shimmer = exp(-pow((p.x + p.y * 0.45 - (0.5 - response)) * 23.0, 2.0));
-	reservoir += vec3(0.35, 0.66, 1.0) * shimmer * response * restoration * is_mana * 0.35;
+	reservoir += vec3(0.35, 0.66, 1.0) * shimmer * response * restoration * is_mana * 0.06;
 	vec3 color = mix(housing, reservoir, glass);
 	COLOR = vec4(color, outer);
 }

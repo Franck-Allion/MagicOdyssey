@@ -1,6 +1,7 @@
 extends Node
 ## Temporary entry-point policy, deliberately separate from reusable CombatScreen.
 func _ready() -> void:
+	_configure_review.call_deferred()
 	if DisplayServer.get_name() != "headless":
 		_report_ready.call_deferred()
 		var usable: Rect2i = DisplayServer.screen_get_usable_rect()
@@ -29,3 +30,27 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
 		get_tree().quit(0)
+
+## Explicit standalone review flags only; no game state or automatic combat.
+func _configure_review() -> void:
+	var screen: CombatScreen = get_node("CombatScreen") as CombatScreen
+	var fan: CombatPreviewCards = screen.get_node("CombatLayout/PlayerHandZone/Fan") as CombatPreviewCards
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--preview-hand="):
+			fan.display_count = clampi(argument.trim_prefix("--preview-hand=").to_int(), 0, 10)
+			fan.rebuild()
+		if argument == "--preview-animate":
+			var timer: Timer = Timer.new()
+			timer.wait_time = 1.5
+			add_child(timer)
+			timer.timeout.connect(_review_resource_step)
+			timer.start()
+
+var _review_step: int = 0
+func _review_resource_step() -> void:
+	var screen: CombatScreen = get_node("CombatScreen") as CombatScreen
+	var health: Array[int] = [30, 18, 8, 0]
+	var mana: Array[int] = [5, 3, 0, 5]
+	_review_step = (_review_step + 1) % 4
+	screen.get_player_health_orb().set_resource_values(health[_review_step], 30)
+	screen.get_player_mana_orb().set_resource_values(mana[_review_step], 5)

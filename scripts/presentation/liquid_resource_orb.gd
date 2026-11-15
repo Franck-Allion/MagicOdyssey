@@ -23,6 +23,8 @@ var _start_ratio: float = 1.0
 var _transition_elapsed: float = TRANSITION_SECONDS
 var _clock: float = 0.0
 var _response: float = 0.0
+var _slosh_elapsed: float = 2.0
+var _slosh_strength: float = 0.0
 var _animation_enabled: bool = true
 
 func _init() -> void:
@@ -51,6 +53,8 @@ func set_resource_values(current: int, maximum: int, animate: bool = true) -> vo
 		if is_equal_approx(target, _target_ratio):
 			return
 		_orb_material.set_shader_parameter("restoration", 1.0 if target > _target_ratio else 0.0)
+		_slosh_elapsed = 0.0
+		_slosh_strength = clampf((_visible_ratio - target) * 0.16, -0.06, 0.06)
 		_response = 1.0
 		_start_ratio = _visible_ratio
 		_target_ratio = target
@@ -58,6 +62,8 @@ func set_resource_values(current: int, maximum: int, animate: bool = true) -> vo
 	else:
 		_target_ratio = target
 		_transition_elapsed = TRANSITION_SECONDS
+		_slosh_elapsed = 2.0
+		_orb_material.set_shader_parameter("surface_tilt", 0.0)
 		_response = 0.0
 		_orb_material.set_shader_parameter("response", 0.0)
 		_set_visible_ratio(target)
@@ -70,6 +76,8 @@ func set_animation_enabled(enabled: bool) -> void:
 	set_process(enabled)
 	if not enabled:
 		_transition_elapsed = TRANSITION_SECONDS
+		_slosh_elapsed = 2.0
+		_orb_material.set_shader_parameter("surface_tilt", 0.0)
 		_response = 0.0
 		_clock = 0.0
 		_orb_material.set_shader_parameter("clock_seconds", 0.0)
@@ -77,6 +85,9 @@ func set_animation_enabled(enabled: bool) -> void:
 		_set_visible_ratio(_target_ratio)
 
 func _process(delta: float) -> void:
+	_slosh_elapsed = minf(2.0, _slosh_elapsed + delta)
+	var tilt: float = _slosh_strength * sin(_slosh_elapsed * 14.0) * exp(-_slosh_elapsed * 4.5) if _slosh_elapsed < 2.0 else 0.0
+	_orb_material.set_shader_parameter("surface_tilt", tilt)
 	_clock += delta
 	_orb_material.set_shader_parameter("clock_seconds", _clock)
 	if _transition_elapsed < TRANSITION_SECONDS:

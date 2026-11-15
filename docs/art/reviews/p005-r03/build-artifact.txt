@@ -1,0 +1,8 @@
+MagicOdyssey Windows Release Executable (P005-R03)
+Date: 2026-11-15
+Engine: Godot 4.7.2.stable.official.ed1daf0bf
+Platform: Windows Desktop (x86_64, release, embedded PCK)
+Renderer: OpenGL Compatibility
+Path: build/windows/MagicOdyssey.exe
+Size: 131571192 bytes
+SHA256: 164894F8A85A16C7C15E6F1BC5C6FA617C7C063A023F2AB1DAFC843ED9467B82

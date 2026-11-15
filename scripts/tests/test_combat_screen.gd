@@ -14,6 +14,7 @@ func run_suite(asserts: TestAsserts, failure_mode: bool = false) -> void:
 	_test_battlefield_rows_and_semantics(asserts)
 	_test_hero_and_hand_zones(asserts)
 	_test_action_bar_and_button(asserts)
+	_test_adaptive_fan(asserts)
 	_test_overlay_layer(asserts)
 	_test_responsive_bounds_1080p_and_720p(asserts)
 
@@ -142,6 +143,27 @@ func _test_hero_and_hand_zones(asserts: TestAsserts) -> void:
 	asserts.assert_true(player_hero.size.y > hand_zone.size.y, "Left hero column has dedicated vertical space")
 	asserts.assert_true(screen.has_node("CombatLayout/OpponentHand"), "Opponent card-back region exists")
 
+	# P005-R03 Master Grid Alignment: Top edge alignment across Left Hero, Battlefield, and Right MatchStatus
+	var status_zone: Panel = screen.get_match_status()
+	asserts.assert_equal(player_hero.position.y, bf_zone.position.y, "Left Hero Column and Battlefield must share top alignment line")
+	asserts.assert_equal(status_zone.position.y, bf_zone.position.y, "Right Utility Column top (MatchStatus) and Battlefield must share top alignment line")
+
+	# P005-R03 Master Grid Alignment: Bottom edge alignment across Left Hero, Player Hand, and Right ActionBar
+	var hero_bottom: float = player_hero.position.y + player_hero.size.y
+	var hand_bottom: float = hand_zone.position.y + hand_zone.size.y
+	var action_bottom: float = action_zone.position.y + action_zone.size.y
+	asserts.assert_true(hero_bottom <= hand_bottom, "Compact hero panel stays above hand bottom")
+	asserts.assert_equal(action_bottom, hand_bottom, "Right Utility Column and Player Hand must share bottom alignment line")
+
+	# P005-R03 Left Hero Column Proportions: Portrait prominence over liquid resource orbs
+	var portrait: TextureRect = player_hero.get_node("Portrait") as TextureRect
+	var health_orb: LiquidResourceOrb = screen.get_player_health_orb()
+	asserts.assert_true(portrait != null, "Hero portrait must exist")
+	asserts.assert_true(portrait.size.y < health_orb.size.y,
+		"Hero portrait height (%.1f) must be smaller than resource orb height (%.1f)" % [portrait.size.y, health_orb.size.y])
+	asserts.assert_true(health_orb.size.x <= player_hero.size.x * 0.70,
+		"Resource orb footprint must leave balanced horizontal breathing room inside hero panel")
+
 	screen.free()
 
 
@@ -236,3 +258,54 @@ func _test_intentional_failure(asserts: TestAsserts) -> void:
 	asserts.set_current_test("combat_screen:intentional_failure_mode")
 	print(">>> Triggering intentional failing assertion for combat screen suite verification...")
 	asserts.assert_true(false, "Deliberate failure triggered for combat screen negative test verification (--test-failure-mode)")
+
+func _test_adaptive_fan(asserts: TestAsserts) -> void:
+	asserts.set_current_test("r04:adaptive_fan_0_to_10")
+	var previous_width: float = 0.0
+	var previous_center_y: float = 0.0
+	for count: int in range(11):
+		var fan: CombatPreviewCards = CombatPreviewCards.new()
+		fan.size = Vector2(1280, 252)
+		fan.display_count = count
+		fan.rebuild()
+		asserts.assert_equal(fan.get_child_count(), count, "Exact display count")
+		var left: float = 1280.0
+		var right: float = 0.0
+		for index: int in range(count):
+			var card: Control = fan.get_child(index) as Control
+			var mirror: Control = fan.get_child(count - 1 - index) as Control
+			var center: Vector2 = card.position + card.pivot_offset
+			asserts.assert_true(center.is_finite(), "Finite center")
+			asserts.assert_true(is_equal_approx(center.x + mirror.position.x + mirror.pivot_offset.x, 1280.0), "Mirrored centers")
+			asserts.assert_true(is_equal_approx(center.y, mirror.position.y + mirror.pivot_offset.y), "Mirrored vertical arc")
+			asserts.assert_true(is_equal_approx(card.rotation, -mirror.rotation), "Mirrored rotations")
+			asserts.assert_true(is_equal_approx(card.size.x / card.size.y, 0.75) and card.scale.x == card.scale.y, "Native aspect ratio")
+			asserts.assert_true(absf(CombatPreviewCards.layout_pose(index, count, 1280, 270).origin.y - previous_center_y) < 30.0 or count <= 1, "No vertical jumps between counts")
+			asserts.assert_equal(card.name, StringName("Card%02d" % index), "Stable order")
+			for point: Vector2 in [Vector2.ZERO, Vector2(card.size.x, 0), card.size, Vector2(0, card.size.y)]:
+				var corner: Vector2 = card.get_transform() * point
+				left = minf(left, corner.x)
+				right = maxf(right, corner.x)
+				for factor: float in [1.0, 2.0 / 3.0]:
+					asserts.assert_true(Rect2(Vector2(320, 774) * factor - Vector2.ONE, Vector2(1280, 301) * factor + Vector2.ONE * 2).has_point((corner + Vector2(320, 804)) * factor), "Idle envelope at supported resolution")
+			if index > 0:
+				var prior: Control = fan.get_child(index - 1) as Control
+				var spacing: float = center.x - prior.position.x - prior.pivot_offset.x
+				asserts.assert_true(spacing >= 80.0 and spacing < card.size.x * card.scale.x, "Meaningful exposed strip and overlap")
+		if count > 1:
+			asserts.assert_true(right - left >= previous_width - 1.0, "Smooth nondecreasing fan envelope")
+		previous_center_y = CombatPreviewCards.layout_pose(0, count, 1280, 270).origin.y
+		previous_width = right - left
+		if count == 1:
+			asserts.assert_equal((fan.get_child(0) as Control).rotation, 0.0, "Single card unrotated")
+		if count > 0:
+			var last: Control = fan.get_child(count - 1) as Control
+			var neighbor_position: Vector2 = last.position
+			fan.set_inspected_card(0)
+			if count > 1:
+				asserts.assert_equal(last.position, neighbor_position, "Inspection leaves neighbors fixed")
+			var raised: Control = fan.get_child(0) as Control
+			for point: Vector2 in [Vector2.ZERO, Vector2(raised.size.x, 0), raised.size, Vector2(0, raised.size.y)]:
+				asserts.assert_true(Rect2(Vector2.ZERO, Vector2(1920, 1080)).has_point(raised.get_transform() * point + Vector2(320, 804)), "Raised card inside viewport")
+			asserts.assert_equal((fan.get_child(0) as Control).z_index, 100, "Inspection above all cards")
+		fan.free()

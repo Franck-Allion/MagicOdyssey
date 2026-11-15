@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([string]$Executable = 'build/windows/MagicOdyssey.exe', [switch]$EditorPreview)
+param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r03', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 7, [switch]$AnimateResources)
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 Add-Type @'
@@ -18,7 +18,8 @@ public static class PreviewDesktop {
 '@
 [PreviewDesktop]::SetProcessDPIAware() | Out-Null
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
-$outDir = Join-Path $repoRoot 'docs/art/reviews/p005-r02'
+$outDir = Join-Path $repoRoot $ReviewDir
+if (-not (Test-Path -LiteralPath $outDir)) { New-Item -ItemType Directory -Path $outDir -Force | Out-Null }
 $sourceExe = (Resolve-Path -LiteralPath $Executable).Path
 # Copy only the embedded executable: prove independence from project resources/editor.
 $testDir = Join-Path $env:TEMP ('MagicOdyssey-standalone-' + [guid]::NewGuid().ToString('N'))
@@ -41,6 +42,11 @@ foreach ($mode in $modes) {
     $start.Arguments = '--log-file "' + $logPath + '"'
     if ($EditorPreview) { $start.Arguments += ' --path "' + $repoRoot + '" res://scenes/combat/combat_preview.tscn' }
     elseif ($mode -ne 'default') { $start.Arguments += " -- --preview-size=$mode" }
+    if (-not $EditorPreview) {
+        if ($mode -eq 'default') { $start.Arguments += ' --' }
+        $start.Arguments += " --preview-hand=$HandCount"
+        if ($AnimateResources) { $start.Arguments += ' --preview-animate' }
+    }
     $process = [System.Diagnostics.Process]::Start($start)
     try {
         $deadline = [DateTime]::UtcNow.AddSeconds(30)
@@ -72,6 +78,17 @@ foreach ($mode in $modes) {
             $graphics.CopyFromScreen($point.X, $point.Y, 0, 0, $bitmap.Size)
             $bitmap.Save((Join-Path $outDir ('desktop-' + $mode + '.png')))
         } finally { $graphics.Dispose(); $bitmap.Dispose() }
+        if ($AnimateResources) {
+            for ($frameIndex = 0; $frameIndex -lt 8; $frameIndex++) {
+                Start-Sleep -Milliseconds 140
+                $motionBitmap = New-Object System.Drawing.Bitmap($width, $height)
+                $motionGraphics = [System.Drawing.Graphics]::FromImage($motionBitmap)
+                try {
+                    $motionGraphics.CopyFromScreen($point.X, $point.Y, 0, 0, $motionBitmap.Size)
+                    $motionBitmap.Save((Join-Path $outDir ("desktop-$mode-motion-$frameIndex.png")))
+                } finally { $motionGraphics.Dispose(); $motionBitmap.Dispose() }
+            }
+        }
         [PreviewDesktop]::keybd_event(0x1B, 0, 0, [UIntPtr]::Zero)
         [PreviewDesktop]::keybd_event(0x1B, 0, 2, [UIntPtr]::Zero)
         if (-not $process.WaitForExit(5000)) { throw "ESC failed to exit: $mode" }
