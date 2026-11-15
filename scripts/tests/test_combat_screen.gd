@@ -15,6 +15,7 @@ func run_suite(asserts: TestAsserts, failure_mode: bool = false) -> void:
 	_test_hero_and_hand_zones(asserts)
 	_test_action_bar_and_button(asserts)
 	_test_adaptive_fan(asserts)
+	_test_hand_hover_and_picking(asserts)
 	_test_overlay_layer(asserts)
 	_test_responsive_bounds_1080p_and_720p(asserts)
 
@@ -309,3 +310,137 @@ func _test_adaptive_fan(asserts: TestAsserts) -> void:
 				asserts.assert_true(Rect2(Vector2.ZERO, Vector2(1920, 1080)).has_point(raised.get_transform() * point + Vector2(320, 804)), "Raised card inside viewport")
 			asserts.assert_equal((fan.get_child(0) as Control).z_index, 100, "Inspection above all cards")
 		fan.free()
+
+
+func _test_hand_hover_and_picking(asserts: TestAsserts) -> void:
+	asserts.set_current_test("r05:hand_hover_and_picking")
+
+	# 1. Picking & Accessibility: Every card in counts 1, 3, 5, 7, 10 has an accessible exposed region
+	for count: int in [1, 3, 5, 7, 10]:
+		var fan: CombatPreviewCards = CombatPreviewCards.new()
+		fan.size = Vector2(1280, 252)
+		fan.display_count = count
+		fan.rebuild()
+
+		var half_w: float = 1086.0 * (270.0 / 1448.0) * 0.5
+		var half_h: float = 270.0 * 0.5
+
+		for i: int in range(count):
+			var pose: Transform2D = CombatPreviewCards.layout_pose(i, count, 1280, 270)
+			# Top-left mana area of each card: exposed due to left-to-right stacking
+			var mana_offset: Vector2 = Vector2(-half_w * 0.65, -half_h * 0.65).rotated(pose.get_rotation())
+			var mana_pt: Vector2 = pose.origin + mana_offset
+			var picked: int = fan.pick_card_at(mana_pt)
+			asserts.assert_equal(picked, i, "Card %d of %d exposed mana area pickable (got %d)" % [i, count, picked])
+
+		# Points outside hand fan return -1
+		asserts.assert_equal(fan.pick_card_at(Vector2(-50, 100)), -1, "Left of hand returns -1")
+		asserts.assert_equal(fan.pick_card_at(Vector2(1350, 100)), -1, "Right of hand returns -1")
+		asserts.assert_equal(fan.pick_card_at(Vector2(640, -350)), -1, "Above hand returns -1")
+		asserts.assert_equal(fan.pick_card_at(Vector2(640, 350)), -1, "Below hand returns -1")
+		fan.free()
+
+	# 2. Hover Stability & Steering
+	var test_fan: CombatPreviewCards = CombatPreviewCards.new()
+	test_fan.size = Vector2(1280, 252)
+	test_fan.display_count = 7
+	test_fan.rebuild()
+
+	# Hover card 3 (center)
+	test_fan.set_inspected_card(3, 1.0)
+	asserts.assert_equal(test_fan.get_hover_state(), CombatPreviewCards.HoverState.INSPECTING, "State is INSPECTING at blend 1.0")
+	asserts.assert_equal(test_fan.get_hovered_index(), 3, "Hovered index is 3")
+
+	# Point in upper raised card body (above resting cards) maintains inspection ownership
+	var raised_pose_x: float = CombatPreviewCards.layout_pose(3, 7, 1280, 270).origin.x
+	var upper_raised_pt: Vector2 = Vector2(raised_pose_x, -50.0)
+	asserts.assert_equal(test_fan.pick_card_at(upper_raised_pt), 3, "Pointer in raised body maintains inspection")
+
+	# Point on neighboring resting card 2 switches pick to card 2
+	var card2_pose: Transform2D = CombatPreviewCards.layout_pose(2, 7, 1280, 270)
+	var card2_pt: Vector2 = card2_pose.origin + Vector2(-50, -50).rotated(card2_pose.get_rotation())
+	asserts.assert_equal(test_fan.pick_card_at(card2_pt), 2, "Steering into neighbor resting area selects neighbor")
+	test_fan.free()
+
+	# 3. Animation Controller, Smooth Transitions & State Machine
+	var anim_fan: CombatPreviewCards = CombatPreviewCards.new()
+	anim_fan.size = Vector2(1280, 252)
+	anim_fan.display_count = 7
+	anim_fan.rebuild()
+	asserts.assert_equal(anim_fan.get_hover_state(), CombatPreviewCards.HoverState.IDLE, "Initial state is IDLE")
+
+	# Simulate pointer motion to card 4
+	var card4_pose: Transform2D = CombatPreviewCards.layout_pose(4, 7, 1280, 270)
+	var card4_pt: Vector2 = card4_pose.origin + Vector2(-40, -40).rotated(card4_pose.get_rotation())
+	anim_fan.pick_card_at(card4_pt)
+	anim_fan._on_pointer_motion(anim_fan.get_global_transform() * card4_pt)
+	asserts.assert_equal(anim_fan.get_hovered_index(), 4, "Target index set to 4 on pointer motion")
+
+	# Step animation partially
+	anim_fan._process(0.02)
+	asserts.assert_true(anim_fan.get_card_blend(4) > 0.0, "Card 4 blend begins rising")
+	asserts.assert_true(anim_fan.get_hover_state() == CombatPreviewCards.HoverState.HOVERING or anim_fan.get_hover_state() == CombatPreviewCards.HoverState.TRANSITIONING, "State is HOVERING/TRANSITIONING")
+
+	# Step animation to completion
+	anim_fan._process(0.20)
+	asserts.assert_equal(anim_fan.get_card_blend(4), 1.0, "Card 4 blend settles at 1.0")
+	asserts.assert_equal(anim_fan.get_hover_state(), CombatPreviewCards.HoverState.INSPECTING, "State settles into INSPECTING")
+	asserts.assert_equal((anim_fan.get_child(4) as Control).z_index, 100, "Inspected card has z_index 100")
+
+	# Rapid switch to card 5
+	var card5_pose: Transform2D = CombatPreviewCards.layout_pose(5, 7, 1280, 270)
+	var card5_pt: Vector2 = card5_pose.origin + Vector2(-40, -40).rotated(card5_pose.get_rotation())
+	anim_fan._on_pointer_motion(anim_fan.get_global_transform() * card5_pt)
+	asserts.assert_equal(anim_fan.get_hovered_index(), 5, "Target retargets to 5")
+
+	# Halfway through retarget
+	anim_fan._process(0.09)
+	asserts.assert_true(anim_fan.get_card_blend(4) > 0.0 and anim_fan.get_card_blend(4) < 1.0, "Card 4 returning smoothly")
+	asserts.assert_true(anim_fan.get_card_blend(5) > 0.0 and anim_fan.get_card_blend(5) < 1.0, "Card 5 rising smoothly")
+	asserts.assert_equal((anim_fan.get_child(5) as Control).z_index, 100, "Rising card takes topmost z_index")
+
+	# Settle retarget
+	anim_fan._process(0.20)
+	asserts.assert_equal(anim_fan.get_card_blend(4), 0.0, "Card 4 fully returned")
+	asserts.assert_equal(anim_fan.get_card_blend(5), 1.0, "Card 5 fully inspected")
+	asserts.assert_equal(anim_fan.get_hover_state(), CombatPreviewCards.HoverState.INSPECTING, "State settles back to INSPECTING")
+
+	# Pointer leaves hand
+	anim_fan._on_pointer_motion(anim_fan.get_global_transform() * Vector2(-500, -500))
+	asserts.assert_equal(anim_fan.get_hovered_index(), -1, "Target cleared on exit")
+	anim_fan._process(0.05)
+	asserts.assert_equal(anim_fan.get_hover_state(), CombatPreviewCards.HoverState.RETURNING, "State is RETURNING")
+	anim_fan._process(0.25)
+	asserts.assert_equal(anim_fan.get_hover_state(), CombatPreviewCards.HoverState.IDLE, "State settles to IDLE on completion")
+	asserts.assert_equal(anim_fan.get_card_blend(5), 0.0, "Card 5 blend returns to 0.0")
+	anim_fan.free()
+
+	# 4. Viewport Containment & Clearance for Inspected Cards
+	for count: int in [1, 3, 5, 7, 10]:
+		var check_fan: CombatPreviewCards = CombatPreviewCards.new()
+		check_fan.size = Vector2(1280, 252)
+		check_fan.display_count = count
+		check_fan.rebuild()
+
+		for i: int in range(count):
+			check_fan.set_inspected_card(i, 1.0)
+			var raised: Control = check_fan.get_child(i) as Control
+			var min_x: float = 9999.0
+			var max_x: float = -9999.0
+			var min_y: float = 9999.0
+			var max_y: float = -9999.0
+
+			for corner_pt: Vector2 in [Vector2.ZERO, Vector2(raised.size.x, 0), raised.size, Vector2(0, raised.size.y)]:
+				var global_pt: Vector2 = raised.get_transform() * corner_pt + Vector2(320, 804)
+				min_x = minf(min_x, global_pt.x)
+				max_x = maxf(max_x, global_pt.x)
+				min_y = minf(min_y, global_pt.y)
+				max_y = maxf(max_y, global_pt.y)
+				asserts.assert_true(Rect2(Vector2.ZERO, Vector2(1920, 1080)).has_point(global_pt),
+					"Inspected card %d of %d corner inside 1080p viewport (pt=%s)" % [i, count, global_pt])
+
+			# Clearances from left hero column (ends at x=296) and right utility column (starts at x=1624)
+			asserts.assert_true(min_x >= 320.0, "Inspected card clears left hero column (min_x=%.1f >= 320.0)" % min_x)
+			asserts.assert_true(max_x <= 1600.0, "Inspected card clears right utility column (max_x=%.1f <= 1600.0)" % max_x)
+			asserts.assert_true(max_y <= 1076.0, "Inspected card clears bottom screen boundary (max_y=%.1f <= 1076.0)" % max_y)
+		check_fan.free()

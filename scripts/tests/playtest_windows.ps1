@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r03', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 7, [switch]$AnimateResources)
+param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources)
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 Add-Type @'
@@ -14,6 +14,8 @@ public static class PreviewDesktop {
     [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr hwnd, ref Point point);
     [DllImport("user32.dll")] public static extern int GetSystemMetrics(int index);
     [DllImport("user32.dll")] public static extern void keybd_event(byte key, byte scan, uint flags, UIntPtr extra);
+    [DllImport("user32.dll")] public static extern bool SetCursorPos(int X, int Y);
+    [DllImport("user32.dll")] public static extern void mouse_event(uint dwFlags, int dx, int dy, int dwData, UIntPtr dwExtraInfo);
 }
 '@
 [PreviewDesktop]::SetProcessDPIAware() | Out-Null
@@ -78,6 +80,77 @@ foreach ($mode in $modes) {
             $graphics.CopyFromScreen($point.X, $point.Y, 0, 0, $bitmap.Size)
             $bitmap.Save((Join-Path $outDir ('desktop-' + $mode + '.png')))
         } finally { $graphics.Dispose(); $bitmap.Dispose() }
+        # Real Windows pointer hover verification across player hand
+        if (-not $EditorPreview) {
+            $scale = [Math]::Min($width / 1920.0, $height / 1080.0)
+            $gameW = 1920.0 * $scale
+            $gameH = 1080.0 * $scale
+            $offsetX = ($width - $gameW) * 0.5
+            $offsetY = ($height - $gameH) * 0.5
+            $scrW = [PreviewDesktop]::GetSystemMetrics(0)
+            $scrH = [PreviewDesktop]::GetSystemMetrics(1)
+
+            # Helper scriptblock for screen coordinates from 1920x1080 reference
+            $refToScreen = {
+                param([double]$rx, [double]$ry)
+                $sx = $point.X + [int]($offsetX + $rx * $scale)
+                $sy = $point.Y + [int]($offsetY + $ry * $scale)
+                return @($sx, $sy)
+            }
+
+            $sendMouseMove = {
+                param([int]$sx, [int]$sy)
+                [PreviewDesktop]::SetCursorPos($sx, $sy) | Out-Null
+                $nx = [int]($sx * 65535.0 / [Math]::Max(1, $scrW - 1))
+                $ny = [int]($sy * 65535.0 / [Math]::Max(1, $scrH - 1))
+                [PreviewDesktop]::mouse_event(0x8001, $nx, $ny, 0, [UIntPtr]::Zero)
+            }
+
+            # 1. Hover leftmost card (Card 0 exposed mana: refX=386, refY=830)
+            $c0 = & $refToScreen 386.0 830.0
+            & $sendMouseMove $c0[0] $c0[1]
+            Start-Sleep -Milliseconds 320
+            $hoverLeftBmp = New-Object System.Drawing.Bitmap($width, $height)
+            $hoverLeftG = [System.Drawing.Graphics]::FromImage($hoverLeftBmp)
+            try {
+                $hoverLeftG.CopyFromScreen($point.X, $point.Y, 0, 0, $hoverLeftBmp.Size)
+                $hoverLeftBmp.Save((Join-Path $outDir ("desktop-$mode-hover-left.png")))
+            } finally { $hoverLeftG.Dispose(); $hoverLeftBmp.Dispose() }
+
+            # 2. Hover center card (Card 4: refX=904, refY=880)
+            $cMid = & $refToScreen 904.0 880.0
+            & $sendMouseMove $cMid[0] $cMid[1]
+            Start-Sleep -Milliseconds 320
+            $hoverCenterBmp = New-Object System.Drawing.Bitmap($width, $height)
+            $hoverCenterG = [System.Drawing.Graphics]::FromImage($hoverCenterBmp)
+            try {
+                $hoverCenterG.CopyFromScreen($point.X, $point.Y, 0, 0, $hoverCenterBmp.Size)
+                $hoverCenterBmp.Save((Join-Path $outDir ("desktop-$mode-hover-center.png")))
+            } finally { $hoverCenterG.Dispose(); $hoverCenterBmp.Dispose() }
+
+            # 3. Hover rightmost card (Card 9: refX=1420, refY=880)
+            $cRight = & $refToScreen 1420.0 880.0
+            & $sendMouseMove $cRight[0] $cRight[1]
+            Start-Sleep -Milliseconds 400
+            $hoverRightBmp = New-Object System.Drawing.Bitmap($width, $height)
+            $hoverRightG = [System.Drawing.Graphics]::FromImage($hoverRightBmp)
+            try {
+                $hoverRightG.CopyFromScreen($point.X, $point.Y, 0, 0, $hoverRightBmp.Size)
+                $hoverRightBmp.Save((Join-Path $outDir ("desktop-$mode-hover-right.png")))
+            } finally { $hoverRightG.Dispose(); $hoverRightBmp.Dispose() }
+
+            # 4. Rapid scrub across cards (Card 0 -> Card 2 -> Card 4 -> Card 6 -> Card 8 -> Card 9)
+            foreach ($rx in @(386.0, 620.0, 850.0, 1080.0, 1310.0, 1468.0)) {
+                $cs = & $refToScreen $rx 880.0
+                & $sendMouseMove $cs[0] $cs[1]
+                Start-Sleep -Milliseconds 50
+            }
+
+            # 5. Move outside hand (into battlefield at refX=960, refY=500) -> cards return to rest
+            $cOut = & $refToScreen 960.0 500.0
+            & $sendMouseMove $cOut[0] $cOut[1]
+            Start-Sleep -Milliseconds 320
+        }
         if ($AnimateResources) {
             for ($frameIndex = 0; $frameIndex -lt 8; $frameIndex++) {
                 Start-Sleep -Milliseconds 140
