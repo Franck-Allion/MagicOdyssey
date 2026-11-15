@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3]
+[gd_scene load_steps=27 format=3]
 
 [ext_resource type="Theme" path="res://resources/themes/fantasy_theme.tres" id="1_theme"]
 [ext_resource type="Script" path="res://scripts/presentation/combat_screen.gd" id="2_script"]
@@ -18,6 +18,10 @@
 [ext_resource type="Script" path="res://scripts/presentation/deck_stack_view.gd" id="14_deck"]
 [ext_resource type="Script" path="res://scripts/presentation/graveyard_view.gd" id="15_graveyard"]
 [ext_resource type="Script" path="res://scripts/presentation/premium_end_turn_button.gd" id="16_button"]
+
+[sub_resource type="SystemFont" id="utility_heading_font"]
+font_names = PackedStringArray("Segoe UI", "Calibri", "Arial")
+font_weight = 600
 
 [sub_resource type="AtlasTexture" id="utility_crop"]
 atlas = ExtResource("12_utility")
@@ -783,20 +787,26 @@ layout_mode = 0
 offset_left = 40.0
 offset_top = 64.0
 offset_right = 232.0
-offset_bottom = 92.0
-theme_override_font_sizes/font_size = 16
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 19
+theme_override_fonts/font = SubResource("utility_heading_font")
 text = "RECENT ACTIONS"
+horizontal_alignment = 1
 vertical_alignment = 1
 mouse_filter = 2
 
 [node name="RecentActions" type="Label" parent="CombatLayout/ActionBarZone"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 102.0
-offset_right = 232.0
-offset_bottom = 230.0
-theme_override_font_sizes/font_size = 17
+offset_left = 44.0
+offset_top = 112.0
+offset_right = 228.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 16
+theme_override_constants/line_spacing = 3
 text = "Awaiting first action..."
+clip_contents = true
+max_lines_visible = 5
+text_overrun_behavior = 4
 autowrap_mode = 2
 mouse_filter = 2
 
@@ -848,10 +858,10 @@ mouse_filter = 2
 
 [node name="EndTurnButton" type="Button" parent="CombatLayout/ActionBarZone"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 558.0
-offset_right = 252.0
-offset_bottom = 616.0
+offset_left = 40.38
+offset_top = 520.0
+offset_right = 230.38
+offset_bottom = 567.45455
 theme_type_variation = &"PrimaryButton"
 text = "END TURN"
 script = ExtResource("16_button")
@@ -859,19 +869,19 @@ script = ExtResource("16_button")
 
 [node name="DeckStack" type="Control" parent="CombatLayout/ActionBarZone"]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 296.0
-offset_right = 134.0
-offset_bottom = 496.0
+offset_left = 35.0
+offset_top = 258.0
+offset_right = 139.0
+offset_bottom = 436.0
 mouse_filter = 2
 script = ExtResource("14_deck")
 
 [node name="GraveyardView" type="Control" parent="CombatLayout/ActionBarZone"]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 296.0
-offset_right = 242.0
-offset_bottom = 496.0
+offset_left = 133.0
+offset_top = 258.0
+offset_right = 237.0
+offset_bottom = 436.0
 mouse_filter = 2
 script = ExtResource("15_graveyard")
 

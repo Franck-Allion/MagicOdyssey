@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources, [switch]$UtilityHud)
+param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources, [switch]$UtilityHud, [double]$UtilityButtonY = 915.73)
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 Add-Type @'
@@ -153,7 +153,7 @@ foreach ($mode in $modes) {
             Start-Sleep -Milliseconds 320
         }
         if ($UtilityHud -and -not $EditorPreview) {
-            $buttonPoint = & $refToScreen 1760.0 959.0
+            $buttonPoint = & $refToScreen 1760.0 $UtilityButtonY
             & $sendMouseMove $buttonPoint[0] $buttonPoint[1]
             foreach ($buttonState in @('hover', 'pressed', 'released')) {
                 if ($buttonState -eq 'pressed') { [PreviewDesktop]::mouse_event(0x0002, 0, 0, 0, [UIntPtr]::Zero) }
@@ -167,9 +167,16 @@ foreach ($mode in $modes) {
                 } finally { $buttonGraphics.Dispose(); $buttonBitmap.Dispose() }
             }
             if (-not (Select-String -LiteralPath $logPath -Pattern '^UTILITY_PREVIEW_ACTIVATED$' -Quiet)) { throw "End Turn native activation not received: $mode" }
+            if (-not (Select-String -LiteralPath $logPath -Pattern '^UTILITY_PREVIEW_FOCUSED$' -Quiet)) { throw "End Turn native focus not received: $mode" }
+            [PreviewDesktop]::keybd_event(0x20, 0, 0, [UIntPtr]::Zero)
+            Start-Sleep -Milliseconds 150
+            [PreviewDesktop]::keybd_event(0x20, 0, 2, [UIntPtr]::Zero)
+            Start-Sleep -Milliseconds 200
+            $activationCount = @(Select-String -LiteralPath $logPath -Pattern '^UTILITY_PREVIEW_ACTIVATED$').Count
+            if ($activationCount -ne 2) { throw "Expected mouse and Space activation exactly once each: $mode ($activationCount)" }
             $outsidePoint = & $refToScreen 960.0 500.0
             & $sendMouseMove $outsidePoint[0] $outsidePoint[1]
-            Write-Output "$mode : native End Turn hover/press/release and activation PASS (preview only)"
+            Write-Output "$mode : native End Turn hover/press/release, focus and mouse/Space activation PASS (preview only)"
         }
         if ($AnimateResources) {
             for ($frameIndex = 0; $frameIndex -lt 8; $frameIndex++) {

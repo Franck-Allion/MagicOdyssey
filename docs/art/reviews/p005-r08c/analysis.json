@@ -1,0 +1,425 @@
+{
+  "source_hashes_unchanged": true,
+  "source_manifest": [
+    {
+      "path": "assets/_source/lot1/hud/utility/mo_hud_end_turn_normal_v01.png",
+      "sha256": "b3586a885ec2cefc1135314d0f013e4961b598e79b309d31b5e54283e7fa341c",
+      "mode": "RGBA",
+      "size": [
+        2090,
+        522
+      ],
+      "aspect": 4.003831417624521,
+      "bounds_alpha8": [
+        22,
+        13,
+        2074,
+        507
+      ],
+      "transparent_pixels": 203153,
+      "near_opaque_pixels": 832369,
+      "center_rgba": [
+        16,
+        36,
+        67,
+        253
+      ]
+    },
+    {
+      "path": "assets/_source/lot1/hud/utility/mo_hud_graveyard_empty_v01.png",
+      "sha256": "9a21d28c9ce3a31224630f852965b81a1070a0d9456021c4585fffb6e3569230",
+      "mode": "RGBA",
+      "size": [
+        1086,
+        1448
+      ],
+      "aspect": 0.75,
+      "bounds_alpha8": [
+        107,
+        84,
+        978,
+        1353
+      ],
+      "transparent_pixels": 1067224,
+      "near_opaque_pixels": 44697,
+      "center_rgba": [
+        185,
+        130,
+        70,
+        162
+      ]
+    },
+    {
+      "path": "assets/_source/lot1/hud/utility/mo_hud_turn_phase_panel_v01.png",
+      "sha256": "759259eed5334a980815503e6274f70a130985735d6cf431edb1dfaf27e2a779",
+      "mode": "RGBA",
+      "size": [
+        1774,
+        887
+      ],
+      "aspect": 2.0,
+      "bounds_alpha8": [
+        12,
+        101,
+        1761,
+        770
+      ],
+      "transparent_pixels": 392416,
+      "near_opaque_pixels": 1116766,
+      "center_rgba": [
+        11,
+        22,
+        36,
+        253
+      ]
+    },
+    {
+      "path": "assets/_source/lot1/hud/utility/mo_hud_utility_panel_v01.png",
+      "sha256": "7e51955c70e354943b438f4d201c28ea9d8e5c9de5f75a3e10aee94f70e7d1e6",
+      "mode": "RGBA",
+      "size": [
+        791,
+        1989
+      ],
+      "aspect": 0.3976872800402212,
+      "bounds_alpha8": [
+        72,
+        21,
+        719,
+        1963
+      ],
+      "transparent_pixels": 428213,
+      "near_opaque_pixels": 1103305,
+      "center_rgba": [
+        22,
+        31,
+        41,
+        253
+      ]
+    },
+    {
+      "path": "assets/_source/lot1/hud/opponent/mo_hud_opponent_card_back_v01.png",
+      "sha256": "ce5d3e2873b4db7747121cda2e4b5abd4a11dc09804679603f4c18385617f681",
+      "mode": "RGBA",
+      "size": [
+        1086,
+        1448
+      ],
+      "aspect": 0.75,
+      "bounds_alpha8": [
+        45,
+        31,
+        1041,
+        1417
+      ],
+      "transparent_pixels": 190158,
+      "near_opaque_pixels": 1350080,
+      "center_rgba": [
+        10,
+        24,
+        48,
+        253
+      ]
+    },
+    {
+      "path": "assets/_source/lot1/cards/frames/mo_card_frame_master_v03.png",
+      "sha256": "937d2a3e3c099ec9830213c725025af250639032591ecc234f8e491068ced3e3",
+      "mode": "RGBA",
+      "size": [
+        1086,
+        1448
+      ],
+      "aspect": 0.75,
+      "bounds_alpha8": [
+        23,
+        0,
+        1059,
+        1445
+      ],
+      "transparent_pixels": 648383,
+      "near_opaque_pixels": 827503,
+      "center_rgba": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "metal_detection": "RGB bronze ratio with alpha >128; conservative horizontal silhouette projections, not an artist-authored mask",
+  "panel_inner": [
+    33.9572301425662,
+    237.3462321792261
+  ],
+  "panel_inner_width": 203.3890020366599,
+  "panel_painted_width": 225.32993890020364,
+  "baseline": {
+    "deck_bounds": [
+      34.97790055248619,
+      299.7403314917127,
+      129.02209944751382,
+      426.2596685082873
+    ],
+    "faceup_bounds": [
+      141.87845303867402,
+      298.0,
+      237.75138121546962,
+      431.72237569060775
+    ],
+    "empty_bounds": [
+      149.65193370165747,
+      305.77348066298345,
+      230.25552486187846,
+      423.2085635359116
+    ],
+    "button_bounds": [
+      22.442105263157895,
+      559.4430622009569,
+      250.22392344497607,
+      614.2794258373206
+    ],
+    "deck_height": 128.0,
+    "graveyard_height": 134,
+    "left_card_margin": 1.0206704099199868,
+    "right_card_margin": -0.4051490362435288,
+    "card_gap": 12.8563535911602,
+    "button_left_margin": -11.515124879408308,
+    "button_right_margin": -12.877691265749974,
+    "counter_to_button_gap": 63.44306220095689,
+    "button_to_panel_bottom": 69.72057416267944
+  },
+  "option_a": {
+    "deck_bounds": [
+      36.97790055248619,
+      261.7403314917127,
+      131.02209944751382,
+      388.2596685082873
+    ],
+    "faceup_bounds": [
+      139.87845303867402,
+      260.0,
+      235.75138121546962,
+      393.72237569060775
+    ],
+    "empty_bounds": [
+      147.65193370165747,
+      267.77348066298345,
+      228.25552486187846,
+      385.2085635359116
+    ],
+    "button_bounds": [
+      42.38,
+      521.1818181818181,
+      228.92545454545453,
+      566.0909090909091
+    ],
+    "deck_height": 128.0,
+    "graveyard_height": 134,
+    "left_card_margin": 3.020670409919987,
+    "right_card_margin": 1.5948509637564712,
+    "card_gap": 8.8563535911602,
+    "button_left_margin": 8.4227698574338,
+    "button_right_margin": 8.420777633771564,
+    "counter_to_button_gap": 63.18181818181813,
+    "button_to_panel_bottom": 117.90909090909088
+  },
+  "option_b": {
+    "deck_bounds": [
+      45.48066298342542,
+      261.3977900552486,
+      128.51933701657458,
+      372.6022099447514
+    ],
+    "faceup_bounds": [
+      144.77900552486187,
+      260.0,
+      224.91160220994476,
+      371.76795580110496
+    ],
+    "empty_bounds": [
+      151.27624309392266,
+      266.49723756906076,
+      218.64640883977899,
+      364.65193370165747
+    ],
+    "button_bounds": [
+      42.38,
+      521.1818181818181,
+      228.92545454545453,
+      566.0909090909091
+    ],
+    "deck_height": 112,
+    "graveyard_height": 112,
+    "left_card_margin": 11.523432840859215,
+    "right_card_margin": 12.434629969281332,
+    "card_gap": 16.25966850828729,
+    "button_left_margin": 8.4227698574338,
+    "button_right_margin": 8.420777633771564,
+    "counter_to_button_gap": 85.18181818181813,
+    "button_to_panel_bottom": 117.90909090909088
+  },
+  "option_c": {
+    "required_inner_width": 229.91712707182324,
+    "required_painted_width": 251.858063935367,
+    "increase": 26.528125035163356,
+    "uniform_fit_height": 764.5274150990122,
+    "art_refinement_required_for_full_size": true,
+    "required_for_selected_option_b": false
+  },
+  "gpu_parity": {
+    "1080": {
+      "left_changed": 0,
+      "header_changed": 0
+    },
+    "720": {
+      "left_changed": 0,
+      "header_changed": 0
+    }
+  },
+  "desktop": {
+    "default": {
+      "client": [
+        1888,
+        956
+      ],
+      "reservoir_changes": {
+        "player_hp": [
+          11,
+          13,
+          1972,
+          1921,
+          145,
+          162,
+          1484
+        ],
+        "player_mana": [
+          11,
+          12,
+          2018,
+          1967,
+          135,
+          157,
+          1526
+        ],
+        "opponent_hp": [
+          5,
+          9,
+          121,
+          121,
+          20,
+          20,
+          102
+        ],
+        "opponent_mana": [
+          9,
+          11,
+          121,
+          121,
+          21,
+          21,
+          109
+        ]
+      },
+      "button_changed": 5971,
+      "hand_changed": 101982,
+      "native_focus": true,
+      "mouse_and_space_activations": 2
+    },
+    "1920x1080": {
+      "client": [
+        1920,
+        1080
+      ],
+      "reservoir_changes": {
+        "player_hp": [
+          16,
+          2414,
+          1250,
+          191,
+          1874,
+          0,
+          0
+        ],
+        "player_mana": [
+          16,
+          2393,
+          1429,
+          200,
+          1813,
+          0,
+          0
+        ],
+        "opponent_hp": [
+          5,
+          144,
+          93,
+          23,
+          125,
+          5,
+          3
+        ],
+        "opponent_mana": [
+          5,
+          144,
+          112,
+          25,
+          126,
+          0,
+          0
+        ]
+      },
+      "button_changed": 7441,
+      "hand_changed": 130018,
+      "native_focus": true,
+      "mouse_and_space_activations": 2
+    },
+    "1280x720": {
+      "client": [
+        1280,
+        720
+      ],
+      "reservoir_changes": {
+        "player_hp": [
+          0,
+          1089,
+          7,
+          7,
+          8,
+          1080,
+          1089
+        ],
+        "player_mana": [
+          7,
+          9,
+          5,
+          7,
+          9,
+          1114,
+          1121
+        ],
+        "opponent_hp": [
+          0,
+          64,
+          4,
+          6,
+          6,
+          64,
+          64
+        ],
+        "opponent_mana": [
+          5,
+          5,
+          4,
+          6,
+          6,
+          64,
+          64
+        ]
+      },
+      "button_changed": 3451,
+      "hand_changed": 57814,
+      "native_focus": true,
+      "mouse_and_space_activations": 2
+    }
+  }
+}

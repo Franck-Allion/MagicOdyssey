@@ -91,6 +91,7 @@ func run_suite(asserts: TestAsserts, _failure_mode: bool = false) -> void:
 	asserts.assert_true(screen.get_end_turn_button() is PremiumEndTurnButton,"Native Button semantics preserved")
 	asserts.assert_equal(screen.get_end_turn_button().focus_mode,Control.FOCUS_ALL,"Keyboard focusable")
 	asserts.assert_true(Rect2(Vector2.ZERO,screen.get_action_bar_zone().size).encloses(screen.get_end_turn_button().get_rect()),"Button contained with bottom clearance")
+	_test_r08c_polish(asserts,screen)
 	screen.free()
 
 func _label_fits(asserts: TestAsserts, label: Label) -> void:
@@ -99,3 +100,39 @@ func _label_fits(asserts: TestAsserts, label: Label) -> void:
 	var ink: Vector2 = font.get_string_size(label.text,HORIZONTAL_ALIGNMENT_LEFT,-1,font_size)
 	asserts.assert_true(ink.x <= label.size.x,"Label width fits actual font: "+label.text)
 	asserts.assert_true(ink.y <= label.size.y,"Label height fits actual font: "+label.text)
+
+func _test_r08c_polish(asserts: TestAsserts, screen: CombatScreen) -> void:
+	asserts.set_current_test("r08c:utility_polish")
+	screen._setup_utility_hud()
+	var zone: Panel = screen.get_action_bar_zone()
+	var title: Label = zone.get_node("RecentTitle") as Label
+	var body: Label = zone.get_node("RecentActions") as Label
+	asserts.assert_equal(title.horizontal_alignment,HORIZONTAL_ALIGNMENT_CENTER,"Heading centered in painted interior")
+	asserts.assert_equal(title.get_theme_font_size("font_size"),19,"Prominent 19px title")
+	asserts.assert_equal((title.get_theme_font("font") as SystemFont).font_weight,600,"Existing Segoe UI family semibold")
+	asserts.assert_equal(title.get_theme_color("font_color"),UIDesignTokens.color_token(&"text_bright"),"Warm ivory heading")
+	asserts.assert_equal(body.get_theme_font_size("font_size"),16,"Body subordinate to heading")
+	asserts.assert_equal(body.get_theme_color("font_color"),UIDesignTokens.color_token(&"secondary"),"Muted body")
+	asserts.assert_equal(body.get_theme_constant("line_spacing"),3,"Comfortable line spacing")
+	asserts.assert_true(body.clip_contents and body.max_lines_visible == 5,"Long unsupported text remains contained")
+	asserts.assert_true(body.get_rect().end.y <= screen.get_player_deck().position.y,"Action text stays above piles")
+	asserts.assert_true(is_equal_approx(title.position.x+title.size.x*0.5,136.0),"Heading follows painted panel centerline")
+	for pile: Control in [screen.get_player_deck(),screen.get_player_graveyard()]:
+		asserts.assert_equal(pile.size,Vector2(104,178),"Modest player-only miniature adjustment")
+		asserts.assert_equal(pile.position.y,258.0,"Paired piles align vertically")
+	screen.get_player_deck().visual_count = 100
+	var back: TextureRect = screen.get_player_deck().get_node("Layer0") as TextureRect
+	asserts.assert_equal(back.size,Vector2(84,112),"Useful 112px mini-card height retained")
+	asserts.assert_true(back.size.y/128.0 >= 0.875,"Deck retains at least 87.5 percent of original scale")
+	var fixture: GraveyardView.PreviewCard = GraveyardView.PreviewCard.new()
+	screen.get_player_graveyard().set_preview(100,fixture)
+	var face: Control = screen.get_player_graveyard().get_node("LastEnteringCard") as Control
+	asserts.assert_true(is_equal_approx(face.scale.y*1448.0,112.0),"Face-up miniature matches deck height")
+	asserts.assert_true(face.scale.y*1448.0/134.0 >= 0.835,"Graveyard retains over 83.5 percent of original scale")
+	asserts.assert_equal(screen.get_opponent_deck().get_rect(),Rect2(30,0,104,166),"Opponent deck geometry unchanged")
+	asserts.assert_equal(screen.get_opponent_graveyard().get_rect(),Rect2(138,0,104,166),"Opponent graveyard geometry unchanged")
+	var button: Button = screen.get_end_turn_button()
+	asserts.assert_true(button.size.x < 205 and button.size.x >= 185,"Button fits actual 203px interior with breathing room")
+	asserts.assert_true(absf(button.size.x/button.size.y-2090.0/522.0) < 0.001,"Original button artwork aspect ratio")
+	asserts.assert_true(button.position.y-(screen.get_player_deck().position.y+screen.get_player_deck().size.y) >= 80,"Clear pile/button separation")
+	asserts.assert_true(zone.size.y-button.get_rect().end.y >= 110,"Comfortable space below button")

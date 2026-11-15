@@ -48,8 +48,9 @@ func _ready() -> void:
 	_setup_utility_hud()
 
 func _setup_utility_hud() -> void:
-	for label: Label in [get_match_status().get_node("Phase"), get_action_bar_zone().get_node("RecentTitle"), get_action_bar_zone().get_node("RecentActions")]:
+	for label: Label in [get_match_status().get_node("Phase"), get_action_bar_zone().get_node("RecentActions")]:
 		label.add_theme_color_override("font_color", TOKENS.color_token(&"secondary"))
+	(get_action_bar_zone().get_node("RecentTitle") as Label).add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
 	set_turn_preview("TURN 01", "PLAYER  /  ACTION")
 
 ## Text-only presentation injection. Never advances a turn.

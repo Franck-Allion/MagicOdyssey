@@ -38,6 +38,7 @@ func _configure_review() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument == "--preview-utility":
 			screen.get_end_turn_button().pressed.connect(func() -> void: print("UTILITY_PREVIEW_ACTIVATED"))
+			screen.get_end_turn_button().focus_entered.connect(func() -> void: print("UTILITY_PREVIEW_FOCUSED"))
 		if argument.begins_with("--preview-hand="):
 			fan.display_count = clampi(argument.trim_prefix("--preview-hand=").to_int(), 0, 10)
 			fan.rebuild()
