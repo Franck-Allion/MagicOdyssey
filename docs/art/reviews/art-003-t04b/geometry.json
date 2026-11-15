@@ -1,0 +1,146 @@
+[
+  {
+    "variant": "A",
+    "visible_panel_bbox": [
+      35,
+      4,
+      237,
+      285
+    ],
+    "side_border_overlap_pixels": [
+      303,
+      268
+    ],
+    "separator_y": [
+      126,
+      134
+    ],
+    "orb_separator_gap": 26,
+    "central_lower_ornament_y": 256,
+    "orb_lower_ornament_vertical_gap": 6,
+    "portrait_metal_overlap_pixels": 0,
+    "orb_box_gap": 20,
+    "nominal_player_gap": 24,
+    "visible_player_gap": 41.84
+  },
+  {
+    "variant": "B",
+    "visible_panel_bbox": [
+      35,
+      4,
+      237,
+      285
+    ],
+    "side_border_overlap_pixels": [
+      471,
+      475
+    ],
+    "separator_y": [
+      126,
+      134
+    ],
+    "orb_separator_gap": 21,
+    "central_lower_ornament_y": 256,
+    "orb_lower_ornament_vertical_gap": 1,
+    "portrait_metal_overlap_pixels": 0,
+    "orb_box_gap": 10,
+    "nominal_player_gap": 24,
+    "visible_player_gap": 41.84
+  },
+  {
+    "variant": "C",
+    "visible_panel_bbox": [
+      35,
+      4,
+      237,
+      285
+    ],
+    "side_border_overlap_pixels": [
+      486,
+      509
+    ],
+    "separator_y": [
+      126,
+      134
+    ],
+    "orb_separator_gap": 18,
+    "central_lower_ornament_y": 256,
+    "orb_lower_ornament_vertical_gap": -1,
+    "portrait_metal_overlap_pixels": 0,
+    "orb_box_gap": 5,
+    "nominal_player_gap": 24,
+    "visible_player_gap": 41.84
+  },
+  {
+    "variant": "D",
+    "visible_panel_bbox": [
+      29,
+      4,
+      242,
+      300
+    ],
+    "side_border_overlap_pixels": [
+      60,
+      80
+    ],
+    "separator_y": [
+      133,
+      141
+    ],
+    "orb_separator_gap": 31,
+    "central_lower_ornament_y": 270,
+    "orb_lower_ornament_vertical_gap": 8,
+    "portrait_metal_overlap_pixels": 0,
+    "orb_box_gap": 20,
+    "nominal_player_gap": 8,
+    "visible_player_gap": 26.84
+  },
+  {
+    "variant": "E",
+    "visible_panel_bbox": [
+      29,
+      4,
+      242,
+      300
+    ],
+    "side_border_overlap_pixels": [
+      332,
+      352
+    ],
+    "separator_y": [
+      133,
+      141
+    ],
+    "orb_separator_gap": 26,
+    "central_lower_ornament_y": 270,
+    "orb_lower_ornament_vertical_gap": 3,
+    "portrait_metal_overlap_pixels": 0,
+    "orb_box_gap": 10,
+    "nominal_player_gap": 8,
+    "visible_player_gap": 26.84
+  },
+  {
+    "variant": "F",
+    "visible_panel_bbox": [
+      29,
+      4,
+      242,
+      300
+    ],
+    "side_border_overlap_pixels": [
+      460,
+      431
+    ],
+    "separator_y": [
+      133,
+      141
+    ],
+    "orb_separator_gap": 23,
+    "central_lower_ornament_y": 270,
+    "orb_lower_ornament_vertical_gap": 1,
+    "portrait_metal_overlap_pixels": 0,
+    "orb_box_gap": 5,
+    "nominal_player_gap": 8,
+    "visible_player_gap": 26.84
+  }
+]

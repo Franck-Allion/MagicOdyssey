@@ -1,0 +1,1139 @@
+{
+  "assets": {
+    "panel": {
+      "path": "assets\\_source\\lot1\\hud\\opponent\\mo_hud_opponent_panel_v01.png",
+      "dimensions": [
+        1202,
+        1308
+      ],
+      "sha256": "cab582589724f2df0986efbaca4b2b2118fdf70d951684bc13afb216a39202d4",
+      "alpha_bbox": [
+        0,
+        16,
+        1182,
+        1308
+      ],
+      "visible_bbox": [
+        156,
+        18,
+        1045,
+        1257
+      ]
+    },
+    "frame": {
+      "path": "assets\\_source\\lot1\\hud\\player\\mo_hud_player_portrait_frame_v01.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "ba4e8a35cd786cfb2fd1125755dc17ce7d4a0062644ebbb75e10f5db6788ca91",
+      "alpha_bbox": [
+        46,
+        22,
+        1208,
+        1193
+      ],
+      "visible_bbox": [
+        46,
+        22,
+        1208,
+        1193
+      ]
+    },
+    "housing": {
+      "path": "assets\\_source\\lot1\\hud\\player\\mo_hud_player_health_orb_housing_v01.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "ce58a60fd27e90988828292c02b2a8b6a7eb76d62fa1f140d20b3d2c9546ab0b",
+      "alpha_bbox": [
+        13,
+        0,
+        1242,
+        1253
+      ],
+      "visible_bbox": [
+        13,
+        0,
+        1242,
+        1253
+      ]
+    },
+    "hero": {
+      "path": "assets\\_source\\lot1\\cards\\illustrations\\mo_illustration_arcane_knight_test_v01.png",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "sha256": "71f87eb6bc0fb8d10da7286d47aacb1cae07236088afc04f2e6209d6738d50dc",
+      "alpha_bbox": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "visible_bbox": [
+        0,
+        0,
+        1086,
+        1448
+      ]
+    },
+    "context": {
+      "path": "docs\\art\\reviews\\p005-r06e\\combat_screen_1080p.png",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d2491bd85471a2eecd27766c6d568109fe0913c8d01800c3537c75ac0a69de86",
+      "alpha_bbox": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "visible_bbox": [
+        0,
+        0,
+        1920,
+        1080
+      ]
+    },
+    "background": {
+      "path": "assets\\_source\\lot1\\battlefield\\wip\\mo_battlefield_sundered_observatory_bg_wip_v03.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "9149c53f8e76ca77935cc84fb14c285239f54620d642f9cb78ac23c1b8bf5ff0",
+      "alpha_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "visible_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    }
+  },
+  "font": "C:\\Windows\\Fonts\\segoeui.ttf",
+  "bold_font": "C:\\Windows\\Fonts\\segoeuib.ttf",
+  "variants": [
+    {
+      "variant": "A",
+      "panel": [
+        272,
+        296
+      ],
+      "orb": 90,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        38,
+        180,
+        126
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "30 / 30",
+          "font": 14,
+          "caption_font": 9,
+          "value_ink_box": [
+            57,
+            204,
+            105,
+            217
+          ],
+          "caption_ink_box": [
+            74,
+            186,
+            87,
+            195
+          ],
+          "aperture_bbox": [
+            12,
+            12,
+            77,
+            78
+          ],
+          "text_clearance_px": 2.83,
+          "housing_box": [
+            36,
+            160,
+            126,
+            250
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "5 / 5",
+          "font": 17,
+          "caption_font": 9,
+          "value_ink_box": [
+            171,
+            203,
+            211,
+            219
+          ],
+          "caption_ink_box": [
+            176,
+            186,
+            205,
+            195
+          ],
+          "aperture_bbox": [
+            12,
+            12,
+            77,
+            78
+          ],
+          "text_clearance_px": 6.32,
+          "housing_box": [
+            146,
+            160,
+            236,
+            250
+          ]
+        }
+      ],
+      "worst_case": false
+    },
+    {
+      "variant": "A",
+      "panel": [
+        272,
+        296
+      ],
+      "orb": 90,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        38,
+        180,
+        126
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "100 / 100",
+          "font": 11,
+          "caption_font": 9,
+          "value_ink_box": [
+            56,
+            205,
+            105,
+            216
+          ],
+          "caption_ink_box": [
+            74,
+            186,
+            87,
+            195
+          ],
+          "aperture_bbox": [
+            12,
+            12,
+            77,
+            78
+          ],
+          "text_clearance_px": 2.83,
+          "housing_box": [
+            36,
+            160,
+            126,
+            250
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "10 / 10",
+          "font": 14,
+          "caption_font": 9,
+          "value_ink_box": [
+            167,
+            204,
+            215,
+            217
+          ],
+          "caption_ink_box": [
+            176,
+            186,
+            205,
+            195
+          ],
+          "aperture_bbox": [
+            12,
+            12,
+            77,
+            78
+          ],
+          "text_clearance_px": 3.0,
+          "housing_box": [
+            146,
+            160,
+            236,
+            250
+          ]
+        }
+      ],
+      "worst_case": true
+    },
+    {
+      "variant": "B",
+      "panel": [
+        272,
+        296
+      ],
+      "orb": 100,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        38,
+        180,
+        126
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "30 / 30",
+          "font": 16,
+          "caption_font": 10,
+          "value_ink_box": [
+            54,
+            204,
+            107,
+            219
+          ],
+          "caption_ink_box": [
+            74,
+            184,
+            89,
+            193
+          ],
+          "aperture_bbox": [
+            14,
+            14,
+            85,
+            86
+          ],
+          "text_clearance_px": 3.61,
+          "housing_box": [
+            31,
+            155,
+            131,
+            255
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "5 / 5",
+          "font": 19,
+          "caption_font": 10,
+          "value_ink_box": [
+            170,
+            202,
+            212,
+            220
+          ],
+          "caption_ink_box": [
+            176,
+            184,
+            207,
+            193
+          ],
+          "aperture_bbox": [
+            14,
+            14,
+            85,
+            86
+          ],
+          "text_clearance_px": 8.6,
+          "housing_box": [
+            141,
+            155,
+            241,
+            255
+          ]
+        }
+      ],
+      "worst_case": false
+    },
+    {
+      "variant": "B",
+      "panel": [
+        272,
+        296
+      ],
+      "orb": 100,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        38,
+        180,
+        126
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "100 / 100",
+          "font": 12,
+          "caption_font": 10,
+          "value_ink_box": [
+            54,
+            206,
+            109,
+            218
+          ],
+          "caption_ink_box": [
+            74,
+            184,
+            89,
+            193
+          ],
+          "aperture_bbox": [
+            14,
+            14,
+            85,
+            86
+          ],
+          "text_clearance_px": 2.0,
+          "housing_box": [
+            31,
+            155,
+            131,
+            255
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "10 / 10",
+          "font": 16,
+          "caption_font": 10,
+          "value_ink_box": [
+            164,
+            204,
+            217,
+            219
+          ],
+          "caption_ink_box": [
+            176,
+            184,
+            207,
+            193
+          ],
+          "aperture_bbox": [
+            14,
+            14,
+            85,
+            86
+          ],
+          "text_clearance_px": 4.0,
+          "housing_box": [
+            141,
+            155,
+            241,
+            255
+          ]
+        }
+      ],
+      "worst_case": true
+    },
+    {
+      "variant": "C",
+      "panel": [
+        272,
+        296
+      ],
+      "orb": 105,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        38,
+        180,
+        126
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "30 / 30",
+          "font": 16,
+          "caption_font": 10,
+          "value_ink_box": [
+            54,
+            204,
+            107,
+            219
+          ],
+          "caption_ink_box": [
+            74,
+            184,
+            89,
+            193
+          ],
+          "aperture_bbox": [
+            14,
+            15,
+            89,
+            90
+          ],
+          "text_clearance_px": 5.0,
+          "housing_box": [
+            28,
+            152,
+            133,
+            257
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "5 / 5",
+          "font": 20,
+          "caption_font": 10,
+          "value_ink_box": [
+            168,
+            203,
+            215,
+            221
+          ],
+          "caption_ink_box": [
+            176,
+            184,
+            207,
+            193
+          ],
+          "aperture_bbox": [
+            14,
+            15,
+            89,
+            90
+          ],
+          "text_clearance_px": 7.21,
+          "housing_box": [
+            138,
+            152,
+            243,
+            257
+          ]
+        }
+      ],
+      "worst_case": false
+    },
+    {
+      "variant": "C",
+      "panel": [
+        272,
+        296
+      ],
+      "orb": 105,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        38,
+        180,
+        126
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "100 / 100",
+          "font": 12,
+          "caption_font": 10,
+          "value_ink_box": [
+            54,
+            206,
+            109,
+            218
+          ],
+          "caption_ink_box": [
+            74,
+            184,
+            89,
+            193
+          ],
+          "aperture_bbox": [
+            14,
+            15,
+            89,
+            90
+          ],
+          "text_clearance_px": 3.0,
+          "housing_box": [
+            28,
+            152,
+            133,
+            257
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "10 / 10",
+          "font": 16,
+          "caption_font": 10,
+          "value_ink_box": [
+            164,
+            204,
+            217,
+            219
+          ],
+          "caption_ink_box": [
+            176,
+            184,
+            207,
+            193
+          ],
+          "aperture_bbox": [
+            14,
+            15,
+            89,
+            90
+          ],
+          "text_clearance_px": 5.0,
+          "housing_box": [
+            138,
+            152,
+            243,
+            257
+          ]
+        }
+      ],
+      "worst_case": true
+    },
+    {
+      "variant": "D",
+      "panel": [
+        272,
+        312
+      ],
+      "orb": 90,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        40,
+        180,
+        128
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "30 / 30",
+          "font": 14,
+          "caption_font": 9,
+          "value_ink_box": [
+            57,
+            216,
+            105,
+            229
+          ],
+          "caption_ink_box": [
+            74,
+            198,
+            87,
+            207
+          ],
+          "aperture_bbox": [
+            12,
+            12,
+            77,
+            78
+          ],
+          "text_clearance_px": 2.83,
+          "housing_box": [
+            36,
+            172,
+            126,
+            262
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "5 / 5",
+          "font": 17,
+          "caption_font": 9,
+          "value_ink_box": [
+            171,
+            215,
+            211,
+            231
+          ],
+          "caption_ink_box": [
+            176,
+            198,
+            205,
+            207
+          ],
+          "aperture_bbox": [
+            12,
+            12,
+            77,
+            78
+          ],
+          "text_clearance_px": 6.32,
+          "housing_box": [
+            146,
+            172,
+            236,
+            262
+          ]
+        }
+      ],
+      "worst_case": false
+    },
+    {
+      "variant": "D",
+      "panel": [
+        272,
+        312
+      ],
+      "orb": 90,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        40,
+        180,
+        128
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "100 / 100",
+          "font": 11,
+          "caption_font": 9,
+          "value_ink_box": [
+            56,
+            217,
+            105,
+            228
+          ],
+          "caption_ink_box": [
+            74,
+            198,
+            87,
+            207
+          ],
+          "aperture_bbox": [
+            12,
+            12,
+            77,
+            78
+          ],
+          "text_clearance_px": 2.83,
+          "housing_box": [
+            36,
+            172,
+            126,
+            262
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "10 / 10",
+          "font": 14,
+          "caption_font": 9,
+          "value_ink_box": [
+            167,
+            216,
+            215,
+            229
+          ],
+          "caption_ink_box": [
+            176,
+            198,
+            205,
+            207
+          ],
+          "aperture_bbox": [
+            12,
+            12,
+            77,
+            78
+          ],
+          "text_clearance_px": 3.0,
+          "housing_box": [
+            146,
+            172,
+            236,
+            262
+          ]
+        }
+      ],
+      "worst_case": true
+    },
+    {
+      "variant": "E",
+      "panel": [
+        272,
+        312
+      ],
+      "orb": 100,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        40,
+        180,
+        128
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "30 / 30",
+          "font": 16,
+          "caption_font": 10,
+          "value_ink_box": [
+            54,
+            216,
+            107,
+            231
+          ],
+          "caption_ink_box": [
+            74,
+            196,
+            89,
+            205
+          ],
+          "aperture_bbox": [
+            14,
+            14,
+            85,
+            86
+          ],
+          "text_clearance_px": 3.61,
+          "housing_box": [
+            31,
+            167,
+            131,
+            267
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "5 / 5",
+          "font": 19,
+          "caption_font": 10,
+          "value_ink_box": [
+            170,
+            214,
+            212,
+            232
+          ],
+          "caption_ink_box": [
+            176,
+            196,
+            207,
+            205
+          ],
+          "aperture_bbox": [
+            14,
+            14,
+            85,
+            86
+          ],
+          "text_clearance_px": 8.6,
+          "housing_box": [
+            141,
+            167,
+            241,
+            267
+          ]
+        }
+      ],
+      "worst_case": false
+    },
+    {
+      "variant": "E",
+      "panel": [
+        272,
+        312
+      ],
+      "orb": 100,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        40,
+        180,
+        128
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "100 / 100",
+          "font": 12,
+          "caption_font": 10,
+          "value_ink_box": [
+            54,
+            218,
+            109,
+            230
+          ],
+          "caption_ink_box": [
+            74,
+            196,
+            89,
+            205
+          ],
+          "aperture_bbox": [
+            14,
+            14,
+            85,
+            86
+          ],
+          "text_clearance_px": 2.0,
+          "housing_box": [
+            31,
+            167,
+            131,
+            267
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "10 / 10",
+          "font": 16,
+          "caption_font": 10,
+          "value_ink_box": [
+            164,
+            216,
+            217,
+            231
+          ],
+          "caption_ink_box": [
+            176,
+            196,
+            207,
+            205
+          ],
+          "aperture_bbox": [
+            14,
+            14,
+            85,
+            86
+          ],
+          "text_clearance_px": 4.0,
+          "housing_box": [
+            141,
+            167,
+            241,
+            267
+          ]
+        }
+      ],
+      "worst_case": true
+    },
+    {
+      "variant": "F",
+      "panel": [
+        272,
+        312
+      ],
+      "orb": 105,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        40,
+        180,
+        128
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "30 / 30",
+          "font": 16,
+          "caption_font": 10,
+          "value_ink_box": [
+            54,
+            216,
+            107,
+            231
+          ],
+          "caption_ink_box": [
+            74,
+            196,
+            89,
+            205
+          ],
+          "aperture_bbox": [
+            14,
+            15,
+            89,
+            90
+          ],
+          "text_clearance_px": 5.0,
+          "housing_box": [
+            28,
+            164,
+            133,
+            269
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "5 / 5",
+          "font": 20,
+          "caption_font": 10,
+          "value_ink_box": [
+            168,
+            215,
+            215,
+            233
+          ],
+          "caption_ink_box": [
+            176,
+            196,
+            207,
+            205
+          ],
+          "aperture_bbox": [
+            14,
+            15,
+            89,
+            90
+          ],
+          "text_clearance_px": 7.21,
+          "housing_box": [
+            138,
+            164,
+            243,
+            269
+          ]
+        }
+      ],
+      "worst_case": false
+    },
+    {
+      "variant": "F",
+      "panel": [
+        272,
+        312
+      ],
+      "orb": 105,
+      "portrait": [
+        88,
+        88
+      ],
+      "portrait_box": [
+        92,
+        40,
+        180,
+        128
+      ],
+      "orbs": [
+        {
+          "caption": "HP",
+          "value": "100 / 100",
+          "font": 12,
+          "caption_font": 10,
+          "value_ink_box": [
+            54,
+            218,
+            109,
+            230
+          ],
+          "caption_ink_box": [
+            74,
+            196,
+            89,
+            205
+          ],
+          "aperture_bbox": [
+            14,
+            15,
+            89,
+            90
+          ],
+          "text_clearance_px": 3.0,
+          "housing_box": [
+            28,
+            164,
+            133,
+            269
+          ]
+        },
+        {
+          "caption": "MANA",
+          "value": "10 / 10",
+          "font": 16,
+          "caption_font": 10,
+          "value_ink_box": [
+            164,
+            216,
+            217,
+            231
+          ],
+          "caption_ink_box": [
+            176,
+            196,
+            207,
+            205
+          ],
+          "aperture_bbox": [
+            14,
+            15,
+            89,
+            90
+          ],
+          "text_clearance_px": 5.0,
+          "housing_box": [
+            138,
+            164,
+            243,
+            269
+          ]
+        }
+      ],
+      "worst_case": true
+    }
+  ],
+  "aperture_source_bbox": {
+    "frame": [
+      160,
+      175,
+      1093,
+      1055
+    ],
+    "housing": [
+      203,
+      209,
+      1036,
+      1046
+    ]
+  },
+  "player_context_bit_exact": true
+}
