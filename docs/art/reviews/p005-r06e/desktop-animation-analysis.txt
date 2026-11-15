@@ -1,0 +1,6 @@
+default HP: changed pixels against frame 0 = [6, 6, 1428, 8744, 8744, 8744, 5587]
+default Mana: changed pixels against frame 0 = [7432, 7434, 7437, 7438, 7439, 7437, 8726]
+1920x1080 HP: changed pixels against frame 0 = [315, 315, 3172, 11117, 11117, 7282, 7088]
+1920x1080 Mana: changed pixels against frame 0 = [10929, 10929, 10929, 10929, 10929, 9224, 9227]
+1280x720 HP: changed pixels against frame 0 = [202, 1286, 1286, 1286, 1286, 1286, 4657]
+1280x720 Mana: changed pixels against frame 0 = [0, 4377, 4957, 4957, 4957, 4957, 4957]

@@ -211,9 +211,9 @@ mouse_filter = 2
 [node name="PlayerHeroZone" type="Panel" parent="CombatLayout"]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 220.0
+offset_top = 344.0
 offset_right = 296.0
-offset_bottom = 920.0
+offset_bottom = 1044.0
 theme_override_styles/panel = SubResource("empty")
 
 [node name="Backplate" type="TextureRect" parent="CombatLayout/PlayerHeroZone"]

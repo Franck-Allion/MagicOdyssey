@@ -1,0 +1,51 @@
+ï¿½ï¿½Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 551.86 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 Ti
+R06E GPU: 4.7.2-stable (official) / NVIDIA GeForce GTX 1660 Ti
+PASS: Live HUD fully inside viewport
+PASS: Live scaled bottom margin
+PASS: Live child contained: Backplate
+PASS: Live child contained: Portrait
+PASS: Live child contained: PortraitFrame
+PASS: Live child contained: PlayerHealthOrb
+PASS: Live child contained: Reservoir
+PASS: Live child contained: Housing
+PASS: Live child contained: Kind
+PASS: Live child contained: Values
+PASS: Live child contained: PlayerManaOrb
+PASS: Live child contained: Reservoir
+PASS: Live child contained: Housing
+PASS: Live child contained: Kind
+PASS: Live child contained: Values
+PASS: CAPTURE combat_screen_1080p.png
+PASS: CAPTURE player_hud_bottom_left_1080p.png
+PASS: CAPTURE before_1080p.png
+PASS: CAPTURE before_after_comparison_1080p.png
+PASS: Outside left column bit-exact at 1080p
+PASS: CAPTURE animation_1080p_0.png
+PASS: CAPTURE animation_1080p_1.png
+PASS: PlayerHealthOrb GPU waves animate at 1080p
+PASS: PlayerManaOrb GPU waves animate at 1080p
+PASS: Live HUD fully inside viewport
+PASS: Live scaled bottom margin
+PASS: Live child contained: Backplate
+PASS: Live child contained: Portrait
+PASS: Live child contained: PortraitFrame
+PASS: Live child contained: PlayerHealthOrb
+PASS: Live child contained: Reservoir
+PASS: Live child contained: Housing
+PASS: Live child contained: Kind
+PASS: Live child contained: Values
+PASS: Live child contained: PlayerManaOrb
+PASS: Live child contained: Reservoir
+PASS: Live child contained: Housing
+PASS: Live child contained: Kind
+PASS: Live child contained: Values
+PASS: CAPTURE combat_screen_720p.png
+PASS: CAPTURE player_hud_bottom_left_720p.png
+PASS: CAPTURE before_720p.png
+PASS: Outside left column bit-exact at 720p
+PASS: CAPTURE animation_720p_0.png
+PASS: CAPTURE animation_720p_1.png
+PASS: PlayerHealthOrb GPU waves animate at 720p
+PASS: PlayerManaOrb GPU waves animate at 720p
+R06E GPU RESULT: PASS

@@ -1,0 +1,17 @@
+ï¿½ï¿½Isolated executable: C:\Users\franc\AppData\Local\Temp\MagicOdyssey-standalone-0a81627eb8564e4988ed20fa4ea96ab1\MagicOdyssey.exe
+Physical desktop: 1920x1080
+default : title=MagicOdyssey, client=1888x956, pid=32368
+default : ESC exit=0
+1920x1080 : title=MagicOdyssey, client=1920x1080, pid=24140
+Failed playtest process cleaned up
+powershell.exe : ESC failed to exit: 1920x1080
+Au caractï¿½re Ligne:2 : 1
++ & powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/p ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ESC failed to exit: 1920x1080:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+Au caractï¿½re D:\Dev\MagicOdyssey\scripts\tests\playtest_windows.ps1:167 : 48
++ ... not $process.WaitForExit(5000)) { throw "ESC failed to exit: $mode" }
++                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (ESC failed to exit: 1920x1080:String) [], RuntimeException
+    + FullyQualifiedErrorId : ESC failed to exit: 1920x1080

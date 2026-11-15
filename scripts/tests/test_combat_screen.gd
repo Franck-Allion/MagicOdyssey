@@ -13,6 +13,7 @@ func run_suite(asserts: TestAsserts, failure_mode: bool = false) -> void:
 	_test_scene_loading_and_hierarchy(asserts)
 	_test_battlefield_rows_and_semantics(asserts)
 	_test_hero_and_hand_zones(asserts)
+	_test_bottom_left_hud(asserts)
 	_test_action_bar_and_button(asserts)
 	_test_adaptive_fan(asserts)
 	_test_hand_hover_and_picking(asserts)
@@ -144,9 +145,9 @@ func _test_hero_and_hand_zones(asserts: TestAsserts) -> void:
 	asserts.assert_true(player_hero.size.y > hand_zone.size.y, "Left hero column has dedicated vertical space")
 	asserts.assert_true(screen.has_node("CombatLayout/OpponentHand"), "Opponent card-back region exists")
 
-	# P005-R03 Master Grid Alignment: Top edge alignment across Left Hero, Battlefield, and Right MatchStatus
+	# R06E supersedes the former player/battlefield top alignment; utility grid stays fixed.
 	var status_zone: Panel = screen.get_match_status()
-	asserts.assert_equal(player_hero.position.y, bf_zone.position.y, "Left Hero Column and Battlefield must share top alignment line")
+	asserts.assert_true(player_hero.position.y > bf_zone.position.y, "Player HUD sits lower than battlefield top")
 	asserts.assert_equal(status_zone.position.y, bf_zone.position.y, "Right Utility Column top (MatchStatus) and Battlefield must share top alignment line")
 
 	# P005-R03 Master Grid Alignment: Bottom edge alignment across Left Hero, Player Hand, and Right ActionBar
@@ -444,3 +445,39 @@ func _test_hand_hover_and_picking(asserts: TestAsserts) -> void:
 			asserts.assert_true(max_x <= 1600.0, "Inspected card clears right utility column (max_x=%.1f <= 1600.0)" % max_x)
 			asserts.assert_true(max_y <= 1076.0, "Inspected card clears bottom screen boundary (max_y=%.1f <= 1076.0)" % max_y)
 		check_fan.free()
+
+
+func _test_bottom_left_hud(asserts: TestAsserts) -> void:
+	asserts.set_current_test("r06e:bottom_left_hud")
+	var screen: CombatScreen = COMBAT_SCREEN_SCENE.instantiate() as CombatScreen
+	var hero: Panel = screen.get_player_hero_zone()
+	asserts.assert_equal(hero.size, Vector2(272, 700), "Approved panel size preserved")
+	var names: Array[String] = ["Backplate", "Portrait", "PortraitFrame", "PlayerHealthOrb", "PlayerManaOrb"]
+	var rects: Array[Rect2] = [Rect2(0, 0, 272, 700), Rect2(62, 70, 148, 144), Rect2(36, 42, 200, 200), Rect2(46, 252, 180, 180), Rect2(46, 452, 180, 180)]
+	for i: int in range(names.size()):
+		var child: Control = hero.get_node(names[i]) as Control
+		asserts.assert_equal(child.get_rect(), rects[i], "Approved local geometry: " + names[i])
+		asserts.assert_true(Rect2(Vector2.ZERO, hero.size).encloses(child.get_rect()), "Child fully inside backplate: " + names[i])
+	asserts.assert_true(screen.get_player_health_orb() == hero.get_node("PlayerHealthOrb"), "Stable Health path/API")
+	asserts.assert_true(screen.get_player_mana_orb() == hero.get_node("PlayerManaOrb"), "Stable Mana path/API")
+	asserts.assert_equal(screen.get_opponent_hero_zone().get_rect(), Rect2(320, 30, 360, 160), "Opponent HUD remains fixed")
+	asserts.assert_equal((screen.get_node("CombatLayout/OpponentHand") as Control).get_rect(), Rect2(704, 30, 896, 160), "Opponent hand remains fixed")
+	asserts.assert_equal(screen.get_player_hand_zone().get_rect(), Rect2(320, 804, 1280, 252), "Player hand remains fixed")
+	asserts.assert_equal(screen.get_battlefield_zone().get_rect(), Rect2(320, 220, 1280, 560), "Master battlefield remains fixed")
+	for dimensions: Vector2 in [Vector2(1920, 1080), Vector2(1280, 720)]:
+		screen.set_anchors_preset(Control.PRESET_TOP_LEFT)
+		screen.size = dimensions
+		screen._apply_responsive_layout()
+		var factor: float = screen.get_combat_layout().scale.x
+		var layout_transform: Transform2D = screen.get_combat_layout().get_transform()
+		# Off-tree Controls do not include ancestor transforms in get_global_rect().
+		var bounds: Rect2 = layout_transform * hero.get_rect()
+		asserts.assert_true(Rect2(Vector2.ZERO, dimensions).encloses(bounds), "Full HUD inside viewport")
+		asserts.assert_true(is_equal_approx(bounds.position.x / factor, 24.0), "Consistent scaled left margin")
+		asserts.assert_true(is_equal_approx((dimensions.y - bounds.end.y) / factor, 36.0), "36 reference px bottom breathing room")
+		for zone: Control in [screen.get_battlefield_zone(), screen.get_player_hand_zone(), screen.get_action_bar_zone()]:
+			asserts.assert_false(bounds.intersects(layout_transform * zone.get_rect()), "HUD clears functional region: " + str(zone.name))
+			asserts.assert_true((layout_transform * zone.get_rect()).position.x - bounds.end.x >= 23.9 * factor, "Horizontal gutter preserved")
+		for child_name: String in names:
+			asserts.assert_true(bounds.encloses(layout_transform * hero.get_transform() * (hero.get_node(child_name) as Control).get_rect()), "Scaled child contained: " + child_name)
+	screen.free()

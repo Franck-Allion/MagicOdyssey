@@ -1,0 +1,21 @@
+ï¿½ï¿½Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+[   0% ] first_scan_filesystem | Started Initialisation du projet (5 steps)
+[   0% ] first_scan_filesystem | Analyse de la structure des fichiers&
+[  16% ] first_scan_filesystem | Chargement des noms des classes globales&
+[  33% ] first_scan_filesystem | Vï¿½rification des GDExtensions&
+[  50% ] first_scan_filesystem | Crï¿½ation des scripts de chargement automatique&
+[  66% ] first_scan_filesystem | Initialisation des extensions&
+[  83% ] first_scan_filesystem | Dï¿½marrage du scan de fichiers&
+[ DONE ] first_scan_filesystem
+[   0% ] update_scripts_classes | Started Enregistrement des classes globales&  (2 steps)
+[   0% ] update_scripts_classes |
+[  33% ] update_scripts_classes | TestCombatScreen
+[ DONE ] update_scripts_classes
+[   0% ] loading_editor_layout | Started Chargement de l ï¿½diteur (5 steps)
+[   0% ] loading_editor_layout | Chargement de la disposition de l ï¿½diteur&
+[  16% ] loading_editor_layout | Chargement des docks&
+[  33% ] loading_editor_layout | Rï¿½ouverture des scï¿½nes&
+[  50% ] loading_editor_layout | Chargement de la disposition de l ï¿½diteur central&
+[  66% ] loading_editor_layout | Chargement de la disposition de la fenï¿½tre des plugins&
+[  83% ] loading_editor_layout | Disposition de l ï¿½diteur prï¿½te.
+[ DONE ] loading_editor_layout

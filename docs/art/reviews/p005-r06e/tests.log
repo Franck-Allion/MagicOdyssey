@@ -1,0 +1,16 @@
+ï¿½ï¿½Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+==================================================
+MagicOdyssey   Native Headless Test Runner
+Engine: 4.7.2-stable (official)
+==================================================
+[RUN] TestHarnessSelf
+[RUN] TestCardPresentation
+[RUN] TestCombatScreen
+[RUN] TestLiquidResourceOrb
+--------------------------------------------------
+Test Execution Summary:
+  Total Assertions: 1598
+  Passed:           1598
+  Failed:           0
+==================================================
+RESULT: ALL TESTS PASSED
