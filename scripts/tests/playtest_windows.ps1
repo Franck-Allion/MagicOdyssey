@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources)
+param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources, [switch]$UtilityHud)
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 Add-Type @'
@@ -48,6 +48,7 @@ foreach ($mode in $modes) {
         if ($mode -eq 'default') { $start.Arguments += ' --' }
         $start.Arguments += " --preview-hand=$HandCount"
         if ($AnimateResources) { $start.Arguments += ' --preview-animate' }
+        if ($UtilityHud) { $start.Arguments += ' --preview-utility' }
     }
     $process = [System.Diagnostics.Process]::Start($start)
     try {
@@ -150,6 +151,25 @@ foreach ($mode in $modes) {
             $cOut = & $refToScreen 960.0 500.0
             & $sendMouseMove $cOut[0] $cOut[1]
             Start-Sleep -Milliseconds 320
+        }
+        if ($UtilityHud -and -not $EditorPreview) {
+            $buttonPoint = & $refToScreen 1760.0 959.0
+            & $sendMouseMove $buttonPoint[0] $buttonPoint[1]
+            foreach ($buttonState in @('hover', 'pressed', 'released')) {
+                if ($buttonState -eq 'pressed') { [PreviewDesktop]::mouse_event(0x0002, 0, 0, 0, [UIntPtr]::Zero) }
+                if ($buttonState -eq 'released') { [PreviewDesktop]::mouse_event(0x0004, 0, 0, 0, [UIntPtr]::Zero) }
+                Start-Sleep -Milliseconds 200
+                $buttonBitmap = New-Object System.Drawing.Bitmap($width, $height)
+                $buttonGraphics = [System.Drawing.Graphics]::FromImage($buttonBitmap)
+                try {
+                    $buttonGraphics.CopyFromScreen($point.X, $point.Y, 0, 0, $buttonBitmap.Size)
+                    $buttonBitmap.Save((Join-Path $outDir ("desktop-$mode-button-$buttonState.png")))
+                } finally { $buttonGraphics.Dispose(); $buttonBitmap.Dispose() }
+            }
+            if (-not (Select-String -LiteralPath $logPath -Pattern '^UTILITY_PREVIEW_ACTIVATED$' -Quiet)) { throw "End Turn native activation not received: $mode" }
+            $outsidePoint = & $refToScreen 960.0 500.0
+            & $sendMouseMove $outsidePoint[0] $outsidePoint[1]
+            Write-Output "$mode : native End Turn hover/press/release and activation PASS (preview only)"
         }
         if ($AnimateResources) {
             for ($frameIndex = 0; $frameIndex -lt 8; $frameIndex++) {

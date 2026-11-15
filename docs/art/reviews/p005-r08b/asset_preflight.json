@@ -1,0 +1,146 @@
+[
+  {
+    "path": "assets/_source/lot1/hud/utility/mo_hud_end_turn_normal_v01.png",
+    "sha256": "b3586a885ec2cefc1135314d0f013e4961b598e79b309d31b5e54283e7fa341c",
+    "mode": "RGBA",
+    "size": [
+      2090,
+      522
+    ],
+    "aspect": 4.003831417624521,
+    "bounds_alpha8": [
+      22,
+      13,
+      2074,
+      507
+    ],
+    "transparent_pixels": 203153,
+    "near_opaque_pixels": 832369,
+    "center_rgba": [
+      16,
+      36,
+      67,
+      253
+    ]
+  },
+  {
+    "path": "assets/_source/lot1/hud/utility/mo_hud_graveyard_empty_v01.png",
+    "sha256": "9a21d28c9ce3a31224630f852965b81a1070a0d9456021c4585fffb6e3569230",
+    "mode": "RGBA",
+    "size": [
+      1086,
+      1448
+    ],
+    "aspect": 0.75,
+    "bounds_alpha8": [
+      107,
+      84,
+      978,
+      1353
+    ],
+    "transparent_pixels": 1067224,
+    "near_opaque_pixels": 44697,
+    "center_rgba": [
+      185,
+      130,
+      70,
+      162
+    ]
+  },
+  {
+    "path": "assets/_source/lot1/hud/utility/mo_hud_turn_phase_panel_v01.png",
+    "sha256": "759259eed5334a980815503e6274f70a130985735d6cf431edb1dfaf27e2a779",
+    "mode": "RGBA",
+    "size": [
+      1774,
+      887
+    ],
+    "aspect": 2.0,
+    "bounds_alpha8": [
+      12,
+      101,
+      1761,
+      770
+    ],
+    "transparent_pixels": 392416,
+    "near_opaque_pixels": 1116766,
+    "center_rgba": [
+      11,
+      22,
+      36,
+      253
+    ]
+  },
+  {
+    "path": "assets/_source/lot1/hud/utility/mo_hud_utility_panel_v01.png",
+    "sha256": "7e51955c70e354943b438f4d201c28ea9d8e5c9de5f75a3e10aee94f70e7d1e6",
+    "mode": "RGBA",
+    "size": [
+      791,
+      1989
+    ],
+    "aspect": 0.3976872800402212,
+    "bounds_alpha8": [
+      72,
+      21,
+      719,
+      1963
+    ],
+    "transparent_pixels": 428213,
+    "near_opaque_pixels": 1103305,
+    "center_rgba": [
+      22,
+      31,
+      41,
+      253
+    ]
+  },
+  {
+    "path": "assets/_source/lot1/hud/opponent/mo_hud_opponent_card_back_v01.png",
+    "sha256": "ce5d3e2873b4db7747121cda2e4b5abd4a11dc09804679603f4c18385617f681",
+    "mode": "RGBA",
+    "size": [
+      1086,
+      1448
+    ],
+    "aspect": 0.75,
+    "bounds_alpha8": [
+      45,
+      31,
+      1041,
+      1417
+    ],
+    "transparent_pixels": 190158,
+    "near_opaque_pixels": 1350080,
+    "center_rgba": [
+      10,
+      24,
+      48,
+      253
+    ]
+  },
+  {
+    "path": "assets/_source/lot1/cards/frames/mo_card_frame_master_v03.png",
+    "sha256": "937d2a3e3c099ec9830213c725025af250639032591ecc234f8e491068ced3e3",
+    "mode": "RGBA",
+    "size": [
+      1086,
+      1448
+    ],
+    "aspect": 0.75,
+    "bounds_alpha8": [
+      23,
+      0,
+      1059,
+      1445
+    ],
+    "transparent_pixels": 648383,
+    "near_opaque_pixels": 827503,
+    "center_rgba": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+]

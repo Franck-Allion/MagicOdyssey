@@ -8,6 +8,7 @@ const TestAssertsScript = preload("res://scripts/tests/test_asserts.gd")
 const TestHarnessSelfScript = preload("res://scripts/tests/test_harness_self.gd")
 const TestCardPresentationScript = preload("res://scripts/tests/test_card_presentation.gd")
 const TestLiquidOrbScript: GDScript = preload("res://scripts/tests/test_liquid_resource_orb.gd")
+const TestUtilityHudScript: GDScript = preload("res://scripts/tests/test_utility_hud.gd")
 const TestCombatScreenScript = preload("res://scripts/tests/test_combat_screen.gd")
 
 
@@ -59,6 +60,10 @@ func _run_registered_suites(asserts: TestAsserts, failure_mode: bool) -> void:
 	print("[RUN] TestCombatScreen")
 	var combat_screen_suite: TestCombatScreen = TestCombatScreenScript.new()
 	combat_screen_suite.run_suite(asserts, failure_mode)
+
+	print("[RUN] TestUtilityHud")
+	var utility_suite: TestUtilityHud = TestUtilityHudScript.new()
+	utility_suite.run_suite(asserts, failure_mode)
 
 	print("[RUN] TestLiquidResourceOrb")
 	var orb_suite: TestLiquidResourceOrb = TestLiquidOrbScript.new()

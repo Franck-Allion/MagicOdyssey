@@ -36,6 +36,8 @@ func _configure_review() -> void:
 	var screen: CombatScreen = get_node("CombatScreen") as CombatScreen
 	var fan: CombatPreviewCards = screen.get_node("CombatLayout/PlayerHandZone/Fan") as CombatPreviewCards
 	for argument: String in OS.get_cmdline_user_args():
+		if argument == "--preview-utility":
+			screen.get_end_turn_button().pressed.connect(func() -> void: print("UTILITY_PREVIEW_ACTIVATED"))
 		if argument.begins_with("--preview-hand="):
 			fan.display_count = clampi(argument.trim_prefix("--preview-hand=").to_int(), 0, 10)
 			fan.rebuild()

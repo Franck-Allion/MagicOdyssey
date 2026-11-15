@@ -45,6 +45,32 @@ func _ready() -> void:
 	resized.connect(_apply_responsive_layout)
 	_apply_responsive_layout()
 	_connect_opponent_resource_labels()
+	_setup_utility_hud()
+
+func _setup_utility_hud() -> void:
+	for label: Label in [get_match_status().get_node("Phase"), get_action_bar_zone().get_node("RecentTitle"), get_action_bar_zone().get_node("RecentActions")]:
+		label.add_theme_color_override("font_color", TOKENS.color_token(&"secondary"))
+	set_turn_preview("TURN 01", "PLAYER  /  ACTION")
+
+## Text-only presentation injection. Never advances a turn.
+func set_turn_preview(turn_text: String, phase_text: String) -> void:
+	(get_match_status().get_node("Turn") as Label).text = turn_text
+	(get_match_status().get_node("Phase") as Label).text = phase_text
+
+func set_recent_actions_preview(entries: Array[String]) -> void:
+	(get_action_bar_zone().get_node("RecentActions") as Label).text = "Awaiting first action..." if entries.is_empty() else "\n".join(entries.slice(0, 3))
+
+func get_player_deck() -> DeckStackView:
+	return get_node("CombatLayout/ActionBarZone/DeckStack") as DeckStackView
+
+func get_opponent_deck() -> DeckStackView:
+	return get_node("CombatLayout/OpponentPiles/DeckStack") as DeckStackView
+
+func get_player_graveyard() -> GraveyardView:
+	return get_node("CombatLayout/ActionBarZone/GraveyardView") as GraveyardView
+
+func get_opponent_graveyard() -> GraveyardView:
+	return get_node("CombatLayout/OpponentPiles/GraveyardView") as GraveyardView
 
 func _connect_opponent_resource_labels() -> void:
 	var health: LiquidResourceOrb = get_opponent_health_orb()
