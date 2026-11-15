@@ -22,6 +22,12 @@ const TRANSITION_SECONDS: float = 0.28
 		_configure_material()
 		if is_node_ready():
 			_layout_contents()
+## Optional presentation-level color modulation for the housing artwork.
+@export var housing_modulate: Color = Color.WHITE:
+	set(value):
+		housing_modulate = value
+		if is_node_ready() and has_node("Housing"):
+			($Housing as TextureRect).modulate = housing_modulate
 
 var _orb_material: ShaderMaterial
 var _visible_ratio: float = 1.0
@@ -138,25 +144,41 @@ func _layout_contents() -> void:
 	housing.visible = housing_texture != null
 	housing.position = origin
 	housing.size = Vector2.ONE * diameter
+	housing.modulate = housing_modulate
 	if housing_texture != null:
 		# Measured source aperture: x=203..1036, y=209..1046 on 1254px.
 		# A 0.9d reservoir yields 0.675d glass, overlapping the aperture's inner lip.
 		reservoir.size = Vector2.ONE * diameter * 0.9
 		reservoir.position = origin + diameter * Vector2(0.044, 0.0504)
-	var label: Label = $Values as Label
-	label.position = origin + Vector2(diameter * 0.13, diameter * 0.40)
-	label.size = Vector2(diameter * 0.74, diameter * 0.26)
-	label.add_theme_font_size_override("font_size", maxi(14, roundi(diameter * 0.205)))
-	label.add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
-	label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))
-	label.add_theme_constant_override("outline_size", 5)
-	var kind_label: Label = $Kind as Label
-	kind_label.position = origin + Vector2(diameter * 0.22, diameter * 0.25)
-	kind_label.size = Vector2(diameter * 0.56, diameter * 0.20)
-	kind_label.add_theme_font_size_override("font_size", maxi(12, roundi(diameter * 0.135)))
-	kind_label.add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
-	kind_label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))
-	kind_label.add_theme_constant_override("outline_size", 4)
+		var label: Label = $Values as Label
+		label.position = origin + Vector2(diameter * 0.13, diameter * 0.44)
+		label.size = Vector2(diameter * 0.74, diameter * 0.26)
+		label.add_theme_font_size_override("font_size", maxi(14, roundi(diameter * 0.20)))
+		label.add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
+		label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))
+		label.add_theme_constant_override("outline_size", 3)
+		var kind_label: Label = $Kind as Label
+		kind_label.position = origin + Vector2(diameter * 0.22, diameter * 0.30)
+		kind_label.size = Vector2(diameter * 0.56, diameter * 0.14)
+		kind_label.add_theme_font_size_override("font_size", maxi(11, roundi(diameter * 0.11)))
+		kind_label.add_theme_color_override("font_color", TOKENS.color_token(&"secondary"))
+		kind_label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))
+		kind_label.add_theme_constant_override("outline_size", 2)
+	else:
+		var label: Label = $Values as Label
+		label.position = origin + Vector2(diameter * 0.13, diameter * 0.40)
+		label.size = Vector2(diameter * 0.74, diameter * 0.26)
+		label.add_theme_font_size_override("font_size", maxi(14, roundi(diameter * 0.205)))
+		label.add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
+		label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))
+		label.add_theme_constant_override("outline_size", 5)
+		var kind_label: Label = $Kind as Label
+		kind_label.position = origin + Vector2(diameter * 0.22, diameter * 0.25)
+		kind_label.size = Vector2(diameter * 0.56, diameter * 0.20)
+		kind_label.add_theme_font_size_override("font_size", maxi(12, roundi(diameter * 0.135)))
+		kind_label.add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
+		kind_label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))
+		kind_label.add_theme_constant_override("outline_size", 4)
 	_fit_value_label()
 
 func _fit_value_label() -> void:
@@ -165,7 +187,8 @@ func _fit_value_label() -> void:
 		return
 	var diameter: float = minf(size.x, size.y)
 	var font: Font = label.get_theme_font("font")
-	var font_size: int = maxi(1, roundi(diameter * 0.205))
+	var base_scale: float = 0.20 if housing_texture != null else 0.205
+	var font_size: int = maxi(1, roundi(diameter * base_scale))
 	var available: float = maxf(1.0, diameter * 0.65 - 8.0)
 	while font_size > 1 and font.get_string_size(label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x > available:
 		font_size -= 1

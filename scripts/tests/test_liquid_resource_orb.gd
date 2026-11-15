@@ -3,6 +3,7 @@ extends RefCounted
 
 const ORB_SCENE: PackedScene = preload("res://scenes/hud/liquid_resource_orb.tscn")
 const SCREEN_SCENE: PackedScene = preload("res://scenes/combat/combat_screen.tscn")
+const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
 
 func run_suite(asserts: TestAsserts, _failure_mode: bool = false) -> void:
 	asserts.set_current_test("liquid_orb:values_and_configuration")
@@ -84,6 +85,20 @@ func _test_artwork_mounting(asserts: TestAsserts) -> void:
 	asserts.assert_equal(hp.housing_texture.resource_path, "res://assets/_source/lot1/hud/player/mo_hud_player_health_orb_housing_v01.png", "Approved housing path")
 	asserts.assert_equal(hp.size, mana.size, "Matching external dimensions")
 	asserts.assert_equal(hp.position.x, mana.position.x, "Same vertical axis")
+	# P005-R06C: Centerline, spacing harmony, and housing modulate assertions
+	var frame_center_x: float = frame.position.x + frame.size.x * 0.5
+	var hp_center_x: float = hp.position.x + hp.size.x * 0.5
+	var mana_center_x: float = mana.position.x + mana.size.x * 0.5
+	asserts.assert_true(is_equal_approx(frame_center_x, hp_center_x), "Portrait frame and Health orb share exact horizontal centerline")
+	asserts.assert_true(is_equal_approx(hp_center_x, mana_center_x), "Health orb and Mana orb share exact horizontal centerline")
+	asserts.assert_true(frame.position.y + frame.size.y < hp.position.y, "Portrait frame is above Health orb")
+	asserts.assert_true(hp.position.y + hp.size.y < mana.position.y, "Health orb is above Mana orb")
+	var gap_frame_to_hp: float = hp.position.y - (frame.position.y + frame.size.y)
+	var gap_hp_to_mana: float = mana.position.y - (hp.position.y + hp.size.y)
+	asserts.assert_true(absf(gap_frame_to_hp - gap_hp_to_mana) <= 12.0, "Vertical gaps are optically balanced (gap1=%.1f, gap2=%.1f)" % [gap_frame_to_hp, gap_hp_to_mana])
+	asserts.assert_equal(hp.housing_modulate, mana.housing_modulate, "Health and Mana share identical bronze modulation")
+	asserts.assert_true(is_equal_approx(hp.housing_modulate.a, 1.0), "Housing modulation preserves full opacity")
+	asserts.assert_true(hp.housing_modulate.r <= 1.0 and hp.housing_modulate.g <= 1.0 and hp.housing_modulate.b <= 1.0, "Housing modulation tones down golden excess")
 	asserts.assert_true(screen.get_opponent_health_orb().housing_texture == null and screen.get_opponent_mana_orb().housing_texture == null, "Opponent keeps procedural mounting")
 	for orb: LiquidResourceOrb in [hp, mana]:
 		orb._layout_contents()
@@ -91,6 +106,12 @@ func _test_artwork_mounting(asserts: TestAsserts) -> void:
 		var mounting: TextureRect = orb.get_node("Housing") as TextureRect
 		asserts.assert_true(mounting.get_index() > orb.get_node("Reservoir").get_index() and mounting.get_index() < orb.get_node("Values").get_index(), "Liquid / artwork / text order")
 		asserts.assert_equal(mounting.mouse_filter, Control.MOUSE_FILTER_IGNORE, "Mounting does not intercept hand pointer")
+		var kind_label: Label = orb.get_node("Kind") as Label
+		var values_label: Label = orb.get_node("Values") as Label
+		asserts.assert_true(kind_label.get_theme_font_size("font_size") < values_label.get_theme_font_size("font_size"), "Caption font size is secondary to numeric values")
+		asserts.assert_true(kind_label.get_theme_constant("outline_size") < values_label.get_theme_constant("outline_size"), "Caption outline is more delicate than numeric outline")
+		asserts.assert_equal(kind_label.get_theme_color("font_color"), TOKENS.color_token(&"secondary"), "Caption uses muted secondary text color")
+		asserts.assert_equal(values_label.get_theme_color("font_color"), TOKENS.color_token(&"text_bright"), "Numeric value uses focal text_bright color")
 		for values: Vector2i in [Vector2i(30, 30), Vector2i(18, 30), Vector2i(0, 30), Vector2i(100, 100), Vector2i(1, 1), Vector2i(5, 5), Vector2i(0, 5), Vector2i(10, 10)]:
 			orb.set_resource_values(values.x, values.y, false)
 			var label: Label = orb.get_node("Values") as Label
