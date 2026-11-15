@@ -63,3 +63,12 @@ When implementing an assigned prompt (`PNNN`):
 4. **No Placeholder Hacks:**
    - Do not leave temporary colored debug boxes intended to survive until release.
    - Follow the established design system tokens in `fantasy_theme.tres`.
+
+---
+
+## 4. Art Production & Integration Workflow (A/B Stages)
+
+When executing artistic tasks split into asset generation and engine integration (e.g., `P005-R06A` vs `P005-R06B`), agents must follow the two-stage protocol formalized in `specs/01-lot1-vertical-slice/05-roadmap.md`:
+- **Stage A (Art Asset Generation):** Produce standalone image assets (PNGs with transparency) matching visual specs. Iterate until owner visual approval. Commit approved assets at designated paths. Do not modify Godot scenes, scripts, or shaders during Stage A.
+- **Stage B (Technical Integration):** Integrate approved committed assets into Godot. Preserve existing resource APIs, shaders, and layout anchors. Validate at 1080p and 720p, run native tests, verify standalone Windows executable with ESC-to-quit, and capture review evidence for owner sign-off.
+- **Approval Invariant:** Automated tests alone never constitute artistic approval. Final visual acceptance is strictly reserved for the project owner.

@@ -35,15 +35,26 @@
 ### J1 — Combat Interface: Visual Layout (`P005`–`P010`)
 *Milestone Gate: G1 (Combat UI Layout)*
 
+> **Artistic Refinement Status Notice (PLAN-001):**
+> While the baseline layout (`P005`), liquid orbs (`P005-R01`), composition (`P005-R02`), adaptive fan (`P005-R04`), and hover inspection (`P005-R05`) have achieved **TECH PASS**, `P005` as a whole is **NOT artistically complete** until remaining visual components (Player HUD, Opponent HUD, Deck/Graveyard/Turn controls, and Global Harmony) receive explicit owner sign-off. Tasks follow the mandatory two-stage A/B workflow (A = standalone art asset generation & owner approval; B = technical Godot integration & owner sign-off).
+> **Hand Capacity Rule Notice:** `P005-R05` supports visual presentation of 0–10 cards. The normative gameplay rule (`specs/01-lot1-vertical-slice/01-scope.md` §3.6 and Decision Q39) remains 7 cards until formal consolidation in `P024`.
+
 | Prompt | Title | Status | Verification Evidence / Reference | Commit SHA |
 |---|---|:---:|---|:---:|
-| **P005** | Compose `CombatScreen` | **PASS** | `scenes/combat/combat_screen.tscn` and `combat_screen.gd` created. Responsive 1080p/720p layout with 0 clipping. Native CI: 208/208 PASS (exit 0); failure mode exits 1 (3 failures). GPU screenshots at 1080p, 720p, and debug overlay captured and inspected. Review evidence: `docs/art/reviews/p005/review.md`. | — |
-| **P005-R01** | Animated liquid Health / Mana orbs | **TECH PASS / ART REVIEW** | Four independent orbs; 263/263 native assertions PASS; GPU 1080p/720p and animated evidence; ART-002 3/3 bit-exact. Recommendation KEEP_WITH_ADJUSTMENTS; owner artistic review pending. `docs/art/reviews/p005-r01/review.md`. | ? |
-| **P005-R02** | Combat composition / Windows preview | **TECH PASS / ART REVIEW** | Rebalanced five-region layout, 220 px player orbs, compact seven-card fan; 266 native assertions PASS; GPU 1080p/720p and isolated Windows shell launches at both sizes; ESC exits 0. KEEP_WITH_ADJUSTMENTS, owner approval pending. `docs/art/reviews/p005-r02/review.md`. | ? |
-| **P005-R04** | Player HUD / adaptive ten-card display | **TECH PASS / ART REVIEW** | Display 0?10; 270 px fan; compact hero; dense liquid with settling. 1223 native assertions PASS; ART-002 3/3 bit-exact; GPU and isolated Windows 7/10-card 1080p/720p, ESC 0. KEEP_WITH_ADJUSTMENTS; normative gameplay cap remains 7. `docs/art/reviews/p005-r04/review.md`. | ? |
+| **P005** | Compose `CombatScreen` | **TECH PASS / ART IN PROGRESS** | `scenes/combat/combat_screen.tscn` and `combat_screen.gd` created. Responsive 1080p/720p layout with 0 clipping. Native CI: 208/208 PASS (exit 0). Initial layout approved; ongoing refinement tracked under `P005-R01`–`R09`. | — |
+| **P005-R01** | Animated liquid Health / Mana orbs | **TECH PASS / ART REVIEW** | Four independent orbs; 263/263 native assertions PASS; GPU 1080p/720p and animated evidence; ART-002 3/3 bit-exact. Recommendation KEEP_WITH_ADJUSTMENTS; owner artistic review pending. `docs/art/reviews/p005-r01/review.md`. | — |
+| **P005-R02** | Combat composition / Windows preview | **TECH PASS / ART REVIEW** | Rebalanced five-region layout, 220 px player orbs, compact seven-card fan; 266 native assertions PASS; GPU 1080p/720p and isolated Windows shell launches at both sizes; ESC exits 0. KEEP_WITH_ADJUSTMENTS, owner approval pending. `docs/art/reviews/p005-r02/review.md`. | — |
+| **P005-R04** | Player HUD / adaptive ten-card display | **TECH PASS / ART REVIEW** | Display 0–10; 270 px fan; compact hero; dense liquid with settling. 1223 native assertions PASS; ART-002 3/3 bit-exact; GPU and isolated Windows 7/10-card 1080p/720p, ESC 0. KEEP_WITH_ADJUSTMENTS; normative gameplay cap remains 7. `docs/art/reviews/p005-r04/review.md`. | — |
 | **P005-R05** | Hand Recognition & Hover Inspection | **TECH PASS / ART REVIEW** | Hearthstone-style pointer hover inspection; deterministic card picking with hysteresis; left-to-right stacking exposing mana & identity; 440 px readable inspection; smooth interruption; 1473 native assertions PASS; ART-002 3/3 bit-exact; GPU 1080p/720p; isolated Windows desktop playtest at default/1080p/720p with real pointer hover, ESC 0. `docs/art/reviews/p005-r05/review.md`. | — |
+| **P005-R06A** | Player Hero HUD Art Assets | **TODO** | Standalone PNG assets for hero portrait housing, HP orb housing, Mana orb housing, decorative trims (`assets/_source/lot1/hud/player/`). Exit: Owner visual approval & asset commit. | — |
+| **P005-R06B** | Integrate Player Hero HUD | **TODO** | Integrate R06A assets into CombatScreen; preserve dynamic liquid shaders and public APIs; 1080p/720p/Windows test. Exit: Owner visual acceptance. | — |
+| **P005-R07A** | Opponent HUD Art Assets | **TODO** | Standalone PNG assets for opponent portrait/identity framing, HP/mana housings, card-back artwork (`assets/_source/lot1/hud/opponent/`). Exit: Owner visual approval & asset commit. | — |
+| **P005-R07B** | Integrate Opponent HUD | **TODO** | Integrate R07A assets; preserve hidden hand info; ensure coherence with player HUD; 1080p/720p/Windows test. Exit: Owner visual acceptance. | — |
+| **P005-R08A** | Deck, Graveyard & Turn Control Assets | **TODO** | Standalone PNG assets for deck plate, graveyard plate, turn indicators, End Turn button states, action log frame (`assets/_source/lot1/hud/utility/`). No baked text. Exit: Owner approval & commit. | — |
+| **P005-R08B** | Integrate Deck, Graveyard & Turn Controls | **TODO** | Integrate R08A artwork; improve counter hierarchy, alignment, button states; presentation-only (no P007 domain binding); 1080p/720p/Windows test. Exit: Owner visual acceptance. | — |
+| **P005-R09** | Global Visual Harmony & P005 Sign-off | **TODO** | Holistic visual review of full CombatScreen composition at 1080p/720p; battlefield environmental integration; standalone Windows test. Exit: Explicit owner artistic sign-off of P005. | — |
 | **P006** | Create 24 Board Slots | **TODO** | 2 camps × 6 columns × 2 rows; distinct Attack/Defense rows; slot signals. | — |
-| **P007** | Hero & Turn HUDs | **TODO** | HP, mana capacity/available, deck counters, turn banner, End Turn button. | — |
+| **P007** | Hero & Turn HUDs | **TODO** | HP, mana capacity/available, deck counters, turn banner, End Turn button. Domain view-model data binding. | — |
 | **P008** | Fantasy Crest `CreatureToken` | **TODO** | Shield token: portrait, ATK (BL), HP (BR), armor/shield badges, max 3 statuses + `+N`. | — |
 | **P009** | `CardView` & `HandView` | **TODO** | Illustrated card rendering, fan/linear layout, hover lift. | — |
 | **P010** | Tooltip & Inspector Panel | **TODO** | Hover tooltip; click side inspector with original printed card + live breakdown. | — |
@@ -183,6 +194,8 @@
 2. **Engine Acceptance Tests:** `NOT_RUN` (0 of 32 engine tests executed; test runner scheduled for P003).
 3. **UI Acceptance Tests:** `NOT_RUN` (0 of 13 UX criteria evaluated; visual implementation scheduled across J1, J4, J7).
 4. **Dedicated Test Harness:** Operational (`scripts/tests/test_runner.gd`, `test_asserts.gd`, `test_harness_self.gd`, `run_tests.ps1`). Self-tests PASS (14 assertions, exit 0); negative failure mode verified (exit 1).
+5. **P005 CombatScreen Artistic Sign-off:** `IN_PROGRESS` (Technical layout anchors and P005-R05 hand hover inspection have achieved TECH PASS; full artistic sign-off is pending execution and owner approval of `P005-R06A/B`, `P005-R07A/B`, `P005-R08A/B`, and `P005-R09` per PLAN-001).
+6. **Hand Capacity Discrepancy:** `P005-R05` presentation supports 0–10 cards per owner guidance; normative gameplay rules (`01-scope.md` §3.6, Decision Q39) define a 7-card maximum. This discrepancy is formally recorded and will be reconciled in `P024` without altering normative gameplay rules prematurely.
 
 ---
 

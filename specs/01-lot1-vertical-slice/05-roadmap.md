@@ -1,7 +1,7 @@
 # MagicOdyssey — Lot 1 Implementation Roadmap
 
-**Status:** Normative Execution Plan for Lot 1.  
-**Structure:** 65 atomic prompts (`P001` to `P065`) across 9 iterations (`J0` to `J8`) and 9 quality gates (`G0` to `G8`).  
+**Status:** Normative Execution Plan for Lot 1.
+**Structure:** 65 atomic prompts (`P001` to `P065`) across 9 iterations (`J0` to `J8`) and 9 quality gates (`G0` to `G8`).
 **Philosophy:** Vertical-slice development tailored for light-reasoning AI assistants (Codex, Gemini Flash, Claude). Each prompt is an isolated unit of work with clear input, bounded scope, and verifiable tests.
 
 ---
@@ -55,7 +55,7 @@ For every prompt execution:
 
 | Prompt | Autonomous Task | Scope | Verification / Exit Criterion |
 |---|---|---|---|
-| **P005** | Compose `CombatScreen` | Build central battlefield layout, opponent/player hero zones, hand area, and action bar with responsive anchors. | No UI component clipped at 1920×1080 or 1280×720 (prepares `L1-U01`, `L1-U02`). |
+| **P005** | Compose `CombatScreen` | Build central battlefield layout, opponent/player hero zones, hand area, and action bar with responsive anchors. | No UI component clipped at 1920×1080 or 1280×720 (prepares `L1-U01`, `L1-U02`). Refined via `P005-R01`–`R09`. |
 | **P006** | Create 24 Board Slots | Draw 2 camps × 6 columns × 2 rows; visually distinguish `ATTACK` and `DEFENSE` rows; wire hover/select signals. | All 24 slots selectable and visually distinct (`L1-U03`). |
 | **P007** | Hero & Turn HUDs | Display HP, mana capacity/available, deck counters, active camp banner, and "End Turn" button. | HUD values refresh purely via injected view-models; no engine coupling. |
 | **P008** | Fantasy Crest `CreatureToken` | Create shield-shaped crest token: portrait, ATK (bottom-left), HP (bottom-right), armor/shield badges, max 3 statuses + `+N`. | Demonstrable on 24 tokens with diverse stats and statuses (`L1-U03`, `L1-U05`). |
@@ -63,6 +63,82 @@ For every prompt execution:
 | **P010** | Tooltip & Inspector Panel | Hover: concise tactical tooltip; Click: opens side inspector with original printed card + live modifier breakdown. | Demonstrates `L1-U04` on a buffed creature; visual review at 1080p and 720p. |
 
 **Gate G1:** Coherent 2D visual board with 24 slots, crest tokens, hand, and inspector. No temporary debug boxes.
+
+#### CombatScreen Art Production & Integration Roadmap (PLAN-001)
+
+The initial responsive layout (`P005`) and hand hover interaction (`P005-R05`) are technically accepted as the baseline. However, `P005` is **not artistically complete** until the player HUD, opponent HUD, utility HUD (deck/graveyard/turn controls), and global visual harmony have been approved by the project owner.
+
+To maintain engineering rigor and avoid combining asset creation with engine integration, all visual refinement is split into mandatory two-stage pairs:
+- **Stage A (Artistic Asset Generation):** Prompt specification, image generation, visual review, owner approval, and committing standalone PNG assets. No Godot code or scenes are modified.
+- **Stage B (Technical Integration):** Integrating approved assets into Godot, preserving component APIs and dynamic shaders, validating across resolutions (1080p and 720p), running automated regression suites, verifying the standalone Windows executable, and obtaining owner visual sign-off.
+
+##### Mandatory Two-Stage Workflow
+
+**Stage A Protocol (Art Asset Generation):**
+1. Define exact asset scope, visual specifications, and aspect ratios.
+2. Provide a standalone, reproducible image-generation prompt.
+3. Define the exact repository destination path and filename using the `mo_` convention.
+4. Generate or obtain the required original PNG asset.
+5. Ensure correct alpha transparency (transparency preserved; no baked background boxes).
+6. Perform visual review against MagicOdyssey's antique-bronze and midnight-blue aesthetic.
+7. Iterate until owner visual approval is obtained.
+8. Commit approved asset to source control.
+9. Mark Stage A task complete. **Do not implement Godot integration during Stage A.**
+
+**Stage B Protocol (Technical Integration):**
+1. Read the approved, committed assets from their documented paths.
+2. Integrate them into `scenes/combat/` and `scripts/presentation/`.
+3. Preserve existing resource APIs, layout anchors, and dynamic shaders (e.g. liquid orbs remain rendered dynamically in Godot).
+4. Validate responsive scaling at 1920×1080 and 1280×720 with zero clipping.
+5. Run native headless tests (`test_runner.gd`) and visual regression (`capture_baseline.gd`).
+6. Rebuild and launch the Windows standalone executable (`build/windows/MagicOdyssey.exe`).
+7. Verify ESC-to-quit and process termination.
+8. Capture real GPU review evidence under `docs/art/reviews/`.
+9. Request owner visual approval. **Never claim artistic approval based on passing automated tests alone.**
+
+##### Proposed Asset Directory & Naming Convention
+Image assets are stored under `assets/_source/lot1/hud/` (directories created on-demand when assets are committed):
+- `assets/_source/lot1/hud/player/` — Player hero portrait frame, health orb housing, mana orb housing, decorative integration trims.
+- `assets/_source/lot1/hud/opponent/` — Opponent identity/portrait framing, health/mana housings, card-back artwork.
+- `assets/_source/lot1/hud/utility/` — Deck frame/plate, graveyard frame/plate, turn banner framing, End Turn button visual states, action log frame.
+
+**Naming standard:** `mo_hud_<zone>_<element>_v<NN>.png`
+Examples:
+- `mo_hud_player_portrait_frame_v01.png`
+- `mo_hud_player_health_orb_housing_v01.png`
+- `mo_hud_player_mana_orb_housing_v01.png`
+- `mo_hud_opponent_portrait_frame_v01.png`
+- `mo_hud_opponent_card_back_v01.png`
+- `mo_hud_utility_deck_plate_v01.png`
+- `mo_hud_utility_end_turn_button_normal_v01.png`
+
+Assets must preserve transparency where applicable and avoid baked-in dynamic gameplay text, counts, or values.
+
+##### P005 Refinement Substeps Breakdown
+
+| Step | Autonomous Task | Scope | Verification / Exit Criterion |
+|---|---|---|---|
+| **P005-R01** | Animated Liquid Health / Mana Orbs | Procedural liquid shader + bronze housings; 4 independent orbs. | **TECH PASS / ART REVIEW.** 263 assertions PASS; 1080p/720p GPU captures. |
+| **P005-R02** | Combat Composition & Windows Preview | Rebalanced 5-region layout, 220 px orbs, compact hand. | **TECH PASS / ART REVIEW.** 266 assertions PASS; Windows standalone test. |
+| **P005-R04** | Player HUD / Adaptive 10-Card Fan | Display 0–10 cards, 270 px fan, compact hero, dense liquid settling. | **TECH PASS / ART REVIEW.** 1223 assertions PASS; 3/3 bit-exact parity. |
+| **P005-R05** | Hand Recognition & Hover Inspection | Hearthstone-style pointer hover, deterministic OBB picking with hysteresis, left-to-right stacking, 440 px inspection. | **TECH PASS / ART REVIEW.** 1473 assertions PASS; 3/3 bit-exact parity; Windows mouse playtest. |
+| **P005-R06A** | Player Hero HUD Art Assets | Standalone PNG assets for hero portrait housing, HP orb housing, Mana orb housing, and decorative integration trims. Antique-bronze & midnight-blue. No Godot code. | Owner visual approval; assets committed to `assets/_source/lot1/hud/player/`. |
+| **P005-R06B** | Integrate Player Hero HUD | Integrate approved R06A assets into CombatScreen. Preserve dynamic liquid shaders and public APIs (`get_player_health_orb`). | Layout, proportions, and readability validated at 1080p/720p; Windows executable verified; owner visual acceptance. |
+| **P005-R07A** | Opponent HUD Art Assets | Standalone PNG assets for opponent portrait/identity framing, HP/mana housings, card-back artwork. No Godot code. | Owner visual approval; assets committed to `assets/_source/lot1/hud/opponent/`. |
+| **P005-R07B** | Integrate Opponent HUD | Integrate R07A assets into CombatScreen. Maintain hidden hand information; ensure visual coherence with player HUD. | Proportions and readability validated at 1080p/720p; Windows executable verified; owner visual acceptance. |
+| **P005-R08A** | Deck, Graveyard & Turn Control Assets | Standalone PNG assets for deck representation, graveyard representation, turn/phase indicators, End Turn button states, action log trim. No baked text/counts. No Godot code. | Owner visual approval; assets committed to `assets/_source/lot1/hud/utility/`. |
+| **P005-R08B** | Integrate Deck, Graveyard & Turn Controls | Integrate R08A assets into CombatScreen. Improve counter hierarchy, button states, and action log presentation. Strictly presentation-only (no P007 domain binding). | Layout and alignment validated at 1080p/720p; Windows executable verified; owner visual acceptance. |
+| **P005-R09** | Global Visual Harmony & P005 Sign-off | Holistic visual review of entire CombatScreen composition (player/opponent HUDs, hand, deck/graveyard, action bar, battlefield integration). | Explicit owner artistic sign-off of P005 at 1080p/720p in Windows standalone. |
+
+##### Architectural Boundaries & Invariants
+1. **Preservation of P006–P010:** The subsequent prompts retain their original scope, responsibilities, and numbers:
+   - `P006`: 24 Board Slots (Attack/Defense rows, hover/select signals).
+   - `P007`: Hero & Turn HUDs (Domain view-model data binding for HP/mana/counters).
+   - `P008`: Fantasy Crest `CreatureToken`.
+   - `P009`: `CardView` & `HandView`.
+   - `P010`: Tooltip & Inspector Panel.
+2. **P005 vs P007 Distinction:** P005 and its refinement substeps (`R01`–`R09`) govern **static visual composition and layout presentation only**. Live gameplay data binding, engine event subscription, and combat view-models belong strictly to `P007` and `P033`.
+3. **Hand Capacity Rule vs Presentation:** `P005-R05` supports visual presentation of 0–10 cards. Normative gameplay rules (`01-scope.md` §3.6, Decision Q39) define a 7-card maximum capacity. This known discrepancy will be formally reconciled in `P024` without altering normative gameplay rules prematurely.
 
 ---
 
