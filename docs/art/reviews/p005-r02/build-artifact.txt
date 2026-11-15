@@ -1,0 +1,3 @@
+Path: D:\Dev\MagicOdyssey\build\windows\MagicOdyssey.exe
+Bytes: 131565208
+SHA256: 0ef47faec328ea3b847375acfd209bfaf327a263a7e70326e5a851c4e738ff4b

@@ -2,7 +2,6 @@
 .godot/
 .import/
 export.cfg
-export_presets.cfg
 
 # Local editor state and logs
 *.translation
@@ -12,3 +11,6 @@ Thumbs.db
 
 # Visual regression fresh test captures (transient)
 docs/audits/AUDIT-002/captures_fresh/
+
+# Generated standalone builds
+/build/

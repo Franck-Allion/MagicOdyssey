@@ -115,15 +115,15 @@ func _layout_contents() -> void:
 	reservoir.position = origin
 	reservoir.size = Vector2.ONE * diameter
 	var label: Label = $Values as Label
-	label.position = origin + Vector2(diameter * 0.13, diameter * 0.46)
-	label.size = Vector2(diameter * 0.74, diameter * 0.29)
+	label.position = origin + Vector2(diameter * 0.13, diameter * 0.40)
+	label.size = Vector2(diameter * 0.74, diameter * 0.26)
 	label.add_theme_font_size_override("font_size", maxi(14, roundi(diameter * 0.205)))
 	label.add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
 	label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))
 	label.add_theme_constant_override("outline_size", 5)
 	var kind_label: Label = $Kind as Label
-	kind_label.position = origin + Vector2(diameter * 0.22, diameter * 0.24)
-	kind_label.size = Vector2(diameter * 0.56, diameter * 0.22)
+	kind_label.position = origin + Vector2(diameter * 0.22, diameter * 0.25)
+	kind_label.size = Vector2(diameter * 0.56, diameter * 0.20)
 	kind_label.add_theme_font_size_override("font_size", maxi(12, roundi(diameter * 0.135)))
 	kind_label.add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
 	kind_label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))

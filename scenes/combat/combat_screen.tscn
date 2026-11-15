@@ -1,10 +1,26 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Theme" path="res://resources/themes/fantasy_theme.tres" id="1_theme"]
 [ext_resource type="Script" path="res://scripts/presentation/combat_screen.gd" id="2_script"]
 [ext_resource type="Texture2D" path="res://assets/_source/lot1/battlefield/wip/mo_battlefield_sundered_observatory_bg_wip_v03.png" id="3_bg"]
 
 [ext_resource type="PackedScene" path="res://scenes/hud/liquid_resource_orb.tscn" id="4_orb"]
+
+[ext_resource type="Script" path="res://scripts/presentation/combat_preview_cards.gd" id="5_cards"]
+[ext_resource type="Texture2D" path="res://assets/_source/lot1/cards/illustrations/mo_illustration_arcane_knight_test_v01.png" id="6_portrait"]
+[sub_resource type="StyleBoxEmpty" id="empty"]
+
+[sub_resource type="StyleBoxFlat" id="tactical_reservation"]
+bg_color = Color(0.055, 0.075, 0.105, 0.46)
+border_color = Color(0.63, 0.51, 0.30, 0.65)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_left = 12
+corner_radius_bottom_right = 12
 
 [node name="CombatScreen" type="Control"]
 layout_mode = 3
@@ -63,1009 +79,597 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+
 [node name="MatchHeader" type="Panel" parent="CombatLayout"]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 18.0
-offset_right = 556.0
-offset_bottom = 104.0
-theme_type_variation = &"InspectorFrame"
-
-[node name="Title" type="Label" parent="CombatLayout/MatchHeader"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 14.0
-offset_right = 498.0
-offset_bottom = 48.0
-theme_type_variation = &"CardTitle"
-theme_override_colors/font_color = Color(0.87, 0.79, 0.59, 1)
-theme_override_font_sizes/font_size = 24
-text = "MAGIC ODYSSEY"
-vertical_alignment = 1
-
-[node name="Subtitle" type="Label" parent="CombatLayout/MatchHeader"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 48.0
-offset_right = 498.0
-offset_bottom = 74.0
-theme_override_colors/font_color = Color(0.627, 0.608, 0.588, 1)
-theme_override_font_sizes/font_size = 15
-text = "THE SUNDERED OBSERVATORY · LOT 1"
-vertical_alignment = 1
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 340.0
+offset_bottom = 95.0
+visible = false
 
 [node name="OpponentHeroZone" type="Panel" parent="CombatLayout"]
 layout_mode = 0
-offset_left = 640.0
-offset_top = 18.0
-offset_right = 1280.0
-offset_bottom = 104.0
+offset_left = 400.0
+offset_top = 45.0
+offset_right = 740.0
+offset_bottom = 190.0
 theme_type_variation = &"HeroFrame"
 
-[node name="CrestBadge" type="Panel" parent="CombatLayout/OpponentHeroZone"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 13.0
-offset_right = 78.0
-offset_bottom = 73.0
-theme_type_variation = &"TokenFrame"
-
-[node name="BadgeLabel" type="Label" parent="CombatLayout/OpponentHeroZone/CrestBadge"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"CardTitle"
-theme_override_colors/font_color = Color(0.85, 0.35, 0.3, 1)
-theme_override_font_sizes/font_size = 28
-text = "O"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HeroTitle" type="Label" parent="CombatLayout/OpponentHeroZone"]
-layout_mode = 0
-offset_left = 94.0
-offset_top = 18.0
-offset_right = 420.0
-offset_bottom = 44.0
-theme_override_colors/font_color = Color(0.85, 0.35, 0.3, 1)
-theme_override_font_sizes/font_size = 17
-text = "OPPONENT"
-vertical_alignment = 1
-
-[node name="HeroCounters" type="Label" parent="CombatLayout/OpponentHeroZone"]
-layout_mode = 0
-offset_left = 94.0
-offset_top = 46.0
-offset_right = 420.0
-offset_bottom = 70.0
-theme_override_colors/font_color = Color(0.627, 0.608, 0.588, 1)
-theme_override_font_sizes/font_size = 14
-text = "DECK 34    ·    HAND 6"
-vertical_alignment = 1
-
-[node name="MatchStatus" type="Panel" parent="CombatLayout"]
-layout_mode = 0
-offset_left = 1364.0
-offset_top = 18.0
-offset_right = 1884.0
-offset_bottom = 104.0
-theme_type_variation = &"InspectorFrame"
-
-[node name="StatusTitle" type="Label" parent="CombatLayout/MatchStatus"]
+[node name="Name" type="Label" parent="CombatLayout/OpponentHeroZone"]
 layout_mode = 0
 offset_left = 22.0
-offset_top = 14.0
-offset_right = 498.0
-offset_bottom = 48.0
-theme_type_variation = &"CardTitle"
-theme_override_colors/font_color = Color(0.87, 0.79, 0.59, 1)
-theme_override_font_sizes/font_size = 20
-text = "COMBAT INTERFACE · STAGE 1"
-horizontal_alignment = 2
+offset_top = 12.0
+offset_right = 318.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 24
+text = "OPPONENT  /  HAND 6"
+horizontal_alignment = 0
 vertical_alignment = 1
+mouse_filter = 2
 
-[node name="StatusSubtitle" type="Label" parent="CombatLayout/MatchStatus"]
+[node name="DeckCount" type="Label" parent="CombatLayout/OpponentHeroZone"]
 layout_mode = 0
 offset_left = 22.0
-offset_top = 48.0
-offset_right = 498.0
-offset_bottom = 74.0
-theme_override_colors/font_color = Color(0.627, 0.608, 0.588, 1)
-theme_override_font_sizes/font_size = 15
-text = "TACTICAL BATTLEFIELD (24 SLOTS)"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="BattlefieldZone" type="Panel" parent="CombatLayout"]
-layout_mode = 0
-offset_left = 260.0
-offset_top = 118.0
-offset_right = 1660.0
-offset_bottom = 698.0
-theme_type_variation = &"BattleBoard"
-
-[node name="OpponentBoardArea" type="Control" parent="CombatLayout/BattlefieldZone"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 264.0
-grow_horizontal = 2
-mouse_filter = 2
-
-[node name="OpponentDefenseRow" type="Control" parent="CombatLayout/BattlefieldZone/OpponentBoardArea"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 32.0
-offset_top = 14.0
-offset_right = -32.0
-offset_bottom = 126.0
-grow_horizontal = 2
-mouse_filter = 2
-
-[node name="RowBanner" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 36.0
-offset_right = 180.0
-offset_bottom = 76.0
-theme_override_colors/font_color = Color(0.85, 0.35, 0.3, 1)
-theme_override_font_sizes/font_size = 16
-text = "OPPONENT
-DEFENSE"
-vertical_alignment = 1
-
-[node name="SlotGuide_01" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 196.0
-offset_top = 12.0
-offset_right = 366.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_01"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "01"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 384.0
-offset_top = 12.0
-offset_right = 554.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_02"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "02"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 572.0
-offset_top = 12.0
-offset_right = 742.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_03"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "03"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 760.0
-offset_top = 12.0
-offset_right = 930.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_04"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "04"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 948.0
-offset_top = 12.0
-offset_right = 1118.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_05"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "05"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 1136.0
-offset_top = 12.0
-offset_right = 1306.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_06"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "06"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OpponentAttackRow" type="Control" parent="CombatLayout/BattlefieldZone/OpponentBoardArea"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 32.0
-offset_top = 140.0
-offset_right = -32.0
-offset_bottom = 252.0
-grow_horizontal = 2
-mouse_filter = 2
-
-[node name="RowBanner" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 36.0
-offset_right = 180.0
-offset_bottom = 76.0
-theme_override_colors/font_color = Color(0.85, 0.35, 0.3, 1)
-theme_override_font_sizes/font_size = 16
-text = "OPPONENT
-ATTACK"
-vertical_alignment = 1
-
-[node name="SlotGuide_01" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 196.0
-offset_top = 12.0
-offset_right = 366.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_01"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "01"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 384.0
-offset_top = 12.0
-offset_right = 554.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_02"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "02"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 572.0
-offset_top = 12.0
-offset_right = 742.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_03"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "03"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 760.0
-offset_top = 12.0
-offset_right = 930.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_04"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "04"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 948.0
-offset_top = 12.0
-offset_right = 1118.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_05"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "05"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 1136.0
-offset_top = 12.0
-offset_right = 1306.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_06"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "06"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CenterDividerArea" type="Control" parent="CombatLayout/BattlefieldZone"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 264.0
-offset_bottom = 316.0
-grow_horizontal = 2
-mouse_filter = 2
-
-[node name="DividerLine" type="ColorRect" parent="CombatLayout/BattlefieldZone/CenterDividerArea"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = -1.0
-offset_right = -40.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.48, 0.39, 0.24, 0.8)
-
-[node name="DividerLabels" type="Label" parent="CombatLayout/BattlefieldZone/CenterDividerArea"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.87, 0.79, 0.59, 0.9)
-theme_override_font_sizes/font_size = 16
-text = "COLUMN  I          COLUMN  II          COLUMN  III          COLUMN  IV          COLUMN  V          COLUMN  VI"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayerBoardArea" type="Control" parent="CombatLayout/BattlefieldZone"]
-layout_mode = 0
-offset_top = 316.0
-offset_right = 1400.0
-offset_bottom = 580.0
-mouse_filter = 2
-
-[node name="PlayerAttackRow" type="Control" parent="CombatLayout/BattlefieldZone/PlayerBoardArea"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 32.0
-offset_top = 12.0
-offset_right = -32.0
-offset_bottom = 124.0
-grow_horizontal = 2
-mouse_filter = 2
-
-[node name="RowBanner" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 36.0
-offset_right = 180.0
-offset_bottom = 76.0
-theme_override_colors/font_color = Color(0.24, 0.65, 0.88, 1)
-theme_override_font_sizes/font_size = 16
-text = "PLAYER
-ATTACK"
-vertical_alignment = 1
-
-[node name="SlotGuide_01" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 196.0
-offset_top = 12.0
-offset_right = 366.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_01"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "01"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 384.0
-offset_top = 12.0
-offset_right = 554.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_02"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "02"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 572.0
-offset_top = 12.0
-offset_right = 742.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_03"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "03"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 760.0
-offset_top = 12.0
-offset_right = 930.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_04"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "04"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 948.0
-offset_top = 12.0
-offset_right = 1118.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_05"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "05"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 1136.0
-offset_top = 12.0
-offset_right = 1306.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_06"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "06"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayerDefenseRow" type="Control" parent="CombatLayout/BattlefieldZone/PlayerBoardArea"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 32.0
-offset_top = 138.0
-offset_right = -32.0
-offset_bottom = 250.0
-grow_horizontal = 2
-mouse_filter = 2
-
-[node name="RowBanner" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 36.0
-offset_right = 180.0
-offset_bottom = 76.0
-theme_override_colors/font_color = Color(0.24, 0.65, 0.88, 1)
-theme_override_font_sizes/font_size = 16
-text = "PLAYER
-DEFENSE"
-vertical_alignment = 1
-
-[node name="SlotGuide_01" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 196.0
-offset_top = 12.0
-offset_right = 366.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_01"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "01"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 384.0
-offset_top = 12.0
-offset_right = 554.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_02"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "02"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 572.0
-offset_top = 12.0
-offset_right = 742.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_03"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "03"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 760.0
-offset_top = 12.0
-offset_right = 930.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_04"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "04"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 948.0
-offset_top = 12.0
-offset_right = 1118.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_05"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "05"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
-modulate = Color(1, 1, 1, 0.35)
-layout_mode = 0
-offset_left = 1136.0
-offset_top = 12.0
-offset_right = 1306.0
-offset_bottom = 100.0
-theme_type_variation = &"TokenFrame"
-
-[node name="GuideLabel" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_06"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.48, 0.39, 0.24, 1)
-theme_override_font_sizes/font_size = 18
-text = "06"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayerHeroZone" type="Panel" parent="CombatLayout"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 712.0
-offset_right = 256.0
-offset_bottom = 1060.0
-theme_type_variation = &"HeroFrame"
-
-[node name="CrestBadge" type="Panel" parent="CombatLayout/PlayerHeroZone"]
-layout_mode = 0
-offset_left = 72.0
-offset_top = 18.0
-offset_right = 148.0
-offset_bottom = 94.0
-theme_type_variation = &"TokenFrame"
-
-[node name="BadgeLabel" type="Label" parent="CombatLayout/PlayerHeroZone/CrestBadge"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"CardTitle"
-theme_override_colors/font_color = Color(0.24, 0.65, 0.88, 1)
-theme_override_font_sizes/font_size = 32
-text = "P"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HeroTitle" type="Label" parent="CombatLayout/PlayerHeroZone"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 108.0
-offset_right = 204.0
-offset_bottom = 134.0
-theme_override_colors/font_color = Color(0.24, 0.65, 0.88, 1)
-theme_override_font_sizes/font_size = 18
-text = "PLAYER"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HeroCounters" type="Label" parent="CombatLayout/PlayerHeroZone"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 258.0
-offset_right = 204.0
-offset_bottom = 314.0
-theme_override_colors/font_color = Color(0.627, 0.608, 0.588, 1)
-theme_override_font_sizes/font_size = 16
-text = "DECK 34
-GRAVE 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayerHandZone" type="Panel" parent="CombatLayout"]
-layout_mode = 0
-offset_left = 272.0
-offset_top = 712.0
-offset_right = 1648.0
-offset_bottom = 1060.0
-theme_type_variation = &"BattleBoard"
-
-[node name="HandHeader" type="Label" parent="CombatLayout/PlayerHandZone"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 24.0
-offset_top = 12.0
-offset_right = -24.0
-offset_bottom = 36.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.87, 0.79, 0.59, 0.8)
-theme_override_font_sizes/font_size = 16
-text = "PLAYER HAND · RESERVED FOR P009 HANDVIEW (UP TO 7 CARDS)"
-vertical_alignment = 1
-
-[node name="HandSubtitle" type="Label" parent="CombatLayout/PlayerHandZone"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = -32.0
-offset_right = -24.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.627, 0.608, 0.588, 0.7)
-theme_override_font_sizes/font_size = 13
-text = "Authoritative CardViewLayout bounds: 1086×1448 source px  •  Standard gameplay scale: ~316 px card height with hover lift"
-vertical_alignment = 1
-
-[node name="ActionBarZone" type="Panel" parent="CombatLayout"]
-layout_mode = 0
-offset_left = 1664.0
-offset_top = 712.0
-offset_right = 1884.0
-offset_bottom = 1060.0
-theme_type_variation = &"InspectorFrame"
-
-[node name="RoundBanner" type="Label" parent="CombatLayout/ActionBarZone"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 18.0
-offset_right = 204.0
-offset_bottom = 44.0
-theme_override_colors/font_color = Color(0.87, 0.79, 0.59, 1)
+offset_top = 59.0
+offset_right = 162.0
+offset_bottom = 87.0
 theme_override_font_sizes/font_size = 20
-text = "ROUND 1"
-horizontal_alignment = 1
+text = "DECK  34"
+horizontal_alignment = 0
 vertical_alignment = 1
-
-[node name="TurnBanner" type="Label" parent="CombatLayout/ActionBarZone"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 52.0
-offset_right = 204.0
-offset_bottom = 80.0
-theme_override_colors/font_color = Color(0.24, 0.65, 0.88, 1)
-theme_override_font_sizes/font_size = 22
-text = "YOUR TURN"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TurnIcon" type="Label" parent="CombatLayout/ActionBarZone"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 88.0
-offset_right = 204.0
-offset_bottom = 158.0
-theme_type_variation = &"CardTitle"
-theme_override_colors/font_color = Color(1, 0.972549, 0.901961, 0.8)
-theme_override_font_sizes/font_size = 48
-text = "I"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="EndTurnButton" type="Button" parent="CombatLayout/ActionBarZone"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 180.0
-offset_right = 200.0
-offset_bottom = 244.0
-theme_type_variation = &"PrimaryButton"
-theme_override_font_sizes/font_size = 22
-text = "End Turn"
-
-[node name="StatusNote" type="Label" parent="CombatLayout/ActionBarZone"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 262.0
-offset_right = 204.0
-offset_bottom = 320.0
-theme_override_colors/font_color = Color(0.627, 0.608, 0.588, 1)
-theme_override_font_sizes/font_size = 14
-text = "P007 HUD Integration
-Awaiting Actions"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OverlayLayer" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 
-[node name="PlayerHealthOrb" parent="CombatLayout/PlayerHeroZone" instance=ExtResource("4_orb")]
+[node name="GraveyardCount" type="Label" parent="CombatLayout/OpponentHeroZone"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 146.0
-offset_right = 110.0
-offset_bottom = 246.0
-resource_kind = 0
-current_value = 30
-maximum_value = 30
-
-[node name="PlayerManaOrb" parent="CombatLayout/PlayerHeroZone" instance=ExtResource("4_orb")]
-layout_mode = 0
-offset_left = 110.0
-offset_top = 146.0
-offset_right = 210.0
-offset_bottom = 246.0
-resource_kind = 1
-current_value = 1
-maximum_value = 1
+offset_left = 22.0
+offset_top = 94.0
+offset_right = 162.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 20
+text = "GRAVE  0"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
 
 [node name="OpponentHealthOrb" parent="CombatLayout/OpponentHeroZone" instance=ExtResource("4_orb")]
 layout_mode = 0
-offset_left = 438.0
-offset_top = 3.0
-offset_right = 518.0
-offset_bottom = 83.0
+offset_left = 165.0
+offset_top = 40.0
+offset_right = 255.0
+offset_bottom = 130.0
 resource_kind = 0
 current_value = 30
 maximum_value = 30
 
 [node name="OpponentManaOrb" parent="CombatLayout/OpponentHeroZone" instance=ExtResource("4_orb")]
 layout_mode = 0
-offset_left = 526.0
-offset_top = 3.0
-offset_right = 606.0
-offset_bottom = 83.0
+offset_left = 247.0
+offset_top = 40.0
+offset_right = 337.0
+offset_bottom = 130.0
 resource_kind = 1
 current_value = 0
 maximum_value = 0
+
+[node name="OpponentHand" type="Control" parent="CombatLayout"]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 25.0
+offset_right = 1515.0
+offset_bottom = 195.0
+mouse_filter = 2
+script = ExtResource("5_cards")
+face_down = true
+
+[node name="MatchStatus" type="Panel" parent="CombatLayout"]
+layout_mode = 0
+offset_left = 1570.0
+offset_top = 235.0
+offset_right = 1880.0
+offset_bottom = 375.0
+theme_type_variation = &"HeroFrame"
+
+[node name="Turn" type="Label" parent="CombatLayout/MatchStatus"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 286.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 30
+text = "TURN 01"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="Phase" type="Label" parent="CombatLayout/MatchStatus"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 67.0
+offset_right = 286.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 21
+text = "PLAYER  /  ACTION"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="PlayerHeroZone" type="Panel" parent="CombatLayout"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 240.0
+offset_right = 340.0
+offset_bottom = 1030.0
+theme_type_variation = &"HeroFrame"
+
+[node name="Name" type="Label" parent="CombatLayout/PlayerHeroZone"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 280.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 24
+text = "YOUR HERO"
+horizontal_alignment = 1
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="Portrait" type="TextureRect" parent="CombatLayout/PlayerHeroZone"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 68.0
+offset_right = 278.0
+offset_bottom = 313.0
+texture = ExtResource("6_portrait")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
+
+[node name="PlayerHealthOrb" parent="CombatLayout/PlayerHeroZone" instance=ExtResource("4_orb")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 330.0
+offset_right = 260.0
+offset_bottom = 550.0
+resource_kind = 0
+current_value = 30
+maximum_value = 30
+
+[node name="PlayerManaOrb" parent="CombatLayout/PlayerHeroZone" instance=ExtResource("4_orb")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 550.0
+offset_right = 260.0
+offset_bottom = 770.0
+resource_kind = 1
+current_value = 1
+maximum_value = 1
+
+[node name="BattlefieldZone" type="Panel" parent="CombatLayout"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 235.0
+offset_right = 1520.0
+offset_bottom = 795.0
+theme_override_styles/panel = SubResource("empty")
+
+[node name="OpponentBoardArea" type="Control" parent="CombatLayout/BattlefieldZone"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1120.0
+offset_bottom = 260.0
+
+
+[node name="CenterDividerArea" type="Control" parent="CombatLayout/BattlefieldZone"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 267.0
+offset_right = 1120.0
+offset_bottom = 293.0
+
+
+[node name="Line" type="ColorRect" parent="CombatLayout/BattlefieldZone/CenterDividerArea"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 12.0
+offset_right = 1085.0
+offset_bottom = 13.0
+color = Color(0.63, 0.51, 0.30, 0.65)
+mouse_filter = 2
+
+[node name="PlayerBoardArea" type="Control" parent="CombatLayout/BattlefieldZone"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 300.0
+offset_right = 1120.0
+offset_bottom = 560.0
+
+
+[node name="OpponentDefenseRow" type="Control" parent="CombatLayout/BattlefieldZone/OpponentBoardArea"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1120.0
+offset_bottom = 124.0
+mouse_filter = 2
+
+[node name="RowBanner" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 40.0
+offset_right = 110.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 16
+text = "DEFENSE"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="SlotGuide_01" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 7.0
+offset_right = 268.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 7.0
+offset_right = 432.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 7.0
+offset_right = 596.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 7.0
+offset_right = 760.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 7.0
+offset_right = 924.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
+layout_mode = 0
+offset_left = 940.0
+offset_top = 7.0
+offset_right = 1088.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="OpponentAttackRow" type="Control" parent="CombatLayout/BattlefieldZone/OpponentBoardArea"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 136.0
+offset_right = 1120.0
+offset_bottom = 260.0
+mouse_filter = 2
+
+[node name="RowBanner" type="Label" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 40.0
+offset_right = 110.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 16
+text = "ATTACK"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="SlotGuide_01" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 7.0
+offset_right = 268.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 7.0
+offset_right = 432.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 7.0
+offset_right = 596.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 7.0
+offset_right = 760.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 7.0
+offset_right = 924.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
+layout_mode = 0
+offset_left = 940.0
+offset_top = 7.0
+offset_right = 1088.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="PlayerAttackRow" type="Control" parent="CombatLayout/BattlefieldZone/PlayerBoardArea"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1120.0
+offset_bottom = 124.0
+mouse_filter = 2
+
+[node name="RowBanner" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 40.0
+offset_right = 110.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 16
+text = "ATTACK"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="SlotGuide_01" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 7.0
+offset_right = 268.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 7.0
+offset_right = 432.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 7.0
+offset_right = 596.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 7.0
+offset_right = 760.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 7.0
+offset_right = 924.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
+layout_mode = 0
+offset_left = 940.0
+offset_top = 7.0
+offset_right = 1088.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="PlayerDefenseRow" type="Control" parent="CombatLayout/BattlefieldZone/PlayerBoardArea"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 136.0
+offset_right = 1120.0
+offset_bottom = 260.0
+mouse_filter = 2
+
+[node name="RowBanner" type="Label" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 40.0
+offset_right = 110.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 16
+text = "DEFENSE"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="SlotGuide_01" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 7.0
+offset_right = 268.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 7.0
+offset_right = 432.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 7.0
+offset_right = 596.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 7.0
+offset_right = 760.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 7.0
+offset_right = 924.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
+layout_mode = 0
+offset_left = 940.0
+offset_top = 7.0
+offset_right = 1088.0
+offset_bottom = 117.0
+theme_type_variation = &"TokenFrame"
+theme_override_styles/panel = SubResource("tactical_reservation")
+
+[node name="PlayerHandZone" type="Panel" parent="CombatLayout"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 825.0
+offset_right = 1520.0
+offset_bottom = 1055.0
+theme_override_styles/panel = SubResource("empty")
+clip_contents = false
+
+[node name="Fan" type="Control" parent="CombatLayout/PlayerHandZone"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1120.0
+offset_bottom = 230.0
+mouse_filter = 2
+script = ExtResource("5_cards")
+
+[node name="ActionBarZone" type="Panel" parent="CombatLayout"]
+layout_mode = 0
+offset_left = 1570.0
+offset_top = 400.0
+offset_right = 1880.0
+offset_bottom = 990.0
+theme_type_variation = &"HeroFrame"
+
+[node name="RecentTitle" type="Label" parent="CombatLayout/ActionBarZone"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 284.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 20
+text = "RECENT ACTIONS"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="RecentActions" type="Label" parent="CombatLayout/ActionBarZone"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 67.0
+offset_right = 284.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 20
+text = "Awaiting first action"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="Deck" type="Label" parent="CombatLayout/ActionBarZone"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 215.0
+offset_right = 284.0
+offset_bottom = 260.0
+theme_override_font_sizes/font_size = 23
+text = "DECK                34"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="Graveyard" type="Label" parent="CombatLayout/ActionBarZone"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 275.0
+offset_right = 284.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 23
+text = "GRAVEYARD      0"
+horizontal_alignment = 0
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="EndTurnButton" type="Button" parent="CombatLayout/ActionBarZone"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 452.0
+offset_right = 286.0
+offset_bottom = 530.0
+theme_type_variation = &"PrimaryButton"
+text = "END TURN"
+
+[node name="OverlayLayer" type="Control" parent="."]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

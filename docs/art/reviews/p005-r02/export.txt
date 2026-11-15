@@ -1,0 +1,140 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started Initialisation du projet (5 steps)
+[   0% ] first_scan_filesystem | Analyse de la structure des fichiers…
+[  16% ] first_scan_filesystem | Chargement des noms des classes globales…
+[  33% ] first_scan_filesystem | Vérification des GDExtensions…
+[  50% ] first_scan_filesystem | Création des scripts de chargement automatique…
+[  66% ] first_scan_filesystem | Initialisation des extensions…
+[  83% ] first_scan_filesystem | Démarrage du scan de fichiers…
+[ DONE ] first_scan_filesystem
+
+[   0% ] savepack | Started Empaquetage (102 steps)
+[   1% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_battlefield_sundered_observatory_bg_wip_v02.png-0f43326d80ece37f4c040c56f55fd90c.ctex
+[   1% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/battlefield/wip/mo_battlefield_sundered_observatory_bg_wip_v02.png.import
+[   2% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_battlefield_sundered_observatory_bg_wip_v03.png-d45cd22d02157876ac7f0415da9a4fe8.ctex
+[   2% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/battlefield/wip/mo_battlefield_sundered_observatory_bg_wip_v03.png.import
+[   4% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_card_frame_master_v02.png-ee1827e1016299e6767103b74c9c54a9.ctex
+[   4% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/frames/mo_card_frame_master_v02.png.import
+[   5% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_card_frame_master_v03.png-773d9d086560f815419844cb2a778dde.ctex
+[   5% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/frames/mo_card_frame_master_v03.png.import
+[   7% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_cabochon_attack_v01.png-f3b51379492f5738c356bd2a6ae84389.ctex
+[   7% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_cabochon_attack_v01.png.import
+[   9% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_cabochon_attack_v02.png-0b58c177ec554e9db58435d4d8ee6f11.ctex
+[   9% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_cabochon_attack_v02.png.import
+[  10% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_cabochon_health_v01.png-873940f88110cca37701478e7f967dc9.ctex
+[  10% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_cabochon_health_v01.png.import
+[  12% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_icon_armor_v01.png-bcb8fb8002085c4f2d053460d897922a.ctex
+[  12% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_icon_armor_v01.png.import
+[  13% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_icon_armor_v02.png-bebbbd6d8ab9aa60f3b00e2937977f9e.ctex
+[  13% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_icon_armor_v02.png.import
+[  15% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_icon_attack_v01.png-e62b125ce927c96778cdc1d738770427.ctex
+[  15% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_icon_attack_v01.png.import
+[  17% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_icon_attack_v02.png-c898c5694ef61645477f4ff9de141e25.ctex
+[  17% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_icon_attack_v02.png.import
+[  18% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_icon_health_v01.png-8bd0ba37ff0876fdd925a5bf45674153.ctex
+[  18% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_icon_health_v01.png.import
+[  20% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_icon_health_v02.png-64a76b4e5f502f440bc006bfe2459a53.ctex
+[  20% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_icon_health_v02.png.import
+[  21% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_icon_shield_v01.png-85920a93dceb5526a50f87300710a6e7.ctex
+[  21% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_icon_shield_v01.png.import
+[  23% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_icon_shield_v02.png-2c9c8fe13b233a2e4a75e5729428557f.ctex
+[  23% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_icon_shield_v02.png.import
+[  25% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_inlay_attack_v01.png-418fe34ca2beb88c9a424e3882f6d830.ctex
+[  25% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_inlay_attack_v01.png.import
+[  26% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_inlay_health_v01.png-7e505f824837380a11166c37eb4a448c.ctex
+[  26% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_inlay_health_v01.png.import
+[  28% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_plate_armor_v01.png-d7c7f6db65f7e80ded341d09bd6a8ea2.ctex
+[  28% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_plate_armor_v01.png.import
+[  30% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_stat_plate_shield_v01.png-9061ec84b2925e069054d8ac6682ba9a.ctex
+[  30% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/icons/mo_stat_plate_shield_v01.png.import
+[  31% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_illustration_arcane_knight_test_v01.png-3108d95bce94b7cec7400998183ee49f.ctex
+[  31% ] savepack | Stockage du fichier en cours : res://assets/_source/lot1/cards/illustrations/mo_illustration_arcane_knight_test_v01.png.import
+[  33% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_inlay_attack.png-78cf72c4057373ecc9cff37b48a1e9a8.ctex
+[  33% ] savepack | Stockage du fichier en cours : res://assets/textures/cards/icons/mo_inlay_attack.png.import
+[  33% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_inlay_health.png-68affde2ae6ba10eed1bb93e128dfc82.ctex
+[  33% ] savepack | Stockage du fichier en cours : res://assets/textures/cards/icons/mo_inlay_health.png.import
+[  35% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_plate_armor.png-09fd1401074ebfe9fe85a6e64ad6037c.ctex
+[  35% ] savepack | Stockage du fichier en cours : res://assets/textures/cards/icons/mo_plate_armor.png.import
+[  37% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_plate_shield.png-b13e0f7d1ddc2bf5d347dbb2f6ab3f45.ctex
+[  37% ] savepack | Stockage du fichier en cours : res://assets/textures/cards/icons/mo_plate_shield.png.import
+[  38% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_socket_bezel_attack.png-4ac4b448782ef8e5023623809c1abb62.ctex
+[  38% ] savepack | Stockage du fichier en cours : res://assets/textures/cards/icons/mo_socket_bezel_attack.png.import
+[  40% ] savepack | Stockage du fichier en cours : res://.godot/imported/mo_socket_bezel_health.png-2df460be5a1b0f0963242ac9bd710202.ctex
+[  40% ] savepack | Stockage du fichier en cours : res://assets/textures/cards/icons/mo_socket_bezel_health.png.import
+[  41% ] savepack | Stockage du fichier en cours : res://.godot/imported/frame_v03_gem_mask.svg-ff6045a9c2a1ee6c292f4b66c41dc5d0.ctex
+[  41% ] savepack | Stockage du fichier en cours : res://assets/textures/cards/frame_v03_gem_mask.svg.import
+[  43% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_liquid_resource_orb.gdc
+[  45% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_runner.gdc
+[  46% ] savepack | Stockage du fichier en cours : res://scripts/tests/capture_p005_r02.gdc
+[  48% ] savepack | Stockage du fichier en cours : res://scripts/tests/capture_p005_r01.gdc
+[  50% ] savepack | Stockage du fichier en cours : res://scripts/tests/capture_p005.gdc
+[  51% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_harness_self.gdc
+[  53% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_combat_screen.gdc
+[  54% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_card_presentation.gdc
+[  56% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_asserts.gdc
+[  58% ] savepack | Stockage du fichier en cours : res://resources/shaders/card_rarity_gems.gdshader
+[  59% ] savepack | Stockage du fichier en cours : res://resources/shaders/liquid_resource_orb.gdshader
+[  61% ] savepack | Stockage du fichier en cours : res://.godot/exported/133200997/export-cfd7c8449330434f15bad614bc8233a2-fantasy_theme.res
+[  62% ] savepack | Stockage du fichier en cours : res://.godot/exported/133200997/export-04abb178a6a2f4e91928fefc33d2c3bd-combat_preview.scn
+[  64% ] savepack | Stockage du fichier en cours : res://.godot/exported/133200997/export-a0c2361821a6b63d9c358694a5b71a2f-combat_screen.scn
+[  66% ] savepack | Stockage du fichier en cours : res://.godot/exported/133200997/export-f65eb0e11777732b4101e84f01375e65-liquid_orbs_demo.scn
+[  66% ] savepack | Stockage du fichier en cours : res://.godot/exported/133200997/export-3e66f08da3a00001fd4bd70a920a71bd-liquid_resource_orb.scn
+[  68% ] savepack | Stockage du fichier en cours : res://.godot/exported/133200997/export-32fc11e9d91e54e84c4d967295187515-art001_integration_test.scn
+[  69% ] savepack | Stockage du fichier en cours : res://.godot/exported/133200997/export-ecdc3247a398bc5ccb68ae610ad26ef7-art002_card_integration_test.scn
+[  71% ] savepack | Stockage du fichier en cours : res://.godot/exported/133200997/export-46818751683302f7be71557466c25310-theme_showcase.scn
+[  73% ] savepack | Stockage du fichier en cours : res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+[  74% ] savepack | Stockage du fichier en cours : res://scripts/presentation/art001_integration_test.gdc
+[  76% ] savepack | Stockage du fichier en cours : res://scripts/presentation/art002_card_integration_test.gdc
+[  78% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_category_overlay.gdc
+[  79% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_content_overlay.gdc
+[  81% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_socket_overlay.gdc
+[  82% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_stat_overlay.gdc
+[  84% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_view_layout.gdc
+[  86% ] savepack | Stockage du fichier en cours : res://scripts/presentation/combat_preview.gdc
+[  87% ] savepack | Stockage du fichier en cours : res://scripts/presentation/combat_preview_cards.gdc
+[  89% ] savepack | Stockage du fichier en cours : res://scripts/presentation/combat_screen.gdc
+[  90% ] savepack | Stockage du fichier en cours : res://scripts/presentation/liquid_orbs_demo.gdc
+[  92% ] savepack | Stockage du fichier en cours : res://scripts/presentation/liquid_resource_orb.gdc
+[  94% ] savepack | Stockage du fichier en cours : res://scripts/presentation/premium_combat_shell.gdc
+[  95% ] savepack | Stockage du fichier en cours : res://scripts/presentation/rarity_gem_treatment.gdc
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/ui_design_tokens.gdc
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_liquid_resource_orb.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_runner.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/tests/capture_p005_r02.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/tests/capture_p005_r01.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/tests/capture_p005.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_harness_self.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_combat_screen.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_card_presentation.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/tests/test_asserts.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://resources/themes/fantasy_theme.tres.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scenes/combat/combat_preview.tscn.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scenes/combat/combat_screen.tscn.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scenes/hud/liquid_orbs_demo.tscn.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scenes/hud/liquid_resource_orb.tscn.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scenes/ui/art001_integration_test.tscn.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scenes/ui/art002_card_integration_test.tscn.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scenes/ui/theme_showcase.tscn.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scenes/main.tscn.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/art001_integration_test.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/art002_card_integration_test.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_category_overlay.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_content_overlay.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_socket_overlay.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_stat_overlay.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/card_view_layout.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/combat_preview.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/combat_preview_cards.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/combat_screen.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/liquid_orbs_demo.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/liquid_resource_orb.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/premium_combat_shell.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/rarity_gem_treatment.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://scripts/presentation/ui_design_tokens.gd.remap
+[  97% ] savepack | Stockage du fichier en cours : res://.godot/global_script_class_cache.cfg
+[  97% ] savepack | Stockage du fichier en cours : res://.godot/uid_cache.bin
+[  97% ] savepack | Stockage du fichier en cours : res://project.binary
+[ DONE ] savepack
+
+Built: D:\Dev\MagicOdyssey\build\windows\MagicOdyssey.exe

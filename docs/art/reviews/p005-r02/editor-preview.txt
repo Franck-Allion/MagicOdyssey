@@ -1,0 +1,5 @@
+Isolated executable: C:\Users\franc\AppData\Local\Temp\MagicOdyssey-standalone-be0f0c3dd3e14f31aab2cf217062ee52\MagicOdyssey.exe
+Physical desktop: 1920x1080
+editor-preview : title=MagicOdyssey (DEBUG), client=1888x956, pid=39276
+editor-preview : ESC exit=0
+PASS: shell launch, 1 desktop windows, ESC exits with code 0, no remaining game process.

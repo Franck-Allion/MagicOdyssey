@@ -1,0 +1,9 @@
+Isolated executable: C:\Users\franc\AppData\Local\Temp\MagicOdyssey-standalone-5dafe21ce3ed4f54af5d94941d1488dd\MagicOdyssey.exe
+Physical desktop: 1920x1080
+default : title=MagicOdyssey, client=1888x956, pid=9428
+default : ESC exit=0
+1920x1080 : title=MagicOdyssey, client=1920x1080, pid=43768
+1920x1080 : ESC exit=0
+1280x720 : title=MagicOdyssey, client=1280x720, pid=23844
+1280x720 : ESC exit=0
+PASS: shell launch, 3 desktop windows, ESC exits with code 0, no remaining game process.

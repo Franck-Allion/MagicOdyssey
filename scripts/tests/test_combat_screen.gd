@@ -123,9 +123,9 @@ func _test_hero_and_hand_zones(asserts: TestAsserts) -> void:
 	asserts.assert_true(opp_hero.position.y < bf_zone.position.y,
 		"Opponent Hero Zone (y=%.1f) must sit above Battlefield (y=%.1f)" % [opp_hero.position.y, bf_zone.position.y])
 
-	# Player Hero is positioned in lower screen region below battlefield
-	asserts.assert_true(player_hero.position.y > bf_zone.position.y,
-		"Player Hero Zone (y=%.1f) must sit below Battlefield (y=%.1f)" % [player_hero.position.y, bf_zone.position.y])
+	# R02 dedicates the left column to the player hero.
+	asserts.assert_true(player_hero.position.x + player_hero.size.x <= bf_zone.position.x,
+		"Player Hero Zone must sit fully to the left of Battlefield")
 
 	# Hand zone sits in lower screen region and between Player Hero and Action Bar
 	asserts.assert_true(hand_zone.position.y > bf_zone.position.y,
@@ -135,11 +135,12 @@ func _test_hero_and_hand_zones(asserts: TestAsserts) -> void:
 	asserts.assert_true(action_zone.position.x > hand_zone.position.x,
 		"Action Bar Zone must be horizontally placed to the right of Player Hand Zone")
 
-	# Hand zone geometry supports up to 7 cards (width >= 1200 px, height >= 320 px for 316 px cards)
-	asserts.assert_true(hand_zone.size.x >= 1200.0,
-		"Player Hand Zone width (%.1f px) must be >= 1200 px to accommodate 7 cards" % hand_zone.size.x)
-	asserts.assert_true(hand_zone.size.y >= 320.0,
-		"Player Hand Zone height (%.1f px) must be >= 320 px for standard 316 px cards + hover headroom" % hand_zone.size.y)
+	# Compact idle fan reserves less height while allowing future upward lift.
+	asserts.assert_true(hand_zone.size.x >= 1000.0, "Hand has room for seven overlapping cards")
+	asserts.assert_true(hand_zone.size.y < 320.0, "Idle fan height is reduced from P005")
+	asserts.assert_false(hand_zone.clip_contents, "Future hovered cards may lift above the idle zone")
+	asserts.assert_true(player_hero.size.y > hand_zone.size.y, "Left hero column has dedicated vertical space")
+	asserts.assert_true(screen.has_node("CombatLayout/OpponentHand"), "Opponent card-back region exists")
 
 	screen.free()
 
