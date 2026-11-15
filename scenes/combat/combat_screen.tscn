@@ -241,9 +241,9 @@ mouse_filter = 2
 [node name="Portrait" type="TextureRect" parent="CombatLayout/PlayerHeroZone"]
 layout_mode = 0
 offset_left = 62.0
-offset_top = 72.0
+offset_top = 70.0
 offset_right = 210.0
-offset_bottom = 216.0
+offset_bottom = 214.0
 material = SubResource("portrait_mask")
 texture = SubResource("hero_close_crop")
 expand_mode = 1
@@ -253,9 +253,9 @@ mouse_filter = 2
 [node name="PortraitFrame" type="TextureRect" parent="CombatLayout/PlayerHeroZone"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 44.0
+offset_top = 42.0
 offset_right = 236.0
-offset_bottom = 244.0
+offset_bottom = 242.0
 texture = ExtResource("8_frame")
 expand_mode = 1
 stretch_mode = 5
@@ -263,10 +263,10 @@ mouse_filter = 2
 
 [node name="PlayerHealthOrb" parent="CombatLayout/PlayerHeroZone" instance=ExtResource("4_orb")]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 260.0
-offset_right = 231.0
-offset_bottom = 450.0
+offset_left = 46.0
+offset_top = 252.0
+offset_right = 226.0
+offset_bottom = 432.0
 housing_texture = ExtResource("9_housing")
 housing_modulate = Color(0.88, 0.86, 0.85, 1)
 resource_kind = 0
@@ -275,10 +275,10 @@ maximum_value = 30
 
 [node name="PlayerManaOrb" parent="CombatLayout/PlayerHeroZone" instance=ExtResource("4_orb")]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 476.0
-offset_right = 231.0
-offset_bottom = 666.0
+offset_left = 46.0
+offset_top = 452.0
+offset_right = 226.0
+offset_bottom = 632.0
 housing_texture = ExtResource("9_housing")
 housing_modulate = Color(0.88, 0.86, 0.85, 1)
 resource_kind = 1

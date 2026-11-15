@@ -151,19 +151,19 @@ func _layout_contents() -> void:
 		reservoir.size = Vector2.ONE * diameter * 0.9
 		reservoir.position = origin + diameter * Vector2(0.044, 0.0504)
 		var label: Label = $Values as Label
-		label.position = origin + Vector2(diameter * 0.13, diameter * 0.44)
-		label.size = Vector2(diameter * 0.74, diameter * 0.26)
-		label.add_theme_font_size_override("font_size", maxi(14, roundi(diameter * 0.20)))
+		label.position = origin + Vector2(diameter * 0.12, diameter * 0.44)
+		label.size = Vector2(diameter * 0.76, diameter * 0.26)
+		label.add_theme_font_size_override("font_size", maxi(14, roundi(diameter * 0.17)))
 		label.add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
 		label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))
-		label.add_theme_constant_override("outline_size", 3)
+		label.add_theme_constant_override("outline_size", 2)
 		var kind_label: Label = $Kind as Label
 		kind_label.position = origin + Vector2(diameter * 0.22, diameter * 0.30)
-		kind_label.size = Vector2(diameter * 0.56, diameter * 0.14)
-		kind_label.add_theme_font_size_override("font_size", maxi(11, roundi(diameter * 0.11)))
+		kind_label.size = Vector2(diameter * 0.56, diameter * 0.13)
+		kind_label.add_theme_font_size_override("font_size", maxi(10, roundi(diameter * 0.085)))
 		kind_label.add_theme_color_override("font_color", TOKENS.color_token(&"secondary"))
 		kind_label.add_theme_color_override("font_outline_color", TOKENS.color_token(&"background"))
-		kind_label.add_theme_constant_override("outline_size", 2)
+		kind_label.add_theme_constant_override("outline_size", 1)
 	else:
 		var label: Label = $Values as Label
 		label.position = origin + Vector2(diameter * 0.13, diameter * 0.40)
@@ -187,9 +187,9 @@ func _fit_value_label() -> void:
 		return
 	var diameter: float = minf(size.x, size.y)
 	var font: Font = label.get_theme_font("font")
-	var base_scale: float = 0.20 if housing_texture != null else 0.205
+	var base_scale: float = 0.17 if housing_texture != null else 0.205
 	var font_size: int = maxi(1, roundi(diameter * base_scale))
-	var available: float = maxf(1.0, diameter * 0.65 - 8.0)
+	var available: float = maxf(1.0, diameter * 0.58 if housing_texture != null else diameter * 0.65 - 8.0)
 	while font_size > 1 and font.get_string_size(label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x > available:
 		font_size -= 1
 	label.add_theme_font_size_override("font_size", font_size)

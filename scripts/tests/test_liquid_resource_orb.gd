@@ -99,6 +99,11 @@ func _test_artwork_mounting(asserts: TestAsserts) -> void:
 	asserts.assert_equal(hp.housing_modulate, mana.housing_modulate, "Health and Mana share identical bronze modulation")
 	asserts.assert_true(is_equal_approx(hp.housing_modulate.a, 1.0), "Housing modulation preserves full opacity")
 	asserts.assert_true(hp.housing_modulate.r <= 1.0 and hp.housing_modulate.g <= 1.0 and hp.housing_modulate.b <= 1.0, "Housing modulation tones down golden excess")
+	# P005-R06D: Mana bottom clearance and safe-area fit
+	var bottom_clearance: float = zone.size.y - (mana.position.y + mana.size.y)
+	asserts.assert_true(bottom_clearance >= 60.0, "Mana orb has comfortable bottom breathing room (clearance=%.1f >= 60 px)" % bottom_clearance)
+	asserts.assert_equal(hp.size, Vector2(180, 180), "Health orb 180 px diameter")
+	asserts.assert_equal(mana.size, Vector2(180, 180), "Mana orb 180 px diameter")
 	asserts.assert_true(screen.get_opponent_health_orb().housing_texture == null and screen.get_opponent_mana_orb().housing_texture == null, "Opponent keeps procedural mounting")
 	for orb: LiquidResourceOrb in [hp, mana]:
 		orb._layout_contents()
@@ -112,6 +117,12 @@ func _test_artwork_mounting(asserts: TestAsserts) -> void:
 		asserts.assert_true(kind_label.get_theme_constant("outline_size") < values_label.get_theme_constant("outline_size"), "Caption outline is more delicate than numeric outline")
 		asserts.assert_equal(kind_label.get_theme_color("font_color"), TOKENS.color_token(&"secondary"), "Caption uses muted secondary text color")
 		asserts.assert_equal(values_label.get_theme_color("font_color"), TOKENS.color_token(&"text_bright"), "Numeric value uses focal text_bright color")
+		# P005-R06D: Check that standard 30/30 value has at least 10 px clearance on each side inside glass aperture
+		orb.set_resource_values(30, 30, false)
+		var sz_30: int = values_label.get_theme_font_size("font_size")
+		var w_30: float = values_label.get_theme_font("font").get_string_size(values_label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, sz_30).x
+		var glass_aperture_w: float = orb.size.x * 0.664
+		asserts.assert_true(glass_aperture_w - w_30 >= 20.0, "30/30 has at least 10 px safe margin on each side (glass=%.1f, w=%.1f, margin=%.1f)" % [glass_aperture_w, w_30, (glass_aperture_w - w_30) * 0.5])
 		for values: Vector2i in [Vector2i(30, 30), Vector2i(18, 30), Vector2i(0, 30), Vector2i(100, 100), Vector2i(1, 1), Vector2i(5, 5), Vector2i(0, 5), Vector2i(10, 10)]:
 			orb.set_resource_values(values.x, values.y, false)
 			var label: Label = orb.get_node("Values") as Label
