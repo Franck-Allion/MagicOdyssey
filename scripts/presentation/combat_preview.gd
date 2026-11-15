@@ -54,3 +54,6 @@ func _review_resource_step() -> void:
 	_review_step = (_review_step + 1) % 4
 	screen.get_player_health_orb().set_resource_values(health[_review_step], 30)
 	screen.get_player_mana_orb().set_resource_values(mana[_review_step], 5)
+	# Explicit --preview-animate fixture only, never the default opponent 0/0 state.
+	screen.get_opponent_health_orb().set_resource_values(health[_review_step], 30)
+	screen.get_opponent_mana_orb().set_resource_values(mana[_review_step], 5)

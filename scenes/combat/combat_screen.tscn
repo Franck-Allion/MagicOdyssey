@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=19 format=3]
 
 [ext_resource type="Theme" path="res://resources/themes/fantasy_theme.tres" id="1_theme"]
 [ext_resource type="Script" path="res://scripts/presentation/combat_screen.gd" id="2_script"]
@@ -11,6 +11,15 @@
 [ext_resource type="Texture2D" path="res://assets/_source/lot1/hud/player/mo_hud_player_portrait_frame_v01.png" id="8_frame"]
 [ext_resource type="Texture2D" path="res://assets/_source/lot1/hud/player/mo_hud_player_health_orb_housing_v01.png" id="9_housing"]
 [ext_resource type="Shader" path="res://resources/shaders/hero_portrait_aperture.gdshader" id="10_aperture"]
+[ext_resource type="Texture2D" path="res://assets/_source/lot1/hud/opponent/mo_hud_opponent_panel_v01.png" id="11_opponent_panel"]
+
+[sub_resource type="AtlasTexture" id="opponent_panel_crop"]
+atlas = ExtResource("11_opponent_panel")
+region = Rect2(150, 12, 900, 1254)
+
+[sub_resource type="SystemFont" id="opponent_value_font"]
+font_names = PackedStringArray("Segoe UI", "Calibri", "Arial")
+font_weight = 700
 
 [sub_resource type="ShaderMaterial" id="portrait_mask"]
 shader = ExtResource("10_aperture")
@@ -104,13 +113,45 @@ offset_bottom = 84.0
 
 [node name="OpponentHeroZone" type="Panel" parent="CombatLayout"]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 30.0
-offset_right = 680.0
-offset_bottom = 190.0
-theme_type_variation = &"HeroFrame"
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 296.0
+offset_bottom = 320.0
+theme_override_styles/panel = SubResource("empty")
+mouse_filter = 2
+
+[node name="Backplate" type="TextureRect" parent="CombatLayout/OpponentHeroZone"]
+texture_filter = 4
+offset_right = 272.0
+offset_bottom = 296.0
+texture = SubResource("opponent_panel_crop")
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="Portrait" type="TextureRect" parent="CombatLayout/OpponentHeroZone"]
+offset_left = 104.0
+offset_top = 50.0
+offset_right = 169.0
+offset_bottom = 112.0
+texture = SubResource("hero_close_crop")
+material = SubResource("portrait_mask")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
+
+[node name="PortraitFrame" type="TextureRect" parent="CombatLayout/OpponentHeroZone"]
+offset_left = 92.0
+offset_top = 38.0
+offset_right = 180.0
+offset_bottom = 126.0
+texture = ExtResource("8_frame")
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
 
 [node name="Name" type="Label" parent="CombatLayout/OpponentHeroZone"]
+visible = false
 layout_mode = 0
 offset_left = 22.0
 offset_top = 14.0
@@ -123,6 +164,7 @@ vertical_alignment = 1
 mouse_filter = 2
 
 [node name="DeckCount" type="Label" parent="CombatLayout/OpponentHeroZone"]
+visible = false
 layout_mode = 0
 offset_left = 22.0
 offset_top = 58.0
@@ -135,6 +177,7 @@ vertical_alignment = 1
 mouse_filter = 2
 
 [node name="GraveyardCount" type="Label" parent="CombatLayout/OpponentHeroZone"]
+visible = false
 layout_mode = 0
 offset_left = 22.0
 offset_top = 92.0
@@ -148,27 +191,77 @@ mouse_filter = 2
 
 [node name="OpponentHealthOrb" parent="CombatLayout/OpponentHeroZone" instance=ExtResource("4_orb")]
 layout_mode = 0
-offset_left = 168.0
-offset_top = 42.0
-offset_right = 258.0
-offset_bottom = 132.0
+offset_left = 58.0
+offset_top = 140.0
+offset_right = 102.0
+offset_bottom = 184.0
 resource_kind = 0
 current_value = 30
 maximum_value = 30
+housing_texture = ExtResource("9_housing")
+housing_modulate = Color(0.88, 0.86, 0.85, 1)
+internal_labels_visible = false
 
 [node name="OpponentManaOrb" parent="CombatLayout/OpponentHeroZone" instance=ExtResource("4_orb")]
 layout_mode = 0
-offset_left = 256.0
-offset_top = 42.0
-offset_right = 346.0
-offset_bottom = 132.0
+offset_left = 58.0
+offset_top = 194.0
+offset_right = 102.0
+offset_bottom = 238.0
 resource_kind = 1
 current_value = 0
 maximum_value = 0
+housing_texture = ExtResource("9_housing")
+housing_modulate = Color(0.88, 0.86, 0.85, 1)
+internal_labels_visible = false
+
+[node name="HealthCaption" type="Label" parent="CombatLayout/OpponentHeroZone"]
+offset_left = 110.0
+offset_top = 140.0
+offset_right = 224.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.741176, 0.709804, 0.647059, 1)
+text = "HP"
+mouse_filter = 2
+
+[node name="HealthValues" type="Label" parent="CombatLayout/OpponentHeroZone"]
+offset_left = 110.0
+offset_top = 157.0
+offset_right = 224.0
+offset_bottom = 190.0
+theme_override_fonts/font = SubResource("opponent_value_font")
+theme_override_font_sizes/font_size = 23
+theme_override_colors/font_outline_color = Color(0.047, 0.063, 0.094, 1)
+theme_override_constants/outline_size = 1
+text = "30 / 30"
+mouse_filter = 2
+
+[node name="ManaCaption" type="Label" parent="CombatLayout/OpponentHeroZone"]
+offset_left = 110.0
+offset_top = 194.0
+offset_right = 224.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.741176, 0.709804, 0.647059, 1)
+text = "MANA"
+mouse_filter = 2
+
+[node name="ManaValues" type="Label" parent="CombatLayout/OpponentHeroZone"]
+offset_left = 110.0
+offset_top = 211.0
+offset_right = 224.0
+offset_bottom = 244.0
+theme_override_fonts/font = SubResource("opponent_value_font")
+theme_override_font_sizes/font_size = 23
+theme_override_colors/font_outline_color = Color(0.047, 0.063, 0.094, 1)
+theme_override_constants/outline_size = 1
+text = "0 / 0"
+mouse_filter = 2
 
 [node name="OpponentHand" type="Control" parent="CombatLayout"]
 layout_mode = 0
-offset_left = 704.0
+offset_left = 320.0
 offset_top = 30.0
 offset_right = 1600.0
 offset_bottom = 190.0

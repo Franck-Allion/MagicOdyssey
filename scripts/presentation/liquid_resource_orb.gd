@@ -4,6 +4,9 @@ extends Control
 
 enum ResourceKind { HEALTH, MANA }
 
+## Emitted immediately after clamping, including updates with unchanged fill ratio.
+signal resource_values_changed(current: int, maximum: int)
+
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
 const LIQUID_SHADER: Shader = preload("res://resources/shaders/liquid_resource_orb.gdshader")
 const TRANSITION_SECONDS: float = 0.28
@@ -15,6 +18,14 @@ const TRANSITION_SECONDS: float = 0.28
 		_update_labels()
 @export var current_value: int = 30
 @export var maximum_value: int = 30
+## Compact HUDs may provide external labels without duplicating the reservoir.
+@export var internal_labels_visible: bool = true:
+	set(value):
+		internal_labels_visible = value
+		for label_name: String in ["Kind", "Values"]:
+			var label: Label = get_node_or_null(label_name) as Label
+			if label != null:
+				label.visible = value
 ## Optional foreground artwork; null preserves the reusable procedural orb.
 @export var housing_texture: Texture2D:
 	set(value):
@@ -62,6 +73,7 @@ func set_resource_values(current: int, maximum: int, animate: bool = true) -> vo
 	current_value = clampi(current, 0, maximum_value)
 	var target: float = float(current_value) / float(maximum_value) if maximum_value > 0 else 0.0
 	_update_labels() # Exact values never wait for the fluid animation.
+	resource_values_changed.emit(current_value, maximum_value)
 	if animate and _animation_enabled and is_inside_tree():
 		if is_equal_approx(target, _target_ratio):
 			return
@@ -134,6 +146,8 @@ func _update_labels() -> void:
 	tooltip_text = "%s: %d / %d" % ["Health" if resource_kind == ResourceKind.HEALTH else "Mana", current_value, maximum_value]
 
 func _layout_contents() -> void:
+	($Kind as Label).visible = internal_labels_visible
+	($Values as Label).visible = internal_labels_visible
 	var diameter: float = minf(size.x, size.y)
 	var origin: Vector2 = (size - Vector2.ONE * diameter) * 0.5
 	var reservoir: ColorRect = $Reservoir as ColorRect

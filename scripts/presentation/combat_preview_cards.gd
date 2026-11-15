@@ -24,6 +24,8 @@ var _card_blends: Array[float] = []
 
 const FRAME: Texture2D = preload("res://assets/_source/lot1/cards/frames/mo_card_frame_master_v03.png")
 const ART: Texture2D = preload("res://assets/_source/lot1/cards/illustrations/mo_illustration_arcane_knight_test_v01.png")
+const CARD_BACK: Texture2D = preload("res://assets/_source/lot1/hud/opponent/mo_hud_opponent_card_back_v01.png")
+const CARD_BACK_SHADER: Shader = preload("res://resources/shaders/card_back_opacity.gdshader")
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_PASS if not face_down else Control.MOUSE_FILTER_IGNORE
@@ -168,25 +170,14 @@ func rebuild() -> void:
 		card.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		add_child(card)
 		if face_down:
-			var back: Panel = Panel.new()
+			var back: TextureRect = _texture(card, CARD_BACK, card.size)
 			back.name = "CardBack"
-			back.size = card.size
-			back.theme_type_variation = &"HeroFrame"
-			var housing: StyleBoxFlat = UIDesignTokens.THEME.get_stylebox("panel", &"HeroFrame").duplicate() as StyleBoxFlat
-			housing.set_border_width_all(16)
-			housing.set_corner_radius_all(65)
-			housing.shadow_size = 32
-			back.add_theme_stylebox_override("panel", housing)
-			back.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			card.add_child(back)
-			var emblem: Label = Label.new()
-			emblem.text = "◇\nM O\n◇"
-			emblem.size = card.size
-			emblem.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-			emblem.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-			emblem.add_theme_font_size_override("font_size", 180)
-			emblem.add_theme_color_override("font_color", UIDesignTokens.color_token(&"accent"))
-			card.add_child(emblem)
+			back.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			back.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+			var opacity: ShaderMaterial = ShaderMaterial.new()
+			opacity.shader = CARD_BACK_SHADER
+			back.material = opacity
+			card.z_index = index
 		else:
 			var aperture: Control = Control.new()
 			aperture.position = CardViewLayout.APERTURE_BOUNDS.position
@@ -328,6 +319,8 @@ func get_card_blend(index: int) -> float:
 
 ## Programmatic / deterministic inspection contract (used by tests & captures).
 func set_inspected_card(index: int, blend: float = 1.0) -> void:
+	if face_down:
+		return
 	selected_index = index
 	_target_index = index
 	var count: int = clampi(display_count, 0, 10)

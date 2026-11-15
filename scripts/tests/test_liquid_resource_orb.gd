@@ -104,7 +104,8 @@ func _test_artwork_mounting(asserts: TestAsserts) -> void:
 	asserts.assert_true(bottom_clearance >= 60.0, "Mana orb has comfortable bottom breathing room (clearance=%.1f >= 60 px)" % bottom_clearance)
 	asserts.assert_equal(hp.size, Vector2(180, 180), "Health orb 180 px diameter")
 	asserts.assert_equal(mana.size, Vector2(180, 180), "Mana orb 180 px diameter")
-	asserts.assert_true(screen.get_opponent_health_orb().housing_texture == null and screen.get_opponent_mana_orb().housing_texture == null, "Opponent keeps procedural mounting")
+	asserts.assert_equal(screen.get_opponent_health_orb().housing_texture, hp.housing_texture, "R07B opponent reuses approved mounting")
+	asserts.assert_false(screen.get_opponent_mana_orb().internal_labels_visible, "R07B miniature uses external text")
 	for orb: LiquidResourceOrb in [hp, mana]:
 		orb._layout_contents()
 		asserts.assert_equal(orb._orb_material.get_shader_parameter("external_housing"), true, "Procedural rim suppressed for player")

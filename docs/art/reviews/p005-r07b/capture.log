@@ -1,0 +1,71 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 551.86 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 Ti
+R07B GPU: 4.7.2-stable (official) / NVIDIA GeForce GTX 1660 Ti
+PASS: Card interior opaque over contrasting backgrounds
+PASS: Card exterior retains genuine transparency
+PASS: CAPTURE card_back_over_red.png
+PASS: CAPTURE card_back_over_green.png
+PASS: CAPTURE combat_screen_1080p.png
+PASS: CAPTURE opponent_hud_closeup_1080p.png
+PASS: CAPTURE opponent_hand_1080p.png
+PASS: Before GPU capture available
+PASS: Player, board and utilities bit-exact below header
+PASS: CAPTURE before_after_1080p.png
+PASS: Visible child contained: Backplate
+PASS: Visible child contained: Portrait
+PASS: Visible child contained: PortraitFrame
+PASS: Visible child contained: OpponentHealthOrb
+PASS: Visible child contained: Reservoir
+PASS: Visible child contained: Housing
+PASS: Visible child contained: OpponentManaOrb
+PASS: Visible child contained: Reservoir
+PASS: Visible child contained: Housing
+PASS: Visible child contained: HealthCaption
+PASS: Visible child contained: HealthValues
+PASS: Visible child contained: ManaCaption
+PASS: Visible child contained: ManaValues
+PASS: CAPTURE values_1080p_hp30_30.png
+PASS: CAPTURE values_1080p_hp18_30.png
+PASS: CAPTURE values_1080p_hp0_30.png
+PASS: CAPTURE values_1080p_hp100_100.png
+PASS: CAPTURE worst_case_closeup_1080p.png
+PASS: CAPTURE mana_1080p_0_0.png
+PASS: CAPTURE mana_1080p_1_1.png
+PASS: CAPTURE mana_1080p_5_5.png
+PASS: CAPTURE mana_1080p_10_10.png
+PASS: CAPTURE animation_1080p_0.png
+PASS: CAPTURE animation_1080p_1.png
+PASS: Miniature OpponentHealthOrb GPU animation 1080p
+PASS: Miniature OpponentManaOrb GPU animation 1080p
+PASS: CAPTURE combat_screen_720p.png
+PASS: CAPTURE opponent_hud_closeup_720p.png
+PASS: CAPTURE opponent_hand_720p.png
+PASS: Before GPU capture available
+PASS: Player, board and utilities bit-exact below header
+PASS: Visible child contained: Backplate
+PASS: Visible child contained: Portrait
+PASS: Visible child contained: PortraitFrame
+PASS: Visible child contained: OpponentHealthOrb
+PASS: Visible child contained: Reservoir
+PASS: Visible child contained: Housing
+PASS: Visible child contained: OpponentManaOrb
+PASS: Visible child contained: Reservoir
+PASS: Visible child contained: Housing
+PASS: Visible child contained: HealthCaption
+PASS: Visible child contained: HealthValues
+PASS: Visible child contained: ManaCaption
+PASS: Visible child contained: ManaValues
+PASS: CAPTURE values_720p_hp30_30.png
+PASS: CAPTURE values_720p_hp18_30.png
+PASS: CAPTURE values_720p_hp0_30.png
+PASS: CAPTURE values_720p_hp100_100.png
+PASS: CAPTURE worst_case_closeup_720p.png
+PASS: CAPTURE mana_720p_0_0.png
+PASS: CAPTURE mana_720p_1_1.png
+PASS: CAPTURE mana_720p_5_5.png
+PASS: CAPTURE mana_720p_10_10.png
+PASS: CAPTURE animation_720p_0.png
+PASS: CAPTURE animation_720p_1.png
+PASS: Miniature OpponentHealthOrb GPU animation 720p
+PASS: Miniature OpponentManaOrb GPU animation 720p
+R07B GPU RESULT: PASS

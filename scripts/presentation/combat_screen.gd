@@ -44,6 +44,23 @@ func _ready() -> void:
 		theme = TOKENS.THEME
 	resized.connect(_apply_responsive_layout)
 	_apply_responsive_layout()
+	_connect_opponent_resource_labels()
+
+func _connect_opponent_resource_labels() -> void:
+	var health: LiquidResourceOrb = get_opponent_health_orb()
+	var mana: LiquidResourceOrb = get_opponent_mana_orb()
+	if not health.resource_values_changed.is_connected(_update_opponent_health_label):
+		health.resource_values_changed.connect(_update_opponent_health_label)
+	if not mana.resource_values_changed.is_connected(_update_opponent_mana_label):
+		mana.resource_values_changed.connect(_update_opponent_mana_label)
+	_update_opponent_health_label(health.current_value, health.maximum_value)
+	_update_opponent_mana_label(mana.current_value, mana.maximum_value)
+
+func _update_opponent_health_label(current: int, maximum: int) -> void:
+	(get_opponent_hero_zone().get_node("HealthValues") as Label).text = "%d / %d" % [current, maximum]
+
+func _update_opponent_mana_label(current: int, maximum: int) -> void:
+	(get_opponent_hero_zone().get_node("ManaValues") as Label).text = "%d / %d" % [current, maximum]
 
 ## Responsive layout management
 ## Scales and centers the combat layout proportionally while background & overlay fill viewport.

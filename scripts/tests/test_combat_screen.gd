@@ -14,6 +14,7 @@ func run_suite(asserts: TestAsserts, failure_mode: bool = false) -> void:
 	_test_battlefield_rows_and_semantics(asserts)
 	_test_hero_and_hand_zones(asserts)
 	_test_bottom_left_hud(asserts)
+	_test_opponent_hud_and_card_backs(asserts)
 	_test_action_bar_and_button(asserts)
 	_test_adaptive_fan(asserts)
 	_test_hand_hover_and_picking(asserts)
@@ -460,8 +461,8 @@ func _test_bottom_left_hud(asserts: TestAsserts) -> void:
 		asserts.assert_true(Rect2(Vector2.ZERO, hero.size).encloses(child.get_rect()), "Child fully inside backplate: " + names[i])
 	asserts.assert_true(screen.get_player_health_orb() == hero.get_node("PlayerHealthOrb"), "Stable Health path/API")
 	asserts.assert_true(screen.get_player_mana_orb() == hero.get_node("PlayerManaOrb"), "Stable Mana path/API")
-	asserts.assert_equal(screen.get_opponent_hero_zone().get_rect(), Rect2(320, 30, 360, 160), "Opponent HUD remains fixed")
-	asserts.assert_equal((screen.get_node("CombatLayout/OpponentHand") as Control).get_rect(), Rect2(704, 30, 896, 160), "Opponent hand remains fixed")
+	asserts.assert_equal(screen.get_opponent_hero_zone().get_rect(), Rect2(24, 24, 272, 296), "R07B moves opponent into reserved envelope")
+	asserts.assert_equal((screen.get_node("CombatLayout/OpponentHand") as Control).get_rect(), Rect2(320, 30, 1280, 160), "R07B centers opponent hand above battlefield")
 	asserts.assert_equal(screen.get_player_hand_zone().get_rect(), Rect2(320, 804, 1280, 252), "Player hand remains fixed")
 	asserts.assert_equal(screen.get_battlefield_zone().get_rect(), Rect2(320, 220, 1280, 560), "Master battlefield remains fixed")
 	for dimensions: Vector2 in [Vector2(1920, 1080), Vector2(1280, 720)]:
@@ -480,4 +481,93 @@ func _test_bottom_left_hud(asserts: TestAsserts) -> void:
 			asserts.assert_true((layout_transform * zone.get_rect()).position.x - bounds.end.x >= 23.9 * factor, "Horizontal gutter preserved")
 		for child_name: String in names:
 			asserts.assert_true(bounds.encloses(layout_transform * hero.get_transform() * (hero.get_node(child_name) as Control).get_rect()), "Scaled child contained: " + child_name)
+	screen.free()
+
+func _test_opponent_hud_and_card_backs(asserts: TestAsserts) -> void:
+	asserts.set_current_test("r07b:opponent_hud_and_hidden_hand")
+	var screen: CombatScreen = COMBAT_SCREEN_SCENE.instantiate() as CombatScreen
+	screen._connect_opponent_resource_labels()
+	# Reconnecting must not create duplicate signal delivery.
+	screen._connect_opponent_resource_labels()
+	var zone: Panel = screen.get_opponent_hero_zone()
+	var player: Panel = screen.get_player_hero_zone()
+	asserts.assert_false(zone.get_rect().intersects(player.get_rect()), "Hero envelopes separated")
+	asserts.assert_equal(zone.position.x + zone.size.x*0.5, player.position.x + player.size.x*0.5, "Shared left-column centerline")
+	asserts.assert_true(zone.get_theme_stylebox("panel") is StyleBoxEmpty, "No procedural opponent panel frame")
+	var backplate: TextureRect = zone.get_node("Backplate") as TextureRect
+	var atlas: AtlasTexture = backplate.texture as AtlasTexture
+	asserts.assert_equal(atlas.atlas.resource_path,"res://assets/_source/lot1/hud/opponent/mo_hud_opponent_panel_v01.png","Exact approved panel imports")
+	asserts.assert_true(atlas.region.encloses(Rect2(156,18,889,1239)),"Crop preserves painted silhouette")
+	asserts.assert_equal(backplate.stretch_mode,TextureRect.STRETCH_KEEP_ASPECT_CENTERED,"Uniform panel scaling")
+	var frame: TextureRect = zone.get_node("PortraitFrame") as TextureRect
+	var portrait: TextureRect = zone.get_node("Portrait") as TextureRect
+	asserts.assert_equal(frame.size.x,frame.size.y,"Portrait frame not stretched")
+	asserts.assert_true(absf(frame.position.x+frame.size.x*0.5-zone.size.x*0.5) <= 1,"Portrait frame on panel centerline")
+	# Approved frame's measured aperture center differs from its padded canvas center.
+	var aperture_center: Vector2 = frame.position + Vector2(626.5,615.0)*frame.size/1254.0
+	asserts.assert_true((portrait.position+portrait.size*0.5-aperture_center).length() <= 1,"Illustration centered in actual painted aperture")
+	asserts.assert_equal(frame.texture,(player.get_node("PortraitFrame") as TextureRect).texture,"Approved shared frame")
+	asserts.assert_true(frame.get_rect().encloses(portrait.get_rect()),"Portrait stays under frame aperture")
+	asserts.assert_true(portrait.material is ShaderMaterial,"Portrait corners masked")
+	for hidden_name: String in ["Name","DeckCount","GraveyardCount"]:
+		asserts.assert_false((zone.get_node(hidden_name) as CanvasItem).visible,"No old opponent text: "+hidden_name)
+	var hp: LiquidResourceOrb = screen.get_opponent_health_orb()
+	var mana: LiquidResourceOrb = screen.get_opponent_mana_orb()
+	asserts.assert_equal(hp.size,mana.size,"Equal indicator dimensions")
+	asserts.assert_true(hp.size.x <= 48 and hp.size.x >= 40,"Compact resource indicators")
+	asserts.assert_equal(hp.position.x,mana.position.x,"Resources share vertical axis")
+	asserts.assert_true(hp.position.y+hp.size.y < mana.position.y,"Separated resource rows")
+	for i: int in range(2):
+		var orb: LiquidResourceOrb = hp if i == 0 else mana
+		var caption: Label = zone.get_node("HealthCaption" if i == 0 else "ManaCaption") as Label
+		var value: Label = zone.get_node("HealthValues" if i == 0 else "ManaValues") as Label
+		orb._layout_contents()
+		asserts.assert_equal(orb.housing_texture,screen.get_player_health_orb().housing_texture,"Reuse approved mounting")
+		asserts.assert_false((orb.get_node("Kind") as Label).visible,"No internal caption")
+		asserts.assert_false((orb.get_node("Values") as Label).visible,"No duplicate internal value")
+		asserts.assert_true(value.position.x >= orb.position.x+orb.size.x+8,"Value clears housing")
+		asserts.assert_equal(caption.position.x,value.position.x,"Caption/value alignment")
+		asserts.assert_true(value.get_theme_font_size("font_size")*2.0/3.0 >= 15,"At least 15 physical px at 720p")
+		for values: Vector2i in [Vector2i(30,30),Vector2i(18,30),Vector2i(0,30),Vector2i(100,100),Vector2i(0,0),Vector2i(1,1),Vector2i(5,5),Vector2i(10,10)]:
+			orb.set_resource_values(values.x,values.y,false)
+			asserts.assert_equal(value.text,"%d / %d" % [values.x,values.y],"External values synchronize without animation delay")
+			var ink: Vector2 = value.get_theme_font("font").get_string_size(value.text,HORIZONTAL_ALIGNMENT_LEFT,-1,value.get_theme_font_size("font_size"))
+			asserts.assert_true(ink.x+2 <= value.size.x,"Real font metrics fit including outline")
+			asserts.assert_true(ink.y <= value.size.y,"Real font height fits")
+		orb.set_resource_values(300,30,false)
+		asserts.assert_equal(value.text,"30 / 30","External label uses clamped API values")
+		orb.set_resource_values(10,10)
+		asserts.assert_equal(value.text,"10 / 10","Same-ratio new maxima still synchronize")
+		orb.set_resource_values(3,5,false)
+		asserts.assert_true(is_equal_approx(orb.get_visible_fill_ratio(),0.6),"Compact API retains fill behavior")
+		orb.internal_labels_visible = true
+		asserts.assert_true((orb.get_node("Values") as Label).visible,"Internal label option reversible")
+		orb.internal_labels_visible = false
+	asserts.assert_true(screen.get_player_health_orb().internal_labels_visible,"Player internal values preserved")
+	var fan: CombatPreviewCards = screen.get_node("CombatLayout/OpponentHand") as CombatPreviewCards
+	fan.rebuild()
+	asserts.assert_equal(fan.get_child_count(),6,"Exactly six hidden cards")
+	for index: int in range(fan.get_child_count()):
+		var card: Control = fan.get_child(index) as Control
+		var back: TextureRect = card.get_node("CardBack") as TextureRect
+		asserts.assert_equal(card.get_child_count(),1,"Back-only tree has no front overlays, identity or emblem")
+		asserts.assert_equal(back.texture.resource_path,"res://assets/_source/lot1/hud/opponent/mo_hud_opponent_card_back_v01.png","Approved back on every card")
+		asserts.assert_equal(back.texture.get_size(),card.size,"Native 1086x1448 coordinates")
+		asserts.assert_true(is_equal_approx(card.size.x/card.size.y,0.75) and card.scale.x == card.scale.y,"Uniform 3:4 cards")
+		asserts.assert_equal(card.z_index,index,"Stable stacking")
+		asserts.assert_true(back.material is ShaderMaterial,"Near-opaque source interior made opaque without editing PNG")
+		asserts.assert_equal(card.mouse_filter,Control.MOUSE_FILTER_IGNORE,"Card ignores input")
+		asserts.assert_equal(back.mouse_filter,Control.MOUSE_FILTER_IGNORE,"Back ignores input")
+		var pose: Transform2D = card.get_transform()
+		fan.set_inspected_card(index)
+		asserts.assert_equal(card.get_transform(),pose,"Programmatic inspection cannot expose opponent cards")
+		for corner: Vector2 in [Vector2.ZERO,Vector2(card.size.x,0),card.size,Vector2(0,card.size.y)]:
+			var point: Vector2 = fan.position + card.get_transform()*corner
+			for factor: float in [1.0,2.0/3.0]:
+				asserts.assert_true(Rect2(Vector2.ZERO,Vector2(1920,1080)*factor).has_point(point*factor),"Opponent fan inside target viewport")
+			asserts.assert_true(point.y < screen.get_battlefield_zone().position.y,"Card clears tactical battlefield")
+	asserts.assert_equal(fan.pick_card_at(fan.size*0.5),-1,"Hidden fan never picks")
+	asserts.assert_equal(fan.get_hovered_index(),-1,"Hidden fan cannot hover")
+	asserts.assert_true(fan.face_down,"Opponent stays face down")
+	asserts.assert_false((screen.get_node("CombatLayout/PlayerHandZone/Fan") as CombatPreviewCards).face_down,"Player face-up cards preserved")
 	screen.free()

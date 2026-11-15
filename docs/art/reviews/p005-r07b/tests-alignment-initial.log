@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+==================================================
+MagicOdyssey — Native Headless Test Runner
+Engine: 4.7.2-stable (official)
+==================================================
+[RUN] TestHarnessSelf
+[RUN] TestCardPresentation
+[RUN] TestCombatScreen
+[r07b:opponent_hud_and_hidden_hand] FAIL: Illustration centered in frame aperture — Expected TRUE but was FALSE
+[RUN] TestLiquidResourceOrb
+--------------------------------------------------
+Test Execution Summary:
+  Total Assertions: 1818
+  Passed:           1817
+  Failed:           1
+==================================================
+RESULT: FAILED (1 failures recorded)

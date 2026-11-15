@@ -1,0 +1,10 @@
+python : Traceback (most recent call last):
+Au caractère Ligne:2 : 1
++ python docs/art/reviews/p005-r07b/analyze.py *> docs/art/reviews/p005 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+  File "D:\Dev\MagicOdyssey\docs\art\reviews\p005-r07b\analyze.py", line 46, in <module>
+    assert count == 0, f'Unexpected production difference: {height} {name}'
+           ^^^^^^^^^^
+AssertionError: Unexpected production difference: 720 battlefield

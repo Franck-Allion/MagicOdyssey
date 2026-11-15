@@ -1,0 +1,305 @@
+{
+  "assets": [
+    {
+      "path": "assets\\_source\\lot1\\hud\\opponent\\mo_hud_opponent_card_back_v01.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_bbox": [
+        35,
+        28,
+        1043,
+        1420
+      ],
+      "visible_alpha_gt8_bbox": [
+        45,
+        31,
+        1041,
+        1417
+      ],
+      "center_alpha": 253,
+      "transparent_pixels": 190158,
+      "sha256": "ce5d3e2873b4db7747121cda2e4b5abd4a11dc09804679603f4c18385617f681"
+    },
+    {
+      "path": "assets\\_source\\lot1\\hud\\opponent\\mo_hud_opponent_panel_v01.png",
+      "size": [
+        1202,
+        1308
+      ],
+      "mode": "RGBA",
+      "alpha_bbox": [
+        0,
+        16,
+        1182,
+        1308
+      ],
+      "visible_alpha_gt8_bbox": [
+        156,
+        18,
+        1045,
+        1257
+      ],
+      "center_alpha": 253,
+      "transparent_pixels": 662820,
+      "sha256": "cab582589724f2df0986efbaca4b2b2118fdf70d951684bc13afb216a39202d4"
+    },
+    {
+      "path": "assets\\_source\\lot1\\hud\\player\\mo_hud_player_portrait_frame_v01.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_bbox": [
+        46,
+        22,
+        1208,
+        1193
+      ],
+      "visible_alpha_gt8_bbox": [
+        46,
+        22,
+        1208,
+        1193
+      ],
+      "center_alpha": 0,
+      "transparent_pixels": 1241302,
+      "sha256": "ba4e8a35cd786cfb2fd1125755dc17ce7d4a0062644ebbb75e10f5db6788ca91"
+    },
+    {
+      "path": "assets\\_source\\lot1\\hud\\player\\mo_hud_player_health_orb_housing_v01.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_bbox": [
+        13,
+        0,
+        1242,
+        1253
+      ],
+      "visible_alpha_gt8_bbox": [
+        13,
+        0,
+        1242,
+        1253
+      ],
+      "center_alpha": 0,
+      "transparent_pixels": 1185554,
+      "sha256": "ce58a60fd27e90988828292c02b2a8b6a7eb76d62fa1f140d20b3d2c9546ab0b"
+    }
+  ],
+  "unchanged_regions": [
+    {
+      "height": 1080,
+      "region": "player_hud",
+      "differing_pixels": 0,
+      "max_channel_delta": 0
+    },
+    {
+      "height": 1080,
+      "region": "battlefield",
+      "differing_pixels": 0,
+      "max_channel_delta": 0
+    },
+    {
+      "height": 1080,
+      "region": "player_hand_with_hover_space",
+      "differing_pixels": 0,
+      "max_channel_delta": 0
+    },
+    {
+      "height": 1080,
+      "region": "utilities",
+      "differing_pixels": 0,
+      "max_channel_delta": 0
+    },
+    {
+      "height": 720,
+      "region": "player_hud",
+      "differing_pixels": 0,
+      "max_channel_delta": 0
+    },
+    {
+      "height": 720,
+      "region": "battlefield",
+      "differing_pixels": 6,
+      "max_channel_delta": 1
+    },
+    {
+      "height": 720,
+      "region": "player_hand_with_hover_space",
+      "differing_pixels": 0,
+      "max_channel_delta": 0
+    },
+    {
+      "height": 720,
+      "region": "utilities",
+      "differing_pixels": 0,
+      "max_channel_delta": 0
+    }
+  ],
+  "desktop_animation": [
+    {
+      "mode": "default",
+      "orb": "opponent_hp",
+      "consecutive_changed_pixels": [
+        0,
+        13,
+        523,
+        15,
+        520,
+        54,
+        354
+      ]
+    },
+    {
+      "mode": "default",
+      "orb": "opponent_mana",
+      "consecutive_changed_pixels": [
+        16,
+        11,
+        15,
+        17,
+        519,
+        61,
+        367
+      ]
+    },
+    {
+      "mode": "default",
+      "orb": "player_hp",
+      "consecutive_changed_pixels": [
+        0,
+        1360,
+        8738,
+        33,
+        8725,
+        456,
+        5584
+      ]
+    },
+    {
+      "mode": "default",
+      "orb": "player_mana",
+      "consecutive_changed_pixels": [
+        32,
+        33,
+        34,
+        34,
+        8726,
+        474,
+        5584
+      ]
+    },
+    {
+      "mode": "1920x1080",
+      "orb": "opponent_hp",
+      "consecutive_changed_pixels": [
+        0,
+        15,
+        671,
+        19,
+        667,
+        411,
+        60
+      ]
+    },
+    {
+      "mode": "1920x1080",
+      "orb": "opponent_mana",
+      "consecutive_changed_pixels": [
+        15,
+        15,
+        14,
+        18,
+        668,
+        427,
+        68
+      ]
+    },
+    {
+      "mode": "1920x1080",
+      "orb": "player_hp",
+      "consecutive_changed_pixels": [
+        0,
+        1419,
+        10869,
+        41,
+        10922,
+        5804,
+        563
+      ]
+    },
+    {
+      "mode": "1920x1080",
+      "orb": "player_mana",
+      "consecutive_changed_pixels": [
+        36,
+        36,
+        36,
+        40,
+        10985,
+        6331,
+        624
+      ]
+    },
+    {
+      "mode": "1280x720",
+      "orb": "opponent_hp",
+      "consecutive_changed_pixels": [
+        29,
+        89,
+        0,
+        0,
+        0,
+        176,
+        296
+      ]
+    },
+    {
+      "mode": "1280x720",
+      "orb": "opponent_mana",
+      "consecutive_changed_pixels": [
+        0,
+        297,
+        12,
+        13,
+        12,
+        10,
+        15
+      ]
+    },
+    {
+      "mode": "1280x720",
+      "orb": "player_hp",
+      "consecutive_changed_pixels": [
+        205,
+        1288,
+        0,
+        0,
+        0,
+        2597,
+        4950
+      ]
+    },
+    {
+      "mode": "1280x720",
+      "orb": "player_mana",
+      "consecutive_changed_pixels": [
+        0,
+        4957,
+        22,
+        20,
+        23,
+        22,
+        19
+      ]
+    }
+  ]
+}
+PASS: approved sources unchanged, player/utility regions bit-exact, battlefield deltas quantified, available desktop motion verified.
