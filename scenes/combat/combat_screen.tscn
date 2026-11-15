@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="Theme" path="res://resources/themes/fantasy_theme.tres" id="1_theme"]
 [ext_resource type="Script" path="res://scripts/presentation/combat_screen.gd" id="2_script"]
@@ -6,6 +6,18 @@
 [ext_resource type="PackedScene" path="res://scenes/hud/liquid_resource_orb.tscn" id="4_orb"]
 [ext_resource type="Script" path="res://scripts/presentation/combat_preview_cards.gd" id="5_cards"]
 [ext_resource type="Texture2D" path="res://assets/_source/lot1/cards/illustrations/mo_illustration_arcane_knight_test_v01.png" id="6_portrait"]
+
+[ext_resource type="Texture2D" path="res://assets/_source/lot1/hud/player/mo_hud_player_panel_v01.png" id="7_panel"]
+[ext_resource type="Texture2D" path="res://assets/_source/lot1/hud/player/mo_hud_player_portrait_frame_v01.png" id="8_frame"]
+[ext_resource type="Texture2D" path="res://assets/_source/lot1/hud/player/mo_hud_player_health_orb_housing_v01.png" id="9_housing"]
+[ext_resource type="Shader" path="res://resources/shaders/hero_portrait_aperture.gdshader" id="10_aperture"]
+
+[sub_resource type="ShaderMaterial" id="portrait_mask"]
+shader = ExtResource("10_aperture")
+
+[sub_resource type="AtlasTexture" id="panel_crop"]
+atlas = ExtResource("7_panel")
+region = Rect2(212, 0, 600, 1536)
 
 [sub_resource type="AtlasTexture" id="hero_close_crop"]
 atlas = ExtResource("6_portrait")
@@ -202,9 +214,19 @@ offset_left = 24.0
 offset_top = 220.0
 offset_right = 296.0
 offset_bottom = 920.0
-theme_type_variation = &"HeroFrame"
+theme_override_styles/panel = SubResource("empty")
+
+[node name="Backplate" type="TextureRect" parent="CombatLayout/PlayerHeroZone"]
+layout_mode = 0
+offset_right = 272.0
+offset_bottom = 700.0
+texture = SubResource("panel_crop")
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
 
 [node name="Name" type="Label" parent="CombatLayout/PlayerHeroZone"]
+visible = false
 layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
@@ -218,13 +240,25 @@ mouse_filter = 2
 
 [node name="Portrait" type="TextureRect" parent="CombatLayout/PlayerHeroZone"]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 64.0
-offset_right = 216.0
-offset_bottom = 224.0
+offset_left = 62.0
+offset_top = 74.0
+offset_right = 210.0
+offset_bottom = 218.0
+material = SubResource("portrait_mask")
 texture = SubResource("hero_close_crop")
 expand_mode = 1
 stretch_mode = 6
+mouse_filter = 2
+
+[node name="PortraitFrame" type="TextureRect" parent="CombatLayout/PlayerHeroZone"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 46.0
+offset_right = 236.0
+offset_bottom = 246.0
+texture = ExtResource("8_frame")
+expand_mode = 1
+stretch_mode = 5
 mouse_filter = 2
 
 [node name="PlayerHealthOrb" parent="CombatLayout/PlayerHeroZone" instance=ExtResource("4_orb")]
@@ -233,6 +267,7 @@ offset_left = 41.0
 offset_top = 256.0
 offset_right = 231.0
 offset_bottom = 446.0
+housing_texture = ExtResource("9_housing")
 resource_kind = 0
 current_value = 30
 maximum_value = 30
@@ -243,6 +278,7 @@ offset_left = 41.0
 offset_top = 474.0
 offset_right = 231.0
 offset_bottom = 664.0
+housing_texture = ExtResource("9_housing")
 resource_kind = 1
 current_value = 1
 maximum_value = 1

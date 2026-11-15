@@ -11,6 +11,8 @@ uniform float surface_tilt = 0.0;
 uniform float response = 0.0;
 uniform float restoration = 0.0;
 uniform float is_mana = 0.0;
+// Optional artwork mounting: opponents keep the original procedural presentation.
+uniform bool external_housing = false;
 uniform vec4 liquid_color : source_color = vec4(0.76, 0.23, 0.23, 1.0);
 uniform vec4 bronze_color : source_color = vec4(0.47, 0.39, 0.25, 1.0);
 uniform vec4 enamel_color : source_color = vec4(0.047, 0.063, 0.094, 1.0);
@@ -71,4 +73,7 @@ void fragment() {
 	reservoir += vec3(0.35, 0.66, 1.0) * shimmer * response * restoration * is_mana * 0.06;
 	vec3 color = mix(housing, reservoir, glass);
 	COLOR = vec4(color, outer);
+	if (external_housing) {
+		COLOR = vec4(reservoir, glass);
+	}
 }

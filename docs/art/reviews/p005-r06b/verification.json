@@ -1,0 +1,61 @@
+{
+  "alpha_exception": "Owner accepts 252-254 interior alpha ONLY for mo_hud_player_panel_v01.png",
+  "assets": [
+    {
+      "path": "assets\\_source\\lot1\\hud\\player\\mo_hud_player_health_orb_housing_v01.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "ce58a60fd27e90988828292c02b2a8b6a7eb76d62fa1f140d20b3d2c9546ab0b",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 1185554,
+      "opaque_pixels": 386962
+    },
+    {
+      "path": "assets\\_source\\lot1\\hud\\player\\mo_hud_player_panel_v01.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "11e45aa68ea60d242ef1f703dd17f152d89613c90934c43cc72967f316080671",
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_pixels": 855742,
+      "opaque_pixels": 0
+    },
+    {
+      "path": "assets\\_source\\lot1\\hud\\player\\mo_hud_player_portrait_frame_v01.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "ba4e8a35cd786cfb2fd1125755dc17ce7d4a0062644ebbb75e10f5db6788ca91",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 1241302,
+      "opaque_pixels": 311836
+    }
+  ],
+  "captures": [
+    {
+      "height": 1080,
+      "outside_player_hud_changed_pixels": 0,
+      "stable_metal_sample_pixels": 7408,
+      "metal_changed_pixels_across_8_frames": 0,
+      "settled_liquid_changed_pixels": 499
+    },
+    {
+      "height": 720,
+      "outside_player_hud_changed_pixels": 0,
+      "stable_metal_sample_pixels": 2492,
+      "metal_changed_pixels_across_8_frames": 0,
+      "settled_liquid_changed_pixels": 256
+    }
+  ],
+  "panel_enclosed_holes_at_half_alpha_threshold": 0
+}

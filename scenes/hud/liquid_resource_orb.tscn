@@ -11,6 +11,11 @@ script = ExtResource("1")
 [node name="Reservoir" type="ColorRect" parent="."]
 mouse_filter = 2
 
+[node name="Housing" type="TextureRect" parent="."]
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Kind" type="Label" parent="."]
 mouse_filter = 2
 text = "HP"

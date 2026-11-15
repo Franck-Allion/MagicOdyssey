@@ -1,0 +1,17 @@
+[
+  {
+    "mode": "default",
+    "desktop_motion_changed_pixels": 15830,
+    "hover_center_changed_pixels_in_hand": 112870
+  },
+  {
+    "mode": "1920x1080",
+    "desktop_motion_changed_pixels": 51950,
+    "hover_center_changed_pixels_in_hand": 142609
+  },
+  {
+    "mode": "1280x720",
+    "desktop_motion_changed_pixels": 11054,
+    "hover_center_changed_pixels_in_hand": 64588
+  }
+]

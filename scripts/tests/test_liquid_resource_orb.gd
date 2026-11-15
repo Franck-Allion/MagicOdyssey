@@ -58,6 +58,53 @@ func run_suite(asserts: TestAsserts, _failure_mode: bool = false) -> void:
 	asserts.assert_true(orb.is_processing(), "Animation can be re-enabled")
 	orb.free()
 	_test_integration(asserts)
+	_test_artwork_mounting(asserts)
+
+func _test_artwork_mounting(asserts: TestAsserts) -> void:
+	asserts.set_current_test("liquid_orb:approved_player_mounting")
+	var screen: CombatScreen = SCREEN_SCENE.instantiate() as CombatScreen
+	var zone: Panel = screen.get_player_hero_zone()
+	asserts.assert_true(zone.get_theme_stylebox("panel") is StyleBoxEmpty, "Old player panel border is neutralized")
+	var backplate: TextureRect = zone.get_node("Backplate") as TextureRect
+	var panel_atlas: AtlasTexture = backplate.texture as AtlasTexture
+	asserts.assert_true(panel_atlas != null and panel_atlas.atlas != null, "Approved panel imports")
+	asserts.assert_equal(panel_atlas.atlas.resource_path, "res://assets/_source/lot1/hud/player/mo_hud_player_panel_v01.png", "Exact approved panel")
+	asserts.assert_equal(backplate.stretch_mode, TextureRect.STRETCH_KEEP_ASPECT_CENTERED, "Panel uses uniform scaling")
+	asserts.assert_equal(zone.get_child(0), backplate, "Panel is behind foreground")
+	asserts.assert_false((zone.get_node("Name") as Label).visible, "Placeholder name cannot collide with panel crest")
+	var portrait: TextureRect = zone.get_node("Portrait") as TextureRect
+	var frame: TextureRect = zone.get_node("PortraitFrame") as TextureRect
+	asserts.assert_true(portrait.material is ShaderMaterial, "Illustration corners clipped under aperture")
+	asserts.assert_true(frame.get_index() > portrait.get_index(), "Portrait frame above illustration")
+	asserts.assert_equal(frame.size.x, frame.size.y, "Square frame not distorted")
+	asserts.assert_equal(frame.texture.get_size(), Vector2(1254, 1254), "Approved portrait frame imports")
+	var hp: LiquidResourceOrb = screen.get_player_health_orb()
+	var mana: LiquidResourceOrb = screen.get_player_mana_orb()
+	asserts.assert_equal(hp.housing_texture, mana.housing_texture, "Both resources reuse exactly one mounting")
+	asserts.assert_equal(hp.housing_texture.resource_path, "res://assets/_source/lot1/hud/player/mo_hud_player_health_orb_housing_v01.png", "Approved housing path")
+	asserts.assert_equal(hp.size, mana.size, "Matching external dimensions")
+	asserts.assert_equal(hp.position.x, mana.position.x, "Same vertical axis")
+	asserts.assert_true(screen.get_opponent_health_orb().housing_texture == null and screen.get_opponent_mana_orb().housing_texture == null, "Opponent keeps procedural mounting")
+	for orb: LiquidResourceOrb in [hp, mana]:
+		orb._layout_contents()
+		asserts.assert_equal(orb._orb_material.get_shader_parameter("external_housing"), true, "Procedural rim suppressed for player")
+		var mounting: TextureRect = orb.get_node("Housing") as TextureRect
+		asserts.assert_true(mounting.get_index() > orb.get_node("Reservoir").get_index() and mounting.get_index() < orb.get_node("Values").get_index(), "Liquid / artwork / text order")
+		asserts.assert_equal(mounting.mouse_filter, Control.MOUSE_FILTER_IGNORE, "Mounting does not intercept hand pointer")
+		for values: Vector2i in [Vector2i(30, 30), Vector2i(18, 30), Vector2i(0, 30), Vector2i(100, 100), Vector2i(1, 1), Vector2i(5, 5), Vector2i(0, 5), Vector2i(10, 10)]:
+			orb.set_resource_values(values.x, values.y, false)
+			var label: Label = orb.get_node("Values") as Label
+			var font_size: int = label.get_theme_font_size("font_size")
+			var width: float = label.get_theme_font("font").get_string_size(label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x
+			asserts.assert_true(width + 8 <= orb.size.x * 0.65, "All requested values fit aperture with outline")
+			asserts.assert_true(font_size * 2.0 / 3.0 >= 16, "Values at least 16 physical pixels at 720p")
+		# Optional mounting can be removed without losing the original reusable behavior.
+		orb.housing_texture = null
+		orb._layout_contents()
+		asserts.assert_equal(orb._orb_material.get_shader_parameter("external_housing"), false, "Null mounting restores procedural shader")
+		asserts.assert_false(mounting.visible, "No empty overlay after removing mounting")
+		asserts.assert_equal((orb.get_node("Reservoir") as Control).size, orb.size, "Default reservoir geometry restored")
+	screen.free()
 
 func _test_integration(asserts: TestAsserts) -> void:
 	asserts.set_current_test("liquid_orb:four_independent_instances")

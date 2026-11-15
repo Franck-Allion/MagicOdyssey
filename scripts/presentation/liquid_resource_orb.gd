@@ -15,6 +15,13 @@ const TRANSITION_SECONDS: float = 0.28
 		_update_labels()
 @export var current_value: int = 30
 @export var maximum_value: int = 30
+## Optional foreground artwork; null preserves the reusable procedural orb.
+@export var housing_texture: Texture2D:
+	set(value):
+		housing_texture = value
+		_configure_material()
+		if is_node_ready():
+			_layout_contents()
 
 var _orb_material: ShaderMaterial
 var _visible_ratio: float = 1.0
@@ -109,6 +116,7 @@ func _configure_material() -> void:
 	_orb_material.set_shader_parameter("is_mana", 1.0 if resource_kind == ResourceKind.MANA else 0.0)
 	_orb_material.set_shader_parameter("bronze_color", TOKENS.color_token(&"accent_dim"))
 	_orb_material.set_shader_parameter("enamel_color", TOKENS.color_token(&"background"))
+	_orb_material.set_shader_parameter("external_housing", housing_texture != null)
 
 func _update_labels() -> void:
 	var label: Label = get_node_or_null("Values") as Label
@@ -125,6 +133,16 @@ func _layout_contents() -> void:
 	var reservoir: ColorRect = $Reservoir as ColorRect
 	reservoir.position = origin
 	reservoir.size = Vector2.ONE * diameter
+	var housing: TextureRect = $Housing as TextureRect
+	housing.texture = housing_texture
+	housing.visible = housing_texture != null
+	housing.position = origin
+	housing.size = Vector2.ONE * diameter
+	if housing_texture != null:
+		# Measured source aperture: x=203..1036, y=209..1046 on 1254px.
+		# A 0.9d reservoir yields 0.675d glass, overlapping the aperture's inner lip.
+		reservoir.size = Vector2.ONE * diameter * 0.9
+		reservoir.position = origin + diameter * Vector2(0.044, 0.0504)
 	var label: Label = $Values as Label
 	label.position = origin + Vector2(diameter * 0.13, diameter * 0.40)
 	label.size = Vector2(diameter * 0.74, diameter * 0.26)
