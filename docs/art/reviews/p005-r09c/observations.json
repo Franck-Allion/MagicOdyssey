@@ -1,0 +1,97 @@
+{
+  "adapter": "NVIDIA GeForce GTX 1660 Ti",
+  "engine": "4.7.2-stable (official)",
+  "hover_measurements_720p": [
+    {
+      "card_bounds_720p": [
+        224.000015258789,
+        342.666656494141,
+        270.0,
+        360.0
+      ],
+      "file": "final_hover_left_720p.png",
+      "index": 0,
+      "rules_font_size_pt": 48,
+      "rules_physical_px_720p": 11.9337015151978,
+      "title": "Arcane Knight",
+      "title_font_size_pt": 68,
+      "title_physical_px_720p": 16.9060771465302
+    },
+    {
+      "card_bounds_720p": [
+        467.830688476563,
+        342.666656494141,
+        270.0,
+        360.0
+      ],
+      "file": "final_hover_center_720p.png",
+      "index": 4,
+      "rules_font_size_pt": 48,
+      "rules_physical_px_720p": 11.9337015151978,
+      "title": "Pyretic Inscription",
+      "title_font_size_pt": 68,
+      "title_physical_px_720p": 16.9060771465302
+    },
+    {
+      "card_bounds_720p": [
+        786.0,
+        342.666656494141,
+        270.0,
+        360.0
+      ],
+      "file": "final_hover_right_720p.png",
+      "index": 9,
+      "rules_font_size_pt": 47,
+      "rules_physical_px_720p": 11.6850827336311,
+      "title": "Archon of the Sundered Sphere",
+      "title_font_size_pt": 48,
+      "title_physical_px_720p": 11.9337015151978
+    },
+    {
+      "card_bounds_720p": [
+        786.0,
+        342.666656494141,
+        270.0,
+        360.0
+      ],
+      "file": "final_hover_long_title_720p.png",
+      "index": 9,
+      "rules_font_size_pt": 47,
+      "rules_physical_px_720p": 11.6850827336311,
+      "title": "Archon of the Sundered Sphere",
+      "title_font_size_pt": 48,
+      "title_physical_px_720p": 11.9337015151978
+    },
+    {
+      "card_bounds_720p": [
+        245.448501586914,
+        342.666656494141,
+        270.0,
+        360.0
+      ],
+      "file": "final_hover_spell_720p.png",
+      "index": 1,
+      "rules_font_size_pt": 46,
+      "rules_physical_px_720p": 11.4364639520645,
+      "title": "Arcane Study",
+      "title_font_size_pt": 68,
+      "title_physical_px_720p": 16.9060771465302
+    },
+    {
+      "card_bounds_720p": [
+        319.3798828125,
+        342.666656494141,
+        270.0,
+        360.0
+      ],
+      "file": "final_hover_equipment_720p.png",
+      "index": 2,
+      "rules_font_size_pt": 48,
+      "rules_physical_px_720p": 11.9337015151978,
+      "title": "Runic Relic",
+      "title_font_size_pt": 68,
+      "title_physical_px_720p": 16.9060771465302
+    }
+  ],
+  "timestamp": "2026-11-16T21:13:33"
+}
