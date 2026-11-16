@@ -1,0 +1,906 @@
+{
+  "baseline": "9ae59b634a86db5184dbda64c9efe5abb6f786a1",
+  "production_hashes_unchanged": 129,
+  "panels": {
+    "CombatLayout/ActionBarZone/Backplate": {
+      "visible_bounds": [
+        1647.1608961303461,
+        375.13441955193485,
+        1872.4908350305498,
+        1051.4725050916495
+      ],
+      "center": [
+        1759.825865580448,
+        713.3034623217922
+      ],
+      "source_bounds": [
+        8,
+        9,
+        655,
+        1951
+      ],
+      "uniform_scale": 0.34826883910386963
+    },
+    "CombatLayout/ActionBarZone/EndTurnButton/Artwork": {
+      "visible_bounds": [
+        1666.3800375050487,
+        893.1818177672639,
+        1852.9254266146934,
+        938.0908929232894
+      ],
+      "center": [
+        1759.6527320598711,
+        915.6363553452766
+      ],
+      "source_bounds": [
+        22,
+        13,
+        2074,
+        507
+      ],
+      "uniform_scale": 0.09090905902029464
+    },
+    "CombatLayout/MatchStatus/Backplate": {
+      "visible_bounds": [
+        1645.0509626274065,
+        265.35956964892415,
+        1874.8176670441676,
+        353.2463193657984
+      ],
+      "center": [
+        1759.934314835787,
+        309.3029445073613
+      ],
+      "source_bounds": [
+        8,
+        9,
+        1757,
+        678
+      ],
+      "uniform_scale": 0.13137032842582105
+    },
+    "CombatLayout/OpponentHeroZone/Backplate": {
+      "visible_bounds": [
+        55.19617224880383,
+        25.416267942583733,
+        265.03987240829343,
+        317.8755980861244
+      ],
+      "center": [
+        160.11802232854865,
+        171.64593301435406
+      ],
+      "source_bounds": [
+        6,
+        6,
+        895,
+        1245
+      ],
+      "uniform_scale": 0.23604465709728867
+    },
+    "CombatLayout/PlayerHeroZone/Backplate": {
+      "visible_bounds": [
+        38.96,
+        352.64000000000004,
+        278.32,
+        1034.4533333333334
+      ],
+      "center": [
+        158.64,
+        693.5466666666667
+      ],
+      "source_bounds": [
+        33,
+        15,
+        561,
+        1519
+      ],
+      "uniform_scale": 0.4533333333333333
+    }
+  },
+  "animation": {
+    "1080": {
+      "times_ms": [
+        23344,
+        24679,
+        26077,
+        27464,
+        29004,
+        30481
+      ],
+      "reservoirs": {
+        "0": [
+          {
+            "changed_pixels": 433,
+            "max_channel_difference": 22
+          },
+          {
+            "changed_pixels": 447,
+            "max_channel_difference": 25
+          },
+          {
+            "changed_pixels": 447,
+            "max_channel_difference": 25
+          },
+          {
+            "changed_pixels": 464,
+            "max_channel_difference": 26
+          },
+          {
+            "changed_pixels": 465,
+            "max_channel_difference": 26
+          }
+        ],
+        "1": [
+          {
+            "changed_pixels": 471,
+            "max_channel_difference": 25
+          },
+          {
+            "changed_pixels": 482,
+            "max_channel_difference": 29
+          },
+          {
+            "changed_pixels": 476,
+            "max_channel_difference": 29
+          },
+          {
+            "changed_pixels": 499,
+            "max_channel_difference": 30
+          },
+          {
+            "changed_pixels": 514,
+            "max_channel_difference": 29
+          }
+        ],
+        "2": [
+          {
+            "changed_pixels": 56,
+            "max_channel_difference": 6
+          },
+          {
+            "changed_pixels": 60,
+            "max_channel_difference": 5
+          },
+          {
+            "changed_pixels": 56,
+            "max_channel_difference": 5
+          },
+          {
+            "changed_pixels": 62,
+            "max_channel_difference": 5
+          },
+          {
+            "changed_pixels": 51,
+            "max_channel_difference": 4
+          }
+        ],
+        "3": [
+          {
+            "changed_pixels": 68,
+            "max_channel_difference": 6
+          },
+          {
+            "changed_pixels": 66,
+            "max_channel_difference": 5
+          },
+          {
+            "changed_pixels": 62,
+            "max_channel_difference": 5
+          },
+          {
+            "changed_pixels": 66,
+            "max_channel_difference": 5
+          },
+          {
+            "changed_pixels": 56,
+            "max_channel_difference": 5
+          }
+        ]
+      },
+      "scope": "motion evidence; PNG I/O and audit overlays make this unsuitable as a frame-rate benchmark"
+    },
+    "720": {
+      "times_ms": [
+        43601,
+        44323,
+        45068,
+        45989,
+        46816,
+        47740
+      ],
+      "reservoirs": {
+        "0": [
+          {
+            "changed_pixels": 236,
+            "max_channel_difference": 16
+          },
+          {
+            "changed_pixels": 234,
+            "max_channel_difference": 11
+          },
+          {
+            "changed_pixels": 252,
+            "max_channel_difference": 10
+          },
+          {
+            "changed_pixels": 223,
+            "max_channel_difference": 13
+          },
+          {
+            "changed_pixels": 240,
+            "max_channel_difference": 16
+          }
+        ],
+        "1": [
+          {
+            "changed_pixels": 246,
+            "max_channel_difference": 20
+          },
+          {
+            "changed_pixels": 233,
+            "max_channel_difference": 21
+          },
+          {
+            "changed_pixels": 251,
+            "max_channel_difference": 23
+          },
+          {
+            "changed_pixels": 258,
+            "max_channel_difference": 24
+          },
+          {
+            "changed_pixels": 253,
+            "max_channel_difference": 26
+          }
+        ],
+        "2": [
+          {
+            "changed_pixels": 35,
+            "max_channel_difference": 3
+          },
+          {
+            "changed_pixels": 35,
+            "max_channel_difference": 3
+          },
+          {
+            "changed_pixels": 31,
+            "max_channel_difference": 3
+          },
+          {
+            "changed_pixels": 31,
+            "max_channel_difference": 3
+          },
+          {
+            "changed_pixels": 25,
+            "max_channel_difference": 3
+          }
+        ],
+        "3": [
+          {
+            "changed_pixels": 34,
+            "max_channel_difference": 3
+          },
+          {
+            "changed_pixels": 35,
+            "max_channel_difference": 3
+          },
+          {
+            "changed_pixels": 36,
+            "max_channel_difference": 3
+          },
+          {
+            "changed_pixels": 34,
+            "max_channel_difference": 3
+          },
+          {
+            "changed_pixels": 27,
+            "max_channel_difference": 3
+          }
+        ]
+      },
+      "scope": "motion evidence; PNG I/O and audit overlays make this unsuitable as a frame-rate benchmark"
+    }
+  },
+  "hover": {
+    "1080": [
+      {
+        "bounds": [
+          336.0,
+          604.0,
+          330.0,
+          440.0
+        ],
+        "category": 0,
+        "index": 0,
+        "rules_physical_px": 14.5856351852417,
+        "title": "Arcane Knight",
+        "title_physical_px": 20.6629831790924
+      },
+      {
+        "bounds": [
+          739.246032714844,
+          604.0,
+          330.000061035156,
+          440.0
+        ],
+        "category": 1,
+        "index": 4,
+        "rules_physical_px": 14.5856351852417,
+        "title": "Pyretic Inscription",
+        "title_physical_px": 20.6629831790924
+      },
+      {
+        "bounds": [
+          1254.0,
+          604.0,
+          330.0,
+          440.0
+        ],
+        "category": 0,
+        "index": 9,
+        "rules_physical_px": 14.2817677855492,
+        "title": "Archon of the Sundered Sphere",
+        "title_physical_px": 12.7624307870865
+      },
+      {
+        "bounds": [
+          405.672729492188,
+          604.0,
+          330.0,
+          440.0
+        ],
+        "category": 1,
+        "index": 1,
+        "rules_physical_px": 13.9779003858566,
+        "title": "Arcane Study",
+        "title_physical_px": 20.6629831790924
+      },
+      {
+        "bounds": [
+          516.56982421875,
+          604.0,
+          330.0,
+          440.0
+        ],
+        "category": 2,
+        "index": 2,
+        "rules_physical_px": 14.5856351852417,
+        "title": "Runic Relic",
+        "title_physical_px": 20.6629831790924
+      }
+    ],
+    "720": [
+      {
+        "bounds": [
+          224.000015258789,
+          402.666656494141,
+          220.000015258789,
+          293.333343505859
+        ],
+        "category": 0,
+        "index": 0,
+        "rules_physical_px": 9.72375679016113,
+        "title": "Arcane Knight",
+        "title_physical_px": 13.7753221193949
+      },
+      {
+        "bounds": [
+          492.830718994141,
+          402.666656494141,
+          220.000030517578,
+          293.333343505859
+        ],
+        "category": 1,
+        "index": 4,
+        "rules_physical_px": 9.72375679016113,
+        "title": "Pyretic Inscription",
+        "title_physical_px": 13.7753221193949
+      },
+      {
+        "bounds": [
+          836.0,
+          402.666656494141,
+          220.0,
+          293.333343505859
+        ],
+        "category": 0,
+        "index": 9,
+        "rules_physical_px": 9.52117852369944,
+        "title": "Archon of the Sundered Sphere",
+        "title_physical_px": 8.50828719139099
+      },
+      {
+        "bounds": [
+          270.448486328125,
+          402.666656494141,
+          220.0,
+          293.333343505859
+        ],
+        "category": 1,
+        "index": 1,
+        "rules_physical_px": 9.31860025723775,
+        "title": "Arcane Study",
+        "title_physical_px": 13.7753221193949
+      },
+      {
+        "bounds": [
+          344.3798828125,
+          402.666656494141,
+          220.0,
+          293.333343505859
+        ],
+        "category": 2,
+        "index": 2,
+        "rules_physical_px": 9.72375679016113,
+        "title": "Runic Relic",
+        "title_physical_px": 13.7753221193949
+      }
+    ]
+  },
+  "desktop": {
+    "default": {
+      "client": [
+        1888,
+        956
+      ],
+      "reservoir_changed_pixels": {
+        "player_hp": [
+          13,
+          1978,
+          989,
+          163,
+          1484,
+          127,
+          0
+        ],
+        "player_mana": [
+          12,
+          2019,
+          1171,
+          172,
+          1527,
+          0,
+          0
+        ],
+        "opponent_hp": [
+          9,
+          121,
+          80,
+          20,
+          103,
+          22,
+          5
+        ],
+        "opponent_mana": [
+          11,
+          121,
+          93,
+          24,
+          109,
+          0,
+          0
+        ]
+      },
+      "button_hover_pressed_changed_pixels": 5971,
+      "center_hover_changed_pixels": 101982,
+      "mouse_and_space_activations": 2,
+      "native_focus": true
+    },
+    "1920x1080": {
+      "client": [
+        1920,
+        1080
+      ],
+      "reservoir_changed_pixels": {
+        "player_hp": [
+          2414,
+          321,
+          198,
+          1874,
+          0,
+          87,
+          0
+        ],
+        "player_mana": [
+          2393,
+          318,
+          203,
+          1813,
+          0,
+          359,
+          2360
+        ],
+        "opponent_hp": [
+          144,
+          35,
+          23,
+          125,
+          2,
+          4,
+          0
+        ],
+        "opponent_mana": [
+          144,
+          37,
+          26,
+          126,
+          0,
+          2,
+          144
+        ]
+      },
+      "button_hover_pressed_changed_pixels": 7441,
+      "center_hover_changed_pixels": 130018,
+      "mouse_and_space_activations": 2,
+      "native_focus": true
+    },
+    "1280x720": {
+      "client": [
+        1280,
+        720
+      ],
+      "reservoir_changed_pixels": {
+        "player_hp": [
+          413,
+          1089,
+          6,
+          8,
+          7,
+          1089,
+          1079
+        ],
+        "player_mana": [
+          8,
+          6,
+          9,
+          7,
+          7,
+          1121,
+          1105
+        ],
+        "opponent_hp": [
+          16,
+          64,
+          6,
+          7,
+          6,
+          64,
+          64
+        ],
+        "opponent_mana": [
+          5,
+          6,
+          6,
+          7,
+          7,
+          64,
+          63
+        ]
+      },
+      "button_hover_pressed_changed_pixels": 3451,
+      "center_hover_changed_pixels": 57814,
+      "mouse_and_space_activations": 2,
+      "native_focus": true
+    }
+  },
+  "slots": {
+    "count": 24,
+    "rects": [
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_01",
+        "rect": [
+          480.0,
+          226.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_02",
+        "rect": [
+          660.0,
+          226.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_03",
+        "rect": [
+          840.0,
+          226.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_04",
+        "rect": [
+          1020.0,
+          226.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_05",
+        "rect": [
+          1200.0,
+          226.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/SlotGuide_06",
+        "rect": [
+          1380.0,
+          226.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_01",
+        "rect": [
+          480.0,
+          362.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_02",
+        "rect": [
+          660.0,
+          362.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_03",
+        "rect": [
+          840.0,
+          362.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_04",
+        "rect": [
+          1020.0,
+          362.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_05",
+        "rect": [
+          1200.0,
+          362.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/SlotGuide_06",
+        "rect": [
+          1380.0,
+          362.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_01",
+        "rect": [
+          480.0,
+          526.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_02",
+        "rect": [
+          660.0,
+          526.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_03",
+        "rect": [
+          840.0,
+          526.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_04",
+        "rect": [
+          1020.0,
+          526.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_05",
+        "rect": [
+          1200.0,
+          526.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/SlotGuide_06",
+        "rect": [
+          1380.0,
+          526.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_01",
+        "rect": [
+          480.0,
+          662.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_02",
+        "rect": [
+          660.0,
+          662.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_03",
+        "rect": [
+          840.0,
+          662.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_04",
+        "rect": [
+          1020.0,
+          662.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_05",
+        "rect": [
+          1200.0,
+          662.0,
+          162.0,
+          112.0
+        ]
+      },
+      {
+        "path": "CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/SlotGuide_06",
+        "rect": [
+          1380.0,
+          662.0,
+          162.0,
+          112.0
+        ]
+      }
+    ],
+    "column_grid_bounds": [
+      480.0,
+      1542.0
+    ],
+    "column_grid_center": 1011.0,
+    "offset_from_screen_center": 51.0,
+    "row_tops": [
+      226.0,
+      362.0,
+      526.0,
+      662.0
+    ],
+    "slot_size": [
+      162.0,
+      112.0
+    ],
+    "horizontal_gap": 18,
+    "placeholder_size": [
+      146,
+      100
+    ]
+  },
+  "fan_source_geometry": {
+    "7": {
+      "painted_bounds": [
+        343.3637760734658,
+        776.0612763964859,
+        1575.8995503023334,
+        1072.7765983537417
+      ],
+      "axis": 960,
+      "height": 270
+    },
+    "10": {
+      "painted_bounds": [
+        343.3637760734658,
+        775.9089605108138,
+        1575.8995503023334,
+        1072.7765983537417
+      ],
+      "axis": 960,
+      "height": 270
+    }
+  },
+  "opponent_hand_painted": {
+    "bounds": [
+      720.5676259714584,
+      33.10260085906074,
+      1199.4323740285415,
+      185.148925499344
+    ],
+    "center_x": 960.0
+  },
+  "default_r08c_comparison": {
+    "1080": 0,
+    "720": 0
+  },
+  "artifact_candidates": {
+    "A": {
+      "rect": [
+        296,
+        344,
+        24,
+        436
+      ],
+      "physical_720": [
+        16,
+        290.67
+      ],
+      "assessment": "Rejected: 24px gutter cannot hold a useful icon/hit target"
+    },
+    "B": {
+      "rect": [
+        320,
+        780,
+        1280,
+        24
+      ],
+      "physical_720": [
+        853.33,
+        16
+      ],
+      "assessment": "Rejected: only 24px high and crossed by the real hover envelope"
+    },
+    "C": {
+      "rect": [
+        1640,
+        198,
+        240,
+        48
+      ],
+      "physical_720": [
+        160,
+        32
+      ],
+      "assessment": "Spatially viable with reservations: use clear PLAYER/HERO affiliation and a future overlay input owner; the transparent top of MatchStatus is logically underneath"
+    },
+    "capacity": "No starting or maximum capacity inferred. Compact summary or visible subset plus +N; artwork, interaction and progression DEFERRED."
+  }
+}

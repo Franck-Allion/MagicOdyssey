@@ -1,0 +1,1473 @@
+{
+  "animation_times_1080p": [
+    23344,
+    24679,
+    26077,
+    27464,
+    29004,
+    30481
+  ],
+  "animation_times_720p": [
+    43601,
+    44323,
+    45068,
+    45989,
+    46816,
+    47740
+  ],
+  "artwork": {
+    "CombatLayout/ActionBarZone/Backplate": {
+      "crop": [
+        64.0,
+        12.0,
+        664.0,
+        1964.0
+      ],
+      "rect": [
+        1644.0,
+        372.0,
+        232.0,
+        684.0
+      ],
+      "source": "res://assets/_source/lot1/hud/utility/mo_hud_utility_panel_v01.png",
+      "texture_size": [
+        664,
+        1964
+      ]
+    },
+    "CombatLayout/ActionBarZone/EndTurnButton/Artwork": {
+      "crop": [
+        0,
+        0,
+        2090,
+        522
+      ],
+      "rect": [
+        1664.38000488281,
+        892.0,
+        190.0,
+        47.4545288085938
+      ],
+      "source": "res://assets/_source/lot1/hud/utility/mo_hud_end_turn_normal_v01.png",
+      "texture_size": [
+        2090,
+        522
+      ]
+    },
+    "CombatLayout/MatchStatus/Backplate": {
+      "crop": [
+        4.0,
+        92.0,
+        1766.0,
+        690.0
+      ],
+      "rect": [
+        1644.0,
+        264.0,
+        232.0,
+        91.0
+      ],
+      "source": "res://assets/_source/lot1/hud/utility/mo_hud_turn_phase_panel_v01.png",
+      "texture_size": [
+        1766,
+        690
+      ]
+    },
+    "CombatLayout/OpponentHeroZone/Backplate": {
+      "crop": [
+        150.0,
+        12.0,
+        900.0,
+        1254.0
+      ],
+      "rect": [
+        24.0,
+        24.0,
+        272.0,
+        296.0
+      ],
+      "source": "res://assets/_source/lot1/hud/opponent/mo_hud_opponent_panel_v01.png",
+      "texture_size": [
+        900,
+        1254
+      ]
+    },
+    "CombatLayout/PlayerHeroZone/Backplate": {
+      "crop": [
+        212.0,
+        0.0,
+        600.0,
+        1536.0
+      ],
+      "rect": [
+        24.0,
+        344.0,
+        272.0,
+        700.0
+      ],
+      "source": "res://assets/_source/lot1/hud/player/mo_hud_player_panel_v01.png",
+      "texture_size": [
+        600,
+        1536
+      ]
+    }
+  },
+  "hover_1080p": [
+    {
+      "bounds": [
+        336.0,
+        604.0,
+        330.0,
+        440.0
+      ],
+      "category": 0,
+      "index": 0,
+      "rules_physical_px": 14.5856351852417,
+      "title": "Arcane Knight",
+      "title_physical_px": 20.6629831790924
+    },
+    {
+      "bounds": [
+        739.246032714844,
+        604.0,
+        330.000061035156,
+        440.0
+      ],
+      "category": 1,
+      "index": 4,
+      "rules_physical_px": 14.5856351852417,
+      "title": "Pyretic Inscription",
+      "title_physical_px": 20.6629831790924
+    },
+    {
+      "bounds": [
+        1254.0,
+        604.0,
+        330.0,
+        440.0
+      ],
+      "category": 0,
+      "index": 9,
+      "rules_physical_px": 14.2817677855492,
+      "title": "Archon of the Sundered Sphere",
+      "title_physical_px": 12.7624307870865
+    },
+    {
+      "bounds": [
+        405.672729492188,
+        604.0,
+        330.0,
+        440.0
+      ],
+      "category": 1,
+      "index": 1,
+      "rules_physical_px": 13.9779003858566,
+      "title": "Arcane Study",
+      "title_physical_px": 20.6629831790924
+    },
+    {
+      "bounds": [
+        516.56982421875,
+        604.0,
+        330.0,
+        440.0
+      ],
+      "category": 2,
+      "index": 2,
+      "rules_physical_px": 14.5856351852417,
+      "title": "Runic Relic",
+      "title_physical_px": 20.6629831790924
+    }
+  ],
+  "hover_720p": [
+    {
+      "bounds": [
+        224.000015258789,
+        402.666656494141,
+        220.000015258789,
+        293.333343505859
+      ],
+      "category": 0,
+      "index": 0,
+      "rules_physical_px": 9.72375679016113,
+      "title": "Arcane Knight",
+      "title_physical_px": 13.7753221193949
+    },
+    {
+      "bounds": [
+        492.830718994141,
+        402.666656494141,
+        220.000030517578,
+        293.333343505859
+      ],
+      "category": 1,
+      "index": 4,
+      "rules_physical_px": 9.72375679016113,
+      "title": "Pyretic Inscription",
+      "title_physical_px": 13.7753221193949
+    },
+    {
+      "bounds": [
+        836.0,
+        402.666656494141,
+        220.0,
+        293.333343505859
+      ],
+      "category": 0,
+      "index": 9,
+      "rules_physical_px": 9.52117852369944,
+      "title": "Archon of the Sundered Sphere",
+      "title_physical_px": 8.50828719139099
+    },
+    {
+      "bounds": [
+        270.448486328125,
+        402.666656494141,
+        220.0,
+        293.333343505859
+      ],
+      "category": 1,
+      "index": 1,
+      "rules_physical_px": 9.31860025723775,
+      "title": "Arcane Study",
+      "title_physical_px": 13.7753221193949
+    },
+    {
+      "bounds": [
+        344.3798828125,
+        402.666656494141,
+        220.0,
+        293.333343505859
+      ],
+      "category": 2,
+      "index": 2,
+      "rules_physical_px": 9.72375679016113,
+      "title": "Runic Relic",
+      "title_physical_px": 13.7753221193949
+    }
+  ],
+  "labels_1080p": [
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentHeroZone/HealthCaption",
+      "physical_font": 16.0,
+      "rect": [
+        134.0,
+        164.0,
+        114.0,
+        23.0
+      ],
+      "reference_font": 16,
+      "text": "HP",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentHeroZone/HealthValues",
+      "physical_font": 23.0,
+      "rect": [
+        134.0,
+        181.0,
+        114.0,
+        33.0
+      ],
+      "reference_font": 23,
+      "text": "100 / 100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentHeroZone/ManaCaption",
+      "physical_font": 16.0,
+      "rect": [
+        134.0,
+        218.0,
+        114.0,
+        23.0
+      ],
+      "reference_font": 16,
+      "text": "MANA",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentHeroZone/ManaValues",
+      "physical_font": 23.0,
+      "rect": [
+        134.0,
+        235.0,
+        114.0,
+        33.0
+      ],
+      "reference_font": 23,
+      "text": "10 / 10",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/MatchStatus/Turn",
+      "physical_font": 28.0,
+      "rect": [
+        1662.0,
+        272.0,
+        196.0,
+        40.0
+      ],
+      "reference_font": 28,
+      "text": "TURN 10",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/MatchStatus/Phase",
+      "physical_font": 17.0,
+      "rect": [
+        1654.0,
+        312.0,
+        212.0,
+        32.0
+      ],
+      "reference_font": 17,
+      "text": "END-OF-TURN ATTACK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHeroZone/PlayerHealthOrb/Kind",
+      "physical_font": 15.0,
+      "rect": [
+        109.599998474121,
+        650.0,
+        100.799995422363,
+        33.0
+      ],
+      "reference_font": 15,
+      "text": "HP",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHeroZone/PlayerHealthOrb/Values",
+      "physical_font": 25.0,
+      "rect": [
+        91.5999984741211,
+        675.200012207031,
+        136.800003051758,
+        46.8000030517578
+      ],
+      "reference_font": 25,
+      "text": "100 / 100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHeroZone/PlayerManaOrb/Kind",
+      "physical_font": 15.0,
+      "rect": [
+        109.599998474121,
+        850.0,
+        100.799995422363,
+        33.0
+      ],
+      "reference_font": 15,
+      "text": "MANA",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHeroZone/PlayerManaOrb/Values",
+      "physical_font": 31.0,
+      "rect": [
+        91.5999984741211,
+        875.200012207031,
+        136.800003051758,
+        46.8000030517578
+      ],
+      "reference_font": 31,
+      "text": "10 / 10",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/RowBanner",
+      "physical_font": 16.0,
+      "rect": [
+        340.0,
+        264.0,
+        110.0,
+        36.0
+      ],
+      "reference_font": 16,
+      "text": "DEFENSE",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/RowBanner",
+      "physical_font": 16.0,
+      "rect": [
+        340.0,
+        400.0,
+        110.0,
+        36.0
+      ],
+      "reference_font": 16,
+      "text": "ATTACK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/RowBanner",
+      "physical_font": 16.0,
+      "rect": [
+        340.0,
+        564.0,
+        110.0,
+        36.0
+      ],
+      "reference_font": 16,
+      "text": "ATTACK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/RowBanner",
+      "physical_font": 16.0,
+      "rect": [
+        340.0,
+        700.0,
+        110.0,
+        36.0
+      ],
+      "reference_font": 16,
+      "text": "DEFENSE",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card00/@Control@322/@Label@326",
+      "physical_font": 12.6795588731766,
+      "rect": [
+        395.530334472656,
+        815.381774902344,
+        113.743103027344,
+        17.5276260375977
+      ],
+      "reference_font": 68,
+      "text": "Arcane Knight",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card00/@Control@322/@Label@327",
+      "physical_font": 8.95027685165405,
+      "rect": [
+        398.997406005859,
+        970.771850585938,
+        135.372940063477,
+        12.3066310882568
+      ],
+      "reference_font": 48,
+      "text": "Creature · Human",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card01/@Control@332/@Label@342",
+      "physical_font": 12.6795578598976,
+      "rect": [
+        567.167114257813,
+        807.778564453125,
+        113.743095397949,
+        17.527624130249
+      ],
+      "reference_font": 68,
+      "text": "Arcane Study",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card01/@Control@332/@Label@343",
+      "physical_font": 8.95027613639832,
+      "rect": [
+        562.496948242188,
+        963.137145996094,
+        135.372924804688,
+        12.3066301345825
+      ],
+      "reference_font": 48,
+      "text": "Spell",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card02/@Control@348/@Label@352",
+      "physical_font": 12.6795578598976,
+      "rect": [
+        739.880615234375,
+        802.225646972656,
+        113.743095397949,
+        17.527624130249
+      ],
+      "reference_font": 68,
+      "text": "Runic Relic",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card02/@Control@348/@Label@353",
+      "physical_font": 8.95027613639832,
+      "rect": [
+        727.086059570313,
+        957.126953125,
+        135.372924804688,
+        12.3066301345825
+      ],
+      "reference_font": 48,
+      "text": "Equipment",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card03/@Control@358/@Label@362",
+      "physical_font": 12.6795578598976,
+      "rect": [
+        913.197509765625,
+        798.738586425781,
+        113.743095397949,
+        17.527624130249
+      ],
+      "reference_font": 68,
+      "text": "Astral Weaver",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card03/@Control@358/@Label@363",
+      "physical_font": 8.95027613639832,
+      "rect": [
+        892.313537597656,
+        952.757934570313,
+        135.372924804688,
+        12.3066301345825
+      ],
+      "reference_font": 48,
+      "text": "Creature · Elf",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card04/@Control@368/@Label@372",
+      "physical_font": 12.6795578598976,
+      "rect": [
+        1086.642578125,
+        797.326782226563,
+        113.743095397949,
+        17.527624130249
+      ],
+      "reference_font": 68,
+      "text": "Pyretic Inscription",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card04/@Control@368/@Label@373",
+      "physical_font": 8.95027613639832,
+      "rect": [
+        1057.72644042969,
+        950.042053222656,
+        135.372924804688,
+        12.3066301345825
+      ],
+      "reference_font": 48,
+      "text": "Spell",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card05/@Control@378/@Label@382",
+      "physical_font": 11.5607733428478,
+      "rect": [
+        1259.74072265625,
+        797.994140625,
+        113.743095397949,
+        17.527624130249
+      ],
+      "reference_font": 62,
+      "text": "Voidbound Talisman",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card05/@Control@378/@Label@383",
+      "physical_font": 8.95027613639832,
+      "rect": [
+        1222.87182617188,
+        948.986755371094,
+        135.372924804688,
+        12.3066301345825
+      ],
+      "reference_font": 48,
+      "text": "Equipment",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card06/@Control@388/@Label@392",
+      "physical_font": 12.6795588731766,
+      "rect": [
+        1432.01721191406,
+        800.73876953125,
+        113.743103027344,
+        17.5276260375977
+      ],
+      "reference_font": 68,
+      "text": "Celestial Warden",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card06/@Control@388/@Label@393",
+      "physical_font": 8.95027685165405,
+      "rect": [
+        1387.29638671875,
+        949.594848632813,
+        135.372940063477,
+        12.3066310882568
+      ],
+      "reference_font": 48,
+      "text": "Creature · Archon",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/ActionBarZone/RecentTitle",
+      "physical_font": 19.0,
+      "rect": [
+        1664.0,
+        436.0,
+        192.0,
+        32.0
+      ],
+      "reference_font": 19,
+      "text": "RECENT ACTIONS",
+      "visible_lines": 1
+    },
+    {
+      "lines": 5,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/ActionBarZone/RecentActions",
+      "physical_font": 16.0,
+      "rect": [
+        1668.0,
+        484.0,
+        184.0,
+        144.0
+      ],
+      "reference_font": 16,
+      "text": "Arcane Knight gains 1 Shield whenever this creature attacks.\nRunic Relic equipped.\nOpponent drew a card.",
+      "visible_lines": 5
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/ActionBarZone/DeckStack/Caption",
+      "physical_font": 15.0,
+      "rect": [
+        1659.0,
+        750.0,
+        104.0,
+        24.0
+      ],
+      "reference_font": 15,
+      "text": "DECK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/ActionBarZone/DeckStack/Count",
+      "physical_font": 25.0,
+      "rect": [
+        1659.0,
+        774.0,
+        104.0,
+        34.0
+      ],
+      "reference_font": 25,
+      "text": "100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/ActionBarZone/GraveyardView/LastEnteringCard/@Control@415/@Label@419",
+      "physical_font": 5.25966864824295,
+      "rect": [
+        1789.58569335938,
+        638.961303710938,
+        47.1823234558105,
+        7.27071857452393
+      ],
+      "reference_font": 68,
+      "text": "Astral Weaver",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/ActionBarZone/GraveyardView/LastEnteringCard/@Control@415/@Label@420",
+      "physical_font": 3.71270728111267,
+      "rect": [
+        1780.92260742188,
+        702.850830078125,
+        56.1546974182129,
+        5.10497236251831
+      ],
+      "reference_font": 48,
+      "text": "Creature · Human",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/ActionBarZone/GraveyardView/Caption",
+      "physical_font": 15.0,
+      "rect": [
+        1757.0,
+        750.0,
+        104.0,
+        24.0
+      ],
+      "reference_font": 15,
+      "text": "GRAVEYARD",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/ActionBarZone/GraveyardView/Count",
+      "physical_font": 25.0,
+      "rect": [
+        1757.0,
+        774.0,
+        104.0,
+        34.0
+      ],
+      "reference_font": 25,
+      "text": "100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentPiles/DeckStack/Caption",
+      "physical_font": 15.0,
+      "rect": [
+        1654.0,
+        132.0,
+        104.0,
+        24.0
+      ],
+      "reference_font": 15,
+      "text": "DECK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentPiles/DeckStack/Count",
+      "physical_font": 25.0,
+      "rect": [
+        1654.0,
+        156.0,
+        104.0,
+        34.0
+      ],
+      "reference_font": 25,
+      "text": "100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentPiles/GraveyardView/LastEnteringCard/@Control@424/@Label@428",
+      "physical_font": 4.69613254070282,
+      "rect": [
+        1796.66577148438,
+        32.2154693603516,
+        42.1270713806152,
+        6.49171257019043
+      ],
+      "reference_font": 68,
+      "text": "Astral Weaver",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentPiles/GraveyardView/LastEnteringCard/@Control@424/@Label@429",
+      "physical_font": 3.31491708755493,
+      "rect": [
+        1788.93090820313,
+        89.2596664428711,
+        50.1381225585938,
+        4.55801105499268
+      ],
+      "reference_font": 48,
+      "text": "Creature · Human",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentPiles/GraveyardView/Caption",
+      "physical_font": 15.0,
+      "rect": [
+        1762.0,
+        132.0,
+        104.0,
+        24.0
+      ],
+      "reference_font": 15,
+      "text": "GRAVEYARD",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@2/CombatScreen/CombatLayout/OpponentPiles/GraveyardView/Count",
+      "physical_font": 25.0,
+      "rect": [
+        1762.0,
+        156.0,
+        104.0,
+        34.0
+      ],
+      "reference_font": 25,
+      "text": "100",
+      "visible_lines": 1
+    }
+  ],
+  "labels_720p": [
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentHeroZone/HealthCaption",
+      "physical_font": 10.6666669845581,
+      "rect": [
+        89.3333358764648,
+        109.333335876465,
+        76.0,
+        15.3333339691162
+      ],
+      "reference_font": 16,
+      "text": "HP",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentHeroZone/HealthValues",
+      "physical_font": 15.3333337903023,
+      "rect": [
+        89.3333358764648,
+        120.66667175293,
+        76.0,
+        22.0
+      ],
+      "reference_font": 23,
+      "text": "100 / 100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentHeroZone/ManaCaption",
+      "physical_font": 10.6666669845581,
+      "rect": [
+        89.3333358764648,
+        145.333343505859,
+        76.0,
+        15.3333339691162
+      ],
+      "reference_font": 16,
+      "text": "MANA",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentHeroZone/ManaValues",
+      "physical_font": 15.3333337903023,
+      "rect": [
+        89.3333358764648,
+        156.66667175293,
+        76.0,
+        22.0
+      ],
+      "reference_font": 23,
+      "text": "10 / 10",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/MatchStatus/Turn",
+      "physical_font": 18.6666672229767,
+      "rect": [
+        1108.00012207031,
+        181.333343505859,
+        130.66667175293,
+        26.6666679382324
+      ],
+      "reference_font": 28,
+      "text": "TURN 10",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/MatchStatus/Phase",
+      "physical_font": 11.333333671093,
+      "rect": [
+        1102.66674804688,
+        208.0,
+        141.333343505859,
+        21.3333339691162
+      ],
+      "reference_font": 17,
+      "text": "END-OF-TURN ATTACK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHeroZone/PlayerHealthOrb/Kind",
+      "physical_font": 10.0000002980232,
+      "rect": [
+        73.0666656494141,
+        433.333343505859,
+        67.1999969482422,
+        22.0
+      ],
+      "reference_font": 15,
+      "text": "HP",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHeroZone/PlayerHealthOrb/Values",
+      "physical_font": 16.666667163372,
+      "rect": [
+        61.0666694641113,
+        450.133331298828,
+        91.2000045776367,
+        31.2000026702881
+      ],
+      "reference_font": 25,
+      "text": "100 / 100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHeroZone/PlayerManaOrb/Kind",
+      "physical_font": 10.0000002980232,
+      "rect": [
+        73.0666656494141,
+        566.666687011719,
+        67.1999969482422,
+        22.0
+      ],
+      "reference_font": 15,
+      "text": "MANA",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHeroZone/PlayerManaOrb/Values",
+      "physical_font": 20.6666672825813,
+      "rect": [
+        61.0666694641113,
+        583.466674804688,
+        91.2000045776367,
+        31.2000026702881
+      ],
+      "reference_font": 31,
+      "text": "10 / 10",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow/RowBanner",
+      "physical_font": 10.6666669845581,
+      "rect": [
+        226.66667175293,
+        176.0,
+        73.3333358764648,
+        24.0
+      ],
+      "reference_font": 16,
+      "text": "DEFENSE",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow/RowBanner",
+      "physical_font": 10.6666669845581,
+      "rect": [
+        226.66667175293,
+        266.666687011719,
+        73.3333358764648,
+        24.0
+      ],
+      "reference_font": 16,
+      "text": "ATTACK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow/RowBanner",
+      "physical_font": 10.6666669845581,
+      "rect": [
+        226.66667175293,
+        376.000030517578,
+        73.3333358764648,
+        24.0
+      ],
+      "reference_font": 16,
+      "text": "ATTACK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow/RowBanner",
+      "physical_font": 10.6666669845581,
+      "rect": [
+        226.66667175293,
+        466.666717529297,
+        73.3333358764648,
+        24.0
+      ],
+      "reference_font": 16,
+      "text": "DEFENSE",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card00/@Control@758/@Label@762",
+      "physical_font": 8.45303907990456,
+      "rect": [
+        263.686889648438,
+        543.587829589844,
+        75.8287353515625,
+        11.6850833892822
+      ],
+      "reference_font": 68,
+      "text": "Arcane Knight",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card00/@Control@758/@Label@763",
+      "physical_font": 5.96685111522675,
+      "rect": [
+        265.998291015625,
+        647.181274414063,
+        90.2486267089844,
+        8.20442008972168
+      ],
+      "reference_font": 48,
+      "text": "Creature · Human",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card01/@Control@768/@Label@778",
+      "physical_font": 8.45303907990456,
+      "rect": [
+        378.111419677734,
+        538.51904296875,
+        75.8287353515625,
+        11.6850833892822
+      ],
+      "reference_font": 68,
+      "text": "Arcane Study",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card01/@Control@768/@Label@779",
+      "physical_font": 5.96685111522675,
+      "rect": [
+        374.997985839844,
+        642.091430664063,
+        90.2486267089844,
+        8.20442008972168
+      ],
+      "reference_font": 48,
+      "text": "Spell",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card02/@Control@784/@Label@788",
+      "physical_font": 8.45303857326508,
+      "rect": [
+        493.253784179688,
+        534.817138671875,
+        75.828727722168,
+        11.6850824356079
+      ],
+      "reference_font": 68,
+      "text": "Runic Relic",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card02/@Control@784/@Label@789",
+      "physical_font": 5.96685075759888,
+      "rect": [
+        484.724029541016,
+        638.084594726563,
+        90.2486190795898,
+        8.20442008972168
+      ],
+      "reference_font": 48,
+      "text": "Equipment",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card03/@Control@794/@Label@798",
+      "physical_font": 8.45303857326508,
+      "rect": [
+        608.79833984375,
+        532.492431640625,
+        75.828727722168,
+        11.6850824356079
+      ],
+      "reference_font": 68,
+      "text": "Astral Weaver",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card03/@Control@794/@Label@799",
+      "physical_font": 5.96685075759888,
+      "rect": [
+        594.875671386719,
+        635.171997070313,
+        90.2486190795898,
+        8.20442008972168
+      ],
+      "reference_font": 48,
+      "text": "Creature · Elf",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card04/@Control@804/@Label@808",
+      "physical_font": 8.45303857326508,
+      "rect": [
+        724.428466796875,
+        531.551147460938,
+        75.828727722168,
+        11.6850824356079
+      ],
+      "reference_font": 68,
+      "text": "Pyretic Inscription",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card04/@Control@804/@Label@809",
+      "physical_font": 5.96685075759888,
+      "rect": [
+        705.151062011719,
+        633.361328125,
+        90.2486190795898,
+        8.20442008972168
+      ],
+      "reference_font": 48,
+      "text": "Spell",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card05/@Control@814/@Label@818",
+      "physical_font": 7.70718269050121,
+      "rect": [
+        839.8271484375,
+        531.99609375,
+        75.8287353515625,
+        11.6850833892822
+      ],
+      "reference_font": 62,
+      "text": "Voidbound Talisman",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card05/@Control@814/@Label@819",
+      "physical_font": 5.96685111522675,
+      "rect": [
+        815.247802734375,
+        632.657836914063,
+        90.2486267089844,
+        8.20442008972168
+      ],
+      "reference_font": 48,
+      "text": "Equipment",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card06/@Control@824/@Label@828",
+      "physical_font": 8.45303907990456,
+      "rect": [
+        954.67822265625,
+        533.825805664063,
+        75.8287353515625,
+        11.6850833892822
+      ],
+      "reference_font": 68,
+      "text": "Celestial Warden",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/PlayerHandZone/Fan/Card06/@Control@824/@Label@829",
+      "physical_font": 5.96685111522675,
+      "rect": [
+        924.864318847656,
+        633.063232421875,
+        90.2486267089844,
+        8.20442008972168
+      ],
+      "reference_font": 48,
+      "text": "Creature · Archon",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/ActionBarZone/RecentTitle",
+      "physical_font": 12.6666670441628,
+      "rect": [
+        1109.33337402344,
+        290.666656494141,
+        128.0,
+        21.3333339691162
+      ],
+      "reference_font": 19,
+      "text": "RECENT ACTIONS",
+      "visible_lines": 1
+    },
+    {
+      "lines": 5,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/ActionBarZone/RecentActions",
+      "physical_font": 10.6666669845581,
+      "rect": [
+        1112.00012207031,
+        322.666687011719,
+        122.66667175293,
+        96.0
+      ],
+      "reference_font": 16,
+      "text": "Arcane Knight gains 1 Shield whenever this creature attacks.\nRunic Relic equipped.\nOpponent drew a card.",
+      "visible_lines": 5
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/ActionBarZone/DeckStack/Caption",
+      "physical_font": 10.0000002980232,
+      "rect": [
+        1106.00012207031,
+        500.0,
+        69.3333358764648,
+        16.0
+      ],
+      "reference_font": 15,
+      "text": "DECK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/ActionBarZone/DeckStack/Count",
+      "physical_font": 16.666667163372,
+      "rect": [
+        1106.00012207031,
+        516.0,
+        69.3333358764648,
+        22.6666679382324
+      ],
+      "reference_font": 25,
+      "text": "100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/ActionBarZone/GraveyardView/LastEnteringCard/@Control@851/@Label@855",
+      "physical_font": 3.5064457654953,
+      "rect": [
+        1193.05712890625,
+        425.974212646484,
+        31.4548816680908,
+        4.84714555740356
+      ],
+      "reference_font": 68,
+      "text": "Astral Weaver",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/ActionBarZone/GraveyardView/LastEnteringCard/@Control@851/@Label@856",
+      "physical_font": 2.47513818740845,
+      "rect": [
+        1187.28173828125,
+        468.567230224609,
+        37.436466217041,
+        3.40331506729126
+      ],
+      "reference_font": 48,
+      "text": "Creature · Human",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/ActionBarZone/GraveyardView/Caption",
+      "physical_font": 10.0000002980232,
+      "rect": [
+        1171.33337402344,
+        500.0,
+        69.3333358764648,
+        16.0
+      ],
+      "reference_font": 15,
+      "text": "GRAVEYARD",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/ActionBarZone/GraveyardView/Count",
+      "physical_font": 16.666667163372,
+      "rect": [
+        1171.33337402344,
+        516.0,
+        69.3333358764648,
+        22.6666679382324
+      ],
+      "reference_font": 25,
+      "text": "100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentPiles/DeckStack/Caption",
+      "physical_font": 10.0000002980232,
+      "rect": [
+        1102.66674804688,
+        88.0,
+        69.3333358764648,
+        16.0
+      ],
+      "reference_font": 15,
+      "text": "DECK",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentPiles/DeckStack/Count",
+      "physical_font": 16.666667163372,
+      "rect": [
+        1102.66674804688,
+        104.0,
+        69.3333358764648,
+        22.6666679382324
+      ],
+      "reference_font": 25,
+      "text": "100",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentPiles/GraveyardView/LastEnteringCard/@Control@860/@Label@864",
+      "physical_font": 3.13075511157513,
+      "rect": [
+        1197.77722167969,
+        21.4769802093506,
+        28.0847148895264,
+        4.32780838012695
+      ],
+      "reference_font": 68,
+      "text": "Astral Weaver",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentPiles/GraveyardView/LastEnteringCard/@Control@860/@Label@865",
+      "physical_font": 2.20994478464127,
+      "rect": [
+        1192.62060546875,
+        59.5064468383789,
+        33.4254150390625,
+        3.03867411613464
+      ],
+      "reference_font": 48,
+      "text": "Creature · Human",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentPiles/GraveyardView/Caption",
+      "physical_font": 10.0000002980232,
+      "rect": [
+        1174.66674804688,
+        88.0,
+        69.3333358764648,
+        16.0
+      ],
+      "reference_font": 15,
+      "text": "GRAVEYARD",
+      "visible_lines": 1
+    },
+    {
+      "lines": 1,
+      "path": "/root/@SubViewport@438/CombatScreen/CombatLayout/OpponentPiles/GraveyardView/Count",
+      "physical_font": 16.666667163372,
+      "rect": [
+        1174.66674804688,
+        104.0,
+        69.3333358764648,
+        22.6666679382324
+      ],
+      "reference_font": 25,
+      "text": "100",
+      "visible_lines": 1
+    }
+  ],
+  "regions": {
+    "CombatLayout/ActionBarZone": [
+      1624.0,
+      372.0,
+      272.0,
+      684.0
+    ],
+    "CombatLayout/BattlefieldZone": [
+      320.0,
+      220.0,
+      1280.0,
+      560.0
+    ],
+    "CombatLayout/MatchStatus": [
+      1624.0,
+      220.0,
+      272.0,
+      136.0
+    ],
+    "CombatLayout/OpponentHand": [
+      320.0,
+      30.0,
+      1280.0,
+      160.0
+    ],
+    "CombatLayout/OpponentHeroZone": [
+      24.0,
+      24.0,
+      272.0,
+      296.0
+    ],
+    "CombatLayout/PlayerHandZone": [
+      320.0,
+      804.0,
+      1280.0,
+      252.0
+    ],
+    "CombatLayout/PlayerHeroZone": [
+      24.0,
+      344.0,
+      272.0,
+      700.0
+    ]
+  }
+}
