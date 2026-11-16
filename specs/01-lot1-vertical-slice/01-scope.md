@@ -1,17 +1,17 @@
 # MagicOdyssey — Lot 1 Functional and Technical Specifications
 
-**Version:** 1.0 — November 2026  
-**Status:** Approved Normative Baseline (Pre-implementation)  
-**Target:** First complete, playable, visually professional 2D tactical combat vertical slice on Windows / Godot 4.  
-**Upstream Reference:** *MagicOdyssey Full Specifications v2.8* (Decisions Q01–Q274), complemented by Q275–Q302.  
+**Version:** 1.0 — November 2026
+**Status:** Approved Normative Baseline (Pre-implementation)
+**Target:** First complete, playable, visually professional 2D tactical combat vertical slice on Windows / Godot 4.
+**Upstream Reference:** *MagicOdyssey Full Specifications v2.8* (Decisions Q01–Q274), complemented by Q275–Q302.
 **Primary Usage:** Source of truth for roadmap execution and atomic prompt engineering.
 
-> **Reading Rule — Levels of Authority:**  
-> - **[VALIDATED]**: Explicit game design decision approved by designer.  
-> - **[LOT1]**: Implementation contract specific to this vertical slice, preserving the long-term target gameplay.  
-> - **[CONFIG]**: Fixture or tuning parameter that can be modified without a new game design arbitration.  
-> - **[PROPOSAL]**: Recommended detail; must not be portrayed as an already locked historical rule.  
-> - **[OUT OF SCOPE]**: Mechanic preserved in the global specifications, but not required to accept Lot 1.  
+> **Reading Rule — Levels of Authority:**
+> - **[VALIDATED]**: Explicit game design decision approved by designer.
+> - **[LOT1]**: Implementation contract specific to this vertical slice, preserving the long-term target gameplay.
+> - **[CONFIG]**: Fixture or tuning parameter that can be modified without a new game design arbitration.
+> - **[PROPOSAL]**: Recommended detail; must not be portrayed as an already locked historical rule.
+> - **[OUT OF SCOPE]**: Mechanic preserved in the global specifications, but not required to accept Lot 1.
 > If an apparent contradiction arises, the most recent validated decision takes absolute precedence.
 
 ---
@@ -35,13 +35,14 @@ This is a **representative vertical slice**: neither a headless rules library wi
 - **Player & AI State:** Hero HP, mana capacity, available mana, mana cap, deck, hand, discard, banished, and progressive fatigue.
 - **Turn Sequence:** End-of-turn automatic attacks across columns 1 to 6, target acquisition order, damage resolution, armor, shields, healing, death, and victory/defeat checks.
 - **Spells & Equipment:** Targeted spells, simple passive and active abilities, Weapon and Protection equipment.
-- **Mini-Catalog:** 16 official card definitions (10 creatures, 4 spells, 2 equipments).
+- **Mini-Catalog:** 16 official card definitions (10 creatures, 4 spells, 2 equipments) with dedicated visual layouts (Creature, Spell, Equipment variants) rendered via a unified `CardView` architecture [PLAN-002].
 - **Heuristic AI:** V1 AI choosing legal commands through the identical engine API without cheating or hidden information leaks.
 - **UI/UX & Art Direction:** Premium 2D combat interface (1920×1080 native, 1280×720 responsive), fantasy crest tokens, interactive hand, tactical tooltips, detailed inspection panel, and expressive VFX.
 - **Automated Verification:** Native headless test runner, 45 acceptance test scenarios (32 core engine + 13 UX), and standalone Windows build.
 
 ### 1.3 Deferred Scope (Non-Blocking for Lot 1) [VALIDATED]
 - Tower exploration, merchant shops, draft reward selection, and floor navigation.
+- Hero Artifact inventory, slot capacity progression, and out-of-combat artifact acquisition (deferred to Phase 2 Tower Exploration; active Artifact compact HUD space reserved in P005-R09) [PLAN-002].
 - World map, final main menu, settings, and out-of-combat meta-progression saving.
 - Mind-control mechanics, resurrection chains, complex aura layers, visual card editor, and the complete ~170-card catalog.
 - Deterministic test logs and headless replayability are mandatory; persistent cross-session save systems are deferred.
@@ -166,6 +167,7 @@ This is a **representative vertical slice**: neither a headless rules library wi
 - By default, granted abilities are controlled by the bearer's controller.
 - Replacing an equipped item sends the old equipment to its owner's discard pile [Q252].
 - Lot 1 equipments are passive stat buffs (`+2 ATK` for weapon, `+2 ARMOR` for protection).
+- **Disambiguation:** Equipment cards attach strictly to board Creatures (occupying Creature Equipment Slots). They are completely distinct from Hero Artifacts (permanent Hero items occupying Hero Artifact Slots) [PLAN-002].
 
 ### 3.11 Victory and Defeat [VALIDATED Q15–Q16, Q63]
 - Opponent Hero HP $\le 0$ (and Player Hero HP $> 0$): **Player Victory**.
@@ -191,9 +193,9 @@ This is a **representative vertical slice**: neither a headless rules library wi
 - Up to 3 active status icons; additional statuses displayed as `+N` badge.
 
 ### 4.3 Cards and Inspection Panel [Q133–Q134]
-- **Hand Cards:** Full illustrated fantasy card showing cost, title, tribe, artwork, printed stats, and rule text.
+- **Hand Cards:** Full illustrated fantasy card showing cost, title, category/tribe, artwork, and rule text. Rendered via unified `CardView` across three distinct layout variants: Creature (approved ART-002 design), Spell (no creature stats/sockets), and Equipment (Weapon/Protection category, no creature stats/sockets) [PLAN-002].
 - **Hover/Tooltip:** Concise tactical summary with effective values and active buffs.
-- **Click Inspection:** Side panel displaying the **unmodified original printed card** alongside a detailed calculation breakdown of effective stats, sources, and durations.
+- **Click Inspection:** Side panel displaying the **unmodified original printed card** alongside a detailed calculation breakdown of effective stats, sources, and durations (Creature equipment attachments inspectable; spell and equipment details rendered without creature-only fields) [PLAN-002].
 
 ### 4.4 Decoupled Visual Scheduling (Juicy VFX) [Q277, Q302]
 - Engine emits events immediately; the visual presenter processes them smoothly.

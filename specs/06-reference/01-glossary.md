@@ -52,6 +52,10 @@ This glossary establishes the normative English domain terminology for **MagicOd
 - **Discard Pile:** Face-up graveyard of spent spells and defeated units. Never automatically reshuffled into the deck during combat [Q43].
 - **Banished Zone:** Out-of-combat exile for cards removed for the duration of the match [Q45].
 - **Progressive Fatigue:** Direct HP loss suffered when drawing from an empty deck; escalates by 1 point per failed attempt (1, then 2, then 3...) [Q210].
+- **Card Types:** The three functional and visual categories of cards rendered via unified `CardView`:
+  - **Creature Card:** Card summoned to the board as a combat token; displays mana cost, title, tribe, artwork, printed base Attack, Health, Armor/Shield, and rules text.
+  - **Spell Card:** Card played from hand for an immediate declarative effect and resolved to discard; displays mana cost, title, spell category, artwork, and effect description (no Creature stats or sockets).
+  - **Equipment Card:** Card played from hand and attached to an eligible board creature; displays mana cost, title, Weapon or Protection category, item artwork, and effect description (no Creature stats or sockets).
 
 ---
 
@@ -64,15 +68,15 @@ This glossary establishes the normative English domain terminology for **MagicOd
 
 ---
 
-## 6. Equipment and Tribes
+## 6. Creature Equipment and Tribes
 
-- **Equipment:** Permanent attachment cards of type `WEAPON` or `PROTECTION` [Q249].
-- **Equipment Slots:** Fixed capacity per creature (0, 1, or 2 slots; at most 1 Weapon and 1 Protection) [Q250, Q253].
+- **Creature Equipment:** Tactical, permanent attachment cards of type `WEAPON` or `PROTECTION` played from hand and attached to an eligible Creature residing on the board [Q249, Q283]. Grants stat buffs or triggered/active abilities controlled by the bearer's controller [Q284]. Detaches to owner's discard upon bearer death or replacement [Q251, Q252]. **Completely distinct from Hero Artifacts.**
+- **Equipment Slot:** Fixed equipment capacity declared by a Creature definition (0, 1, or 2 slots; at most 1 Weapon and 1 Protection) [Q250, Q253]. Completely independent of Hero Artifact Capacity.
 - **MVP Tribes:** The four foundational factions:
   - **Humans:** Frontline formation and armor.
   - **Elves:** Ranged strikes and healing.
   - **Dwarves:** Heavy fortifications and runic shields.
-  - **Dragons:** Colossal monsters; **0 equipment slots** [Q253].
+  - **Dragons:** Colossal monsters; **0 equipment slots [Q253]**.
 
 ---
 
@@ -83,3 +87,12 @@ This glossary establishes the normative English domain terminology for **MagicOd
 - **Fantasy Crest:** Shield-shaped token representing creatures on the board (replaces circular medallion) [Q294].
 - **Inspection Panel:** Side interface displaying the intact original printed card on the left and live modifier breakdowns on the right [Q133].
 - **Juicy VFX:** Fast-paced, punchy visual animations decoupled from engine logic [Q141, Q277, Q302].
+
+---
+
+## 8. Hero Artifact System (Exploration & Progression)
+
+- **Hero Artifact:** A permanent progression object acquired by the Hero during exploration (NOT a card, NOT Creature Equipment). Stored in the Hero's Artifact Inventory. Grants passive or triggered combat/exploration effects only when equipped in an active artifact slot. Does not occupy board slots or participate in deck/hand card flows.
+- **Artifact Inventory:** The Hero's persistent collection of all acquired Hero Artifacts. Holds both equipped (active) and unequipped (inactive) artifacts. Unequipped artifacts grant zero active effects.
+- **Active Artifact:** A Hero Artifact currently equipped into one of the Hero's limited active artifact slots, actively granting its effects to combat or exploration systems.
+- **Artifact Capacity:** An attribute of the Hero defining the maximum number of Hero Artifacts that can be simultaneously equipped and active. Increases through Hero progression (e.g., Sphere Grid milestones or level upgrades). Completely independent of Creature Equipment Slots.

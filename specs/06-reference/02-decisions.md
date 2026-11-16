@@ -21,6 +21,7 @@ This document contains the authoritative log of all 302 design decisions governi
 | **Q225 – Q254** | v2.4 – v2.6 | 4 MVP Tribes, Equipment Slots (0-2), Weapons & Protection |
 | **Q255 – Q274** | v2.7 – v2.8 | 100 Independent Cards, AI Archetypes, Special Missions (Protect & Survive) |
 | **Q275 – Q302** | Lot 1 Baseline | Turn 1 Mana, Godot 4 GDScript 2D, 16 Cards, Heuristic AI, Declarative `.tres` |
+| **PLAN-002 Addendum** | v2.9 / Lot 1 Extension | Card Visual Variants & Hero Artifact System Baseline |
 
 ---
 
@@ -249,3 +250,56 @@ This document contains the authoritative log of all 302 design decisions governi
 | **Q300** | A | Data Storage: Godot typed `.tres` Resources for card and ability definitions. | VALIDATED | [lot1/catalog](../01-lot1-vertical-slice/02-catalog.md) |
 | **Q301** | B | Ability Engine: Generic atomic operations library and declarative composition. | VALIDATED | [lot1/architecture_godot](../01-lot1-vertical-slice/04-architecture-godot.md) |
 | **Q302** | B | Presentation Pipeline: Immediate engine resolution, decoupled juicy VFX, controlled visual sync. | VALIDATED | [lot1/scope](../01-lot1-vertical-slice/01-scope.md) |
+
+---
+
+## 8. Addendum — Card Visual Variants and Hero Artifact System (PLAN-002)
+
+This addendum records confirmed design decisions and open parameters established in **PLAN-002**. In accordance with project governance, formal sequential Q-numbers (e.g., Q303+) are allocated exclusively through project-owner arbitration. The decisions below serve as the normative baseline pending formal Q-number assignment.
+
+### 8.1 Card Visual Variants [VALIDATED]
+
+| Item | Choice | Normative Summary | Status | Document |
+|---|:---:|---|:---:|---|
+| **PLAN-002-CV01** | A | **Creature Card Preservation:** Preserve the approved ART-002 Creature card design (artwork aperture, title, mana cost, Attack bottom-left, Health bottom-right, Armor/Shield badges, rarity treatment, rules text). No redesign scheduled. | VALIDATED | [cards](../03-presentation-ui/02-cards-and-inspection.md) |
+| **PLAN-002-CV02** | A | **Spell Card Dedicated Variant:** Shared materials, proportions, rarity coding, and mana cost; displays spell name, illustration, category badge, and effect description. **Eliminates all Creature Attack/Health indicators and empty stat sockets.** Recognizable in hand and hover inspection. | VALIDATED | [cards](../03-presentation-ui/02-cards-and-inspection.md) |
+| **PLAN-002-CV03** | A | **Equipment Card Dedicated Variant:** Shared materials, proportions, rarity coding, and mana cost; displays equipment name, item illustration, Weapon/Protection category badge, and effect description. **Eliminates all Creature Attack/Health indicators and empty stat sockets.** Distinguishes Weapon vs Protection without breaking shared card identity. | VALIDATED | [cards](../03-presentation-ui/02-cards-and-inspection.md) |
+| **PLAN-002-CV04** | A | **Single Reusable `CardView` Architecture:** Card variants are rendered through a single unified `CardView` presentation pipeline using type-conditional layouts. Three independent rendering systems are strictly forbidden. | VALIDATED | [roadmap](../01-lot1-vertical-slice/05-roadmap.md) |
+| **PLAN-002-CV05** | A | **Two-Stage Card Variant Workflow:** Spell and Equipment frame assets are produced in standalone Stage A art tasks (`assets/_source/lot1/cards/`), approved by owner, and subsequently integrated into Godot in Stage B (`P009-R01A/B` and `P009-R02A/B`). | VALIDATED | [roadmap](../01-lot1-vertical-slice/05-roadmap.md) |
+
+### 8.2 Hero Artifact Core Model [VALIDATED]
+
+| Item | Choice | Normative Summary | Status | Document |
+|---|:---:|---|:---:|---|
+| **PLAN-002-HA01** | A | **Hero Artifacts are NOT Cards:** Hero Artifacts do not participate in deck construction, hand drawing, card casting, discard, or banishment. | VALIDATED | [roadmap](../01-lot1-vertical-slice/05-roadmap.md) |
+| **PLAN-002-HA02** | A | **Hero Artifacts are NOT Creature Equipment:** Hero Artifacts attach to the Hero's progression state, not to board creature tokens. Creature Equipment rules (0–2 slots, 1 Weapon, 1 Protection; 0 slots for Dragons) remain completely unchanged. | VALIDATED | [equipment](../02-combat-rules/12-equipment-and-tribes.md) |
+| **PLAN-002-HA03** | A | **Exploration Progression Objects:** Hero Artifacts are permanent items acquired during exploration (Tower boss rewards, elite encounters, merchants). | VALIDATED | [roadmap](../01-lot1-vertical-slice/05-roadmap.md) |
+| **PLAN-002-HA04** | A | **Hero Artifact Inventory:** Acquired Artifacts are stored in the Hero's persistent Artifact Inventory. | VALIDATED | [glossary](01-glossary.md) |
+| **PLAN-002-HA05** | A | **Active vs Inactive State:** Only equipped/activated Artifacts grant active combat or exploration effects. | VALIDATED | [glossary](01-glossary.md) |
+| **PLAN-002-HA06** | A | **Limited Active Slots:** The number of simultaneously equipped/active Artifacts is strictly limited. | VALIDATED | [glossary](01-glossary.md) |
+| **PLAN-002-HA07** | A | **Hero Artifact Capacity:** The Hero possesses an `Artifact Capacity` attribute defining how many Artifacts can be active simultaneously. Independent of Creature Equipment Slots. | VALIDATED | [glossary](01-glossary.md) |
+| **PLAN-002-HA08** | A | **Progression-Based Capacity Growth:** Artifact Capacity increases through Hero progression (e.g., Sphere Grid milestones or level upgrades). | VALIDATED | [sphere](../04-progression-rpg/02-hero-sphere.md) |
+| **PLAN-002-HA09** | A | **Inactive Artifact Invariant:** Artifacts retained in inventory that are not equipped in an active slot grant zero active effects. | VALIDATED | [glossary](01-glossary.md) |
+| **PLAN-002-HA10** | A | **Generic Effect System Integration:** Active Artifact effects influence combat through a generic declarative effect system without hardcoded card-specific or artifact-specific branches in the combat engine. | VALIDATED | [roadmap](../01-lot1-vertical-slice/05-roadmap.md) |
+| **PLAN-002-HA11** | A | **Battlefield Invariant Preserved:** The tactical grid consists strictly of the 24 Creature slots (2 camps × 6 columns × 2 rows). No Artifact row or board positions exist. | VALIDATED | [battlefield](../02-combat-rules/01-battlefield-and-layout.md) |
+| **PLAN-002-HA12** | A | **Lot 1 Scope Boundary:** Hero Artifacts are deferred to Phase 2 (Tower Exploration). They are not counted among the 16 Lot 1 cards and do not block Gate G2, G3, or G5. | VALIDATED | [roadmap](../01-lot1-vertical-slice/05-roadmap.md) |
+
+### 8.3 Open Design Questions and Proposals (Pending Owner Arbitration) [OPEN / PROPOSAL]
+
+| Item | Proposal / Question | Current Classification | Status | Target Phase |
+|---|---|---|:---:|:---:|
+| **PLAN-002-OP01** | What is the starting Artifact Capacity for a new Hero run? (Proposal: 1 or 2 active slots). | PROPOSAL | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP02** | What is the maximum Artifact Capacity ceiling across full progression? (Proposal: 3 to 5 active slots). | PROPOSAL | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP03** | What are the exact capacity progression milestones and Sphere Grid costs? | Undecided balance rule | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP04** | What are the acquisition drop rates, loot tables, and merchant prices for Artifacts? | Undecided balance rule | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP05** | Do Artifacts follow the 5 card rarities or a dedicated Artifact quality tier system? | Undecided design rule | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP06** | What is the initial Artifact catalog for Phase 2 exploration? | Undecided catalog | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP07** | Can Artifacts be consumed, upgraded, fused, or transformed during a run? | Undecided mechanic | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP08** | Can equipped Artifacts be changed during combat, or strictly outside combat? (Proposal: outside combat only). | PROPOSAL | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP09** | Do Artifacts persist across Tower runs (meta-progression) or reset per run (roguelike)? | Undecided progression rule | OPEN | Phase 2/3 |
+| **PLAN-002-OP10** | What are the detailed stacking and precedence rules when multiple Artifact effects interact? | Undecided engine rule | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP11** | Is the Hero Artifact Inventory unbounded or capped by an inventory limit? | Undecided UI/inventory rule | OPEN | Phase 2 (Tower) |
+| **PLAN-002-OP12** | What is the exact HUD screen placement and interaction behavior for active Artifacts in combat? (Subject to P005-R09 compatibility review). | Undecided UI design | OPEN | Phase 2 (Tower) |
+
+### 8.4 Numbering Follow-Up
+Formal sequential decision numbers (Q303+) will be assigned to validated PLAN-002 items upon project-owner arbitration. Until that time, `PLAN-002-CV*`, `PLAN-002-HA*`, and `PLAN-002-OP*` serve as the definitive normative references across all specifications and roadmaps.

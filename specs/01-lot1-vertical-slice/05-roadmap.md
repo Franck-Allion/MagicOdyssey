@@ -58,9 +58,9 @@ For every prompt execution:
 | **P005** | Compose `CombatScreen` | Build central battlefield layout, opponent/player hero zones, hand area, and action bar with responsive anchors. | No UI component clipped at 1920×1080 or 1280×720 (prepares `L1-U01`, `L1-U02`). Refined via `P005-R01`–`R09`. |
 | **P006** | Create 24 Board Slots | Draw 2 camps × 6 columns × 2 rows; visually distinguish `ATTACK` and `DEFENSE` rows; wire hover/select signals. | All 24 slots selectable and visually distinct (`L1-U03`). |
 | **P007** | Hero & Turn HUDs | Display HP, mana capacity/available, deck counters, active camp banner, and "End Turn" button. | HUD values refresh purely via injected view-models; no engine coupling. |
-| **P008** | Fantasy Crest `CreatureToken` | Create shield-shaped crest token: portrait, ATK (bottom-left), HP (bottom-right), armor/shield badges, max 3 statuses + `+N`. | Demonstrable on 24 tokens with diverse stats and statuses (`L1-U03`, `L1-U05`). |
-| **P009** | `CardView` & `HandView` | Render premium illustrated card with cost, title, tribe, frame, and fan/linear hand layout with hover lift. | Cards render clearly in hand; readable at 720p; handles multi-instance copies. |
-| **P010** | Tooltip & Inspector Panel | Hover: concise tactical tooltip; Click: opens side inspector with original printed card + live modifier breakdown. | Demonstrates `L1-U04` on a buffed creature; visual review at 1080p and 720p. |
+| **P008** | Fantasy Crest `CreatureToken` | Create shield-shaped crest token: portrait, ATK (bottom-left), HP (bottom-right), armor/shield badges, max 3 statuses + `+N`. Ensure presentation compatibility with Weapon and Protection attachment indicators and stat modifiers (note: represents Creature Equipment, distinct from Hero Artifacts). | Demonstrable on 24 tokens with diverse stats and statuses (`L1-U03`, `L1-U05`). |
+| **P009** | `CardView` & `HandView` | Render premium illustrated cards across all three Lot 1 card types: Creature (approved ART-002 design preserved), Spell (dedicated layout variant without creature stats/sockets), and Equipment (dedicated Weapon/Protection layout variant without creature stats/sockets). Single CardView architecture with shared card back, rarity coding, typography, mana gem, and fan/linear hand layout with hover lift. Refined via two-stage packages `P009-R01A/B` and `P009-R02A/B`. | Cards of all 3 types render clearly in hand and hover inspection; readable at 720p; handles multi-instance copies; no inappropriate stat badges. |
+| **P010** | Tooltip & Inspector Panel | Hover: concise tactical tooltip; Click: opens side inspector with original printed card + live modifier breakdown. Renders Spell details without Creature-only fields; displays Equipment effects and categories; inspects Creature Equipment attachments on board creatures (future Hero Artifact inspection planned separately). | Demonstrates `L1-U04` on a buffed creature, spell, and equipment; visual review at 1080p and 720p. |
 
 **Gate G1:** Coherent 2D visual board with 24 slots, crest tokens, hand, and inspector. No temporary debug boxes.
 
@@ -130,7 +130,7 @@ Assets must preserve transparency where applicable and avoid baked-in dynamic ga
 | **P005-R07B** | Integrate Opponent HUD | Integrate R07A assets into CombatScreen. Maintain hidden hand information; ensure visual coherence with player HUD. | Proportions and readability validated at 1080p/720p; Windows executable verified; owner visual acceptance. |
 | **P005-R08A** | Deck, Graveyard & Turn Control Assets | Standalone PNG assets for deck representation, graveyard representation, turn/phase indicators, End Turn button states, action log trim. No baked text/counts. No Godot code. | Owner visual approval; assets committed to `assets/_source/lot1/hud/utility/`. |
 | **P005-R08B** | Integrate Deck, Graveyard & Turn Controls | Integrate R08A assets into CombatScreen. Improve counter hierarchy, button states, and action log presentation. Strictly presentation-only (no P007 domain binding). | Layout and alignment validated at 1080p/720p; Windows executable verified; owner visual acceptance. |
-| **P005-R09** | Global Visual Harmony & P005 Sign-off | Holistic visual review of entire CombatScreen composition (player/opponent HUDs, hand, deck/graveyard, action bar, battlefield integration). | Explicit owner artistic sign-off of P005 at 1080p/720p in Windows standalone. |
+| **P005-R09** | Global Visual Harmony & P005 Sign-off | Holistic visual review of entire CombatScreen composition (player/opponent HUDs, hand, deck/graveyard, action bar, battlefield integration). Compatibility check: verify space is reserved for a future compact active Hero Artifact indicator (associated visually with Hero zones, without occupying any of the 24 tactical creature slots or colliding with utility controls) and that the visual hierarchy supports a variable active Artifact Capacity. (Reservation and design-compatibility check only; does not require working Artifact inventory/systems or reopening approved HUD artwork unless demonstrable collision exists). | Explicit owner artistic sign-off of P005 at 1080p/720p in Windows standalone. |
 
 ##### Architectural Boundaries & Invariants
 1. **Preservation of P006–P010:** The subsequent prompts retain their original scope, responsibilities, and numbers:
@@ -141,6 +141,39 @@ Assets must preserve transparency where applicable and avoid baked-in dynamic ga
    - `P010`: Tooltip & Inspector Panel.
 2. **P005 vs P007 Distinction:** P005 and its refinement substeps (`R01`–`R09`) govern **static visual composition and layout presentation only**. Live gameplay data binding, engine event subscription, and combat view-models belong strictly to `P007` and `P033`.
 3. **Hand Capacity Rule vs Presentation:** `P005-R05` supports visual presentation of 0–10 cards. Normative gameplay rules (`01-scope.md` §3.6, Decision Q39) define a 7-card maximum capacity. This known discrepancy will be formally reconciled in `P024` without altering normative gameplay rules prematurely.
+4. **Hero Artifact Visual Reservation Invariant:** In `P005-R09`, confirming spatial reservation for future compact active Hero Artifact indicators is strictly a design-compatibility check. Hero Artifact inventory, slot equipping, and exploration acquisition are deferred to Phase 2 (Tower Exploration). Approved HUD artwork will not be reopened unless a demonstrable collision exists.
+
+#### Card Layout Variants Art Production & Integration Roadmap (PLAN-002)
+
+The approved ART-002 card framework was designed around Creature cards. However, the Lot 1 catalog contains 10 Creatures, 4 Spells, and 2 Equipments. To provide professional visual differentiation without fragmenting the presentation codebase, MagicOdyssey adopts a **single reusable `CardView` presentation architecture** with card-type-specific layouts.
+
+##### Architectural Principle: Single Reusable CardView Architecture
+1. **No Fragmented Renderers:** Do not introduce three independent rendering systems. All card types are rendered through the unified `CardView` pipeline (`scripts/presentation/card_view_layout.gd`).
+2. **Shared Foundation Preserved:**
+   - Card back illustration and opacity shader (`card_back_opacity.gdshader`).
+   - Rarity coding (gem shader `card_rarity_gems.gdshader`, border tints, and corner flourishes across Common, Uncommon, Rare, Epic, Legendary).
+   - Typography tokens, fonts, and outline treatments (`fantasy_theme.tres`).
+   - Mana cost gem badge (top-left).
+   - Card artwork presentation aperture.
+   - Hand fan placement, left-to-right stacking, hover lift, and click/drag interaction semantics.
+3. **Card-Type Layout Variants:**
+   - **Creature Cards (Approved Baseline):** Retain the approved ART-002 design intact: artwork aperture, card title, mana cost, Attack (bottom-left) and Health (bottom-right) badges, Armor/Shield badges where applicable, rarity treatment, tribe badge, and rules text. No redesign is scheduled.
+   - **Spell Cards (Dedicated Layout Variant):** Uses shared materials and proportions; displays mana cost, spell name, spell illustration, clear Spell category indicator, and readable spell effect description. **Explicitly eliminates all Creature Attack/Health indicators and empty stat sockets.** Recognizable both in the player's hand and during hover inspection.
+   - **Equipment Cards (Dedicated Layout Variant):** Uses shared materials and proportions; displays mana cost, equipment name, item illustration, Weapon or Protection category badge, and equipment effect description. **Explicitly eliminates all Creature Attack/Health indicators and empty stat sockets.** Distinguishes Weapon vs Protection without breaking the shared card identity.
+
+##### Mandatory Two-Stage Workflow for Card Layout Variants
+Following the mandatory A/B work package structure:
+- **Stage A (Artistic Creation):** Standalone PNG card-layout artwork specifications (`assets/_source/lot1/cards/mo_card_frame_spell_v01.png` and `assets/_source/lot1/cards/mo_card_frame_equipment_v01.png`). Prompt specification, transparency verification, game-size review (hand ~270px, hover/inspector ~440px), owner approval, and source control commit. No Godot code or scenes are modified during Stage A.
+- **Stage B (Technical Integration):** Integration of approved frames into `CardView`. Validate that creature cards remain unchanged, spell cards have no inappropriate stat indicators, equipment cards display category and effects, mana and rarity remain consistent, hand fan and hover inspection operate with zero regression, 1080p and 720p readability is verified, and ART-002 visual regression tests pass bit-exact.
+
+##### P009 Refinement Substeps Breakdown
+
+| Step | Autonomous Task | Scope | Verification / Exit Criterion |
+|---|---|---|---|
+| **P009-R01A** | Spell Card Variant Art Asset Generation | Standalone PNG layout artwork for Spell card frame (`assets/_source/lot1/cards/mo_card_frame_spell_v01.png`). Prompt specification, antique-bronze & midnight-blue styling, clean aperture, transparency check. No Godot code. | Owner visual approval; asset committed to `assets/_source/lot1/cards/`. |
+| **P009-R01B** | Integrate Spell Card Variant into `CardView` | Integrate approved R01A asset into `CardView` (`card_view_layout.gd`). Implement layout conditional on `card_type == SPELL`: render spell category and effect text; omit Attack/Health badges and sockets. Preserve shared mana, rarity, typography, and hover lift. | All 4 Lot 1 spells render cleanly in hand and hover; no ATK/HP badges or sockets; 1080p/720p verified; ART-002 regression suite PASS; owner visual acceptance. |
+| **P009-R02A** | Equipment Card Variant Art Asset Generation | Standalone PNG layout artwork for Equipment card frame (`assets/_source/lot1/cards/mo_card_frame_equipment_v01.png`). Distinct framing for Weapon/Protection category badges. Prompt specification, transparency check, game-size review. No Godot code. | Owner visual approval; asset committed to `assets/_source/lot1/cards/`. |
+| **P009-R02B** | Integrate Equipment Card Variant into `CardView` | Integrate approved R02A asset into `CardView` (`card_view_layout.gd`). Implement layout conditional on `card_type == EQUIPMENT`: render Weapon/Protection badge and effect description; omit Attack/Health badges and sockets. Preserve shared mana, rarity, typography, and hover lift. | Both Lot 1 equipments render cleanly in hand and hover; distinct from spells/creatures; 1080p/720p verified; ART-002 regression suite PASS; owner visual acceptance. |
 
 ---
 
@@ -162,6 +195,9 @@ Assets must preserve transparency where applicable and avoid baked-in dynamic ga
 
 **Gate G2:** All 16 card resources exist; 40-card decks validate; match factory initializes reproducibly.
 
+> **Hero Artifacts vs Card Catalog Invariant (PLAN-002):**
+> Hero Artifacts are **NOT cards** and are **NOT Creature Equipment**. They are permanent Hero progression objects. They must never be merged into `CardDefinition` and are not counted among the 16 Lot 1 cards (10 creatures, 4 spells, 2 equipments). Gate G2 requires strictly the 16 official cards; no Artifact catalog is required or expected for G2.
+
 ---
 
 ### J3 — Core Deterministic Combat Engine · P021–P031
@@ -182,6 +218,10 @@ Assets must preserve transparency where applicable and avoid baked-in dynamic ga
 | **P031** | Headless Core Simulation | Run headless test suite covering `L1-B01` to `L1-B14` and `L1-B20` to `L1-B27`; generate state hashes. | Gate G3: Complete scripted combat match runs headlessly with 100% PASS. |
 
 **Gate G3:** Full creature combat simulates headlessly to match conclusion with deterministic seed reproduction.
+
+> **Battlefield Invariant & Combat Engine Extension Point (PLAN-002):**
+> - **Battlefield Invariant:** The battlefield grid remains strictly 2 camps × 6 columns × 2 rows (24 tactical Creature positions across `ATTACK` and `DEFENSE` rows). Hero Artifacts do not occupy battlefield slots and do not introduce an Artifact row or board positions.
+> - **Engine Extension Point:** The core Lot 1 combat engine is decoupled and declarative. A future extension point allows an active Hero Artifact snapshot (aggregating passive modifiers through generic `EffectOperation` primitives) to be injected at match setup (`HeroState`), without card-specific or artifact-specific code branches. Gate G3 is strictly validated on the core Lot 1 rules; Hero Artifact progression does not block Gate G3.
 
 ---
 
@@ -219,6 +259,9 @@ Assets must preserve transparency where applicable and avoid baked-in dynamic ga
 | **P048** | Atomic Grouping & Simultaneous Damage | Group compatible simultaneous damage instances; consume shields in canonical order; commit HP simultaneously. | `L1-B22`, `L1-B30`: Q287–Q289 verified; all 16 cards fully playable. |
 
 **Gate G5:** All 16 cards fully functional via declarative operations; tests `L1-B15` to `L1-B22` passing.
+
+> **Scope Boundary Notice (PLAN-002):**
+> Gate G5 validates the 16 declarative cards (spells, equipments, creature abilities) and Creature Equipment slots (0–2 slots: at most 1 Weapon and 1 Protection; Dragons have 0). Hero Artifact progression, active artifact capacity, and artifact inventory are deferred to Phase 2 (Tower Exploration) and are strictly non-blocking for Gate G5.
 
 ---
 
@@ -316,3 +359,75 @@ Lot 1 is strictly accepted when:
 4. Extensibility test (17th card) succeeds without altering engine GDScript.
 5. The standalone Windows executable runs a complete combat match outside the editor.
 6. The codebase contains zero placeholder debug boxes, zero unhandled errors, and clean typed GDScript.
+
+---
+
+## G. Post-Lot 1 Roadmap: Hero Artifacts & Exploration Architecture (PLAN-002)
+
+While Lot 1 delivers the self-contained tactical combat vertical slice (`P001`–`P065`), the owner-validated **Hero Artifact System** establishes the foundation for exploration progression across subsequent phases.
+
+### 1. Macro Implementation Phase Sequence
+1. **Phase 1 — Combat Engine & Playable Vertical Slice (Current Lot 1):** Complete tactical combat against AI, 16 declarative cards, 24-slot grid, responsive UI, headless test runner (`P001`–`P065`, Gates `G0`–`G8`).
+2. **Phase 2 — Tower Exploration:** Floor navigation, merchant shops, draft reward selection, Sanctum respec, persistent Hero Artifact Inventory, limited active artifact slots, and progression-based capacity increases.
+3. **Phase 3 — World Exploration:** World map, non-linear node traversal, persistent quest encounters, and multi-run meta-progression.
+4. **Phase 4 — Main Menu, Settings & Transverse Systems:** Audio management, user preferences, localization, and full save/load management.
+
+> **Implementation Phase Invariant:** Development must not begin on Phase 2 (Tower Exploration) until Gate `G8` of Lot 1 is fully validated and signed off by the owner.
+
+### 2. Validated Hero Artifact Core Model [VALIDATED]
+The project owner has explicitly arbitrated and validated the following design invariants:
+1. **Not Cards:** Hero Artifacts are NOT cards and do NOT participate in deck building, hand draws, card play, or graveyard recycling.
+2. **Not Creature Equipment:** Hero Artifacts are NOT Creature Equipment. They attach to the Hero's progression state, not to board creature tokens.
+3. **Permanent Exploration Objects:** Acquired during exploration (e.g., Tower floor boss rewards, elite encounters, merchant stock).
+4. **Hero Artifact Inventory:** Acquired Artifacts are permanently retained in the Hero's Artifact Inventory.
+5. **Active vs Inactive State:** Only equipped/activated Artifacts grant active combat or exploration effects.
+6. **Limited Active Slots:** The number of simultaneously active Artifacts is strictly limited.
+7. **Hero Artifact Capacity:** The Hero possesses an `Artifact Capacity` attribute defining how many Artifacts can be active simultaneously.
+8. **Progression-Based Capacity Growth:** Artifact Capacity can increase through Hero progression (e.g., Sphere Grid milestones or level upgrades).
+9. **Inactive Artifact Invariant:** Artifacts retained in inventory that are not currently equipped grant zero active effects.
+10. **Generic Effect Integration:** Active Artifact effects influence combat through a generic declarative effect system, without hardcoded card-specific or artifact-specific branches in the combat engine.
+
+**Independence from Creature Equipment:**
+- Creature Equipment rules remain strictly unchanged: 0 to 2 slots per creature (at most 1 Weapon and 1 Protection; Dragons have 0 slots).
+- Hero Artifact Capacity is completely independent of Creature Equipment Slots.
+- Artifacts are never counted among the 16 Lot 1 cards and are never placed in the 24 tactical creature slots.
+
+### 3. Open Design Questions & Proposals [OPEN / PROPOSAL]
+The following parameters are **not yet validated** and remain open for owner decision during Phase 2 planning:
+- Starting Artifact Capacity (proposal: 1 or 2 slots; pending owner validation).
+- Maximum Artifact Capacity ceiling across full hero progression.
+- Capacity progression curve and unlock milestones (e.g., Sphere Grid node costs).
+- Exact acquisition drop rates, loot tables, and merchant pricing.
+- Artifact rarity tiers and visual quality coding.
+- Complete Artifact catalog and specific effect definitions.
+- Whether Artifacts can be consumed, upgraded, fused, or transformed.
+- Rules for changing equipped Artifacts during combat (proposal: equipping/unequipping occurs strictly outside combat; pending owner confirmation).
+- Persistence between separate Tower runs vs cross-run meta-progression.
+- Detailed effect stacking order and precedence resolution.
+- Inventory size limits (unbounded vs capped inventory).
+- Exact HUD screen placement and interaction behavior.
+
+### 4. UI Presentation Surfaces
+The Hero Artifact system spans two complementary presentation surfaces:
+- **Surface A — Combat HUD Indicator (Phase 1 Reservation / Phase 2 Implementation):**
+  - Compact visual representation of currently active Hero Artifacts.
+  - Visually anchored to the Hero HUD zone.
+  - **Zero occupation of the 24 tactical Creature positions**; no intrusion into board slots.
+  - Compact and readable at both 1920×1080 and 1280×720 without decorative clutter.
+  - Recognizable Artifact iconography with hover tooltip showing inspectable effect descriptions.
+  - Dynamically supports variable Artifact Capacity (e.g., 1 to N active slots) with clean overflow handling.
+  - Visually coherent with the approved player and opponent HUD backplates.
+- **Surface B — Hero Artifact Inventory (Phase 2 Tower Exploration):**
+  - Full-screen or dedicated modal view in the out-of-combat exploration layer.
+  - Displays all acquired Artifacts in persistent storage.
+  - Displays currently equipped Artifacts and active slot status.
+  - Clearly communicates current Artifact Capacity (active vs available capacity).
+  - Handles equipping and unequipping according to validated rules.
+  - Provides detailed mathematical inspection of Artifact passive and triggered effects.
+
+### 5. Combat Engine Integration Architecture (Phase 2 Preparation)
+To ensure seamless consumption of active Artifact effects when Phase 2 begins:
+- **Typed Data Representation:** `ArtifactDefinition` typed Resource inheriting from `Resource`, declaring unique identifier, display metadata, and declarative `Array[EffectOperation]` or passive modifiers.
+- **Hero State Snapshot:** At combat match initialization (`CombatFactory`), the player's `HeroState` receives an immutable snapshot of currently equipped active artifacts (`active_artifacts: Array[ArtifactDefinition]`).
+- **Generic Effect Dispatch:** Active artifact modifiers (e.g., start-of-combat shields, passive stat auras, fatigue mitigation) hook into the existing `EffectRegistry` and event FIFO queue without adding artifact-specific `if/else` logic to `CombatEngine`.
+- **Deterministic Verification:** Artifact effects are covered by automated headless tests ensuring identical RNG seeds produce identical outcomes with active artifacts enabled.

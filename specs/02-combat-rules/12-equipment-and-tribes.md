@@ -21,6 +21,9 @@ The game's foundational catalog is anchored around four fantasy tribes with dist
 
 Equipment cards represent weapons and protective gear attached to creatures on the battlefield.
 
+> **Disambiguation — Creature Equipment vs Hero Artifacts [PLAN-002]:**
+> Equipment cards described in this section attach strictly to Creatures on the battlefield, occupying Creature Equipment Slots (0 to 2 slots). They are completely distinct from **Hero Artifacts** (permanent exploration progression objects equipped into the Hero's limited active Artifact Slots).
+
 ### 2.1 Casting and Attachment [Q285]
 - An equipment card is played from hand during the action phase by paying its mana cost.
 - It requires a legal, eligible target creature currently residing on the player's board.

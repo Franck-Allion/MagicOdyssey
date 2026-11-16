@@ -31,7 +31,7 @@ Col:     1       2       3       4       5       6
          [ PLAYER HERO & RESOURCES ]
 ```
 
-Every board slot is uniquely addressed by the coordinate tuple:  
+Every board slot is uniquely addressed by the coordinate tuple:
 $$\text{Slot} = (\text{Camp}, \text{Column}, \text{Row})$$
 
 ---
@@ -41,6 +41,7 @@ $$\text{Slot} = (\text{Camp}, \text{Column}, \text{Row})$$
 1. **Uniqueness:** At most one creature instance may occupy a slot at any time.
 2. **Persistence:** Moving or swapping preserves the creature's board instance (`instance_id`).
 3. **No Retaliation:** When attacked by an opposing unit, the defending creature does not strike back automatically [Q09].
+4. **Battlefield Invariant (Hero Artifacts) [PLAN-002]:** The tactical grid consists strictly of the 24 Creature slots (2 camps × 6 columns × 2 rows). Hero Artifacts do not occupy battlefield slots and do not introduce an Artifact row or board positions.
 
 ---
 
@@ -57,5 +58,5 @@ When a creature in `ATTACK[c]` strikes at the end of the turn, it directs its at
 
 - **Contested Column:** A column containing at least one creature from both camps.
 - **Uncontested Enemy Column:** A column containing at least one enemy creature and zero allied creatures.
-- **Contestation Priority Rule [Q03]:**  
+- **Contestation Priority Rule [Q03]:**
   When summoning a creature from hand, if one or more **uncontested enemy columns** exist on the board, and a legal placement is possible in at least one of those columns, the player **must** summon into one of those uncontested columns. Free placement into any empty slot on the board is only permitted when no uncontested enemy columns exist (i.e. all enemy columns are already contested, or the enemy board is empty).
