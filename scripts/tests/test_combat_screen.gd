@@ -20,6 +20,7 @@ func run_suite(asserts: TestAsserts, failure_mode: bool = false) -> void:
 	_test_hand_hover_and_picking(asserts)
 	_test_overlay_layer(asserts)
 	_test_responsive_bounds_1080p_and_720p(asserts)
+	_test_p005_r09b_card_hover_readability_and_inspection(asserts)
 
 	if failure_mode:
 		_test_intentional_failure(asserts)
@@ -571,3 +572,89 @@ func _test_opponent_hud_and_card_backs(asserts: TestAsserts) -> void:
 	asserts.assert_true(fan.face_down,"Opponent stays face down")
 	asserts.assert_false((screen.get_node("CombatLayout/PlayerHandZone/Fan") as CombatPreviewCards).face_down,"Player face-up cards preserved")
 	screen.free()
+
+
+func _test_p005_r09b_card_hover_readability_and_inspection(asserts: TestAsserts) -> void:
+	asserts.set_current_test("combat_screen:p005_r09b_card_hover_readability_and_inspection")
+
+	var fan: CombatPreviewCards = CombatPreviewCards.new()
+	fan.size = Vector2(1280, 252)
+	fan.display_count = 7
+	fan.rebuild()
+
+	# 1. Inspection size and aspect ratio
+	asserts.assert_equal(fan.inspection_height, 540.0, "P005-R09B default inspection height must be 540.0 px")
+	var scale_factor: float = fan.inspection_height / CardViewLayout.CARD_SIZE.y
+	var expected_width: float = CardViewLayout.CARD_SIZE.x * scale_factor
+	asserts.assert_true(is_equal_approx(expected_width, 405.0), "Inspected card width must be 405.0 px at 540 px height (3:4 ratio)")
+	asserts.assert_true(is_equal_approx(expected_width / fan.inspection_height, 0.75), "Inspected card must strictly preserve 3:4 aspect ratio")
+
+	# 2. Adaptive inspection center calculations across candidate heights
+	# Baseline Candidate A (440 px): y = 20.0 (baseline preserved)
+	var center_440: Vector2 = CombatPreviewCards.calculate_inspection_center(640.0, 1280.0, 440.0)
+	asserts.assert_equal(center_440.y, 20.0, "Candidate A (440 px) inspection center Y must remain baseline 20.0 px")
+
+	# Candidate B (500 px): y = 0.0
+	var center_500: Vector2 = CombatPreviewCards.calculate_inspection_center(640.0, 1280.0, 500.0)
+	asserts.assert_equal(center_500.y, 0.0, "Candidate B (500 px) inspection center Y must be 0.0 px")
+
+	# Candidate C (540 px): y = -20.0
+	var center_540: Vector2 = CombatPreviewCards.calculate_inspection_center(640.0, 1280.0, 540.0)
+	asserts.assert_equal(center_540.y, -20.0, "Candidate C (540 px) inspection center Y must be -20.0 px")
+
+	# 3. Viewport and screen-edge containment for 540 px inspection
+	# CombatLayout coordinates: hand_offset_y = 804.0, hand_offset_x = 320.0
+	var hand_y: float = 804.0
+	var hand_x: float = 320.0
+	var half_h: float = 540.0 * 0.5 # 270.0 px
+	var half_w: float = 405.0 * 0.5 # 202.5 px
+
+	var card_bottom_screen: float = hand_y + center_540.y + half_h # 804 - 20 + 270 = 1054.0 px
+	var card_top_screen: float = hand_y + center_540.y - half_h    # 804 - 20 - 270 = 514.0 px
+
+	asserts.assert_equal(card_bottom_screen, 1054.0, "Inspected card bottom must reach exactly y=1054.0 px")
+	asserts.assert_true(card_bottom_screen <= 1080.0 - 26.0, "Inspected card bottom must maintain >= 26 px screen margin (no clipping)")
+	asserts.assert_true(card_top_screen >= 480.0, "Inspected card top must remain strictly below center divider (y=480 px)")
+
+	# 4. Horizontal containment and clearance to side HUD columns (1080p and 720p)
+	for test_count: int in [7, 10]:
+		fan.display_count = test_count
+		fan.rebuild()
+
+		# Leftmost card
+		var left_rest_x: float = CombatPreviewCards.layout_pose(0, test_count, 1280, 270).origin.x
+		var left_center: Vector2 = CombatPreviewCards.calculate_inspection_center(left_rest_x, 1280.0, 540.0)
+		var left_edge_screen: float = hand_x + left_center.x - half_w
+		var player_hud_right: float = 296.0 # PlayerHeroZone ends at x=296
+		var clearance_left: float = left_edge_screen - player_hud_right
+		asserts.assert_true(clearance_left >= 38.0, "Leftmost card (count %d) must clear Player HUD by >= 38 px (got %.2f px)" % [test_count, clearance_left])
+
+		# Rightmost card
+		var right_rest_x: float = CombatPreviewCards.layout_pose(test_count - 1, test_count, 1280, 270).origin.x
+		var right_center: Vector2 = CombatPreviewCards.calculate_inspection_center(right_rest_x, 1280.0, 540.0)
+		var right_edge_screen: float = hand_x + right_center.x + half_w
+		var utility_hud_left: float = 1624.0 # ActionBarZone starts at x=1624
+		var clearance_right: float = utility_hud_left - right_edge_screen
+		asserts.assert_true(clearance_right >= 38.0, "Rightmost card (count %d) must clear Utility HUD by >= 38 px (got %.2f px)" % [test_count, clearance_right])
+
+	# 5. Interactive pointer picking with 540 px inspection
+	fan.display_count = 7
+	fan.rebuild()
+	fan.set_inspected_card(3, 1.0)
+	asserts.assert_equal(fan.get_hover_state(), CombatPreviewCards.HoverState.INSPECTING, "Hover state must be INSPECTING")
+
+	var raised_x: float = CombatPreviewCards.layout_pose(3, 7, 1280, 270).origin.x
+	var upper_pt: Vector2 = Vector2(raised_x, -50.0)
+	asserts.assert_equal(fan.pick_card_at(upper_pt), 3, "Pointer in raised 540 px body must maintain inspection ownership")
+
+	var outside_pt: Vector2 = Vector2(raised_x, -350.0)
+	asserts.assert_equal(fan.pick_card_at(outside_pt), -1, "Pointer far above raised card returns -1")
+
+	# 6. Responsive 720p physical metrics
+	var factor_720p: float = 2.0 / 3.0
+	var physical_h_720p: float = 540.0 * factor_720p
+	var physical_w_720p: float = 405.0 * factor_720p
+	asserts.assert_equal(physical_h_720p, 360.0, "At 720p, inspected card height must be 360.0 physical px (was 293.3 px in R09A)")
+	asserts.assert_equal(physical_w_720p, 270.0, "At 720p, inspected card width must be 270.0 physical px (was 220.0 px in R09A)")
+
+	fan.free()

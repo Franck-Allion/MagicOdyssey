@@ -14,7 +14,7 @@ enum HoverState {
 @export var face_down: bool = false
 @export_range(0, 10) var display_count: int = 7
 @export var preferred_height: float = 270.0
-@export var inspection_height: float = 440.0
+@export var inspection_height: float = 540.0
 @export var transition_duration: float = 0.18
 
 var selected_index: int = -1
@@ -102,6 +102,17 @@ func _update_hover_state() -> void:
 		else:
 			_hover_state = HoverState.TRANSITIONING
 
+## Computes the deterministic, clamped visual center for card inspection.
+## Preserves safe horizontal clearance to HUD side-columns and prevents vertical screen clipping.
+static func calculate_inspection_center(rest_x: float, width: float, inspect_h: float, safe_margin_x: float = 16.0, bottom_screen_margin: float = 26.0, hand_offset_y: float = 804.0, screen_h: float = 1080.0) -> Vector2:
+	var scale_inspect: float = inspect_h / CardViewLayout.CARD_SIZE.y
+	var half_w_inspect: float = CardViewLayout.CARD_SIZE.x * scale_inspect * 0.5
+	var inspect_center_x: float = clampf(rest_x, half_w_inspect + safe_margin_x, width - half_w_inspect - safe_margin_x)
+	# Vertical placement: ensure card bottom clears bottom screen edge by at least bottom_screen_margin.
+	# For inspect_h <= 440, maintains the baseline 20.0 px offset.
+	var inspect_center_y: float = minf(20.0, screen_h - bottom_screen_margin - hand_offset_y - inspect_h * 0.5)
+	return Vector2(inspect_center_x, inspect_center_y)
+
 func _apply_card_transforms() -> void:
 	var count: int = clampi(display_count, 0, 10)
 	for i: int in range(mini(count, get_child_count())):
@@ -115,15 +126,12 @@ func _apply_card_transforms() -> void:
 		var rest_h: float = preferred_height
 
 		var inspect_h: float = inspection_height
-		var scale_inspect: float = inspect_h / CardViewLayout.CARD_SIZE.y
-		var half_w_inspect: float = CardViewLayout.CARD_SIZE.x * scale_inspect * 0.5
-		var inspect_center_x: float = clampf(rest_center.x, half_w_inspect + 16.0, size.x - half_w_inspect - 16.0)
-		var inspect_center_y: float = 20.0
+		var inspect_center: Vector2 = calculate_inspection_center(rest_center.x, size.x, inspect_h)
 		var inspect_rot: float = 0.0
 
 		var current_h: float = lerpf(rest_h, inspect_h, t)
 		var current_rot: float = lerpf(rest_rot, inspect_rot, t)
-		var current_center: Vector2 = rest_center.lerp(Vector2(inspect_center_x, inspect_center_y), t)
+		var current_center: Vector2 = rest_center.lerp(inspect_center, t)
 
 		card.rotation = current_rot
 		card.scale = Vector2.ONE * current_h / CardViewLayout.CARD_SIZE.y
@@ -270,11 +278,8 @@ func pick_card_at(local_point: Vector2) -> int:
 		if raised_blend > 0.08:
 			var rest_pose: Transform2D = layout_pose(_target_index, count, size.x, preferred_height)
 			var inspect_h: float = inspection_height
-			var scale_inspect: float = inspect_h / CardViewLayout.CARD_SIZE.y
-			var half_w_inspect: float = CardViewLayout.CARD_SIZE.x * scale_inspect * 0.5
-			var inspect_center_x: float = clampf(rest_pose.origin.x, half_w_inspect + 16.0, size.x - half_w_inspect - 16.0)
-			var inspect_center_y: float = 20.0
-			var current_center: Vector2 = rest_pose.origin.lerp(Vector2(inspect_center_x, inspect_center_y), raised_blend)
+			var inspect_center: Vector2 = calculate_inspection_center(rest_pose.origin.x, size.x, inspect_h)
+			var current_center: Vector2 = rest_pose.origin.lerp(inspect_center, raised_blend)
 			var current_h: float = lerpf(preferred_height, inspect_h, raised_blend)
 			var current_rot: float = lerpf(rest_pose.get_rotation(), 0.0, raised_blend)
 

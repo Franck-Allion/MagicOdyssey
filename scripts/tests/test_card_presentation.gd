@@ -23,6 +23,7 @@ func run_suite(asserts: TestAsserts, failure_mode: bool = false) -> void:
 	_test_creature_vs_non_creature_behavior(asserts)
 	_test_epic_emerald_rarity(asserts)
 	_test_content_transactional_safety(asserts)
+	_test_p005_r09b_title_and_rules_fitting(asserts)
 
 	if failure_mode:
 		_test_intentional_failure(asserts)
@@ -323,6 +324,51 @@ func _test_content_transactional_safety(asserts: TestAsserts) -> void:
 	asserts.assert_equal(err_multi, ERR_INVALID_DATA, "Multiline title must return ERR_INVALID_DATA")
 
 	content_overlay.free()
+
+
+func _test_p005_r09b_title_and_rules_fitting(asserts: TestAsserts) -> void:
+	asserts.set_current_test("card_presentation:p005_r09b_title_and_rules_fitting")
+
+	var overlay: CardContentOverlay = CONTENT_OVERLAY.new()
+	asserts.assert_true(overlay != null, "CardContentOverlay must instantiate cleanly")
+
+	# 1. Short title retains preferred 68 pt font size without wrapping
+	var short_data: CardContentOverlay.Content = CardContentOverlay.Content.new(
+		"Arcane Knight", CardContentOverlay.Category.CREATURE, "Human", "Whenever this creature attacks, gain 1 Shield.")
+	var err_short: Error = overlay.configure(short_data)
+	asserts.assert_equal(err_short, OK, "Short title card must configure OK")
+	asserts.assert_equal(overlay.title_font_size, 68, "Short title must remain at preferred 68 pt")
+	asserts.assert_equal(overlay.rules_font_size, 48, "Short rules must use preferred 48 pt")
+
+	# 2. Medium title fits single line cleanly
+	var med_data: CardContentOverlay.Content = CardContentOverlay.Content.new(
+		"Voidbound Talisman", CardContentOverlay.Category.EQUIPMENT, "", "At the start of your turn, add 1 Mana Crystal.")
+	var err_med: Error = overlay.configure(med_data)
+	asserts.assert_equal(err_med, OK, "Medium title card must configure OK")
+	asserts.assert_equal(overlay.title_font_size, 62, "Medium title must scale cleanly on single line (62 pt)")
+	asserts.assert_equal(overlay.rules_font_size, 48, "Medium rules must use preferred 48 pt")
+
+	# 3. Long title (30 chars) adaptively wraps onto 2 lines at 48 pt instead of shrinking to 42 pt
+	var long_data: CardContentOverlay.Content = CardContentOverlay.Content.new(
+		"Archon of the Sundered Sphere", CardContentOverlay.Category.CREATURE, "Celestial",
+		"Legendary creature. Battlecry: Banish all enemy tokens until end of turn.")
+	var err_long: Error = overlay.configure(long_data)
+	asserts.assert_equal(err_long, OK, "Long title card must configure OK")
+	asserts.assert_equal(overlay.title_font_size, 48, "Long title must wrap onto 2 lines and use 48 pt (was 42 pt in R09A)")
+	asserts.assert_equal(overlay.rules_font_size, 48, "Rules must fit at 48 pt")
+
+	# 4. Physical font sizes at 720p with 540 px inspection height
+	# Factor: (540.0 / 1448.0) * (2.0 / 3.0) = 0.2486188
+	var scale_720p: float = (540.0 / 1448.0) * (2.0 / 3.0)
+	var long_title_720p: float = float(overlay.title_font_size) * scale_720p
+	var rules_720p: float = float(overlay.rules_font_size) * scale_720p
+	var short_title_720p: float = 68.0 * scale_720p
+
+	asserts.assert_true(long_title_720p >= 11.5, "Long title at 720p must reach ~12 physical px (got %.2f px)" % long_title_720p)
+	asserts.assert_true(rules_720p >= 11.5, "Rules text at 720p must reach ~12 physical px (got %.2f px)" % rules_720p)
+	asserts.assert_true(short_title_720p >= 16.0, "Short title at 720p must exceed 16 physical px (got %.2f px)" % short_title_720p)
+
+	overlay.free()
 
 
 func _test_intentional_failure(asserts: TestAsserts) -> void:

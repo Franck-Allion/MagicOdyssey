@@ -1,0 +1,49 @@
+{
+  "adapter": "NVIDIA GeForce GTX 1660 Ti",
+  "candidates_720p": [
+    {
+      "card_screen_rect_720p": [
+        836.0,
+        402.666656494141,
+        220.000015258789,
+        293.333343505859
+      ],
+      "height_physical_720p": 293.333333333333,
+      "height_ref": 440.0,
+      "long_title_physical_px": 9.72375690607735,
+      "rules_physical_px": 9.72375690607735,
+      "short_title_physical_px": 13.7753222836096,
+      "width_physical_720p": 220.0
+    },
+    {
+      "card_screen_rect_720p": [
+        806.0,
+        369.333312988281,
+        250.000015258789,
+        333.333343505859
+      ],
+      "height_physical_720p": 333.333333333333,
+      "height_ref": 500.0,
+      "long_title_physical_px": 11.0497237569061,
+      "rules_physical_px": 11.0497237569061,
+      "short_title_physical_px": 15.6537753222836,
+      "width_physical_720p": 250.0
+    },
+    {
+      "card_screen_rect_720p": [
+        786.0,
+        342.666656494141,
+        270.0,
+        360.0
+      ],
+      "height_physical_720p": 360.0,
+      "height_ref": 540.0,
+      "long_title_physical_px": 11.9337016574586,
+      "rules_physical_px": 11.9337016574586,
+      "short_title_physical_px": 16.9060773480663,
+      "width_physical_720p": 270.0
+    }
+  ],
+  "engine": "4.7.2-stable (official)",
+  "timestamp": "2026-11-16T20:55:29"
+}

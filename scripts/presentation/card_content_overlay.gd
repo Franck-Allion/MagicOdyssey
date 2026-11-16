@@ -64,6 +64,8 @@ func _title(value: String, points: int) -> Label:
 	label.add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.add_theme_constant_override("line_separation", -6)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	return label
 
@@ -116,7 +118,25 @@ func configure(data: Content) -> Error:
 	var title_points: int = clampi(int(TITLE_PREFERRED * TITLE_BOUNDS.size.x / maxf(preferred_width, 1.0)), TITLE_MINIMUM, TITLE_PREFERRED)
 	while title_points > TITLE_MINIMUM and display_font.get_string_size(data.title, HORIZONTAL_ALIGNMENT_LEFT, -1, title_points).x > TITLE_BOUNDS.size.x:
 		title_points -= 1
-	title_overflow = display_font.get_string_size(data.title, HORIZONTAL_ALIGNMENT_LEFT, -1, title_points).x > TITLE_BOUNDS.size.x
+	var single_fits: bool = display_font.get_string_size(data.title, HORIZONTAL_ALIGNMENT_LEFT, -1, title_points).x <= TITLE_BOUNDS.size.x
+
+	# Controlled wrapping (P005-R09B): if title is long and multi-word, evaluate 2-line wrap
+	# to preserve comfortable physical legibility (aiming for >= 12 physical px at 720p).
+	if title_points < 52 and data.title.contains(" "):
+		var test_points: int = 48
+		while test_points > title_points:
+			var p: TextParagraph = TextParagraph.new()
+			p.width = TITLE_BOUNDS.size.x
+			p.alignment = HORIZONTAL_ALIGNMENT_CENTER
+			p.line_spacing = -6.0
+			p.add_string(data.title, display_font, test_points)
+			if p.get_line_count() <= 2 and p.get_size().y <= TITLE_BOUNDS.size.y:
+				title_points = test_points
+				single_fits = true
+				break
+			test_points -= 1
+
+	title_overflow = not single_fits
 	var candidate_rules: RichTextLabel
 	var rule_points: int = RULES_PREFERRED
 	while true:
