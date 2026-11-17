@@ -31,6 +31,18 @@ func set_preview(count: int, entering_card: PreviewCard = null) -> bool:
 	refresh()
 	return true
 
+## Sets or updates the visual graveyard card count independently of top card identity.
+## If new_top_card is supplied, updates the top miniature. If count <= 0, resets to empty.
+## If count > 0 and new_top_card is null, preserves any previously accepted top card.
+func set_card_count(count: int, new_top_card: PreviewCard = null) -> bool:
+	if count <= 0:
+		return set_preview(0, null)
+	if new_top_card != null:
+		return set_preview(count, new_top_card)
+	visual_count = count
+	refresh()
+	return true
+
 func refresh() -> void:
 	for child: Node in get_children():
 		remove_child(child)
@@ -67,6 +79,8 @@ func refresh() -> void:
 			seal.category = last_card.category
 			seal.set("_mana", last_card.mana)
 			card.add_child(seal)
+	else:
+		texture(self, EMPTY, origin, mini_size).name = "Empty"
 	DeckStackView.add_labels(self, "GRAVEYARD", visual_count)
 
 static func texture(parent: Control, source: Texture2D, origin: Vector2, dimensions: Vector2) -> TextureRect:

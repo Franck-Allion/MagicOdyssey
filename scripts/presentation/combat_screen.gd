@@ -18,9 +18,14 @@ signal slot_unhovered(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldS
 signal slot_selected(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row)
 signal slot_selection_changed(slot: BattlefieldSlot)
 
+signal hud_view_model_applied(model: CombatHudViewModel)
+signal end_turn_requested()
+
 var _slots: Dictionary[Vector3i, BattlefieldSlot] = {}
 var _slots_initialized: bool = false
 var _selected_slot: BattlefieldSlot
+var _current_hud_view_model: CombatHudViewModel
+var _utility_hud_initialized: bool = false
 
 ## Node references to authoritative presentation regions
 @onready var background_layer: Control = $BackgroundLayer
@@ -170,10 +175,19 @@ func _on_slot_selected(camp: BattlefieldSlot.Camp, column: int, row: Battlefield
 	slot_selected.emit(camp, column, row)
 
 func _setup_utility_hud() -> void:
+	if _utility_hud_initialized:
+		return
+	_utility_hud_initialized = true
 	for label: Label in [get_match_status().get_node("Phase"), get_action_bar_zone().get_node("RecentActions")]:
 		label.add_theme_color_override("font_color", TOKENS.color_token(&"secondary"))
 	(get_action_bar_zone().get_node("RecentTitle") as Label).add_theme_color_override("font_color", TOKENS.color_token(&"text_bright"))
+	var btn: Button = get_end_turn_button()
+	if not btn.pressed.is_connected(_on_end_turn_button_pressed):
+		btn.pressed.connect(_on_end_turn_button_pressed)
 	set_turn_preview("TURN 01", "PLAYER  /  ACTION")
+
+func _on_end_turn_button_pressed() -> void:
+	end_turn_requested.emit()
 
 ## Text-only presentation injection. Never advances a turn.
 func set_turn_preview(turn_text: String, phase_text: String) -> void:
@@ -182,6 +196,169 @@ func set_turn_preview(turn_text: String, phase_text: String) -> void:
 
 func set_recent_actions_preview(entries: Array[String]) -> void:
 	(get_action_bar_zone().get_node("RecentActions") as Label).text = "Awaiting first action..." if entries.is_empty() else "\n".join(entries.slice(0, 3))
+
+## P007 HUD Data-Binding API
+## Injects a complete presentation snapshot into all combat HUD components.
+## Strictly presentation-only: does not couple with or mutate CombatEngine state.
+func apply_hud_view_model(model: CombatHudViewModel, animate: bool = true) -> bool:
+	if model == null or not model.is_valid():
+		return false
+
+	_connect_opponent_resource_labels()
+	_setup_utility_hud()
+
+	# 1. Player Hero Resources
+	get_player_health_orb().set_resource_values(model.player_hero.current_health, model.player_hero.max_health, animate)
+	get_player_mana_orb().set_resource_values(model.player_hero.current_mana, model.player_hero.max_mana, animate)
+
+	# 2. Opponent Hero Resources (external labels update automatically via resource_values_changed)
+	get_opponent_health_orb().set_resource_values(model.opponent_hero.current_health, model.opponent_hero.max_health, animate)
+	get_opponent_mana_orb().set_resource_values(model.opponent_hero.current_mana, model.opponent_hero.max_mana, animate)
+
+	# 3. Deck Counters
+	get_player_deck().visual_count = model.player_hero.deck_count
+	get_opponent_deck().visual_count = model.opponent_hero.deck_count
+
+	# 4. Graveyard Counters
+	get_player_graveyard().set_card_count(model.player_hero.graveyard_count, model.player_hero.top_graveyard_card)
+	get_opponent_graveyard().set_card_count(model.opponent_hero.graveyard_count, model.opponent_hero.top_graveyard_card)
+
+	# 5. Turn & Phase Presentation
+	set_turn_preview(model.get_formatted_turn(), model.get_formatted_phase())
+
+	# 6. End Turn Button Presentation
+	set_end_turn_enabled(model.end_turn_enabled)
+
+	# 7. Recent Actions Log
+	set_recent_actions_preview(model.recent_actions)
+
+	# 8. Store snapshot and emit signal
+	_current_hud_view_model = model.duplicate_model()
+	hud_view_model_applied.emit(model)
+	return true
+
+## Returns the currently active HUD view-model snapshot, or constructs one from current controls if none was applied.
+func get_hud_view_model() -> CombatHudViewModel:
+	if _current_hud_view_model != null:
+		return _current_hud_view_model.duplicate_model()
+	var p_health: LiquidResourceOrb = get_player_health_orb()
+	var p_mana: LiquidResourceOrb = get_player_mana_orb()
+	var o_health: LiquidResourceOrb = get_opponent_health_orb()
+	var o_mana: LiquidResourceOrb = get_opponent_mana_orb()
+	var player_hero: HeroHudViewModel = HeroHudViewModel.new(
+		"Player",
+		p_health.current_value,
+		p_health.maximum_value,
+		p_mana.current_value,
+		p_mana.maximum_value,
+		get_player_deck().visual_count,
+		get_player_graveyard().visual_count,
+		get_player_graveyard().last_card
+	)
+	var opponent_hero: HeroHudViewModel = HeroHudViewModel.new(
+		"Opponent",
+		o_health.current_value,
+		o_health.maximum_value,
+		o_mana.current_value,
+		o_mana.maximum_value,
+		get_opponent_deck().visual_count,
+		get_opponent_graveyard().visual_count,
+		get_opponent_graveyard().last_card
+	)
+	var empty_actions: Array[String] = []
+	var vm: CombatHudViewModel = CombatHudViewModel.new(
+		player_hero,
+		opponent_hero,
+		1,
+		BattlefieldSlot.Camp.PLAYER,
+		CombatHudViewModel.Phase.ACTION,
+		not get_end_turn_button().disabled,
+		empty_actions
+	)
+	vm.turn_display_override = (get_match_status().get_node("Turn") as Label).text
+	vm.phase_display_override = (get_match_status().get_node("Phase") as Label).text
+	return vm
+
+## Granular presentation update for hero Health and Mana.
+func apply_hero_resources(camp: BattlefieldSlot.Camp, health: int, max_health: int, mana: int, max_mana: int, animate: bool = true) -> bool:
+	if health < 0 or max_health < 0 or mana < 0 or max_mana < 0:
+		return false
+	_connect_opponent_resource_labels()
+	if camp == BattlefieldSlot.Camp.PLAYER:
+		get_player_health_orb().set_resource_values(health, max_health, animate)
+		get_player_mana_orb().set_resource_values(mana, max_mana, animate)
+		if _current_hud_view_model != null:
+			_current_hud_view_model.player_hero.current_health = health
+			_current_hud_view_model.player_hero.max_health = max_health
+			_current_hud_view_model.player_hero.current_mana = mana
+			_current_hud_view_model.player_hero.max_mana = max_mana
+	else:
+		get_opponent_health_orb().set_resource_values(health, max_health, animate)
+		get_opponent_mana_orb().set_resource_values(mana, max_mana, animate)
+		if _current_hud_view_model != null:
+			_current_hud_view_model.opponent_hero.current_health = health
+			_current_hud_view_model.opponent_hero.max_health = max_health
+			_current_hud_view_model.opponent_hero.current_mana = mana
+			_current_hud_view_model.opponent_hero.max_mana = max_mana
+	return true
+
+## Granular presentation update for turn, active camp, phase, and End Turn availability.
+func apply_turn_state(turn_number: int, active_camp: BattlefieldSlot.Camp, phase: CombatHudViewModel.Phase, end_turn_enabled: bool) -> bool:
+	if turn_number < 1:
+		return false
+	var vm: CombatHudViewModel = get_hud_view_model()
+	vm.turn_number = turn_number
+	vm.active_camp = active_camp
+	vm.phase = phase
+	vm.end_turn_enabled = end_turn_enabled
+	vm.turn_display_override = ""
+	vm.phase_display_override = ""
+	set_turn_preview(vm.get_formatted_turn(), vm.get_formatted_phase())
+	set_end_turn_enabled(end_turn_enabled)
+	if _current_hud_view_model != null:
+		_current_hud_view_model.turn_number = turn_number
+		_current_hud_view_model.active_camp = active_camp
+		_current_hud_view_model.phase = phase
+		_current_hud_view_model.end_turn_enabled = end_turn_enabled
+		_current_hud_view_model.turn_display_override = ""
+		_current_hud_view_model.phase_display_override = ""
+	return true
+
+## Granular presentation update for player and opponent deck counts.
+func apply_deck_counts(player_deck: int, opponent_deck: int) -> bool:
+	if player_deck < 0 or opponent_deck < 0:
+		return false
+	get_player_deck().visual_count = player_deck
+	get_opponent_deck().visual_count = opponent_deck
+	if _current_hud_view_model != null:
+		_current_hud_view_model.player_hero.deck_count = player_deck
+		_current_hud_view_model.opponent_hero.deck_count = opponent_deck
+	return true
+
+## Granular presentation update for player and opponent graveyard counts.
+func apply_graveyard_counts(player_grave: int, opponent_grave: int) -> bool:
+	if player_grave < 0 or opponent_grave < 0:
+		return false
+	get_player_graveyard().set_card_count(player_grave)
+	get_opponent_graveyard().set_card_count(opponent_grave)
+	if _current_hud_view_model != null:
+		_current_hud_view_model.player_hero.graveyard_count = player_grave
+		_current_hud_view_model.opponent_hero.graveyard_count = opponent_grave
+	return true
+
+## Granular presentation update for recent action log entries.
+func apply_recent_actions(actions: Array[String]) -> bool:
+	set_recent_actions_preview(actions)
+	if _current_hud_view_model != null:
+		_current_hud_view_model.recent_actions.assign(actions)
+	return true
+
+## Updates the End Turn button's presentation enabled/disabled state.
+func set_end_turn_enabled(enabled: bool) -> void:
+	_setup_utility_hud()
+	get_end_turn_button().disabled = not enabled
+	if _current_hud_view_model != null:
+		_current_hud_view_model.end_turn_enabled = enabled
 
 func get_player_deck() -> DeckStackView:
 	return get_node("CombatLayout/ActionBarZone/DeckStack") as DeckStackView
