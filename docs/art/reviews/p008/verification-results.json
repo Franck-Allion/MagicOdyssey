@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-17",
+  "engine": "4.7.2 stable ed1daf0bf",
+  "native": {
+    "exit_code": 0,
+    "total": 3620,
+    "passed": 3620,
+    "failed": 0,
+    "previous_assertions": 3098,
+    "added": 522
+  },
+  "gpu": {
+    "exit_code": 0,
+    "checks": 263,
+    "failed": 0
+  },
+  "ART002": {
+    "exit_code": 0,
+    "scenes_passed": 3,
+    "differing_pixels": 0
+  },
+  "import_exit_code": 0,
+  "export_exit_code": 0,
+  "executable": "D:/Dev/MagicOdyssey/build/windows/MagicOdyssey.exe",
+  "executable_sha256": "67f3b41e9856c7c86ab205c71390f1958c825ba4b0744f3055904c30c5785a38",
+  "standalone": {
+    "full": {
+      "harness_exit_code": 0,
+      "isolated_executable": true,
+      "modes": {
+        "default": {
+          "unique_slot_identities_clicked": 24,
+          "slot_click_events": 28,
+          "all_slot_hover_click": true,
+          "selection_switch_toggle": true,
+          "hand_hover_inspection_and_click_isolation": true,
+          "end_turn_mouse_and_space": true,
+          "ESC_exit_code": 0
+        },
+        "1920x1080": {
+          "unique_slot_identities_clicked": 24,
+          "slot_click_events": 28,
+          "all_slot_hover_click": true,
+          "selection_switch_toggle": true,
+          "hand_hover_inspection_and_click_isolation": true,
+          "end_turn_mouse_and_space": true,
+          "ESC_exit_code": 0
+        },
+        "1280x720": {
+          "unique_slot_identities_clicked": 24,
+          "slot_click_events": 28,
+          "all_slot_hover_click": true,
+          "selection_switch_toggle": true,
+          "hand_hover_inspection_and_click_isolation": true,
+          "end_turn_mouse_and_space": true,
+          "ESC_exit_code": 0
+        }
+      }
+    },
+    "single": {
+      "harness_exit_code": 0,
+      "isolated_executable": true,
+      "modes": {
+        "default": {
+          "unique_slot_identities_clicked": 24,
+          "slot_click_events": 28,
+          "all_slot_hover_click": true,
+          "selection_switch_toggle": true,
+          "hand_hover_inspection_and_click_isolation": true,
+          "end_turn_mouse_and_space": true,
+          "ESC_exit_code": 0
+        },
+        "1920x1080": {
+          "unique_slot_identities_clicked": 24,
+          "slot_click_events": 28,
+          "all_slot_hover_click": true,
+          "selection_switch_toggle": true,
+          "hand_hover_inspection_and_click_isolation": true,
+          "end_turn_mouse_and_space": true,
+          "ESC_exit_code": 0
+        },
+        "1280x720": {
+          "unique_slot_identities_clicked": 24,
+          "slot_click_events": 28,
+          "all_slot_hover_click": true,
+          "selection_switch_toggle": true,
+          "hand_hover_inspection_and_click_isolation": true,
+          "end_turn_mouse_and_space": true,
+          "ESC_exit_code": 0
+        }
+      }
+    },
+    "empty": {
+      "harness_exit_code": 0,
+      "isolated_executable": true,
+      "modes": {
+        "default": {
+          "unique_slot_identities_clicked": 24,
+          "slot_click_events": 28,
+          "all_slot_hover_click": true,
+          "selection_switch_toggle": true,
+          "hand_hover_inspection_and_click_isolation": true,
+          "end_turn_mouse_and_space": true,
+          "ESC_exit_code": 0
+        },
+        "1920x1080": {
+          "unique_slot_identities_clicked": 24,
+          "slot_click_events": 28,
+          "all_slot_hover_click": true,
+          "selection_switch_toggle": true,
+          "hand_hover_inspection_and_click_isolation": true,
+          "end_turn_mouse_and_space": true,
+          "ESC_exit_code": 0
+        },
+        "1280x720": {
+          "unique_slot_identities_clicked": 24,
+          "slot_click_events": 28,
+          "all_slot_hover_click": true,
+          "selection_switch_toggle": true,
+          "hand_hover_inspection_and_click_isolation": true,
+          "end_turn_mouse_and_space": true,
+          "ESC_exit_code": 0
+        }
+      }
+    }
+  },
+  "owner_art_approval": "PENDING",
+  "readability_720p_four_stats": "CORRECTION_REQUIRED",
+  "G1": "NOT_VALIDATED"
+}

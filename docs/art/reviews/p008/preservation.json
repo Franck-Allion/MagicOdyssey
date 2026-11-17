@@ -1,0 +1,83 @@
+{
+  "protected_files": {
+    "scripts/presentation/battlefield_slot.gd": {
+      "unchanged_from_HEAD": true,
+      "comparison": "source with CRLF normalized to LF",
+      "working_sha256": "c9647de5c9b5e3e42e90d15868cd176f968b7afa1394af1ca31637c1b4d90801"
+    },
+    "scripts/presentation/card_stat_overlay.gd": {
+      "unchanged_from_HEAD": true,
+      "comparison": "source with CRLF normalized to LF",
+      "working_sha256": "db4de4486a48596d4008d126eb3c677ff0c156bd111d06374e0a8a764c6f7614"
+    },
+    "scripts/presentation/card_socket_overlay.gd": {
+      "unchanged_from_HEAD": true,
+      "comparison": "source with CRLF normalized to LF",
+      "working_sha256": "d31da980a7b8eaf51f4e048375cab618a33c6556728106cbc00537b66c0f1110"
+    },
+    "scripts/presentation/card_view_layout.gd": {
+      "unchanged_from_HEAD": true,
+      "comparison": "source with CRLF normalized to LF",
+      "working_sha256": "421206a6ee99eb0d55a02978fea73963f8f6e0aedfa012a0240628b4a1c8db87"
+    },
+    "scripts/presentation/ui_design_tokens.gd": {
+      "unchanged_from_HEAD": true,
+      "comparison": "source with CRLF normalized to LF",
+      "working_sha256": "90a0eb847816c237a5304d882f826d5c9fa9a3b79be1c4d19388738abe5f7a36"
+    },
+    "scripts/presentation/combat_preview_cards.gd": {
+      "unchanged_from_HEAD": true,
+      "comparison": "source with CRLF normalized to LF",
+      "working_sha256": "51637433c74e5c4973d291ab5c76cf87b99f5e0244c0957e5e2529ab70fb03d5"
+    },
+    "scripts/presentation/combat_hud_view_model.gd": {
+      "unchanged_from_HEAD": true,
+      "comparison": "source with CRLF normalized to LF",
+      "working_sha256": "1c87c84b34e6eebc34aefdfb230973b36473e6cbfb57b976f4d8c4916d9fc295"
+    },
+    "scripts/presentation/hero_hud_view_model.gd": {
+      "unchanged_from_HEAD": true,
+      "comparison": "source with CRLF normalized to LF",
+      "working_sha256": "9bd2c70712f829e881a1c4cfda46cd4487b4f6eb16685e69397cc1aea58f4eb8"
+    },
+    "scenes/combat/combat_screen.tscn": {
+      "unchanged_from_HEAD": true,
+      "comparison": "source with CRLF normalized to LF",
+      "working_sha256": "d71519ca01206e69763ebf166f3ee9350e52bab50d792232935b551beb620787"
+    },
+    "assets/textures/cards/icons/mo_inlay_attack.png": {
+      "unchanged_from_HEAD": true,
+      "comparison": "raw bytes",
+      "working_sha256": "ae31e9c0096bcda206ff6527286bd874a5a3fa5e0b4ad048e6459d2ae9fd0528"
+    },
+    "assets/textures/cards/icons/mo_inlay_health.png": {
+      "unchanged_from_HEAD": true,
+      "comparison": "raw bytes",
+      "working_sha256": "113bd44dd31153b75c56a05744840742e5c359cafb54ea47d60182d9912062d1"
+    },
+    "assets/textures/cards/icons/mo_plate_armor.png": {
+      "unchanged_from_HEAD": true,
+      "comparison": "raw bytes",
+      "working_sha256": "14a9f64c4918b9e43f0674dd32698c5fc933fa8a1e21e3aa7ecef381fb5980fa"
+    },
+    "assets/textures/cards/icons/mo_plate_shield.png": {
+      "unchanged_from_HEAD": true,
+      "comparison": "raw bytes",
+      "working_sha256": "9fd7bd873d7d5f4575bc3185c6de5ea438cca0ec9e659eabcb2767a91775aea2"
+    },
+    "assets/textures/cards/icons/mo_socket_bezel_attack.png": {
+      "unchanged_from_HEAD": true,
+      "comparison": "raw bytes",
+      "working_sha256": "a84277cfa26e02ae70bb60afefdf840fd14bc0900aefb74341ace5d6f5cb917c"
+    },
+    "assets/textures/cards/icons/mo_socket_bezel_health.png": {
+      "unchanged_from_HEAD": true,
+      "comparison": "raw bytes",
+      "working_sha256": "121fa38443ec25691b63449c6eb16514ad5f9151d1ed125dc0418fed345ae439"
+    }
+  },
+  "P006_empty_differing_pixels": {
+    "1080": 0,
+    "720": 0
+  }
+}

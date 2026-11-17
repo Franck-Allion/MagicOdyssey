@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources, [switch]$UtilityHud, [double]$UtilityButtonY = 915.73, [switch]$BattlefieldSlots)
+param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources, [switch]$UtilityHud, [double]$UtilityButtonY = 915.73, [switch]$BattlefieldSlots, [ValidateSet("", "empty", "single", "full_board")][string]$TokenScenario = "")
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 Add-Type @'
@@ -50,6 +50,7 @@ foreach ($mode in $modes) {
         if ($AnimateResources) { $start.Arguments += ' --preview-animate' }
         if ($UtilityHud) { $start.Arguments += ' --preview-utility' }
         if ($BattlefieldSlots) { $start.Arguments += ' --preview-slots' }
+        if ($TokenScenario) { $start.Arguments += " --preview-tokens=$TokenScenario" }
     }
     $process = [System.Diagnostics.Process]::Start($start)
     try {
@@ -60,6 +61,7 @@ foreach ($mode in $modes) {
             Start-Sleep -Milliseconds 200
         }
         if (-not $ready) { throw "Scene did not render within 30 seconds: $mode" }
+        if ($TokenScenario -and -not (Select-String -LiteralPath $logPath -SimpleMatch "TOKEN_REVIEW_READY $TokenScenario" -Quiet)) { throw "Token fixture not confirmed: $TokenScenario / $mode" }
         Start-Sleep -Milliseconds 800
         $process.Refresh()
         if ($process.HasExited -or $process.MainWindowHandle -eq [IntPtr]::Zero) { throw "No game window: $mode" }

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CreatureTokenViewModel" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/presentation/creature_token_view_model.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/_source/lot1/cards/illustrations/mo_illustration_arcane_knight_test_v01.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+instance_id = &"fixture_0"
+portrait = ExtResource("2")
+effective_attack = 4
+current_health = 5
+maximum_health = 5
+armor = 0
+shield = 0
+weapon_attached = false
+protection_attached = false

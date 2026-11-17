@@ -512,3 +512,50 @@ func get_opponent_health_orb() -> LiquidResourceOrb:
 
 func get_opponent_mana_orb() -> LiquidResourceOrb:
 	return get_node("CombatLayout/OpponentHeroZone/OpponentManaOrb") as LiquidResourceOrb
+
+## P008 visual board operations. False/null means invalid slot/model, occupied
+## destination, duplicate instance, or missing token. No domain actions occur.
+func get_creature_token(identity: Vector3i) -> CreatureToken:
+	var slot: BattlefieldSlot = get_slot(identity.x as BattlefieldSlot.Camp, identity.y, identity.z as BattlefieldSlot.Row)
+	if slot == null:
+		return null
+	for child: Node in slot.get_token_anchor().get_children():
+		if child is CreatureToken and not child.is_queued_for_deletion():
+			return child as CreatureToken
+	return null
+
+func add_creature_token(identity: Vector3i, model: CreatureTokenViewModel) -> bool:
+	var slot: BattlefieldSlot = get_slot(identity.x as BattlefieldSlot.Camp, identity.y, identity.z as BattlefieldSlot.Row)
+	if slot == null or model == null or not model.is_valid() or slot.get_token_anchor().get_child_count() != 0:
+		return false
+	if _has_creature_instance(model.instance_id):
+		return false
+	var token: CreatureToken = preload("res://scenes/combat/creature_token.tscn").instantiate() as CreatureToken
+	token.apply_view_model(model)
+	slot.get_token_anchor().add_child(token)
+	return true
+
+func update_creature_token(identity: Vector3i, model: CreatureTokenViewModel) -> bool:
+	var token: CreatureToken = get_creature_token(identity)
+	if token == null or model == null or not model.is_valid() or token.get_view_model().instance_id != model.instance_id:
+		return false
+	return token.apply_view_model(model)
+
+func remove_creature_token(identity: Vector3i) -> bool:
+	var token: CreatureToken = get_creature_token(identity)
+	if token == null:
+		return false
+	token.get_parent().remove_child(token)
+	token.queue_free()
+	return true
+
+func clear_creature_tokens() -> void:
+	for slot: BattlefieldSlot in get_slots():
+		remove_creature_token(slot.get_slot_identity())
+
+func _has_creature_instance(instance_id: StringName) -> bool:
+	for slot: BattlefieldSlot in get_slots():
+		var token: CreatureToken = get_creature_token(slot.get_slot_identity())
+		if token != null and token.get_view_model().instance_id == instance_id:
+			return true
+	return false

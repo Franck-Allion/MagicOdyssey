@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="CreatureTokenViewModel" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/presentation/creature_token_view_model.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/_source/lot1/cards/illustrations/mo_illustration_arcane_knight_test_v01.png" id="2"]
+[ext_resource type="Script" path="res://scripts/presentation/creature_status_view_model.gd" id="3"]
+
+[sub_resource type="Resource" id="Status0"]
+script = ExtResource("3")
+status_id = &"diagnostic_0"
+diagnostic_label = "1"
+
+[sub_resource type="Resource" id="Status1"]
+script = ExtResource("3")
+status_id = &"diagnostic_1"
+diagnostic_label = "2"
+
+[sub_resource type="Resource" id="Status2"]
+script = ExtResource("3")
+status_id = &"diagnostic_2"
+diagnostic_label = "3"
+
+[sub_resource type="Resource" id="Status3"]
+script = ExtResource("3")
+status_id = &"diagnostic_3"
+diagnostic_label = "4"
+
+[sub_resource type="Resource" id="Status4"]
+script = ExtResource("3")
+status_id = &"diagnostic_4"
+diagnostic_label = "5"
+
+[resource]
+script = ExtResource("1")
+instance_id = &"fixture_3"
+portrait = ExtResource("2")
+effective_attack = 7
+current_health = 4
+maximum_health = 7
+armor = 1
+shield = 12
+weapon_attached = false
+protection_attached = false
+statuses = Array[ExtResource("3")]([SubResource("Status0"), SubResource("Status1"), SubResource("Status2"), SubResource("Status3"), SubResource("Status4")])

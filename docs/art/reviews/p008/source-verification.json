@@ -1,0 +1,49 @@
+{
+  "source": "assets/_source/lot1/tokens/mo_creature_token_frame_v01.png",
+  "runtime": "assets/textures/tokens/mo_creature_token_frame_v01.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "bb131857a192724c3bbf336272b55b7aba2dbc6106d712663f0c1d15c64e038c",
+  "byte_identical_runtime": true,
+  "alpha_range": [
+    0,
+    254
+  ],
+  "transparent_pixels": 961458,
+  "opaque_pixels": 0,
+  "samples": {
+    "(768, 400)": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "(220, 802)": [
+      84,
+      60,
+      38,
+      0
+    ],
+    "(1317, 802)": [
+      74,
+      50,
+      29,
+      0
+    ],
+    "(560, 850)": [
+      87,
+      79,
+      79,
+      253
+    ],
+    "(970, 850)": [
+      3,
+      29,
+      78,
+      252
+    ]
+  }
+}

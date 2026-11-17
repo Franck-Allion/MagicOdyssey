@@ -78,6 +78,10 @@ func _run_registered_suites(asserts: TestAsserts, failure_mode: bool) -> void:
 	var hud_suite: TestCombatHud = TestCombatHudScript.new()
 	hud_suite.run_suite(asserts, failure_mode)
 
+	print("[RUN] TestCreatureToken")
+	var token_suite: TestCreatureToken = preload("res://scripts/tests/test_creature_token.gd").new()
+	token_suite.run_suite(asserts, failure_mode)
+
 
 func _is_failure_mode_requested() -> bool:
 	for arg: String in OS.get_cmdline_user_args():

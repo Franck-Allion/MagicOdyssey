@@ -37,6 +37,9 @@ func _configure_review() -> void:
 	var screen: CombatScreen = get_node("CombatScreen") as CombatScreen
 	var fan: CombatPreviewCards = screen.get_node("CombatLayout/PlayerHandZone/Fan") as CombatPreviewCards
 	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--preview-tokens="):
+			CreatureTokenDemo.populate(screen, argument.trim_prefix("--preview-tokens="))
+			print("TOKEN_REVIEW_READY %s" % argument.trim_prefix("--preview-tokens="))
 		if argument == "--preview-slots":
 			screen.slot_hovered.connect(func(c: BattlefieldSlot.Camp, n: int, r: BattlefieldSlot.Row) -> void: print("SLOT_ENTER %d %d %d" % [c, n, r]))
 			screen.slot_unhovered.connect(func(c: BattlefieldSlot.Camp, n: int, r: BattlefieldSlot.Row) -> void: print("SLOT_LEAVE %d %d %d" % [c, n, r]))
