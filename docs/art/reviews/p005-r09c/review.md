@@ -292,3 +292,18 @@ Zero BLOCKER or MAJOR defects remain open for P005.
 All technical, visual, ergonomic, and documentation requirements for `P005` have been fully satisfied. The presentation layer is robust, beautifully balanced, responsive across 1080p and 720p, and verified with zero automated regressions.
 
 The project owner now has the complete, definitive evidence package required to grant formal artistic sign-off for milestone `P005-R09`.
+
+---
+
+## 19. Owner Sign-Off Addendum (P005-CLOSE)
+
+**Date of Owner Sign-Off:** 2026-11-16
+**Sign-Off Confirmation:**
+The project owner has explicitly arbitrated and officially confirmed:
+> *"I officially approve P005-R09 and the artistic composition of the CombatScreen."*
+
+**Milestone Disposition:**
+- **P005:** Formally closed with status `TECH PASS / ART OWNER-APPROVED`. Final artistic approval: CONFIRMED. Owner sign-off: CONFIRMED.
+- **P005-R09:** Formally closed with status `OWNER-APPROVED / COMPLETE`. Sequence of audit (`P005-R09A`), polish (`P005-R09B`), and final review (`P005-R09C`) concluded.
+- **Protected Baseline:** The approved CombatScreen presentation geometry, HUD backplates, liquid reservoirs, and 540 px inspection layout constitute the protected visual baseline for subsequent tasks.
+- **Progression Authorization:** Progression to `P006` (Create 24 Board Slots) is formally authorized. Gate `G1` remains `NOT_VALIDATED` pending completion of `P006`–`P010`.

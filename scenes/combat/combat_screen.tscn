@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3]
+[gd_scene load_steps=28 format=3]
 
 [ext_resource type="Theme" path="res://resources/themes/fantasy_theme.tres" id="1_theme"]
 [ext_resource type="Script" path="res://scripts/presentation/combat_screen.gd" id="2_script"]
@@ -18,6 +18,8 @@
 [ext_resource type="Script" path="res://scripts/presentation/deck_stack_view.gd" id="14_deck"]
 [ext_resource type="Script" path="res://scripts/presentation/graveyard_view.gd" id="15_graveyard"]
 [ext_resource type="Script" path="res://scripts/presentation/premium_end_turn_button.gd" id="16_button"]
+
+[ext_resource type="Script" path="res://scripts/presentation/battlefield_slot.gd" id="17_slot"]
 
 [sub_resource type="SystemFont" id="utility_heading_font"]
 font_names = PackedStringArray("Segoe UI", "Calibri", "Arial")
@@ -475,6 +477,10 @@ offset_right = 322.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 1
+row = 1
 
 [node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
 layout_mode = 0
@@ -484,6 +490,10 @@ offset_right = 502.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 2
+row = 1
 
 [node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
 layout_mode = 0
@@ -493,6 +503,10 @@ offset_right = 682.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 3
+row = 1
 
 [node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
 layout_mode = 0
@@ -502,6 +516,10 @@ offset_right = 862.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 4
+row = 1
 
 [node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
 layout_mode = 0
@@ -511,6 +529,10 @@ offset_right = 1042.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 5
+row = 1
 
 [node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentDefenseRow"]
 layout_mode = 0
@@ -520,6 +542,10 @@ offset_right = 1222.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 6
+row = 1
 
 [node name="OpponentAttackRow" type="Control" parent="CombatLayout/BattlefieldZone/OpponentBoardArea"]
 layout_mode = 0
@@ -549,6 +575,10 @@ offset_right = 322.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 1
+row = 0
 
 [node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
 layout_mode = 0
@@ -558,6 +588,10 @@ offset_right = 502.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 2
+row = 0
 
 [node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
 layout_mode = 0
@@ -567,6 +601,10 @@ offset_right = 682.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 3
+row = 0
 
 [node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
 layout_mode = 0
@@ -576,6 +614,10 @@ offset_right = 862.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 4
+row = 0
 
 [node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
 layout_mode = 0
@@ -585,6 +627,10 @@ offset_right = 1042.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 5
+row = 0
 
 [node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/OpponentBoardArea/OpponentAttackRow"]
 layout_mode = 0
@@ -594,6 +640,10 @@ offset_right = 1222.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 1
+column = 6
+row = 0
 
 [node name="PlayerAttackRow" type="Control" parent="CombatLayout/BattlefieldZone/PlayerBoardArea"]
 layout_mode = 0
@@ -623,6 +673,10 @@ offset_right = 322.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 1
+row = 0
 
 [node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
 layout_mode = 0
@@ -632,6 +686,10 @@ offset_right = 502.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 2
+row = 0
 
 [node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
 layout_mode = 0
@@ -641,6 +699,10 @@ offset_right = 682.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 3
+row = 0
 
 [node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
 layout_mode = 0
@@ -650,6 +712,10 @@ offset_right = 862.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 4
+row = 0
 
 [node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
 layout_mode = 0
@@ -659,6 +725,10 @@ offset_right = 1042.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 5
+row = 0
 
 [node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerAttackRow"]
 layout_mode = 0
@@ -668,6 +738,10 @@ offset_right = 1222.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 6
+row = 0
 
 [node name="PlayerDefenseRow" type="Control" parent="CombatLayout/BattlefieldZone/PlayerBoardArea"]
 layout_mode = 0
@@ -697,6 +771,10 @@ offset_right = 322.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 1
+row = 1
 
 [node name="SlotGuide_02" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
 layout_mode = 0
@@ -706,6 +784,10 @@ offset_right = 502.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 2
+row = 1
 
 [node name="SlotGuide_03" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
 layout_mode = 0
@@ -715,6 +797,10 @@ offset_right = 682.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 3
+row = 1
 
 [node name="SlotGuide_04" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
 layout_mode = 0
@@ -724,6 +810,10 @@ offset_right = 862.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 4
+row = 1
 
 [node name="SlotGuide_05" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
 layout_mode = 0
@@ -733,6 +823,10 @@ offset_right = 1042.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 5
+row = 1
 
 [node name="SlotGuide_06" type="Panel" parent="CombatLayout/BattlefieldZone/PlayerBoardArea/PlayerDefenseRow"]
 layout_mode = 0
@@ -742,6 +836,10 @@ offset_right = 1222.0
 offset_bottom = 118.0
 theme_type_variation = &"TokenFrame"
 theme_override_styles/panel = SubResource("tactical_reservation")
+script = ExtResource("17_slot")
+camp = 0
+column = 6
+row = 1
 
 [node name="PlayerHandZone" type="Panel" parent="CombatLayout"]
 layout_mode = 0

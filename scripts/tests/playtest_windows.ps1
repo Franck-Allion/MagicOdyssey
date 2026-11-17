@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources, [switch]$UtilityHud, [double]$UtilityButtonY = 915.73)
+param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources, [switch]$UtilityHud, [double]$UtilityButtonY = 915.73, [switch]$BattlefieldSlots)
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 Add-Type @'
@@ -49,6 +49,7 @@ foreach ($mode in $modes) {
         $start.Arguments += " --preview-hand=$HandCount"
         if ($AnimateResources) { $start.Arguments += ' --preview-animate' }
         if ($UtilityHud) { $start.Arguments += ' --preview-utility' }
+        if ($BattlefieldSlots) { $start.Arguments += ' --preview-slots' }
     }
     $process = [System.Diagnostics.Process]::Start($start)
     try {
@@ -107,6 +108,60 @@ foreach ($mode in $modes) {
                 [PreviewDesktop]::mouse_event(0x8001, $nx, $ny, 0, [UIntPtr]::Zero)
             }
 
+            if ($BattlefieldSlots) {
+                $captureSlot = {
+                    param([string]$name)
+                    $slotBmp = New-Object System.Drawing.Bitmap($width, $height)
+                    $slotG = [System.Drawing.Graphics]::FromImage($slotBmp)
+                    try {
+                        $slotG.CopyFromScreen($point.X, $point.Y, 0, 0, $slotBmp.Size)
+                        $slotBmp.Save((Join-Path $outDir ("desktop-$mode-$name.png")))
+                    } finally { $slotG.Dispose(); $slotBmp.Dispose() }
+                }
+                $slotClick = {
+                    [PreviewDesktop]::mouse_event(0x0002, 0, 0, 0, [UIntPtr]::Zero)
+                    Start-Sleep -Milliseconds 50
+                    [PreviewDesktop]::mouse_event(0x0004, 0, 0, 0, [UIntPtr]::Zero)
+                    Start-Sleep -Milliseconds 160
+                }
+                $neutral = & $refToScreen 960 500
+                & $sendMouseMove $neutral[0] $neutral[1]
+                Start-Sleep -Milliseconds 250
+                # Windows can deny SetForegroundWindow to a background launcher.
+                # A real click in the empty divider activates the game first.
+                & $slotClick
+                $countBefore = @(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count
+                $rowSpecs = @(@(1,1,282), @(1,0,418), @(0,0,582), @(0,1,718))
+                foreach ($rowSpec in $rowSpecs) {
+                    $camp = $rowSpec[0]; $row = $rowSpec[1]; $ry = $rowSpec[2]
+                    foreach ($column in 1..6) {
+                        $slotPoint = & $refToScreen (561 + ($column - 1) * 180) $ry
+                        & $sendMouseMove $slotPoint[0] $slotPoint[1]
+                        Start-Sleep -Milliseconds 180
+                        if (-not (Select-String -LiteralPath $logPath -SimpleMatch "SLOT_ENTER $camp $column $row" -Quiet)) { throw "Slot hover missing: $mode / $camp $column $row" }
+                        if ($column -in @(1,6)) { & $captureSlot "hover-c$camp-r$row-n$column" }
+                        & $slotClick
+                        $latest = (Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ' | Select-Object -Last 1).Line
+                        if ($latest -ne "SLOT_CLICK $camp $column $row SELECTED $camp $column $row") { throw "Wrong selection: $latest" }
+                    }
+                }
+                $clickCount = @(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count
+                if ($clickCount - $countBefore -ne 24) { throw "Duplicate or missing slot clicks: $mode" }
+                & $slotClick
+                if ((Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ' | Select-Object -Last 1).Line -ne 'SLOT_CLICK 0 6 1 SELECTED NONE') { throw 'Selection toggle failed' }
+                foreach ($target in @(@(0,3,0,921,582,'player-attack'), @(1,1,1,561,282,'opponent-defense'))) {
+                    $slotPoint = & $refToScreen $target[3] $target[4]
+                    & $sendMouseMove $slotPoint[0] $slotPoint[1]
+                    Start-Sleep -Milliseconds 200
+                    & $captureSlot ("hover-" + $target[5])
+                    & $slotClick
+                    & $captureSlot ("selected-" + $target[5])
+                }
+                & $slotClick
+                $clicksAfterBoard = @(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count
+                Write-Output "$mode : all 24 OS pointer hover/click identities PASS; eight row extremes captured; selection switch/toggle PASS"
+            }
+
             # 1. Hover leftmost card (Card 0 exposed mana: refX=386, refY=830)
             $c0 = & $refToScreen 386.0 830.0
             & $sendMouseMove $c0[0] $c0[1]
@@ -128,6 +183,20 @@ foreach ($mode in $modes) {
                 $hoverCenterG.CopyFromScreen($point.X, $point.Y, 0, 0, $hoverCenterBmp.Size)
                 $hoverCenterBmp.Save((Join-Path $outDir ("desktop-$mode-hover-center.png")))
             } finally { $hoverCenterG.Dispose(); $hoverCenterBmp.Dispose() }
+
+            if ($BattlefieldSlots) {
+                $handPoint = & $refToScreen 960 900
+                & $sendMouseMove $handPoint[0] $handPoint[1]
+                Start-Sleep -Milliseconds 300
+                $raisedPoint = & $refToScreen 960 620
+                & $sendMouseMove $raisedPoint[0] $raisedPoint[1]
+                Start-Sleep -Milliseconds 250
+                & $slotClick
+                & $captureSlot 'raised-hand-no-slot-leak'
+                if (@(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count -ne $clicksAfterBoard) { throw 'Slot click leaked through raised inspection' }
+                if (-not (Select-String -LiteralPath $logPath -Pattern '^SLOT_REVIEW_HAND [0-9]+$' -Quiet)) { throw 'Actual hand hover not observed' }
+                Write-Output "$mode : actual hand hover and raised inspection click isolation PASS"
+            }
 
             # 3. Hover rightmost card (Card 9: refX=1420, refY=880)
             $cRight = & $refToScreen 1420.0 880.0
@@ -189,6 +258,7 @@ foreach ($mode in $modes) {
                 } finally { $motionGraphics.Dispose(); $motionBitmap.Dispose() }
             }
         }
+        if ($BattlefieldSlots -and @(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count -ne $clicksAfterBoard) { throw 'Slot input leaked through hand or utility controls' }
         [PreviewDesktop]::keybd_event(0x1B, 0, 0, [UIntPtr]::Zero)
         [PreviewDesktop]::keybd_event(0x1B, 0, 2, [UIntPtr]::Zero)
         if (-not $process.WaitForExit(5000)) { throw "ESC failed to exit: $mode" }

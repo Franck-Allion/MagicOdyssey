@@ -1,6 +1,7 @@
 extends Node
 ## Temporary entry-point policy, deliberately separate from reusable CombatScreen.
 func _ready() -> void:
+	set_process(false)
 	_configure_review.call_deferred()
 	if DisplayServer.get_name() != "headless":
 		_report_ready.call_deferred()
@@ -36,6 +37,13 @@ func _configure_review() -> void:
 	var screen: CombatScreen = get_node("CombatScreen") as CombatScreen
 	var fan: CombatPreviewCards = screen.get_node("CombatLayout/PlayerHandZone/Fan") as CombatPreviewCards
 	for argument: String in OS.get_cmdline_user_args():
+		if argument == "--preview-slots":
+			screen.slot_hovered.connect(func(c: BattlefieldSlot.Camp, n: int, r: BattlefieldSlot.Row) -> void: print("SLOT_ENTER %d %d %d" % [c, n, r]))
+			screen.slot_unhovered.connect(func(c: BattlefieldSlot.Camp, n: int, r: BattlefieldSlot.Row) -> void: print("SLOT_LEAVE %d %d %d" % [c, n, r]))
+			screen.slot_selected.connect(_report_slot_click)
+			for orb: LiquidResourceOrb in [screen.get_player_health_orb(), screen.get_player_mana_orb(), screen.get_opponent_health_orb(), screen.get_opponent_mana_orb()]:
+				orb.set_animation_enabled(false)
+			set_process(true)
 		if argument == "--preview-utility":
 			screen.get_end_turn_button().pressed.connect(func() -> void: print("UTILITY_PREVIEW_ACTIVATED"))
 			screen.get_end_turn_button().focus_entered.connect(func() -> void: print("UTILITY_PREVIEW_FOCUSED"))
@@ -50,6 +58,20 @@ func _configure_review() -> void:
 			timer.start()
 
 var _review_step: int = 0
+var _review_hand_index: int = -2
+
+func _process(_delta: float) -> void:
+	var fan: CombatPreviewCards = get_node("CombatScreen/CombatLayout/PlayerHandZone/Fan") as CombatPreviewCards
+	var index: int = fan.get_hovered_index()
+	if index != _review_hand_index:
+		_review_hand_index = index
+		print("SLOT_REVIEW_HAND %d" % index)
+
+func _report_slot_click(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row) -> void:
+	var screen: CombatScreen = get_node("CombatScreen") as CombatScreen
+	var selected: BattlefieldSlot = screen.get_selected_slot()
+	print("SLOT_CLICK %d %d %d SELECTED %s" % [camp, column, row, "NONE" if selected == null else "%d %d %d" % [selected.camp, selected.column, selected.row]])
+
 func _review_resource_step() -> void:
 	var screen: CombatScreen = get_node("CombatScreen") as CombatScreen
 	var health: Array[int] = [30, 18, 8, 0]

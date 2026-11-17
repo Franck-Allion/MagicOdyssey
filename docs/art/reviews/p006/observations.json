@@ -1,0 +1,13 @@
+{
+  "assertions": {
+    "failed": 0,
+    "failures": [],
+    "passed": 256,
+    "total": 256
+  },
+  "engine": "4.7.2-stable (official)",
+  "gpu": "NVIDIA GeForce GTX 1660 Ti",
+  "idle_p005_differing_pixels_1080p": 0,
+  "idle_p005_differing_pixels_720p": 0,
+  "input": "SubViewport.push_input; not OS pointer"
+}

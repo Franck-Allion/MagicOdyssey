@@ -45,6 +45,11 @@ func _gui_input(event: InputEvent) -> void:
 		var motion: InputEventMouseMotion = event as InputEventMouseMotion
 		_on_pointer_motion(motion.global_position)
 
+## Raised inspection extends above the hand Control's rectangle. Its visible
+## footprint must own GUI input so P006 slots underneath never receive clicks.
+func _has_point(point: Vector2) -> bool:
+	return not face_down and pick_card_at(point) >= 0
+
 func _input(event: InputEvent) -> void:
 	if face_down:
 		return

@@ -13,6 +13,15 @@ extends Control
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
 const REFERENCE_SIZE: Vector2 = Vector2(1920, 1080)
 
+signal slot_hovered(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row)
+signal slot_unhovered(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row)
+signal slot_selected(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row)
+signal slot_selection_changed(slot: BattlefieldSlot)
+
+var _slots: Dictionary[Vector3i, BattlefieldSlot] = {}
+var _slots_initialized: bool = false
+var _selected_slot: BattlefieldSlot
+
 ## Node references to authoritative presentation regions
 @onready var background_layer: Control = $BackgroundLayer
 @onready var battlefield_environment: TextureRect = $BackgroundLayer/BattlefieldEnvironment
@@ -46,6 +55,119 @@ func _ready() -> void:
 	_apply_responsive_layout()
 	_connect_opponent_resource_labels()
 	_setup_utility_hud()
+	_initialize_slots()
+
+## One registry, built in visual top-to-bottom, left-to-right order.
+## Invalid scene configuration fails closed; no partial board can be selected.
+func _initialize_slots() -> void:
+	if _slots_initialized:
+		return
+	_slots_initialized = true
+	var rows: Array[Control] = [get_opponent_defense_row(), get_opponent_attack_row(), get_player_attack_row(), get_player_defense_row()]
+	var candidates: Dictionary[Vector3i, BattlefieldSlot] = {}
+	for index: int in range(rows.size()):
+		var row_node: Control = rows[index]
+		if row_node == null:
+			push_error("P006: Missing battlefield row %d" % index)
+			return
+		var count: int = 0
+		for child: Node in row_node.get_children():
+			if not child.name.begins_with("SlotGuide_"):
+				continue
+			var slot: BattlefieldSlot = child as BattlefieldSlot
+			if slot == null:
+				push_error("P006: Missing BattlefieldSlot script on %s" % child.name)
+				return
+			count += 1
+			var expected_camp: BattlefieldSlot.Camp = BattlefieldSlot.Camp.OPPONENT if index < 2 else BattlefieldSlot.Camp.PLAYER
+			var expected_row: BattlefieldSlot.Row = BattlefieldSlot.Row.DEFENSE if index in [0, 3] else BattlefieldSlot.Row.ATTACK
+			var identity: Vector3i = slot.get_slot_identity()
+			if not BattlefieldSlot.is_valid_identity(identity.x, identity.y, identity.z) or candidates.has(identity):
+				push_error("P006: Invalid or duplicate slot identity %s at %s" % [identity, slot.name])
+				return
+			if slot.camp != expected_camp or slot.row != expected_row or slot.column != count or slot.name != StringName("SlotGuide_%02d" % count):
+				push_error("P006: Slot identity does not match visual position: %s" % slot.name)
+				return
+			candidates[identity] = slot
+		if count != 6:
+			push_error("P006: Expected six slots in %s, found %d" % [row_node.name, count])
+			return
+	_slots = candidates
+	for slot: BattlefieldSlot in _slots.values():
+		slot.lock_identity()
+		slot.slot_hovered.connect(_on_slot_hovered)
+		slot.slot_unhovered.connect(_on_slot_unhovered)
+		slot.slot_selected.connect(_on_slot_selected)
+		slot.interaction_changed.connect(_on_slot_interaction_changed.bind(slot))
+
+## Invalid coordinates return null, including values outside the enum ranges.
+func get_slot(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row) -> BattlefieldSlot:
+	_initialize_slots()
+	return _slots.get(Vector3i(camp, column, row)) as BattlefieldSlot
+
+func get_slots() -> Array[BattlefieldSlot]:
+	_initialize_slots()
+	var result: Array[BattlefieldSlot] = []
+	result.assign(_slots.values())
+	return result
+
+func get_selected_slot() -> BattlefieldSlot:
+	return _selected_slot
+
+func clear_slot_selection() -> void:
+	if _selected_slot == null:
+		return
+	_selected_slot.set_selected(false)
+	_selected_slot = null
+	slot_selection_changed.emit(null)
+
+func select_slot(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row) -> bool:
+	var slot: BattlefieldSlot = get_slot(camp, column, row)
+	if slot == null or not slot.interactable:
+		return false
+	if _selected_slot == slot:
+		return true
+	if _selected_slot != null:
+		_selected_slot.set_selected(false)
+	_selected_slot = slot
+	slot.set_selected(true)
+	slot_selection_changed.emit(slot)
+	return true
+
+func set_slot_highlight(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row, value: bool) -> bool:
+	var slot: BattlefieldSlot = get_slot(camp, column, row)
+	if slot == null:
+		return false
+	slot.set_highlighted(value)
+	return true
+
+func clear_slot_highlights() -> void:
+	for slot: BattlefieldSlot in get_slots():
+		slot.set_highlighted(false)
+
+func set_slot_interaction_enabled(value: bool) -> void:
+	for slot: BattlefieldSlot in get_slots():
+		slot.set_interactable(value)
+
+func _on_slot_interaction_changed(slot: BattlefieldSlot) -> void:
+	if not slot.interactable and _selected_slot == slot:
+		clear_slot_selection()
+
+func _on_slot_hovered(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row) -> void:
+	slot_hovered.emit(camp, column, row)
+
+func _on_slot_unhovered(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row) -> void:
+	slot_unhovered.emit(camp, column, row)
+
+func _on_slot_selected(camp: BattlefieldSlot.Camp, column: int, row: BattlefieldSlot.Row) -> void:
+	var slot: BattlefieldSlot = get_slot(camp, column, row)
+	if slot == null or not slot.interactable:
+		return
+	if slot == _selected_slot:
+		clear_slot_selection()
+	else:
+		select_slot(camp, column, row)
+	slot_selected.emit(camp, column, row)
 
 func _setup_utility_hud() -> void:
 	for label: Label in [get_match_status().get_node("Phase"), get_action_bar_zone().get_node("RecentActions")]:
