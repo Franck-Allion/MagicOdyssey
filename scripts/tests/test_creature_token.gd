@@ -3,6 +3,11 @@ extends RefCounted
 const SCREEN: PackedScene = preload("res://scenes/combat/combat_screen.tscn")
 const TOKEN: PackedScene = preload("res://scenes/combat/creature_token.tscn")
 
+class ZeroProbe extends CreatureToken:
+	var numeral_calls: int = 0
+	func draw_number(_center: Vector2, _value: int, _points: int, _width: float, _ink: Color, _radius: float = 0.0, _offset: Variant = null) -> void:
+		numeral_calls += 1
+
 func run_suite(a: TestAsserts, _failure_mode: bool = false) -> void:
 	a.set_current_test("P008: typed snapshots, board lifecycle and preservation")
 	var token: CreatureToken = TOKEN.instantiate() as CreatureToken
@@ -159,6 +164,26 @@ func run_suite(a: TestAsserts, _failure_mode: bool = false) -> void:
 		a.assert_false(source.contains("set_printed_values("), "No printed card mutation")
 	screen.free()
 	_run_v02_checks(a)
+	_run_tactical_checks(a)
+
+func _run_tactical_checks(a: TestAsserts) -> void:
+	var probe: ZeroProbe = ZeroProbe.new()
+	a.assert_false(probe.diagnostic_indicators_enabled, "Diagnostic letters require explicit development opt-in")
+	probe._draw_plaque(CreatureTokenLayout.ARMOR,CardStatOverlay.PLATE_ARMOR,0)
+	probe._draw_plaque(CreatureTokenLayout.SHIELD,CardStatOverlay.PLATE_SHIELD,0)
+	a.assert_equal(probe.numeral_calls,0,"Zero defenses draw neither numeral")
+	var model: CreatureTokenViewModel = CreatureTokenDemo.MODELS[0].duplicate_model()
+	model.armor = 0
+	model.shield = 0
+	probe.apply_view_model(model)
+	a.assert_equal(probe.get_view_model().armor,0,"Hidden zero Armor stays zero in model")
+	a.assert_equal(probe.get_view_model().shield,0,"Hidden zero Shield stays zero in model")
+	for value: int in [0,1,2,3,6,8,10,12,14,99,100]:
+		var fit: Vector3 = probe.get_primary_fit(value)
+		a.assert_true(fit.z <= CreatureTokenLayout.PRIMARY_RADIUS,"Transformed glyph corners plus stroke remain in aperture")
+		if value >= 10 and value <= 99:
+			a.assert_true(fit.x >= 185,"Two digits avoid excessive baseline shrink")
+	probe.free()
 
 func _run_v02_checks(a: TestAsserts) -> void:
 	a.set_current_test("P008-C02: V02 alpha, material calibration and glyph containment")

@@ -1,0 +1,56 @@
+{
+  "native": {
+    "passed": 3681,
+    "failed": 0,
+    "previous_retained": 3662,
+    "added": 19,
+    "exit_code": 0
+  },
+  "GPU_variants": {
+    "A": 717,
+    "B": 717,
+    "C": 717
+  },
+  "GPU_exit_codes": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "ART002_bit_exact_scenes": 3,
+  "ART002_exit_code": 0,
+  "Windows_harness_exit_code": 0,
+  "Windows_OS_tests": {
+    "default": {
+      "unique_slot_click_identities": 24,
+      "ESC_exit_code": 0,
+      "hand_isolation_and_End_Turn": "PASS"
+    },
+    "1920x1080": {
+      "unique_slot_click_identities": 24,
+      "ESC_exit_code": 0,
+      "hand_isolation_and_End_Turn": "PASS"
+    },
+    "1280x720": {
+      "unique_slot_click_identities": 24,
+      "ESC_exit_code": 0,
+      "hand_isolation_and_End_Turn": "PASS"
+    }
+  },
+  "export_exit_code": 0,
+  "aperture_gpu_exit_code": 0,
+  "aperture_pixel_intersections": {
+    "aperture_0": 0,
+    "aperture_1": 0,
+    "aperture_10": 0,
+    "aperture_12": 0,
+    "aperture_14": 0,
+    "aperture_2": 0,
+    "aperture_3": 0,
+    "aperture_6": 0,
+    "aperture_8": 0,
+    "aperture_99": 0
+  },
+  "executable_sha256": "e46963b0e59d92abfe29aa1337bcd93282ddfaf1937ac7b5ccf03144fdfe3df6",
+  "owner_approval": "PENDING",
+  "G1": "NOT_VALIDATED"
+}

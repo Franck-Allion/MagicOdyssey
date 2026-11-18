@@ -27,5 +27,6 @@ static func populate(screen: CombatScreen, scenario: String) -> void:
 		var model: CreatureTokenViewModel = MODELS[index % MODELS.size() if count == 24 else fixture_index].duplicate_model()
 		model.instance_id = StringName("review_%02d" % index)
 		screen.add_creature_token(slots[index].get_slot_identity(), model)
+		screen.get_creature_token(slots[index].get_slot_identity()).diagnostic_indicators_enabled = true
 	if scenario == "selected":
 		screen.select_slot(slots[8].camp, slots[8].column, slots[8].row)
