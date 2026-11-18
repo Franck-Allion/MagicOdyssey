@@ -1,0 +1,725 @@
+{
+  "method": "Actual GPU glyph-only images: alpha>=128, R/G>=150, B>=140. Ink bounds exclude dark stroke/shadow; same shared renderer, token transform scale and fractional phase. Not text size inferred from font points.",
+  "measurements": [
+    {
+      "kind": "primary",
+      "value": 0,
+      "resolution": 1080,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 22.057291666666668,
+      "raster_ink_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "ink_pixels": 78
+    },
+    {
+      "kind": "primary",
+      "value": 0,
+      "resolution": 720,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 14.70486111111111,
+      "raster_ink_bbox_xywh": [
+        23,
+        60,
+        6,
+        10
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        22,
+        59,
+        7,
+        11
+      ],
+      "ink_pixels": 31
+    },
+    {
+      "kind": "primary",
+      "value": 10,
+      "resolution": 1080,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 22.057291666666668,
+      "raster_ink_bbox_xywh": [
+        25,
+        86,
+        15,
+        11
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        24,
+        86,
+        16,
+        11
+      ],
+      "ink_pixels": 71
+    },
+    {
+      "kind": "primary",
+      "value": 10,
+      "resolution": 720,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 14.70486111111111,
+      "raster_ink_bbox_xywh": [
+        22,
+        61,
+        9,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        21,
+        61,
+        10,
+        8
+      ],
+      "ink_pixels": 29
+    },
+    {
+      "kind": "primary",
+      "value": 12,
+      "resolution": 1080,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 22.057291666666668,
+      "raster_ink_bbox_xywh": [
+        25,
+        86,
+        15,
+        11
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        24,
+        86,
+        16,
+        11
+      ],
+      "ink_pixels": 64
+    },
+    {
+      "kind": "primary",
+      "value": 12,
+      "resolution": 720,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 14.70486111111111,
+      "raster_ink_bbox_xywh": [
+        22,
+        61,
+        9,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        21,
+        61,
+        10,
+        8
+      ],
+      "ink_pixels": 29
+    },
+    {
+      "kind": "primary",
+      "value": 14,
+      "resolution": 1080,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 22.057291666666668,
+      "raster_ink_bbox_xywh": [
+        25,
+        86,
+        15,
+        11
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        24,
+        86,
+        16,
+        11
+      ],
+      "ink_pixels": 66
+    },
+    {
+      "kind": "primary",
+      "value": 14,
+      "resolution": 720,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 14.70486111111111,
+      "raster_ink_bbox_xywh": [
+        21,
+        61,
+        10,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        21,
+        61,
+        10,
+        8
+      ],
+      "ink_pixels": 24
+    },
+    {
+      "kind": "primary",
+      "value": 1,
+      "resolution": 1080,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 22.057291666666668,
+      "raster_ink_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "ink_pixels": 54
+    },
+    {
+      "kind": "primary",
+      "value": 1,
+      "resolution": 720,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 14.70486111111111,
+      "raster_ink_bbox_xywh": [
+        23,
+        60,
+        6,
+        10
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        23,
+        60,
+        6,
+        10
+      ],
+      "ink_pixels": 25
+    },
+    {
+      "kind": "primary",
+      "value": 2,
+      "resolution": 1080,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 22.057291666666668,
+      "raster_ink_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "ink_pixels": 70
+    },
+    {
+      "kind": "primary",
+      "value": 2,
+      "resolution": 720,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 14.70486111111111,
+      "raster_ink_bbox_xywh": [
+        23,
+        60,
+        6,
+        10
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        22,
+        60,
+        7,
+        10
+      ],
+      "ink_pixels": 29
+    },
+    {
+      "kind": "primary",
+      "value": 3,
+      "resolution": 1080,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 22.057291666666668,
+      "raster_ink_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "ink_pixels": 64
+    },
+    {
+      "kind": "primary",
+      "value": 3,
+      "resolution": 720,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 14.70486111111111,
+      "raster_ink_bbox_xywh": [
+        23,
+        60,
+        6,
+        10
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        22,
+        59,
+        7,
+        11
+      ],
+      "ink_pixels": 26
+    },
+    {
+      "kind": "primary",
+      "value": 6,
+      "resolution": 1080,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 22.057291666666668,
+      "raster_ink_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "ink_pixels": 66
+    },
+    {
+      "kind": "primary",
+      "value": 6,
+      "resolution": 720,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 14.70486111111111,
+      "raster_ink_bbox_xywh": [
+        23,
+        60,
+        6,
+        10
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        22,
+        59,
+        7,
+        11
+      ],
+      "ink_pixels": 28
+    },
+    {
+      "kind": "primary",
+      "value": 8,
+      "resolution": 1080,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 22.057291666666668,
+      "raster_ink_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        27,
+        84,
+        10,
+        15
+      ],
+      "ink_pixels": 76
+    },
+    {
+      "kind": "primary",
+      "value": 8,
+      "resolution": 720,
+      "nominal_source_font_points": 220,
+      "nominal_physical_font_points": 14.70486111111111,
+      "raster_ink_bbox_xywh": [
+        23,
+        60,
+        6,
+        10
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        22,
+        59,
+        7,
+        11
+      ],
+      "ink_pixels": 33
+    },
+    {
+      "kind": "secondary",
+      "value": 0,
+      "resolution": 1080,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 17.044270833333332,
+      "raster_ink_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "ink_pixels": 44
+    },
+    {
+      "kind": "secondary",
+      "value": 0,
+      "resolution": 720,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 11.362847222222221,
+      "raster_ink_bbox_xywh": [
+        47,
+        65,
+        4,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        46,
+        65,
+        6,
+        8
+      ],
+      "ink_pixels": 14
+    },
+    {
+      "kind": "secondary",
+      "value": 10,
+      "resolution": 1080,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 17.044270833333332,
+      "raster_ink_bbox_xywh": [
+        59,
+        92,
+        16,
+        11
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        59,
+        91,
+        16,
+        13
+      ],
+      "ink_pixels": 72
+    },
+    {
+      "kind": "secondary",
+      "value": 10,
+      "resolution": 720,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 11.362847222222221,
+      "raster_ink_bbox_xywh": [
+        44,
+        65,
+        10,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        44,
+        65,
+        10,
+        8
+      ],
+      "ink_pixels": 28
+    },
+    {
+      "kind": "secondary",
+      "value": 12,
+      "resolution": 1080,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 17.044270833333332,
+      "raster_ink_bbox_xywh": [
+        59,
+        92,
+        16,
+        11
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        59,
+        91,
+        16,
+        12
+      ],
+      "ink_pixels": 66
+    },
+    {
+      "kind": "secondary",
+      "value": 12,
+      "resolution": 720,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 11.362847222222221,
+      "raster_ink_bbox_xywh": [
+        45,
+        65,
+        9,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        44,
+        65,
+        10,
+        8
+      ],
+      "ink_pixels": 22
+    },
+    {
+      "kind": "secondary",
+      "value": 14,
+      "resolution": 1080,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 17.044270833333332,
+      "raster_ink_bbox_xywh": [
+        59,
+        92,
+        16,
+        11
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        59,
+        91,
+        16,
+        12
+      ],
+      "ink_pixels": 66
+    },
+    {
+      "kind": "secondary",
+      "value": 14,
+      "resolution": 720,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 11.362847222222221,
+      "raster_ink_bbox_xywh": [
+        45,
+        65,
+        8,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        44,
+        65,
+        10,
+        8
+      ],
+      "ink_pixels": 17
+    },
+    {
+      "kind": "secondary",
+      "value": 1,
+      "resolution": 1080,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 17.044270833333332,
+      "raster_ink_bbox_xywh": [
+        63,
+        92,
+        8,
+        11
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "ink_pixels": 40
+    },
+    {
+      "kind": "secondary",
+      "value": 1,
+      "resolution": 720,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 11.362847222222221,
+      "raster_ink_bbox_xywh": [
+        48,
+        65,
+        2,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        47,
+        65,
+        5,
+        8
+      ],
+      "ink_pixels": 8
+    },
+    {
+      "kind": "secondary",
+      "value": 2,
+      "resolution": 1080,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 17.044270833333332,
+      "raster_ink_bbox_xywh": [
+        63,
+        92,
+        8,
+        11
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "ink_pixels": 35
+    },
+    {
+      "kind": "secondary",
+      "value": 2,
+      "resolution": 720,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 11.362847222222221,
+      "raster_ink_bbox_xywh": [
+        47,
+        65,
+        4,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        46,
+        65,
+        6,
+        8
+      ],
+      "ink_pixels": 12
+    },
+    {
+      "kind": "secondary",
+      "value": 3,
+      "resolution": 1080,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 17.044270833333332,
+      "raster_ink_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "ink_pixels": 36
+    },
+    {
+      "kind": "secondary",
+      "value": 3,
+      "resolution": 720,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 11.362847222222221,
+      "raster_ink_bbox_xywh": [
+        47,
+        65,
+        4,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        46,
+        65,
+        6,
+        8
+      ],
+      "ink_pixels": 13
+    },
+    {
+      "kind": "secondary",
+      "value": 6,
+      "resolution": 1080,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 17.044270833333332,
+      "raster_ink_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "ink_pixels": 42
+    },
+    {
+      "kind": "secondary",
+      "value": 6,
+      "resolution": 720,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 11.362847222222221,
+      "raster_ink_bbox_xywh": [
+        47,
+        65,
+        4,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        46,
+        65,
+        6,
+        8
+      ],
+      "ink_pixels": 13
+    },
+    {
+      "kind": "secondary",
+      "value": 8,
+      "resolution": 1080,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 17.044270833333332,
+      "raster_ink_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        63,
+        91,
+        8,
+        12
+      ],
+      "ink_pixels": 44
+    },
+    {
+      "kind": "secondary",
+      "value": 8,
+      "resolution": 720,
+      "nominal_source_font_points": 170,
+      "nominal_physical_font_points": 11.362847222222221,
+      "raster_ink_bbox_xywh": [
+        47,
+        65,
+        4,
+        7
+      ],
+      "raster_all_nonzero_alpha_bbox_xywh": [
+        46,
+        65,
+        6,
+        8
+      ],
+      "ink_pixels": 16
+    }
+  ]
+}

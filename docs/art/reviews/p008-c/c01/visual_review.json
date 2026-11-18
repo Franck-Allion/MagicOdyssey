@@ -1,0 +1,18 @@
+{
+  "task": "P008-C01",
+  "alpha_step": "PASS",
+  "candidate_sha256": "c5b09a920793d6fef70181e300595efe1702dd3bd98b9a5f9d1e58dbb1f10aba",
+  "inspected": [
+    "after_battlefield.png",
+    "after_light.png",
+    "after_bright_portrait.png (also visible in after_official_inlays.png)",
+    "after_dark_portrait.png",
+    "after_official_inlays.png",
+    "native_720p_comparison.png",
+    "flagged_edge_regions.png",
+    "removed_alpha1_away_from_original_zero.png"
+  ],
+  "finding": "No significant matte fringe, new visible metal holes, or damaged edges in the inspected offline composites, including native token footprint. Remaining alpha 2..31 is confined within 12 source pixels of alpha>=128 and follows existing edge taper; no further cleanup was applied.",
+  "qualification": "Alpha 2..253 is intentionally preserved under the exact user-specified transformation. Neutral cavity samples remain 253, not 255. This PASS does not certify uniformly alpha-255 material interiors.",
+  "scope": "Offline alpha/compositing validation only; no integration, game GPU capture, gameplay test, or owner artistic approval."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "format": "PNG",
+  "mode": "RGBA",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "c5b09a920793d6fef70181e300595efe1702dd3bd98b9a5f9d1e58dbb1f10aba",
+  "source_runtime_identical": true,
+  "exact_C01_alpha_and_RGB_verified": true
+}

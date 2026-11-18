@@ -1,0 +1,7 @@
+Tool: built-in image_gen.imagegen
+transparent_background: true
+Reference: assets/_source/lot1/tokens/mo_creature_token_frame_v02.png
+Disposition: REJECTED; saved as rejected_generated_restore.png, never installed.
+
+Exact prompt:
+Use case: background-extraction. Edit the supplied MagicOdyssey V02 token artwork ONLY to restore technically correct alpha. Output must be exactly 1536x1024 PNG RGBA. This is a production texture with exact alignment constraints, NOT a redesign. Preserve exact original pixel coordinates and full RGB artwork geometry and metal/enamel detail: same outer decorative frame, same central portrait aperture contour, same Attack and Health cabochon contours at (220,802) and (1317,802), same two neutral recessed dark Armor/Shield cavities at bottom center. Keep the Armor/Shield cavity surfaces opaque and neutral. Entire exterior, central portrait aperture, and both large circular cabochon interiors must be truly alpha zero. Solid bronze and midnight-blue enamel and neutral secondary cavities must be alpha 255, with professional antialiasing only at boundaries. Remove residual translucent haze and background matte contamination. Do not remove bright metal highlights. Do not change any contours, proportions, materials, hues, highlights, decoration, engraving, framing, dimensions, or alignment. Do not add stat numerals, symbols, or inserts. The input is already a mostly transparent RGBA texture; repair its alpha rather than inventing new artwork.

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "exact_alpha_formula": true,
+  "RGB_bit_identical": true,
+  "source_runtime_byte_identical": true,
+  "original_backup_sha256_verified": true,
+  "protected_files_unchanged_from_HEAD": {
+    "scripts/presentation/battlefield_slot.gd": true,
+    "scripts/presentation/card_stat_overlay.gd": true,
+    "scripts/presentation/card_socket_overlay.gd": true,
+    "scripts/presentation/card_view_layout.gd": true,
+    "scripts/presentation/ui_design_tokens.gd": true,
+    "scripts/presentation/combat_preview_cards.gd": true,
+    "scripts/presentation/combat_hud_view_model.gd": true,
+    "scripts/presentation/hero_hud_view_model.gd": true,
+    "scenes/combat/combat_screen.tscn": true,
+    "assets/textures/cards/icons/mo_inlay_attack.png": true,
+    "assets/textures/cards/icons/mo_inlay_health.png": true,
+    "assets/textures/cards/icons/mo_plate_armor.png": true,
+    "assets/textures/cards/icons/mo_plate_shield.png": true,
+    "assets/textures/cards/icons/mo_socket_bezel_attack.png": true,
+    "assets/textures/cards/icons/mo_socket_bezel_health.png": true,
+    "scripts/presentation/creature_token.gd": true,
+    "scripts/presentation/creature_token_layout.gd": true,
+    "assets/_source/lot1/tokens/mo_creature_token_frame_v01.png": true,
+    "assets/textures/tokens/mo_creature_token_frame_v01.png": true
+  },
+  "CreatureToken_uses_V01": true
+}

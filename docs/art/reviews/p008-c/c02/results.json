@@ -1,0 +1,75 @@
+{
+  "native": {
+    "exit_code": 0,
+    "passed": 3662,
+    "failed": 0,
+    "old_assertions_retained": 3620,
+    "new_assertions": 42
+  },
+  "GPU": {
+    "exit_code": 0,
+    "passed": 718,
+    "failed": 0
+  },
+  "ART002": {
+    "exit_code": 0,
+    "scenes_bit_exact": 3
+  },
+  "import_exit_code": 0,
+  "export_exit_code": 0,
+  "standalone_single_harness_exit_code": 0,
+  "standalone_full_harness_exit_code": 0,
+  "Windows_OS_pointer_tests": {
+    "single": {
+      "default": {
+        "unique_slot_identities_clicked": 24,
+        "slot_click_events": 28,
+        "hand_and_raised_inspection": "PASS",
+        "End_Turn_mouse_and_Space": "PASS",
+        "ESC_exit_code": 0
+      },
+      "1920x1080": {
+        "unique_slot_identities_clicked": 24,
+        "slot_click_events": 28,
+        "hand_and_raised_inspection": "PASS",
+        "End_Turn_mouse_and_Space": "PASS",
+        "ESC_exit_code": 0
+      },
+      "1280x720": {
+        "unique_slot_identities_clicked": 24,
+        "slot_click_events": 28,
+        "hand_and_raised_inspection": "PASS",
+        "End_Turn_mouse_and_Space": "PASS",
+        "ESC_exit_code": 0
+      }
+    },
+    "full": {
+      "default": {
+        "unique_slot_identities_clicked": 24,
+        "slot_click_events": 28,
+        "hand_and_raised_inspection": "PASS",
+        "End_Turn_mouse_and_Space": "PASS",
+        "ESC_exit_code": 0
+      },
+      "1920x1080": {
+        "unique_slot_identities_clicked": 24,
+        "slot_click_events": 28,
+        "hand_and_raised_inspection": "PASS",
+        "End_Turn_mouse_and_Space": "PASS",
+        "ESC_exit_code": 0
+      },
+      "1280x720": {
+        "unique_slot_identities_clicked": 24,
+        "slot_click_events": 28,
+        "hand_and_raised_inspection": "PASS",
+        "End_Turn_mouse_and_Space": "PASS",
+        "ESC_exit_code": 0
+      }
+    }
+  },
+  "executable_sha256": "3e7d1f2176ac43e03fd0fefe1bf96bc89671638d22a4055604e141d4165ff388",
+  "alpha": "PASS / unchanged C01 PNG bytes",
+  "native_720p_four_stat_readability": "ART_CORRECTION_REQUIRED",
+  "owner_approval": "PENDING",
+  "G1": "NOT_VALIDATED"
+}

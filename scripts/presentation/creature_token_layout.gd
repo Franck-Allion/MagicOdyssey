@@ -9,10 +9,12 @@ const INLAY_SIZE: Vector2 = Vector2(296, 296)
 const PRIMARY_POINTS: int = 220
 const PRIMARY_WIDTH: float = 212.0
 const PRIMARY_RADIUS: float = 101.0
-const ARMOR: Rect2 = Rect2(408, 809, 300, 104)
-const SHIELD: Rect2 = Rect2(826, 803, 300, 115)
-const SECONDARY_POINTS: int = 140
-const SECONDARY_WIDTH: float = 212.0
+# V02: neutral interiors span roughly x381..750 / x788..1154 at y860.
+# Insets retain each official material's aspect ratio and a common 336px width.
+const ARMOR: Rect2 = Rect2(400, 802, 336, 116)
+const SHIELD: Rect2 = Rect2(800, 796, 336, 128)
+const SECONDARY_POINTS: int = 170
+const SECONDARY_WIDTH: float = 260.0
 const PORTRAIT_BOUNDS: Rect2 = Rect2(108, 84, 1320, 690)
 # Polygon extends under the inner metal edge; excludes stat cavities and band.
 const PORTRAIT_POLYGON: Array[Vector2] = [
