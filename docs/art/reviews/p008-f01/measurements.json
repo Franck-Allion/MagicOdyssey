@@ -1,0 +1,6245 @@
+{
+  "method": "GPU probes, alpha>=128 and RGB bright-ink thresholds 150/150/140; material alpha and same-phase actual no-ink scene backgrounds; contrast uses straight-alpha probe compositing over the actual background and sRGB relative luminance, not an accessibility certification. Ink and full-alpha/stroke bounds are both checked against cell bounds.",
+  "records": [
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 13.999998015758855,
+      "contrast_ratio_min": 3.2345781923037658,
+      "contrast_ratio_median": 11.70939559446689,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        20,
+        85,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 13.999998015758855,
+      "contrast_ratio_min": 3.6651954236531434,
+      "contrast_ratio_median": 9.931807923587565,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 13.999998015758855,
+      "contrast_ratio_min": 3.2345781923037658,
+      "contrast_ratio_median": 10.476530342225644,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 13.999998015758855,
+      "contrast_ratio_min": 3.127313475372116,
+      "contrast_ratio_median": 11.693188315513165,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 13.999998015758855,
+      "contrast_ratio_min": 3.6651954236531434,
+      "contrast_ratio_median": 11.945117911955165,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        85,
+        12,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 13.999998015758855,
+      "contrast_ratio_min": 3.2345781923037658,
+      "contrast_ratio_median": 11.898232695830945,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        13,
+        85,
+        24,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        13,
+        85,
+        24,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 2,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 7.999998015758855,
+      "contrast_ratio_min": 1.492701112089915,
+      "contrast_ratio_median": 11.898232695830945,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        13,
+        85,
+        24,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        13,
+        85,
+        24,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 6,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 7.999998015758855,
+      "contrast_ratio_min": 1.5591596464799788,
+      "contrast_ratio_median": 11.898232695830945,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        13,
+        85,
+        24,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        13,
+        85,
+        24,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 5,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 7.999998015758855,
+      "contrast_ratio_min": 1.5591596464799788,
+      "contrast_ratio_median": 12.26535361922296,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        13,
+        85,
+        24,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        13,
+        85,
+        24,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 2,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 7.999998015758855,
+      "contrast_ratio_min": 1.366573509726456,
+      "contrast_ratio_median": 12.073655227043263,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        58,
+        87,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 13.999999639856334,
+      "contrast_ratio_min": 2.1780764596634223,
+      "contrast_ratio_median": 6.766835007885655,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        58,
+        88,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333372260068231,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 13.999999639856334,
+      "contrast_ratio_min": 1.7321108423567986,
+      "contrast_ratio_median": 7.189220919340949,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        58,
+        88,
+        10,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333372260068231,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 13.999999639856334,
+      "contrast_ratio_min": 1.0882058270915806,
+      "contrast_ratio_median": 6.743731695599694,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        58,
+        87,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 13.999999639856334,
+      "contrast_ratio_min": 1.4896400721281307,
+      "contrast_ratio_median": 7.136535145397481,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        58,
+        87,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 13.999999639856334,
+      "contrast_ratio_min": 3.3229019643203515,
+      "contrast_ratio_median": 8.139979224668195,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        58,
+        87,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 13.999999639856334,
+      "contrast_ratio_min": 2.0904708341910156,
+      "contrast_ratio_median": 7.845169816500607,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        53,
+        87,
+        20,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        52,
+        87,
+        22,
+        16
+      ],
+      "minimum_cell_margin_px": 4.333372260068231,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 8.999999639856334,
+      "contrast_ratio_min": 1.1430259791594688,
+      "contrast_ratio_median": 7.015780761274998,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        53,
+        87,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        52,
+        87,
+        22,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 8.999999639856334,
+      "contrast_ratio_min": 1.1149472391487123,
+      "contrast_ratio_median": 6.506480755108443,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        53,
+        88,
+        20,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        53,
+        87,
+        21,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333372260068231,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 8.999999639856334,
+      "contrast_ratio_min": 1.185859714085703,
+      "contrast_ratio_median": 6.208916131900827,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        53,
+        87,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        52,
+        87,
+        21,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 8.999999639856334,
+      "contrast_ratio_min": 1.4896400721281307,
+      "contrast_ratio_median": 7.077809828693881,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        96,
+        87,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        96,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 15.000001894963859,
+      "contrast_ratio_min": 3.485232347874883,
+      "contrast_ratio_median": 11.183951477972549,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        97,
+        88,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        96,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333372260068231,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 15.000001894963859,
+      "contrast_ratio_min": 3.7914545817357803,
+      "contrast_ratio_median": 11.846638229349871,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        96,
+        88,
+        10,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        96,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333372260068231,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 15.000001894963859,
+      "contrast_ratio_min": 2.6596160402238125,
+      "contrast_ratio_median": 11.837822155995593,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        96,
+        87,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        96,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 15.000001894963859,
+      "contrast_ratio_min": 1.8343956711177913,
+      "contrast_ratio_median": 11.161462781669929,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        96,
+        87,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        96,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 15.000001894963859,
+      "contrast_ratio_min": 3.9918624273573515,
+      "contrast_ratio_median": 10.703527674739945,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        96,
+        87,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        96,
+        87,
+        10,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 15.000001894963859,
+      "contrast_ratio_min": 3.485232347874883,
+      "contrast_ratio_median": 11.361195837106358,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        91,
+        87,
+        20,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        87,
+        22,
+        16
+      ],
+      "minimum_cell_margin_px": 4.333372260068231,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 10.000001894963859,
+      "contrast_ratio_min": 3.344382876831862,
+      "contrast_ratio_median": 11.309868323806008,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        91,
+        87,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        87,
+        22,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 10.000001894963859,
+      "contrast_ratio_min": 3.344382876831862,
+      "contrast_ratio_median": 11.006506547045916,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        91,
+        88,
+        20,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        87,
+        21,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333372260068231,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 10.000001894963859,
+      "contrast_ratio_min": 3.344382876831862,
+      "contrast_ratio_median": 11.44890371048843,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        91,
+        87,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        87,
+        21,
+        16
+      ],
+      "minimum_cell_margin_px": 5.333327427570822,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.333372260068231,
+      "nearest_other_stat_cell_distance_px": 10.000001894963859,
+      "contrast_ratio_min": 2.720646388177332,
+      "contrast_ratio_median": 11.460811132341597,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 15.000004890160838,
+      "contrast_ratio_min": 5.110013859888704,
+      "contrast_ratio_median": 10.728075171271296,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 15.000004890160838,
+      "contrast_ratio_min": 4.957194800863764,
+      "contrast_ratio_median": 11.52243171341389,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        133,
+        85,
+        13,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 15.000004890160838,
+      "contrast_ratio_min": 4.7183267613065,
+      "contrast_ratio_median": 11.163771092357003,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 15.000004890160838,
+      "contrast_ratio_min": 5.511920893487132,
+      "contrast_ratio_median": 11.073689340198804,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 15.000004890160838,
+      "contrast_ratio_min": 5.632839230952933,
+      "contrast_ratio_median": 11.157352998766404,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        134,
+        85,
+        11,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 15.000004890160838,
+      "contrast_ratio_min": 4.796351134431122,
+      "contrast_ratio_median": 11.049149540465137,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        127,
+        85,
+        25,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        127,
+        85,
+        25,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 3,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 8.000004890160838,
+      "contrast_ratio_min": 1.3954387644752135,
+      "contrast_ratio_median": 10.962217669235445,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        127,
+        85,
+        25,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        127,
+        85,
+        25,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 10,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 8.000004890160838,
+      "contrast_ratio_min": 1.8006389651118773,
+      "contrast_ratio_median": 10.55771149206696,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        127,
+        85,
+        25,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        127,
+        85,
+        25,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 8,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 8.000004890160838,
+      "contrast_ratio_min": 1.8006389651118773,
+      "contrast_ratio_median": 10.989937992690066,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        127,
+        85,
+        25,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        127,
+        85,
+        25,
+        18
+      ],
+      "minimum_cell_margin_px": 4.3333722600682165,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 2,
+      "full_alpha_cell_margin_px": 4.3333722600682165,
+      "nearest_other_stat_cell_distance_px": 8.000004890160838,
+      "contrast_ratio_min": 1.5773880164289344,
+      "contrast_ratio_median": 10.773633939150185,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        16,
+        59,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        59,
+        8,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 9.333321837979817,
+      "contrast_ratio_min": 4.383670532619025,
+      "contrast_ratio_median": 11.912932901669596,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        16,
+        59,
+        5,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        59,
+        7,
+        12
+      ],
+      "minimum_cell_margin_px": 3.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 11.333321837979817,
+      "contrast_ratio_min": 3.4787549336769166,
+      "contrast_ratio_median": 10.593995683099113,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        16,
+        59,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        59,
+        8,
+        12
+      ],
+      "minimum_cell_margin_px": 3.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 9.333321837979817,
+      "contrast_ratio_min": 4.383670532619025,
+      "contrast_ratio_median": 10.859550939716794,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        16,
+        59,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        59,
+        8,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 9.333321837979817,
+      "contrast_ratio_min": 4.383670532619025,
+      "contrast_ratio_median": 12.000328643920579,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        16,
+        59,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        59,
+        8,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 9.333321837979817,
+      "contrast_ratio_min": 3.930744964721281,
+      "contrast_ratio_median": 11.898232695830945,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        16,
+        59,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        58,
+        8,
+        13
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 9.333321837979817,
+      "contrast_ratio_min": 4.383670532619025,
+      "contrast_ratio_median": 11.898232695830945,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        11,
+        59,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        58,
+        17,
+        13
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 5.333321837979817,
+      "contrast_ratio_min": 2.1491087327084633,
+      "contrast_ratio_median": 11.865535133288404,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        11,
+        59,
+        16,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        59,
+        17,
+        12
+      ],
+      "minimum_cell_margin_px": 3.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 5.333321837979817,
+      "contrast_ratio_min": 2.1491087327084633,
+      "contrast_ratio_median": 11.724185972808675,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        11,
+        59,
+        16,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        59,
+        17,
+        12
+      ],
+      "minimum_cell_margin_px": 3.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 5.333321837979817,
+      "contrast_ratio_min": 2.1491087327084633,
+      "contrast_ratio_median": 12.057952007957308,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        11,
+        59,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        59,
+        16,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 1,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 5.333321837979817,
+      "contrast_ratio_min": 1.1864763488248202,
+      "contrast_ratio_median": 11.731460796100059,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        41,
+        60,
+        7,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        41,
+        60,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 9.333343265763638,
+      "contrast_ratio_min": 1.8502191932227263,
+      "contrast_ratio_median": 6.861374632628878,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        42,
+        60,
+        4,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        60,
+        5,
+        10
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.5555465321176314,
+      "nearest_other_stat_cell_distance_px": 10.333343265763638,
+      "contrast_ratio_min": 2.239669273919197,
+      "contrast_ratio_median": 7.024755413291513,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        41,
+        60,
+        7,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        41,
+        60,
+        7,
+        10
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.5555465321176314,
+      "nearest_other_stat_cell_distance_px": 9.333343265763638,
+      "contrast_ratio_min": 1.4956368950194683,
+      "contrast_ratio_median": 6.676917157062864,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        42,
+        60,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        41,
+        60,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 9.666653404676289,
+      "contrast_ratio_min": 2.568622168984796,
+      "contrast_ratio_median": 7.466164098768001,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        41,
+        60,
+        7,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        41,
+        60,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 9.333343265763638,
+      "contrast_ratio_min": 2.114020993777932,
+      "contrast_ratio_median": 7.728560805131064,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        41,
+        60,
+        7,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        41,
+        60,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 9.333343265763638,
+      "contrast_ratio_min": 2.568622168984796,
+      "contrast_ratio_median": 7.931953096794847,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        38,
+        60,
+        14,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        60,
+        14,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 5.666653404676289,
+      "contrast_ratio_min": 1.3298949733411107,
+      "contrast_ratio_median": 7.120934473069581,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        39,
+        60,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        60,
+        14,
+        10
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.5555465321176314,
+      "nearest_other_stat_cell_distance_px": 5.666653404676289,
+      "contrast_ratio_min": 1.0967539233372934,
+      "contrast_ratio_median": 7.114691138956669,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        38,
+        60,
+        14,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        60,
+        14,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 5.666653404676289,
+      "contrast_ratio_min": 1.3298949733411107,
+      "contrast_ratio_median": 6.5748730175933074,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        38,
+        60,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        60,
+        14,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 6.333343265763638,
+      "contrast_ratio_min": 1.3298949733411107,
+      "contrast_ratio_median": 7.120934473069581,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        67,
+        60,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        60,
+        6,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 9.999991090783055,
+      "contrast_ratio_min": 4.427514489566812,
+      "contrast_ratio_median": 11.585350803286977,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        67,
+        61,
+        5,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        60,
+        5,
+        10
+      ],
+      "minimum_cell_margin_px": 3.5555865929750325,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.5555465321176314,
+      "nearest_other_stat_cell_distance_px": 10.666678332663217,
+      "contrast_ratio_min": 1.5895358965525797,
+      "contrast_ratio_median": 10.919350852899482,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        67,
+        60,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        60,
+        6,
+        10
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.5555465321176314,
+      "nearest_other_stat_cell_distance_px": 9.999991090783055,
+      "contrast_ratio_min": 2.964871539871719,
+      "contrast_ratio_median": 11.668914964461772,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        67,
+        60,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        60,
+        6,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 9.999991090783055,
+      "contrast_ratio_min": 3.0947701370796104,
+      "contrast_ratio_median": 11.776279552813584,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        67,
+        60,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        60,
+        6,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 9.999991090783055,
+      "contrast_ratio_min": 2.6944375507034284,
+      "contrast_ratio_median": 11.137717927060784,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        67,
+        60,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        60,
+        6,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 9.999991090783055,
+      "contrast_ratio_min": 4.287806532443253,
+      "contrast_ratio_median": 11.546096668812051,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        63,
+        60,
+        14,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        63,
+        60,
+        14,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 5.999991090783055,
+      "contrast_ratio_min": 5.961742767046493,
+      "contrast_ratio_median": 11.625456208436342,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        63,
+        60,
+        14,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        63,
+        60,
+        14,
+        10
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.5555465321176314,
+      "nearest_other_stat_cell_distance_px": 5.999991090783055,
+      "contrast_ratio_min": 5.222963283187858,
+      "contrast_ratio_median": 11.624604937761902,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        63,
+        60,
+        14,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        63,
+        60,
+        14,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 5.999991090783055,
+      "contrast_ratio_min": 6.799351425174752,
+      "contrast_ratio_median": 11.639368942096118,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        63,
+        60,
+        14,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        63,
+        60,
+        14,
+        11
+      ],
+      "minimum_cell_margin_px": 3.5555465321176314,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750325,
+      "nearest_other_stat_cell_distance_px": 5.999991090783055,
+      "contrast_ratio_min": 2.4570322086084615,
+      "contrast_ratio_median": 12.123571374333935,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        92,
+        59,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        59,
+        8,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 10.333346765966752,
+      "contrast_ratio_min": 4.4280029893619535,
+      "contrast_ratio_median": 10.729402677827,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        92,
+        59,
+        5,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        59,
+        7,
+        12
+      ],
+      "minimum_cell_margin_px": 3.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 10.333346765966752,
+      "contrast_ratio_min": 6.805189421224225,
+      "contrast_ratio_median": 11.417079708918354,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        92,
+        59,
+        8,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        59,
+        8,
+        12
+      ],
+      "minimum_cell_margin_px": 3.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 10.333346765966752,
+      "contrast_ratio_min": 4.410459357533164,
+      "contrast_ratio_median": 10.873136729131597,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        92,
+        59,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        59,
+        8,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 10.333346765966752,
+      "contrast_ratio_min": 6.385075803921516,
+      "contrast_ratio_median": 10.77299414997231,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        92,
+        59,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        59,
+        8,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 10.333346765966752,
+      "contrast_ratio_min": 6.952683851246273,
+      "contrast_ratio_median": 11.122598019170946,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        92,
+        59,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        59,
+        8,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 10.333346765966752,
+      "contrast_ratio_min": 3.002033273752037,
+      "contrast_ratio_median": 10.931594517855547,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        88,
+        59,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        87,
+        59,
+        17,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 6.333346765966752,
+      "contrast_ratio_min": 2.008768018133223,
+      "contrast_ratio_median": 11.078668465203,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        88,
+        59,
+        16,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        87,
+        59,
+        17,
+        12
+      ],
+      "minimum_cell_margin_px": 3.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 1,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 6.333346765966752,
+      "contrast_ratio_min": 3.0102333290327685,
+      "contrast_ratio_median": 10.339264265167966,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        88,
+        59,
+        16,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        87,
+        59,
+        17,
+        12
+      ],
+      "minimum_cell_margin_px": 3.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 6.333346765966752,
+      "contrast_ratio_min": 3.0102333290327685,
+      "contrast_ratio_median": 10.730675741262832,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "a",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        88,
+        59,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        88,
+        59,
+        16,
+        12
+      ],
+      "minimum_cell_margin_px": 2.5555865929750468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 1,
+      "full_alpha_cell_margin_px": 2.5555865929750468,
+      "nearest_other_stat_cell_distance_px": 6.333346765966752,
+      "contrast_ratio_min": 2.008768018133223,
+      "contrast_ratio_median": 10.77299414997231,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 15.999999014330179,
+      "contrast_ratio_min": 3.9772942668009725,
+      "contrast_ratio_median": 12.26535361922296,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 15.999999014330179,
+      "contrast_ratio_min": 4.786889222094572,
+      "contrast_ratio_median": 9.466460077223342,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        20
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 9.333328695008106,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 15.999999014330179,
+      "contrast_ratio_min": 3.9772942668009725,
+      "contrast_ratio_median": 10.243805304988516,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 15.999999014330179,
+      "contrast_ratio_min": 3.3729487304667254,
+      "contrast_ratio_median": 12.097213061385386,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 15.999999014330179,
+      "contrast_ratio_min": 3.6971669650492363,
+      "contrast_ratio_median": 12.19731258916351,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 15.999999014330179,
+      "contrast_ratio_min": 3.9772942668009725,
+      "contrast_ratio_median": 12.105925502557358,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        12,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "minimum_cell_margin_px": 4.999997633295791,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999997633295791,
+      "nearest_other_stat_cell_distance_px": 7.999999014330179,
+      "contrast_ratio_min": 3.0554680136287353,
+      "contrast_ratio_median": 11.55159390950194,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        11,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "minimum_cell_margin_px": 5.000000049606028,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 5,
+      "full_alpha_cell_margin_px": 4.999997633295791,
+      "nearest_other_stat_cell_distance_px": 8.999999014330179,
+      "contrast_ratio_min": 1.7834290350296866,
+      "contrast_ratio_median": 11.380529654407537,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "minimum_cell_margin_px": 4.999997633295791,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 5,
+      "full_alpha_cell_margin_px": 4.999997633295791,
+      "nearest_other_stat_cell_distance_px": 7.999999014330179,
+      "contrast_ratio_min": 1.7834290350296866,
+      "contrast_ratio_median": 12.250368882626214,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        11,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "minimum_cell_margin_px": 5.000000049606028,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 1,
+      "full_alpha_cell_margin_px": 4.999997633295791,
+      "nearest_other_stat_cell_distance_px": 8.999999014330179,
+      "contrast_ratio_min": 1.2548629894818992,
+      "contrast_ratio_median": 12.250368882626214,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        63,
+        11,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 14.000002366704209,
+      "contrast_ratio_min": 2.3573769446860755,
+      "contrast_ratio_median": 6.418202649978744,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        59,
+        64,
+        10,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 14.000002366704209,
+      "contrast_ratio_min": 1.8104572468149756,
+      "contrast_ratio_median": 7.395327252302104,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        63,
+        11,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 14.000002366704209,
+      "contrast_ratio_min": 1.7112791164907037,
+      "contrast_ratio_median": 6.495180336937834,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 14.000002366704209,
+      "contrast_ratio_min": 1.9815105699934994,
+      "contrast_ratio_median": 7.291447237416751,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 14.000002366704209,
+      "contrast_ratio_min": 2.5732356354344232,
+      "contrast_ratio_median": 7.924426772198075,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 14.000002366704209,
+      "contrast_ratio_min": 2.1250377840789736,
+      "contrast_ratio_median": 7.259467758039786,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "minimum_cell_margin_px": 4.999997426937341,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999997426937341,
+      "nearest_other_stat_cell_distance_px": 8.000002366704209,
+      "contrast_ratio_min": 1.926595619106118,
+      "contrast_ratio_median": 8.009002108218219,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "minimum_cell_margin_px": 4.999997426937341,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999997426937341,
+      "nearest_other_stat_cell_distance_px": 8.000002366704209,
+      "contrast_ratio_min": 1.926595619106118,
+      "contrast_ratio_median": 7.868692378782311,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "minimum_cell_margin_px": 4.999997426937341,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999997426937341,
+      "nearest_other_stat_cell_distance_px": 8.000002366704209,
+      "contrast_ratio_min": 1.926595619106118,
+      "contrast_ratio_median": 7.372729832410123,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "minimum_cell_margin_px": 4.999997426937341,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999997426937341,
+      "nearest_other_stat_cell_distance_px": 8.000002366704209,
+      "contrast_ratio_min": 1.6124320080341261,
+      "contrast_ratio_median": 8.16547507826926,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        11,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 13.999995109839361,
+      "contrast_ratio_min": 5.543155515422556,
+      "contrast_ratio_median": 11.623378343760537,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        95,
+        64,
+        10,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 13.999995109839361,
+      "contrast_ratio_min": 3.450572302215097,
+      "contrast_ratio_median": 11.35335234208861,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        94,
+        63,
+        12,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 13.999995109839361,
+      "contrast_ratio_min": 3.7359898144138586,
+      "contrast_ratio_median": 11.60868779947538,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 13.999995109839361,
+      "contrast_ratio_min": 4.692496087691261,
+      "contrast_ratio_median": 11.685698685211642,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 13.999995109839361,
+      "contrast_ratio_min": 3.20570850236875,
+      "contrast_ratio_median": 11.240021730055663,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "minimum_cell_margin_px": 7.66666845016168,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.66666845016168,
+      "nearest_other_stat_cell_distance_px": 13.999995109839361,
+      "contrast_ratio_min": 4.478895921181768,
+      "contrast_ratio_median": 11.724484415288057,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "minimum_cell_margin_px": 4.999997170972861,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999997170972861,
+      "nearest_other_stat_cell_distance_px": 7.999995109839361,
+      "contrast_ratio_min": 3.579857138256227,
+      "contrast_ratio_median": 11.936238914768433,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "minimum_cell_margin_px": 4.999997170972861,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999997170972861,
+      "nearest_other_stat_cell_distance_px": 7.999995109839361,
+      "contrast_ratio_min": 3.579857138256227,
+      "contrast_ratio_median": 12.003725040189403,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        63,
+        23,
+        17
+      ],
+      "minimum_cell_margin_px": 4.999997170972861,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.9999971709728612,
+      "nearest_other_stat_cell_distance_px": 7.999995109839361,
+      "contrast_ratio_min": 3.289427377298633,
+      "contrast_ratio_median": 12.255912537381812,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "minimum_cell_margin_px": 4.999997170972861,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999997170972861,
+      "nearest_other_stat_cell_distance_px": 7.999995109839361,
+      "contrast_ratio_min": 4.478895921181768,
+      "contrast_ratio_median": 11.977339717515742,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 16.00000282902714,
+      "contrast_ratio_min": 4.098685222073751,
+      "contrast_ratio_median": 10.393115299539607,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 16.00000282902714,
+      "contrast_ratio_min": 6.081520750044939,
+      "contrast_ratio_median": 11.677440707188692,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        20
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 9.333328695008106,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 16.00000282902714,
+      "contrast_ratio_min": 5.8868150787848625,
+      "contrast_ratio_median": 11.121241379028127,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 16.00000282902714,
+      "contrast_ratio_min": 4.439495672288764,
+      "contrast_ratio_median": 10.729402677827,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 16.00000282902714,
+      "contrast_ratio_min": 4.689177614445483,
+      "contrast_ratio_median": 10.729402677827,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_cell_margin_px": 8.333369200363222,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 8.333369200363222,
+      "nearest_other_stat_cell_distance_px": 16.00000282902714,
+      "contrast_ratio_min": 6.7375571295448164,
+      "contrast_ratio_median": 10.641474495979113,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        125,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        124,
+        78,
+        29,
+        21
+      ],
+      "minimum_cell_margin_px": 4.999992792741182,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999992792741182,
+      "nearest_other_stat_cell_distance_px": 9.000002829027139,
+      "contrast_ratio_min": 2.0713171043523357,
+      "contrast_ratio_median": 10.534689833934047,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        125,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        124,
+        78,
+        29,
+        21
+      ],
+      "minimum_cell_margin_px": 4.999992792741182,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 8,
+      "full_alpha_cell_margin_px": 4.999992792741182,
+      "nearest_other_stat_cell_distance_px": 9.000002829027139,
+      "contrast_ratio_min": 1.1357406483505144,
+      "contrast_ratio_median": 9.5607178362628,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        125,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        124,
+        78,
+        29,
+        21
+      ],
+      "minimum_cell_margin_px": 4.999992792741182,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 5,
+      "full_alpha_cell_margin_px": 4.999992792741182,
+      "nearest_other_stat_cell_distance_px": 9.000002829027139,
+      "contrast_ratio_min": 1.1357406483505144,
+      "contrast_ratio_median": 10.561520553389967,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        125,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        124,
+        78,
+        29,
+        21
+      ],
+      "minimum_cell_margin_px": 4.999992792741182,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 1,
+      "full_alpha_cell_margin_px": 4.999992792741182,
+      "nearest_other_stat_cell_distance_px": 9.000002829027139,
+      "contrast_ratio_min": 2.038377216929226,
+      "contrast_ratio_median": 10.729402677827,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 10.333322503694028,
+      "contrast_ratio_min": 4.938099386357261,
+      "contrast_ratio_median": 12.120850407894531,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        16,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 10.333322503694028,
+      "contrast_ratio_min": 5.058301131678373,
+      "contrast_ratio_median": 9.639757892664496,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 10.333322503694028,
+      "contrast_ratio_min": 4.086649918378921,
+      "contrast_ratio_median": 9.615341675578929,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 10.333322503694028,
+      "contrast_ratio_min": 4.938099386357261,
+      "contrast_ratio_median": 12.250368882626214,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 10.333322503694028,
+      "contrast_ratio_min": 5.97418739070273,
+      "contrast_ratio_median": 12.097252817468897,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 10.333322503694028,
+      "contrast_ratio_min": 4.938099386357261,
+      "contrast_ratio_median": 12.185751781040615,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "minimum_cell_margin_px": 3.333321583004441,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 1,
+      "full_alpha_cell_margin_px": 3.333321583004441,
+      "nearest_other_stat_cell_distance_px": 5.333322503694028,
+      "contrast_ratio_min": 3.404471472931062,
+      "contrast_ratio_median": 12.073655227043263,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "minimum_cell_margin_px": 3.333321583004441,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 3,
+      "full_alpha_cell_margin_px": 3.333321583004441,
+      "nearest_other_stat_cell_distance_px": 5.333322503694028,
+      "contrast_ratio_min": 4.57947034647616,
+      "contrast_ratio_median": 12.105925502557358,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "minimum_cell_margin_px": 3.333321583004441,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 2,
+      "full_alpha_cell_margin_px": 3.333321583004441,
+      "nearest_other_stat_cell_distance_px": 5.333322503694028,
+      "contrast_ratio_min": 4.57947034647616,
+      "contrast_ratio_median": 12.250368882626214,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "minimum_cell_margin_px": 3.333321583004441,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 1,
+      "full_alpha_cell_margin_px": 3.333321583004441,
+      "nearest_other_stat_cell_distance_px": 5.333322503694028,
+      "contrast_ratio_min": 2.225181509877047,
+      "contrast_ratio_median": 12.149159704989476,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 9.333322333050994,
+      "contrast_ratio_min": 2.5008859471794924,
+      "contrast_ratio_median": 6.43579627693178,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        5,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 9.666678416995559,
+      "contrast_ratio_min": 2.8989885832663376,
+      "contrast_ratio_median": 7.250845606358166,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 9.333322333050994,
+      "contrast_ratio_min": 1.674687161313156,
+      "contrast_ratio_median": 6.254413595552801,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 9.333322333050994,
+      "contrast_ratio_min": 1.6328556617318706,
+      "contrast_ratio_median": 7.2993741496633024,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 9.333322333050994,
+      "contrast_ratio_min": 2.005125542054142,
+      "contrast_ratio_median": 8.317764885515343,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 9.333322333050994,
+      "contrast_ratio_min": 2.8989885832663376,
+      "contrast_ratio_median": 7.6004916118288905,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        44,
+        15,
+        12
+      ],
+      "minimum_cell_margin_px": 2.6666547787654338,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.6666547787654338,
+      "nearest_other_stat_cell_distance_px": 5.333322333050994,
+      "contrast_ratio_min": 2.0012630882073954,
+      "contrast_ratio_median": 8.293721567111284,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.6666547787654338,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.6666547787654338,
+      "nearest_other_stat_cell_distance_px": 5.333322333050994,
+      "contrast_ratio_min": 2.0012630882073954,
+      "contrast_ratio_median": 7.150818071224396,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.6666547787654338,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.6666547787654338,
+      "nearest_other_stat_cell_distance_px": 5.333322333050994,
+      "contrast_ratio_min": 2.0012630882073954,
+      "contrast_ratio_median": 6.544717605820962,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.6666547787654338,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.6666547787654338,
+      "nearest_other_stat_cell_distance_px": 5.333322333050994,
+      "contrast_ratio_min": 1.9251767551789964,
+      "contrast_ratio_median": 8.415914219634551,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 8.66665323403339,
+      "contrast_ratio_min": 3.811764938680524,
+      "contrast_ratio_median": 12.06572121973817,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        5,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 10.333345221234566,
+      "contrast_ratio_min": 3.811764938680524,
+      "contrast_ratio_median": 10.954185988570643,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 8.66665323403339,
+      "contrast_ratio_min": 2.980525770581377,
+      "contrast_ratio_median": 11.69590770709204,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 8.66665323403339,
+      "contrast_ratio_min": 2.518526058585646,
+      "contrast_ratio_median": 11.266281559326938,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 8.66665323403339,
+      "contrast_ratio_min": 3.811764938680524,
+      "contrast_ratio_median": 11.414669466217727,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 5.444450719704037,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.444450719704037,
+      "nearest_other_stat_cell_distance_px": 8.66665323403339,
+      "contrast_ratio_min": 3.811764938680524,
+      "contrast_ratio_median": 11.836164493021474,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        62,
+        44,
+        15,
+        12
+      ],
+      "minimum_cell_margin_px": 2.6666546081224,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.6666546081224,
+      "nearest_other_stat_cell_distance_px": 4.66665323403339,
+      "contrast_ratio_min": 5.140409067245843,
+      "contrast_ratio_median": 11.887639467238731,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.6666546081224,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.6666546081224,
+      "nearest_other_stat_cell_distance_px": 4.66665323403339,
+      "contrast_ratio_min": 5.140409067245843,
+      "contrast_ratio_median": 11.977859397629773,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.6666546081224,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.6666546081224,
+      "nearest_other_stat_cell_distance_px": 4.66665323403339,
+      "contrast_ratio_min": 3.587500061491558,
+      "contrast_ratio_median": 11.756411261148145,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.6666546081224,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.6666546081224,
+      "nearest_other_stat_cell_distance_px": 4.66665323403339,
+      "contrast_ratio_min": 5.140409067245843,
+      "contrast_ratio_median": 11.797419536847688,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        9,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 11.3333453918776,
+      "contrast_ratio_min": 5.0502697628601165,
+      "contrast_ratio_median": 10.30733568299184,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 11.3333453918776,
+      "contrast_ratio_min": 8.296257259545058,
+      "contrast_ratio_median": 11.52243171341389,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        54,
+        10,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 11.3333453918776,
+      "contrast_ratio_min": 5.7638774786365685,
+      "contrast_ratio_median": 10.859813800607649,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 11.3333453918776,
+      "contrast_ratio_min": 3.4650364874872612,
+      "contrast_ratio_median": 10.729402677827,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 11.3333453918776,
+      "contrast_ratio_min": 4.099624015659791,
+      "contrast_ratio_median": 10.989937992690066,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "minimum_cell_margin_px": 5.555584553171698,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.555584553171698,
+      "nearest_other_stat_cell_distance_px": 11.3333453918776,
+      "contrast_ratio_min": 6.302929027456631,
+      "contrast_ratio_median": 10.643979057611368,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "minimum_cell_margin_px": 3.6666516893012187,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.6666516893012187,
+      "nearest_other_stat_cell_distance_px": 6.3333453918776,
+      "contrast_ratio_min": 2.6083334347013616,
+      "contrast_ratio_median": 10.70304457614051,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        86,
+        54,
+        19,
+        14
+      ],
+      "minimum_cell_margin_px": 3.6666516893012187,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 3,
+      "full_alpha_cell_margin_px": 2.6666516893012187,
+      "nearest_other_stat_cell_distance_px": 6.3333453918776,
+      "contrast_ratio_min": 1.9674558654048584,
+      "contrast_ratio_median": 10.934612768861623,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        86,
+        54,
+        19,
+        14
+      ],
+      "minimum_cell_margin_px": 3.6666516893012187,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 2,
+      "full_alpha_cell_margin_px": 2.6666516893012187,
+      "nearest_other_stat_cell_distance_px": 6.3333453918776,
+      "contrast_ratio_min": 1.9674558654048584,
+      "contrast_ratio_median": 10.964875504318327,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "minimum_cell_margin_px": 3.6666516893012187,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.6666516893012187,
+      "nearest_other_stat_cell_distance_px": 6.3333453918776,
+      "contrast_ratio_min": 2.4385445704175988,
+      "contrast_ratio_median": 11.13653922734204,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 15.999999680044446,
+      "contrast_ratio_min": 4.792422257786983,
+      "contrast_ratio_median": 12.26535361922296,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 15.999999680044446,
+      "contrast_ratio_min": 3.5619426354538763,
+      "contrast_ratio_median": 9.737202802943624,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 15.999999680044446,
+      "contrast_ratio_min": 3.144533574174525,
+      "contrast_ratio_median": 10.690497510494573,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 15.999999680044446,
+      "contrast_ratio_min": 4.418305417096404,
+      "contrast_ratio_median": 11.92902540681238,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 15.999999680044446,
+      "contrast_ratio_min": 3.8892846325743764,
+      "contrast_ratio_median": 12.233846936431835,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 15.999999680044446,
+      "contrast_ratio_min": 2.8298633631550283,
+      "contrast_ratio_median": 12.169087699065994,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        12,
+        74,
+        30,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        12,
+        73,
+        30,
+        23
+      ],
+      "minimum_cell_margin_px": 5.999998631867108,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.999998631867108,
+      "nearest_other_stat_cell_distance_px": 7.999999680044446,
+      "contrast_ratio_min": 2.4996832922230903,
+      "contrast_ratio_median": 12.120850407894531,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        12,
+        74,
+        30,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        12,
+        74,
+        30,
+        22
+      ],
+      "minimum_cell_margin_px": 5.999998631867108,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 2,
+      "full_alpha_cell_margin_px": 5.999998631867108,
+      "nearest_other_stat_cell_distance_px": 7.999999680044446,
+      "contrast_ratio_min": 3.6057037054167105,
+      "contrast_ratio_median": 12.042156758635965,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        12,
+        74,
+        30,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        12,
+        74,
+        30,
+        22
+      ],
+      "minimum_cell_margin_px": 5.999998631867108,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 2,
+      "full_alpha_cell_margin_px": 5.999998631867108,
+      "nearest_other_stat_cell_distance_px": 7.999999680044446,
+      "contrast_ratio_min": 3.6057037054167105,
+      "contrast_ratio_median": 12.226265292157652,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        12,
+        74,
+        30,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        12,
+        74,
+        30,
+        22
+      ],
+      "minimum_cell_margin_px": 5.999998631867108,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.999998631867108,
+      "nearest_other_stat_cell_distance_px": 7.999999680044446,
+      "contrast_ratio_min": 1.5911997391978443,
+      "contrast_ratio_median": 12.250368882626214,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        60,
+        77,
+        11,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 11.999995365803642,
+      "contrast_ratio_min": 1.4114214383599752,
+      "contrast_ratio_median": 6.139455550111476,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        61,
+        77,
+        9,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 12.999995365803642,
+      "contrast_ratio_min": 1.522536200467413,
+      "contrast_ratio_median": 6.838727329971334,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        60,
+        77,
+        11,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 11.999995365803642,
+      "contrast_ratio_min": 1.522536200467413,
+      "contrast_ratio_median": 6.951254136418492,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        61,
+        77,
+        9,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 12.999995365803642,
+      "contrast_ratio_min": 2.5175289289044933,
+      "contrast_ratio_median": 6.98105641413807,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        61,
+        77,
+        9,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 12.999995365803642,
+      "contrast_ratio_min": 2.5608912641719623,
+      "contrast_ratio_median": 7.695457985899361,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        61,
+        77,
+        9,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 12.999995365803642,
+      "contrast_ratio_min": 2.2900031891059203,
+      "contrast_ratio_median": 6.91779068618343,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        55,
+        77,
+        21,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        54,
+        77,
+        22,
+        16
+      ],
+      "minimum_cell_margin_px": 4.999997759794468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.000000319955554,
+      "nearest_other_stat_cell_distance_px": 6.999995365803642,
+      "contrast_ratio_min": 1.834053995285554,
+      "contrast_ratio_median": 7.915448451072203,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        55,
+        77,
+        21,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        54,
+        77,
+        23,
+        16
+      ],
+      "minimum_cell_margin_px": 4.999997759794468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.999997759794468,
+      "nearest_other_stat_cell_distance_px": 6.999995365803642,
+      "contrast_ratio_min": 1.0607678837312198,
+      "contrast_ratio_median": 7.514760451044831,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        55,
+        77,
+        21,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        54,
+        77,
+        23,
+        16
+      ],
+      "minimum_cell_margin_px": 4.999997759794468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.999997759794468,
+      "nearest_other_stat_cell_distance_px": 6.999995365803642,
+      "contrast_ratio_min": 1.3109344904269884,
+      "contrast_ratio_median": 7.211869744090966,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        55,
+        77,
+        21,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        55,
+        77,
+        21,
+        16
+      ],
+      "minimum_cell_margin_px": 4.999997759794468,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.999997759794468,
+      "nearest_other_stat_cell_distance_px": 6.999995365803642,
+      "contrast_ratio_min": 1.4897009588000807,
+      "contrast_ratio_median": 7.643380369611767,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        93,
+        77,
+        11,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 12.000002240205532,
+      "contrast_ratio_min": 2.883279994118433,
+      "contrast_ratio_median": 11.491259762611985,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        94,
+        77,
+        9,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 13.000002240205532,
+      "contrast_ratio_min": 3.6311783658764405,
+      "contrast_ratio_median": 10.77650434846377,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        93,
+        77,
+        11,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 12.000002240205532,
+      "contrast_ratio_min": 2.5860423590408685,
+      "contrast_ratio_median": 10.982856341028892,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        94,
+        77,
+        9,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 13.000002240205532,
+      "contrast_ratio_min": 3.8755178155972514,
+      "contrast_ratio_median": 11.492318820331311,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        94,
+        77,
+        10,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 12.000003290383376,
+      "contrast_ratio_min": 1.3567424116311289,
+      "contrast_ratio_median": 11.013336386264042,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        94,
+        77,
+        9,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        77,
+        11,
+        16
+      ],
+      "minimum_cell_margin_px": 6.666666325036829,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 6.666666325036829,
+      "nearest_other_stat_cell_distance_px": 13.000002240205532,
+      "contrast_ratio_min": 3.001922979468334,
+      "contrast_ratio_median": 11.70612163307133,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        88,
+        77,
+        21,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        88,
+        77,
+        22,
+        16
+      ],
+      "minimum_cell_margin_px": 4.99999344555367,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.9999934455536703,
+      "nearest_other_stat_cell_distance_px": 7.000002240205532,
+      "contrast_ratio_min": 4.397019133907759,
+      "contrast_ratio_median": 11.710166025415553,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        88,
+        77,
+        21,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        87,
+        77,
+        23,
+        16
+      ],
+      "minimum_cell_margin_px": 4.99999344555367,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.9999934455536703,
+      "nearest_other_stat_cell_distance_px": 7.000002240205532,
+      "contrast_ratio_min": 1.6159295039885393,
+      "contrast_ratio_median": 11.847743194847306,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        88,
+        77,
+        21,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        87,
+        77,
+        23,
+        16
+      ],
+      "minimum_cell_margin_px": 4.99999344555367,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.9999934455536703,
+      "nearest_other_stat_cell_distance_px": 7.000002240205532,
+      "contrast_ratio_min": 3.5463303568980233,
+      "contrast_ratio_median": 12.086210812560706,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        88,
+        77,
+        21,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        88,
+        77,
+        21,
+        16
+      ],
+      "minimum_cell_margin_px": 4.99999344555367,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.99999344555367,
+      "nearest_other_stat_cell_distance_px": 7.000002240205532,
+      "contrast_ratio_min": 2.074230715811199,
+      "contrast_ratio_median": 11.94222741932987,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 16.00000655444633,
+      "contrast_ratio_min": 5.007637319025595,
+      "contrast_ratio_median": 10.534689833934047,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 16.00000655444633,
+      "contrast_ratio_min": 6.589360691276339,
+      "contrast_ratio_median": 11.61247818668059,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 16.00000655444633,
+      "contrast_ratio_min": 4.56008695905396,
+      "contrast_ratio_median": 10.962217669235445,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 16.00000655444633,
+      "contrast_ratio_min": 4.602509581765067,
+      "contrast_ratio_median": 10.730675741262832,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 16.00000655444633,
+      "contrast_ratio_min": 3.0374375858168707,
+      "contrast_ratio_median": 10.90303574470723,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        130,
+        74,
+        14,
+        22
+      ],
+      "minimum_cell_margin_px": 11.33337226006823,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 11.33337226006823,
+      "nearest_other_stat_cell_distance_px": 16.00000655444633,
+      "contrast_ratio_min": 4.1337056197673645,
+      "contrast_ratio_median": 10.561520553389967,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        122,
+        74,
+        30,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        122,
+        73,
+        30,
+        23
+      ],
+      "minimum_cell_margin_px": 5.9999967096166245,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.9999967096166245,
+      "nearest_other_stat_cell_distance_px": 8.00000655444633,
+      "contrast_ratio_min": 1.0080565671590462,
+      "contrast_ratio_median": 10.90172145600954,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        122,
+        74,
+        30,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        122,
+        74,
+        30,
+        22
+      ],
+      "minimum_cell_margin_px": 5.9999967096166245,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 5,
+      "full_alpha_cell_margin_px": 5.9999967096166245,
+      "nearest_other_stat_cell_distance_px": 8.00000655444633,
+      "contrast_ratio_min": 2.099081687392994,
+      "contrast_ratio_median": 10.393115299539607,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        122,
+        74,
+        30,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        122,
+        74,
+        30,
+        22
+      ],
+      "minimum_cell_margin_px": 5.9999967096166245,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 4,
+      "full_alpha_cell_margin_px": 5.9999967096166245,
+      "nearest_other_stat_cell_distance_px": 8.00000655444633,
+      "contrast_ratio_min": 2.099081687392994,
+      "contrast_ratio_median": 10.817906145205757,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        122,
+        74,
+        30,
+        22
+      ],
+      "all_alpha_bbox_xywh": [
+        122,
+        74,
+        30,
+        22
+      ],
+      "minimum_cell_margin_px": 5.9999967096166245,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 5.9999967096166245,
+      "nearest_other_stat_cell_distance_px": 8.00000655444633,
+      "contrast_ratio_min": 2.099081687392994,
+      "contrast_ratio_median": 10.731948804698664,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666656280836875,
+      "contrast_ratio_min": 4.168450561175737,
+      "contrast_ratio_median": 12.169434751419812,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666656280836875,
+      "contrast_ratio_min": 5.819406901773827,
+      "contrast_ratio_median": 10.389643764084353,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        51,
+        10,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666656280836875,
+      "contrast_ratio_min": 2.9511126573558113,
+      "contrast_ratio_median": 10.086876274366897,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666656280836875,
+      "contrast_ratio_min": 5.214657372860866,
+      "contrast_ratio_median": 12.073655227043263,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666656280836875,
+      "contrast_ratio_min": 4.669652026034981,
+      "contrast_ratio_median": 12.088500620213411,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        51,
+        9,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666656280836875,
+      "contrast_ratio_min": 4.184745984508373,
+      "contrast_ratio_median": 12.250368882626214,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        11,
+        51,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        51,
+        20,
+        15
+      ],
+      "minimum_cell_margin_px": 3.3333222487186447,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.3333222487186447,
+      "nearest_other_stat_cell_distance_px": 4.666656280836875,
+      "contrast_ratio_min": 5.211902405459222,
+      "contrast_ratio_median": 12.088500620213411,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        11,
+        51,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        51,
+        20,
+        15
+      ],
+      "minimum_cell_margin_px": 3.3333222487186447,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 2,
+      "full_alpha_cell_margin_px": 3.3333222487186447,
+      "nearest_other_stat_cell_distance_px": 4.666656280836875,
+      "contrast_ratio_min": 5.211902405459222,
+      "contrast_ratio_median": 12.073655227043263,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        11,
+        51,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        10,
+        51,
+        21,
+        15
+      ],
+      "minimum_cell_margin_px": 3.3333222487186447,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 2,
+      "full_alpha_cell_margin_px": 3.3333222487186447,
+      "nearest_other_stat_cell_distance_px": 4.666656280836875,
+      "contrast_ratio_min": 3.4080550028709498,
+      "contrast_ratio_median": 12.26535361922296,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        11,
+        51,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        51,
+        20,
+        15
+      ],
+      "minimum_cell_margin_px": 3.3333222487186447,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.3333222487186447,
+      "nearest_other_stat_cell_distance_px": 4.666656280836875,
+      "contrast_ratio_min": 3.842045180024029,
+      "contrast_ratio_median": 12.088500620213411,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666653404676289,
+      "contrast_ratio_min": 2.098098357806363,
+      "contrast_ratio_median": 6.335558439641249,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666653404676289,
+      "contrast_ratio_min": 1.5172098591039793,
+      "contrast_ratio_median": 7.506473320492956,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        43,
+        54,
+        7,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666653404676289,
+      "contrast_ratio_min": 2.098098357806363,
+      "contrast_ratio_median": 7.010825329030793,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666653404676289,
+      "contrast_ratio_min": 1.3125181895907818,
+      "contrast_ratio_median": 7.218302943575803,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666653404676289,
+      "contrast_ratio_min": 1.8409029512863233,
+      "contrast_ratio_median": 7.630712811186481,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666653404676289,
+      "contrast_ratio_min": 2.098098357806363,
+      "contrast_ratio_median": 7.53636492634949,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        39,
+        53,
+        14,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        39,
+        53,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 3.333321667336854,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.333321667336854,
+      "nearest_other_stat_cell_distance_px": 4.666653404676289,
+      "contrast_ratio_min": 1.9214163417120438,
+      "contrast_ratio_median": 8.392909687085915,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        39,
+        54,
+        15,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        39,
+        53,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.333321667336854,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.333321667336854,
+      "nearest_other_stat_cell_distance_px": 3.666653404676289,
+      "contrast_ratio_min": 1.9214163417120438,
+      "contrast_ratio_median": 8.018263102767694,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        39,
+        54,
+        15,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        39,
+        53,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.333321667336854,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.333321667336854,
+      "nearest_other_stat_cell_distance_px": 3.666653404676289,
+      "contrast_ratio_min": 1.9214163417120438,
+      "contrast_ratio_median": 7.332345342439384,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        39,
+        53,
+        14,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        39,
+        53,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 3.333321667336854,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.333321667336854,
+      "nearest_other_stat_cell_distance_px": 4.666653404676289,
+      "contrast_ratio_min": 1.3329216212161616,
+      "contrast_ratio_median": 8.296113182700495,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666658687729409,
+      "contrast_ratio_min": 7.243851147341953,
+      "contrast_ratio_median": 12.304456761428872,
+      "secondary_zero_note": "Probe only; hidden in scene"
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        65,
+        54,
+        7,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666658687729409,
+      "contrast_ratio_min": 4.35546224378646,
+      "contrast_ratio_median": 11.847488469729763,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        65,
+        54,
+        7,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666658687729409,
+      "contrast_ratio_min": 5.447747097342129,
+      "contrast_ratio_median": 12.004334752564798,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666658687729409,
+      "contrast_ratio_min": 7.385781034655637,
+      "contrast_ratio_median": 12.211945598950427,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666658687729409,
+      "contrast_ratio_min": 4.604745271339102,
+      "contrast_ratio_median": 11.928447032613203,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        53,
+        7,
+        11
+      ],
+      "minimum_cell_margin_px": 4.444449302954112,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 4.444449302954112,
+      "nearest_other_stat_cell_distance_px": 7.666658687729409,
+      "contrast_ratio_min": 4.094928461699557,
+      "contrast_ratio_median": 11.576519198196204,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        61,
+        53,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        61,
+        53,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.333318791176268,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.333318791176268,
+      "nearest_other_stat_cell_distance_px": 3.6666586877294094,
+      "contrast_ratio_min": 7.126910481760154,
+      "contrast_ratio_median": 11.737372680582258,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        61,
+        54,
+        15,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        61,
+        53,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.333318791176268,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.333318791176268,
+      "nearest_other_stat_cell_distance_px": 3.6666586877294094,
+      "contrast_ratio_min": 4.68303790069933,
+      "contrast_ratio_median": 11.957258677942544,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        61,
+        54,
+        15,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        61,
+        53,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 2.333318791176268,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.333318791176268,
+      "nearest_other_stat_cell_distance_px": 3.6666586877294094,
+      "contrast_ratio_min": 4.1955385299045425,
+      "contrast_ratio_median": 11.904852123192791,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        61,
+        53,
+        14,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        61,
+        53,
+        15,
+        11
+      ],
+      "minimum_cell_margin_px": 3.333318791176268,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 2.333318791176268,
+      "nearest_other_stat_cell_distance_px": 4.666658687729409,
+      "contrast_ratio_min": 4.548669669964261,
+      "contrast_ratio_median": 12.444398406654503,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666681208823732,
+      "contrast_ratio_min": 4.716508118760115,
+      "contrast_ratio_median": 10.309685411775735,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        90,
+        51,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 11.666681208823732,
+      "contrast_ratio_min": 8.073783390316768,
+      "contrast_ratio_median": 11.52243171341389,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666681208823732,
+      "contrast_ratio_min": 8.435230460852102,
+      "contrast_ratio_median": 11.163771092357003,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666681208823732,
+      "contrast_ratio_min": 5.89117824079106,
+      "contrast_ratio_median": 10.393115299539607,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666681208823732,
+      "contrast_ratio_min": 4.183567062819927,
+      "contrast_ratio_median": 10.75986529804889,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        51,
+        10,
+        15
+      ],
+      "minimum_cell_margin_px": 7.555586592975047,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 7.555586592975047,
+      "nearest_other_stat_cell_distance_px": 10.666681208823732,
+      "contrast_ratio_min": 4.955688437685147,
+      "contrast_ratio_median": 10.421886795927419,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        84,
+        51,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        84,
+        51,
+        20,
+        15
+      ],
+      "minimum_cell_margin_px": 3.6666578087114488,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.6666578087114488,
+      "nearest_other_stat_cell_distance_px": 5.666681208823732,
+      "contrast_ratio_min": 2.4637716142724133,
+      "contrast_ratio_median": 10.660163825739346,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        84,
+        51,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        84,
+        51,
+        20,
+        15
+      ],
+      "minimum_cell_margin_px": 3.6666578087114488,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 1,
+      "full_alpha_cell_margin_px": 3.6666578087114488,
+      "nearest_other_stat_cell_distance_px": 5.666681208823732,
+      "contrast_ratio_min": 2.5396914388568437,
+      "contrast_ratio_median": 10.601575176525161,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        84,
+        51,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        84,
+        51,
+        20,
+        15
+      ],
+      "minimum_cell_margin_px": 3.6666578087114488,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 1,
+      "full_alpha_cell_margin_px": 3.6666578087114488,
+      "nearest_other_stat_cell_distance_px": 5.666681208823732,
+      "contrast_ratio_min": 2.5396914388568437,
+      "contrast_ratio_median": 10.671059467307602,
+      "secondary_zero_note": null
+    },
+    {
+      "variant": "c",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        84,
+        51,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        84,
+        51,
+        20,
+        15
+      ],
+      "minimum_cell_margin_px": 3.6666578087114488,
+      "clipped_by_cell": false,
+      "outside_material_alpha128_ink_pixels": 0,
+      "full_alpha_cell_margin_px": 3.6666578087114488,
+      "nearest_other_stat_cell_distance_px": 5.666681208823732,
+      "contrast_ratio_min": 2.157879099270448,
+      "contrast_ratio_median": 10.875751538486414,
+      "secondary_zero_note": null
+    }
+  ]
+}

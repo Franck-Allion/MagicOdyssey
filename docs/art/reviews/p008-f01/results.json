@@ -1,0 +1,42 @@
+{
+  "status": "DIAGNOSTIC REVIEW COMPLETE / OWNER LAYOUT DECISION PENDING",
+  "recommended_variant": "B",
+  "native": {
+    "passed": 3681,
+    "failed": 0,
+    "exit_code": 0,
+    "assertions_changed": false
+  },
+  "GPU": {
+    "failed": 0,
+    "failures": [],
+    "passed": 1136,
+    "total": 1136
+  },
+  "GPU_exit_code": 0,
+  "hover_GPU": {
+    "failed": 0,
+    "failures": [],
+    "passed": 32,
+    "total": 32
+  },
+  "hover_exit_code": 0,
+  "import_exit_code": 0,
+  "ART002": {
+    "bit_exact_scenes": 3,
+    "differing_pixels": 0,
+    "exit_code": 0
+  },
+  "supplement_exit_codes": {
+    "backgrounds": 0,
+    "comparison": 0,
+    "portraits": 0
+  },
+  "measurement_records": 240,
+  "source_production_files_unchanged": 215,
+  "new_production_export": "NOT_RUN_NOT_NEEDED",
+  "Windows_OS_input": "NOT_RUN",
+  "owner_layout_approval": "PENDING",
+  "owner_art_approval": "NOT_GRANTED",
+  "G1": "NOT_VALIDATED"
+}

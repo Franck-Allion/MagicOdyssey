@@ -1,0 +1,35 @@
+{
+  "a": {
+    "portrait_target_reference": [
+      152,
+      72
+    ],
+    "visible_fraction_no_indicators": 0.6921909259571597,
+    "visible_fraction_max_placeholders": 0.6295749704840613,
+    "upper_unobstructed_height_reference": 72,
+    "method": "Analytical reference rectangles, excluding opaque stat cells; max placeholders subtract six 15x11 cells. Does not certify recognition of other creature illustrations."
+  },
+  "b": {
+    "portrait_target_reference": [
+      152,
+      81
+    ],
+    "visible_fraction_no_indicators": 0.5513998988024962,
+    "visible_fraction_max_placeholders": 0.48878394332939784,
+    "upper_unobstructed_height_reference": 48,
+    "method": "Analytical reference rectangles, excluding opaque stat cells; max placeholders subtract six 15x11 cells. Does not certify recognition of other creature illustrations."
+  },
+  "c": {
+    "portrait_target_reference": [
+      152,
+      54
+    ],
+    "visible_fraction_no_indicators": 0.5191431944678697,
+    "visible_fraction_max_placeholders": 0.45652723899477143,
+    "upper_unobstructed_height_reference": 54,
+    "method": "Analytical reference rectangles, excluding opaque stat cells; max placeholders subtract six 15x11 cells. Does not certify recognition of other creature illustrations."
+  },
+  "baseline": {
+    "transparent_portrait_polygon_fraction": 0.47647666931152344
+  }
+}
