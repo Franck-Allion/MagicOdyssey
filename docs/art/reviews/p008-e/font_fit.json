@@ -1,0 +1,79 @@
+[
+  {
+    "bounding_radius_including_margin": 113.490699768066,
+    "fitted_points": 260.0,
+    "horizontal_scale": 1.0,
+    "physical_points_720p": 17.3784722222222,
+    "value": 0
+  },
+  {
+    "bounding_radius_including_margin": 112.264999389648,
+    "fitted_points": 260.0,
+    "horizontal_scale": 1.0,
+    "physical_points_720p": 17.3784722222222,
+    "value": 1
+  },
+  {
+    "bounding_radius_including_margin": 112.64192199707,
+    "fitted_points": 260.0,
+    "horizontal_scale": 1.0,
+    "physical_points_720p": 17.3784722222222,
+    "value": 2
+  },
+  {
+    "bounding_radius_including_margin": 113.221733093262,
+    "fitted_points": 260.0,
+    "horizontal_scale": 1.0,
+    "physical_points_720p": 17.3784722222222,
+    "value": 3
+  },
+  {
+    "bounding_radius_including_margin": 112.954429626465,
+    "fitted_points": 260.0,
+    "horizontal_scale": 1.0,
+    "physical_points_720p": 17.3784722222222,
+    "value": 6
+  },
+  {
+    "bounding_radius_including_margin": 113.644088745117,
+    "fitted_points": 260.0,
+    "horizontal_scale": 1.0,
+    "physical_points_720p": 17.3784722222222,
+    "value": 8
+  },
+  {
+    "bounding_radius_including_margin": 114.68376159668,
+    "fitted_points": 210.0,
+    "horizontal_scale": 0.800000011920929,
+    "physical_points_720p": 14.0364583333333,
+    "value": 10
+  },
+  {
+    "bounding_radius_including_margin": 115.861000061035,
+    "fitted_points": 214.0,
+    "horizontal_scale": 0.800000011920929,
+    "physical_points_720p": 14.3038194444444,
+    "value": 12
+  },
+  {
+    "bounding_radius_including_margin": 115.228614807129,
+    "fitted_points": 212.0,
+    "horizontal_scale": 0.800000011920929,
+    "physical_points_720p": 14.1701388888889,
+    "value": 14
+  },
+  {
+    "bounding_radius_including_margin": 115.904006958008,
+    "fitted_points": 214.0,
+    "horizontal_scale": 0.800000011920929,
+    "physical_points_720p": 14.3038194444444,
+    "value": 99
+  },
+  {
+    "bounding_radius_including_margin": 115.434181213379,
+    "fitted_points": 160.0,
+    "horizontal_scale": 0.800000011920929,
+    "physical_points_720p": 10.6944444444444,
+    "value": 100
+  }
+]

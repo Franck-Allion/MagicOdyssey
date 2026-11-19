@@ -1,0 +1,51 @@
+{
+  "native": {
+    "assertions": 3681,
+    "passed": 3681,
+    "failed": 0,
+    "exit_code": 0,
+    "previous_baseline": 3681,
+    "new_assertions": 0,
+    "geometry_assertions_recalibrated": true
+  },
+  "GPU": {
+    "V02": {
+      "passed": 717,
+      "exit_code": 0
+    },
+    "V03": {
+      "passed": 717,
+      "exit_code": 0
+    }
+  },
+  "ART002": {
+    "bit_exact_scenes": 3,
+    "exit_code": 0
+  },
+  "Windows_corrected_build": {
+    "default": {
+      "unique_clicked_slot_identities": 24,
+      "hand_inspection_and_isolation": "PASS",
+      "End_Turn_mouse_and_Space": "PASS",
+      "ESC_exit_code": 0
+    },
+    "1920x1080": {
+      "unique_clicked_slot_identities": 24,
+      "hand_inspection_and_isolation": "PASS",
+      "End_Turn_mouse_and_Space": "PASS",
+      "ESC_exit_code": 0
+    },
+    "1280x720": {
+      "unique_clicked_slot_identities": 24,
+      "hand_inspection_and_isolation": "PASS",
+      "End_Turn_mouse_and_Space": "PASS",
+      "ESC_exit_code": 0
+    }
+  },
+  "Windows_harness_exit_code": 0,
+  "export_exit_code": 0,
+  "executable_sha256": "a9a066f652fe46454a030515c06e9b0c6b1e1939a01e25bbc008526804684982",
+  "owner_approval": "NOT_GRANTED",
+  "readability_targets": "NOT_MET",
+  "G1": "NOT_VALIDATED"
+}
