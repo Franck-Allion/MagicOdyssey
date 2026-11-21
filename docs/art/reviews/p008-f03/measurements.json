@@ -1,0 +1,1373 @@
+{
+  "method": "GPU probes; bright ink alpha>=128 and RGB>=150/150/140; all-alpha separately includes outline and shadow.",
+  "measurements": [
+    {
+      "stat": "Armor",
+      "value": 0,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        65,
+        74,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        74,
+        9,
+        15
+      ],
+      "ink_width": 9,
+      "ink_height": 15
+    },
+    {
+      "stat": "Armor",
+      "value": 0,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        43,
+        50,
+        6,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        49,
+        7,
+        10
+      ],
+      "ink_width": 6,
+      "ink_height": 9
+    },
+    {
+      "stat": "Armor",
+      "value": 10,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        60,
+        74,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        74,
+        20,
+        15
+      ],
+      "ink_width": 20,
+      "ink_height": 15
+    },
+    {
+      "stat": "Armor",
+      "value": 10,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        40,
+        50,
+        13,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        49,
+        13,
+        10
+      ],
+      "ink_width": 13,
+      "ink_height": 9
+    },
+    {
+      "stat": "Armor",
+      "value": 12,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        60,
+        74,
+        20,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        74,
+        20,
+        14
+      ],
+      "ink_width": 20,
+      "ink_height": 14
+    },
+    {
+      "stat": "Armor",
+      "value": 12,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        40,
+        50,
+        13,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        50,
+        13,
+        9
+      ],
+      "ink_width": 13,
+      "ink_height": 9
+    },
+    {
+      "stat": "Armor",
+      "value": 14,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        60,
+        74,
+        20,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        74,
+        20,
+        14
+      ],
+      "ink_width": 20,
+      "ink_height": 14
+    },
+    {
+      "stat": "Armor",
+      "value": 14,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        40,
+        49,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        49,
+        13,
+        10
+      ],
+      "ink_width": 13,
+      "ink_height": 10
+    },
+    {
+      "stat": "Armor",
+      "value": 1,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        65,
+        74,
+        7,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        74,
+        9,
+        14
+      ],
+      "ink_width": 7,
+      "ink_height": 14
+    },
+    {
+      "stat": "Armor",
+      "value": 1,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        44,
+        49,
+        5,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        49,
+        6,
+        10
+      ],
+      "ink_width": 5,
+      "ink_height": 10
+    },
+    {
+      "stat": "Armor",
+      "value": 2,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        65,
+        74,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        74,
+        9,
+        14
+      ],
+      "ink_width": 9,
+      "ink_height": 14
+    },
+    {
+      "stat": "Armor",
+      "value": 2,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        43,
+        50,
+        7,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        49,
+        7,
+        10
+      ],
+      "ink_width": 7,
+      "ink_height": 9
+    },
+    {
+      "stat": "Armor",
+      "value": 6,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        65,
+        74,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        74,
+        9,
+        15
+      ],
+      "ink_width": 9,
+      "ink_height": 15
+    },
+    {
+      "stat": "Armor",
+      "value": 6,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        43,
+        50,
+        6,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        49,
+        7,
+        10
+      ],
+      "ink_width": 6,
+      "ink_height": 9
+    },
+    {
+      "stat": "Armor",
+      "value": 8,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        65,
+        74,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        74,
+        9,
+        15
+      ],
+      "ink_width": 9,
+      "ink_height": 15
+    },
+    {
+      "stat": "Armor",
+      "value": 8,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        43,
+        50,
+        6,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        43,
+        49,
+        6,
+        10
+      ],
+      "ink_width": 6,
+      "ink_height": 9
+    },
+    {
+      "stat": "Armor",
+      "value": 99,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        60,
+        74,
+        19,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        74,
+        19,
+        15
+      ],
+      "ink_width": 19,
+      "ink_height": 15
+    },
+    {
+      "stat": "Armor",
+      "value": 99,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        40,
+        50,
+        13,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        49,
+        13,
+        10
+      ],
+      "ink_width": 13,
+      "ink_height": 9
+    },
+    {
+      "stat": "Attack",
+      "value": 0,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Attack",
+      "value": 0,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        19,
+        45,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 12
+    },
+    {
+      "stat": "Attack",
+      "value": 10,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        29,
+        67,
+        11,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "ink_width": 11,
+      "ink_height": 19
+    },
+    {
+      "stat": "Attack",
+      "value": 10,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Attack",
+      "value": 12,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        29,
+        67,
+        11,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "ink_width": 11,
+      "ink_height": 19
+    },
+    {
+      "stat": "Attack",
+      "value": 12,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Attack",
+      "value": 14,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        29,
+        67,
+        11,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "ink_width": 11,
+      "ink_height": 19
+    },
+    {
+      "stat": "Attack",
+      "value": 14,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Attack",
+      "value": 1,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        29,
+        67,
+        11,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "ink_width": 11,
+      "ink_height": 19
+    },
+    {
+      "stat": "Attack",
+      "value": 1,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Attack",
+      "value": 2,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        28,
+        67,
+        13,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        28,
+        67,
+        13,
+        19
+      ],
+      "ink_width": 13,
+      "ink_height": 19
+    },
+    {
+      "stat": "Attack",
+      "value": 2,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        19,
+        45,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 12
+    },
+    {
+      "stat": "Attack",
+      "value": 6,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Attack",
+      "value": 6,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Attack",
+      "value": 8,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Attack",
+      "value": 8,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        19,
+        45,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 12
+    },
+    {
+      "stat": "Attack",
+      "value": 99,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        29,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        28,
+        67,
+        13,
+        19
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Attack",
+      "value": 99,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        19,
+        45,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 12
+    },
+    {
+      "stat": "Health",
+      "value": 0,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        139,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        139,
+        67,
+        13,
+        19
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Health",
+      "value": 0,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        93,
+        45,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 12
+    },
+    {
+      "stat": "Health",
+      "value": 10,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        139,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        139,
+        66,
+        12,
+        20
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Health",
+      "value": 10,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Health",
+      "value": 12,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        139,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        139,
+        66,
+        12,
+        20
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Health",
+      "value": 12,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Health",
+      "value": 14,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        139,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        139,
+        66,
+        12,
+        20
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Health",
+      "value": 14,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Health",
+      "value": 1,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        139,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        139,
+        66,
+        12,
+        20
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Health",
+      "value": 1,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Health",
+      "value": 2,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        139,
+        67,
+        13,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        139,
+        67,
+        13,
+        19
+      ],
+      "ink_width": 13,
+      "ink_height": 19
+    },
+    {
+      "stat": "Health",
+      "value": 2,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        93,
+        45,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 12
+    },
+    {
+      "stat": "Health",
+      "value": 6,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        139,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        139,
+        67,
+        13,
+        19
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Health",
+      "value": 6,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 13
+    },
+    {
+      "stat": "Health",
+      "value": 8,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        139,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        139,
+        67,
+        13,
+        19
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Health",
+      "value": 8,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        93,
+        45,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 12
+    },
+    {
+      "stat": "Health",
+      "value": 99,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        139,
+        67,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        139,
+        67,
+        12,
+        19
+      ],
+      "ink_width": 12,
+      "ink_height": 19
+    },
+    {
+      "stat": "Health",
+      "value": 99,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        93,
+        45,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        44,
+        8,
+        13
+      ],
+      "ink_width": 8,
+      "ink_height": 12
+    },
+    {
+      "stat": "Shield",
+      "value": 0,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        107,
+        74,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        107,
+        74,
+        9,
+        15
+      ],
+      "ink_width": 9,
+      "ink_height": 15
+    },
+    {
+      "stat": "Shield",
+      "value": 0,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        71,
+        50,
+        6,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        71,
+        49,
+        6,
+        10
+      ],
+      "ink_width": 6,
+      "ink_height": 9
+    },
+    {
+      "stat": "Shield",
+      "value": 10,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        102,
+        74,
+        19,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        101,
+        74,
+        20,
+        15
+      ],
+      "ink_width": 19,
+      "ink_height": 15
+    },
+    {
+      "stat": "Shield",
+      "value": 10,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        68,
+        50,
+        13,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        49,
+        13,
+        10
+      ],
+      "ink_width": 13,
+      "ink_height": 9
+    },
+    {
+      "stat": "Shield",
+      "value": 12,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        102,
+        74,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        101,
+        74,
+        20,
+        14
+      ],
+      "ink_width": 19,
+      "ink_height": 14
+    },
+    {
+      "stat": "Shield",
+      "value": 12,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        68,
+        50,
+        13,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        49,
+        13,
+        10
+      ],
+      "ink_width": 13,
+      "ink_height": 9
+    },
+    {
+      "stat": "Shield",
+      "value": 14,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        102,
+        74,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        101,
+        74,
+        20,
+        14
+      ],
+      "ink_width": 19,
+      "ink_height": 14
+    },
+    {
+      "stat": "Shield",
+      "value": 14,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        68,
+        49,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        49,
+        13,
+        10
+      ],
+      "ink_width": 13,
+      "ink_height": 10
+    },
+    {
+      "stat": "Shield",
+      "value": 1,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        107,
+        74,
+        7,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        107,
+        74,
+        9,
+        14
+      ],
+      "ink_width": 7,
+      "ink_height": 14
+    },
+    {
+      "stat": "Shield",
+      "value": 1,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        71,
+        50,
+        6,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        71,
+        49,
+        6,
+        10
+      ],
+      "ink_width": 6,
+      "ink_height": 9
+    },
+    {
+      "stat": "Shield",
+      "value": 2,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        107,
+        74,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        106,
+        74,
+        10,
+        14
+      ],
+      "ink_width": 9,
+      "ink_height": 14
+    },
+    {
+      "stat": "Shield",
+      "value": 2,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        71,
+        50,
+        6,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        71,
+        50,
+        6,
+        9
+      ],
+      "ink_width": 6,
+      "ink_height": 9
+    },
+    {
+      "stat": "Shield",
+      "value": 6,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        107,
+        74,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        107,
+        74,
+        9,
+        15
+      ],
+      "ink_width": 9,
+      "ink_height": 15
+    },
+    {
+      "stat": "Shield",
+      "value": 6,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        71,
+        50,
+        6,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        71,
+        49,
+        6,
+        10
+      ],
+      "ink_width": 6,
+      "ink_height": 9
+    },
+    {
+      "stat": "Shield",
+      "value": 8,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        107,
+        74,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        107,
+        74,
+        9,
+        15
+      ],
+      "ink_width": 9,
+      "ink_height": 15
+    },
+    {
+      "stat": "Shield",
+      "value": 8,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        71,
+        50,
+        6,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        71,
+        49,
+        6,
+        10
+      ],
+      "ink_width": 6,
+      "ink_height": 9
+    },
+    {
+      "stat": "Shield",
+      "value": 99,
+      "resolution": 1080,
+      "bright_ink_bbox_xywh": [
+        101,
+        74,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        101,
+        74,
+        20,
+        15
+      ],
+      "ink_width": 20,
+      "ink_height": 15
+    },
+    {
+      "stat": "Shield",
+      "value": 99,
+      "resolution": 720,
+      "bright_ink_bbox_xywh": [
+        68,
+        49,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        49,
+        13,
+        10
+      ],
+      "ink_width": 13,
+      "ink_height": 10
+    }
+  ]
+}

@@ -165,6 +165,20 @@ func run_suite(a: TestAsserts, _failure_mode: bool = false) -> void:
 	screen.free()
 	_run_v02_checks(a)
 	_run_tactical_checks(a)
+	_run_v05_deep_checks(a)
+
+func _run_v05_deep_checks(a: TestAsserts) -> void:
+	a.set_current_test("P008-F03: V05 deep asset properties and geometry reservations")
+	a.assert_equal(CreatureTokenLayout.PRIMARY_POINTS, 280, "V05 primary points calibrated to 280")
+	a.assert_equal(CreatureTokenLayout.PRIMARY_RADIUS, 122.0, "V05 primary radius calibrated to 122.0")
+	a.assert_equal(CreatureTokenLayout.SECONDARY_POINTS, 210, "V05 secondary points calibrated to 210")
+	a.assert_equal(CreatureTokenLayout.INLAY_SIZE, Vector2(300, 300), "V05 inlay size 300x300")
+	a.assert_equal(CreatureTokenLayout.VARIANT_B_ATTACK, Vector2(204, 821), "Variant B Attack reference preserved")
+	a.assert_equal(CreatureTokenLayout.VARIANT_B_HEALTH, Vector2(1332, 821), "Variant B Health reference preserved")
+	a.assert_equal(CreatureTokenLayout.VARIANT_B_ARMOR.get_center(), Vector2(588, 653), "Variant B Armor reference center (588, 653)")
+	a.assert_equal(CreatureTokenLayout.VARIANT_B_SHIELD.get_center(), Vector2(948, 653), "Variant B Shield reference center (948, 653)")
+	a.assert_equal(CreatureTokenLayout.PORTRAIT_POLYGON.size(), 20, "20-vertex calibrated portrait polygon")
+	a.assert_true(CreatureTokenLayout.PORTRAIT_BOUNDS.encloses(Rect2(120, 120, 1296, 600)), "Portrait bounds encloses main aperture")
 
 func _run_tactical_checks(a: TestAsserts) -> void:
 	var probe: ZeroProbe = ZeroProbe.new()
@@ -186,30 +200,30 @@ func _run_tactical_checks(a: TestAsserts) -> void:
 	probe.free()
 
 func _run_v02_checks(a: TestAsserts) -> void:
-	a.set_current_test("P008-C02: V02 alpha, material calibration and glyph containment")
-	a.assert_equal(CreatureToken.FRAME.resource_path, "res://assets/textures/tokens/mo_creature_token_frame_v03.png", "Production uses corrected V02")
+	a.set_current_test("P008-F03: V05 alpha, material calibration and glyph containment")
+	a.assert_equal(CreatureToken.FRAME.resource_path, "res://assets/textures/tokens/mo_creature_token_frame_v05_final.png", "Production uses V05")
 	var source: Image = Image.new()
 	var runtime: Image = Image.new()
-	a.assert_equal(source.load_png_from_buffer(FileAccess.get_file_as_bytes("res://assets/_source/lot1/tokens/mo_creature_token_frame_v03.png")), OK, "Source PNG decodes losslessly")
+	a.assert_equal(source.load_png_from_buffer(FileAccess.get_file_as_bytes("res://assets/_source/lot1/tokens/mo_creature_token_frame_v05_final.png")), OK, "Source PNG decodes losslessly")
 	a.assert_equal(runtime.load_png_from_buffer(FileAccess.get_file_as_bytes(CreatureToken.FRAME.resource_path)), OK, "Runtime PNG decodes losslessly")
-	a.assert_equal(source.get_size(), Vector2i(1536, 1024), "Exact V02 dimensions")
-	a.assert_equal(source.get_format(), Image.FORMAT_RGBA8, "V02 RGBA")
+	a.assert_equal(source.get_size(), Vector2i(1536, 1024), "Exact V05 dimensions")
+	a.assert_equal(source.get_format(), Image.FORMAT_RGBA8, "V05 RGBA")
 	a.assert_true(source.get_data() == runtime.get_data(), "Runtime matches corrected source pixels")
-	for point: Vector2i in [Vector2i(0,0), Vector2i(1535,0), Vector2i(0,1023), Vector2i(1535,1023), Vector2i(768,350), Vector2i(220,802), Vector2i(1317,802)]:
-		a.assert_equal(source.get_pixelv(point).a, 0.0, "Clear V02 opening / exterior")
-	a.assert_equal(source.get_pixel(514,775).a, 1.0, "Bronze highlight remains fully opaque")
-	for point: Vector2i in [Vector2i(570,860), Vector2i(970,860)]:
+	for point: Vector2i in [Vector2i(0,0), Vector2i(1535,0), Vector2i(0,1023), Vector2i(1535,1023), Vector2i(768,350), Vector2i(216,823), Vector2i(1320,823)]:
+		a.assert_equal(source.get_pixelv(point).a, 0.0, "Clear V05 opening / exterior")
+	a.assert_equal(source.get_pixel(1332,657).a, 1.0, "Bronze highlight remains fully opaque")
+	for point: Vector2i in [Vector2i(555,851), Vector2i(970,851)]:
 		a.assert_true(source.get_pixelv(point).a > 0.98, "Neutral cavity preserved near opaque")
 		var color: Color = source.get_pixelv(point)
 		a.assert_true(absf(color.r - color.b) < 0.08, "Inactive cavity is neutral, not active blue")
-	a.assert_equal(CreatureTokenLayout.ATTACK, Vector2(233,800), "Attack geometry preserved")
-	a.assert_equal(CreatureTokenLayout.HEALTH, Vector2(1300,800), "Health geometry preserved")
+	a.assert_equal(CreatureTokenLayout.ATTACK, Vector2(216,823), "Attack geometry preserved")
+	a.assert_equal(CreatureTokenLayout.HEALTH, Vector2(1320,823), "Health geometry preserved")
 	var font: Font = UIDesignTokens.THEME.get_font(&"font", &"TacticalNumber")
 	var ts: TextServer = TextServerManager.get_primary_interface()
 	var rid: RID = font.get_rids()[0]
 	for rect: Rect2 in [CreatureTokenLayout.ARMOR, CreatureTokenLayout.SHIELD]:
-		a.assert_true(Rect2(400,765,740,170).encloses(rect), "Insert stays inside secondary housing band")
-		a.assert_equal(rect.get_center().y, 845.0, "Common secondary baseline")
+		a.assert_true(Rect2(360,760,820,190).encloses(rect), "Insert stays inside secondary housing band")
+		a.assert_equal(rect.get_center().y, 851.0, "Common secondary baseline")
 		for value: int in [0,1,2,3,6,8,10,12,14]:
 			var bounds: Rect2 = Rect2()
 			var cursor: float = 0.0
@@ -220,4 +234,4 @@ func _run_v02_checks(a: TestAsserts) -> void:
 				bounds = glyph_rect if index == 0 else bounds.merge(glyph_rect)
 				cursor += ts.font_get_glyph_advance(rid,CreatureTokenLayout.SECONDARY_POINTS,glyph).x
 			# Measured central cavity: excludes the rounded end caps; includes stroke/shadow.
-			a.assert_true(bounds.size.x + 12 <= 256 and bounds.size.y + 12 <= 134, "Visible glyph and outline fit V02 central interior")
+			a.assert_true(bounds.size.x + 12 <= 300 and bounds.size.y + 12 <= 178, "Visible glyph and outline fit V05 central interior")

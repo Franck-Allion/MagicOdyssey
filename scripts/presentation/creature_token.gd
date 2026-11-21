@@ -3,7 +3,7 @@ extends CardSocketOverlay
 ## Presentation-only. Shared ART-002 textures and glyph renderer, calibrated to
 ## the token artwork. The new frame supplies the bronze rings; no extra bezel.
 const GEOMETRY: GDScript = preload("res://scripts/presentation/creature_token_layout.gd")
-const FRAME: Texture2D = preload("res://assets/textures/tokens/mo_creature_token_frame_v03.png")
+const FRAME: Texture2D = preload("res://assets/textures/tokens/mo_creature_token_frame_v05_final.png")
 var _diagnostic_style: StyleBoxFlat
 var _model: CreatureTokenViewModel
 ## Missing-icon letters are development fixtures, never substitute production art.
