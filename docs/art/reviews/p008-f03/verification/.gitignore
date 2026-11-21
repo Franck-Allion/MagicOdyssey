@@ -1,0 +1,4 @@
+# Preserve fresh verification logs as review evidence.
+!*.log
+!windows-full-input/*.log
+!windows-single-input/*.log

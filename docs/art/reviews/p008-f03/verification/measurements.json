@@ -1,0 +1,6005 @@
+{
+  "method": "Actual production/benchmark draw_number, native first-slot scale and fractional phase. Bright alpha>=128 RGB>=150/150/140. Full-alpha includes stroke/shadow. Bronze is a declared warm-color predicate, not semantic segmentation. Contrast uses real no-ink GPU backgrounds with all defenses active. Distances are pixel-center distances.",
+  "records": [
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        23,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        22,
+        77,
+        12,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 3.694647901409005,
+      "contrast_median": 12.397156794016848,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        23,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        23,
+        77,
+        11,
+        18
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.929470362289664,
+      "contrast_median": 10.556996286925617,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        23,
+        78,
+        11,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        22,
+        77,
+        12,
+        18
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.994628798133085,
+      "contrast_median": 10.53497138312862,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        23,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        23,
+        77,
+        11,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.7181112289708445,
+      "contrast_median": 12.073655227043263,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        23,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        23,
+        77,
+        11,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 4.0,
+      "contrast_min": 5.4872725080191564,
+      "contrast_median": 12.073655227043263,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        23,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        22,
+        77,
+        12,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 3.9242736854947924,
+      "contrast_median": 12.081077923628337,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        21,
+        79,
+        15,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        79,
+        16,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.477864794433101,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 2.237963099950412,
+      "contrast_median": 12.073655227043263,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        20,
+        79,
+        16,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        79,
+        17,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.199217803776335,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 4.221280298746396,
+      "contrast_median": 11.628838836853932,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        20,
+        79,
+        16,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        79,
+        17,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.199217803776335,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 4.819346246828821,
+      "contrast_median": 12.097213061385386,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        20,
+        79,
+        16,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        79,
+        17,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.199217803776335,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.691750577124319,
+      "contrast_median": 11.92902540681238,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        60,
+        85,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 2,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.0248541744726185,
+      "contrast_median": 6.975105913299814,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        60,
+        85,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        60,
+        85,
+        7,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 7,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 1.2096700375175546,
+      "contrast_median": 7.337422918187744,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        60,
+        85,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.2096700375175546,
+      "contrast_median": 5.355364707947245,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        60,
+        85,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 2,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 1.2096700375175546,
+      "contrast_median": 7.445127206647925,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        60,
+        85,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 2,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 3.0242356171823372,
+      "contrast_median": 7.457296979750797,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        60,
+        85,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 2,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.229470616284417,
+      "contrast_median": 7.235532634408987,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        55,
+        85,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        55,
+        85,
+        16,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 3,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 1.8133598543538347,
+      "contrast_median": 6.234609809639436,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        55,
+        85,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        55,
+        85,
+        17,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 13,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 1.253228306286043,
+      "contrast_median": 6.632291018587288,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        55,
+        85,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        55,
+        85,
+        17,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 11,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 1.253228306286043,
+      "contrast_median": 6.234609809639436,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        55,
+        85,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        55,
+        85,
+        16,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7981742396948874,
+      "outside_material_alpha128_ink_pixels": 3,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 1.8374819540319598,
+      "contrast_median": 6.7200074320485905,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        97,
+        85,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        97,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.9597504653208406,
+      "contrast_median": 10.384507255194546,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        98,
+        85,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        97,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 1.4574823052299113,
+      "contrast_median": 10.33737794200186,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        97,
+        85,
+        8,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        97,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 2.744089963033035,
+      "contrast_median": 10.509565344824212,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        98,
+        85,
+        7,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        97,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.744089963033035,
+      "contrast_median": 9.9605631402154,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        97,
+        85,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        97,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.744089963033035,
+      "contrast_median": 10.509565344824212,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        97,
+        85,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        97,
+        85,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.1458815282654804,
+      "contrast_median": 11.083365650672558,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        93,
+        85,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        85,
+        16,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.3846527242760436,
+      "contrast_median": 11.81360962779986,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        93,
+        85,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        85,
+        16,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.3846527242760436,
+      "contrast_median": 12.27953634384448,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        93,
+        85,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        85,
+        16,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.3846527242760436,
+      "contrast_median": 11.935926392111277,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        93,
+        85,
+        16,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        93,
+        85,
+        16,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.5976534113286078,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 2.3846527242760436,
+      "contrast_median": 10.976874239533254,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        130,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        129,
+        77,
+        12,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 4.0,
+      "contrast_min": 5.4199628521893155,
+      "contrast_median": 10.561520553389967,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        130,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        130,
+        77,
+        11,
+        18
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 6.892365229550908,
+      "contrast_median": 11.491964141249852,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        130,
+        78,
+        11,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        129,
+        77,
+        12,
+        18
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.787226044431087,
+      "contrast_median": 10.643979057611368,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        130,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        130,
+        77,
+        11,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.9380249008430432,
+      "contrast_median": 10.617974747027155,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        130,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        130,
+        77,
+        11,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 4.0,
+      "contrast_min": 6.524661615594441,
+      "contrast_median": 10.789758695123313,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        130,
+        77,
+        11,
+        18
+      ],
+      "all_alpha_bbox_xywh": [
+        129,
+        77,
+        12,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.713544398546404,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 4.0,
+      "contrast_min": 5.4199628521893155,
+      "contrast_median": 10.643979057611368,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        127,
+        79,
+        16,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        127,
+        79,
+        16,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.500002861022722,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 3.467189414169234,
+      "contrast_median": 10.561520553389967,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        127,
+        79,
+        16,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        127,
+        79,
+        16,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.500002861022722,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 3.830619283790273,
+      "contrast_median": 9.743645613109875,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        127,
+        79,
+        16,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        127,
+        79,
+        16,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.500002861022722,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.8491370194817565,
+      "contrast_median": 9.912811645831873,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        127,
+        79,
+        16,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        127,
+        79,
+        16,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.500002861022722,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 2.4025533884856514,
+      "contrast_median": 10.834063150451883,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        18,
+        54,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        53,
+        7,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.089203381580806,
+      "contrast_median": 12.27410860883209,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        18,
+        54,
+        5,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        54,
+        7,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.0,
+      "contrast_min": 7.216746055099453,
+      "contrast_median": 11.088386927679768,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        18,
+        54,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        54,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 5.162271102691047,
+      "contrast_median": 11.027484031008143,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        18,
+        54,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        53,
+        7,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 5.162271102691047,
+      "contrast_median": 11.770737136974764,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        18,
+        54,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        53,
+        7,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 6.8647512803077015,
+      "contrast_median": 11.898232695830945,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        18,
+        54,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        53,
+        7,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 5.162271102691047,
+      "contrast_median": 12.049706400304109,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        16,
+        55,
+        11,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        55,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.132801696658142,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.878908228957564,
+      "contrast_median": 12.169434751419812,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        16,
+        55,
+        11,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        55,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.132801696658142,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 8.080076244035526,
+      "contrast_median": 11.597788512591745,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        16,
+        55,
+        11,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        55,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.132801696658142,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 6.668223978225619,
+      "contrast_median": 12.363065683484995,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        16,
+        55,
+        11,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        54,
+        11,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.132801696658142,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.1622776601683795,
+      "contrast_min": 4.918195607028397,
+      "contrast_median": 11.898232695830945,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        42,
+        59,
+        5,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        59,
+        5,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 2.2787035919325103,
+      "contrast_median": 7.2672295599282695,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        43,
+        59,
+        3,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        59,
+        5,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.619279826590813,
+      "contrast_median": 5.7196599093228295,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        43,
+        59,
+        4,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        59,
+        5,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.5162009202107463,
+      "contrast_median": 5.3533994621495875,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        42,
+        59,
+        5,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        59,
+        5,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.619279826590813,
+      "contrast_median": 8.131622876109606,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        42,
+        59,
+        5,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        59,
+        5,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.619279826590813,
+      "contrast_median": 8.084626264280036,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        42,
+        59,
+        5,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        59,
+        5,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 2.2787035919325103,
+      "contrast_median": 7.338517199355083,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        40,
+        59,
+        10,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        59,
+        10,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.281931635436163,
+      "contrast_median": 6.900079740913753,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        41,
+        59,
+        9,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        59,
+        10,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.3311736741173268,
+      "contrast_median": 6.502128226953989,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        41,
+        59,
+        8,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        59,
+        10,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.3311736741173268,
+      "contrast_median": 5.369589702820753,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        40,
+        59,
+        10,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        39,
+        59,
+        11,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.8654444068670273,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.9394686556761989,
+      "contrast_median": 6.011119959644344,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        68,
+        59,
+        5,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        59,
+        6,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.7481565381042072,
+      "contrast_median": 9.7169650113683,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        69,
+        59,
+        2,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        59,
+        5,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 3.3990032053378476,
+      "contrast_median": 10.94913139884364,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        68,
+        59,
+        5,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        59,
+        6,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.7481565381042072,
+      "contrast_median": 8.162946049577272,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        68,
+        59,
+        4,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        59,
+        6,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.7481565381042072,
+      "contrast_median": 8.683048313190515,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        68,
+        59,
+        4,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        59,
+        6,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.7481565381042072,
+      "contrast_median": 8.66677165521919,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        68,
+        59,
+        4,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        67,
+        59,
+        6,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.7481565381042072,
+      "contrast_median": 9.7169650113683,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        65,
+        59,
+        10,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        59,
+        10,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.5379606854890862,
+      "contrast_median": 10.426222206763347,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        66,
+        59,
+        9,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        59,
+        10,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.5379606854890862,
+      "contrast_median": 10.5052708328893,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        66,
+        59,
+        8,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        59,
+        11,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.5379606854890862,
+      "contrast_median": 11.577597203274077,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        65,
+        59,
+        10,
+        7
+      ],
+      "all_alpha_bbox_xywh": [
+        65,
+        59,
+        10,
+        8
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7317638546228409,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.0,
+      "contrast_min": 1.5379606854890862,
+      "contrast_median": 10.362591968215243,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        89,
+        54,
+        8,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        53,
+        8,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.21755105563885,
+      "contrast_median": 10.476579100329396,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        89,
+        54,
+        6,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        53,
+        8,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.0,
+      "contrast_min": 4.366141143709774,
+      "contrast_median": 11.429914216192861,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        89,
+        54,
+        8,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        54,
+        8,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 7.75307763153764,
+      "contrast_median": 10.718097559832266,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        89,
+        54,
+        8,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        53,
+        8,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 4.327953272187543,
+      "contrast_median": 10.434847199934502,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        89,
+        54,
+        8,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        53,
+        8,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.924729595015054,
+      "contrast_median": 10.744688336939712,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        89,
+        54,
+        8,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        53,
+        8,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.1423680186271667,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.20583558613913,
+      "contrast_median": 10.703654470886141,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        88,
+        55,
+        10,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        88,
+        55,
+        10,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.142368018627167,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 6.025979837318212,
+      "contrast_median": 10.393115299539607,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        88,
+        55,
+        10,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        87,
+        55,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.142368018627167,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 5.6775553252092505,
+      "contrast_median": 9.794900929571245,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        88,
+        55,
+        10,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        87,
+        55,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.142368018627167,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.604876534976168,
+      "contrast_median": 10.49418186929147,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v03",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        88,
+        55,
+        10,
+        9
+      ],
+      "all_alpha_bbox_xywh": [
+        87,
+        54,
+        11,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.142368018627167,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.1622776601683795,
+      "contrast_min": 3.302770897845973,
+      "contrast_median": 10.70424631496587,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.9772942668009725,
+      "contrast_median": 12.26535361922296,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.786889222094572,
+      "contrast_median": 9.466460077223342,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        20
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.9772942668009725,
+      "contrast_median": 10.243805304988516,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.3729487304667254,
+      "contrast_median": 12.097213061385386,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.6971669650492363,
+      "contrast_median": 12.19731258916351,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        19,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.9772942668009725,
+      "contrast_median": 12.105925502557358,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        12,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997633295791,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.0554680136287353,
+      "contrast_median": 11.55159390950194,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        11,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997633295791,
+      "outside_material_alpha128_ink_pixels": 5,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.7834290350296866,
+      "contrast_median": 11.380529654407537,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997633295791,
+      "outside_material_alpha128_ink_pixels": 5,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.7834290350296866,
+      "contrast_median": 12.250368882626214,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        11,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        11,
+        78,
+        29,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997633295791,
+      "outside_material_alpha128_ink_pixels": 1,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.2548629894818992,
+      "contrast_median": 12.250368882626214,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        63,
+        11,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.3573769446860755,
+      "contrast_median": 6.418202649978744,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        59,
+        64,
+        10,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.8104572468149756,
+      "contrast_median": 7.395327252302104,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        58,
+        63,
+        11,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.7112791164907037,
+      "contrast_median": 6.495180336937834,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.9815105699934994,
+      "contrast_median": 7.291447237416751,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.5732356354344232,
+      "contrast_median": 7.924426772198075,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        59,
+        63,
+        10,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.1250377840789736,
+      "contrast_median": 7.259467758039786,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997426937341,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.926595619106118,
+      "contrast_median": 8.009002108218219,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997426937341,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.926595619106118,
+      "contrast_median": 7.868692378782311,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997426937341,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.926595619106118,
+      "contrast_median": 7.372729832410123,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        53,
+        63,
+        22,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997426937341,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.6124320080341261,
+      "contrast_median": 8.16547507826926,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        11,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 5.543155515422556,
+      "contrast_median": 11.623378343760537,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        95,
+        64,
+        10,
+        16
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.450572302215097,
+      "contrast_median": 11.35335234208861,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        94,
+        63,
+        12,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.7359898144138586,
+      "contrast_median": 11.60868779947538,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.692496087691261,
+      "contrast_median": 11.685698685211642,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.20570850236875,
+      "contrast_median": 11.240021730055663,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        95,
+        63,
+        10,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 7.66666845016168,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.478895921181768,
+      "contrast_median": 11.724484415288057,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997170972861,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.579857138256227,
+      "contrast_median": 11.936238914768433,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997170972861,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.579857138256227,
+      "contrast_median": 12.003725040189403,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        63,
+        23,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.9999971709728612,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.289427377298633,
+      "contrast_median": 12.255912537381812,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        63,
+        22,
+        17
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999997170972861,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.478895921181768,
+      "contrast_median": 11.977339717515742,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.098685222073751,
+      "contrast_median": 10.393115299539607,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 6.081520750044939,
+      "contrast_median": 11.677440707188692,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        20
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 5.8868150787848625,
+      "contrast_median": 11.121241379028127,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.439495672288764,
+      "contrast_median": 10.729402677827,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.689177614445483,
+      "contrast_median": 10.729402677827,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        132,
+        78,
+        13,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 8.333369200363222,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 6.7375571295448164,
+      "contrast_median": 10.641474495979113,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        125,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        124,
+        78,
+        29,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999992792741182,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.0713171043523357,
+      "contrast_median": 10.534689833934047,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        125,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        124,
+        78,
+        29,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999992792741182,
+      "outside_material_alpha128_ink_pixels": 8,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.1357406483505144,
+      "contrast_median": 9.5607178362628,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        125,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        124,
+        78,
+        29,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999992792741182,
+      "outside_material_alpha128_ink_pixels": 5,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.1357406483505144,
+      "contrast_median": 10.561520553389967,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        125,
+        78,
+        28,
+        21
+      ],
+      "all_alpha_bbox_xywh": [
+        124,
+        78,
+        29,
+        21
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.999992792741182,
+      "outside_material_alpha128_ink_pixels": 1,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.038377216929226,
+      "contrast_median": 10.729402677827,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.938099386357261,
+      "contrast_median": 12.120850407894531,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        16,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 5.058301131678373,
+      "contrast_median": 9.639757892664496,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.086649918378921,
+      "contrast_median": 9.615341675578929,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.938099386357261,
+      "contrast_median": 12.250368882626214,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 5.97418739070273,
+      "contrast_median": 12.097252817468897,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.938099386357261,
+      "contrast_median": 12.185751781040615,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.333321583004441,
+      "outside_material_alpha128_ink_pixels": 1,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.404471472931062,
+      "contrast_median": 12.073655227043263,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.333321583004441,
+      "outside_material_alpha128_ink_pixels": 3,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.57947034647616,
+      "contrast_median": 12.105925502557358,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.333321583004441,
+      "outside_material_alpha128_ink_pixels": 2,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.57947034647616,
+      "contrast_median": 12.250368882626214,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        10,
+        54,
+        19,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.333321583004441,
+      "outside_material_alpha128_ink_pixels": 1,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.225181509877047,
+      "contrast_median": 12.149159704989476,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.5008859471794924,
+      "contrast_median": 6.43579627693178,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        5,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.8989885832663376,
+      "contrast_median": 7.250845606358166,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.674687161313156,
+      "contrast_median": 6.254413595552801,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.6328556617318706,
+      "contrast_median": 7.2993741496633024,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.005125542054142,
+      "contrast_median": 8.317764885515343,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        42,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.8989885832663376,
+      "contrast_median": 7.6004916118288905,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        44,
+        15,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666547787654338,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.0012630882073954,
+      "contrast_median": 8.293721567111284,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666547787654338,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.0012630882073954,
+      "contrast_median": 7.150818071224396,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666547787654338,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.0012630882073954,
+      "contrast_median": 6.544717605820962,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        38,
+        44,
+        15,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666547787654338,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.9251767551789964,
+      "contrast_median": 8.415914219634551,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.811764938680524,
+      "contrast_median": 12.06572121973817,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        5,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.811764938680524,
+      "contrast_median": 10.954185988570643,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.980525770581377,
+      "contrast_median": 11.69590770709204,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.518526058585646,
+      "contrast_median": 11.266281559326938,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.811764938680524,
+      "contrast_median": 11.414669466217727,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        66,
+        44,
+        7,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.444450719704037,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.811764938680524,
+      "contrast_median": 11.836164493021474,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        62,
+        44,
+        15,
+        12
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666546081224,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 5.140409067245843,
+      "contrast_median": 11.887639467238731,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666546081224,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 5.140409067245843,
+      "contrast_median": 11.977859397629773,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666546081224,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.587500061491558,
+      "contrast_median": 11.756411261148145,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "all_alpha_bbox_xywh": [
+        62,
+        44,
+        15,
+        11
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666546081224,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 5.140409067245843,
+      "contrast_median": 11.797419536847688,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 5.0502697628601165,
+      "contrast_median": 10.30733568299184,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 8.296257259545058,
+      "contrast_median": 11.52243171341389,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        54,
+        10,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 5.7638774786365685,
+      "contrast_median": 10.859813800607649,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 3.4650364874872612,
+      "contrast_median": 10.729402677827,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 4.099624015659791,
+      "contrast_median": 10.989937992690066,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        91,
+        54,
+        8,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.555584553171698,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 6.302929027456631,
+      "contrast_median": 10.643979057611368,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.6666516893012187,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.6083334347013616,
+      "contrast_median": 10.70304457614051,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        86,
+        54,
+        19,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666516893012187,
+      "outside_material_alpha128_ink_pixels": 3,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.9674558654048584,
+      "contrast_median": 10.934612768861623,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        86,
+        54,
+        19,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.6666516893012187,
+      "outside_material_alpha128_ink_pixels": 2,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 1.9674558654048584,
+      "contrast_median": 10.964875504318327,
+      "secondary_zero": null
+    },
+    {
+      "variant": "b",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        86,
+        54,
+        18,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.6666516893012187,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": null,
+      "contrast_min": 2.4385445704175988,
+      "contrast_median": 11.13653922734204,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        20,
+        79,
+        13,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        79,
+        13,
+        20
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 4.0,
+      "contrast_min": 3.4236474113210273,
+      "contrast_median": 12.443400784059387,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        21,
+        79,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        21,
+        79,
+        12,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 2.513961778001797,
+      "contrast_median": 10.695335467576202,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        20,
+        79,
+        13,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        79,
+        13,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 2.6671319505899103,
+      "contrast_median": 11.536965409008786,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        21,
+        79,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        79,
+        13,
+        20
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.1622776601683795,
+      "contrast_min": 3.4236474113210273,
+      "contrast_median": 12.296465849405635,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        21,
+        79,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        79,
+        13,
+        20
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 3.372635377097534,
+      "contrast_median": 12.081077923628337,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        21,
+        79,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        20,
+        79,
+        13,
+        20
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 4.0,
+      "contrast_min": 3.4236474113210273,
+      "contrast_median": 12.250368882626214,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        18,
+        81,
+        17,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        81,
+        17,
+        16
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 5.675602375842459,
+      "contrast_median": 12.081077923628337,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        18,
+        81,
+        17,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        81,
+        17,
+        16
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.4830074816086496,
+      "contrast_median": 11.898232695830945,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        18,
+        81,
+        17,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        81,
+        17,
+        16
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.4830074816086496,
+      "contrast_median": 12.250368882626214,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        18,
+        81,
+        17,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        18,
+        81,
+        17,
+        16
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 3.9501548898379903,
+      "contrast_median": 12.073655227043263,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        56,
+        84,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        56,
+        84,
+        10,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 8,
+      "bronze_overlap_bright_pixels": 4,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 2.0949769437715893,
+      "contrast_median": 7.223782185820493,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        56,
+        84,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        56,
+        84,
+        9,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 10,
+      "bronze_overlap_bright_pixels": 8,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.7809092205008827,
+      "contrast_median": 6.2701245365633955,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        56,
+        84,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        56,
+        84,
+        10,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 4,
+      "bronze_overlap_bright_pixels": 3,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.8572349848624188,
+      "contrast_median": 5.112905015154607,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        56,
+        84,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        56,
+        84,
+        9,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 6,
+      "bronze_overlap_bright_pixels": 5,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.9169855988589424,
+      "contrast_median": 7.100259260880647,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        56,
+        84,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        56,
+        84,
+        9,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 6,
+      "bronze_overlap_bright_pixels": 4,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 2.013282264319474,
+      "contrast_median": 7.474926141116835,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        56,
+        84,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        56,
+        84,
+        9,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 8,
+      "bronze_overlap_bright_pixels": 5,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 2.0949769437715893,
+      "contrast_median": 6.997395139930332,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        51,
+        84,
+        19,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        51,
+        84,
+        20,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 8,
+      "bronze_overlap_bright_pixels": 10,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.3824842408961246,
+      "contrast_median": 6.294339823516363,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        51,
+        84,
+        19,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        51,
+        84,
+        20,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 19,
+      "bronze_overlap_bright_pixels": 19,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.8223510424073484,
+      "contrast_median": 6.895106969484366,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        51,
+        84,
+        19,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        51,
+        84,
+        20,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 12,
+      "bronze_overlap_bright_pixels": 9,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.7845477135265904,
+      "contrast_median": 6.734600089807376,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        51,
+        84,
+        19,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        51,
+        84,
+        20,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.6953096836803496,
+      "outside_material_alpha128_ink_pixels": 11,
+      "bronze_overlap_bright_pixels": 3,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.8223510424073484,
+      "contrast_median": 7.37086303075481,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        98,
+        84,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        97,
+        84,
+        10,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 5,
+      "bronze_overlap_bright_pixels": 2,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.4477726276633667,
+      "contrast_median": 10.521369993365944,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        98,
+        85,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        98,
+        84,
+        9,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 8,
+      "bronze_overlap_bright_pixels": 8,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 3.232241947858371,
+      "contrast_median": 9.248556802517822,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        98,
+        84,
+        9,
+        14
+      ],
+      "all_alpha_bbox_xywh": [
+        97,
+        84,
+        10,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 2,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 1.0,
+      "contrast_min": 1.9181440431738184,
+      "contrast_median": 10.456388558077172,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        98,
+        84,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        97,
+        84,
+        10,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 7,
+      "bronze_overlap_bright_pixels": 3,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.2373148778823164,
+      "contrast_median": 10.04043382858948,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        98,
+        84,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        98,
+        84,
+        9,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 5,
+      "bronze_overlap_bright_pixels": 2,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.9181440431738184,
+      "contrast_median": 10.169516050100595,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        98,
+        84,
+        9,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        98,
+        84,
+        9,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 5,
+      "bronze_overlap_bright_pixels": 2,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.2373148778823164,
+      "contrast_median": 10.330235019102554,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        93,
+        84,
+        19,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        84,
+        20,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 7,
+      "bronze_overlap_bright_pixels": 6,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.2373148778823164,
+      "contrast_median": 11.354531319869885,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        92,
+        84,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        84,
+        20,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 18,
+      "bronze_overlap_bright_pixels": 22,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.2373148778823164,
+      "contrast_median": 10.442652227946363,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        92,
+        84,
+        20,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        84,
+        20,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 10,
+      "bronze_overlap_bright_pixels": 12,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.2373148778823164,
+      "contrast_median": 11.524190041516087,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        93,
+        84,
+        19,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        92,
+        84,
+        20,
+        15
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.0937471985815108,
+      "outside_material_alpha128_ink_pixels": 10,
+      "bronze_overlap_bright_pixels": 4,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.2373148778823164,
+      "contrast_median": 11.038887198665314,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        131,
+        79,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        131,
+        79,
+        13,
+        20
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 4.123105625617661,
+      "contrast_min": 3.699087017353108,
+      "contrast_median": 10.534689833934047,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        132,
+        79,
+        11,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        131,
+        79,
+        12,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.1622776601683795,
+      "contrast_min": 3.7329592940713496,
+      "contrast_median": 11.52243171341389,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        131,
+        79,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        131,
+        79,
+        13,
+        19
+      ],
+      "minimum_full_alpha_cell_margin_px": 5.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.7924037064176033,
+      "contrast_median": 11.13653922734204,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        131,
+        79,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        131,
+        79,
+        13,
+        20
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 4.102629305982365,
+      "contrast_median": 10.890061907220602,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        131,
+        79,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        131,
+        79,
+        13,
+        20
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 3.9047360091302323,
+      "contrast_median": 11.151533400240465,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        131,
+        79,
+        12,
+        19
+      ],
+      "all_alpha_bbox_xywh": [
+        131,
+        79,
+        13,
+        20
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 4.123105625617661,
+      "contrast_min": 4.65152850086747,
+      "contrast_median": 10.874512057962335,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        129,
+        81,
+        17,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        129,
+        81,
+        17,
+        16
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 1.01742453283874,
+      "contrast_median": 10.964186614880322,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        129,
+        81,
+        17,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        129,
+        81,
+        17,
+        16
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.330515345212086,
+      "contrast_median": 10.436060967475957,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        129,
+        81,
+        17,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        129,
+        81,
+        17,
+        16
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.330515345212086,
+      "contrast_median": 10.67536555671342,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 1080,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        129,
+        81,
+        17,
+        15
+      ],
+      "all_alpha_bbox_xywh": [
+        129,
+        81,
+        17,
+        16
+      ],
+      "minimum_full_alpha_cell_margin_px": 6.220054753124899,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 1.9089889055019689,
+      "contrast_median": 10.803832420164536,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        16,
+        55,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.1622776601683795,
+      "contrast_min": 4.153057560275162,
+      "contrast_median": 12.33022495619814,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        17,
+        55,
+        5,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        55,
+        8,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.605551275463989,
+      "contrast_min": 6.003083915411435,
+      "contrast_median": 11.288234021088257,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        16,
+        55,
+        9,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        55,
+        9,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 4.153057560275162,
+      "contrast_median": 11.51931587255386,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        16,
+        55,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        55,
+        9,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.153057560275162,
+      "contrast_median": 12.250969129487643,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        16,
+        55,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.1622776601683795,
+      "contrast_min": 5.495774181367484,
+      "contrast_median": 11.99329406435643,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        16,
+        55,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        16,
+        54,
+        9,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 3.3160589044017192,
+      "contrast_median": 12.411689662552671,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        15,
+        56,
+        11,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        56,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.1301975548267436,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 4.478042297510048,
+      "contrast_median": 11.55159390950194,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        15,
+        56,
+        11,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        56,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.1301975548267436,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 5.471403798207393,
+      "contrast_median": 11.55159390950194,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        15,
+        56,
+        11,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        56,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.1301975548267436,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 5.471403798207393,
+      "contrast_median": 12.322732587899768,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Attack",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        15,
+        56,
+        11,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        15,
+        56,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 4.1301975548267436,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.179713237201834,
+      "contrast_median": 11.818484157611195,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 5,
+      "bronze_overlap_bright_pixels": 2,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.817929586712319,
+      "contrast_median": 7.9950551785547415,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 7,
+      "bronze_overlap_bright_pixels": 5,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 2.323010007625556,
+      "contrast_median": 6.384107773258082,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 8,
+      "bronze_overlap_bright_pixels": 6,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.0055351986385093,
+      "contrast_median": 5.882925981527145,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 7,
+      "bronze_overlap_bright_pixels": 3,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.3236344849637702,
+      "contrast_median": 8.218823850092415,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 5,
+      "bronze_overlap_bright_pixels": 2,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 2.1495153674639553,
+      "contrast_median": 8.036191752930502,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        40,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 5,
+      "bronze_overlap_bright_pixels": 2,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.817929586712319,
+      "contrast_median": 8.036191752930502,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        37,
+        58,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        36,
+        58,
+        14,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 12,
+      "bronze_overlap_bright_pixels": 5,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 2.5858327745492695,
+      "contrast_median": 9.120919754293656,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        37,
+        58,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        36,
+        58,
+        14,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 16,
+      "bronze_overlap_bright_pixels": 8,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.7214658041055397,
+      "contrast_median": 9.327847536061608,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        37,
+        58,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        36,
+        58,
+        14,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 12,
+      "bronze_overlap_bright_pixels": 6,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.817929586712319,
+      "contrast_median": 9.569423348455967,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Armor",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        37,
+        58,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        36,
+        58,
+        14,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -1.130201369524002,
+      "outside_material_alpha128_ink_pixels": 10,
+      "bronze_overlap_bright_pixels": 2,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 2.5858327745492695,
+      "contrast_median": 8.71177310557823,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 2,
+      "bronze_overlap_bright_pixels": 2,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 1.8427438299984285,
+      "contrast_median": 9.582129254388335,
+      "secondary_zero": "hypothetical glyph probe; suppressed in real scene"
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 6,
+      "bronze_overlap_bright_pixels": 6,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 2.672881435421573,
+      "contrast_median": 8.935396972140282,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 6,
+      "bronze_overlap_bright_pixels": 6,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 2.735155885141537,
+      "contrast_median": 8.68335006778594,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 3,
+      "bronze_overlap_bright_pixels": 3,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 3.2509284548364024,
+      "contrast_median": 8.150573106412267,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 2,
+      "bronze_overlap_bright_pixels": 2,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 3.2509284548364024,
+      "contrast_median": 9.959002812553134,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        68,
+        58,
+        6,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 3,
+      "bronze_overlap_bright_pixels": 3,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 3.2509284548364024,
+      "contrast_median": 9.725696063771544,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        64,
+        58,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        64,
+        58,
+        14,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 7,
+      "bronze_overlap_bright_pixels": 6,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 3.272184307684466,
+      "contrast_median": 11.230568359185256,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        64,
+        58,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        64,
+        58,
+        13,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 11,
+      "bronze_overlap_bright_pixels": 8,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 3.272184307684466,
+      "contrast_median": 11.874956250554755,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        64,
+        58,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        64,
+        58,
+        14,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 9,
+      "bronze_overlap_bright_pixels": 6,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 3.272184307684466,
+      "contrast_median": 11.543185953765612,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Shield",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        64,
+        58,
+        13,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        64,
+        58,
+        13,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": -0.7291597127914429,
+      "outside_material_alpha128_ink_pixels": 4,
+      "bronze_overlap_bright_pixels": 4,
+      "nearest_bronze_pixel_center_px": 0.0,
+      "contrast_min": 3.272184307684466,
+      "contrast_median": 11.543185953765612,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 0,
+      "bright_ink_bbox_xywh": [
+        90,
+        55,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        54,
+        8,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 5.902271995449029,
+      "contrast_median": 10.76085374991099,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 1,
+      "bright_ink_bbox_xywh": [
+        90,
+        55,
+        6,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        55,
+        8,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.1622776601683795,
+      "contrast_min": 1.6825497504894267,
+      "contrast_median": 10.731948804698664,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 2,
+      "bright_ink_bbox_xywh": [
+        90,
+        55,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        55,
+        8,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 4.435734288583494,
+      "contrast_median": 10.832755116804863,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 3,
+      "bright_ink_bbox_xywh": [
+        90,
+        55,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        55,
+        8,
+        13
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 5.359805609986814,
+      "contrast_median": 10.868607171583019,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 6,
+      "bright_ink_bbox_xywh": [
+        90,
+        55,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        54,
+        8,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 3.1622776601683795,
+      "contrast_min": 6.804304744020026,
+      "contrast_median": 11.051849701867566,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 8,
+      "bright_ink_bbox_xywh": [
+        90,
+        55,
+        8,
+        12
+      ],
+      "all_alpha_bbox_xywh": [
+        90,
+        54,
+        8,
+        14
+      ],
+      "minimum_full_alpha_cell_margin_px": 2.8133749216794968,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.92514074905134,
+      "contrast_median": 10.846828841846087,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 10,
+      "bright_ink_bbox_xywh": [
+        89,
+        56,
+        11,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        56,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.92186239361763,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.559401452649156,
+      "contrast_median": 11.049149540465137,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 12,
+      "bright_ink_bbox_xywh": [
+        89,
+        56,
+        11,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        88,
+        56,
+        12,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.92186239361763,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.23606797749979,
+      "contrast_min": 3.738305997446623,
+      "contrast_median": 9.740536394404575,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 14,
+      "bright_ink_bbox_xywh": [
+        89,
+        56,
+        11,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        88,
+        56,
+        12,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.92186239361763,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.559401452649156,
+      "contrast_median": 10.481435295727465,
+      "secondary_zero": null
+    },
+    {
+      "variant": "v05",
+      "resolution": 720,
+      "stat": "Health",
+      "value": 99,
+      "bright_ink_bbox_xywh": [
+        89,
+        56,
+        11,
+        10
+      ],
+      "all_alpha_bbox_xywh": [
+        89,
+        56,
+        11,
+        10
+      ],
+      "minimum_full_alpha_cell_margin_px": 3.92186239361763,
+      "outside_material_alpha128_ink_pixels": 0,
+      "bronze_overlap_bright_pixels": 0,
+      "nearest_bronze_pixel_center_px": 2.8284271247461903,
+      "contrast_min": 4.1603794407508,
+      "contrast_median": 10.731948804698664,
+      "secondary_zero": null
+    }
+  ]
+}

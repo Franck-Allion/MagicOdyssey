@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-21",
+  "head": "9448e6f2067b442dd029b105001b9a11435669de",
+  "recommendation": "TARGETED_CORRECTIONS_REQUIRED",
+  "P008_F03_technically_complete": false,
+  "owner_approval": "PENDING",
+  "production_changed_this_run": false,
+  "checks": {
+    "headless_import": {
+      "exit": 0
+    },
+    "native": {
+      "assertions": 3691,
+      "failed": 0,
+      "exit": 0
+    },
+    "gpu": {
+      "checks": 1276,
+      "failed": 0,
+      "exit": 0
+    },
+    "active_backgrounds": {
+      "checks": 6,
+      "failed": 0,
+      "exit": 0
+    },
+    "analysis": {
+      "records": 240,
+      "exit": 0
+    },
+    "art002": {
+      "bit_exact": 3,
+      "failed": 0,
+      "exit": 0
+    },
+    "export": {
+      "exit": 0,
+      "executable": "build/windows/MagicOdyssey.exe",
+      "sha256": "e35819360fd935b43fb811a61c635667627f7873002b4f8f82af13e6befcd112"
+    },
+    "windows_full_input": {
+      "shell_exit": 0,
+      "modes": [
+        "default 1888x956",
+        "1920x1080",
+        "1280x720"
+      ],
+      "os_pointer": true,
+      "esc_exit_codes": [
+        0,
+        0,
+        0
+      ]
+    },
+    "windows_single_input": {
+      "shell_exit": 0,
+      "modes": [
+        "default 1888x956",
+        "1920x1080",
+        "1280x720"
+      ],
+      "os_pointer": true,
+      "esc_exit_codes": [
+        0,
+        0,
+        0
+      ]
+    },
+    "git_diff_check": {
+      "exit": 0
+    }
+  },
+  "acceptance": {
+    "variant_b_geometry": false,
+    "primary_720p_14px": false,
+    "secondary_720p_11px": false,
+    "clean_material_contours": false,
+    "source_runtime_byte_identity": true,
+    "source_normalization": true,
+    "portrait_alpha0_containment": true,
+    "twenty_four_slot_containment": true
+  },
+  "not_run": [
+    "revised-art integration",
+    "target-achieving production B layout",
+    "multiple creature portrait compositions",
+    "approved status/equipment icon art",
+    "owner artistic acceptance"
+  ]
+}

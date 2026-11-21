@@ -1,0 +1,23 @@
+{
+  "method": "Connected dark neutral pixels from stated seed; alpha>=250, max RGB<95, channel spread<18. Conservative color segmentation, not an exact bronze-edge contour.",
+  "cavities": {
+    "Armor": {
+      "bbox_xywh": [
+        425,
+        762,
+        318,
+        145
+      ],
+      "mask_pixels": 44192
+    },
+    "Shield": {
+      "bbox_xywh": [
+        794,
+        762,
+        317,
+        145
+      ],
+      "mask_pixels": 44053
+    }
+  }
+}

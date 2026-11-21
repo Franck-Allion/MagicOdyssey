@@ -1,0 +1,50 @@
+﻿Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 551.86 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 Ti
+
+==================================================
+MagicOdyssey — Visual Regression Suite (AUDIT-002)
+Engine: 4.7.2-stable (official)
+Display Server: Windows
+Output Directory: D:/Dev/MagicOdyssey/docs/audits/AUDIT-002/captures_fresh/
+==================================================
+[CAPTURE] Generating Card Production Baseline (1080p) -> card_production_fresh_1080p.png
+  -> Saved card_production_fresh_1080p.png (1920 × 1080 px, exit 0)
+[CAPTURE] Generating Seven-Card Hand Baseline (1080p) -> seven_card_hand_fresh_1080p.png
+  -> Saved seven_card_hand_fresh_1080p.png (1920 × 1080 px, exit 0)
+[CAPTURE] Generating Four Stats Closeup Baseline (1080p) -> four_stats_closeup_fresh_1080p.png
+  -> Saved four_stats_closeup_fresh_1080p.png (1920 × 1080 px, exit 0)
+--------------------------------------------------
+Visual Comparison Metrics (Fresh vs Golden Baseline):
+--------------------------------------------------
+Scene: Card Production Baseline (1080p)
+  Golden Reference:   card_production_baseline_1080p.png
+  Fresh Render:       card_production_fresh_1080p.png
+  Image Dimensions:   1920 × 1080 px
+  Total Subpixels:    8294400
+  Differing Pixels:   0 (0.0000%)
+  Max Channel Diff:   0
+  Mean Channel Diff:  0.000000
+  Comparison Result:  PASS (100% Bit-Exact Parity)
+
+Scene: Seven-Card Hand Baseline (1080p)
+  Golden Reference:   seven_card_hand_baseline_1080p.png
+  Fresh Render:       seven_card_hand_fresh_1080p.png
+  Image Dimensions:   1920 × 1080 px
+  Total Subpixels:    8294400
+  Differing Pixels:   0 (0.0000%)
+  Max Channel Diff:   0
+  Mean Channel Diff:  0.000000
+  Comparison Result:  PASS (100% Bit-Exact Parity)
+
+Scene: Four Stats Closeup Baseline (1080p)
+  Golden Reference:   four_stats_closeup_baseline_1080p.png
+  Fresh Render:       four_stats_closeup_fresh_1080p.png
+  Image Dimensions:   1920 × 1080 px
+  Total Subpixels:    8294400
+  Differing Pixels:   0 (0.0000%)
+  Max Channel Diff:   0
+  Mean Channel Diff:  0.000000
+  Comparison Result:  PASS (100% Bit-Exact Parity)
+
+==================================================
+VISUAL REGRESSION RESULT: ALL SCENES PASSED (0 regressions)
