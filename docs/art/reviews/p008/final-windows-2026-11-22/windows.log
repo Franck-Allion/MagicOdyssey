@@ -1,0 +1,18 @@
+﻿Isolated executable: C:\Users\franc\AppData\Local\Temp\MagicOdyssey-standalone-00f8509fe7654aef9d939072918e3c33\MagicOdyssey.exe
+Physical desktop: 1920x1080
+default : title=MagicOdyssey, client=1888x956, pid=23948
+default : all 24 OS pointer hover/click identities PASS; eight row extremes captured; selection switch/toggle PASS
+default : actual hand hover and raised inspection click isolation PASS
+default : native End Turn hover/press/release, focus and mouse/Space activation PASS (preview only)
+default : ESC exit=0
+1920x1080 : title=MagicOdyssey, client=1920x1080, pid=27092
+1920x1080 : all 24 OS pointer hover/click identities PASS; eight row extremes captured; selection switch/toggle PASS
+1920x1080 : actual hand hover and raised inspection click isolation PASS
+1920x1080 : native End Turn hover/press/release, focus and mouse/Space activation PASS (preview only)
+1920x1080 : ESC exit=0
+1280x720 : title=MagicOdyssey, client=1280x720, pid=39896
+1280x720 : all 24 OS pointer hover/click identities PASS; eight row extremes captured; selection switch/toggle PASS
+1280x720 : actual hand hover and raised inspection click isolation PASS
+1280x720 : native End Turn hover/press/release, focus and mouse/Space activation PASS (preview only)
+1280x720 : ESC exit=0
+PASS: shell launch, 3 desktop windows, ESC exits with code 0, no remaining game process.

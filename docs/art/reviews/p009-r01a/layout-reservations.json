@@ -1,0 +1,171 @@
+{
+  "status": "PROPOSED_SPELL_RESERVATIONS_NOT_GENERATED_ART_MEASUREMENTS",
+  "source_canvas": [
+    1086,
+    1448
+  ],
+  "aspect_ratio": [
+    3,
+    4
+  ],
+  "expected_eventual_source": "assets/_source/lot1/cards/mo_card_frame_spell_v01.png",
+  "runtime_copy_path": "NOT_ASSIGNED_BY_THIS_PREPARATION",
+  "master_source": "assets/_source/lot1/cards/frames/mo_card_frame_master_v03.png",
+  "master_source_sha256": "937d2a3e3c099ec9830213c725025af250639032591ecc234f8e491068ced3e3",
+  "verified_master": {
+    "outer_alpha128_bbox_xywh": [
+      24,
+      0,
+      1034,
+      1444
+    ],
+    "connected_aperture_alpha0_bbox_xywh": [
+      131,
+      206,
+      823,
+      637
+    ],
+    "aperture_alpha0_pixels": 470984,
+    "legacy_alpha1_pixels": 27402,
+    "renderer_aperture_xywh": [
+      124,
+      207,
+      838,
+      642
+    ],
+    "title_xywh": [
+      292,
+      90,
+      610,
+      94
+    ],
+    "mana_center": [
+      153,
+      151
+    ],
+    "mana_safe_radius": 70,
+    "type_xywh": [
+      180,
+      916,
+      726,
+      66
+    ],
+    "rules_xywh": [
+      260,
+      990,
+      566,
+      210
+    ],
+    "nominal_bottom_rarity_constant": [
+      543,
+      1330
+    ]
+  },
+  "spell_proposal": {
+    "renderer_aperture_xywh": [
+      124,
+      207,
+      838,
+      642
+    ],
+    "approximate_clear_opening_envelope_xywh": [
+      132,
+      216,
+      822,
+      620
+    ],
+    "title_xywh": [
+      292,
+      90,
+      610,
+      94
+    ],
+    "mana_center": [
+      153,
+      151
+    ],
+    "mana_safe_radius": 70,
+    "category_xywh": [
+      180,
+      916,
+      726,
+      66
+    ],
+    "effect_text_xywh": [
+      140,
+      990,
+      806,
+      240
+    ],
+    "effect_text_area_gain_percent": 62.75,
+    "mana_backing": "OPAQUE_STATIC_NO_VALUE",
+    "rarity_substrates": "OPAQUE_NEUTRAL_FOR_MASKED_SHADER",
+    "transparent_layers": [
+      "exterior",
+      "illustration opening"
+    ],
+    "other_under_frame_material_inserts": false
+  },
+  "existing_rarity_mask_contours": {
+    "crown": [
+      [
+        543,
+        24
+      ],
+      [
+        564,
+        48
+      ],
+      [
+        544,
+        83
+      ],
+      [
+        525,
+        49
+      ]
+    ],
+    "bridge": [
+      [
+        543,
+        836
+      ],
+      [
+        565,
+        861
+      ],
+      [
+        544,
+        896
+      ],
+      [
+        522,
+        862
+      ]
+    ],
+    "footer": [
+      [
+        543,
+        1247
+      ],
+      [
+        567,
+        1286
+      ],
+      [
+        543,
+        1337
+      ],
+      [
+        520,
+        1287
+      ]
+    ]
+  },
+  "rarity_specification_mismatch": {
+    "normative_Q181_epic": "purple",
+    "current_theme_and_shader_epic": "emerald",
+    "action": "neutral source only; no production color change in preparation"
+  },
+  "artwork_exists": false
+}

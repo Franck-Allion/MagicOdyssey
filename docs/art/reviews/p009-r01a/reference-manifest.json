@@ -1,0 +1,45 @@
+{
+  "references": [
+    {
+      "upload_name": "01_art002_master_v03.png",
+      "source_path": "assets/_source/lot1/cards/frames/mo_card_frame_master_v03.png",
+      "copy_path": "docs/art/reviews/p009-r01a/references/01_art002_master_v03.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "sha256": "937d2a3e3c099ec9830213c725025af250639032591ecc234f8e491068ced3e3",
+      "role": "Primary approved ART-002 family geometry/material source; remove Creature-only footer features.",
+      "byte_identical": true
+    },
+    {
+      "upload_name": "02_art002_rarity_palette_t03b.png",
+      "source_path": "docs/art/reviews/art002/t03b/rarity_samples_1080p.png",
+      "copy_path": "docs/art/reviews/p009-r01a/references/02_art002_rarity_palette_t03b.png",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "daf8843c691065507a660fffb82c9769b68a48133c13d722f5d0fc6e31edbf1a",
+      "role": "Normative five-color rarity demonstration, not a request to bake colors, text, portraits or Creature stats.",
+      "byte_identical": true
+    },
+    {
+      "upload_name": "03_owner_approved_card_hover_720p.png",
+      "source_path": "docs/art/reviews/p005-r09c/final_hover_left_720p.png",
+      "copy_path": "docs/art/reviews/p009-r01a/references/03_owner_approved_card_hover_720p.png",
+      "size": [
+        1280,
+        720
+      ],
+      "mode": "RGBA",
+      "sha256": "2b343ad5ba951a17193a797c6929c4f7f5274a8696631ff7d63e4e282ab84472",
+      "role": "P005 owner-approved native card/hand context; preserve identity and typography hierarchy, not Creature stat sockets.",
+      "byte_identical": true
+    }
+  ],
+  "new_artwork_generated": false,
+  "copies_only": true
+}

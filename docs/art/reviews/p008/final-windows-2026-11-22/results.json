@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-22",
+  "head": "72de243f3ca4474969a5ba385fce9fd9be4225d7",
+  "owner_art_approval": "APPROVED_2026_11_22",
+  "windows_follow_up": "PASS",
+  "export_exit": 0,
+  "desktop_harness_exit": 0,
+  "executable_sha256": "7d0cd42ce4c335623302d1f7b694a3bf67783dfc3cc0fa8a1b808eacca8b6419",
+  "actual_os_pointer": true,
+  "modes": [
+    {
+      "client": "1888x956",
+      "mode": "default",
+      "esc_exit": 0
+    },
+    {
+      "client": "1920x1080",
+      "mode": "1920x1080",
+      "esc_exit": 0
+    },
+    {
+      "client": "1280x720",
+      "mode": "1280x720",
+      "esc_exit": 0
+    }
+  ],
+  "verified": [
+    "24 occupied identities hover/click",
+    "selection switch/toggle",
+    "raised hand-card isolation",
+    "End Turn mouse/Space",
+    "ESC termination"
+  ],
+  "fresh_full_native_suite": "NOT_RUN_DOCUMENTATION_ONLY",
+  "historical_F04_blocked_tests_rewritten": false
+}

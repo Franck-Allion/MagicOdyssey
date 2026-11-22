@@ -1,3 +1,13 @@
+# Current owner decision - 2026-11-22
+
+**OWNER ART-APPROVED / WINDOWS TECHNICAL FOLLOW-UP PASS (2026-11-22).** The owner explicitly accepted the V05 frame, tactical geometry, portrait aperture and four-stat composition after viewing the actual Windows executable, including native 720p readability as a deliberate Lot 1 compromise. No further V05 redesign is required before P009.
+
+See [final owner sign-off](../p008/owner-sign-off-2026-11-22.md). This supersedes the internal-housing redesign recommendation and every pending-owner-approval statement in the historical review below. Measurements, residual material interference, reduced 99 height, icon dependencies and historical blocked automation remain unchanged.
+
+The new [Windows follow-up](../p008/final-windows-2026-11-22/review.md) passed real OS-input checks at 1080p, 720p and default mode on 2026-11-22. These new results do not relabel the historical failed attempts. No second owner artistic review was required.
+
+## Historical review - 2026-11-21 (preserved verbatim)
+
 # P008-F03 — V05 integration verification and tactical acceptance
 
 2026-11-21. **TARGETED_CORRECTIONS_REQUIRED. P008-F03 is not technically complete against the requested Variant B contract. P008 owner artistic approval remains pending.**
