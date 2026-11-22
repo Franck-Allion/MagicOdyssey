@@ -58,8 +58,17 @@ static func get_numeral_optical_offset(value: int) -> Vector2:
 ## Applies principled optical centering for asymmetrical numerals (ART-002-T21).
 func draw_number(center: Vector2, value: int, points: int, max_width: float, ink: Color,
 		safe_radius: float = 0.0, custom_optical_offset: Variant = null) -> void:
+	draw_number_with_style(center, value, points, max_width, ink, safe_radius, custom_optical_offset)
+
+## One glyph renderer; optional token style leaves the default card path intact.
+func draw_number_with_style(center: Vector2, value: int, points: int, max_width: float, ink: Color,
+		safe_radius: float = 0.0, custom_optical_offset: Variant = null, style: NumeralStyle = null) -> void:
 	var text: String = str(value)
-	var font: Font = TOKENS.THEME.get_font(&"font", &"TacticalNumber")
+	var font: Font = style.font if style != null and style.font != null else TOKENS.THEME.get_font(&"font", &"TacticalNumber")
+	var outline: int = NUMERAL_OUTLINE_SIZE if style == null else style.outline_size
+	var outline_color: Color = TOKENS.color_token(&"background") if style == null else style.outline_color
+	var fill: Color = ink if style == null else style.fill
+	var radius_padding: float = 4.0 if style == null else maxf(4.0, outline + 1.0)
 	var measured: Vector2 = font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, points)
 	var font_size: int = mini(points, maxi(1, int(points * max_width / maxf(measured.x, 1.0))))
 	var server: TextServer = TextServerManager.get_primary_interface()
@@ -84,7 +93,7 @@ func draw_number(center: Vector2, value: int, points: int, max_width: float, ink
 		# A width-only fit cannot protect a circular socket's diagonal corners.
 		# Keep the existing glyph-bounds centering; fit its enclosing rectangle in
 		# the safe disk, including 3 px outline + 1 px baseline rounding allowance.
-		if safe_radius <= 0.0 or bounds.size.length() * 0.5 + 4.0 <= safe_radius or font_size <= 1:
+		if safe_radius <= 0.0 or bounds.size.length() * 0.5 + radius_padding <= safe_radius or font_size <= 1:
 			break
 		font_size -= 1
 
@@ -97,14 +106,16 @@ func draw_number(center: Vector2, value: int, points: int, max_width: float, ink
 		var at: Vector2 = baseline + Vector2(offsets[index], 0)
 
 		# Layer A: Coherent directional depth shadow across all stat numerals (ART-002-T25)
-		server.font_draw_glyph_outline(font_rid, get_canvas_item(), font_size, NUMERAL_OUTLINE_SIZE, at + NUMERAL_SHADOW_OFFSET, glyphs[index], NUMERAL_SHADOW_COLOR)
-		server.font_draw_glyph(font_rid, get_canvas_item(), font_size, at + NUMERAL_SHADOW_OFFSET, glyphs[index], NUMERAL_SHADOW_COLOR)
+		if style == null or style.shadow_enabled:
+			server.font_draw_glyph_outline(font_rid, get_canvas_item(), font_size, NUMERAL_OUTLINE_SIZE, at + NUMERAL_SHADOW_OFFSET, glyphs[index], NUMERAL_SHADOW_COLOR)
+			server.font_draw_glyph(font_rid, get_canvas_item(), font_size, at + NUMERAL_SHADOW_OFFSET, glyphs[index], NUMERAL_SHADOW_COLOR)
 
 		# Layer B: Crisp boundary stroke
-		server.font_draw_glyph_outline(font_rid, get_canvas_item(), font_size, NUMERAL_OUTLINE_SIZE, at, glyphs[index], TOKENS.color_token(&"background"))
+		if outline > 0:
+			server.font_draw_glyph_outline(font_rid, get_canvas_item(), font_size, outline, at, glyphs[index], outline_color)
 
 		# Layer C: Bright ivory numeral fill
-		server.font_draw_glyph(font_rid, get_canvas_item(), font_size, at, glyphs[index], ink)
+		server.font_draw_glyph(font_rid, get_canvas_item(), font_size, at, glyphs[index], fill)
 
 ## Polymorphic API stub for setting printed values (overridden by child classes)
 func set_printed_values(mana: int, _attack: int = 0, _max_health: int = 0, _native_armor: int = 0) -> void:

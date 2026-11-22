@@ -1,0 +1,13 @@
+﻿powershell.exe : Baseline ESC exit failed
+Au caractère Ligne:2 : 1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File docs/art/re ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Baseline ESC exit failed:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Au caractère D:\Dev\MagicOdyssey\docs\art\reviews\p008-f04\capture_before.ps1:57 : 72
++ ... 00) -or $process.ExitCode -ne 0) { throw 'Baseline ESC exit failed' }
++                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Baseline ESC exit failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : Baseline ESC exit failed
+ 

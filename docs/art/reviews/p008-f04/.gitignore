@@ -1,0 +1,3 @@
+!*.log
+!windows-full/*.log
+!windows-single/*.log

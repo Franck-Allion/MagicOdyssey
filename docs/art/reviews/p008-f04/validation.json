@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-21",
+  "head": "f7721b330b4a92533d2042d6ea1fa63cfab49be4",
+  "status": "IMPLEMENTED_WINDOWS_VERIFICATION_BLOCKED",
+  "selected": "C",
+  "owner_approval": "PENDING",
+  "geometry_accepted_by_owner_in_current_brief": true,
+  "P008_F04_definition_of_done_complete": false,
+  "checks": {
+    "headless_import": {
+      "exit": 0
+    },
+    "native": {
+      "passed": 3691,
+      "failed": 0,
+      "exit": 0,
+      "assertions_changed": false
+    },
+    "candidate_gpu": {
+      "passed": 3588,
+      "failed": 0,
+      "exit": 0
+    },
+    "comparison_gpu": {
+      "passed": 3,
+      "failed": 0,
+      "exit": 0
+    },
+    "production_gpu": {
+      "passed": 324,
+      "failed": 0,
+      "exit": 0
+    },
+    "analysis": {
+      "records": 528,
+      "exit": 0
+    },
+    "art002": {
+      "bit_exact": 3,
+      "differing_pixels": 0,
+      "exit": 0
+    },
+    "windows_export": {
+      "exit": 0,
+      "executable": "build/windows/MagicOdyssey.exe",
+      "sha256": "7d0cd42ce4c335623302d1f7b694a3bf67783dfc3cc0fa8a1b808eacca8b6419"
+    },
+    "baseline_executable": {
+      "path": "build/windows/MagicOdyssey-P008-F03B-baseline.exe",
+      "sha256": "e35819360fd935b43fb811a61c635667627f7873002b4f8f82af13e6befcd112"
+    },
+    "windows_baseline_first_attempt": {
+      "exit": 1,
+      "result": "foreground not acquired; ESC failed; rejected screenshot removed"
+    },
+    "windows_baseline_guarded_retry": {
+      "exit": 1,
+      "result": "refused OS input because foreground ownership unavailable"
+    },
+    "windows_selected_input": {
+      "status": "NOT_RUN_BLOCKED_FOREGROUND"
+    },
+    "git_diff_check": {
+      "exit": 0
+    }
+  },
+  "not_verified": [
+    "Selected Windows full/single OS pointer, hand inspection, End Turn and ESC at default/1080p/720p",
+    "Actual normal-desktop-scale Windows before/after visual comparison",
+    "Alternative font fallback visuals",
+    "Owner typography acceptance"
+  ],
+  "limits": [
+    "Primary 99 white ink is 8px at native720p",
+    "Not all stats reach the previous 14/11px benchmark",
+    "Inherited material/bronze interference reduced but not eliminated"
+  ]
+}

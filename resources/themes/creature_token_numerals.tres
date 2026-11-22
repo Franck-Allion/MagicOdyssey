@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NumeralStyle" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/presentation/numeral_style.gd" id="1"]
+
+[sub_resource type="SystemFont" id="font_token"]
+font_names = PackedStringArray("Bahnschrift", "Segoe UI", "Arial")
+font_weight = 700
+antialiasing = 1
+hinting = 1
+subpixel_positioning = 1
+
+[resource]
+script = ExtResource("1")
+font = SubResource("font_token")
+fill = Color(1, 1, 1, 1)
+outline_color = Color(0, 0, 0, 1)
+outline_size = 10
+shadow_enabled = false
+primary_width_scale = 1.0
+secondary_points = 190

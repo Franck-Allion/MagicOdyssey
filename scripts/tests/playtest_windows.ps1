@@ -10,6 +10,10 @@ public static class PreviewDesktop {
     [StructLayout(LayoutKind.Sequential)] public struct Point { public int X, Y; }
     [DllImport("user32.dll")] public static extern bool SetProcessDPIAware();
     [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr hwnd);
+    [DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow();
+    [DllImport("user32.dll")] public static extern bool SetWindowPos(IntPtr hwnd, IntPtr after, int x, int y, int w, int h, uint flags);
+    [DllImport("user32.dll")] public static extern IntPtr WindowFromPoint(Point point);
+    [DllImport("user32.dll")] public static extern IntPtr GetAncestor(IntPtr hwnd, uint flags);
     [DllImport("user32.dll")] public static extern bool GetClientRect(IntPtr hwnd, out Rect rect);
     [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr hwnd, ref Point point);
     [DllImport("user32.dll")] public static extern int GetSystemMetrics(int index);
@@ -73,6 +77,25 @@ foreach ($mode in $modes) {
         [PreviewDesktop]::ClientToScreen($process.MainWindowHandle, [ref]$point) | Out-Null
         $width = $rect.Right - $rect.Left
         $height = $rect.Bottom - $rect.Top
+        # A refused foreground request must never send test input to another app.
+        # Raise only this test window, then use a verified native click to focus it.
+        if ([PreviewDesktop]::GetForegroundWindow() -ne $process.MainWindowHandle) {
+            [PreviewDesktop]::SetWindowPos($process.MainWindowHandle, [IntPtr](-1), 0, 0, 0, 0, 0x0053) | Out-Null
+            Start-Sleep -Milliseconds 300
+            $focusPoint = New-Object PreviewDesktop+Point
+            $focusPoint.X = $point.X + $width - 10
+            $focusPoint.Y = $point.Y + $height - 10
+            $underPointer = [PreviewDesktop]::GetAncestor([PreviewDesktop]::WindowFromPoint($focusPoint), 2)
+            if ($underPointer -ne $process.MainWindowHandle) { throw 'Test window is occluded; refusing OS input' }
+            [PreviewDesktop]::SetCursorPos($focusPoint.X, $focusPoint.Y) | Out-Null
+            [PreviewDesktop]::mouse_event(0x0002, 0, 0, 0, [UIntPtr]::Zero)
+            [PreviewDesktop]::mouse_event(0x0004, 0, 0, 0, [UIntPtr]::Zero)
+            Start-Sleep -Milliseconds 300
+        }
+        $assertForeground = {
+            if ([PreviewDesktop]::GetForegroundWindow() -ne $process.MainWindowHandle) { throw 'Test window lost foreground; refusing OS input' }
+        }
+        & $assertForeground
         Write-Output "$mode : title=$($process.MainWindowTitle), client=${width}x${height}, pid=$($process.Id)"
         if ($mode -match '^\d+x\d+$' -and "${width}x${height}" -ne $mode) { throw "Wrong client size for $mode" }
         if ($point.X -lt 0 -or $point.Y -lt 0 -or ($point.X + $width) -gt [PreviewDesktop]::GetSystemMetrics(0) -or ($point.Y + $height) -gt [PreviewDesktop]::GetSystemMetrics(1)) {
@@ -104,6 +127,7 @@ foreach ($mode in $modes) {
 
             $sendMouseMove = {
                 param([int]$sx, [int]$sy)
+                & $assertForeground
                 [PreviewDesktop]::SetCursorPos($sx, $sy) | Out-Null
                 $nx = [int]($sx * 65535.0 / [Math]::Max(1, $scrW - 1))
                 $ny = [int]($sy * 65535.0 / [Math]::Max(1, $scrH - 1))
@@ -121,6 +145,7 @@ foreach ($mode in $modes) {
                     } finally { $slotG.Dispose(); $slotBmp.Dispose() }
                 }
                 $slotClick = {
+                    & $assertForeground
                     [PreviewDesktop]::mouse_event(0x0002, 0, 0, 0, [UIntPtr]::Zero)
                     Start-Sleep -Milliseconds 50
                     [PreviewDesktop]::mouse_event(0x0004, 0, 0, 0, [UIntPtr]::Zero)
@@ -239,6 +264,7 @@ foreach ($mode in $modes) {
             }
             if (-not (Select-String -LiteralPath $logPath -Pattern '^UTILITY_PREVIEW_ACTIVATED$' -Quiet)) { throw "End Turn native activation not received: $mode" }
             if (-not (Select-String -LiteralPath $logPath -Pattern '^UTILITY_PREVIEW_FOCUSED$' -Quiet)) { throw "End Turn native focus not received: $mode" }
+            & $assertForeground
             [PreviewDesktop]::keybd_event(0x20, 0, 0, [UIntPtr]::Zero)
             Start-Sleep -Milliseconds 150
             [PreviewDesktop]::keybd_event(0x20, 0, 2, [UIntPtr]::Zero)
@@ -261,6 +287,7 @@ foreach ($mode in $modes) {
             }
         }
         if ($BattlefieldSlots -and @(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count -ne $clicksAfterBoard) { throw 'Slot input leaked through hand or utility controls' }
+        & $assertForeground
         [PreviewDesktop]::keybd_event(0x1B, 0, 0, [UIntPtr]::Zero)
         [PreviewDesktop]::keybd_event(0x1B, 0, 2, [UIntPtr]::Zero)
         if (-not $process.WaitForExit(5000)) { throw "ESC failed to exit: $mode" }

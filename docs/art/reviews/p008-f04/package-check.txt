@@ -1,0 +1,4 @@
+PASS: new text trailing whitespace and Markdown relative links.
+PASS: selected C has no per-case increase in measured material/bronze interference versus A, including stroke.
+PASS: git diff --check exit 0.
+Windows desktop verification remains blocked; not a technical completion claim.

@@ -1,0 +1,121 @@
+﻿Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[
+  {
+    "12_at_14": "(14.0, 15.0)",
+    "12_at_185": "(185.0, 189.0)",
+    "antialiasing": 1,
+    "family": "Palatino Linotype",
+    "hinting": 1,
+    "mipmaps": false,
+    "msdf": false,
+    "oversampling": 0.0,
+    "requested": [
+      "Cinzel",
+      "Trajan Pro",
+      "Palatino Linotype",
+      "Georgia",
+      "Times New Roman"
+    ],
+    "rids": 1,
+    "style": "Bold",
+    "subpixel": 1,
+    "supported_variations": {},
+    "variation_coordinates": {}
+  },
+  {
+    "12_at_14": "(16.0, 20.0)",
+    "12_at_185": "(212.0, 253.0)",
+    "family": "Open Sans SemiBold",
+    "rids": 1,
+    "style": "SemiBold",
+    "supported_variations": {},
+    "variation_coordinates": {}
+  },
+  {
+    "12_at_14": "(17.0, 20.0)",
+    "12_at_185": "(213.0, 247.0)",
+    "antialiasing": 1,
+    "family": "Segoe UI",
+    "hinting": 1,
+    "mipmaps": false,
+    "msdf": false,
+    "oversampling": 0.0,
+    "requested": [
+      "Segoe UI"
+    ],
+    "rids": 1,
+    "style": "Bold",
+    "subpixel": 1,
+    "supported_variations": {},
+    "variation_coordinates": {}
+  },
+  {
+    "12_at_14": "(16.0, 16.0)",
+    "12_at_185": "(206.0, 208.0)",
+    "antialiasing": 1,
+    "family": "Arial",
+    "hinting": 1,
+    "mipmaps": false,
+    "msdf": false,
+    "oversampling": 0.0,
+    "requested": [
+      "Arial"
+    ],
+    "rids": 1,
+    "style": "Bold",
+    "subpixel": 1,
+    "supported_variations": {},
+    "variation_coordinates": {}
+  },
+  {
+    "12_at_14": "(12.0, 15.0)",
+    "12_at_185": "(157.0, 186.0)",
+    "antialiasing": 1,
+    "family": "Bahnschrift",
+    "hinting": 1,
+    "mipmaps": false,
+    "msdf": false,
+    "oversampling": 0.0,
+    "requested": [
+      "Bahnschrift"
+    ],
+    "rids": 1,
+    "style": "Regular",
+    "subpixel": 1,
+    "supported_variations": {
+      "2003072104": "(75, 100, 100)",
+      "2003265652": "(300, 700, 400)"
+    },
+    "variation_coordinates": {
+      "2003072104": 100,
+      "2003265652": 700
+    }
+  },
+  {
+    "12_at_14": "(16.0, 20.0)",
+    "12_at_185": "(212.0, 253.0)",
+    "antialiasing": 1,
+    "family": "Open Sans SemiBold",
+    "hinting": 1,
+    "mipmaps": false,
+    "msdf": false,
+    "oversampling": 0.0,
+    "requested": [
+      "Arial Narrow"
+    ],
+    "rids": 1,
+    "style": "SemiBold",
+    "subpixel": 1,
+    "supported_variations": {},
+    "variation_coordinates": {}
+  }
+]
+SELECTED_FIT 1 (280.0, 1.0, 116.6243)
+SELECTED_FIT 6 (263.0, 1.0, 121.5317)
+SELECTED_FIT 8 (256.0, 1.0, 121.982)
+SELECTED_FIT 10 (202.0, 1.0, 121.0511)
+SELECTED_FIT 12 (207.0, 1.0, 121.7305)
+SELECTED_FIT 14 (199.0, 1.0, 121.3098)
+SELECTED_FIT 99 (185.0, 1.0, 121.1147)
+SELECTED_FIT 100 (142.0, 1.0, 120.8567)

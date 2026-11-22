@@ -1,0 +1,13 @@
+﻿powershell.exe : Baseline has no foreground; refusing OS input
+Au caractère Ligne:2 : 218
++ ... e-720p.png; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Baseline has no...fusing OS input:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Au caractère D:\Dev\MagicOdyssey\docs\art\reviews\p008-f04\capture_before.ps1:66 : 78
++ ... ndowHandle) { throw 'Baseline has no foreground; refusing OS input' }
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Baseline has no...fusing OS input:String) [], RuntimeException
+    + FullyQualifiedErrorId : Baseline has no foreground; refusing OS input
+ 
