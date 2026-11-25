@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1086" height="1448" viewBox="0 0 1086 1448">
+  <!-- Spell v01 source pixels. White covers only crystal interiors; black protects
+       bronze bezels, category ribbon, rules panel, aperture and native alpha. -->
+  <rect width="1086" height="1448" fill="black"/>
+  <g fill="white">
+    <path id="crown" d="M543 25 L564 48 L543 82 L524 48 Z"/>
+    <path id="bridge" d="M543 834 L566 861 L543 895 L520 861 Z"/>
+    <path id="footer" d="M543 1340 L567 1372 L543 1407 L520 1372 Z"/>
+  </g>
+</svg>

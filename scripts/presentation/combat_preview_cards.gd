@@ -27,6 +27,64 @@ const ART: Texture2D = preload("res://assets/_source/lot1/cards/illustrations/mo
 const CARD_BACK: Texture2D = preload("res://assets/_source/lot1/hud/opponent/mo_hud_opponent_card_back_v01.png")
 const CARD_BACK_SHADER: Shader = preload("res://resources/shaders/card_back_opacity.gdshader")
 
+const CARD_VIEW: GDScript = preload("res://scripts/presentation/card_view.gd")
+const MODEL: GDScript = preload("res://scripts/presentation/card_presentation_model.gd")
+const VARIANT: GDScript = preload("res://scripts/presentation/card_visual_variant.gd")
+
+var preview_scenario: String = "mixed"
+var custom_models: Array = []
+
+func set_preview_scenario(scenario: String) -> void:
+	preview_scenario = scenario
+	custom_models.clear()
+	rebuild()
+
+func set_custom_cards(models: Array) -> void:
+	custom_models = models.duplicate()
+	rebuild()
+
+func _get_scenario_models() -> Array:
+	match preview_scenario:
+		"spells", "spell", "spells_only":
+			return [
+				MODEL.create_spell("Fireball", 3, &"rare", "Deal 4 damage to target enemy creature.", ART, "spell_fireball"),
+				MODEL.create_spell("Mending Light", 2, &"common", "Restore 3 Health to target allied creature.", ART, "spell_heal"),
+				MODEL.create_spell("Arcane Barrier", 2, &"uncommon", "Grant 3 Shield to target allied creature.", ART, "spell_barrier"),
+				MODEL.create_spell("Martial Blessing", 2, &"common", "Target allied creature gains +2 Attack until end of turn.", ART, "spell_blessing"),
+				MODEL.create_spell("Freezing Ray", 0, &"common", "Freeze target enemy creature until end of turn.", ART, "spell_freezing_ray"),
+				MODEL.create_spell("Pyroclasm", 10, &"legendary", "Deal 10 damage to all enemy units.", ART, "spell_pyroclasm"),
+				MODEL.create_spell("Fireball", 3, &"rare", "Deal 4 damage to target enemy creature.", ART, "spell_fireball_dup")
+			]
+		"creatures", "creature", "creatures_only":
+			return [
+				MODEL.create_creature("Arcane Knight", 1, &"common", 2, 3, "Human", "Whenever this creature attacks, gain 1 Shield.", 0, 0, ART),
+				MODEL.create_creature("Rampart Guard", 2, &"uncommon", 3, 4, "Dwarf", "Armor 1. Protects the frontline.", 1, 0, ART),
+				MODEL.create_creature("Astral Weaver", 4, &"epic", 3, 4, "Elf", "Battlecry: Return an allied creature to your hand.", 0, 0, ART),
+				MODEL.create_creature("Celestial Warden", 6, &"legendary", 5, 6, "Archon", "Whenever an enemy attacks your hero, retaliate for 2 damage.", 0, 0, ART),
+				MODEL.create_creature("Iron Guardian", 6, &"legendary", 6, 8, "Golem", "Taunt. Dual protection master.", 3, 2, ART),
+				MODEL.create_creature("Scout", 1, &"common", 1, 1, "Elf", "Quick step.", 0, 0, ART),
+				MODEL.create_creature("Archon of the Sphere", 8, &"legendary", 7, 8, "Celestial", "Battlecry: Banish all enemy tokens until end of turn.", 0, 0, ART)
+			]
+		"stress":
+			return [
+				MODEL.create_spell("Archon of the Sundered Sphere", 10, &"legendary", "Banish all enemy creature tokens from the battlefield, restore 10 Health to your hero, and draw 3 cards.", ART),
+				MODEL.create_spell("Greater Cataclysmic Flame Inscription", 8, &"epic", "Deal 8 damage to all enemy creatures. Excess damage is dealt to the enemy hero.", ART),
+				MODEL.create_creature("Grand Inquisitor of the Sunken Citadel", 7, &"rare", 6, 7, "Human", "Battlecry: Destroy all enemy enchantments and gain 2 Shield for each destroyed item.", 1, 2, ART)
+			]
+		_: # "mixed" (default)
+			return [
+				MODEL.create_creature("Arcane Knight", 1, &"common", 2, 3, "Human", "Whenever this creature attacks, gain 1 Shield.", 0, 0, ART),
+				MODEL.create_spell("Fireball", 3, &"rare", "Deal 4 damage to target enemy creature.", ART, "spell_fireball"),
+				MODEL.create_equipment("Runic Relic", 3, &"uncommon", "Equipped creature gains +2 Armor and Taunt.", ART),
+				MODEL.create_creature("Astral Weaver", 4, &"epic", 3, 4, "Elf", "Battlecry: Return an allied creature to your hand.", 0, 0, ART),
+				MODEL.create_spell("Mending Light", 2, &"common", "Restore 3 Health to target allied creature.", ART, "spell_heal"),
+				MODEL.create_equipment("Voidbound Talisman", 2, &"rare", "At the start of your turn, add 1 Mana Crystal.", ART),
+				MODEL.create_creature("Celestial Warden", 6, &"legendary", 5, 6, "Archon", "Whenever an enemy attacks your hero, retaliate for 2 damage.", 0, 0, ART),
+				MODEL.create_spell("Arcane Barrier", 2, &"uncommon", "Grant 3 Shield to target allied creature.", ART, "spell_barrier"),
+				MODEL.create_equipment("Obsidian Blade", 4, &"epic", "Equipped creature gains +3 Attack and Piercing.", ART),
+				MODEL.create_spell("Martial Blessing", 2, &"common", "Target allied creature gains +2 Attack until end of turn.", ART, "spell_blessing")
+			]
+
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_PASS if not face_down else Control.MOUSE_FILTER_IGNORE
 	rebuild()
@@ -164,7 +222,7 @@ func rebuild() -> void:
 	_hover_state = HoverState.IDLE
 
 	for index: int in range(count):
-		var card: Control = Control.new()
+		var card: Control = Control.new() if face_down else CARD_VIEW.new()
 		card.name = "Card%02d" % index
 		card.size = Vector2(1086, 1448)
 		var height: float = 144.0 if face_down else preferred_height
@@ -192,61 +250,9 @@ func rebuild() -> void:
 			back.material = opacity
 			card.z_index = index
 		else:
-			var aperture: Control = Control.new()
-			aperture.position = CardViewLayout.APERTURE_BOUNDS.position
-			aperture.size = CardViewLayout.APERTURE_BOUNDS.size
-			aperture.clip_contents = true
-			card.add_child(aperture)
-			var crop: AtlasTexture = AtlasTexture.new()
-			crop.atlas = ART
-			crop.region = CardViewLayout.PORTRAIT_CROP_REGION
-			_texture(aperture, crop, aperture.size)
-			var frame: TextureRect = _texture(card, FRAME, card.size)
-			var rarities: Array[StringName] = [&"common", &"uncommon", &"rare", &"epic", &"legendary"]
-			frame.material = RarityGemTreatment.create_material(rarities[index % rarities.size()])
-			var content: CardContentOverlay = CardContentOverlay.new()
-			card.add_child(content)
-			var category: CardContentOverlay.Category = (index % 3) as CardContentOverlay.Category
-			var titles: Array[String] = [
-				"Arcane Knight", "Arcane Study", "Runic Relic",
-				"Astral Weaver", "Pyretic Inscription", "Voidbound Talisman",
-				"Celestial Warden", "Gilded Divination", "Obsidian Blade",
-				"Archon of the Sundered Sphere"
-			]
-			var bodies: Array[String] = [
-				"Whenever this creature attacks, gain 1 Shield.",
-				"Draw 2 cards. If you control an Arcane creature, reduce their cost by 1.",
-				"Equipped creature gains +2 Armor and Taunt.",
-				"Battlecry: Return an allied creature to your hand.",
-				"Deal 3 damage to all enemy frontline positions.",
-				"At the start of your turn, add 1 Mana Crystal.",
-				"Whenever an enemy attacks your hero, retaliate for 2 damage.",
-				"Discover an ancient spell from your library.",
-				"Equipped creature gains +3 Attack and Piercing.",
-				"Legendary creature. Battlecry: Banish all enemy tokens until end of turn."
-			]
-			var subtypes: Array[String] = [
-				"Human", "", "", "Elf", "", "", "Archon", "", "", "Celestial"
-			]
-			var costs: Array[int] = [1, 2, 3, 4, 5, 2, 6, 3, 4, 8]
-			var attacks: Array[int] = [2, 0, 0, 3, 0, 0, 5, 0, 0, 7]
-			var healths: Array[int] = [3, 0, 0, 4, 0, 0, 6, 0, 0, 8]
-
-			var card_title: String = titles[index % titles.size()]
-			var card_body: String = bodies[index % bodies.size()]
-			var card_subtype: String = subtypes[index % subtypes.size()]
-			var card_cost: int = costs[index % costs.size()]
-
-			content.configure(CardContentOverlay.Content.new(card_title, category, card_subtype, card_body))
-			if category == CardContentOverlay.Category.CREATURE:
-				var stats: CardStatOverlay = CardStatOverlay.new()
-				card.add_child(stats)
-				stats.set_printed_values(card_cost, attacks[index % attacks.size()], healths[index % healths.size()], 0)
-			else:
-				var seal: CardCategoryOverlay = CardCategoryOverlay.new()
-				seal.category = category
-				seal.set("_mana", card_cost)
-				card.add_child(seal)
+			var models: Array = custom_models if not custom_models.is_empty() else _get_scenario_models()
+			var model: RefCounted = models[index % models.size()] as RefCounted
+			card.call(&"apply_model", model)
 
 ## Deterministic compressed circular arc; position is the visual center.
 ## Horizontal overlap preserves scale. Vertical compression reserves the tactical area.

@@ -1,0 +1,36 @@
+﻿Mode: default
+
+Physical desktop: 1920x1080
+default : title=MagicOdyssey, client=1888x956, pid=46164
+default : player attack slot 3 OS hover and selection PASS
+default : native Mending Light inspection and slot hover isolation PASS
+default : actual hand hover and raised inspection click isolation PASS
+default : native End Turn hover/press/release, focus and mouse/Space activation PASS (preview only)
+default : ESC exit=0
+PASS: shell launch, 1 desktop windows, ESC exits with code 0, no remaining game process.
+
+Godot event log:
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 551.86 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 Ti
+
+CARDS_REVIEW_READY mixed
+SLOT_REVIEW_HAND -1
+COMBAT_PREVIEW_READY
+SLOT_REVIEW_HAND 7
+SLOT_REVIEW_HAND -1
+SLOT_ENTER 0 3 0
+SLOT_CLICK 0 3 0 SELECTED 0 3 0
+SLOT_LEAVE 0 3 0
+SLOT_REVIEW_HAND 0
+SLOT_REVIEW_HAND 4
+SLOT_REVIEW_HAND 9
+SLOT_REVIEW_HAND 0
+SLOT_REVIEW_HAND 2
+SLOT_REVIEW_HAND 4
+SLOT_REVIEW_HAND 6
+SLOT_REVIEW_HAND 8
+SLOT_REVIEW_HAND 9
+SLOT_REVIEW_HAND -1
+UTILITY_PREVIEW_FOCUSED
+UTILITY_PREVIEW_ACTIVATED
+UTILITY_PREVIEW_ACTIVATED

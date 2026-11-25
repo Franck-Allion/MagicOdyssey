@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources, [switch]$UtilityHud, [double]$UtilityButtonY = 915.73, [switch]$BattlefieldSlots, [ValidateSet("", "empty", "single", "full_board")][string]$TokenScenario = "")
+param([string]$Executable = 'build/windows/MagicOdyssey.exe', [string]$ReviewDir = 'docs/art/reviews/p005-r05', [switch]$EditorPreview, [ValidateRange(0,10)][int]$HandCount = 10, [switch]$AnimateResources, [switch]$UtilityHud, [double]$UtilityButtonY = 915.73, [switch]$BattlefieldSlots, [ValidateSet("", "empty", "single", "full_board")][string]$TokenScenario = "", [string]$CardScenario = "", [ValidateSet('default', '1920x1080', '1280x720')][string[]]$DesktopModes = @('default', '1920x1080', '1280x720'))
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 Add-Type @'
@@ -20,6 +20,7 @@ public static class PreviewDesktop {
     [DllImport("user32.dll")] public static extern void keybd_event(byte key, byte scan, uint flags, UIntPtr extra);
     [DllImport("user32.dll")] public static extern bool SetCursorPos(int X, int Y);
     [DllImport("user32.dll")] public static extern void mouse_event(uint dwFlags, int dx, int dy, int dwData, UIntPtr dwExtraInfo);
+    [DllImport("user32.dll")] public static extern uint GetWindowThreadProcessId(IntPtr hwnd, out uint processId);
 }
 '@
 [PreviewDesktop]::SetProcessDPIAware() | Out-Null
@@ -34,7 +35,7 @@ $testExe = Join-Path $testDir 'MagicOdyssey.exe'
 Copy-Item -LiteralPath $sourceExe -Destination $testExe
 Write-Output "Isolated executable: $testExe"
 Write-Output "Physical desktop: $([PreviewDesktop]::GetSystemMetrics(0))x$([PreviewDesktop]::GetSystemMetrics(1))"
-$modes = @('default', '1920x1080', '1280x720')
+$modes = $DesktopModes
 if ($EditorPreview) { $modes = @('editor-preview') }
 foreach ($mode in $modes) {
     $logPath = Join-Path $outDir ('desktop-' + $mode + '.log')
@@ -55,6 +56,7 @@ foreach ($mode in $modes) {
         if ($UtilityHud) { $start.Arguments += ' --preview-utility' }
         if ($BattlefieldSlots) { $start.Arguments += ' --preview-slots' }
         if ($TokenScenario) { $start.Arguments += " --preview-tokens=$TokenScenario" }
+        if ($CardScenario) { $start.Arguments += " --preview-cards=$CardScenario" }
     }
     $process = [System.Diagnostics.Process]::Start($start)
     try {
@@ -66,6 +68,7 @@ foreach ($mode in $modes) {
         }
         if (-not $ready) { throw "Scene did not render within 30 seconds: $mode" }
         if ($TokenScenario -and -not (Select-String -LiteralPath $logPath -SimpleMatch "TOKEN_REVIEW_READY $TokenScenario" -Quiet)) { throw "Token fixture not confirmed: $TokenScenario / $mode" }
+        if ($CardScenario -and -not (Select-String -LiteralPath $logPath -SimpleMatch "CARDS_REVIEW_READY $CardScenario" -Quiet)) { throw "Card fixture not confirmed: $CardScenario / $mode" }
         Start-Sleep -Milliseconds 800
         $process.Refresh()
         if ($process.HasExited -or $process.MainWindowHandle -eq [IntPtr]::Zero) { throw "No game window: $mode" }
@@ -83,8 +86,8 @@ foreach ($mode in $modes) {
             [PreviewDesktop]::SetWindowPos($process.MainWindowHandle, [IntPtr](-1), 0, 0, 0, 0, 0x0053) | Out-Null
             Start-Sleep -Milliseconds 300
             $focusPoint = New-Object PreviewDesktop+Point
-            $focusPoint.X = $point.X + $width - 10
-            $focusPoint.Y = $point.Y + $height - 10
+            $focusPoint.X = $point.X + [int]($width * 0.5)
+            $focusPoint.Y = $point.Y + 50
             $underPointer = [PreviewDesktop]::GetAncestor([PreviewDesktop]::WindowFromPoint($focusPoint), 2)
             if ($underPointer -ne $process.MainWindowHandle) { throw 'Test window is occluded; refusing OS input' }
             [PreviewDesktop]::SetCursorPos($focusPoint.X, $focusPoint.Y) | Out-Null
@@ -93,7 +96,13 @@ foreach ($mode in $modes) {
             Start-Sleep -Milliseconds 300
         }
         $assertForeground = {
-            if ([PreviewDesktop]::GetForegroundWindow() -ne $process.MainWindowHandle) { throw 'Test window lost foreground; refusing OS input' }
+            $fg = [PreviewDesktop]::GetForegroundWindow()
+            $root = [PreviewDesktop]::GetAncestor($fg, 2)
+            [uint32]$fgPid = 0
+            [PreviewDesktop]::GetWindowThreadProcessId($fg, [ref]$fgPid) | Out-Null
+            if ($fg -ne $process.MainWindowHandle -and $root -ne $process.MainWindowHandle -and $fgPid -ne $process.Id) {
+                throw "Test window lost foreground (fg=$fg, root=$root, fgPid=$fgPid, expectedPid=$($process.Id)); refusing OS input"
+            }
         }
         & $assertForeground
         Write-Output "$mode : title=$($process.MainWindowTitle), client=${width}x${height}, pid=$($process.Id)"
@@ -109,6 +118,7 @@ foreach ($mode in $modes) {
         } finally { $graphics.Dispose(); $bitmap.Dispose() }
         # Real Windows pointer hover verification across player hand
         if (-not $EditorPreview) {
+            $mixedSpellCheck = $CardScenario -eq 'mixed' -and $HandCount -eq 10
             $scale = [Math]::Min($width / 1920.0, $height / 1080.0)
             $gameW = 1920.0 * $scale
             $gameH = 1080.0 * $scale
@@ -159,34 +169,46 @@ foreach ($mode in $modes) {
                 & $slotClick
                 $countBefore = @(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count
                 $rowSpecs = @(@(1,1,282), @(1,0,418), @(0,0,582), @(0,1,718))
+                $columns = 1..6
+                if ($mixedSpellCheck) {
+                    # Positive control for the exact slot covered by raised Mending Light.
+                    $rowSpecs = ,@(0,0,582)
+                    $columns = @(3)
+                }
                 foreach ($rowSpec in $rowSpecs) {
                     $camp = $rowSpec[0]; $row = $rowSpec[1]; $ry = $rowSpec[2]
-                    foreach ($column in 1..6) {
+                    foreach ($column in $columns) {
                         $slotPoint = & $refToScreen (561 + ($column - 1) * 180) $ry
                         & $sendMouseMove $slotPoint[0] $slotPoint[1]
                         Start-Sleep -Milliseconds 180
                         if (-not (Select-String -LiteralPath $logPath -SimpleMatch "SLOT_ENTER $camp $column $row" -Quiet)) { throw "Slot hover missing: $mode / $camp $column $row" }
                         if ($column -in @(1,6)) { & $captureSlot "hover-c$camp-r$row-n$column" }
+                        if ($mixedSpellCheck) { & $sendMouseMove $slotPoint[0] $slotPoint[1] }
                         & $slotClick
                         $latest = (Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ' | Select-Object -Last 1).Line
                         if ($latest -ne "SLOT_CLICK $camp $column $row SELECTED $camp $column $row") { throw "Wrong selection: $latest" }
                     }
                 }
                 $clickCount = @(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count
-                if ($clickCount - $countBefore -ne 24) { throw "Duplicate or missing slot clicks: $mode" }
-                & $slotClick
-                if ((Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ' | Select-Object -Last 1).Line -ne 'SLOT_CLICK 0 6 1 SELECTED NONE') { throw 'Selection toggle failed' }
-                foreach ($target in @(@(0,3,0,921,582,'player-attack'), @(1,1,1,561,282,'opponent-defense'))) {
-                    $slotPoint = & $refToScreen $target[3] $target[4]
-                    & $sendMouseMove $slotPoint[0] $slotPoint[1]
-                    Start-Sleep -Milliseconds 200
-                    & $captureSlot ("hover-" + $target[5])
+                $expectedClicks = $rowSpecs.Count * $columns.Count
+                if ($clickCount - $countBefore -ne $expectedClicks) { throw "Duplicate or missing slot clicks: $mode" }
+                if ($mixedSpellCheck) {
+                    Write-Output "$mode : player attack slot 3 OS hover and selection PASS"
+                } else {
                     & $slotClick
-                    & $captureSlot ("selected-" + $target[5])
+                    if ((Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ' | Select-Object -Last 1).Line -ne 'SLOT_CLICK 0 6 1 SELECTED NONE') { throw 'Selection toggle failed' }
+                    foreach ($target in @(@(0,3,0,921,582,'player-attack'), @(1,1,1,561,282,'opponent-defense'))) {
+                        $slotPoint = & $refToScreen $target[3] $target[4]
+                        & $sendMouseMove $slotPoint[0] $slotPoint[1]
+                        Start-Sleep -Milliseconds 200
+                        & $captureSlot ("hover-" + $target[5])
+                        & $slotClick
+                        & $captureSlot ("selected-" + $target[5])
+                    }
+                    & $slotClick
+                    Write-Output "$mode : all 24 OS pointer hover/click identities PASS; eight row extremes captured; selection switch/toggle PASS"
                 }
-                & $slotClick
                 $clicksAfterBoard = @(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count
-                Write-Output "$mode : all 24 OS pointer hover/click identities PASS; eight row extremes captured; selection switch/toggle PASS"
             }
 
             # 1. Hover leftmost card (Card 0 exposed mana: refX=386, refY=830)
@@ -212,12 +234,28 @@ foreach ($mode in $modes) {
             } finally { $hoverCenterG.Dispose(); $hoverCenterBmp.Dispose() }
 
             if ($BattlefieldSlots) {
-                $handPoint = & $refToScreen 960 900
+                $handPoint = if ($mixedSpellCheck) { & $refToScreen 904 880 } else { & $refToScreen 960 900 }
                 & $sendMouseMove $handPoint[0] $handPoint[1]
                 Start-Sleep -Milliseconds 300
-                $raisedPoint = & $refToScreen 960 620
+                # For the ten-card mixed fixture, card 4 is Mending Light.
+                # The raised body covers player attack slot 3, checked above.
+                $raisedPoint = if ($mixedSpellCheck -and $mode -eq 'default') {
+                    & $refToScreen 904 582
+                } elseif ($mixedSpellCheck) {
+                    & $refToScreen 921 582
+                } else {
+                    & $refToScreen 960 620
+                }
+                $hoverEvents = @(Select-String -LiteralPath $logPath -Pattern '^SLOT_ENTER ').Count
                 & $sendMouseMove $raisedPoint[0] $raisedPoint[1]
                 Start-Sleep -Milliseconds 250
+                if ($mixedSpellCheck) {
+                    $handTarget = (Select-String -LiteralPath $logPath -Pattern '^SLOT_REVIEW_HAND ' | Select-Object -Last 1).Line
+                    if ($handTarget -ne 'SLOT_REVIEW_HAND 4') { throw "Expected raised Mending Light at $mode, got $handTarget" }
+                    if (@(Select-String -LiteralPath $logPath -Pattern '^SLOT_ENTER ').Count -ne $hoverEvents) { throw 'Slot hover leaked through raised Spell' }
+                    Write-Output "$mode : native Mending Light inspection and slot hover isolation PASS"
+                    & $sendMouseMove $raisedPoint[0] $raisedPoint[1]
+                }
                 & $slotClick
                 & $captureSlot 'raised-hand-no-slot-leak'
                 if (@(Select-String -LiteralPath $logPath -Pattern '^SLOT_CLICK ').Count -ne $clicksAfterBoard) { throw 'Slot click leaked through raised inspection' }

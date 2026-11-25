@@ -29,3 +29,12 @@ const TITLE_BOUNDS: Rect2 = Rect2(292, 90, 610, 94)
 const TYPE_BOUNDS: Rect2 = Rect2(180, 916, 726, 66)
 const TYPE_SIZE: int = 48
 const RULES_BOUNDS: Rect2 = Rect2(260, 990, 566, 210)
+
+## Dedicated Spell text layout bounds (P009-R01B: enlarged quiet panel, +62.7% area)
+const SPELL_RULES_BOUNDS: Rect2 = Rect2(140, 990, 806, 240)
+
+## The bridge bezel projects into the top of the Spell nameplate. Reserve
+## room below the shoulders and use tracking to clear its tip between p and e.
+const SPELL_TYPE_BOUNDS: Rect2 = Rect2(180, 908, 726, 38)
+const SPELL_TYPE_SIZE: int = 36
+const SPELL_TYPE_GLYPH_SPACING: int = 5

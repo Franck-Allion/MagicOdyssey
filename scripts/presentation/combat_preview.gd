@@ -53,6 +53,10 @@ func _configure_review() -> void:
 		if argument.begins_with("--preview-hand="):
 			fan.display_count = clampi(argument.trim_prefix("--preview-hand=").to_int(), 0, 10)
 			fan.rebuild()
+		if argument.begins_with("--preview-cards="):
+			var scenario: String = argument.trim_prefix("--preview-cards=")
+			fan.set_preview_scenario(scenario)
+			print("CARDS_REVIEW_READY %s" % scenario)
 		if argument == "--preview-animate":
 			var timer: Timer = Timer.new()
 			timer.wait_time = 1.5

@@ -48,16 +48,30 @@ var title_label: Label
 var type_label: Label
 var rules_label: RichTextLabel
 
+var active_title_bounds: Rect2 = TITLE_BOUNDS
+var active_type_bounds: Rect2 = TYPE_BOUNDS
+var active_rules_bounds: Rect2 = RULES_BOUNDS
+var active_type_size: int = TYPE_SIZE
+
 func _init() -> void:
 	theme = TOKENS.THEME
 	size = Vector2(1086, 1448)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
+func set_rules_bounds(p_bounds: Rect2) -> void:
+	active_rules_bounds = p_bounds
+
+func set_layout(p_rules_bounds: Rect2, p_title_bounds: Rect2 = TITLE_BOUNDS, p_type_bounds: Rect2 = TYPE_BOUNDS, p_type_size: int = TYPE_SIZE) -> void:
+	active_rules_bounds = p_rules_bounds
+	active_title_bounds = p_title_bounds
+	active_type_bounds = p_type_bounds
+	active_type_size = p_type_size
+
 func _title(value: String, points: int) -> Label:
 	var label: Label = Label.new()
 	label.text = value
-	label.position = TITLE_BOUNDS.position
-	label.size = TITLE_BOUNDS.size
+	label.position = active_title_bounds.position
+	label.size = active_title_bounds.size
 	label.theme = TOKENS.THEME
 	label.theme_type_variation = &"CardTitle"
 	label.add_theme_font_size_override("font_size", points)
@@ -72,8 +86,8 @@ func _title(value: String, points: int) -> Label:
 func _rules(data: Content, points: int) -> RichTextLabel:
 	var label: RichTextLabel = RichTextLabel.new()
 	label.theme = TOKENS.THEME
-	label.position = RULES_BOUNDS.position
-	label.size = RULES_BOUNDS.size
+	label.position = active_rules_bounds.position
+	label.size = active_rules_bounds.size
 	label.scroll_active = false
 	label.threaded = false
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -96,7 +110,13 @@ func _rules(data: Content, points: int) -> RichTextLabel:
 	label.pop()
 	return label
 
-func configure(data: Content) -> Error:
+func configure(data: Content, custom_rules_bounds: Rect2 = Rect2(), custom_type_bounds: Rect2 = Rect2(), custom_type_size: int = 0, type_glyph_spacing: int = 0) -> Error:
+	if custom_rules_bounds.size != Vector2.ZERO:
+		active_rules_bounds = custom_rules_bounds
+	if custom_type_bounds.size != Vector2.ZERO:
+		active_type_bounds = custom_type_bounds
+	if custom_type_size > 0:
+		active_type_size = custom_type_size
 	title_overflow = false
 	rules_overflow = false
 	overflow_reason = ""
@@ -111,14 +131,14 @@ func configure(data: Content) -> Error:
 		cursor = span.start+span.length
 	var display_font: Font = TOKENS.THEME.get_font(&"font", &"CardTitle")
 	var type_text: String = category_name(data.category) + (" · " + data.tribe if data.category == Category.CREATURE and not data.tribe.is_empty() else "")
-	if display_font.get_string_size(type_text, HORIZONTAL_ALIGNMENT_LEFT, -1, TYPE_SIZE).x > TYPE_BOUNDS.size.x:
+	if display_font.get_string_size(type_text, HORIZONTAL_ALIGNMENT_LEFT, -1, active_type_size).x > active_type_bounds.size.x:
 		overflow_reason = "Type/tribe line exceeds its supported width."
 		return ERR_PARAMETER_RANGE_ERROR
 	var preferred_width: float = display_font.get_string_size(data.title, HORIZONTAL_ALIGNMENT_LEFT, -1, TITLE_PREFERRED).x
-	var title_points: int = clampi(int(TITLE_PREFERRED * TITLE_BOUNDS.size.x / maxf(preferred_width, 1.0)), TITLE_MINIMUM, TITLE_PREFERRED)
-	while title_points > TITLE_MINIMUM and display_font.get_string_size(data.title, HORIZONTAL_ALIGNMENT_LEFT, -1, title_points).x > TITLE_BOUNDS.size.x:
+	var title_points: int = clampi(int(TITLE_PREFERRED * active_title_bounds.size.x / maxf(preferred_width, 1.0)), TITLE_MINIMUM, TITLE_PREFERRED)
+	while title_points > TITLE_MINIMUM and display_font.get_string_size(data.title, HORIZONTAL_ALIGNMENT_LEFT, -1, title_points).x > active_title_bounds.size.x:
 		title_points -= 1
-	var single_fits: bool = display_font.get_string_size(data.title, HORIZONTAL_ALIGNMENT_LEFT, -1, title_points).x <= TITLE_BOUNDS.size.x
+	var single_fits: bool = display_font.get_string_size(data.title, HORIZONTAL_ALIGNMENT_LEFT, -1, title_points).x <= active_title_bounds.size.x
 
 	# Controlled wrapping (P005-R09B): if title is long and multi-word, evaluate 2-line wrap
 	# to preserve comfortable physical legibility (aiming for >= 12 physical px at 720p).
@@ -126,11 +146,11 @@ func configure(data: Content) -> Error:
 		var test_points: int = 48
 		while test_points > title_points:
 			var p: TextParagraph = TextParagraph.new()
-			p.width = TITLE_BOUNDS.size.x
+			p.width = active_title_bounds.size.x
 			p.alignment = HORIZONTAL_ALIGNMENT_CENTER
 			p.line_spacing = -6.0
 			p.add_string(data.title, display_font, test_points)
-			if p.get_line_count() <= 2 and p.get_size().y <= TITLE_BOUNDS.size.y:
+			if p.get_line_count() <= 2 and p.get_size().y <= active_title_bounds.size.y:
 				title_points = test_points
 				single_fits = true
 				break
@@ -143,7 +163,7 @@ func configure(data: Content) -> Error:
 		candidate_rules = _rules(data, rule_points)
 		# Native synchronous shaping; attach before querying content dimensions.
 		add_child(candidate_rules)
-		var fits: bool = candidate_rules.get_content_height() <= RULES_BOUNDS.size.y and candidate_rules.get_content_width() <= RULES_BOUNDS.size.x
+		var fits: bool = candidate_rules.get_content_height() <= active_rules_bounds.size.y and candidate_rules.get_content_width() <= active_rules_bounds.size.x
 		if fits or rule_points == RULES_MINIMUM:
 			rules_overflow = not fits
 			break
@@ -161,15 +181,20 @@ func configure(data: Content) -> Error:
 		rules_label.free()
 	title_label = _title(data.title, title_points)
 	add_child(title_label)
-	type_label = _title(type_text, TYPE_SIZE)
-	type_label.position = TYPE_BOUNDS.position
-	type_label.size = TYPE_BOUNDS.size
+	type_label = _title(type_text, active_type_size)
+	type_label.position = active_type_bounds.position
+	type_label.size = active_type_bounds.size
 	type_label.add_theme_color_override("font_color", TOKENS.color_token(&"accent"))
+	if type_glyph_spacing != 0:
+		var category_font: FontVariation = FontVariation.new()
+		category_font.base_font = TOKENS.THEME.get_font(&"font", &"CardTitle")
+		category_font.spacing_glyph = type_glyph_spacing
+		type_label.add_theme_font_override(&"font", category_font)
 	add_child(type_label)
 	rules_label = candidate_rules
 	# Center the native wrapped block in the available panel without stretching lines.
 	var height: float = float(rules_label.get_content_height())
-	rules_label.position.y += floorf((RULES_BOUNDS.size.y-height)*0.5)
+	rules_label.position.y += floorf((active_rules_bounds.size.y-height)*0.5)
 	rules_label.size.y = maxf(1.0, height)
 	title_font_size = title_points
 	rules_font_size = rule_points

@@ -1,0 +1,55 @@
+{
+  "task": "P009-R01B",
+  "description": "Spell Card Frame Alpha Validation and Controlled Normalization",
+  "source_path": "assets\\_source\\lot1\\cards\\frames\\mo_card_frame_spell_v01.png",
+  "source_sha256": "bbabb17307b2c275ee981d6e0e9a5d54ebefc21c44613f5bfe4f432a4afdfb04",
+  "runtime_path": "assets\\textures\\cards\\mo_card_frame_spell_v01.png",
+  "runtime_sha256": "555e0df72b06ccbb7285d2c7e42cdabe8b7e8c858ce44188a116e2349a12fb34",
+  "dimensions": [
+    1086,
+    1448
+  ],
+  "format": "PNG RGBA",
+  "normalization_rules": [
+    "alpha <= 1 -> 0 (clean alpha-1 contamination from empty regions)",
+    "alpha >= 252 -> 255 (normalize solid bronze, enamel, title, mana, category, effect, rarity)",
+    "alpha in [2, 251] -> unchanged (preserve legitimate antialiased edge transitions)",
+    "RGB channels -> unchanged (0 modified RGB values)"
+  ],
+  "checks": {
+    "source_hash_verified": true,
+    "dimensions_1086x1448": true,
+    "rgba_mode": true,
+    "rgb_channels_bit_exact": true,
+    "alpha_2_through_251_unchanged": true,
+    "zero_alpha1_remaining": true,
+    "solid_interiors_255": true,
+    "exterior_corners_transparent": true,
+    "aperture_center_transparent": true,
+    "no_creature_sockets": true
+  },
+  "before_histogram": {
+    "alpha_0": 662826,
+    "alpha_1": 12643,
+    "alpha_2_to_251": 56436,
+    "alpha_252_to_254": 839153,
+    "alpha_255": 1470
+  },
+  "after_histogram": {
+    "alpha_0": 675469,
+    "alpha_1": 0,
+    "alpha_2_to_251": 56436,
+    "alpha_252_to_254": 0,
+    "alpha_255": 840623
+  },
+  "modified_alpha_pixels": 851796,
+  "alpha1_cleaned_to_0": 12643,
+  "alpha252_to_254_normalized_to_255": 839153,
+  "antialiased_edge_pixels_preserved": 56436,
+  "modified_rgb_values": 0,
+  "composite_max_channel_diffs": {
+    "dark": 3,
+    "light": 3,
+    "illustrated": 3
+  }
+}

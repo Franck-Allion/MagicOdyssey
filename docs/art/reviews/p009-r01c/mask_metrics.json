@@ -1,0 +1,703 @@
+{
+  "units": "source pixels unless marked physical. xyxy bounds have exclusive right and bottom.",
+  "frame_png_sha256": {
+    "assets/_source/lot1/cards/frames/mo_card_frame_spell_v01.png": "bbabb17307b2c275ee981d6e0e9a5d54ebefc21c44613f5bfe4f432a4afdfb04",
+    "assets/textures/cards/mo_card_frame_spell_v01.png": "555e0df72b06ccbb7285d2c7e42cdabe8b7e8c858ce44188a116e2349a12fb34"
+  },
+  "source_size": [
+    1086,
+    1448
+  ],
+  "mask_traced_crystal_contours": {
+    "crown": [
+      [
+        543,
+        24
+      ],
+      [
+        565,
+        48
+      ],
+      [
+        543,
+        83
+      ],
+      [
+        523,
+        48
+      ]
+    ],
+    "bridge": [
+      [
+        543,
+        833
+      ],
+      [
+        567,
+        861
+      ],
+      [
+        543,
+        896
+      ],
+      [
+        519,
+        861
+      ]
+    ],
+    "footer": [
+      [
+        543,
+        1339
+      ],
+      [
+        568,
+        1372
+      ],
+      [
+        543,
+        1408
+      ],
+      [
+        519,
+        1372
+      ]
+    ]
+  },
+  "before_mask": {
+    "crystals": {
+      "crown": {
+        "crystal_xyxy": [
+          523,
+          24,
+          565,
+          83
+        ],
+        "crystal_center": [
+          544.0,
+          53.5
+        ],
+        "crystal_area": 1268,
+        "mask_xyxy": [
+          525,
+          24,
+          564,
+          83
+        ],
+        "mask_center": [
+          544.5,
+          53.5
+        ],
+        "covered_area": 1145.28,
+        "weighted_coverage_percent": 90.32,
+        "coverage_outside_crystal_in_local_window": 6.41
+      },
+      "bridge": {
+        "crystal_xyxy": [
+          519,
+          833,
+          567,
+          896
+        ],
+        "crystal_center": [
+          543.0,
+          864.5
+        ],
+        "crystal_area": 1546,
+        "mask_xyxy": [
+          522,
+          836,
+          565,
+          896
+        ],
+        "mask_center": [
+          543.5,
+          866.0
+        ],
+        "covered_area": 1287.38,
+        "weighted_coverage_percent": 83.27,
+        "coverage_outside_crystal_in_local_window": 3.85
+      },
+      "footer": {
+        "crystal_xyxy": [
+          519,
+          1339,
+          568,
+          1408
+        ],
+        "crystal_center": [
+          543.5,
+          1373.5
+        ],
+        "crystal_area": 1729,
+        "mask_xyxy": null,
+        "mask_center": null,
+        "covered_area": 0.0,
+        "weighted_coverage_percent": 0.0,
+        "coverage_outside_crystal_in_local_window": 0.0
+      }
+    },
+    "off_crystal_weighted_pixels": 2126.22,
+    "off_crystal_nonzero_pixels": 2285,
+    "rules_reservation_nonzero_pixels": 0,
+    "lower_description_nonzero_pixels": 2248,
+    "lower_description_mask_xyxy": [
+      520,
+      1247,
+      567,
+      1337
+    ]
+  },
+  "after_mask": {
+    "crystals": {
+      "crown": {
+        "crystal_xyxy": [
+          523,
+          24,
+          565,
+          83
+        ],
+        "crystal_center": [
+          544.0,
+          53.5
+        ],
+        "crystal_area": 1268,
+        "mask_xyxy": [
+          524,
+          25,
+          564,
+          82
+        ],
+        "mask_center": [
+          544.0,
+          53.5
+        ],
+        "covered_area": 1140.7,
+        "weighted_coverage_percent": 89.96,
+        "coverage_outside_crystal_in_local_window": 0.0
+      },
+      "bridge": {
+        "crystal_xyxy": [
+          519,
+          833,
+          567,
+          896
+        ],
+        "crystal_center": [
+          543.0,
+          864.5
+        ],
+        "crystal_area": 1546,
+        "mask_xyxy": [
+          520,
+          834,
+          566,
+          895
+        ],
+        "mask_center": [
+          543.0,
+          864.5
+        ],
+        "covered_area": 1403.79,
+        "weighted_coverage_percent": 90.8,
+        "coverage_outside_crystal_in_local_window": 0.0
+      },
+      "footer": {
+        "crystal_xyxy": [
+          519,
+          1339,
+          568,
+          1408
+        ],
+        "crystal_center": [
+          543.5,
+          1373.5
+        ],
+        "crystal_area": 1729,
+        "mask_xyxy": [
+          520,
+          1340,
+          567,
+          1407
+        ],
+        "mask_center": [
+          543.5,
+          1373.5
+        ],
+        "covered_area": 1575.32,
+        "weighted_coverage_percent": 91.11,
+        "coverage_outside_crystal_in_local_window": 0.0
+      }
+    },
+    "off_crystal_weighted_pixels": 0.0,
+    "off_crystal_nonzero_pixels": 0,
+    "rules_reservation_nonzero_pixels": 0,
+    "lower_description_nonzero_pixels": 0,
+    "lower_description_mask_xyxy": null
+  },
+  "gpu_mask": {
+    "common": {
+      "outside_mask_rgb_changes": 0,
+      "outside_crystal_rgb_changes": 0,
+      "alpha_changes": 0,
+      "gems": {
+        "crown": {
+          "changed_percent": 96.69,
+          "median_chromatic_hue": 217.89,
+          "median_saturation": 0.0
+        },
+        "bridge": {
+          "changed_percent": 96.64,
+          "median_chromatic_hue": 218.55,
+          "median_saturation": 0.0
+        },
+        "footer": {
+          "changed_percent": 96.59,
+          "median_chromatic_hue": 212.27,
+          "median_saturation": 0.0
+        }
+      }
+    },
+    "uncommon": {
+      "outside_mask_rgb_changes": 0,
+      "outside_crystal_rgb_changes": 0,
+      "alpha_changes": 0,
+      "gems": {
+        "crown": {
+          "changed_percent": 96.53,
+          "median_chromatic_hue": 211.52,
+          "median_saturation": 0.877
+        },
+        "bridge": {
+          "changed_percent": 96.51,
+          "median_chromatic_hue": 211.51,
+          "median_saturation": 0.878
+        },
+        "footer": {
+          "changed_percent": 96.59,
+          "median_chromatic_hue": 211.48,
+          "median_saturation": 0.878
+        }
+      }
+    },
+    "rare": {
+      "outside_mask_rgb_changes": 0,
+      "outside_crystal_rgb_changes": 0,
+      "alpha_changes": 0,
+      "gems": {
+        "crown": {
+          "changed_percent": 96.61,
+          "median_chromatic_hue": 1.73,
+          "median_saturation": 0.897
+        },
+        "bridge": {
+          "changed_percent": 96.64,
+          "median_chromatic_hue": 1.72,
+          "median_saturation": 0.898
+        },
+        "footer": {
+          "changed_percent": 96.47,
+          "median_chromatic_hue": 1.74,
+          "median_saturation": 0.899
+        }
+      }
+    },
+    "epic": {
+      "outside_mask_rgb_changes": 0,
+      "outside_crystal_rgb_changes": 0,
+      "alpha_changes": 0,
+      "gems": {
+        "crown": {
+          "changed_percent": 96.69,
+          "median_chromatic_hue": 149.45,
+          "median_saturation": 0.897
+        },
+        "bridge": {
+          "changed_percent": 96.64,
+          "median_chromatic_hue": 149.43,
+          "median_saturation": 0.898
+        },
+        "footer": {
+          "changed_percent": 96.59,
+          "median_chromatic_hue": 149.4,
+          "median_saturation": 0.898
+        }
+      }
+    },
+    "legendary": {
+      "outside_mask_rgb_changes": 0,
+      "outside_crystal_rgb_changes": 0,
+      "alpha_changes": 0,
+      "gems": {
+        "crown": {
+          "changed_percent": 96.61,
+          "median_chromatic_hue": 42.24,
+          "median_saturation": 0.817
+        },
+        "bridge": {
+          "changed_percent": 96.64,
+          "median_chromatic_hue": 42.21,
+          "median_saturation": 0.818
+        },
+        "footer": {
+          "changed_percent": 96.53,
+          "median_chromatic_hue": 42.18,
+          "median_saturation": 0.818
+        }
+      }
+    },
+    "before_rare": {
+      "changed_pixels_in_lower_description": 2236,
+      "changed_pixels_on_footer_crystal": 0
+    }
+  },
+  "nameplate": {
+    "straight_rail_safe_strip_xyxy": [
+      180,
+      898,
+      906,
+      946
+    ],
+    "bridge_bezel_trace": [
+      [
+        522,
+        897
+      ],
+      [
+        565,
+        897
+      ],
+      [
+        558,
+        903
+      ],
+      [
+        551,
+        910
+      ],
+      [
+        545,
+        922
+      ],
+      [
+        543,
+        925
+      ],
+      [
+        541,
+        924
+      ],
+      [
+        535,
+        914
+      ],
+      [
+        529,
+        906
+      ]
+    ],
+    "before": {
+      "ink_xyxy": [
+        488,
+        925,
+        599,
+        973
+      ],
+      "ink_center": [
+        543.5,
+        949.0
+      ],
+      "rail_clearance_ltrb": [
+        308,
+        27,
+        307,
+        -27
+      ],
+      "painted_bridge_bezel_ink_pixels": 0
+    },
+    "after": {
+      "ink_xyxy": [
+        492,
+        909,
+        595,
+        944
+      ],
+      "ink_center": [
+        543.5,
+        926.5
+      ],
+      "rail_clearance_ltrb": [
+        312,
+        11,
+        311,
+        2
+      ],
+      "painted_bridge_bezel_ink_pixels": 0
+    },
+    "font": {
+      "ascent": 27.0,
+      "case": "source",
+      "descent": 11.0,
+      "font_px": 36,
+      "line_separation": -6
+    }
+  },
+  "gpu_rendered_nameplate": [
+    {
+      "case": "combat_screen_mixed_small_1080p",
+      "title": "Fireball",
+      "physical_xyxy": [
+        1036,
+        970,
+        1056,
+        977
+      ],
+      "physical_ink_height": 7,
+      "physical_changed_pixels": 41,
+      "projected_source_y_min_max": [
+        909.13,
+        942.28
+      ]
+    },
+    {
+      "case": "inspect_fireball_2_1080p",
+      "title": "Fireball",
+      "physical_xyxy": [
+        854,
+        853,
+        893,
+        866
+      ],
+      "physical_ink_height": 13,
+      "physical_changed_pixels": 177,
+      "projected_source_y_min_max": [
+        910.36,
+        942.54
+      ]
+    },
+    {
+      "case": "inspect_mending_light_2_1080p",
+      "title": "Mending Light",
+      "physical_xyxy": [
+        1027,
+        853,
+        1066,
+        866
+      ],
+      "physical_ink_height": 13,
+      "physical_changed_pixels": 177,
+      "projected_source_y_min_max": [
+        910.36,
+        942.54
+      ]
+    },
+    {
+      "case": "combat_screen_mixed_large_1080p",
+      "title": "Martial Blessing",
+      "physical_xyxy": [
+        1444,
+        958,
+        1464,
+        965
+      ],
+      "physical_ink_height": 7,
+      "physical_changed_pixels": 42,
+      "projected_source_y_min_max": [
+        909.83,
+        942.77
+      ]
+    },
+    {
+      "case": "inspect_fireball_10_1080p",
+      "title": "Fireball",
+      "physical_xyxy": [
+        519,
+        853,
+        558,
+        866
+      ],
+      "physical_ink_height": 13,
+      "physical_changed_pixels": 177,
+      "projected_source_y_min_max": [
+        910.36,
+        942.54
+      ]
+    },
+    {
+      "case": "inspect_mending_light_10_1080p",
+      "title": "Mending Light",
+      "physical_xyxy": [
+        551,
+        853,
+        590,
+        866
+      ],
+      "physical_ink_height": 13,
+      "physical_changed_pixels": 177,
+      "projected_source_y_min_max": [
+        910.36,
+        942.54
+      ]
+    },
+    {
+      "case": "inspect_arcane_barrier_10_1080p",
+      "title": "Arcane Barrier",
+      "physical_xyxy": [
+        662,
+        853,
+        701,
+        866
+      ],
+      "physical_ink_height": 13,
+      "physical_changed_pixels": 177,
+      "projected_source_y_min_max": [
+        910.36,
+        942.54
+      ]
+    },
+    {
+      "case": "inspect_martial_blessing_10_1080p",
+      "title": "Martial Blessing",
+      "physical_xyxy": [
+        773,
+        853,
+        812,
+        866
+      ],
+      "physical_ink_height": 13,
+      "physical_changed_pixels": 177,
+      "projected_source_y_min_max": [
+        910.36,
+        942.54
+      ]
+    },
+    {
+      "case": "combat_screen_mixed_small_720p",
+      "title": "Fireball",
+      "physical_xyxy": [
+        691,
+        647,
+        704,
+        651
+      ],
+      "physical_ink_height": 4,
+      "physical_changed_pixels": 17,
+      "projected_source_y_min_max": [
+        913.1,
+        938.24
+      ]
+    },
+    {
+      "case": "inspect_fireball_2_720p",
+      "title": "Fireball",
+      "physical_xyxy": [
+        569,
+        569,
+        595,
+        578
+      ],
+      "physical_ink_height": 9,
+      "physical_changed_pixels": 86,
+      "projected_source_y_min_max": [
+        912.37,
+        944.55
+      ]
+    },
+    {
+      "case": "inspect_mending_light_2_720p",
+      "title": "Mending Light",
+      "physical_xyxy": [
+        685,
+        569,
+        710,
+        578
+      ],
+      "physical_ink_height": 9,
+      "physical_changed_pixels": 82,
+      "projected_source_y_min_max": [
+        912.37,
+        944.55
+      ]
+    },
+    {
+      "case": "combat_screen_mixed_large_720p",
+      "title": "Martial Blessing",
+      "physical_xyxy": [
+        963,
+        639,
+        976,
+        644
+      ],
+      "physical_ink_height": 5,
+      "physical_changed_pixels": 18,
+      "projected_source_y_min_max": [
+        911.37,
+        938.58
+      ]
+    },
+    {
+      "case": "inspect_fireball_10_720p",
+      "title": "Fireball",
+      "physical_xyxy": [
+        346,
+        569,
+        372,
+        578
+      ],
+      "physical_ink_height": 9,
+      "physical_changed_pixels": 78,
+      "projected_source_y_min_max": [
+        912.37,
+        944.55
+      ]
+    },
+    {
+      "case": "inspect_mending_light_10_720p",
+      "title": "Mending Light",
+      "physical_xyxy": [
+        367,
+        569,
+        393,
+        578
+      ],
+      "physical_ink_height": 9,
+      "physical_changed_pixels": 86,
+      "projected_source_y_min_max": [
+        912.37,
+        944.55
+      ]
+    },
+    {
+      "case": "inspect_arcane_barrier_10_720p",
+      "title": "Arcane Barrier",
+      "physical_xyxy": [
+        441,
+        569,
+        467,
+        578
+      ],
+      "physical_ink_height": 9,
+      "physical_changed_pixels": 86,
+      "projected_source_y_min_max": [
+        912.37,
+        944.55
+      ]
+    },
+    {
+      "case": "inspect_martial_blessing_10_720p",
+      "title": "Martial Blessing",
+      "physical_xyxy": [
+        515,
+        569,
+        541,
+        578
+      ],
+      "physical_ink_height": 9,
+      "physical_changed_pixels": 86,
+      "projected_source_y_min_max": [
+        912.37,
+        944.55
+      ]
+    }
+  ]
+}

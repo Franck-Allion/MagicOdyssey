@@ -6,12 +6,13 @@ extends RefCounted
 
 const SHADER: Shader = preload("res://resources/shaders/card_rarity_gems.gdshader")
 const MASK: Texture2D = preload("res://assets/textures/cards/frame_v03_gem_mask.svg")
+const SPELL_MASK: Texture2D = preload("res://assets/textures/cards/frame_spell_v01_gem_mask.svg")
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
 
 ## Canonical emerald green hue (Colombian beryl hue ~150°, ART-002-T03C)
 const EMERALD_PIGMENT_HUE: float = 0.415
 
-static func create_material(rarity: StringName, _force_emerald_epic: bool = true) -> ShaderMaterial:
+static func create_material(rarity: StringName, _force_emerald_epic: bool = true, custom_mask: Texture2D = null) -> ShaderMaterial:
 	var color: Color = TOKENS.color_token(rarity)
 	var pigment: Color
 	var specular: Color
@@ -50,7 +51,8 @@ static func create_material(rarity: StringName, _force_emerald_epic: bool = true
 
 	var treatment: ShaderMaterial = ShaderMaterial.new()
 	treatment.shader = SHADER
-	treatment.set_shader_parameter("gem_mask", MASK)
+	var mask_to_use: Texture2D = custom_mask if custom_mask != null else MASK
+	treatment.set_shader_parameter("gem_mask", mask_to_use)
 	treatment.set_shader_parameter("gemstone_color", pigment)
 	treatment.set_shader_parameter("specular_color", specular)
 	treatment.set_shader_parameter("inner_light", inner_light)

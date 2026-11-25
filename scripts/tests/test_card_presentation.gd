@@ -10,6 +10,11 @@ const CONTENT_OVERLAY: GDScript = preload("res://scripts/presentation/card_conte
 const CATEGORY_OVERLAY: GDScript = preload("res://scripts/presentation/card_category_overlay.gd")
 const GEM_TREATMENT: GDScript = preload("res://scripts/presentation/rarity_gem_treatment.gd")
 const TOKENS: GDScript = preload("res://scripts/presentation/ui_design_tokens.gd")
+const CARD_VIEW: GDScript = preload("res://scripts/presentation/card_view.gd")
+const VARIANT: GDScript = preload("res://scripts/presentation/card_visual_variant.gd")
+const MODEL: GDScript = preload("res://scripts/presentation/card_presentation_model.gd")
+const MANA_OVERLAY: GDScript = preload("res://scripts/presentation/card_mana_overlay.gd")
+const SPELL_FRAME: Texture2D = preload("res://assets/textures/cards/mo_card_frame_spell_v01.png")
 
 
 func run_suite(asserts: TestAsserts, failure_mode: bool = false) -> void:
@@ -24,6 +29,14 @@ func run_suite(asserts: TestAsserts, failure_mode: bool = false) -> void:
 	_test_epic_emerald_rarity(asserts)
 	_test_content_transactional_safety(asserts)
 	_test_p005_r09b_title_and_rules_fitting(asserts)
+	_test_p009_r01b_spell_frame_asset(asserts)
+	_test_p009_r01b_solid_variants(asserts)
+	_test_p009_r01b_spell_presentation_model(asserts)
+	_test_p009_r01b_card_mana_overlay(asserts)
+	_test_p009_r01b_card_view_composition(asserts)
+	_test_p009_r01b_combat_preview_cards_integration(asserts)
+	_test_p009_r01c_category_alignment(asserts)
+	_test_p009_r01c_rarity_mask_registration(asserts)
 
 	if failure_mode:
 		_test_intentional_failure(asserts)
@@ -369,6 +382,342 @@ func _test_p005_r09b_title_and_rules_fitting(asserts: TestAsserts) -> void:
 	asserts.assert_true(short_title_720p >= 16.0, "Short title at 720p must exceed 16 physical px (got %.2f px)" % short_title_720p)
 
 	overlay.free()
+
+
+func _test_p009_r01b_spell_frame_asset(asserts: TestAsserts) -> void:
+	asserts.set_current_test("card_presentation:p009_r01b_spell_frame_asset")
+
+	# Runtime texture must be loaded and match production dimensions
+	asserts.assert_true(SPELL_FRAME != null, "Spell frame runtime texture must load successfully")
+	if SPELL_FRAME != null:
+		asserts.assert_equal(SPELL_FRAME.get_size(), Vector2(1086, 1448), "Spell frame must be exactly 1086x1448 px")
+		var img: Image = SPELL_FRAME.get_image()
+		asserts.assert_true(img != null, "Spell frame image must be accessible")
+		if img != null:
+			# Validate exterior transparency
+			asserts.assert_equal(img.get_pixel(0, 0).a, 0.0, "Exterior top-left corner must be fully transparent")
+			asserts.assert_equal(img.get_pixel(1085, 0).a, 0.0, "Exterior top-right corner must be fully transparent")
+			asserts.assert_equal(img.get_pixel(0, 1447).a, 0.0, "Exterior bottom-left corner must be fully transparent")
+			asserts.assert_equal(img.get_pixel(1085, 1447).a, 0.0, "Exterior bottom-right corner must be fully transparent")
+
+			# Validate aperture interior transparency
+			asserts.assert_equal(img.get_pixel(543, 500).a, 0.0, "Aperture center must be fully transparent")
+
+			# Validate solid interiors (normalized to 255 / 1.0)
+			asserts.assert_equal(img.get_pixel(153, 151).a, 1.0, "Mana housing center must be fully opaque (alpha 1.0)")
+			asserts.assert_equal(img.get_pixel(597, 137).a, 1.0, "Title bar center must be fully opaque")
+			asserts.assert_equal(img.get_pixel(543, 949).a, 1.0, "Category bar center must be fully opaque")
+			asserts.assert_equal(img.get_pixel(543, 1110).a, 1.0, "Effect description panel center must be fully opaque")
+
+			# Validate lower corners: quiet solid bronze/enamel, no stat sockets or holes
+			asserts.assert_equal(img.get_pixel(162, 1279).a, 1.0, "Former creature Attack position must be solid material")
+			asserts.assert_equal(img.get_pixel(919, 1279).a, 1.0, "Former creature Health position must be solid material")
+
+
+func _test_p009_r01b_solid_variants(asserts: TestAsserts) -> void:
+	asserts.set_current_test("card_presentation:p009_r01b_solid_variants")
+
+	var creature_v: RefCounted = VARIANT.create_creature_variant()
+	var spell_v: RefCounted = VARIANT.create_spell_variant()
+	var equip_v: RefCounted = VARIANT.create_equipment_variant()
+
+	# Creature variant properties
+	asserts.assert_equal(creature_v.category, CardContentOverlay.Category.CREATURE, "Creature variant category must be CREATURE")
+	asserts.assert_equal(creature_v.frame_texture, VARIANT.MASTER_CREATURE_FRAME, "Creature variant must use master frame v03")
+	asserts.assert_equal(creature_v.rules_bounds, CardViewLayout.RULES_BOUNDS, "Creature rules bounds must be protected narrow column")
+	asserts.assert_true(creature_v.supports_creature_stats, "Creature variant must flag supports_creature_stats as true")
+	asserts.assert_equal(creature_v.card_size, Vector2(1086, 1448), "Creature card size must be 1086x1448")
+
+	# Spell variant properties
+	asserts.assert_equal(spell_v.category, CardContentOverlay.Category.SPELL, "Spell variant category must be SPELL")
+	asserts.assert_equal(spell_v.frame_texture, SPELL_FRAME, "Spell variant must use production spell frame")
+	asserts.assert_equal(spell_v.rules_bounds, CardViewLayout.SPELL_RULES_BOUNDS, "Spell rules bounds must use enlarged SPELL_RULES_BOUNDS")
+	asserts.assert_equal(spell_v.rules_bounds.size, Vector2(806, 240), "Spell effect area must be exactly 806x240 px")
+	asserts.assert_false(spell_v.supports_creature_stats, "Spell variant must flag supports_creature_stats as false")
+	asserts.assert_equal(spell_v.illustration_bounds, CardViewLayout.APERTURE_BOUNDS, "Shared illustration aperture bounds")
+	asserts.assert_equal(spell_v.mana_center, CardViewLayout.MANA_CENTER, "Shared mana center")
+
+	# Area gain verification (+62.7% area gain over creature description)
+	var creature_area: float = CardViewLayout.RULES_BOUNDS.size.x * CardViewLayout.RULES_BOUNDS.size.y
+	var spell_area: float = CardViewLayout.SPELL_RULES_BOUNDS.size.x * CardViewLayout.SPELL_RULES_BOUNDS.size.y
+	var gain_pct: float = ((spell_area - creature_area) / creature_area) * 100.0
+	asserts.assert_true(gain_pct >= 62.0 and gain_pct <= 63.5, "Spell effect area gain must be ~62.7%% (got %.2f%%)" % gain_pct)
+
+	# Factory resolution
+	asserts.assert_equal(VARIANT.for_category(CardContentOverlay.Category.CREATURE).category, CardContentOverlay.Category.CREATURE, "Factory CREATURE resolution")
+	asserts.assert_equal(VARIANT.for_category(CardContentOverlay.Category.SPELL).category, CardContentOverlay.Category.SPELL, "Factory SPELL resolution")
+	asserts.assert_equal(VARIANT.for_category(CardContentOverlay.Category.EQUIPMENT).category, CardContentOverlay.Category.EQUIPMENT, "Factory EQUIPMENT resolution")
+
+
+func _test_p009_r01b_spell_presentation_model(asserts: TestAsserts) -> void:
+	asserts.set_current_test("card_presentation:p009_r01b_spell_presentation_model")
+
+	# 1. Fireball
+	var fireball: RefCounted = MODEL.create_spell("Fireball", 3, &"rare", "Deal 4 damage to target enemy creature.", null, "spell_fireball")
+	asserts.assert_equal(fireball.title, "Fireball", "Fireball title")
+	asserts.assert_equal(fireball.category, CardContentOverlay.Category.SPELL, "Fireball category is SPELL")
+	asserts.assert_equal(fireball.cost, 3, "Fireball cost is 3")
+	asserts.assert_equal(fireball.rarity, &"rare", "Fireball rarity is rare")
+	asserts.assert_equal(fireball.tribe, "", "Spell must have empty tribe")
+	asserts.assert_equal(fireball.attack, 0, "Spell attack must default to 0")
+	asserts.assert_equal(fireball.max_health, 0, "Spell health must default to 0")
+
+	# 2. Mending Light
+	var mending: RefCounted = MODEL.create_spell("Mending Light", 2, &"common", "Restore 3 Health to target allied creature.", null, "spell_heal")
+	asserts.assert_equal(mending.title, "Mending Light", "Mending Light title")
+	asserts.assert_equal(mending.cost, 2, "Mending Light cost is 2")
+	asserts.assert_equal(mending.rarity, &"common", "Mending Light rarity is common")
+
+	# 3. Arcane Barrier
+	var barrier: RefCounted = MODEL.create_spell("Arcane Barrier", 2, &"uncommon", "Grant 3 Shield to target allied creature.", null, "spell_barrier")
+	asserts.assert_equal(barrier.cost, 2, "Arcane Barrier cost is 2")
+	asserts.assert_equal(barrier.rarity, &"uncommon", "Arcane Barrier rarity is uncommon")
+
+	# 4. Martial Blessing
+	var blessing: RefCounted = MODEL.create_spell("Martial Blessing", 2, &"common", "Target allied creature gains +2 Attack until end of turn.", null, "spell_blessing")
+	asserts.assert_equal(blessing.cost, 2, "Martial Blessing cost is 2")
+
+	# 5. Boundary cost tests (0 cost and double-digit 10 cost)
+	var zero_cost: RefCounted = MODEL.create_spell("Zero Spell", 0, &"common", "Cost zero test.")
+	asserts.assert_equal(zero_cost.cost, 0, "0-cost spell supported")
+	var ten_cost: RefCounted = MODEL.create_spell("Ten Spell", 10, &"legendary", "Cost ten test.")
+	asserts.assert_equal(ten_cost.cost, 10, "10-cost spell supported")
+
+
+func _test_p009_r01b_card_mana_overlay(asserts: TestAsserts) -> void:
+	asserts.set_current_test("card_presentation:p009_r01b_card_mana_overlay")
+
+	var mana_overlay: Control = (MANA_OVERLAY as GDScript).new()
+	asserts.assert_true(mana_overlay != null, "CardManaOverlay must instantiate cleanly")
+	asserts.assert_true(mana_overlay is CardSocketOverlay, "CardManaOverlay must inherit CardSocketOverlay")
+	asserts.assert_false((mana_overlay as Object) is CardStatOverlay, "CardManaOverlay must NOT inherit CardStatOverlay")
+	asserts.assert_false((mana_overlay as Object) is CardCategoryOverlay, "CardManaOverlay must NOT inherit CardCategoryOverlay")
+
+	# Mana values setting
+	for test_mana in [0, 2, 3, 10]:
+		mana_overlay.call(&"set_mana", test_mana)
+		asserts.assert_equal(mana_overlay.get("_mana"), test_mana, "Mana value %d must be stored" % test_mana)
+
+	asserts.assert_equal(mana_overlay.get_child_count(), 0, "CardManaOverlay must have zero child nodes (pure immediate canvas draw)")
+	mana_overlay.free()
+
+
+func _test_p009_r01b_card_view_composition(asserts: TestAsserts) -> void:
+	asserts.set_current_test("card_presentation:p009_r01b_card_view_composition")
+
+	var view: Control = (CARD_VIEW as GDScript).new()
+	asserts.assert_true(view != null, "CardView must instantiate cleanly")
+
+	# 1. Compose Creature card
+	var creature_model: RefCounted = MODEL.create_creature("Arcane Knight", 4, &"rare", 4, 5, "Human", "Whenever this creature attacks, gain 1 Shield.", 2, 1)
+	var err_c: Error = view.call(&"apply_model", creature_model)
+	asserts.assert_equal(err_c, OK, "CardView must configure creature with OK")
+	asserts.assert_true(view.has_node("Aperture"), "Creature view must have Aperture")
+	asserts.assert_true(view.has_node("Frame"), "Creature view must have Frame")
+	asserts.assert_true(view.has_node("Content"), "Creature view must have Content")
+	asserts.assert_true(view.has_node("Stats"), "Creature view must have Stats overlay")
+	asserts.assert_false(view.has_node("Mana"), "Creature view must NOT have standalone Mana overlay")
+	asserts.assert_equal((view.get_node("Frame") as TextureRect).texture, VARIANT.MASTER_CREATURE_FRAME, "Creature Frame texture must be master v03")
+	var creature_content: CardContentOverlay = view.get_node("Content") as CardContentOverlay
+	asserts.assert_equal(creature_content.active_rules_bounds, CardViewLayout.RULES_BOUNDS, "Creature content bounds must be narrow column")
+
+	# 2. Compose Spell card
+	var spell_model: RefCounted = MODEL.create_spell("Fireball", 3, &"rare", "Deal 4 damage to target enemy creature.", null, "spell_fireball")
+	var err_s: Error = view.call(&"apply_model", spell_model)
+	asserts.assert_equal(err_s, OK, "CardView must configure spell with OK")
+	asserts.assert_true(view.has_node("Aperture"), "Spell view must have Aperture")
+	asserts.assert_true(view.has_node("Frame"), "Spell view must have Frame")
+	asserts.assert_true(view.has_node("Content"), "Spell view must have Content")
+	asserts.assert_true(view.has_node("Mana"), "Spell view must have Mana overlay")
+	asserts.assert_false(view.has_node("Stats"), "Spell view must NOT have Stats overlay")
+	asserts.assert_false(view.has_node("CategoryOverlay"), "Spell view must NOT have legacy CategoryOverlay rosette engravings")
+	asserts.assert_equal((view.get_node("Frame") as TextureRect).texture, SPELL_FRAME, "Spell Frame texture must be production spell frame")
+	var spell_content: CardContentOverlay = view.get_node("Content") as CardContentOverlay
+	asserts.assert_equal(spell_content.active_rules_bounds, CardViewLayout.SPELL_RULES_BOUNDS, "Spell content bounds must use enlarged SPELL_RULES_BOUNDS")
+	asserts.assert_equal(spell_content.type_label.text, "Spell", "Spell type text must be 'Spell' without tribe")
+
+	# 3. Two independent Spell instances do not share mutable state
+	var view2: Control = (CARD_VIEW as GDScript).new()
+	var spell_model2: RefCounted = MODEL.create_spell("Mending Light", 2, &"common", "Restore 3 Health to target allied creature.")
+	view2.call(&"apply_model", spell_model2)
+	asserts.assert_equal((view.get_node("Content") as CardContentOverlay).title_label.text, "Fireball", "View 1 title preserved")
+	asserts.assert_equal((view2.get_node("Content") as CardContentOverlay).title_label.text, "Mending Light", "View 2 title correct")
+	asserts.assert_equal(view.get_node("Mana").get("_mana"), 3, "View 1 mana cost is 3")
+	asserts.assert_equal(view2.get_node("Mana").get("_mana"), 2, "View 2 mana cost is 2")
+
+	# 4. Stress text fit in enlarged 806x240 envelope
+	var stress_spell: RefCounted = MODEL.create_spell(
+		"Cataclysmic Conflagration", 8, &"epic",
+		"Deal 8 damage to all enemy frontline creatures. If any creature is destroyed, ignite adjacent positions for 2 damage per turn.")
+	var err_stress: Error = view.call(&"apply_model", stress_spell)
+	asserts.assert_equal(err_stress, OK, "Stress spell rules must fit in enlarged 806x240 envelope")
+
+	view.free()
+	view2.free()
+
+
+func _test_p009_r01b_combat_preview_cards_integration(asserts: TestAsserts) -> void:
+	asserts.set_current_test("card_presentation:p009_r01b_combat_preview_cards_integration")
+
+	var fan: CombatPreviewCards = CombatPreviewCards.new()
+	fan.size = Vector2(1920, 270)
+	fan.display_count = 7
+	fan.rebuild()
+
+	asserts.assert_equal(fan.get_child_count(), 7, "Fan must have 7 child cards")
+
+	# Check mixed hand: index 0 is Creature, index 1 is Spell
+	var card0: Control = fan.get_child(0) as Control
+	var card1: Control = fan.get_child(1) as Control
+
+	asserts.assert_true(card0.has_node("Stats"), "Card 0 (Creature) must have Stats overlay")
+	asserts.assert_false(card0.has_node("Mana"), "Card 0 (Creature) must NOT have Mana overlay")
+	asserts.assert_equal((card0.get_node("Frame") as TextureRect).texture, VARIANT.MASTER_CREATURE_FRAME, "Card 0 Frame is master creature")
+
+	asserts.assert_true(card1.has_node("Mana"), "Card 1 (Spell) must have Mana overlay")
+	asserts.assert_false(card1.has_node("Stats"), "Card 1 (Spell) must NOT have Stats overlay")
+	asserts.assert_equal((card1.get_node("Frame") as TextureRect).texture, SPELL_FRAME, "Card 1 Frame is production spell frame")
+
+	# Check spells-only scenario
+	fan.set_preview_scenario("spells_only")
+	for i: int in range(fan.get_child_count()):
+		var spell_card: Control = fan.get_child(i) as Control
+		asserts.assert_true(spell_card.has_node("Mana"), "Card %d in spells-only hand must have Mana overlay" % i)
+		asserts.assert_false(spell_card.has_node("Stats"), "Card %d in spells-only hand must NOT have Stats overlay" % i)
+		asserts.assert_equal((spell_card.get_node("Frame") as TextureRect).texture, SPELL_FRAME, "Card %d Frame is spell frame" % i)
+
+	# Check creatures-only scenario
+	fan.set_preview_scenario("creatures_only")
+	for i: int in range(fan.get_child_count()):
+		var creature_card: Control = fan.get_child(i) as Control
+		asserts.assert_true(creature_card.has_node("Stats"), "Card %d in creatures-only hand must have Stats overlay" % i)
+		asserts.assert_false(creature_card.has_node("Mana"), "Card %d in creatures-only hand must NOT have Mana overlay" % i)
+		asserts.assert_equal((creature_card.get_node("Frame") as TextureRect).texture, VARIANT.MASTER_CREATURE_FRAME, "Card %d Frame is creature frame" % i)
+
+	# Check interaction picking consistency: picking formula respects exact card box
+	var card_center: Vector2 = Vector2(960, 135)
+	asserts.assert_true(CombatPreviewCards.is_point_in_card(card_center, card_center, 0.0, 270.0), "Card center must be inside card")
+	asserts.assert_false(CombatPreviewCards.is_point_in_card(card_center + Vector2(200, 0), card_center, 0.0, 270.0), "Point outside card width must be rejected")
+
+	fan.free()
+
+
+func _test_p009_r01c_category_alignment(asserts: TestAsserts) -> void:
+	asserts.set_current_test("card_presentation:p009_r01c_category_alignment")
+
+	# 1. Authoritative geometry constants
+	asserts.assert_equal(CardViewLayout.SPELL_TYPE_BOUNDS, Rect2(180, 908, 726, 38), "Spell category reservation clears the upper shoulders")
+	asserts.assert_equal(CardViewLayout.SPELL_TYPE_SIZE, 36, "Spell category uses calibrated 36 px serif")
+
+	# 2. Bounded within dark enamel interior y in [898, 946]
+	var box_top: float = CardViewLayout.SPELL_TYPE_BOUNDS.position.y
+	var box_bottom: float = box_top + CardViewLayout.SPELL_TYPE_BOUNDS.size.y
+	var box_center: float = box_top + CardViewLayout.SPELL_TYPE_BOUNDS.size.y * 0.5
+	asserts.assert_true(box_top >= 898.0, "Spell category box top must clear upper bronze border (got %.1f, >= 898)" % box_top)
+	asserts.assert_true(box_bottom <= 946.0, "Spell category box bottom must clear lower bronze divider (got %.1f, <= 946)" % box_bottom)
+	asserts.assert_equal(box_center, 927.0, "Spell reservation centers at y=927 below the bridge shoulders")
+
+	# 3. CardVisualVariant wiring
+	var creature_v: RefCounted = VARIANT.create_creature_variant()
+	var spell_v: RefCounted = VARIANT.create_spell_variant()
+	asserts.assert_equal(creature_v.category_bounds, CardViewLayout.TYPE_BOUNDS, "Creature variant preserves TYPE_BOUNDS")
+	asserts.assert_equal(creature_v.category_size, CardViewLayout.TYPE_SIZE, "Creature variant preserves TYPE_SIZE (48 pt)")
+	asserts.assert_equal(spell_v.category_bounds, CardViewLayout.SPELL_TYPE_BOUNDS, "Spell variant uses SPELL_TYPE_BOUNDS")
+	asserts.assert_equal(spell_v.category_size, CardViewLayout.SPELL_TYPE_SIZE, "Spell variant uses the calibrated type size")
+	asserts.assert_equal(creature_v.category_glyph_spacing, 0, "Creature variant preserves the original tracking")
+	asserts.assert_equal(spell_v.category_glyph_spacing, CardViewLayout.SPELL_TYPE_GLYPH_SPACING, "Spell variant supplies tracking")
+
+	# 4. CardView composition of category label
+	var view: Control = (CARD_VIEW as GDScript).new()
+	var spell_model: RefCounted = MODEL.create_spell("Fireball", 3, &"rare", "Deal 4 damage to target enemy creature.", null, "spell_fireball")
+	view.call(&"apply_model", spell_model)
+
+	var content: CardContentOverlay = view.get_node("Content") as CardContentOverlay
+	asserts.assert_equal(content.active_type_bounds, CardViewLayout.SPELL_TYPE_BOUNDS, "Content overlay active_type_bounds matches SPELL_TYPE_BOUNDS")
+	asserts.assert_equal(content.active_type_size, CardViewLayout.SPELL_TYPE_SIZE, "Content overlay active_type_size matches SPELL_TYPE_SIZE")
+	asserts.assert_equal(content.type_label.position, CardViewLayout.SPELL_TYPE_BOUNDS.position, "Label position matches SPELL_TYPE_BOUNDS")
+	asserts.assert_equal(content.type_label.size, CardViewLayout.SPELL_TYPE_BOUNDS.size, "Label size matches SPELL_TYPE_BOUNDS")
+	asserts.assert_equal(content.type_label.get_theme_font_size(&"font_size"), 36, "Label font size is 36 px")
+	var font: FontVariation = content.type_label.get_theme_font(&"font") as FontVariation
+	asserts.assert_true(font != null and font.spacing_glyph == CardViewLayout.SPELL_TYPE_GLYPH_SPACING, "Category label uses configured tracking")
+	asserts.assert_equal(content.type_label.text, "Spell", "Spell type text is 'Spell'")
+
+	# 5. All 4 Lot 1 spells format cleanly within bounds
+	var lot1_spells: Array[RefCounted] = [
+		MODEL.create_spell("Fireball", 3, &"rare", "Deal 4 damage to target enemy creature.", null, "spell_fireball"),
+		MODEL.create_spell("Mending Light", 2, &"common", "Restore 3 Health to target allied creature.", null, "spell_heal"),
+		MODEL.create_spell("Arcane Barrier", 2, &"uncommon", "Grant 3 Shield to target allied creature.", null, "spell_barrier"),
+		MODEL.create_spell("Martial Blessing", 2, &"common", "Target allied creature gains +2 Attack until end of turn.", null, "spell_blessing")
+	]
+	for sp: RefCounted in lot1_spells:
+		var err: Error = view.call(&"apply_model", sp)
+		content = view.get_node("Content") as CardContentOverlay
+		asserts.assert_equal(err, OK, "Spell '%s' must apply model cleanly" % sp.title)
+		asserts.assert_false(content.title_overflow, "Title must not overflow for '%s'" % sp.title)
+		asserts.assert_false(content.rules_overflow, "Rules must not overflow for '%s'" % sp.title)
+		asserts.assert_equal(content.type_label.text, "Spell", "Each reference Spell supplies the same category label")
+
+	view.free()
+
+
+func _test_p009_r01c_rarity_mask_registration(asserts: TestAsserts) -> void:
+	asserts.set_current_test("card_presentation:p009_r01c_rarity_mask_registration")
+
+	# 1. Mask asset loading and dimensions
+	asserts.assert_true(GEM_TREATMENT.SPELL_MASK != null, "Spell rarity mask must be loaded")
+	if GEM_TREATMENT.SPELL_MASK != null:
+		asserts.assert_equal(GEM_TREATMENT.SPELL_MASK.get_size(), Vector2(1086, 1448), "Spell mask must be 1086x1448 px")
+		var mask_img: Image = GEM_TREATMENT.SPELL_MASK.get_image()
+		asserts.assert_true(mask_img != null, "Mask image must be accessible")
+		if mask_img != null:
+			# Crown crystal interior (white / recolored)
+			asserts.assert_true(mask_img.get_pixel(543, 53).r > 0.5, "Crown crystal interior must be white in mask")
+
+			# Bridge crystal interior (white / recolored)
+			asserts.assert_true(mask_img.get_pixel(543, 866).r > 0.5, "Bridge crystal interior must be white in mask")
+
+			# Footer crystal interior at actual Spell position y ~ 1375 (white / recolored)
+			asserts.assert_true(mask_img.get_pixel(543, 1375).r > 0.5, "Actual Spell footer crystal interior must be white in mask")
+
+			# Old Creature footer position y=1286 MUST BE BLACK (zero leakage into description panel)
+			asserts.assert_equal(mask_img.get_pixel(543, 1286).r, 0.0, "Former creature footer position must be black (zero leakage)")
+
+			# Rules description area MUST BE BLACK
+			asserts.assert_equal(mask_img.get_pixel(543, 1110).r, 0.0, "Description panel center must be black")
+			asserts.assert_equal(mask_img.get_pixel(300, 1110).r, 0.0, "Description panel left must be black")
+			asserts.assert_equal(mask_img.get_pixel(780, 1110).r, 0.0, "Description panel right must be black")
+
+			# Bezel flanking footer crystal MUST BE BLACK
+			asserts.assert_equal(mask_img.get_pixel(500, 1375).r, 0.0, "Bronze bezel left of footer crystal must be black")
+			asserts.assert_equal(mask_img.get_pixel(586, 1375).r, 0.0, "Bronze bezel right of footer crystal must be black")
+
+	# 2. Material independence between Creature and Spell
+	var creature_view: Control = (CARD_VIEW as GDScript).new()
+	var spell_view: Control = (CARD_VIEW as GDScript).new()
+
+	var c_model: RefCounted = MODEL.create_creature("Arcane Knight", 1, &"rare", 2, 3, "Human")
+	var s_model: RefCounted = MODEL.create_spell("Fireball", 3, &"rare", "Deal 4 damage.")
+
+	creature_view.call(&"apply_model", c_model)
+	spell_view.call(&"apply_model", s_model)
+
+	var c_mat: ShaderMaterial = (creature_view.get_node("Frame") as TextureRect).material as ShaderMaterial
+	var s_mat: ShaderMaterial = (spell_view.get_node("Frame") as TextureRect).material as ShaderMaterial
+
+	asserts.assert_true(c_mat != null and s_mat != null, "Both views must have ShaderMaterial")
+	asserts.assert_false(c_mat == s_mat, "Creature and Spell must have independent ShaderMaterial instances")
+	asserts.assert_equal(c_mat.shader, s_mat.shader, "Creature and Spell use the same rarity shader")
+	asserts.assert_equal(c_mat.get_shader_parameter("gem_mask"), GEM_TREATMENT.MASK, "Creature material must use MASK (frame_v03_gem_mask.svg)")
+	asserts.assert_equal(s_mat.get_shader_parameter("gem_mask"), GEM_TREATMENT.SPELL_MASK, "Spell material must use SPELL_MASK (frame_spell_v01_gem_mask.svg)")
+
+	# 3. All 5 rarities on Spell generate valid materials with SPELL_MASK
+	for r: StringName in [&"common", &"uncommon", &"rare", &"epic", &"legendary"]:
+		var mat: ShaderMaterial = GEM_TREATMENT.create_material(r, true, GEM_TREATMENT.SPELL_MASK)
+		asserts.assert_true(mat != null, "Material for rarity '%s' must not be null" % r)
+		asserts.assert_equal(mat.get_shader_parameter("gem_mask"), GEM_TREATMENT.SPELL_MASK, "Rarity '%s' must carry SPELL_MASK" % r)
+
+	creature_view.free()
+	spell_view.free()
 
 
 func _test_intentional_failure(asserts: TestAsserts) -> void:

@@ -1,0 +1,24 @@
+{
+  "assertions_failed": 0,
+  "assertions_passed": 11,
+  "captures": [
+    "combat_screen_mixed_1080p.png",
+    "combat_screen_mixed_720p.png",
+    "combat_screen_spells_1080p.png",
+    "combat_screen_spells_720p.png",
+    "inspect_fireball_1080p.png",
+    "inspect_mending_light_1080p.png",
+    "inspect_arcane_barrier_1080p.png",
+    "inspect_martial_blessing_1080p.png",
+    "creature_vs_spell_comparison_1080p.png",
+    "rarity_variations_spell_1080p.png",
+    "text_readability_stress_1080p.png"
+  ],
+  "engine": "4.7.2-stable (official)",
+  "gpu": "NVIDIA GeForce GTX 1660 Ti",
+  "task": "P009-R01B",
+  "viewport_modes": [
+    "1920x1080",
+    "1280x720"
+  ]
+}

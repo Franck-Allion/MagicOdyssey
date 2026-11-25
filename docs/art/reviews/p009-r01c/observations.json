@@ -1,0 +1,276 @@
+{
+  "captures": [
+    "spell_text_before.png",
+    "spell_text_alignment_diagnostic.png",
+    "spell_mask_diagnostic.png",
+    "creature_rare_baseline_1080p.png",
+    "creature_vs_spell_comparison_1080p.png",
+    "spell_rare_before_after_1080p.png",
+    "spell_common_1080p.png",
+    "spell_uncommon_1080p.png",
+    "spell_rare_1080p.png",
+    "spell_epic_1080p.png",
+    "spell_legendary_1080p.png",
+    "spell_text_alignment_diagnostic_1080p.png",
+    "spell_mask_diagnostic_1080p.png",
+    "combat_screen_mixed_small_1080p.png",
+    "combat_screen_mixed_large_1080p.png",
+    "inspect_fireball_10_1080p.png",
+    "inspect_mending_light_10_1080p.png",
+    "inspect_arcane_barrier_10_1080p.png",
+    "inspect_martial_blessing_10_1080p.png",
+    "creature_rare_baseline_720p.png",
+    "creature_vs_spell_comparison_720p.png",
+    "spell_rare_before_after_720p.png",
+    "spell_common_720p.png",
+    "spell_uncommon_720p.png",
+    "spell_rare_720p.png",
+    "spell_epic_720p.png",
+    "spell_legendary_720p.png",
+    "spell_text_alignment_diagnostic_720p.png",
+    "spell_mask_diagnostic_720p.png",
+    "combat_screen_mixed_small_720p.png",
+    "combat_screen_mixed_large_720p.png",
+    "inspect_fireball_10_720p.png",
+    "inspect_mending_light_10_720p.png",
+    "inspect_arcane_barrier_10_720p.png",
+    "inspect_martial_blessing_10_720p.png"
+  ],
+  "engine": "4.7.2-stable (official)",
+  "failed": 0,
+  "glyph_cases": [
+    {
+      "ascent": 27.0,
+      "case": "source",
+      "descent": 11.0,
+      "font_px": 36,
+      "line_separation": -6
+    },
+    {
+      "case": "combat_screen_mixed_small_1080p",
+      "raised": false,
+      "title": "Fireball",
+      "transform": [
+        0.18644592165947,
+        0.0026034452021122,
+        -0.0026034452021122,
+        0.18644592165947,
+        947.05322265625,
+        799.463134765625
+      ],
+      "viewport_scale": 1.0
+    },
+    {
+      "case": "inspect_fireball_2_1080p",
+      "raised": true,
+      "title": "Fireball",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        671.091552734375,
+        514.0
+      ],
+      "viewport_scale": 1.0
+    },
+    {
+      "case": "inspect_mending_light_2_1080p",
+      "raised": true,
+      "title": "Mending Light",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        843.908447265625,
+        514.0
+      ],
+      "viewport_scale": 1.0
+    },
+    {
+      "case": "combat_screen_mixed_large_1080p",
+      "raised": false,
+      "title": "Martial Blessing",
+      "transform": [
+        0.184168413281441,
+        0.029169412329793,
+        -0.029169412329793,
+        0.184168413281441,
+        1380.865234375,
+        775.646118164063
+      ],
+      "viewport_scale": 1.0
+    },
+    {
+      "case": "inspect_fireball_10_1080p",
+      "raised": true,
+      "title": "Fireball",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        336.0,
+        514.0
+      ],
+      "viewport_scale": 1.0
+    },
+    {
+      "case": "inspect_mending_light_10_1080p",
+      "raised": true,
+      "title": "Mending Light",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        368.172729492188,
+        514.0
+      ],
+      "viewport_scale": 1.0
+    },
+    {
+      "case": "inspect_arcane_barrier_10_1080p",
+      "raised": true,
+      "title": "Arcane Barrier",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        479.069793701172,
+        514.0
+      ],
+      "viewport_scale": 1.0
+    },
+    {
+      "case": "inspect_martial_blessing_10_1080p",
+      "raised": true,
+      "title": "Martial Blessing",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        590.306030273438,
+        514.0
+      ],
+      "viewport_scale": 1.0
+    },
+    {
+      "case": "combat_screen_mixed_small_720p",
+      "raised": false,
+      "title": "Fireball",
+      "transform": [
+        0.18644592165947,
+        0.0026034452021122,
+        -0.0026034452021122,
+        0.18644592165947,
+        947.05322265625,
+        799.463134765625
+      ],
+      "viewport_scale": 0.666666666666667
+    },
+    {
+      "case": "inspect_fireball_2_720p",
+      "raised": true,
+      "title": "Fireball",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        671.091552734375,
+        514.0
+      ],
+      "viewport_scale": 0.666666666666667
+    },
+    {
+      "case": "inspect_mending_light_2_720p",
+      "raised": true,
+      "title": "Mending Light",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        843.908447265625,
+        514.0
+      ],
+      "viewport_scale": 0.666666666666667
+    },
+    {
+      "case": "combat_screen_mixed_large_720p",
+      "raised": false,
+      "title": "Martial Blessing",
+      "transform": [
+        0.184168413281441,
+        0.029169412329793,
+        -0.029169412329793,
+        0.184168413281441,
+        1380.865234375,
+        775.646118164063
+      ],
+      "viewport_scale": 0.666666666666667
+    },
+    {
+      "case": "inspect_fireball_10_720p",
+      "raised": true,
+      "title": "Fireball",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        336.0,
+        514.0
+      ],
+      "viewport_scale": 0.666666666666667
+    },
+    {
+      "case": "inspect_mending_light_10_720p",
+      "raised": true,
+      "title": "Mending Light",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        368.172729492188,
+        514.0
+      ],
+      "viewport_scale": 0.666666666666667
+    },
+    {
+      "case": "inspect_arcane_barrier_10_720p",
+      "raised": true,
+      "title": "Arcane Barrier",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        479.069793701172,
+        514.0
+      ],
+      "viewport_scale": 0.666666666666667
+    },
+    {
+      "case": "inspect_martial_blessing_10_720p",
+      "raised": true,
+      "title": "Martial Blessing",
+      "transform": [
+        0.37292817234993,
+        0.0,
+        0.0,
+        0.37292817234993,
+        590.306030273438,
+        514.0
+      ],
+      "viewport_scale": 0.666666666666667
+    }
+  ],
+  "gpu": "NVIDIA GeForce GTX 1660 Ti",
+  "passed": 160
+}
